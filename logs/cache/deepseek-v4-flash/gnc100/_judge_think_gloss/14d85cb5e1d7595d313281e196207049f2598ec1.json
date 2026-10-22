@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "饱和后连续三次干净样本使 clean 增至 required=3，C 的 clean=3 符合表；B 未递增。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "中途 0.6 落入 (recovered,saturated) 应清 clean，随后两次干净样本增至 2；C 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "起始 RECOVERING，连续三次干净样本使 clean=3；C 符合，B 未递增。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "起始 clean=1，两次干净样本后 clean=3；C 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "required_clean=1，一次干净样本使 clean=1；C 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "Disabled 应报 NOMINAL 并清 clean；C 正确处理，A 误报 FAULT，B 使用了 disabled 样本。"
+  }
+ ],
+ "pick": "C"
+}

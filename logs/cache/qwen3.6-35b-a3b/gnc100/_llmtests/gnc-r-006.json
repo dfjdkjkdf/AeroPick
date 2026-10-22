@@ -1,0 +1,143 @@
+{
+ "key": "5b38aad01118fb7db68958ca88fb8eb21f032de5",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 5.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 5.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 5.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 5.0;\nwa_input.requested_torque_nm->y = 5.0;\nwa_input.requested_torque_nm->z = 5.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 10.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 10.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 10.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 10.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 10.1;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 10.1;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;",
+    "wa_state.previous_wheel_torque_nm[0] = 10.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;",
+    "wa_state.previous_wheel_torque_nm[0] = 10.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;",
+    "wa_state.previous_wheel_torque_nm[0] = 10.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 10.1;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_LIMITED;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 10.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;",
+    "wa_input.requested_torque_nm->x = 0.0; wa_input.requested_torque_nm->y = 0.0; wa_input.requested_torque_nm->z = 0.0;",
+    "wa_input.requested_torque_nm->x = 0.0; wa_input.requested_torque_nm->y = 0.0; wa_input.requested_torque_nm->z = 0.0;",
+    "wa_input.requested_torque_nm->x = 0.0; wa_input.requested_torque_nm->y = 0.0; wa_input.requested_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 5.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 4.9;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 5.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 5.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm = NULL;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 1.0/0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes = NULL;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 2;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 3;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;",
+    "wa_input.available_mask = 6;\nwa_state.mode = WA_DEGRADED;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;",
+    "wa_input.available_mask = 7;\nwa_state.mode = WA_RECOVERING;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;",
+    "wa_state.clean_count = 1;\nwa_state.restore_count = 0;",
+    "wa_state.clean_count = 2;\nwa_state.restore_count = 0;",
+    "wa_state.clean_count = 3;\nwa_state.restore_count = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;",
+    "wa_input.available_mask = 6;\nwa_state.mode = WA_DEGRADED;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;",
+    "wa_input.available_mask = 7;\nwa_state.mode = WA_RECOVERING;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;",
+    "wa_input.requested_torque_nm->x = 10.1;\nwa_state.mode = WA_LIMITED;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;",
+    "wa_input.requested_torque_nm->x = 0.0;\nwa_state.mode = WA_RECOVERING;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;",
+    "wa_state.clean_count = 1;\nwa_state.restore_count = 0;",
+    "wa_state.clean_count = 2;\nwa_state.restore_count = 0;",
+    "wa_state.clean_count = 3;\nwa_state.restore_count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 0;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = -1.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 0;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 21;\nwa_state.mode = WA_NORMAL;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7;\nwa_input.requested_torque_nm->x = 0.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_input.axes[0].x = 1.0; wa_input.axes[0].y = 0.0; wa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0; wa_input.axes[1].y = 1.0; wa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0; wa_input.axes[2].y = 0.0; wa_input.axes[2].z = 1.0;\nwa_config.wheel_limit_nm[0] = 10.0; wa_config.wheel_limit_nm[1] = 10.0; wa_config.wheel_limit_nm[2] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[1] = 20.0; wa_config.max_wheel_slew_nm_per_cycle[2] = 20.0;\nwa_config.release_cycles = 3;\nwa_config.restore_cycles = 3;\nwa_state.mode = WA_FAULT;\nwa_state.clean_count = 0;\nwa_state.restore_count = 0;\nwa_state.previous_wheel_torque_nm[0] = 0.0; wa_state.previous_wheel_torque_nm[1] = 0.0; wa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  }
+ ]
+}

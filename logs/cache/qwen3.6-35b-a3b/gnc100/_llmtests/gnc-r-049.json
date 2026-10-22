@@ -1,0 +1,258 @@
+{
+ "key": "ab6a4f04a35823e90ad0252a2f19e1c27b7b7057",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "request = NULL;",
+    "limited = NULL;",
+    "residual = NULL;",
+    "residual_norm = NULL;",
+    "mask = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "limits[0].min_value = 1.0;",
+    "limits[0].max_value = 0.5;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = INFINITY;",
+    "request->y = 0.0;",
+    "request->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = NAN;",
+    "request->y = 0.0;",
+    "request->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.0;",
+    "request->y = 0.0;",
+    "request->z = 0.0;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.5;",
+    "request->y = -0.5;",
+    "request->z = 0.0;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0;",
+    "request->y = 0.0;",
+    "request->z = 0.0;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = -1.0;",
+    "request->y = 0.0;",
+    "request->z = 0.0;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.1;",
+    "request->y = 0.0;",
+    "request->z = 0.0;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = -1.1;",
+    "request->y = 0.0;",
+    "request->z = 0.0;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.0;",
+    "request->y = 1.1;",
+    "request->z = 0.0;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.0;",
+    "request->y = 0.0;",
+    "request->z = 1.1;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.1;",
+    "request->y = 1.1;",
+    "request->z = 1.1;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = -1.1;",
+    "request->y = -1.1;",
+    "request->z = -1.1;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0000000000000002;",
+    "request->y = 0.0;",
+    "request->z = 0.0;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.5;",
+    "request->y = 0.5;",
+    "request->z = 0.5;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 2.0;",
+    "request->y = 3.0;",
+    "request->z = 4.0;",
+    "limits[0].min_value = -1.5;",
+    "limits[0].max_value = 1.5;",
+    "limits[1].min_value = -2.5;",
+    "limits[1].max_value = 2.5;",
+    "limits[2].min_value = -3.5;",
+    "limits[2].max_value = 3.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.0;",
+    "request->y = 0.0;",
+    "request->z = 0.0;",
+    "limits[0].min_value = 0.0;",
+    "limits[0].max_value = 0.0;",
+    "limits[1].min_value = 0.0;",
+    "limits[1].max_value = 0.0;",
+    "limits[2].min_value = 0.0;",
+    "limits[2].max_value = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1e-10;",
+    "request->y = 1e-10;",
+    "request->z = 1e-10;",
+    "limits[0].min_value = -1.0;",
+    "limits[0].max_value = 1.0;",
+    "limits[1].min_value = -1.0;",
+    "limits[1].max_value = 1.0;",
+    "limits[2].min_value = -1.0;",
+    "limits[2].max_value = 1.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2986 @@
+[
+ {
+  "t": "gnc-f-001",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9501,
+   "completion": 20403
+  }
+ },
+ {
+  "t": "gnc-f-001",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9465,
+   "completion": 10376
+  }
+ },
+ {
+  "t": "gnc-f-001",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9372,
+   "completion": 2043
+  }
+ },
+ {
+  "t": "gnc-f-002",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8621,
+   "completion": 17913
+  }
+ },
+ {
+  "t": "gnc-f-002",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8541,
+   "completion": 15383
+  }
+ },
+ {
+  "t": "gnc-f-002",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8692,
+   "completion": 20328
+  }
+ },
+ {
+  "t": "gnc-f-003",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 8489,
+   "completion": 23825
+  }
+ },
+ {
+  "t": "gnc-f-003",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8652,
+   "completion": 1495
+  }
+ },
+ {
+  "t": "gnc-f-003",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8492,
+   "completion": 6059
+  }
+ },
+ {
+  "t": "gnc-f-004",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9616,
+   "completion": 15748
+  }
+ },
+ {
+  "t": "gnc-f-004",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 12338,
+   "completion": 23429
+  }
+ },
+ {
+  "t": "gnc-f-004",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10080,
+   "completion": 16544
+  }
+ },
+ {
+  "t": "gnc-f-005",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8459,
+   "completion": 11520
+  }
+ },
+ {
+  "t": "gnc-f-005",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8498,
+   "completion": 11780
+  }
+ },
+ {
+  "t": "gnc-f-005",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8446,
+   "completion": 26851
+  }
+ },
+ {
+  "t": "gnc-f-006",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9804,
+   "completion": 11715
+  }
+ },
+ {
+  "t": "gnc-f-006",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9572,
+   "completion": 5976
+  }
+ },
+ {
+  "t": "gnc-f-006",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9563,
+   "completion": 12981
+  }
+ },
+ {
+  "t": "gnc-f-007",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9386,
+   "completion": 2453
+  }
+ },
+ {
+  "t": "gnc-f-007",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9701,
+   "completion": 2917
+  }
+ },
+ {
+  "t": "gnc-f-007",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9475,
+   "completion": 9349
+  }
+ },
+ {
+  "t": "gnc-f-008",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9146,
+   "completion": 12924
+  }
+ },
+ {
+  "t": "gnc-f-008",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9137,
+   "completion": 18357
+  }
+ },
+ {
+  "t": "gnc-f-008",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8941,
+   "completion": 13692
+  }
+ },
+ {
+  "t": "gnc-f-009",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9924,
+   "completion": 24617
+  }
+ },
+ {
+  "t": "gnc-f-009",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9720,
+   "completion": 6398
+  }
+ },
+ {
+  "t": "gnc-f-009",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9769,
+   "completion": 9162
+  }
+ },
+ {
+  "t": "gnc-f-010",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9960,
+   "completion": 989
+  }
+ },
+ {
+  "t": "gnc-f-010",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9969,
+   "completion": 1322
+  }
+ },
+ {
+  "t": "gnc-f-010",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9883,
+   "completion": 1901
+  }
+ },
+ {
+  "t": "gnc-f-011",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9452,
+   "completion": 27082
+  }
+ },
+ {
+  "t": "gnc-f-011",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9071,
+   "completion": 1326
+  }
+ },
+ {
+  "t": "gnc-f-011",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9035,
+   "completion": 20617
+  }
+ },
+ {
+  "t": "gnc-f-012",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9913,
+   "completion": 26463
+  }
+ },
+ {
+  "t": "gnc-f-012",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9756,
+   "completion": 19955
+  }
+ },
+ {
+  "t": "gnc-f-012",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9821,
+   "completion": 3096
+  }
+ },
+ {
+  "t": "gnc-f-013",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 9654,
+   "completion": 2685
+  }
+ },
+ {
+  "t": "gnc-f-013",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 9732,
+   "completion": 14909
+  }
+ },
+ {
+  "t": "gnc-f-013",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10063,
+   "completion": 2872
+  }
+ },
+ {
+  "t": "gnc-f-014",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10208,
+   "completion": 20564
+  }
+ },
+ {
+  "t": "gnc-f-014",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10031,
+   "completion": 16660
+  }
+ },
+ {
+  "t": "gnc-f-014",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10094,
+   "completion": 24625
+  }
+ },
+ {
+  "t": "gnc-f-015",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9489,
+   "completion": 6746
+  }
+ },
+ {
+  "t": "gnc-f-015",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9653,
+   "completion": 3856
+  }
+ },
+ {
+  "t": "gnc-f-015",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10020,
+   "completion": 5887
+  }
+ },
+ {
+  "t": "gnc-f-016",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10715,
+   "completion": 4850
+  }
+ },
+ {
+  "t": "gnc-f-016",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10445,
+   "completion": 18039
+  }
+ },
+ {
+  "t": "gnc-f-016",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10319,
+   "completion": 2252
+  }
+ },
+ {
+  "t": "gnc-f-017",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9431,
+   "completion": 6219
+  }
+ },
+ {
+  "t": "gnc-f-017",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9493,
+   "completion": 2067
+  }
+ },
+ {
+  "t": "gnc-f-017",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9307,
+   "completion": 19362
+  }
+ },
+ {
+  "t": "gnc-f-018",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10644,
+   "completion": 19840
+  }
+ },
+ {
+  "t": "gnc-f-018",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11255,
+   "completion": 11375
+  }
+ },
+ {
+  "t": "gnc-f-018",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11102,
+   "completion": 5778
+  }
+ },
+ {
+  "t": "gnc-f-019",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8579,
+   "completion": 10794
+  }
+ },
+ {
+  "t": "gnc-f-019",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8533,
+   "completion": 1249
+  }
+ },
+ {
+  "t": "gnc-f-019",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8586,
+   "completion": 842
+  }
+ },
+ {
+  "t": "gnc-f-020",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9013,
+   "completion": 1275
+  }
+ },
+ {
+  "t": "gnc-f-020",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9093,
+   "completion": 14469
+  }
+ },
+ {
+  "t": "gnc-f-020",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9095,
+   "completion": 14104
+  }
+ },
+ {
+  "t": "gnc-f-021",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9422,
+   "completion": 15723
+  }
+ },
+ {
+  "t": "gnc-f-021",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9484,
+   "completion": 18576
+  }
+ },
+ {
+  "t": "gnc-f-021",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9686,
+   "completion": 2403
+  }
+ },
+ {
+  "t": "gnc-f-022",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9726,
+   "completion": 24717
+  }
+ },
+ {
+  "t": "gnc-f-022",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9686,
+   "completion": 5181
+  }
+ },
+ {
+  "t": "gnc-f-022",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9531,
+   "completion": 23601
+  }
+ },
+ {
+  "t": "gnc-f-023",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9998,
+   "completion": 935
+  }
+ },
+ {
+  "t": "gnc-f-023",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10298,
+   "completion": 15495
+  }
+ },
+ {
+  "t": "gnc-f-023",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10095,
+   "completion": 23910
+  }
+ },
+ {
+  "t": "gnc-f-024",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9558,
+   "completion": 27721
+  }
+ },
+ {
+  "t": "gnc-f-024",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9436,
+   "completion": 12600
+  }
+ },
+ {
+  "t": "gnc-f-024",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9542,
+   "completion": 9601
+  }
+ },
+ {
+  "t": "gnc-f-025",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8617,
+   "completion": 16196
+  }
+ },
+ {
+  "t": "gnc-f-025",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8624,
+   "completion": 6405
+  }
+ },
+ {
+  "t": "gnc-f-025",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8599,
+   "completion": 718
+  }
+ },
+ {
+  "t": "gnc-f-026",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9257,
+   "completion": 16971
+  }
+ },
+ {
+  "t": "gnc-f-026",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9184,
+   "completion": 16478
+  }
+ },
+ {
+  "t": "gnc-f-026",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9161,
+   "completion": 17082
+  }
+ },
+ {
+  "t": "gnc-f-027",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9415,
+   "completion": 1358
+  }
+ },
+ {
+  "t": "gnc-f-027",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10144,
+   "completion": 3398
+  }
+ },
+ {
+  "t": "gnc-f-027",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9929,
+   "completion": 11008
+  }
+ },
+ {
+  "t": "gnc-f-028",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8717,
+   "completion": 6323
+  }
+ },
+ {
+  "t": "gnc-f-028",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8834,
+   "completion": 16638
+  }
+ },
+ {
+  "t": "gnc-f-028",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8660,
+   "completion": 8261
+  }
+ },
+ {
+  "t": "gnc-f-029",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9499,
+   "completion": 12863
+  }
+ },
+ {
+  "t": "gnc-f-029",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9112,
+   "completion": 431
+  }
+ },
+ {
+  "t": "gnc-f-029",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9195,
+   "completion": 13017
+  }
+ },
+ {
+  "t": "gnc-f-030",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9258,
+   "completion": 17481
+  }
+ },
+ {
+  "t": "gnc-f-030",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9260,
+   "completion": 31664
+  }
+ },
+ {
+  "t": "gnc-f-030",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9290,
+   "completion": 14069
+  }
+ },
+ {
+  "t": "gnc-f-031",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9953,
+   "completion": 16780
+  }
+ },
+ {
+  "t": "gnc-f-031",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9665,
+   "completion": 27989
+  }
+ },
+ {
+  "t": "gnc-f-031",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9909,
+   "completion": 16059
+  }
+ },
+ {
+  "t": "gnc-f-032",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8945,
+   "completion": 22023
+  }
+ },
+ {
+  "t": "gnc-f-032",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9032,
+   "completion": 26650
+  }
+ },
+ {
+  "t": "gnc-f-032",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8996,
+   "completion": 807
+  }
+ },
+ {
+  "t": "gnc-f-033",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9437,
+   "completion": 27214
+  }
+ },
+ {
+  "t": "gnc-f-033",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9367,
+   "completion": 653
+  }
+ },
+ {
+  "t": "gnc-f-033",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9217,
+   "completion": 1013
+  }
+ },
+ {
+  "t": "gnc-f-034",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9302,
+   "completion": 12963
+  }
+ },
+ {
+  "t": "gnc-f-034",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9543,
+   "completion": 17070
+  }
+ },
+ {
+  "t": "gnc-f-034",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9568,
+   "completion": 20977
+  }
+ },
+ {
+  "t": "gnc-f-035",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9254,
+   "completion": 21157
+  }
+ },
+ {
+  "t": "gnc-f-035",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9222,
+   "completion": 15508
+  }
+ },
+ {
+  "t": "gnc-f-035",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9263,
+   "completion": 25317
+  }
+ },
+ {
+  "t": "gnc-f-036",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9664,
+   "completion": 7666
+  }
+ },
+ {
+  "t": "gnc-f-036",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9362,
+   "completion": 11958
+  }
+ },
+ {
+  "t": "gnc-f-036",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10273,
+   "completion": 3969
+  }
+ },
+ {
+  "t": "gnc-f-037",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9402,
+   "completion": 15682
+  }
+ },
+ {
+  "t": "gnc-f-037",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9383,
+   "completion": 6902
+  }
+ },
+ {
+  "t": "gnc-f-037",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9501,
+   "completion": 7099
+  }
+ },
+ {
+  "t": "gnc-f-038",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9818,
+   "completion": 14468
+  }
+ },
+ {
+  "t": "gnc-f-038",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9808,
+   "completion": 31060
+  }
+ },
+ {
+  "t": "gnc-f-038",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9632,
+   "completion": 19244
+  }
+ },
+ {
+  "t": "gnc-f-039",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9123,
+   "completion": 18548
+  }
+ },
+ {
+  "t": "gnc-f-039",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9213,
+   "completion": 12364
+  }
+ },
+ {
+  "t": "gnc-f-039",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8960,
+   "completion": 1015
+  }
+ },
+ {
+  "t": "gnc-f-040",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9417,
+   "completion": 23333
+  }
+ },
+ {
+  "t": "gnc-f-040",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9521,
+   "completion": 10201
+  }
+ },
+ {
+  "t": "gnc-f-040",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9655,
+   "completion": 12599
+  }
+ },
+ {
+  "t": "gnc-f-041",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9426,
+   "completion": 17357
+  }
+ },
+ {
+  "t": "gnc-f-041",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9843,
+   "completion": 10598
+  }
+ },
+ {
+  "t": "gnc-f-041",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9787,
+   "completion": 1146
+  }
+ },
+ {
+  "t": "gnc-f-042",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9776,
+   "completion": 16442
+  }
+ },
+ {
+  "t": "gnc-f-042",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9562,
+   "completion": 26936
+  }
+ },
+ {
+  "t": "gnc-f-042",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9364,
+   "completion": 31183
+  }
+ },
+ {
+  "t": "gnc-f-043",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9111,
+   "completion": 1273
+  }
+ },
+ {
+  "t": "gnc-f-043",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8780,
+   "completion": 22336
+  }
+ },
+ {
+  "t": "gnc-f-043",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8942,
+   "completion": 32686
+  }
+ },
+ {
+  "t": "gnc-f-044",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 9027,
+   "completion": 7004
+  }
+ },
+ {
+  "t": "gnc-f-044",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8989,
+   "completion": 2938
+  }
+ },
+ {
+  "t": "gnc-f-044",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9069,
+   "completion": 8915
+  }
+ },
+ {
+  "t": "gnc-f-045",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8670,
+   "completion": 556
+  }
+ },
+ {
+  "t": "gnc-f-045",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8573,
+   "completion": 4454
+  }
+ },
+ {
+  "t": "gnc-f-045",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8626,
+   "completion": 487
+  }
+ },
+ {
+  "t": "gnc-f-046",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9074,
+   "completion": 18390
+  }
+ },
+ {
+  "t": "gnc-f-046",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9118,
+   "completion": 1432
+  }
+ },
+ {
+  "t": "gnc-f-046",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8898,
+   "completion": 23400
+  }
+ },
+ {
+  "t": "gnc-f-047",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8578,
+   "completion": 3860
+  }
+ },
+ {
+  "t": "gnc-f-047",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8674,
+   "completion": 20266
+  }
+ },
+ {
+  "t": "gnc-f-047",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8582,
+   "completion": 1551
+  }
+ },
+ {
+  "t": "gnc-f-048",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9417,
+   "completion": 5485
+  }
+ },
+ {
+  "t": "gnc-f-048",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9219,
+   "completion": 25285
+  }
+ },
+ {
+  "t": "gnc-f-048",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9357,
+   "completion": 3483
+  }
+ },
+ {
+  "t": "gnc-f-049",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8510,
+   "completion": 4296
+  }
+ },
+ {
+  "t": "gnc-f-049",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8440,
+   "completion": 14635
+  }
+ },
+ {
+  "t": "gnc-f-049",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8394,
+   "completion": 766
+  }
+ },
+ {
+  "t": "gnc-f-050",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10268,
+   "completion": 6503
+  }
+ },
+ {
+  "t": "gnc-f-050",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10027,
+   "completion": 7842
+  }
+ },
+ {
+  "t": "gnc-f-050",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9797,
+   "completion": 10143
+  }
+ },
+ {
+  "t": "gnc-r-001",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10021,
+   "completion": 12813
+  }
+ },
+ {
+  "t": "gnc-r-001",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10223,
+   "completion": 7363
+  }
+ },
+ {
+  "t": "gnc-r-001",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10415,
+   "completion": 12681
+  }
+ },
+ {
+  "t": "gnc-r-002",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 15530,
+   "completion": 41104
+  }
+ },
+ {
+  "t": "gnc-r-002",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 19353,
+   "completion": 24006
+  }
+ },
+ {
+  "t": "gnc-r-002",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 15543,
+   "completion": 13149
+  }
+ },
+ {
+  "t": "gnc-r-003",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 17481,
+   "completion": 32062
+  }
+ },
+ {
+  "t": "gnc-r-003",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 16572,
+   "completion": 29860
+  }
+ },
+ {
+  "t": "gnc-r-003",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 17042,
+   "completion": 28118
+  }
+ },
+ {
+  "t": "gnc-r-004",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 16961,
+   "completion": 16734
+  }
+ },
+ {
+  "t": "gnc-r-004",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 17103,
+   "completion": 23553
+  }
+ },
+ {
+  "t": "gnc-r-004",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 16677,
+   "completion": 19742
+  }
+ },
+ {
+  "t": "gnc-r-005",
+  "p": 1,
+  "final": 1,
+  "path": "single"
+ },
+ {
+  "t": "gnc-r-005",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 15383,
+   "completion": 35465
+  }
+ },
+ {
+  "t": "gnc-r-005",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 16635,
+   "completion": 55331
+  }
+ },
+ {
+  "t": "gnc-r-006",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13371,
+   "completion": 11648
+  }
+ },
+ {
+  "t": "gnc-r-006",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 16202,
+   "completion": 28245
+  }
+ },
+ {
+  "t": "gnc-r-006",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 16424,
+   "completion": 29644
+  }
+ },
+ {
+  "t": "gnc-r-007",
+  "p": 1,
+  "final": 0,
+  "path": "single"
+ },
+ {
+  "t": "gnc-r-007",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 16467,
+   "completion": 21571
+  }
+ },
+ {
+  "t": "gnc-r-007",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 15996,
+   "completion": 23869
+  }
+ },
+ {
+  "t": "gnc-r-008",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 18317,
+   "completion": 26269
+  }
+ },
+ {
+  "t": "gnc-r-008",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 14041,
+   "completion": 35177
+  }
+ },
+ {
+  "t": "gnc-r-008",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 17788,
+   "completion": 31810
+  }
+ },
+ {
+  "t": "gnc-r-009",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 18114,
+   "completion": 23868
+  }
+ },
+ {
+  "t": "gnc-r-009",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 14738,
+   "completion": 17152
+  }
+ },
+ {
+  "t": "gnc-r-009",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 15452,
+   "completion": 16032
+  }
+ },
+ {
+  "t": "gnc-r-010",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 17444,
+   "completion": 18572
+  }
+ },
+ {
+  "t": "gnc-r-010",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 18428,
+   "completion": 24995
+  }
+ },
+ {
+  "t": "gnc-r-010",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 14363,
+   "completion": 10618
+  }
+ },
+ {
+  "t": "gnc-r-011",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 14154,
+   "completion": 29394
+  }
+ },
+ {
+  "t": "gnc-r-011",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13681,
+   "completion": 42655
+  }
+ },
+ {
+  "t": "gnc-r-011",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 12095,
+   "completion": 25194
+  }
+ },
+ {
+  "t": "gnc-r-012",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 12499,
+   "completion": 24376
+  }
+ },
+ {
+  "t": "gnc-r-012",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10907,
+   "completion": 9300
+  }
+ },
+ {
+  "t": "gnc-r-012",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 12548,
+   "completion": 28536
+  }
+ },
+ {
+  "t": "gnc-r-013",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13477,
+   "completion": 15141
+  }
+ },
+ {
+  "t": "gnc-r-013",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13406,
+   "completion": 22293
+  }
+ },
+ {
+  "t": "gnc-r-013",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13691,
+   "completion": 28516
+  }
+ },
+ {
+  "t": "gnc-r-014",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11827,
+   "completion": 8772
+  }
+ },
+ {
+  "t": "gnc-r-014",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10849,
+   "completion": 9443
+  }
+ },
+ {
+  "t": "gnc-r-014",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11006,
+   "completion": 9126
+  }
+ },
+ {
+  "t": "gnc-r-015",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 15677,
+   "completion": 19288
+  }
+ },
+ {
+  "t": "gnc-r-015",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 16299,
+   "completion": 21090
+  }
+ },
+ {
+  "t": "gnc-r-015",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 14869,
+   "completion": 7834
+  }
+ },
+ {
+  "t": "gnc-r-016",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13997,
+   "completion": 29176
+  }
+ },
+ {
+  "t": "gnc-r-016",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 13307,
+   "completion": 21371
+  }
+ },
+ {
+  "t": "gnc-r-016",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 14158,
+   "completion": 10558
+  }
+ },
+ {
+  "t": "gnc-r-017",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13530,
+   "completion": 32224
+  }
+ },
+ {
+  "t": "gnc-r-017",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13171,
+   "completion": 35123
+  }
+ },
+ {
+  "t": "gnc-r-017",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 15402,
+   "completion": 22350
+  }
+ },
+ {
+  "t": "gnc-r-018",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 13787,
+   "completion": 12847
+  }
+ },
+ {
+  "t": "gnc-r-018",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13598,
+   "completion": 15586
+  }
+ },
+ {
+  "t": "gnc-r-018",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13854,
+   "completion": 30564
+  }
+ },
+ {
+  "t": "gnc-r-019",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 15254,
+   "completion": 14867
+  }
+ },
+ {
+  "t": "gnc-r-019",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 17104,
+   "completion": 17588
+  }
+ },
+ {
+  "t": "gnc-r-019",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 14584,
+   "completion": 14995
+  }
+ },
+ {
+  "t": "gnc-r-020",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11282,
+   "completion": 10819
+  }
+ },
+ {
+  "t": "gnc-r-020",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10616,
+   "completion": 32104
+  }
+ },
+ {
+  "t": "gnc-r-020",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11027,
+   "completion": 19123
+  }
+ },
+ {
+  "t": "gnc-r-021",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11375,
+   "completion": 8864
+  }
+ },
+ {
+  "t": "gnc-r-021",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13157,
+   "completion": 11662
+  }
+ },
+ {
+  "t": "gnc-r-021",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11712,
+   "completion": 13223
+  }
+ },
+ {
+  "t": "gnc-r-022",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11972,
+   "completion": 10692
+  }
+ },
+ {
+  "t": "gnc-r-022",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11766,
+   "completion": 30877
+  }
+ },
+ {
+  "t": "gnc-r-022",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11709,
+   "completion": 15611
+  }
+ },
+ {
+  "t": "gnc-r-023",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 12743,
+   "completion": 18676
+  }
+ },
+ {
+  "t": "gnc-r-023",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13156,
+   "completion": 24333
+  }
+ },
+ {
+  "t": "gnc-r-023",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13270,
+   "completion": 27535
+  }
+ },
+ {
+  "t": "gnc-r-024",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10936,
+   "completion": 14039
+  }
+ },
+ {
+  "t": "gnc-r-024",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11098,
+   "completion": 13242
+  }
+ },
+ {
+  "t": "gnc-r-024",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11369,
+   "completion": 13929
+  }
+ },
+ {
+  "t": "gnc-r-025",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10922,
+   "completion": 5804
+  }
+ },
+ {
+  "t": "gnc-r-025",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11555,
+   "completion": 10766
+  }
+ },
+ {
+  "t": "gnc-r-025",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11735,
+   "completion": 16611
+  }
+ },
+ {
+  "t": "gnc-r-026",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13924,
+   "completion": 18358
+  }
+ },
+ {
+  "t": "gnc-r-026",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 14498,
+   "completion": 24078
+  }
+ },
+ {
+  "t": "gnc-r-026",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 14036,
+   "completion": 4556
+  }
+ },
+ {
+  "t": "gnc-r-027",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11796,
+   "completion": 9836
+  }
+ },
+ {
+  "t": "gnc-r-027",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 12202,
+   "completion": 14988
+  }
+ },
+ {
+  "t": "gnc-r-027",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 12194,
+   "completion": 24970
+  }
+ },
+ {
+  "t": "gnc-r-028",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11192,
+   "completion": 24302
+  }
+ },
+ {
+  "t": "gnc-r-028",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11181,
+   "completion": 13244
+  }
+ },
+ {
+  "t": "gnc-r-028",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11252,
+   "completion": 7124
+  }
+ },
+ {
+  "t": "gnc-r-029",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10364,
+   "completion": 25863
+  }
+ },
+ {
+  "t": "gnc-r-029",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10504,
+   "completion": 24518
+  }
+ },
+ {
+  "t": "gnc-r-029",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10530,
+   "completion": 6377
+  }
+ },
+ {
+  "t": "gnc-r-030",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11321,
+   "completion": 18106
+  }
+ },
+ {
+  "t": "gnc-r-030",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10875,
+   "completion": 16057
+  }
+ },
+ {
+  "t": "gnc-r-030",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10440,
+   "completion": 9792
+  }
+ },
+ {
+  "t": "gnc-r-031",
+  "p": 1,
+  "final": 0,
+  "path": "single"
+ },
+ {
+  "t": "gnc-r-031",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 19489,
+   "completion": 25295
+  }
+ },
+ {
+  "t": "gnc-r-031",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 18451,
+   "completion": 29391
+  }
+ },
+ {
+  "t": "gnc-r-032",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10655,
+   "completion": 38631
+  }
+ },
+ {
+  "t": "gnc-r-032",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11239,
+   "completion": 12979
+  }
+ },
+ {
+  "t": "gnc-r-032",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10991,
+   "completion": 14035
+  }
+ },
+ {
+  "t": "gnc-r-033",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10852,
+   "completion": 15416
+  }
+ },
+ {
+  "t": "gnc-r-033",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13192,
+   "completion": 18914
+  }
+ },
+ {
+  "t": "gnc-r-033",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 13681,
+   "completion": 21324
+  }
+ },
+ {
+  "t": "gnc-r-034",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9401,
+   "completion": 5890
+  }
+ },
+ {
+  "t": "gnc-r-034",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9374,
+   "completion": 10561
+  }
+ },
+ {
+  "t": "gnc-r-034",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9290,
+   "completion": 3748
+  }
+ },
+ {
+  "t": "gnc-r-035",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8902,
+   "completion": 7587
+  }
+ },
+ {
+  "t": "gnc-r-035",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8901,
+   "completion": 3834
+  }
+ },
+ {
+  "t": "gnc-r-035",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8994,
+   "completion": 7556
+  }
+ },
+ {
+  "t": "gnc-r-036",
+  "p": 1,
+  "final": 0,
+  "path": "single"
+ },
+ {
+  "t": "gnc-r-036",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10641,
+   "completion": 6500
+  }
+ },
+ {
+  "t": "gnc-r-036",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11030,
+   "completion": 26069
+  }
+ },
+ {
+  "t": "gnc-r-037",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8678,
+   "completion": 5705
+  }
+ },
+ {
+  "t": "gnc-r-037",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9161,
+   "completion": 4941
+  }
+ },
+ {
+  "t": "gnc-r-037",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9097,
+   "completion": 9496
+  }
+ },
+ {
+  "t": "gnc-r-038",
+  "p": 1,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10909,
+   "completion": 18485
+  }
+ },
+ {
+  "t": "gnc-r-038",
+  "p": 2,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10762,
+   "completion": 8582
+  }
+ },
+ {
+  "t": "gnc-r-038",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 10619,
+   "completion": 12554
+  }
+ },
+ {
+  "t": "gnc-r-039",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8711,
+   "completion": 24470
+  }
+ },
+ {
+  "t": "gnc-r-039",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8764,
+   "completion": 10536
+  }
+ },
+ {
+  "t": "gnc-r-039",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8689,
+   "completion": 9186
+  }
+ },
+ {
+  "t": "gnc-r-040",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9277,
+   "completion": 15590
+  }
+ },
+ {
+  "t": "gnc-r-040",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9126,
+   "completion": 12593
+  }
+ },
+ {
+  "t": "gnc-r-040",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9195,
+   "completion": 3312
+  }
+ },
+ {
+  "t": "gnc-r-041",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9966,
+   "completion": 11032
+  }
+ },
+ {
+  "t": "gnc-r-041",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9339,
+   "completion": 13444
+  }
+ },
+ {
+  "t": "gnc-r-041",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9503,
+   "completion": 3973
+  }
+ },
+ {
+  "t": "gnc-r-042",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9905,
+   "completion": 24666
+  }
+ },
+ {
+  "t": "gnc-r-042",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9661,
+   "completion": 7379
+  }
+ },
+ {
+  "t": "gnc-r-042",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9754,
+   "completion": 21880
+  }
+ },
+ {
+  "t": "gnc-r-043",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8892,
+   "completion": 3148
+  }
+ },
+ {
+  "t": "gnc-r-043",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8882,
+   "completion": 1355
+  }
+ },
+ {
+  "t": "gnc-r-043",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9002,
+   "completion": 3991
+  }
+ },
+ {
+  "t": "gnc-r-044",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 11592,
+   "completion": 18890
+  }
+ },
+ {
+  "t": "gnc-r-044",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9913,
+   "completion": 24042
+  }
+ },
+ {
+  "t": "gnc-r-044",
+  "p": 3,
+  "final": 0,
+  "path": "picked",
+  "usage": {
+   "prompt": 11938,
+   "completion": 16762
+  }
+ },
+ {
+  "t": "gnc-r-045",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9734,
+   "completion": 26250
+  }
+ },
+ {
+  "t": "gnc-r-045",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9745,
+   "completion": 5319
+  }
+ },
+ {
+  "t": "gnc-r-045",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10170,
+   "completion": 3260
+  }
+ },
+ {
+  "t": "gnc-r-046",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9757,
+   "completion": 9079
+  }
+ },
+ {
+  "t": "gnc-r-046",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9875,
+   "completion": 3674
+  }
+ },
+ {
+  "t": "gnc-r-046",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9678,
+   "completion": 32740
+  }
+ },
+ {
+  "t": "gnc-r-047",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 8900,
+   "completion": 824
+  }
+ },
+ {
+  "t": "gnc-r-047",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9744,
+   "completion": 14535
+  }
+ },
+ {
+  "t": "gnc-r-047",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9859,
+   "completion": 19020
+  }
+ },
+ {
+  "t": "gnc-r-048",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9437,
+   "completion": 1786
+  }
+ },
+ {
+  "t": "gnc-r-048",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9506,
+   "completion": 5459
+  }
+ },
+ {
+  "t": "gnc-r-048",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9348,
+   "completion": 1303
+  }
+ },
+ {
+  "t": "gnc-r-049",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10302,
+   "completion": 25439
+  }
+ },
+ {
+  "t": "gnc-r-049",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9673,
+   "completion": 12268
+  }
+ },
+ {
+  "t": "gnc-r-049",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 9632,
+   "completion": 4229
+  }
+ },
+ {
+  "t": "gnc-r-050",
+  "p": 1,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10505,
+   "completion": 4899
+  }
+ },
+ {
+  "t": "gnc-r-050",
+  "p": 2,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10236,
+   "completion": 31340
+  }
+ },
+ {
+  "t": "gnc-r-050",
+  "p": 3,
+  "final": 1,
+  "path": "picked",
+  "usage": {
+   "prompt": 10567,
+   "completion": 2068
+  }
+ }
+]

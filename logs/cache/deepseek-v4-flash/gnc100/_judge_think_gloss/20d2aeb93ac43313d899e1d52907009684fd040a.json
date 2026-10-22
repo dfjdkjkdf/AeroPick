@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "position_m 为 NULL，应返回 ADCS_E_NULL，并按要求将 miss_m 置为 INFINITY。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "sun_direction 为 NULL，应返回 ADCS_E_NULL，并按要求将 miss_m 置为 INFINITY。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "eclipse 为 NULL 属失败，需求规定失败时 miss_m 为 INFINITY，故 A=inf 正确。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "behind_m 为 NULL 属失败，需求规定失败时 miss_m 为 INFINITY，故 A=inf 正确。"
+  }
+ ],
+ "pick": "A"
+}

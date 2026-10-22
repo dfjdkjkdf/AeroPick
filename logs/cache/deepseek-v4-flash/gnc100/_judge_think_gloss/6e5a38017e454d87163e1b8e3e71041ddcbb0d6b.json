@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "candidate 含 NAN，按需求应非有限失败并输出单位阵与 INFINITY，A 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "candidate 含 INFINITY，按需求应非有限失败并输出单位阵与 INFINITY，A 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "candidate 含 -INFINITY，按需求应非有限失败并输出单位阵与 INFINITY，A 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "candidate 含 NAN，按需求应非有限失败并输出单位阵与 INFINITY，A 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "第二行全零导致前两行几何退化，按需求应失败并输出单位阵与 INFINITY，A 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "第一行全零导致前两行几何退化，按需求应失败并输出单位阵与 INFINITY，A 符合。"
+  }
+ ],
+ "pick": "A"
+}

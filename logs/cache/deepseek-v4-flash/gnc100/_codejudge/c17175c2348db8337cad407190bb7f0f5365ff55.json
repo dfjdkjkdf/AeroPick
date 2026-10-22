@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly validates all inputs including nonfinite axis norm, normalizes axes, computes minimum margin and reserve, and returns wheel momentum.",
+ "_usage": {
+  "prompt": 9542,
+  "completion": 9601
+ }
+}

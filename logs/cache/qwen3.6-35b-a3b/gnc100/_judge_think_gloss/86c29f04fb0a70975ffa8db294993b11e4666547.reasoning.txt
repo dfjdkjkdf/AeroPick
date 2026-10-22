@@ -1,0 +1,162 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as a GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a given set of requirements and test cases. I must output a JSON object with the correct implementation for each test and a final pick.
+
+2.  **Analyze the Requirements**:
+    *   **Function**: `Cylindrical Earth-shadow payload supervisor with battery-hysteresis load management.`
+    *   **Inputs/Context**:
+        *   `position_eci_m`: points from Earth to spacecraft.
+        *   `sun_direction_eci`: points from Earth toward Sun.
+        *   Normalize sun direction with linked library.
+        *   Eclipse condition: behind Earth (`axial < 0`) AND perpendicular distance to Sun line `< earth_radius_m` (`cross_track < radius`). Equality is sunlight.
+        *   `axial` = projection of position on sun direction. `cross_track` = perpendicular distance.
+        *   Eclipse mode: ECLIPSE, heater on, payload off, elapsed zero.
+        *   Sunlight after eclipse: RECOVERY. This call is recovery sample 1.
+        *   Sunlight in RECOVERY: WARMUP after `recovery_cycles` consecutive samples. WARMUP starts at sample 1.
+        *   Sunlight in WARMUP: If `warmup_cycles` reached & `battery_soc >= payload_on_soc` -> SUN (payload on). If `battery_soc < payload_on_soc` -> LOADWAIT (payload off).
+        *   Sunlight in LOADWAIT: SUN once `battery_soc >= payload_on_soc`, else LOADWAIT. Payload off until SUN.
+        *   Sunlight in SUN: If `battery_soc < payload_off_soc` -> LOADSHED (payload off, no counter reset).
+        *   Sunlight in LOADSHED: SUN once `battery_soc >= payload_on_soc`, else LOADSHED.
+        *   Fault conditions: NULL, degenerate/nonfinite vectors, nonpositive radius, counters outside 1..100, nonfinite/out-of-[0,1] battery_soc or SoC thresholds, `payload_off_soc > payload_on_soc`, enable != 0/1. Latches FAULT.
+        *   Disabled: SUN, payload off, elapsed zero.
+        *   Eclipse preempts all phases.
+        *   `payload_on` is true only in mode SUN.
+    *   **State Machine Table**:
+        *   disabled -> SUN, payload off, elapsed=0
+        *   eclipse -> ECLIPSE, heater on, payload off, elapsed=0
+        *   sunlight after ECLIPSE -> RECOVERY (this call is sample 1)
+        *   sunlight in RECOVERY -> WARMUP after `recovery_cycles` samples (WARMUP starts at sample 1)
+        *   sunlight in WARMUP, cycles reached, soc >= on -> SUN (payload on)
+        *   sunlight in WARMUP, cycles reached, soc < on -> LOADWAIT
+        *   sunlight in LOADWAIT -> SUN if soc >= on, else LOADWAIT
+        *   sunlight in SUN, soc < off -> LOADSHED
+        *   sunlight in LOADSHED -> SUN if soc >= on, else LOADSHED
+    *   **Key Variables**: `enable`, `position_eci_m`, `sun_direction_eci`, `earth_radius_m`, `recovery_cycles`, `warmup_cycles`, `battery_soc`, `payload_on_soc`, `payload_off_soc`.
+    *   **Test Setup**: Both tests are sequences of 6 calls. Unassigned values default to 0.
+    *   **Test 1 Inputs**:
+        *   Call 1: `enable = 1`
+        *   Call 2: `position = (-6372000, 0, 0)`
+        *   Call 3: `sun_dir = (1, 0, 0)`
+        *   Call 4: `earth_radius = 6371000.0`
+        *   Call 5: `recovery_cycles = 1`
+        *   Call 6: `warmup_cycles = 1`
+        *   All other config/input fields default to 0. So `battery_soc = 0`, `payload_on_soc = 0`, `payload_off_soc = 0`. Wait, `battery_soc` defaults to 0. Is 0 valid? Requirement says "nonfinite/out-of-[0,1] battery_soc ... latch FAULT". 0 is in [0,1], so it's valid. But wait, `payload_on_soc` also defaults to 0. `payload_on_soc` is 0. `battery_soc` is 0. So `battery_soc >= payload_on_soc` is true (0 >= 0).
+        *   Let's check eclipse condition: `position` is (-6.372e6, 0, 0). `sun_dir` is (1, 0, 0). Normalized sun dir is (1, 0, 0).
+        *   Axial projection: `dot(position, sun_dir) = -6372000.0 * 1 + 0 + 0 = -6372000.0`. This is `< 0`. So behind Earth.
+        *   Cross-track distance: `pos` vector magnitude is 6372000. Since `sun_dir` is along X, cross-track distance is sqrt(y^2+z^2) = 0. Or strictly, `norm(pos - axial * sun_dir)`. Here it's 0.
+        *   Condition: `axial < 0` (-6.372e6 < 0, True) AND `cross_track < radius` (0 < 6371000, True). So it IS an eclipse.
+        *   Therefore, the state should transition to ECLIPSE.
+        *   Output mode for ECLIPSE is 1 (based on enum `EP_ECLIPSE=1`).
+        *   Test 1 output difference: A=1 (ECLIPSE), B=0 (SUN).
+        *   According to requirement, eclipse condition is met. So mode should be ECLIPSE (1). Thus A is correct.
+
+    *   **Test 2 Inputs**:
+        *   Same as Test 1, except `recovery_cycles = 2`, `warmup_cycles = 1`.
+        *   Eclipse condition is identical: `axial = -6372000`, `cross_track = 0`, `radius = 6371000`. Still eclipse.
+        *   Mode should still be ECLIPSE (1).
+        *   Test 2 output difference: A=1, B=0.
+        *   So A is correct again.
+
+3.  **Deep Dive into Eclipse Calculation**:
+    Let's verify the geometric calculation carefully.
+    `position_eci_m` = (-6372000, 0, 0)
+    `sun_direction_eci` = (1, 0, 0) -> normalized is (1, 0, 0).
+    Axial projection = dot(pos, sun_dir) = -6372000.
+    Cross-track distance = norm(pos - axial * sun_dir) = norm((-6372000,0,0) - (-6372000)*(1,0,0)) = norm(0,0,0) = 0.
+    Condition: `axial < 0` (True) AND `cross_track < earth_radius_m` (0 < 6371000, True).
+    Result: Eclipse. Mode = ECLIPSE (1).
+    Implementation A gives mode=1. Implementation B gives mode=0.
+    So A matches the requirement.
+
+    Wait, is there any trick with `position_eci_m` pointing from Earth to spacecraft? Yes, standard.
+    What about `sun_direction_eci` pointing from Earth toward Sun? Yes.
+    So the geometry is straightforward.
+    Could there be a normalization issue? The sun direction is already unit length.
+    Could `cross_track` calculation differ? Some might compute `norm(cross(pos, sun_dir))` which equals `norm(pos)*sin(theta)`. Since they are anti-parallel, sin(theta)=0, so cross-track is 0. Correct.
+    So definitely Eclipse.
+
+    Let's double check the exact wording: "Eclipse exists only behind Earth (position projection on Sun direction < 0) and when the perpendicular distance to the Sun line is strictly less than earth_radius_m."
+    Projection = -6372000 < 0. True.
+    Perpendicular distance = 0 < 6371000. True.
+    So Eclipse. Mode 1.
+
+    Both tests have identical inputs regarding geometry and radii. Only `recovery_cycles` changes from 1 to 2. This doesn't affect the immediate eclipse detection. The state machine will detect eclipse on the first call where geometry is set, but here geometry is set on call 2, sun on call 3, radius on call 4. The function is called 6 times. By call 6, all params are set. The output compares the state after 6 calls. It should be ECLIPSE.
+
+    Therefore, A is correct for both.
+
+4.  **Check for Edge Cases / Traps**:
+    *   `enable` defaults to 0? In tests, it's set to 1 before call 1.
+    *   `battery_soc` defaults to 0. Valid range [0,1]. 0 is okay.
+    *   `payload_on_soc` defaults to 0. Valid.
+    *   `payload_off_soc` defaults to 0. Valid.
+    *   `recovery_cycles` = 1 or 2. Within 1..100. Valid.
+    *   `warmup_cycles` = 1. Valid.
+    *   `earth_radius_m` = 6371000. Positive. Valid.
+    *   Vectors are finite. Valid.
+    *   So no fault latching.
+    *   Eclipse condition is strictly met.
+    *   Output mode for Eclipse is 1.
+    *   A outputs 1. B outputs 0.
+    *   Conclusion stands: A is correct.
+
+    Let's structure the reasoning clearly.
+    Test 1 & 2 share the same geometric configuration.
+    Position: (-6372000, 0, 0) m
+    Sun Dir: (1, 0, 0)
+    Axial proj: -6372000 (<0) -> Behind Earth.
+    Cross-track dist: 0 (<6371000) -> Inside cylinder.
+    Meets eclipse criteria exactly.
+    Per requirement: "Eclipse immediately selects ECLIPSE...". Enum value for ECLIPSE is 1.
+    Both tests result in ECLIPSE mode.
+    A returns 1, B returns 0.
+    Thus A is correct for both.
+
+    One minor point: The prompt says "Equality is sunlight." for the perpendicular distance. Here distance is 0, radius is 6371000. 0 < 6371000, so strictly less. Not equality. So eclipse holds.
+    Also, projection is -6372000, not 0. So strictly behind.
+    Everything aligns.
+
+    I will formulate the JSON output as requested.
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "几何参数满足轴投影<-6371000且交叉距离0<半径，严格满足需求中Eclipse条件，模式应为ECLIPSE(1)。"},
+        {"id": 2, "correct": "A", "reason": "几何与半径参数同测试1，同样严格满足Eclipse条件，恢复周期数不影响当前拍判定，模式应为ECLIPSE(1)。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Check constraints: "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}"
+    I will ensure the JSON matches exactly.
+    Reason needs to be concise.
+    Test 1 reason: 位置向量在太阳反方向投影为负且垂直距离为0小于地球半径，严格触发需求定义的Eclipse条件，对应枚举值为1。
+    Test 2 reason: 输入几何条件与测试1完全一致，同样严格满足Eclipse判定条件，模式应输出1。
+    Pick: A
+
+    All steps verified. Ready. 
+    One detail: `ep_state.mode` enum: `EP_SUN=0, EP_ECLIPSE=1`. So 1 is indeed ECLIPSE.
+    The prompt says "输出差异：ep_state.mode：A=1；B=0". Matches.
+    Final check of the prompt: "Equality is sunlight." applies to `cross_track < radius`. Here `0 < 6371000`, so eclipse. Correct.
+    No other tricks detected.
+    Output matches request.✅
+    Proceed. 
+    Generate JSON. 
+    Self-Correction/Refinement during thought: 
+    Wait, could `position_eci_m` pointing from Earth to spacecraft mean that if it's negative x, it's actually behind Earth relative to sun at +x? Yes.
+    Could there be a coordinate frame mismatch? "position_eci_m points from Earth to the spacecraft and sun_direction_eci points from Earth toward the Sun." Both in ECI. Dot product works directly.
+    All good.
+    Output matches. 
+    Proceeds. 
+    `{ "tests": [ { "id": 1, "correct": "A", "reason": "位置在太阳反方向投影为负且垂直距离0严格小于地球半径，完全满足需求Eclipse条件，模式应为ECLIPSE(1)。" }, { "id": 2, "correct": "A", "reason": "几何与半径参数同测试1，同样严格满足Eclipse条件，恢复周期配置不影响当前拍状态机跳转，模式应为ECLIPSE(1)。" } ], "pick": "A" }`
+    Matches perfectly. 
+    Output generation. 
+    [Done] 
+    *Self-Correction/Verification during generation prep*: 
+    Check enum definition in context: `typedef enum { EP_SUN=0,EP_ECLIPSE=1,EP_RECOVERY=2,EP_WARMUP=3,EP_FAULT=4,EP_LOADWAIT=5,EP_LOADSHED=6 } ep_mode_t;`
+    Yes, ECLIPSE is 1.
+    Check requirement: "Eclipse immediately selects ECLIPSE..."
+    Check test setup: unassigned values are 0. `battery_soc`=0, `payload_on_soc`=0. Even if it were sunlight, soc>=on_soc would trigger SUN. But it's eclipse, so eclipse overrides.
+    Everything is solid.
+    Output matches request format exactly.✅
+    Proceeds. 
+    [Final Output Generation] -> *Proceeds*

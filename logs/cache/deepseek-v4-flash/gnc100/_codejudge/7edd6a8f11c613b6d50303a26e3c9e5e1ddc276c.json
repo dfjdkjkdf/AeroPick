@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly implements latched FAULT and retains history per the normative table, while B can clear FAULT on accepted samples and loses retained history on subsequent rejections.",
+ "_usage": {
+  "prompt": 11027,
+  "completion": 19123
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "实现B严格遵循了需求指定的错误码映射规则（非有限/零/平行均返回DEGENERATE），且正确实现了要求的矩阵行顺序（primary, third, second）及分离正弦计算。",
+ "_usage": {
+  "prompt": 10594,
+  "completion": 3328
+ }
+}

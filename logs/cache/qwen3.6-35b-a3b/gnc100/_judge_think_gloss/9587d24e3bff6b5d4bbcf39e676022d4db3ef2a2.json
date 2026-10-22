@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求Status contract明确规定reset非0或1时应返回ADCS_E_NULL且不修改历史状态与rejects，B返回1且状态未变符合需求，A错误地将其当作首次有效采样更新了状态。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同上，reset=-1属非法重置值，应报ADCS_E_NULL并保持状态不变，B行为符合规范。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "零向量场强属无效数据，需求表格明确拒绝采样必须“preserve history, increment rejects”，A的rejects递增至1符合需求，B未递增违反约定。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "场强模(1e-13)≤1e-12属退化场，按需求应判定为拒绝采样并递增rejects计数器，A符合而B遗漏了计数逻辑。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "gain为负数属非法参数，需求规定应返回ADCS_E_RANGE并按拒绝采样处理（递增rejects），A正确实现了该状态转移。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "limit为负数属非法参数，同样触发拒绝采样逻辑，需求明确要求递增rejects，A符合而B未执行计数。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10299,
+  "completion": 4548
+ }
+}

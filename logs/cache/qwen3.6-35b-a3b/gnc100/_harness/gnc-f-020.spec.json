@@ -1,0 +1,1 @@
+{"prompt_sha1": "60ded1d4de7da9e2c84e78a6b8d588a5ed7e1e23", "discrete": [["adcs_status_t", null, ["0", "1", "2", "3", "4", "5"]]], "continuous": [["vector.x", [3], -1000000.0, 1000000.0], ["axis.x", [3], -1000000.0, 1000000.0], ["angle_rad", null, -1000000.0, 1000000.0]], "outputs": [["rotated.x", [3], null]]}

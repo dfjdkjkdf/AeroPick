@@ -1,0 +1,125 @@
+{
+ "key": "e867795903c9afb0385f5390da47e5700ce4f167",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "c = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reference = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "innovation = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*angle = 0.0; angle = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body->x = 0.0; body->y = 0.0; body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "reference->x = 0.0; reference->y = 0.0; reference->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body->x = NAN; body->y = 1.0; body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body->x = INFINITY; body->y = 1.0; body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reference->x = -INFINITY; reference->y = 1.0; reference->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c->m[0][0] = 1.0; c->m[0][1] = 0.0; c->m[0][2] = 0.0;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = 0.0; c->m[2][1] = 0.0; c->m[2][2] = 1.0;\nbody->x = 1.0; body->y = 0.0; body->z = 0.0;\nreference->x = 1.0; reference->y = 0.0; reference->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c->m[0][0] = 1.0; c->m[0][1] = 0.0; c->m[0][2] = 0.0;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = 0.0; c->m[2][1] = 0.0; c->m[2][2] = 1.0;\nbody->x = 1.0; body->y = 0.0; body->z = 0.0;\nreference->x = -1.0; reference->y = 0.0; reference->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c->m[0][0] = 1.0; c->m[0][1] = 0.0; c->m[0][2] = 0.0;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = 0.0; c->m[2][1] = 0.0; c->m[2][2] = 1.0;\nbody->x = 0.0; body->y = 1.0; body->z = 0.0;\nreference->x = 0.0; reference->y = 1.0; reference->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c->m[0][0] = 1.0; c->m[0][1] = 0.0; c->m[0][2] = 0.0;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = 0.0; c->m[2][1] = 0.0; c->m[2][2] = 1.0;\nbody->x = 0.0; body->y = 0.0; body->z = 1.0;\nreference->x = 0.0; reference->y = 0.0; reference->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c->m[0][0] = 1.0; c->m[0][1] = 0.0; c->m[0][2] = 0.0;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = 0.0; c->m[2][1] = 0.0; c->m[2][2] = 1.0;\nbody->x = 1.0; body->y = 1.0; body->z = 0.0;\nreference->x = 1.0; reference->y = 1.0; reference->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c->m[0][0] = 0.0; c->m[0][1] = 0.0; c->m[0][2] = 1.0;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = -1.0; c->m[2][1] = 0.0; c->m[2][2] = 0.0;\nbody->x = 1.0; body->y = 0.0; body->z = 0.0;\nreference->x = 0.0; reference->y = 0.0; reference->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c->m[0][0] = 0.0; c->m[0][1] = 0.0; c->m[0][2] = 1.0;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = -1.0; c->m[2][1] = 0.0; c->m[2][2] = 0.0;\nbody->x = 0.0; body->y = 0.0; body->z = 1.0;\nreference->x = 1.0; reference->y = 0.0; reference->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "c->m[0][0] = 1.0; c->m[0][1] = 0.0; c->m[0][2] = 0.0;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = 0.0; c->m[2][1] = 0.0; c->m[2][2] = 1.0;\nbody->x = 1e-13; body->y = 1e-13; body->z = 1e-13;\nreference->x = 1.0; reference->y = 0.0; reference->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "c->m[0][0] = 1.0; c->m[0][1] = 0.0; c->m[0][2] = 0.0;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = 0.0; c->m[2][1] = 0.0; c->m[2][2] = 1.0;\nbody->x = 1.0; body->y = 0.0; body->z = 0.0;\nreference->x = 1e-13; reference->y = 1e-13; reference->z = 1e-13;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c->m[0][0] = 0.7071067811865476; c->m[0][1] = 0.0; c->m[0][2] = 0.7071067811865476;\nc->m[1][0] = 0.0; c->m[1][1] = 1.0; c->m[1][2] = 0.0;\nc->m[2][0] = -0.7071067811865476; c->m[2][1] = 0.0; c->m[2][2] = 0.7071067811865476;\nbody->x = 1.0; body->y = 0.0; body->z = 0.0;\nreference->x = 0.0; reference->y = 0.0; reference->z = 1.0;"
+   ]
+  }
+ ]
+}

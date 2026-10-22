@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "第二次调用计算得速率模为2.0，大于max_slew_t_s(1.0)且reject计数为0未达上限，按需求应进入REJECT状态(mode=2)并保留历史，A符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "第二次调用速率模为3.0，超差但reject计数0<2，按需求应进入REJECT状态(mode=2)，A符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "第二次调用速率模为3.0，超差但reject计数0<3，按需求应进入REJECT状态(mode=2)，A符合。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9699,
+  "completion": 3018
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "实现B正确使用了GNC原语adcs_quat_normalize和adcs_quat_abs_dot，并维护了qn_state.mode，更符合需求。",
+ "_usage": {
+  "prompt": 10922,
+  "completion": 5804
+ }
+}

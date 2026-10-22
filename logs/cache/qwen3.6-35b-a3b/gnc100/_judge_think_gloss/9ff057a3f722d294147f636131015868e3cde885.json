@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确“无效输入会引发故障”，rate_rad_s为NULL属严重非法输入，enable=1时应进入FAULT(3)而非OFF(0)。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "stationary_limit_rad_s为负值违反“非负阈值”要求，非法配置应直接触发FAULT(3)。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "max_sample_delta_rad_s为负值违反“非负阈值”要求，非法配置应直接触发FAULT(3)。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "max_stddev_rad_s为负值违反“非负阈值”要求，非法配置应直接触发FAULT(3)。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "required_samples=2不在3..100合法范围内，属非法配置应触发FAULT(3)。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "required_samples=101不在3..100合法范围内，属非法配置应触发FAULT(3)。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 10044,
+  "completion": 2576
+ }
+}

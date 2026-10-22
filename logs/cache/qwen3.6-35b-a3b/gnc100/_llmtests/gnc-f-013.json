@@ -1,0 +1,125 @@
+{
+ "key": "b80999453f17d3a6f0e76f203dc09f42b23f6d29",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "q0_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q1_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "interpolated_q_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "fraction = -0.001;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "fraction = 1.001;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q0_bi->w = 0.0;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q1_bi->w = 0.0;\nq1_bi->x = 0.0;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q0_bi->w = 1.0;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 1.0;\nq1_bi->x = 0.0;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q0_bi->w = 1.0;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 0.7071067811865475;\nq1_bi->x = 0.7071067811865475;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q0_bi->w = 1.0;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 1.0;\nq1_bi->x = 0.0;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q0_bi->w = 1.0;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 1.0;\nq1_bi->x = 0.0;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q0_bi->w = 0.7071067811865475;\nq0_bi->x = 0.7071067811865475;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 0.7071067811865475;\nq1_bi->x = -0.7071067811865475;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q0_bi->w = 1.0;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = -1.0;\nq1_bi->x = 0.0;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q0_bi->w = 0.9999999999999999;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 0.9999999999999999;\nq1_bi->x = 0.0;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q0_bi->w = 0.0;\nq0_bi->x = 1.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 0.0;\nq1_bi->x = 0.0;\nq1_bi->y = 1.0;\nq1_bi->z = 0.0;\nfraction = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q0_bi->w = 0.0;\nq0_bi->x = 0.0;\nq0_bi->y = 1.0;\nq0_bi->z = 0.0;\nq1_bi->w = 0.0;\nq1_bi->x = 0.0;\nq1_bi->y = 0.0;\nq1_bi->z = 1.0;\nfraction = 0.25;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q0_bi->w = 1.0;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 1.0;\nq1_bi->x = 0.0;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 0.0 / 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q0_bi->w = 1.0;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 1.0;\nq1_bi->x = 0.0;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 1.0 / 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q0_bi->w = 0.5;\nq0_bi->x = 0.5;\nq0_bi->y = 0.5;\nq0_bi->z = 0.5;\nq1_bi->w = -0.5;\nq1_bi->x = 0.5;\nq1_bi->y = -0.5;\nq1_bi->z = 0.5;\nfraction = 0.3333333333333333;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q0_bi->w = 0.9999999999999999;\nq0_bi->x = 0.0;\nq0_bi->y = 0.0;\nq0_bi->z = 0.0;\nq1_bi->w = 0.9999999999999999;\nq1_bi->x = 0.0000000000000001;\nq1_bi->y = 0.0;\nq1_bi->z = 0.0;\nfraction = 0.5;"
+   ]
+  }
+ ]
+}

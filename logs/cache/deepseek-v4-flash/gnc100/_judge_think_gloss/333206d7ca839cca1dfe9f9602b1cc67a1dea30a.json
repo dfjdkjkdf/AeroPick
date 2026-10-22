@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "可用轮仅2个，缺失轮进入DEGRADED，模式应为2；A输出2符合需求。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "请求力矩指针为NULL应锁存FAULT并清零输出，unavailable_mask应为0；A输出0符合需求。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "轴指针NULL应触发FAULT且不得崩溃，B崩溃；C在其它无效输入未清零，A符合无效轴处理。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "轮转速限幅为0非正有限配置，应锁存FAULT并清零输出，unavailable_mask应为0；A输出0符合需求。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "轮力矩限幅为负非正有限配置，应锁存FAULT并清零输出，unavailable_mask应为0；A输出0符合需求。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "请求力矩含NaN非有限，应锁存FAULT并清零输出，unavailable_mask应为0；A输出0符合需求。"
+  }
+ ],
+ "pick": "A"
+}

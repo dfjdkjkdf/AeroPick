@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "candidate=NULL 应先按 Null 失败，并置 repaired 为单位阵、correction_norm=INFINITY；C 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "repaired=NULL 属 Null 失败，可写的 correction_norm 应置 INFINITY；C 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "correction_norm=NULL 属 Null 失败，可写的 repaired 应置单位阵；C 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "含 NaN 应先报非有限失败并置 repaired 单位阵、correction_norm=INFINITY；C 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "含 +Inf 应先报非有限失败并置 repaired 单位阵、correction_norm=INFINITY；C 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "含 -Inf 应先报非有限失败并置 repaired 单位阵、correction_norm=INFINITY；C 符合。"
+  }
+ ],
+ "pick": "C"
+}

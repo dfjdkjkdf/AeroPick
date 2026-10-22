@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "未赋值指针为NULL，需求明确规定空输出指针应返回ADCS_E_NULL(1)，B符合该前置检查，A错误跳过并返回0。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "零磁场触发底层函数失败，需求强制要求“若失败则返回状态码且所有输出置零”，B正确清除了enabled和excess，A未清零残留滞回结果。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9204,
+  "completion": 5058
+ }
+}

@@ -1,0 +1,130 @@
+{
+ "key": "81795200ccf34bf635d8e980f5a11dd9bf077d05",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "sample = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "accepted = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "separation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample = NULL;\naccepted = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample = NULL;\nseparation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "accepted = NULL;\nseparation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample = NULL;\naccepted = NULL;\nseparation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = -1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.7071067811865475;\nsample->x = 0.7071067811865475;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "sample->w = 0.7071067811865475;\nsample->x = 0.7071067811865475;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "sample->w = -0.7071067811865475;\nsample->x = -0.7071067811865475;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.0;\nsample->x = 1.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.0;\nsample->x = -1.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "sample->w = 0.9999999999999999;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "sample->w = 0.9999999999999999;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 1e-20;\nsample->x = 1e-20;\nsample->y = 1e-20;\nsample->z = 1e-20;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = INFINITY;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = NAN;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.5;\nsample->x = 0.5;\nsample->y = 0.5;\nsample->z = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = -0.5;\nsample->x = -0.5;\nsample->y = -0.5;\nsample->z = -0.5;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 1.0;",
+    "sample->w = 0.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = -1.0;"
+   ]
+  }
+ ]
+}

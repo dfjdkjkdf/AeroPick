@@ -1,0 +1,155 @@
+{
+ "key": "57cc666f67da69a1d6e8513b369dc55cb37c3aaf",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "b1 = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b2 = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "r1 = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "r2 = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_angle = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "inertial_angle = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mismatch = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b1->x = NAN;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 1.0;\nb2->y = 0.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b1->x = INFINITY;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 1.0;\nb2->y = 0.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "r1->x = 0.0;\nr1->y = 0.0;\nr1->z = 0.0;\nb1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0;\nb2->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b1->x = 2.0e-9;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.5;\nb2->y = 1.0e-9;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "b1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0e-8;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "b1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0000001e-8;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "b1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "b1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 1.0;\nb2->y = 0.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 1.0;\nr2->y = 0.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "b1->x = 3.0;\nb1->y = 4.0;\nb1->z = 0.0;\nb2->x = -2.0;\nb2->y = 5.0;\nb2->z = 1.0;\nr1->x = 6.0;\nr1->y = 8.0;\nr1->z = 0.0;\nr2->x = -4.0;\nr2->y = 10.0;\nr2->z = 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "b1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 1.0;\nr2->y = 0.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "b1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 3.0;\nr2->z = 4.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "b1->x = 1.0e-20;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0e-20;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "b1->x = 1.0e300;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0e300;\nb2->z = 0.0;\nr1->x = 1.0e-300;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0e-300;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "b1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = -1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "b1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0;\nb2->z = 0.0;\nr1->x = -1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = -1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b1->x = NAN;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "adcs_pilot_vector_separation(b1,b2,r1,r2,body_angle,inertial_angle,mismatch);\nb1->x = 1.0;\nb1->y = 0.0;\nb1->z = 0.0;\nb2->x = 0.0;\nb2->y = 1.0;\nb2->z = 0.0;\nr1->x = 1.0;\nr1->y = 0.0;\nr1->z = 0.0;\nr2->x = 0.0;\nr2->y = 1.0;\nr2->z = 0.0;"
+   ]
+  }
+ ]
+}

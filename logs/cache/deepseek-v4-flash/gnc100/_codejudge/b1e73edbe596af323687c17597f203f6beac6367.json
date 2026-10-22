@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly normalizes via the existing helper, applies the lexicographic sign rule to the first nonzero component, and handles failure identity and statuses as specified.",
+ "_usage": {
+  "prompt": 8942,
+  "completion": 32686
+ }
+}

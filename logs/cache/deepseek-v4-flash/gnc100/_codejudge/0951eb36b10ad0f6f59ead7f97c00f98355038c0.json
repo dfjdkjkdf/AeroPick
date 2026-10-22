@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 完整正确地校验配置/标志/四元数并按“measured*conj(predicted)”计算最短角、执行滞回决策与 max_rejects 锁故障；B 的退化四元数阈值用了平方范数导致误判，C 在 Disable 时提前返回未对退化四元数锁 FAULT。",
+ "_usage": {
+  "prompt": 11321,
+  "completion": 18106
+ }
+}

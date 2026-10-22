@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B uses the GNC primitives, implements the exact behind/miss/eclipse math with strict radius comparison, and sets eclipse=0, behind=0, miss=INFINITY on all failure paths including nonfinite computation results.",
+ "_usage": {
+  "prompt": 9161,
+  "completion": 4941
+ }
+}

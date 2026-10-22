@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "requested_torque_nm 为 NULL 属无效输入，应进入 FAULT 并清零输出；available_mask=7 表示无缺失轮，unavailable_mask 应为 0。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "axes 为 NULL 属无效轴向，应进入 FAULT 并清零输出；available_mask=7 表示无缺失轮，unavailable_mask 应为 0。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "slew limit 必须为正有限值，0.0 非法，应进入 FAULT；available_mask=7 时无缺失轮，unavailable_mask 应为 0。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "wheel limit 必须为正有限值，-1.0 非法，应进入 FAULT；available_mask=7 时无缺失轮，unavailable_mask 应为 0。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "requested torque 含 NAN 非有限，应进入 FAULT 并清零输出；available_mask=7 时无缺失轮，unavailable_mask 应为 0。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "axis 为 INFINITY 非有限，应进入 FAULT；available_mask=7 时无缺失轮，unavailable_mask 应为 0。"
+  }
+ ],
+ "pick": "A"
+}

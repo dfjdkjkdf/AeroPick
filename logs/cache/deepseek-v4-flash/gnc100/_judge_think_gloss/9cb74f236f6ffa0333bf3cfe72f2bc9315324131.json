@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "正常输入应完成旋转和转置回代，往返误差近似0；C为0，B不符。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "正常输入应完成旋转和转置回代，往返误差近似0；C为0，B不符。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "正常输入应完成旋转和转置回代，往返误差仅为浮点舍入；C为4.44e-16，B不符。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "q_bi为NULL应返回ADCS_E_NULL，失败时应将error置INFINITY；C为inf，A/B为0不符。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "inertial为NULL应返回ADCS_E_NULL，失败时应将error置INFINITY；C为inf，A/B为0不符。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "body为NULL应返回ADCS_E_NULL，失败时应将error置INFINITY；C为inf，A/B为0不符。"
+  }
+ ],
+ "pick": "C"
+}

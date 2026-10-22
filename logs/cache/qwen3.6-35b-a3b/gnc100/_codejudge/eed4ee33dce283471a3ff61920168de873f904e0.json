@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C严格遵循需求规范，正确设置了所有异常路径的INFINITY/-INF输出并返回ADCS_E_RANGE，且显式校验了负速率条件，而A遗漏了该检查，B错误使用了DEGENERATE状态码且未处理失败输出。",
+ "_usage": {
+  "prompt": 9355,
+  "completion": 3169
+ }
+}

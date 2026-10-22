@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 在所有失败路径（包括 NULL 输入）都将非 NULL 输出清零，并正确调用 adcs_bdot_update 和 adcs_bdot_dipole，传播错误。",
+ "_usage": {
+  "prompt": 9661,
+  "completion": 7379
+ }
+}

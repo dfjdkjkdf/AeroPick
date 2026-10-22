@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "输入NULL触发空指针检查，需求明确规定失败时必须输出单位阵和INFINITY，B完全匹配，A输出全零矩阵和0错误，C范数不符。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "仅m[0][0]=1其余为0，第二行为零向量触发退化几何检查，需求规定失败输出INFINITY，B正确，C输出0违反契约。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同测试2配置，触发退化检查，B输出INFINITY符合需求，C输出0错误。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同测试2配置，触发退化检查，B输出INFINITY符合需求，C输出0错误。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "同测试2配置，触发退化检查，B输出INFINITY符合需求，C输出0错误。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "输入全零矩阵，第一行为零向量触发退化/空检查，需求规定失败输出INFINITY，B正确，C输出0错误。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9330,
+  "completion": 4203
+ }
+}

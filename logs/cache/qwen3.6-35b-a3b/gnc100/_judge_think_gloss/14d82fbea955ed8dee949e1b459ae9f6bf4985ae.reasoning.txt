@@ -1,0 +1,81 @@
+Here's a thinking process:
+
+1.  **Analyze User Input:**
+    *   **Role:** Aerospace GNC Software Review Expert.
+    *   **Task:** Evaluate two implementations (A and B) of a C function based on the provided requirements and test case differences. Output only JSON with reasoning.
+    *   **Requirements Summary:**
+        *   Function: Magnetometer hard-iron min/max calibration with chronic-insufficient-excitation latch.
+        *   Tracks component extrema for required samples.
+        *   `bias = (max + min) / 2`, `half_span = (max - min) / 2`.
+        *   READY only when every `half_span >= minimum_span`.
+        *   Insufficient excitation restarts collection and increments `rejected_windows`.
+        *   `max_rejected_windows` caps consecutive insufficient windows before giving up; 0 means unlimited.
+        *   Once `rejected_windows` reaches nonzero `max_rejected_windows`, next insufficient window latches FAULT instead of restarting.
+        *   Disable clears everything including rejection counter.
+        *   NULL/nonfinite sample or invalid configuration latches FAULT.
+        *   Normative math: `bias=(max+min)/2`, `half_span=(max-min)/2`, `span_norm=||half_span||`, `span_energy=half_span dot half_span`. Every component must meet `half_span >= minimum_span`.
+        *   Valid config: `required` in 4..100, `minimum_span` finite & > 0, `max_rejected_windows` <= 1000.
+    *   **Context/Code Snippet:** Shows types (`mh_mode_t`, `mh_input_t`, `mh_config_t`, `mh_state_t`, `mh_output_t`), static variables, and the start of `GncRepoMHCalibrationStep(void){`. The actual implementation code for A and B is not provided, but I need to judge based on the test case behavior vs. requirements.
+    *   **Test Case 1:**
+        *   Type: error
+        *   Input: `mh_input.sample = NULL;` (Called once)
+        *   Output Difference: `mh_output.mode`: A=3 (FAULT), B=0 (IDLE). `mh_state.mode`: A=3, B=0.
+        *   Requirement says: "NULL/nonfinite sample or invalid configuration ... latches FAULT."
+        *   So, upon receiving a NULL sample, the function should latch FAULT.
+        *   Implementation A returns mode 3 (FAULT). Implementation B returns mode 0 (IDLE).
+        *   Therefore, A matches the requirement. B does not.
+
+2.  **Evaluate Test 1 against Requirements:**
+    *   Requirement: "NULL/nonfinite sample or invalid configuration (including max_rejected_windows itself) latches FAULT."
+    *   Input: `sample` is NULL.
+    *   Expected Behavior: Latch FAULT. Mode should become 3 (FAULT).
+    *   Implementation A: `mode = 3` -> Matches.
+    *   Implementation B: `mode = 0` -> Does not match.
+    *   Conclusion for Test 1: A is correct.
+
+3.  **Format Output:**
+    *   Need to produce JSON exactly as requested: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    *   Only one test is provided.
+    *   Reasoning: 需求明确规定“NULL/nonfinite sample... latches FAULT”，输入为NULL时应置为FAULT(模式3)，实现A输出3符合，B输出0不符合。
+    *   Pick: A
+
+    Check constraints: "只依据需求判断", "只输出JSON".
+    Structure:
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "A",
+          "reason": "需求明确规定输入NULL样本时必须latch FAULT（模式3），实现A输出3符合要求，B输出0不符合。"
+        }
+      ],
+      "pick": "A"
+    }
+    ```
+    All steps verified. Matches requirement strictly. No extra text. Proceed. 
+    Self-Correction/Refinement during thought: 
+    The prompt says "测试 1（类型 error；未赋值的量为 0；共调用 1 次，比较最后一次调用后的输出）". I will use id: 1.
+    The reason should be concise.
+    JSON format matches exactly.
+    Ready. 
+    Output matches the requested format.✅
+    Note: I'll make sure the JSON is valid and strictly follows the prompt. No markdown formatting around the JSON if possible, or just standard JSON block. The prompt says "只输出 JSON：{...}". I will output raw JSON.
+    One minor point: The prompt says "测试 1", so id is 1.
+    All good. 
+    Output Generation. 
+    `{ "tests": [ { "id": 1, "correct": "A", "reason": "需求明确规定输入NULL样本时必须latch FAULT（模式3），实现A输出3符合要求，B输出0不符合。" } ], "pick": "A" }` -> matches perfectly. 
+    Proceeds. 
+    [Done] 
+    *Self-Correction/Verification during generation prep*: 
+    Check requirement wording: "NULL/nonfinite sample or invalid configuration ... latches FAULT." -> Clearly mandates FAULT state (mode 3) for NULL input.
+    Test 1 input: `mh_input.sample = NULL;`
+    A outputs mode=3, B outputs mode=0.
+    A is correct.
+    JSON structure matches request.
+    Output matches.✅
+    Final Output Generation. 
+    *(Note: I will ensure strict JSON formatting as requested.)*
+    `{ "tests": [ { "id": 1, "correct": "A", "reason": "需求明确规定输入NULL样本时必须进入FAULT状态（模式3），实现A输出3符合该要求，B输出0不符合。" } ], "pick": "A" }` -> ready. 
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

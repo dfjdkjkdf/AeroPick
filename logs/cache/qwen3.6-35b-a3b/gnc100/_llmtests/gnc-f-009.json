@@ -1,0 +1,217 @@
+{
+ "key": "f812d1b93ee8ed49b927a840fde1c8fed5036e95",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "c_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_vectors = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "inertial_vectors = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "weights = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "loss = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "worst_index = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 33;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 1;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;",
+    "weights[0] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;",
+    "body_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;",
+    "inertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;",
+    "weights[0] = 1.0; weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "weights[0] = -1.0;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "weights[0] = 0.0;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "weights[0] = INFINITY;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "weights[0] = NAN;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "c_bi->m[0][0] = INFINITY; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;",
+    "weights[0] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = INFINITY; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;",
+    "weights[0] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = NAN; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;",
+    "weights[0] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 1;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = -1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;",
+    "weights[0] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;",
+    "body_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;",
+    "inertial_vectors[1].x = -1.0; inertial_vectors[1].y = 0.0; inertial_vectors[1].z = 0.0;",
+    "weights[0] = 1.0; weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;",
+    "body_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;",
+    "inertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;",
+    "weights[0] = 10.0; weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;",
+    "c_bi->m[0][0] = 1.0; c_bi->m[0][1] = 0.0; c_bi->m[0][2] = 0.0;",
+    "c_bi->m[1][0] = 0.0; c_bi->m[1][1] = 1.0; c_bi->m[1][2] = 0.0;",
+    "c_bi->m[2][0] = 0.0; c_bi->m[2][1] = 0.0; c_bi->m[2][2] = 1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "inertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;",
+    "body_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;",
+    "inertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;",
+    "weights[0] = 1.0; weights[1] = 10.0;"
+   ]
+  }
+ ]
+}

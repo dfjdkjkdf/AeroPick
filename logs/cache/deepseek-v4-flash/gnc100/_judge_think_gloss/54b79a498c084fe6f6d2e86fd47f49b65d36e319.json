@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "前三次小变化均接受为TRACK，第4次超限但仅第1次拒收未达max_rejects=3，应REJECT=2。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "首帧TRACK后第二帧速率10>1，首次拒收未达3，应REJECT=2。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "max_rejects=2时第1次拒收仍未达到2，应REJECT=2。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "enable有效但field为NULL，属无效输入，应锁存FAULT=3。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "field含NaN，非有限数据，应锁存FAULT=3。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "field含Inf，非有限数据，应锁存FAULT=3。"
+  }
+ ],
+ "pick": "B"
+}

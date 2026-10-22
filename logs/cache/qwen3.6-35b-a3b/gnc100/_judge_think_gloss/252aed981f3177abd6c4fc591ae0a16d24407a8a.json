@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定当输出指针(rotated)为Null时必须返回ADCS_E_NULL(即1)且禁止解引用；实现B安全处理了空指针并返回1，实现A触发崩溃，故B符合需求。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 8832,
+  "completion": 2328
+ }
+}

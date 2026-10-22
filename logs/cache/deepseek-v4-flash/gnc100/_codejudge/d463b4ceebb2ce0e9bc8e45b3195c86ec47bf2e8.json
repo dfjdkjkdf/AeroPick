@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C validates all inputs, zeros the output on failures, and correctly computes F=I-dt*[ω]x and P_next=F P F^T + process_noise*dt*I.",
+ "_usage": {
+  "prompt": 9909,
+  "completion": 16059
+ }
+}

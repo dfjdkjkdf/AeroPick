@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求规定任意NULL指针应返回ADCS_E_NULL，B安全拦截并返回错误码，A直接崩溃违反错误处理契约。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同上，resultant为NULL时应安全返回ADCS_E_NULL而非崩溃，B符合空指针防御与状态合约要求。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同向单位向量加权和方向为(1,0,0)，归一化后direction.x必为1，A输出0错误。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "正交向量加权和方向x分量非零（约0.707），A输出0违背几何逻辑，B输出1符合非零预期。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "加权正交向量加权和方向x分量非零（约0.894），A输出0错误，B符合非零特征。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "反向等权观测合矢量模为0，触发ADCS_E_DEGENERATE，需求明确规定失败输出归零，A输出0正确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9695,
+  "completion": 5303
+ }
+}

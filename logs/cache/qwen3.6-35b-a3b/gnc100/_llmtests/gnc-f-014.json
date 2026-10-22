@@ -1,0 +1,319 @@
+{
+ "key": "6dd34a7df70c4866022b0219ac8facd17a9aceb6",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "candidate = NULL;",
+    "repaired = NULL;",
+    "correction_norm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = NULL;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;",
+    "candidate->m[0][0] = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;",
+    "candidate->m[0][0] = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "candidate->m[0][0] = 0.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 1.0;",
+    "candidate->m[1][1] = 0.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "candidate->m[0][0] = 0.9999999999999999;",
+    "candidate->m[0][1] = 0.0000000000000001;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = -0.0000000000000001;",
+    "candidate->m[1][1] = 0.9999999999999999;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "candidate->m[0][0] = 0.0;",
+    "candidate->m[0][1] = 1.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 0.0;",
+    "candidate->m[1][2] = 1.0;",
+    "candidate->m[2][0] = 1.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 0.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "candidate->m[0][0] = 1.0 / sqrt(3.0);",
+    "candidate->m[0][1] = 1.0 / sqrt(3.0);",
+    "candidate->m[0][2] = 1.0 / sqrt(3.0);",
+    "candidate->m[1][0] = 1.0 / sqrt(2.0);",
+    "candidate->m[1][1] = -1.0 / sqrt(2.0);",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 1.0 / sqrt(6.0);",
+    "candidate->m[2][1] = 1.0 / sqrt(6.0);",
+    "candidate->m[2][2] = -2.0 / sqrt(6.0);",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = ADCS_EPS_COLLINEAR;",
+    "candidate->m[1][1] = 1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = (double)(ADCS_EPS_COLLINEAR * 1.5);",
+    "candidate->m[1][1] = 1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "candidate->m[0][0] = 1e-13;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 1e-13;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "candidate->m[0][0] = 0.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = 0.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 0.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "candidate->m[0][0] = -1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 0.0;",
+    "candidate->m[1][1] = -1.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = -1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "candidate->m[0][0] = 0.7071067811865475;",
+    "candidate->m[0][1] = 0.7071067811865475;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = -0.7071067811865475;",
+    "candidate->m[1][1] = 0.7071067811865475;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 1.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "candidate->m[0][0] = 1.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 0.0;",
+    "candidate->m[1][0] = 1.0;",
+    "candidate->m[1][1] = 0.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 0.0;",
+    "candidate->m[2][2] = 0.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "candidate->m[0][0] = 0.0;",
+    "candidate->m[0][1] = 0.0;",
+    "candidate->m[0][2] = 1.0;",
+    "candidate->m[1][0] = 1.0;",
+    "candidate->m[1][1] = 0.0;",
+    "candidate->m[1][2] = 0.0;",
+    "candidate->m[2][0] = 0.0;",
+    "candidate->m[2][1] = 1.0;",
+    "candidate->m[2][2] = 0.0;",
+    "repaired = &dummy_mat3_var;",
+    "correction_norm = &dummy_double_var;"
+   ]
+  }
+ ]
+}

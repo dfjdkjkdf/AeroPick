@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly resets on enable 0, faults on invalid enabled inputs including enable not 0/1, and follows the completion/restart counting table.",
+ "_usage": {
+  "prompt": 11252,
+  "completion": 7124
+ }
+}

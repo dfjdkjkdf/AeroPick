@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确处理空指针并优先返回 ADCS_E_NULL，同时在所有失败路径将可写输出清零，并正确实现独立限幅、饱和掩码和 tau=m×B。",
+ "_usage": {
+  "prompt": 9960,
+  "completion": 989
+ }
+}

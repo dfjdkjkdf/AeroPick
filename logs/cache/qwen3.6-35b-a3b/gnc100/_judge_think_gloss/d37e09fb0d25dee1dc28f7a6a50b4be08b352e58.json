@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "输入两组正交向量且权重和2.0≥1.5、分离正弦值1.0≥0.5，完全满足可用集条件，需求明确usable为有效观测数，应为2。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "边界条件下分离正弦值≈0.0001仍≥阈值0.0001，几何未被拒绝，两组观测均有效，usable应为2。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "条件与测试1一致，两组观测均通过验证，usable应为2。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "仅required_good改为2，不影响当前拍的有效观测计数逻辑，usable仍应为2。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "条件与测试1一致，两组观测均有效，usable应为2。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "条件与测试1一致，两组观测均有效，usable应为2。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 11427,
+  "completion": 4480
+ }
+}

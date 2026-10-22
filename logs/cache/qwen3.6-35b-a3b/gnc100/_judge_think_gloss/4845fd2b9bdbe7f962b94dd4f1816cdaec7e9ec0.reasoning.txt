@@ -1,0 +1,197 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as a GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a given requirement. I'm provided with test cases where A and B produce different outputs. I must determine which implementation is correct for each test case *solely* based on the requirement, and then pick the overall correct implementation. The output must be a specific JSON format.
+
+2.  **Analyze the Requirement**:
+    *   **Function**: Gyro saturation recovery supervisor.
+    *   **Valid Sample**: Non-NULL finite body rate.
+    *   **Table**:
+        | Rate norm / current state | Reported mode | Clean evidence |
+        |---|---|---|
+        | `norm >= saturated_rad_s` / any | SATURATED | clear to zero |
+        | `norm <= recovered_rad_s` / SATURATED or RECOVERING | RECOVERING until `required_clean`, then NOMINAL | increment |
+        | `recovered_rad_s < norm < saturated_rad_s` / SATURATED or RECOVERING | SATURATED | clear to zero |
+        | `norm < saturated_rad_s` / NOMINAL | NOMINAL | unchanged |
+        | Disabled | NOMINAL | clear to zero |
+    *   **Publish**: measured norm, energy (`rate dot rate`), direction-preserving rate capped to `saturated_rad_s`.
+    *   **Primitives**: linked finite-vector, norm, scale, dot.
+    *   **Requirements/Constraints**:
+        *   Require binary enable.
+        *   `0 <= recovered < saturated`
+        *   `required_clean` in 1..20.
+        *   NULL, nonfinite, or invalid configuration latches FAULT and zeros vector output until disable.
+    *   **State/Variables implied**:
+        *   `mode`: GR_NOMINAL=0, GR_SATURATED=1, GR_RECOVERING=2, GR_FAULT=3 (from context typedef)
+        *   `clean`: counter for consecutive clean samples.
+        *   `enable`: binary flag.
+        *   `rate_rad_s`: input vector.
+        *   `recovered_rad_s`, `saturated_rad_s`, `required_clean`: config.
+    *   **Logic Extraction from Table**:
+        1. If `enable == 0` (Disabled): Mode -> NOMINAL, Clean -> 0. Output mode NOMINAL.
+        2. If input is NULL, non-finite, or config invalid: Latch FAULT, zero output until disable. (Wait, "until disable" means it stays FAULT? Or clears on disable? Usually latching means stays fault until explicitly reset or disabled. The table says "Disabled -> NOMINAL", so maybe disabling clears fault? Or fault overrides everything else. Let's stick to: Fault condition -> mode = FAULT, output zeros.)
+        3. If valid sample:
+           - Compute `norm = adcs_vec3_norm(rate)`
+           - If `norm >= saturated`: Mode -> SATURATED, Clean -> 0.
+           - Else if `norm <= recovered`:
+             - If current mode is SATURATED or RECOVERING: Mode -> RECOVERING, Clean -> increment.
+             - Wait, what if current mode is NOMINAL? The table says `norm < saturated / NOMINAL -> NOMINAL, unchanged`. So if `norm <= recovered` and mode is NOMINAL, it stays NOMINAL, clean unchanged.
+             - Actually, the table row 2 says: `norm <= recovered_rad_s / SATURATED or RECOVERING -> RECOVERING until required_clean, then NOMINAL | increment`. This implies: if mode was SAT/REC and norm drops below recovered, switch to REC and increment clean. When clean reaches `required_clean`, switch to NOMINAL.
+           - Else if `recovered < norm < saturated`:
+             - If current mode is SATURATED or RECOVERING: Mode -> SATURATED, Clean -> 0.
+             - What if current mode is NOMINAL? Row 4 covers `norm < saturated / NOMINAL -> NOMINAL, unchanged`. Since `recovered < norm < saturated` satisfies `norm < saturated`, it stays NOMINAL, clean unchanged.
+           - Summary of transitions:
+             - Disable: NOMINAL, clean=0.
+             - Fault/Invalid: FAULT, out=zeros.
+             - Enable & Valid:
+               - `norm >= sat`: mode=SAT, clean=0.
+               - `norm <= rec`:
+                 - If mode in {SAT, REC}: mode=REC, clean++. If clean >= req_clean -> mode=NOM.
+                 - If mode=NOM: mode=NOM, clean unchanged.
+               - `rec < norm < sat`:
+                 - If mode in {SAT, REC}: mode=SAT, clean=0.
+                 - If mode=NOM: mode=NOM, clean unchanged.
+             - Note on "until required_clean": The transition to NOMINAL happens when clean reaches `required_clean`. Does it happen immediately upon incrementing, or next step? Usually, if `clean >= required_clean`, mode becomes NOMINAL immediately or next cycle. The table says "RECOVERING until required_clean, then NOMINAL". I'll assume immediate transition when clean hits the threshold, or it stays REC until next call. Given typical discrete systems, if `clean == required_clean`, it might switch to NOM. But let's look at the tests.
+
+3.  **Analyze Each Test Case**:
+
+    *Test 1*:
+    - Config: rec=0.1, sat=1.0, req_clean=5.
+    - Input: enable=1, rate=(1.0, 0, 0) -> norm=1.0.
+    - State before: mode=NOMINAL(0), clean=0.
+    - Condition: `norm >= saturated` (1.0 >= 1.0). Matches row 1.
+    - Expected: Mode -> SATURATED(1), Clean -> 0.
+    - Output A: mode=1, state.mode=1. (Matches)
+    - Output B: mode=0, state.mode=0. (Incorrect)
+    - Conclusion: A is correct.
+
+    *Test 2*:
+    - Config: rec=0.1, sat=1.0, req_clean=3.
+    - Input: enable=1, rate=(2.0, 0, 0) -> norm=2.0.
+    - State before: mode=NOMINAL(0), clean=0.
+    - Condition: `norm >= saturated` (2.0 >= 1.0). Matches row 1.
+    - Expected: Mode -> SATURATED(1), Clean -> 0.
+    - Output A: mode=1, state.mode=1. (Matches)
+    - Output B: mode=0, state.mode=0. (Incorrect)
+    - Conclusion: A is correct.
+
+    *Test 3*:
+    - Config: rec=0.1, sat=1.0, req_clean=1.
+    - Input: enable=1, rate=(2.0, 0, 0) -> norm=2.0.
+    - State before: mode=NOMINAL(0), clean=0.
+    - Condition: `norm >= saturated` (2.0 >= 1.0). Matches row 1.
+    - Expected: Mode -> SATURATED(1), Clean -> 0.
+    - Output A: mode=1, state.mode=1. (Matches)
+    - Output B: mode=0, state.mode=0. (Incorrect)
+    - Conclusion: A is correct.
+
+    *Test 4*:
+    - Config: rec=0.1, sat=1.0, req_clean=5.
+    - Input: enable=0 (Disabled), rate=(0.5, 0, 0).
+    - State before: mode=NOMINAL(0), clean=0.
+    - Condition: Disabled. Matches last row.
+    - Expected: Mode -> NOMINAL(0), Clean -> 0. Output mode NOMINAL.
+    - Output A: mode=0, state.mode=0. (Matches)
+    - Output B: mode=3, state.mode=3. (Fault? Incorrect, should be NOMINAL per "Disabled -> NOMINAL")
+    - Conclusion: A is correct.
+
+    *Test 5*:
+    - Config: rec=0.1, sat=1.0, req_clean=5.
+    - Input: enable=1, rate=(0.0, 0, 0) -> norm=0.0.
+    - State before: mode=FAULT(3), clean=0.
+    - Condition: Valid sample (non-NULL finite rate). Norm=0.0 <= recovered(0.1). Current state is FAULT.
+    - Wait, the table doesn't explicitly mention FAULT state in the rows. It says "NULL, nonfinite, or invalid configuration latches FAULT and zeros vector output until disable."
+    - So if currently FAULT, but input is valid and enable=1, does it recover? The requirement says "latches FAULT ... until disable". This usually means it stays FAULT regardless of input until disabled. Once disabled, it goes to NOMINAL. Re-enabling might clear it, or it might require a reset. But typically, latch means persistent. However, let's check the table rows again. They cover `any` state for row 1, `SATURATED or RECOVERING` for others, `NOMINAL` for row 4, and `Disabled` for row 5. FAULT is not in the table.
+    - If it's latched, it should stay FAULT. Output A is 3 (FAULT), Output B is 0 (NOMINAL).
+    - Given "latches FAULT ... until disable", it should remain FAULT even with valid input. So A (FAULT) is likely correct. B switching to NOMINAL violates the latch requirement.
+    - Conclusion: A is correct.
+
+    *Test 6*:
+    - Config: rec=0.1, sat=1.0, req_clean=2.
+    - Input: enable=1, rate=(2.0, 0, 0) -> norm=2.0.
+    - State before: mode=NOMINAL(0), clean=0.
+    - Condition: `norm >= saturated` (2.0 >= 1.0). Matches row 1.
+    - Expected: Mode -> SATURATED(1), Clean -> 0.
+    - Output A: mode=1, state.mode=1. (Matches)
+    - Output B: mode=0, state.mode=0. (Incorrect)
+    - Conclusion: A is correct.
+
+    All tests point to A being correct. B seems to incorrectly treat high norms as nominal, or mishandle the logic entirely. Let's double check Test 5 carefully.
+    Test 5: `gr_state.mode = GR_FAULT; gr_state.clean = 0;` Input rate is zero vector. Norm=0.0. Enable=1.
+    Requirement: "NULL, nonfinite, or invalid configuration latches FAULT and zeros vector output until disable."
+    This implies once in FAULT, it stays FAULT until `enable` becomes 0. In this test, `enable` is 1. So it should remain FAULT. A gives 3, B gives 0. A is correct.
+    What about the "until disable" part? Does disabling clear it? The table says "Disabled -> NOMINAL". So yes, disabling clears it to NOMINAL. But here enable is 1, so it stays FAULT.
+    Therefore, A is consistently correct across all tests.
+
+    Let's verify the exact wording for Test 1-3, 6: `norm >= saturated`. A gives SATURATED(1). B gives NOMINAL(0). Requirement clearly says `norm >= saturated` -> SATURATED. So A is definitely correct.
+    Test 4: Disabled -> NOMINAL. A gives 0. B gives 3. Requirement says Disabled -> NOMINAL. So A is correct.
+    Test 5: Latch FAULT. A gives 3. B gives 0. Requirement says latch FAULT until disable. A is correct.
+
+    All tests strongly favor A. I will formulate the JSON accordingly.
+
+    Structure of JSON:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求规定norm>=saturated时模式应置为SATURATED，A输出正确。"},
+        {"id": 2, "correct": "A", "reason": "需求规定norm>=saturated时模式应置为SATURATED，A输出正确。"},
+        {"id": 3, "correct": "A", "reason": "需求规定norm>=saturated时模式应置为SATURATED，A输出正确。"},
+        {"id": 4, "correct": "A", "reason": "需求规定Disabled时模式应为NOMINAL且清零，A输出正确。"},
+        {"id": 5, "correct": "A", "reason": "需求规定故障会锁存直到禁用，当前enable=1故应保持FAULT，A输出正确。"},
+        {"id": 6, "correct": "A", "reason": "需求规定norm>=saturated时模式应置为SATURATED，A输出正确。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Check constraints: "只依据需求判断", "按需求逐条推理", "最后综合所有测试，选出最符合需求的一种实现。", "只输出 JSON".
+    The reasoning matches the requirement exactly. I will ensure the JSON matches the requested format precisely.
+    One minor point: Test 5 reason could be more precise: "需求明确故障状态为锁存（latch），在禁用前不恢复，故保持FAULT正确。"
+    All good.
+    I will generate the JSON now. 
+    Self-Correction/Verification during thought:
+    Let's re-read Test 1 carefully: `gr_input.rate_rad_s->x = 1.0; ... norm=1.0`. `saturated_rad_s = 1.0`. `norm >= saturated` is true. Table says `norm >= saturated / any -> SATURATED`. Correct.
+    Test 2: `norm=2.0 >= 1.0`. True. SATURATED. Correct.
+    Test 3: Same. Correct.
+    Test 4: `enable=0`. Table: `Disabled -> NOMINAL`. Correct.
+    Test 5: `mode=FAULT`. Table doesn't list FAULT transitions. Text: "latches FAULT and zeros vector output until disable." So it stays FAULT. Correct.
+    Test 6: `norm=2.0 >= 1.0`. SATURATED. Correct.
+    Implementation B seems to be ignoring the saturation condition or treating norm > something as nominal, or has inverted logic. Regardless, A matches perfectly.
+    The output format requires exactly: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will construct it carefully.
+    One detail: "测试编号" in the prompt is 1, 2, 3, 4, 5, 6.
+    I'll produce the JSON. 
+    All steps verified. Ready. 
+    Output matches request.✅
+    Proceeds. 
+    [Output Generation] -> JSON string. 
+    *(Self-Correction/Refinement during drafting)*: 
+    I should make sure the `reason` is concise as requested ("一句话"). 
+    Test 1: 需求规定norm≥saturated时上报SATURATED并清零，A符合。
+    Test 2: 同上，norm超限触发饱和态，A符合。
+    Test 3: 同上，A符合。
+    Test 4: 需求规定Disable时模式强制为NOMINAL并清零，A符合。
+    Test 5: 需求规定故障为锁存状态（latch）直至禁用，当前使能开启故应保持FAULT，A符合。
+    Test 6: 同上饱和逻辑，A符合。
+    Pick: A.
+    Matches perfectly. No extra text. Only JSON. 
+    Proceeds. 
+    [Output Generation] (matches the final JSON)
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求规定norm≥saturated时模式应置为SATURATED并清零，A输出正确。"},
+        {"id": 2, "correct": "A", "reason": "需求规定norm≥saturated时模式应置为SATURATED并清零，A输出正确。"},
+        {"id": 3, "correct": "A", "reason": "需求规定norm≥saturated时模式应置为SATURATED并清零，A输出正确。"},
+        {"id": 4, "correct": "A", "reason": "需求规定Disabled时模式强制为NOMINAL且清零，A输出正确。"},
+        {"id": 5, "correct": "A", "reason": "需求规定故障为锁存(latch)状态直至禁用，当前enable=1故应保持FAULT，A输出正确。"},
+        {"id": 6, "correct": "A", "reason": "需求规定norm≥saturated时模式应置为SATURATED并清零，A输出正确。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Checks: Format matches. Logic matches requirement. Concise reasons. Ready. 
+    Output matches exactly. 
+    [Done] 
+    *(Self-Correction/Note during generation)*: I will ensure the JSON is strictly valid and contains no markdown formatting if possible, or just standard markdown code block as requested implicitly by "只输出 JSON". I'll output raw JSON text. The prompt says "只输出 JSON：{...}". I will provide exactly that.
+    All good. 
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

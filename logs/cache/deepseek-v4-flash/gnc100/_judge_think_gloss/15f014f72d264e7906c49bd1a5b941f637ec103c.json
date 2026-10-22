@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B|C",
+   "reason": "body_primary为NULL属空指针失败，应返回单位阵、零对齐和ADCS_E_NULL；B和C均置对角为1，符合，A未置单位阵。"
+  },
+  {
+   "id": 2,
+   "correct": "B|C",
+   "reason": "body_secondary为NULL应走空指针失败分支并输出单位阵；B和C均置对角为1，符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B|C",
+   "reason": "ref_primary为NULL应返回单位阵、零对齐和ADCS_E_NULL；B和C均置对角为1，符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B|C",
+   "reason": "ref_secondary为NULL应返回单位阵、零对齐和ADCS_E_NULL；B和C均置对角为1，符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B|C",
+   "reason": "check_body为NULL应返回单位阵、零对齐和ADCS_E_NULL；B和C均置对角为1，符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B|C",
+   "reason": "check_ref为NULL应返回单位阵、零对齐和ADCS_E_NULL；B和C均置对角为1，符合。"
+  }
+ ],
+ "pick": "B"
+}

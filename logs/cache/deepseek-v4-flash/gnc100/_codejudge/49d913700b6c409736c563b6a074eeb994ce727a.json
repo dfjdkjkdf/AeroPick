@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly latches FAULT in qo_state, honors disable by resetting to WAIT with zeroed outputs, and reports usable as the validated observation count; A misses FAULT state latching and mishandles disable/output usable.",
+ "_usage": {
+  "prompt": 11375,
+  "completion": 8864
+ }
+}

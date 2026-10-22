@@ -1,0 +1,125 @@
+{
+ "key": "5579d69ed77f59d5dd199c935e087dabdc6b5105",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "sigma = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "shadow = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*switched = 0;\nswitched = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sigma->x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sigma->x = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sigma->x = -INFINITY;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 0.0;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 0.5;\nsigma->y = 0.5;\nsigma->z = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 1.0;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 0.9999999999999999;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 1.0000000000000002;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 2.0;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = -2.0;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 0.1;\nsigma->y = 0.2;\nsigma->z = 0.3;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = -0.1;\nsigma->y = -0.2;\nsigma->z = -0.3;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 0.5773502691896257;\nsigma->y = 0.5773502691896257;\nsigma->z = 0.5773502691896257;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 1.7320508075688772;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 0.0;\nsigma->y = 10.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 0.0;\nsigma->y = 0.0;\nsigma->z = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 0.0000000000000001;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  }
+ ]
+}

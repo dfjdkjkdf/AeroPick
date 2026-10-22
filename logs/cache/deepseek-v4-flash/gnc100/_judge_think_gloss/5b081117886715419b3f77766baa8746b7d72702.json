@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "非对称惯性阵应判 malformed 返回 ADCS_E_RANGE 并清零失败输出，B 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "非对称惯性阵应返回 ADCS_E_RANGE 并清零失败输出，B 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "body 为 NULL 应返回 ADCS_E_NULL 且不崩溃，B 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "trace 为 NULL 应返回 ADCS_E_NULL 且清零 body，B 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "symmetry_error 为 NULL 应返回 ADCS_E_NULL 且清零 body，B 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "第三次调用输入非对称，应返回 ADCS_E_RANGE 并清零失败输出，B 符合。"
+  }
+ ],
+ "pick": "B"
+}

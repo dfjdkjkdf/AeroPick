@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "estimated->w=NAN 属于非有限四元数，按需求应返回 ADCS_E_DEGENERATE=3。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "estimated->w=INFINITY 属于非有限四元数，按需求应返回 ADCS_E_DEGENERATE=3。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "target->y=NAN 属于非有限四元数，按需求应返回 ADCS_E_DEGENERATE=3。"
+  }
+ ],
+ "pick": "A"
+}

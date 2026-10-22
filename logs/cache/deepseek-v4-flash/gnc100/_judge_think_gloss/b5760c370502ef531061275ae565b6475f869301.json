@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "输入非对称，属 malformed，应返回 ADCS_E_RANGE 且失败时 body/trace 清零、symmetry_error=INF；C 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "非对称输入属 malformed，应返回 ADCS_E_RANGE 并置失败输出；C 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "q_bi 为 NULL，应返回 ADCS_E_NULL 且失败时 symmetry_error=INF；C 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "inertial 为 NULL，应返回 ADCS_E_NULL 且失败时 symmetry_error=INF；C 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "body 为 NULL，应返回 ADCS_E_NULL 且失败时 symmetry_error=INF；C 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "trace 为 NULL，应返回 ADCS_E_NULL 且失败时 symmetry_error=INF；C 符合。"
+  }
+ ],
+ "pick": "C"
+}

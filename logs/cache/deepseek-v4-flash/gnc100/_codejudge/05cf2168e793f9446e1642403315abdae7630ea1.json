@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 在 NULL 和 nonfinite 失败时都尽可能将 torque/authority 置零，并正确计算 m×B 及其欧氏范数。",
+ "_usage": {
+  "prompt": 8394,
+  "completion": 766
+ }
+}

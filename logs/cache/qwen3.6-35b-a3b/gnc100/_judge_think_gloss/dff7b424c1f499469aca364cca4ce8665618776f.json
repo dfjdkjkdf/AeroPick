@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定NULL字段必须置FAULT(3)，A/B正确捕获并返回3，C返回OFF(0)不符。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "默认配置不满足restart_rate>quiet_rate且输入时间非递增，需求规定此类非法条件应置FAULT(3)，A/B符合，C错误。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试2，非法配置与时间条件触发全局故障锁定逻辑，A/B输出3符合要求。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测试2，非法配置与时间条件触发全局故障锁定逻辑，A/B输出3符合要求。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "同测试2，非法配置与时间条件触发全局故障锁定逻辑，A/B输出3符合要求。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "同测试2，非法配置与时间条件触发全局故障锁定逻辑，A/B输出3符合要求。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9476,
+  "completion": 4030
+ }
+}

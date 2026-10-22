@@ -1,0 +1,125 @@
+{
+ "key": "5e7601ff39de7751f70cfe7f25aa55b2999a8ae5",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "a = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "distance_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "a->w = 0.0;\na->x = 0.0;\na->y = 0.0;\na->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b->w = 0.0;\nb->x = 0.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "a->w = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "a->w = NAN;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "a->w = 1.0;\na->x = 0.0;\na->y = 0.0;\na->z = 0.0;\nb->w = 1.0;\nb->x = 0.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "a->w = 0.0;\na->x = 1.0;\na->y = 0.0;\na->z = 0.0;\nb->w = 0.0;\nb->x = 1.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "a->w = 0.7071067811865476;\na->x = 0.7071067811865476;\na->y = 0.0;\na->z = 0.0;\nb->w = 0.7071067811865476;\nb->x = 0.7071067811865476;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "a->w = 0.0;\na->x = 1.0;\na->y = 0.0;\na->z = 0.0;\nb->w = 0.0;\nb->x = -1.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "a->w = 1.0;\na->x = 0.0;\na->y = 0.0;\na->z = 0.0;\nb->w = 0.0;\nb->x = 0.0;\nb->y = 1.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "a->w = 1.0;\na->x = 0.0;\na->y = 0.0;\na->z = 0.0;\nb->w = 0.0;\nb->x = 0.0;\nb->y = 0.0;\nb->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "a->w = 0.5;\na->x = 0.5;\na->y = 0.5;\na->z = 0.5;\nb->w = 0.5;\nb->x = 0.5;\nb->y = 0.5;\nb->z = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "a->w = -1.0;\na->x = 0.0;\na->y = 0.0;\na->z = 0.0;\nb->w = 1.0;\nb->x = 0.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "a->w = 0.0;\na->x = 0.0;\na->y = 0.0;\na->z = 1.0;\nb->w = 0.0;\nb->x = 0.0;\nb->y = 0.0;\nb->z = -1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "a->w = 0.9238795325112867;\na->x = 0.3826834323650898;\na->y = 0.0;\na->z = 0.0;\nb->w = 0.9238795325112867;\nb->x = -0.3826834323650898;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "a->w = 0.0;\na->x = 0.0;\na->y = 0.7071067811865476;\na->z = 0.7071067811865476;\nb->w = 0.0;\nb->x = 0.0;\nb->y = -0.7071067811865476;\nb->z = -0.7071067811865476;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "a->w = 1.0e-20;\na->x = 1.0e-20;\na->y = 1.0e-20;\na->z = 1.0e-20;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "a->w = 1.0;\na->x = 0.0;\na->y = 0.0;\na->z = 0.0;\nb->w = 0.0;\nb->x = 0.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly validates pointers/tolerance/matrix finiteness, computes determinant and C*C^T error with GNC primitives, and sets valid only for positive determinant within error tolerance without treating non-positive determinant as an input-range error.",
+ "_usage": {
+  "prompt": 8764,
+  "completion": 10536
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 使用 ADCS_CLAMP 实现分量限幅，并对 field 范数非有限也按范围错误处理，失败时清零所有输出，最贴合需求与 GNC 原语偏好。",
+ "_usage": {
+  "prompt": 9859,
+  "completion": 19020
+ }
+}

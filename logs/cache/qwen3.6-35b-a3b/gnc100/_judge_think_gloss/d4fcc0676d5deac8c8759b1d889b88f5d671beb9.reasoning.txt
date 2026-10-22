@@ -1,0 +1,114 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task**: I am an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a provided requirement specification. I'm given test cases where A and B produce different outputs. I must determine which implementation's output is correct according to the requirements, reason through each test case, and finally pick the overall better implementation. Output must be strictly JSON.
+
+2.  **Analyze the Requirement**:
+    *   **Functionality**: Magnetometer hard-iron min/max calibration with a chronic-insufficient-excitation latch.
+    *   **Core Logic**:
+        *   Track component extrema for required samples.
+        *   `bias = (max + min) / 2`, `half_span = (max - min) / 2`.
+        *   `READY` only when every `half_span >= minimum_span`.
+        *   Insufficient excitation restarts collection and increments `rejected_windows`.
+        *   `max_rejected_windows` caps consecutive insufficient windows before giving up. `0` means unlimited.
+        *   Once `rejected_windows` reaches a nonzero `max_rejected_windows`, the next insufficient window latches `FAULT` instead of restarting.
+        *   `Disable` clears everything including rejection counter.
+        *   `NULL/nonfinite sample or invalid configuration (including max_rejected_windows itself)` latches `FAULT`.
+        *   Prefer GNC primitives.
+    *   **Normative Math**: `bias=(max+min)/2`, `half_span=(max-min)/2`, `span_norm=||half_span||`, `span_energy=half_span·half_span`. Every component must meet `half_span >= minimum_span`.
+    *   **Valid Configuration**: `required` in 4..100, `minimum_span` finite and > 0, `max_rejected_windows <= 1000`.
+    *   **Context/Types**:
+        *   `mh_input_t`: `enable` (int), `sample` (const adcs_vec3_t*)
+        *   `mh_config_t`: `required` (uint32), `minimum_span` (double), `max_rejected_windows` (uint32)
+        *   `mh_state_t`: `mode` (mh_mode_t: IDLE=0, COLLECT=1, READY=2, FAULT=3), `count`, `rejected`, `minimum`, `maximum`, `bias`
+        *   `mh_output_t`: `mode`, `count`, `rejected`, `bias`, `half_span`, `span_norm`, `span_energy`
+        *   Globals: `mh_input`, `mh_config`, `mh_state`, `mh_output`
+        *   Function signature implied: `void GncRepoMHCalibrationStep(void)` called periodically.
+    *   **Key State Machine Transitions** (inferred from requirements):
+        *   Start/Default: Likely `IDLE` or `COLLECT` depending on `enable`.
+        *   `Disable` (`enable=0`?): Clears everything -> `IDLE`? Or just resets state. The requirement says "Disable clears everything including the rejection counter." Usually implies going to `IDLE` or resetting counters/modes. Let's assume `IDLE` (0) or `COLLECT` (1) upon enable. Actually, typical calibration starts collecting. If `enable` becomes true, it might start `COLLECT`. If false, `IDLE`.
+        *   Invalid config (`required` not 4-100, `minimum_span` not finite/>0, `max_rejected_windows` > 1000 or invalid): Latches `FAULT` (3).
+        *   NULL/nonfinite sample: Latches `FAULT` (3).
+        *   Sufficient excitation & count reached: `READY` (2).
+        *   Insufficient excitation: Restarts collection, increments `rejected`. If `rejected` hits limit, next insufficient -> `FAULT`.
+
+3.  **Analyze Test Cases**:
+    *   **Test 1**:
+        *   Calls: 3 times.
+        *   Before call 1: `mh_input.sample = NULL;` (others unassigned -> 0/default)
+        *   Before call 2: `mh_config.required = 10;`
+        *   Before call 3: `mh_config.minimum_span = 1.0;`
+        *   Output diff: `mh_output.mode`: A=0 (IDLE), B=3 (FAULT)
+        *   Reasoning: On the very first call, `sample` is `NULL`. Requirement explicitly states: "`NULL/nonfinite sample ... latches FAULT.`" So the state should transition to `FAULT` (3) immediately upon receiving a NULL sample. Implementation B gives 3, Implementation A gives 0. Therefore, B is correct for this test.
+        *   Wait, does `NULL` sample check happen at initialization or per step? It's a step function. Each call processes a sample. If sample is NULL, fault. So B is correct.
+
+    *   **Tests 2-6**:
+        *   All identical setup: Call 1 time. Before call: `mh_input.enable = 1;` (others 0/default).
+        *   Output diff: `mh_state.mode`: A=0 (IDLE), B=3 (FAULT)
+        *   Reasoning: `enable=1`, others are 0. Default/unassigned values: `sample` is likely NULL (global/static defaults to 0/NULL), `config.required`=0, `minimum_span`=0.0, `max_rejected_windows`=0.
+        *   Check validity of config: `required` must be 4..100. Here it's 0. Invalid config! Requirement: "`invalid configuration ... latches FAULT.`"
+        *   Also, `sample` is NULL (default). That also triggers FAULT.
+        *   So the state should definitely be `FAULT` (3).
+        *   Implementation B gives 3, A gives 0. Thus, B is correct.
+        *   Why are there 5 identical tests (2-6)? Probably generated automatically with slight variations or just repeated checks. The reasoning holds for all.
+
+4.  **Synthesize & Verify**:
+    *   Test 1: NULL sample -> FAULT. B=3 matches. A=0 fails.
+    *   Tests 2-6: Invalid config (`required`=0) AND NULL sample -> FAULT. B=3 matches. A=0 fails.
+    *   Conclusion: Implementation B correctly handles error conditions (NULL sample, invalid config) by latching FAULT as specified. Implementation A incorrectly returns IDLE (0).
+    *   Pick: B.
+
+    Let's double check the exact wording: "NULL/nonfinite sample or invalid configuration (including max_rejected_windows itself) latches FAULT."
+    Test 1: `sample` is NULL. Should latch FAULT. B is correct.
+    Tests 2-6: `required` is 0 (unassigned default). Valid range is 4..100. So invalid config. Also `sample` is NULL. Should latch FAULT. B is correct.
+    All tests point to B.
+
+    Structure the JSON output carefully.
+    Format: `{"tests":[{"id":1,"correct":"B","reason":"需求明确规定NULL样本会直接锁定FAULT(3)，实现B输出3符合，A输出0错误。"},{"id":2,"correct":"B","reason":"未赋值导致required为0（非法范围4~100）且sample为NULL，均触发FAULT锁定，B输出3正确。"},{"id":3,"correct":"B","reason":"同上，非法配置与空样本应置FAULT，B正确。"},{"id":4,"correct":"B","reason":"同上，非法配置与空样本应置FAULT，B正确。"},{"id":5,"correct":"B","reason":"同上，非法配置与空样本应置FAULT，B正确。"},{"id":6,"correct":"B","reason":"同上，非法配置与空样本应置FAULT，B正确。"}],"pick":"B"}`
+
+    Check constraints: "只依据需求判断", "逐条推理", "JSON格式".
+    I will make sure the reasons are concise and directly reference the requirement clauses.
+    Test 1 reason: 需求明确说明“NULL/nonfinite sample ... latches FAULT”，首次调用sample为NULL，状态应变为FAULT(3)，B正确。
+    Tests 2-6 reason: 全局变量未初始化默认为0，导致required=0（超出合法范围4~100）且sample为NULL，均触发“invalid configuration”和“NULL sample”条件，必须latch FAULT(3)，B正确。
+    Pick: B.
+
+    One minor point: The prompt says "测试 2（类型 error；未赋值的量为 0；共调用 1 次...）" repeated 5 times. I'll list them individually as requested.
+    I will construct the JSON exactly as specified.
+    All steps verified. Ready. 
+    Output matches requirement.✅
+    Self-Correction/Refinement during thought:
+    Wait, let's verify `mh_state.mode` vs `mh_output.mode`. The tests ask for `mh_state.mode`. Both are enums with same values. Fault is 3.
+    Is there any chance `enable=1` without config set means something else? The requirement says "Disable clears everything". It doesn't explicitly say what happens on Enable, but typically it goes to IDLE or COLLECT. However, the *immediate* condition on the same cycle or next cycle for invalid config/NULL sample overrides it to FAULT. Since these are error tests, latching FAULT is the robust and spec-compliant behavior.
+    The prompt says "类型 error", meaning these are negative/error path tests.
+    So B is definitively correct.
+    I will generate the JSON now. 
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "需求明确规定NULL样本会直接锁定FAULT(3)，实现B输出3符合，A输出0错误。"},
+        {"id": 2, "correct": "B", "reason": "未赋值导致required为0（非法范围4~100）且sample为NULL，均触发fault条件，状态应变为FAULT(3)，B正确。"},
+        {"id": 3, "correct": "B", "reason": "同上，非法配置与空样本应置FAULT，B输出3正确。"},
+        {"id": 4, "correct": "B", "reason": "同上，非法配置与空样本应置FAULT，B输出3正确。"},
+        {"id": 5, "correct": "B", "reason": "同上，非法配置与空样本应置FAULT，B输出3正确。"},
+        {"id": 6, "correct": "B", "reason": "同上，非法配置与空样本应置FAULT，B输出3正确。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Checks out. Proceeds. 
+    One detail: `mh_state.mode` vs `mh_output.mode`. In test 1 it asks for `mh_output.mode`, in 2-6 it asks for `mh_state.mode`. Both track the mode enum. The logic holds.
+    All good. 
+    Output matches exactly. 
+    Generating. 
+    [Done] 
+    *Self-Correction/Verification during generation prep*: 
+    Let's re-read carefully: "NULL/nonfinite sample or invalid configuration (including max_rejected_windows itself) latches FAULT."
+    Test 1: sample=NULL -> FAULT. Correct.
+    Tests 2-6: required=0 (invalid), sample=NULL -> FAULT. Correct.
+    The reasoning is solid. I will produce the JSON. 
+    Output matches request.✅
+    Final JSON string construction. 
+    `{ "tests": [ { "id": 1, "correct": "B", "reason": "需求明确规定NULL样本会直接锁定FAULT(3)，实现B输出3符合规范，A输出0错误。" }, { "id": 2, "correct": "B", "reason": "全局变量默认值为0，导致required=0（非法范围4~100）且sample为NULL，均触发fault锁定条件，状态应为FAULT(3)，B正确。" }, { "id": 3, "correct": "B", "reason": "同上，非法配置与空样本必须置FAULT，B输出3正确。" }, { "id": 4, "correct": "B", "reason": "同上，非法配置与空样本必须置FAULT，B输出3正确。" }, { "id": 5, "correct": "B", "reason": "同上，非法配置与空样本必须置FAULT，B输出3正确。" }, { "id": 6, "correct": "B", "reason": "同上，非法配置与空样本必须置FAULT，B输出3正确。" } ], "pick": "B" }`
+    Matches perfectly. Proceeds. 
+    Output Generation. 
+    *(Done.)*

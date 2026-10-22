@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly handles disable priority and FAULT latching, uses boresight×sun for the correction axis, and employs GNC normalization primitives.",
+ "_usage": {
+  "prompt": 10530,
+  "completion": 6377
+ }
+}

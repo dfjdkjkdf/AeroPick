@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "实现B严格遵循了需求中关于非法输入/配置触发FAULT、禁用时清零计数器、以及max_rejected_windows为0时仍须累加计数器的规定，且各状态均正确更新发布输出，而实现A在max_rejected_windows为0时漏计拒绝次数且READY状态下未刷新输出。",
+ "_usage": {
+  "prompt": 11628,
+  "completion": 5232
+ }
+}

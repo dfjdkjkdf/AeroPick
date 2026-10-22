@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "有效输入，C 返回 ADCS_OK 并构造 K，A 虽同值但后续测试不满足需求。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "有效输入，C 返回 ADCS_OK 并构造 K。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "有效输入，C 返回 ADCS_OK 并构造 K。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "权重为有限正数，C 计算并返回 ADCS_OK（溢出未规定）。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "body 向量范数 1e-13 低于阈值，应视为无效并清零，C 正确返回失败输出 0。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "inertial 向量范数 1e-13 低于阈值，应视为无效并清零，C 正确返回失败输出 0。"
+  }
+ ],
+ "pick": "C"
+}

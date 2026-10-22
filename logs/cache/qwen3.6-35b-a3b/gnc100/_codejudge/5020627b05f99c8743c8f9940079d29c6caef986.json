@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "实现A严格遵循需求中非有限输入返回ADCS_E_DEGENERATE及失败时输出置零的契约，而B/C错误返回了ADCS_E_NOT_FINITE且C未清零输出。",
+ "_usage": {
+  "prompt": 8723,
+  "completion": 2426
+ }
+}

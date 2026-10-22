@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B accumulates energy and energy_axis in local variables and only writes them on success, so any later validation or momentum failure leaves all outputs zeroed, whereas A and C write partial outputs before a mid-loop failure.",
+ "_usage": {
+  "prompt": 9521,
+  "completion": 10201
+ }
+}

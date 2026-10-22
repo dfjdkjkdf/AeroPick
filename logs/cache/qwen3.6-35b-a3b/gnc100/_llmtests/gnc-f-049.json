@@ -1,0 +1,125 @@
+{
+ "key": "bc9b919fab5eb5232550fcff0b82f199f68fafc7",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "m->x = 1.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 0.0;\nb->y = 1.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "m->x = 0.0;\nm->y = 1.0;\nm->z = 0.0;\nb->x = 1.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "m->x = 0.0;\nm->y = 0.0;\nm->z = 1.0;\nb->x = 1.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "m->x = 1.0;\nm->y = 2.0;\nm->z = 3.0;\nb->x = 4.0;\nb->y = 5.0;\nb->z = 6.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = 0.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 1.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = 1.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 0.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = 1.0;\nm->y = 1.0;\nm->z = 1.0;\nb->x = 1.0;\nb->y = 1.0;\nb->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = -1.0;\nm->y = -1.0;\nm->z = -1.0;\nb->x = 1.0;\nb->y = 1.0;\nb->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "authority = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m = NULL;\nb = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = NAN;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 1.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = INFINITY;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 1.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = 1.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = NAN;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = 1.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = INFINITY;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = -INFINITY;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 1.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = 1.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 1.0;\nb->y = INFINITY;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = 1.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 1.0;\nb->y = 0.0;\nb->z = -NAN;"
+   ]
+  }
+ ]
+}

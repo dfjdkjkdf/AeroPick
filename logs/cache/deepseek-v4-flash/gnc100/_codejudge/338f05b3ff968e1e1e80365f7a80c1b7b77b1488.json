@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly handles all null inputs including out, writes identity on any failure when out exists, and otherwise computes c_bi = body_basis * inertial_basis^T.",
+ "_usage": {
+  "prompt": 8652,
+  "completion": 1495
+ }
+}

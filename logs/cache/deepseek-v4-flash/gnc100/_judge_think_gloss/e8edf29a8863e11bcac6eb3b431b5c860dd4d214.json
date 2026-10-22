@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A|B",
+   "reason": "invalid binary enable must latch FAULT (mode=2)"
+  },
+  {
+   "id": 2,
+   "correct": "A|B",
+   "reason": "NULL current quaternion must latch FAULT"
+  },
+  {
+   "id": 3,
+   "correct": "A|B",
+   "reason": "NULL target quaternion must latch FAULT"
+  },
+  {
+   "id": 4,
+   "correct": "A|B",
+   "reason": "NULL rate vector must latch FAULT"
+  },
+  {
+   "id": 5,
+   "correct": "A|B",
+   "reason": "zero/degenerate current quaternion must latch FAULT"
+  },
+  {
+   "id": 6,
+   "correct": "A|B",
+   "reason": "nonfinite rate telemetry must latch FAULT"
+  }
+ ],
+ "pick": "A"
+}

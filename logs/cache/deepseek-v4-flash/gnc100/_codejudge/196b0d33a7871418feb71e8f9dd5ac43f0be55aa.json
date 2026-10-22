@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C implements the true angular residual via acos, validates all flags including enable 0/1, and correctly performs single-outlier retry/fallback with the specified READY/MONITOR/FAULT/OFF latch semantics.",
+ "_usage": {
+  "prompt": 14036,
+  "completion": 4556
+ }
+}

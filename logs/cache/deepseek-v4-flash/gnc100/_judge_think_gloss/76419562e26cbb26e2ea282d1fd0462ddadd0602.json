@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "Body vectors are collinear, an invalid vector set for Wahba, so ADCS_E_RANGE with zero RMS is correct; B incorrectly returns OK with a residual."
+  }
+ ],
+ "pick": "A"
+}

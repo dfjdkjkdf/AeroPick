@@ -1,0 +1,133 @@
+{
+ "key": "aa325a71fb8a01c3ad95ab0d6d908d34bf1a72f4",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "raw->x = 1.0;\nraw->y = 2.0;\nraw->z = 3.0;\nhard_iron->x = 0.1;\nhard_iron->y = 0.2;\nhard_iron->z = 0.3;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "raw->x = 10.0;\nraw->y = -20.0;\nraw->z = 30.0;\nhard_iron->x = 1.0;\nhard_iron->y = 2.0;\nhard_iron->z = 3.0;\nsoft_iron->m[0][0] = 2.0;\nsoft_iron->m[0][1] = 0.5;\nsoft_iron->m[1][0] = -0.5;\nsoft_iron->m[1][1] = 1.5;\nsoft_iron->m[2][2] = 3.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "raw->x = 0.3;\nraw->y = 0.4;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "raw->x = 5.0;\nraw->y = 5.0;\nraw->z = 5.0;\nhard_iron->x = 5.0;\nhard_iron->y = -5.0;\nhard_iron->z = 5.0;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[0][1] = 0.0;\nsoft_iron->m[0][2] = 0.0;\nsoft_iron->m[1][0] = 0.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[1][2] = 0.0;\nsoft_iron->m[2][0] = 0.0;\nsoft_iron->m[2][1] = 0.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "raw->x = 1.0;\nraw->y = 0.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.0e-13;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "raw->x = 1.0;\nraw->y = 0.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.0e-12;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "raw->x = 1.0;\nraw->y = 0.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.000000000001e-12;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "raw->x = 1.0e-13;\nraw->y = 0.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "raw->x = 1.0e-12;\nraw->y = 0.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "raw->x = 0.0;\nraw->y = 0.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "raw->x = 1.0;\nraw->y = 2.0;\nraw->z = 3.0;\nhard_iron->x = 1.0;\nhard_iron->y = 2.0;\nhard_iron->z = 3.0;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "hard_iron = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "soft_iron = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "calibrated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "direction = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "magnitude = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw->x = NAN;\nraw->y = 0.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw->x = INFINITY;\nraw->y = 0.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw->x = 1.0;\nraw->y = 0.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = NAN;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "raw->x = 3.0;\nraw->y = 4.0;\nraw->z = 0.0;\nhard_iron->x = 0.0;\nhard_iron->y = 0.0;\nhard_iron->z = 0.0;\nsoft_iron->m[0][0] = 1.0;\nsoft_iron->m[1][1] = 1.0;\nsoft_iron->m[2][2] = 1.0;",
+    "raw->x = 6.0;\nraw->y = 8.0;\nraw->z = 0.0;",
+    "raw->x = -3.0;\nraw->y = -4.0;\nraw->z = 0.0;"
+   ]
+  }
+ ]
+}

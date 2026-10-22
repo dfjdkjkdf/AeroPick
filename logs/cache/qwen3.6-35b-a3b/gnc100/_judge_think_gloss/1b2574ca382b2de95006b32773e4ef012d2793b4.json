@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确要求NULL输入按Failure处理并将error置为INFINITY，A/C符合该数值约束，B未更新error值。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，针对inertial为NULL的分支，A正确执行了error置位逻辑。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "航天GNC软件严禁对NULL指针解引用导致崩溃，A/C越界属致命缺陷；B安全拦截并返回ADCS_E_NULL，符合工程规范。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同上，B正确处理recovered指针校验，无越界风险，满足稳健性要求。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "同上，B正确处理error指针校验，避免运行时异常，符合防御性编程要求。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "需求规定非有限向量应映射至ADCS_E_DEGENERATE(枚举值为3)，A/B返回码正确，C误用ADCS_E_NOT_FINITE(4)。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9521,
+  "completion": 5495
+ }
+}

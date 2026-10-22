@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly checks null/nonfinite inputs, zeroes outputs on failure, and computes torque=m×B and authority=||torque||.",
+ "_usage": {
+  "prompt": 8440,
+  "completion": 14635
+ }
+}

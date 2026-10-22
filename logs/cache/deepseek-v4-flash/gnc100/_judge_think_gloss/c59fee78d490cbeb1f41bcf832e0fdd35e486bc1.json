@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "有限矩阵应返回行列式和正交误差，负行列式仅使 valid=0，不应提前返回 RANGE，故 A 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "零矩阵仍应计算并返回行列式 0 和 C*C^T 的 Frobenius 误差 sqrt(3)，valid=0，故 A 符合。"
+  }
+ ],
+ "pick": "A"
+}

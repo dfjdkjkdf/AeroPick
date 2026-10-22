@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "首个有效样本无历史应进入RUN并存历史，只有C的pg_state.mode=1。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "首个有效样本无历史应进入RUN并存历史，只有C的pg_state.mode=1。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "首个有效样本无历史应进入RUN并存历史，只有C的pg_state.mode=1。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "零场违反非退化要求，应锁存FAULT，只有C的pg_state.mode=3。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "dt=0不满足正有限要求，应锁存FAULT，只有C的pg_state.mode=3。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "负dt不满足正有限要求，应锁存FAULT，只有C的pg_state.mode=3。"
+  }
+ ],
+ "pick": "C"
+}

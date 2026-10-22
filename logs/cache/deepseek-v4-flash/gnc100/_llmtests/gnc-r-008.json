@@ -1,0 +1,145 @@
+{
+ "key": "651fb4ad55fcee4c156ea7aa90d2742ac3301ee8",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "dt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 0.0;\ndt_input.field_body_t->z = 0.0;\ndt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 1.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 3;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 0.0;\ndt_input.field_body_t->z = 0.0;",
+    "dt_input.time_s = 0.1;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 1.0e-6;\ndt_input.field_body_t->z = 0.0;",
+    "dt_input.time_s = 0.2;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 2.0e-6;\ndt_input.field_body_t->z = 0.0;",
+    "dt_input.time_s = 0.3;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 3.0e-6;\ndt_input.field_body_t->z = 0.0;",
+    "dt_input.time_s = 0.4;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 4.0e-6;\ndt_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 2;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;",
+    "dt_input.time_s = 0.1;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 1.0e-7;",
+    "dt_input.time_s = 0.2;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 2.0e-7;",
+    "dt_input.time_s = 0.3;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 2.0e-7;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 2;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;",
+    "dt_input.time_s = 0.1;\ndt_input.field_body_t->x = 1.0e-6;",
+    "dt_input.time_s = 0.2;\ndt_input.field_body_t->x = 1.0e-6;",
+    "dt_input.time_s = 0.5;\ndt_input.field_body_t->x = 1.0e-4;",
+    "dt_input.time_s = 0.6;\ndt_input.field_body_t->x = 1.0e-4;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 1.0;\ndt_config.required_good = 2;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;",
+    "dt_input.time_s = 0.1;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 1.0e-6;",
+    "dt_input.time_s = 5.0;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 2.0e-6;",
+    "dt_input.time_s = 5.1;\ndt_input.field_body_t->x = 1.0e-5;\ndt_input.field_body_t->y = 3.0e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.5;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.005;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 0.5;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = -0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 0.5;\ndt_config.coarse_gain_a_m2_s_t = -1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 0.5;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 0;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 0.5;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 25;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 0.5;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 2;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 0.5;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 0.5;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 0.5;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-5;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-4;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-5;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.1e-5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 0.0;\ndt_config.coarse_gain_a_m2_s_t = 0.0;\ndt_config.fine_gain_a_m2_s_t = 0.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 20;\ndt_config.max_bad = 20;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 0.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 10.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt_config.stop_rate_t_s = 0.001;\ndt_config.restart_rate_t_s = 0.002;\ndt_config.fine_enter_rate_t_s = 0.005;\ndt_config.fine_exit_rate_t_s = 0.010;\ndt_config.filter_alpha = 1.0;\ndt_config.coarse_gain_a_m2_s_t = 1.0;\ndt_config.fine_gain_a_m2_s_t = 2.0;\ndt_config.max_dipole_a_m2 = 1.0;\ndt_config.max_dipole_slew_a_m2_per_cycle = 1.0;\ndt_config.minimum_field_t = 1.0e-6;\ndt_config.maximum_field_t = 1.0e-4;\ndt_config.max_sample_gap_s = 0.0;\ndt_config.required_good = 3;\ndt_config.max_bad = 5;\ndt_input.enable = 1;\ndt_input.valid = 1;\ndt_input.time_s = 0.0;\ndt_input.field_body_t->x = 1.0e-5;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "有效输入应返回姿态解；A 返回 ADCS_OK 且给出一个姿态四元数，而 B/C 返回不收敛并置单位四元数，不符合有效输入应求解的要求。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "两对向量完全一致，正确输出应为单位四元数；C 置为单位四元数（尽管返回码异常），A 给出非单位旋转不符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "b 为 NULL 应返回 ADCS_E_NULL 并置失败输出为单位四元数；C 置 out.w=1 符合，B 未置默认。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "r 为 NULL 应返回 ADCS_E_NULL 并置失败输出为单位四元数；C 置 out.w=1 符合，B 未置默认。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "w 为 NULL 应返回 ADCS_E_NULL 并置失败输出为单位四元数；C 置 out.w=1 符合，B 未置默认。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "零向量为坏向量，应失败并输出单位四元数；C 输出单位四元数（返回码虽非 RANGE），优于 A 返回成功且非单位四元数。"
+  }
+ ],
+ "pick": "C"
+}

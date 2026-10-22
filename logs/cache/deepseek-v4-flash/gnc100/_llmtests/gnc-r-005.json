@@ -1,0 +1,142 @@
+{
+ "key": "14fb5249c7de29f79302f5107472695c1a0bdadc",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.request_a_m2->y = 0.0;\nmp_input.request_a_m2->z = 0.0;\nmp_input.field_body_t->x = 1.0;\nmp_input.field_body_t->y = 0.0;\nmp_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 10.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.2;\nmp_config.pulse_cycles = 4;\nmp_config.cooldown_cycles = 1;\nmp_config.reversal_blank_cycles = 1;\nmp_config.max_thermal_cycles = 20;\nmp_config.recovery_cycles = 1;\nmp_state.mode = MP_IDLE;\nmp_state.last_capture_a_m2.x = 8.0;\nmp_input.request_a_m2->x = 3.0;\nmp_input.field_body_t->z = 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 10.0;\nmp_config.start_fraction = 1.0;\nmp_config.stop_fraction = 0.5;\nmp_config.pulse_cycles = 2;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 5;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 10.0;\nmp_input.request_a_m2->y = 10.0;\nmp_input.request_a_m2->z = 10.0;\nmp_input.field_body_t->x = 0.0;\nmp_input.field_body_t->y = 1.0;\nmp_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1.0;",
+    "mp_input.request_a_m2->x = 0.0;",
+    "mp_input.request_a_m2->x = -80.0;",
+    "mp_input.request_a_m2->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 50.0;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_state.mode = MP_IDLE;\nmp_state.last_capture_a_m2.x = 80.0;\nmp_input.request_a_m2->x = 25.0;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 1.0;\nmp_config.start_fraction = 1.0;\nmp_config.stop_fraction = 0.5;\nmp_config.pulse_cycles = 1;\nmp_config.cooldown_cycles = 1;\nmp_config.reversal_blank_cycles = 1;\nmp_config.max_thermal_cycles = 1;\nmp_config.recovery_cycles = 1;\nmp_input.request_a_m2->z = 1.0;\nmp_input.field_body_t->y = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 100;\nmp_config.cooldown_cycles = 100;\nmp_config.reversal_blank_cycles = 100;\nmp_config.max_thermal_cycles = 100;\nmp_config.recovery_cycles = 100;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 0.0;\nmp_input.request_a_m2->y = 0.0;\nmp_input.request_a_m2->z = 0.0;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mp_input.enable = 0;\nmp_config.max_dipole_a_m2 = -1.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = NAN;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2 = NULL;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = INFINITY;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1e-13;\nmp_input.field_body_t->y = 0.0;\nmp_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.25;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 0;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 2;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1.0;",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 3;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 10;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1.0;",
+    "mp_input.request_a_m2->x = -80.0;",
+    "mp_input.request_a_m2->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mp_input.enable = 1;\nmp_config.max_dipole_a_m2 = 100.0;\nmp_config.start_fraction = 0.5;\nmp_config.stop_fraction = 0.25;\nmp_config.pulse_cycles = 2;\nmp_config.cooldown_cycles = 2;\nmp_config.reversal_blank_cycles = 2;\nmp_config.max_thermal_cycles = 3;\nmp_config.recovery_cycles = 2;\nmp_input.request_a_m2->x = 80.0;\nmp_input.field_body_t->x = 1.0;",
+    "",
+    "",
+    "mp_input.request_a_m2->x = 80.0;",
+    "",
+    "mp_input.request_a_m2->x = 0.0;",
+    "mp_input.request_a_m2->x = 0.0;",
+    ""
+   ]
+  }
+ ]
+}

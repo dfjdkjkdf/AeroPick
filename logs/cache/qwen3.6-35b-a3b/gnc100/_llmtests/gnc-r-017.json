@@ -1,0 +1,276 @@
+{
+ "key": "e0011b94e148d981defcf5413df16d2c6f86f92e",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.current_q_bi = NULL;",
+    "qs_input.target_q_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.current_q_bi = (adcs_quat_t[1]){0};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = -1.0;",
+    "qs_config.max_accel_rad_cycle2 = 1.0;",
+    "qs_config.settle_angle_rad = 0.0;",
+    "qs_config.settle_rate_rad_cycle = 0.0;",
+    "qs_config.settle_cycles = 5;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{1,0,0,0}}"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 3.14159265358979;",
+    "qs_config.max_accel_rad_cycle2 = -1.0;",
+    "qs_config.settle_angle_rad = 0.0;",
+    "qs_config.settle_rate_rad_cycle = 0.0;",
+    "qs_config.settle_cycles = 5;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{1,0,0,0}}"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 1.0;",
+    "qs_config.max_accel_rad_cycle2 = 1.0;",
+    "qs_config.settle_angle_rad = 0.0;",
+    "qs_config.settle_rate_rad_cycle = 2.0;",
+    "qs_config.settle_cycles = 5;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{1,0,0,0}}"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 1.0;",
+    "qs_config.max_accel_rad_cycle2 = 1.0;",
+    "qs_config.settle_angle_rad = 0.0;",
+    "qs_config.settle_rate_rad_cycle = 0.0;",
+    "qs_config.settle_cycles = 0;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{1,0,0,0}}"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 1.0;",
+    "qs_config.max_accel_rad_cycle2 = 1.0;",
+    "qs_config.settle_angle_rad = 0.0;",
+    "qs_config.settle_rate_rad_cycle = 0.0;",
+    "qs_config.settle_cycles = 21;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{1,0,0,0}}"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.1;",
+    "qs_config.max_accel_rad_cycle2 = 0.01;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 3;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{0,1,0,0}}"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.1;",
+    "qs_config.max_accel_rad_cycle2 = 0.01;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 3;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{0,1,0,0}}"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.5;",
+    "qs_config.max_accel_rad_cycle2 = 0.1;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{cos(0.5),sin(0.5),0,0}};",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.5;",
+    "qs_config.max_accel_rad_cycle2 = 0.1;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{cos(0.5),sin(0.5),0,0}};",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = ADCS_PI;",
+    "qs_config.max_accel_rad_cycle2 = 0.1;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{-1,0,0,0}}"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.1;",
+    "qs_config.max_accel_rad_cycle2 = 0.0001;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{cos(0.5),sin(0.5),0,0}}"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.1;",
+    "qs_config.max_accel_rad_cycle2 = 100.0;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{cos(0.5),sin(0.5),0,0}}"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.5;",
+    "qs_config.max_accel_rad_cycle2 = 0.1;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{cos(0.5),sin(0.5),0,0}};",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.5;",
+    "qs_config.max_accel_rad_cycle2 = 0.1;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{cos(0.5),sin(0.5),0,0}};",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.1;",
+    "qs_config.max_accel_rad_cycle2 = 0.01;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{1,0,0,0}}"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.5;",
+    "qs_config.max_accel_rad_cycle2 = 0.1;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{cos(0.5),sin(0.5),0,0}};",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_config.max_rate_rad_cycle = 0.5;",
+    "qs_config.max_accel_rad_cycle2 = 0.1;",
+    "qs_config.settle_angle_rad = 0.01;",
+    "qs_config.settle_rate_rad_cycle = 0.01;",
+    "qs_config.settle_cycles = 2;",
+    "qs_input.enable = 1;",
+    "qs_input.current_q_bi = (adcs_quat_t[1]){{1,0,0,0}};",
+    "qs_input.target_q_bi = (adcs_quat_t[1]){{cos(0.5),sin(0.5),0,0}};",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  }
+ ]
+}

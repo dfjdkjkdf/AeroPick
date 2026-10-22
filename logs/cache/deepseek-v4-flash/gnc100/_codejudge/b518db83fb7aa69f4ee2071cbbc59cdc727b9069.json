@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly computes momentum via adcs_wheel_momentum, checks errors in the specified order, and calculates body torque, mechanical power, and bus power with correct signs and efficiency.",
+ "_usage": {
+  "prompt": 9260,
+  "completion": 31664
+ }
+}

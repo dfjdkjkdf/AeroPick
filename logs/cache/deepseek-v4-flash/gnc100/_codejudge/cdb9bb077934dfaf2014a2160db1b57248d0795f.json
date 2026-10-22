@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly restarts collection by clearing extrema and count on insufficient excitation, resets the consecutive rejection counter on success, and uses the provided GNC vector primitives for span calculations.",
+ "_usage": {
+  "prompt": 10852,
+  "completion": 15416
+ }
+}

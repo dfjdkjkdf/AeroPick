@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "第二次请求为零（低于停止阈值），PULSE 应立即取消进入 COOLDOWN，B 的 mode=COOLDOWN、elapsed=0、thermal=1 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "max_thermal_cycles=1 时首次捕获脉冲即达热上限，该拍应置零并进入 INHIBIT，但 IDLE 捕获已置 elapsed=1，C 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "零请求是有效静默请求，IDLE 下无轴触发脉冲应保持 IDLE，B 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "enable=0 为禁用，应清除状态且不因未启用的非法配置报错，B 的 mode=IDLE 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "field 为 NULL 属无效使能输入，应锁存 FAULT 且不崩溃，B 未崩溃并处理（C 崩溃）。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "pulse_cycles=2 且请求未降低，应发射两个脉冲周期再离开 PULSE，C 的 PULSE/elapsed=2/realized=100 符合。"
+  }
+ ],
+ "pick": "B"
+}

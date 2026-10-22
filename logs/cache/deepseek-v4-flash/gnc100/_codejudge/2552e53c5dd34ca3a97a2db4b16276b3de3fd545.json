@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A zeroes all outputs before any failure (including NULL) and uses ADCS_CLAMP for component limiting, while B returns early on NULL without zeroing outputs, violating the failure-output requirement.",
+ "_usage": {
+  "prompt": 8900,
+  "completion": 824
+ }
+}

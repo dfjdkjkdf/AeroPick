@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "NIS=9 lies between thresholds, prior ACCEPT preserved, so output ACCEPT with nis 9, norm 3, use_measurement 1."
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "NIS is at or near accept_threshold; requirement yields ACCEPT with nis 5, norm 2.23607, use_measurement 1."
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "Whitened NIS rounds just below reject_threshold, so middle interval preserves prior ACCEPT; A matches."
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "NIS=6 lies in middle interval, prior ACCEPT preserved, so output ACCEPT with nis 6, norm 2.44949."
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "NIS=3 <= accept_threshold, so ACCEPT with nis 3, norm 1.73205, use_measurement 1."
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "Disable resets ACCEPT and publishes zero count/nis/norm with use_measurement 1; A matches."
+  }
+ ],
+ "pick": "A"
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "严格遵循需求规定的错误码映射（非有限或极小模长均返回ADCS_E_DEGENERATE）且基于绝对值阈值的符号判定逻辑更稳健，而B/C错误地使用了ADCS_E_NOT_FINITE。",
+ "_usage": {
+  "prompt": 9481,
+  "completion": 3430
+ }
+}

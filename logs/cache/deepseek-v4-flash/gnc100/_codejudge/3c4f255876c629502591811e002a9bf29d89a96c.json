@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C validates nulls and finite/time inputs before differencing, returns ADCS_E_NULL/ADCS_E_RANGE correctly, and zeros the output on failures when rate_t_s is available, matching the failure-zero contract.",
+ "_usage": {
+  "prompt": 8626,
+  "completion": 487
+ }
+}

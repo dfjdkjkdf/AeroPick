@@ -1,0 +1,125 @@
+{
+ "key": "2d2e1544925323a117c2f1f53e0a217ab2e0c7c0",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 3.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0e4;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 2.0e-5;\nfield_body_t->z = 3.0e-5;\nbody_rate_rad_s->x = 0.05;\nbody_rate_rad_s->y = -0.02;\nbody_rate_rad_s->z = 0.01;\ngain = 5.0e4;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = -2.0e-5;\nfield_body_t->y = 1.5e-5;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = -0.3;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.2;\ngain = 1.0e5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0e-9;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 1.0;\ngain = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 1.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 3.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0e4;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 3.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.2;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0e4;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 3.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 1.0e-12;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0e12;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 3.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 1.0e12;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 1.0e-5;\nfield_body_t->z = 1.0e-5;\nbody_rate_rad_s->x = 1.0e-5;\nbody_rate_rad_s->y = 1.0e-5;\nbody_rate_rad_s->z = 1.0e-5;\ngain = 2.5e3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t = NULL;\nbody_rate_rad_s->x = 0.1;\ngain = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nbody_rate_rad_s = NULL;\ngain = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nbody_rate_rad_s->y = 0.1;\ngain = 1.0;\npredicted_power_w = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 0.0/0.0;\nfield_body_t->y = 1.0e-5;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->y = 0.1;\ngain = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nbody_rate_rad_s->y = 0.0/0.0;\nbody_rate_rad_s->z = 0.1;\ngain = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nbody_rate_rad_s->y = 0.1;\ngain = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0/0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->y = 0.1;\ngain = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nbody_rate_rad_s->y = 1.0/0.0;\ngain = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nbody_rate_rad_s->y = 0.1;\ngain = 0.0/0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 1.0e-300;\ngain = 1.0e-300;"
+   ]
+  }
+ ]
+}

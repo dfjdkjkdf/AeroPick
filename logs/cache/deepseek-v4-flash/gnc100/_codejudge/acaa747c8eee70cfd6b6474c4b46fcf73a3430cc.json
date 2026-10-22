@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B normalizes each vector, accumulates all nine entries, enforces symmetric H, and zeroes the output on failures including null when information is non-null.",
+ "_usage": {
+  "prompt": 10144,
+  "completion": 3398
+ }
+}

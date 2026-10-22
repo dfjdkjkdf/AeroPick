@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "四个轮子惯量、转速、轴向均有效，应返回ADCS_OK并按B计算动量、能量和最快轮索引3。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "四个轮子均满足有效性条件，应返回ADCS_OK；最大|speed|首次出现在轮1。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "四个轮子均有效；最大|speed|首次出现在轮0，B的动量、能量和fastest均符合需求。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "四个轮子均有效；最大|speed|首次出现在轮0，B的动量、能量和fastest均符合需求。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "四个轮子均有效且转速为零，应返回ADCS_OK，最快索引为第一个轮0。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "轮3轴范数为1e-11，大于ADCS_EPS_NORM=1e-12，可归一化，不应报错；B结果符合需求。"
+  }
+ ],
+ "pick": "B"
+}

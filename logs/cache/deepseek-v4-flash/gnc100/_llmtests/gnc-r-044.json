@@ -1,0 +1,157 @@
+{
+ "key": "b1c2930500dd1ec6fd91dbf90b178c829035a777",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 0;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 2.0;\nms_input.field_body_t->z = 3.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 0.1;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 0.1000000001;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;",
+    "ms_input.field_body_t->x = 1.05;",
+    "ms_input.field_body_t->x = 1.10;",
+    "ms_input.field_body_t->x = 2.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;",
+    "ms_input.field_body_t->x = 2.0;",
+    "ms_input.field_body_t->x = 2.0;",
+    "ms_input.field_body_t->x = 2.0;",
+    "ms_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 2;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;",
+    "ms_input.field_body_t->x = 2.0;",
+    "ms_input.field_body_t->x = 2.0;",
+    "ms_input.enable = 0;",
+    "ms_input.enable = 1;\nms_input.field_body_t->x = 5.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t = NULL;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = NAN;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = INFINITY;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 0.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = -0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 0.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = -1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = NAN;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 0;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 11;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 10;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 0.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;\nms_state.mode = MS_TRACK;\nms_state.rejects = 2;\nms_state.previous_field_t.x = 1.0;\nms_state.previous_field_t.y = 0.0;\nms_state.previous_field_t.z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 1.0;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;",
+    "ms_input.field_body_t->x = 2.0;",
+    "ms_input.field_body_t->x = 3.0;",
+    "ms_input.field_body_t->x = 4.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ms_input.enable = 1;\nms_config.max_slew_t_s = 1.0;\nms_config.max_rejects = 3;\nms_input.field_body_t->x = 0.1;\nms_input.field_body_t->y = 0.0;\nms_input.field_body_t->z = 0.0;\nms_input.dt_s = 0.1;\nms_state.previous_field_t.x = 0.0;\nms_state.previous_field_t.y = 0.0;\nms_state.previous_field_t.z = 0.0;\nms_state.mode = MS_TRACK;\nms_state.rejects = 2;"
+   ]
+  }
+ ]
+}

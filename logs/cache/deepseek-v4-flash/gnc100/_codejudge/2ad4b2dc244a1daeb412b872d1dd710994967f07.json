@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly latches FAULT on invalid input and max rejects, preserves history on rejected rates, publishes required rates/energy, and validates configuration; A and C fail to latch FAULT properly.",
+ "_usage": {
+  "prompt": 11938,
+  "completion": 16762
+ }
+}

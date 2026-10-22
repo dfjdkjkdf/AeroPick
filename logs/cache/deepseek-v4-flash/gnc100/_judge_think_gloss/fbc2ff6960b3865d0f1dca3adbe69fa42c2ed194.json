@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "Sign-invariant separation is 2*acos(|dot|)=pi/2; B reports 1.5708."
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "Flipped quaternion has same attitude, so sign-invariant separation remains pi/2; B reports 1.5708."
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "180-degree attitude gives separation pi; B reports 3.14159."
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "NULL accepted returns E_NULL; since not both outputs exist, separation is not defaulted and stays 0."
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "NULL separation returns E_NULL; since not both outputs exist, accepted is not defaulted and stays 0."
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "NULL accepted triggers E_NULL before sample handling; not both outputs exist, so separation stays 0."
+  }
+ ],
+ "pick": "B"
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A validates all required conditions including adcs_wheel_momentum, uses linked sub/norm/dot, and correctly implements the completion/restart/FAULT/disable table.",
+ "_usage": {
+  "prompt": 11192,
+  "completion": 24302
+ }
+}

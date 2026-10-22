@@ -1,0 +1,30 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "未规定",
+   "reason": "count=16 但 wheels[1..15] 轴为零，adcs_wheel_momentum 会失败，按需求应返回 ADCS_E_RANGE，错误时输出未规定。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "按需求应计算 h=(10,-10,0)、tau=(-0.02,-0.01,0)、P_mech=1.5，B 的输出更符合包含所有轮子的名义计算，A 忽略奇数索引轮子。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "按需求应计算 h=(10,10,10)、tau=(-0.01,-0.02,-0.03)、P_mech=6，B 尝试处理所有轮子，A 完全遗漏 y 轴轮子。"
+  },
+  {
+   "id": 4,
+   "correct": "未规定",
+   "reason": "wheels[1] 轴为零，adcs_wheel_momentum 会失败，按需求应返回 ADCS_E_RANGE，错误时输出未规定。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "按需求应计算 h=(10,-10,0)、tau=(-0.02,0.02,0)、P_mech=4，B 尝试处理所有轮子，A 遗漏 y 轴轮子。"
+  }
+ ],
+ "pick": "B"
+}

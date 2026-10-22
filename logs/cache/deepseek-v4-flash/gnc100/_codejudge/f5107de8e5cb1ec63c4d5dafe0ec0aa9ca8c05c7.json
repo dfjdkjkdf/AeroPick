@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B先完整校验四个轮子且失败时清零并置SIZE_MAX，使用adcs_wheel_momentum计算动量，并按首次最大|speed|选最快索引；A未用GNC原语，C在后续轮子畸形时会残留已累加能量。",
+ "_usage": {
+  "prompt": 9757,
+  "completion": 9079
+ }
+}

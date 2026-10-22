@@ -1,0 +1,1 @@
+{"prompt_sha1": "80e30faf23119df0a2d22fddc006dd8ec1625ee2", "discrete": [], "continuous": [["a.w", null, -1.0, 1.0], ["a.x", null, -1.0, 1.0], ["a.y", null, -1.0, 1.0], ["a.z", null, -1.0, 1.0], ["b.w", null, -1.0, 1.0], ["b.x", null, -1.0, 1.0], ["b.y", null, -1.0, 1.0], ["b.z", null, -1.0, 1.0]], "outputs": [["distance_rad", null, [0.0, 3.14159265]]]}

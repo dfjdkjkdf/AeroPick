@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确实现了质量门、Welford 更新、READY 漂移监视及拒绝/故障输出；B 在 READY 漂移未确认时错误清零已冻结 bias/variance，C 在漂移重启时错误清零 rejected_windows 且拒绝致 FAULT 时未清零方差。",
+ "_usage": {
+  "prompt": 17444,
+  "completion": 18572
+ }
+}

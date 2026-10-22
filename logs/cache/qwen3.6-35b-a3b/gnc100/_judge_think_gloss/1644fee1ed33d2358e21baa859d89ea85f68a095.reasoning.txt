@@ -1,0 +1,123 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as an aerospace GNC software review expert. I need to evaluate three different implementations (A, B, C) of a C function (`adcs_pilot_rodrigues`) based on a given set of tests and requirements. I must output a JSON object with the correct implementation for each test and a final pick, along with brief reasons.
+
+2.  **Analyze the Requirements**:
+    *   **Function**: Rodrigues vector rotation.
+    *   **Context**: Rotates a body vector about a commanded body axis.
+    *   **Input Interface**: Finite vector, finite nonzero axis, finite angle in radians, and output.
+    *   **Mathematical Definition**: Normalize axis `u` and return `v cos(a) + (u cross v)sin(a) + u(u dot v)(1-cos(a))`.
+    *   **Required Processing**: Use right-handed cross product, preserve vector magnitude.
+    *   **Output Contract**: `ADCS_OK` with rotated vector; failure output zero.
+    *   **Boundary and Failure Handling**:
+        *   Null -> `ADCS_E_NULL`
+        *   Invalid axis/vector/angle -> `ADCS_E_RANGE`
+    *   **Traceability**: Rodrigues rotation formula. Ends with `}`.
+    *   **Constants/Macros**: `ADCS_OK=0`, `ADCS_E_NULL=1`, `ADCS_E_RANGE=2`, `ADCS_E_DEGENERATE=3`, `ADCS_E_NOT_FINITE=4`.
+    *   **Implicit Requirements from Context**: Input vectors/axis/angle must be finite. Nonzero axis is required (implied by "normalize axis u" and "nonzero axis"). If inputs are not finite or invalid, return `ADCS_E_RANGE`. If null, return `ADCS_E_NULL`. On failure, output vector should be zeroed.
+
+3.  **Analyze the Tests**:
+    *   **Test 1**: `rotated = NULL`. All pointers likely valid except `rotated`. Expected: `ADCS_E_NULL` (which is 1). Output vector shouldn't matter much, but requirement says "failure output zero". Since it crashes or returns 1, let's check.
+        *   A: `__ret__`=1, `crash__`=no, `rotated.y/z`=0. Matches `ADCS_E_NULL`.
+        *   B: `__ret__`=1, `crash__`=no, `rotated.y/z`=0. Matches `ADCS_E_NULL`.
+        *   C: `__ret__`=crashes, `__crash__`=1. Fails to handle null properly without crashing.
+        *   *Conclusion for T1*: A and B handle it correctly per spec (`ADCS_E_NULL`). C crashes. Both A and B are plausible. I'll note that both A and B return 1, which matches `ADCS_E_NULL`. The prompt says "only judge which implementation's output meets the requirement". Since A and B both match, I need to see other tests to differentiate or just pick one if they are identical here. Wait, the prompt says "同一个 C 函数有几种不同实现（记为 A、B、C）". I will evaluate each test independently first. For T1, A and B both return 1. I might mark both as correct for this test, or just say A/B. Let's look at the exact wording: "在每个测试上，哪一种实现的输出符合需求。" I can say "A或B" or just pick one if forced, but usually these benchmarks have one clear winner per test. Actually, A and B returning 1 is correct. I'll state A or B. Let's keep it simple: A and B both satisfy. I'll note A/B.
+
+    *   **Test 2**: `vector=(1,0,0)`, `axis=(1,0,0)`, `angle_rad = INFINITY`.
+        *   Requirement: "Finite vector, finite nonzero axis, finite angle in radians". `INFINITY` is not finite.
+        *   Boundary handling: "invalid axis/vector/angle -> ADCS_E_RANGE" (which is 2).
+        *   Expected return: 2 (`ADCS_E_RANGE`).
+        *   Outputs: A=4 (`ADCS_E_NOT_FINITE`), B=2, C=2.
+        *   *Conclusion for T2*: Requirement explicitly says `ADCS_E_RANGE` for invalid inputs. So B and C are correct. A returns 4, which is wrong per spec (spec says range).
+
+    *   **Test 3**: `vector=(1,0,0)`, `axis=(1,0,0)`, `angle_rad = NAN`.
+        *   Same as T2. `NAN` is not finite.
+        *   Expected return: 2 (`ADCS_E_RANGE`).
+        *   Outputs: A=4, B=2, C=2.
+        *   *Conclusion for T3*: B and C are correct.
+
+    *   **Test 4**: `vector=(INFINITY,0,0)`, `axis=(1,0,0)`, `angle_rad=1.0`.
+        *   Vector is infinite. Not finite.
+        *   Expected return: 2 (`ADCS_E_RANGE`).
+        *   Outputs: A=4, B=2, C=2.
+        *   *Conclusion for T4*: B and C are correct.
+
+    *   **Test 5**: `vector=(1,0,0)`, `axis=(INFINITY,0,0)`, `angle_rad=1.0`.
+        *   Axis is infinite. Not finite/nonzero.
+        *   Expected return: 2 (`ADCS_E_RANGE`).
+        *   Outputs: A=4, B=2, C=2.
+        *   *Conclusion for T5*: B and C are correct.
+
+4.  **Synthesize & Differentiate**:
+    *   T1: A(1), B(1), C(crash). Spec says `ADCS_E_NULL`(1). So A and B pass. C fails.
+    *   T2-T5: A returns 4 (`ADCS_E_NOT_FINITE`). B and C return 2 (`ADCS_E_RANGE`). Spec explicitly says: "invalid axis/vector/angle -> ADCS_E_RANGE". Therefore, B and C are correct for T2-T5. A is incorrect.
+    *   This leaves B and C as strong candidates. How to distinguish between B and C?
+    *   Let's re-read T1 carefully: "rotated = NULL; ... __ret__: A=1; B=1; C=（无输出）", "__crash__: A=...; B=...; C=1". C crashes. The spec says "Null -> ADCS_E_NULL". It does not say crash. So C fails T1.
+    *   What about B vs C for T2-T5? Both return 2. Both seem correct per the explicit text. Is there any subtle difference? The prompt says "只依据需求判断". Based strictly on the provided text, B and C both match the requirements for all tests. However, typically in these tasks, one implementation is the "correct" one overall. Let's check if there's any hint in the test descriptions or standard practices. Often, `ADCS_E_RANGE` covers non-finite values. A uses `ADCS_E_NOT_FINITE` (4), which contradicts the explicit "invalid axis/vector/angle -> ADCS_E_RANGE". So A is out.
+    *   Between B and C: C crashes on T1. B handles it gracefully returning 1. So B is better.
+    *   Therefore, B is the most compliant implementation overall.
+    *   Wait, let's double check T1 output contract: "failure output zero". B returns 1, and presumably zeros the output (though not shown, it's implied or handled). C crashes. So B wins T1.
+    *   For T2-T5, both B and C return 2. Both comply.
+    *   Final pick: B.
+
+    Let's structure the reasoning carefully according to the prompt's request: "按需求逐条推理这个输入应走的分支和应得到的结果... 最后综合所有测试，选出最符合需求的一种实现。"
+
+    Test 1: Input `rotated=NULL`. Spec: "Null -> ADCS_E_NULL" (value 1). A和B返回1，符合；C崩溃，不符合。
+    Test 2-5: Inputs contain `INFINITY` or `NAN`. Spec: "Finite vector, finite nonzero axis, finite angle... invalid axis/vector/angle -> ADCS_E_RANGE" (value 2). A返回4(`ADCS_E_NOT_FINITE`)，与需求明确指出的`ADCS_E_RANGE`不符；B和C返回2，符合。
+    综合：B在所有测试中均符合需求（T1处理空指针不崩溃且返回正确错误码，T2-T5返回正确的范围错误码）。C在T1崩溃。A在T2-T5返回错误码不符。故选B。
+
+    Check format: JSON only.
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A或B", "reason": "需求规定空指针返回ADCS_E_NULL(1)，A/B均返回1且未崩溃，符合要求；C崩溃。"},
+        {"id": 2, "correct": "B或C", "reason": "需求规定无效角度(INFINITY)返回ADCS_E_RANGE(2)，B/C返回2符合；A返回4不符合需求明确指定的错误码。"},
+        {"id": 3, "correct": "B或C", "reason": "同上，NAN属无效角度，需求规定返回ADCS_E_RANGE(2)。"},
+        {"id": 4, "correct": "B或C", "reason": "同上，向量含INFINITY属无效输入，需求规定返回ADCS_E_RANGE(2)。"},
+        {"id": 5, "correct": "B或C", "reason": "同上，轴向量含INFINITY属无效输入，需求规定返回ADCS_E_RANGE(2)。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Wait, the prompt says "在每个测试上，哪一种实现的输出符合需求。" It might expect a single letter per test. I'll stick to "A或B" / "B或C" or just pick the best if they tie. But usually, these benchmarks have one correct answer per test. Let's assume B is the intended correct one for all, or I'll just list the ones that match. I will write "A/B" or "B/C" as requested. Actually, I can just say "A或B" for T1, and "B或C" for others. Or maybe the prompt implies only one is correct per test. I'll just state the matching ones. To be safe, I'll say "A或B" and "B或C". But often in these tasks, if multiple match, either is fine. I'll just list them.
+    Let's refine the reason to be concise.
+    T1: 需求规定空指针返回ADCS_E_NULL(1)。A、B返回1且运行正常，符合；C崩溃。
+    T2-T5: 需求明确规定非有限值(INFINITY/NAN)属于“无效axis/vector/angle”，应返回ADCS_E_RANGE(2)。B、C返回2符合；A返回4(ADCS_E_NOT_FINITE)与需求字面规定不符。
+    Pick: B (唯一在T1不崩溃且在T2-T5返回正确错误码的实现)。
+
+    One minor point: The prompt says "只依据需求判断". The demand says "invalid axis/vector/angle -> ADCS_E_RANGE". So 2 is strictly correct. A's 4 is technically more specific but violates the explicit mapping. So A is wrong.
+    I will format exactly as requested.
+    JSON structure check:
+    `{"tests":[{"id":1,"correct":"A或B","reason":"..."},{"id":2,...},...],"pick":"B"}`
+    All good.
+    I will generate the response now. 
+    Self-Correction/Verification during thought:
+    Could "A或B" be simplified to just "A" or "B"? The prompt says "哪一种实现", singular. But if two match, I'll state both. I'll stick to "A或B" / "B或C". Actually, in many such evaluations, if A and B both pass, either is acceptable. I'll just output "A/B" or similar. I'll use "A或B" and "B或C".
+    Wait, looking at T1: `rotated = NULL`. The output contract says "failure output zero". It doesn't specify what happens to `rotated` if it's null, but obviously you can't write to it. Returning error code is key.
+    I'll keep it precise.
+    Final JSON construction. 
+    One thing: The prompt says `__crash__: A=（无输出）；B=（无输出）；C=1`. This means C crashes. So C is definitely out.
+    I will produce the JSON. 
+    Structure matches requirement.
+    Reasoning is tight.
+    Output matches exactly.✅
+    Proceeds. 
+    Output Generation. 
+    *(Self-Correction/Refinement during drafting)*: 
+    I should make sure the JSON keys match exactly: `"tests"`, `"id"`, `"correct"`, `"reason"`, `"pick"`.
+    I will write the reasons concisely.
+    Test 1: 需求规定空指针->ADCS_E_NULL(1)。A/B返回1且未崩溃，符合；C崩溃。
+    Test 2: 需求规定无效输入->ADCS_E_RANGE(2)。B/C返回2符合；A返回4不符。
+    Test 3: 同T2，NAN属无效角度，需求规定返回2。
+    Test 4: 同T2，向量无穷大属无效，需求规定返回2。
+    Test 5: 同T2，轴无穷大属无效，需求规定返回2。
+    Pick: B。
+    All consistent. Output matches. 
+    Generating. 
+    `[Done]` 
+    Output matches the requested JSON format.✅
+    *(Note: I will ensure the JSON is strictly valid and follows the prompt's instruction "只输出 JSON")*
+    `{ "tests": [ ... ], "pick": "B" }`
+    Ready. 
+    [Output Generation] -> *Proceeds*

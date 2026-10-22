@@ -1,0 +1,209 @@
+{
+ "key": "6d9b02bd16f2561d6e85f60f9516d0ee4b229007",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_primary->x = 0; body_primary->y = 0; body_primary->z = 1;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 0; ref_primary->y = 0; ref_primary->z = 1;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 0; check_body->y = 0; check_body->z = 1;\ncheck_ref->x = 0; check_ref->y = 0; check_ref->z = 1;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_primary->x = 0.6; body_primary->y = 0.8; body_primary->z = 0;\nbody_secondary->x = -0.8; body_secondary->y = 0.6; body_secondary->z = 0;\nref_primary->x = 0.6; ref_primary->y = 0.8; ref_primary->z = 0;\nref_secondary->x = -0.8; ref_secondary->y = 0.6; ref_secondary->z = 0;\ncheck_body->x = 3; check_body->y = 4; check_body->z = 0;\ncheck_ref->x = 3; check_ref->y = 4; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 0; ref_primary->y = 0; ref_primary->z = 1;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 2; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 0; check_ref->y = 0; check_ref->z = 5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 0; ref_primary->y = 0; ref_primary->z = 1;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 0; check_ref->y = 0; check_ref->z = -1;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_primary->x = 0; body_primary->y = 0; body_primary->z = 7;\nbody_secondary->x = 5; body_secondary->y = 0; body_secondary->z = 0;\nref_primary->x = 7; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 5; ref_secondary->z = 0;\ncheck_body->x = 0; check_body->y = 9; check_body->z = 0;\ncheck_ref->x = 0; check_ref->y = 9; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 0; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_primary->x = 1e-13; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_primary->x = 1e-12; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1e-13; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1e-12; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1e-9; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 1e-9; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 1e-9; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_secondary = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ref_primary = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ref_secondary = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "check_body = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "check_ref = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "c_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "alignment = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = NAN; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = INFINITY; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = NAN; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = NAN; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = 0; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 0; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 2; body_secondary->y = 0; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 2; ref_secondary->y = 0; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 0; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 0; check_ref->y = 0; check_ref->z = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;",
+    "check_body->x = 0; check_body->y = 1; check_body->z = 0;",
+    "check_body->x = 0; check_body->y = 0; check_body->z = 1;",
+    "check_body->x = -1; check_body->y = 0; check_body->z = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "body_primary->x = 1; body_primary->y = 0; body_primary->z = 0;\nbody_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_primary->x = 1; ref_primary->y = 0; ref_primary->z = 0;\nref_secondary->x = 0; ref_secondary->y = 1; ref_secondary->z = 0;\ncheck_body->x = 1; check_body->y = 0; check_body->z = 0;\ncheck_ref->x = 1; check_ref->y = 0; check_ref->z = 0;",
+    "body_secondary->x = 1e-9; body_secondary->y = 1;",
+    "body_secondary->x = 0; body_secondary->y = 0; body_secondary->z = 0;",
+    "body_secondary->x = 0; body_secondary->y = 1; body_secondary->z = 0;\nref_secondary->x = 5; ref_secondary->y = 0; ref_secondary->z = 0;"
+   ]
+  }
+ ]
+}

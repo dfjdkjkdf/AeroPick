@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A normalizes both, computes q_b⊗conj(q_a), uses 2*acos(clamp(abs(w),0,1)), and sets distance to INFINITY on null and invalid-quaternion failures.",
+ "_usage": {
+  "prompt": 8533,
+  "completion": 1249
+ }
+}

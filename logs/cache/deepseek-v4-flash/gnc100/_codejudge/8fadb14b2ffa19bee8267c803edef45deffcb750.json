@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly implements all state transitions, COOLDOWN zero commands, FAULT vector zeroing, disable precedence, and reset/elapsed semantics, while A commands non-zero in COOLDOWN and B fails to zero momentum in latched FAULT and does not reset disable before validation.",
+ "_usage": {
+  "prompt": 17042,
+  "completion": 28118
+ }
+}

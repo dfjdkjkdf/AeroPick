@@ -1,0 +1,1 @@
+{"prompt_sha1": "388592353ea9912fa646e27f17624182620a369c", "discrete": [["limited", null, ["0", "1"]]], "continuous": [["previous", [3], -1000000.0, 1000000.0], ["target", [3], -1000000.0, 1000000.0], ["max_delta_nm", null, 0.0, 1000000.0]], "outputs": [["next", [3], null], ["limited", null, null]]}

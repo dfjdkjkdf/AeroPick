@@ -1,0 +1,29 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "q0为NULL，需求规定返回ADCS_E_NULL(1)；A正确返回1且避免对空指针解引用写入，符合航天软件空指针安全规范。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "q1为NULL，同上，A正确返回ADCS_E_NULL(1)且保证执行流安全终止。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "输出指针为NULL，需求规定返回ADCS_E_NULL(1)；A正确返回1且无崩溃，C尝试向空指针写入单位四元数导致段错误。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "fraction为NaN属非法参数，需求规定返回ADCS_E_RANGE(2)；A返回2正确匹配，B误判为退化(3)。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9263,
+  "completion": 5563
+ }
+}

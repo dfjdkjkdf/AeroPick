@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B validates configuration/enable, handles disable as OFF with filter reset before field checks, rejects degenerate fields, calls adcs_bdot_update, and follows the required OFF/ACTIVE/QUIET/FAULT transitions and published rate norm/energy.",
+ "_usage": {
+  "prompt": 11796,
+  "completion": 9836
+ }
+}

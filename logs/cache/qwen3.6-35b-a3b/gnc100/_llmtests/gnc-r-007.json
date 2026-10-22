@@ -1,0 +1,183 @@
+{
+ "key": "5251e3c8de92e3caa1ead12316bc84d48ece2e69",
+ "tests": [
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 0.0;\nsa_input.measured_body->y = 1.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 0.0;\nsa_input.target_body->y = 1.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = -1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = cos(0.1);\nsa_input.target_body->y = sin(0.1);\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = cos(0.1 + 0.001);\nsa_input.target_body->y = sin(0.1 + 0.001);\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = cos(0.2);\nsa_input.target_body->y = sin(0.2);\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = cos(0.2 + 0.001);\nsa_input.target_body->y = sin(0.2 + 0.001);\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body = NULL;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body = NULL;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 0.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = INFINITY;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 0;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 2;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.05;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = -1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 1.1;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 0;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 10;\nsa_config.max_bad_samples = 5;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_config.enter_rad = 0.1;\nsa_config.exit_rad = 0.2;\nsa_config.acquire_gain_nm_rad = 1.0;\nsa_config.track_gain_nm_rad = 0.5;\nsa_config.torque_limit_nm = 10.0;\nsa_config.max_slew_nm_per_cycle = 2.0;\nsa_config.coast_decay = 0.9;\nsa_config.acquire_samples = 3;\nsa_config.max_coast_samples = 5;\nsa_config.max_bad_samples = 10;\nsa_input.enable = 1;\nsa_input.valid = 1;\nsa_input.measured_body->x = 1.0;\nsa_input.measured_body->y = 0.0;\nsa_input.measured_body->z = 0.0;\nsa_input.target_body->x = 1.0;\nsa_input.target_body->y = 0.0;\nsa_input.target_body->z = 0.0;",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 在空指针检查后统一清零输出，并正确计算 B×tau_d/||B||²、按范数饱和及设置 saturated_axes。",
+ "_usage": {
+  "prompt": 9563,
+  "completion": 12981
+ }
+}

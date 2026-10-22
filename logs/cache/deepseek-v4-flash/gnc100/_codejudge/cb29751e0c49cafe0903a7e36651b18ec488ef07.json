@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C checks errors in the specified order, performs sign-aligned shortest-arc SLERP with linear-limit fallback, and normalizes the result with identity on failure.",
+ "_usage": {
+  "prompt": 9732,
+  "completion": 14909
+ }
+}

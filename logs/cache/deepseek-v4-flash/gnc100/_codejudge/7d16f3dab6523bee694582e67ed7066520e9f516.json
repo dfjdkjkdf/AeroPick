@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 使用 bdot_update 与 bdot_dipole，且仅在成功后提交状态，拒绝样本保留历史并递增 rejects，符合全部契约。",
+ "_usage": {
+  "prompt": 10223,
+  "completion": 7363
+ }
+}

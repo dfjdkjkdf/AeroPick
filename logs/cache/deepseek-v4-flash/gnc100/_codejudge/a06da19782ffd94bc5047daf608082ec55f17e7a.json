@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C uses the required atan2(||cross||,dot) formulation correctly and zeroes output for nonfinite/degenerate failures, while B corrupts valid angles to pi and A omits failure-zero output.",
+ "_usage": {
+  "prompt": 8582,
+  "completion": 1551
+ }
+}

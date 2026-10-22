@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "非零有限request和有效field，fraction应为|perpendicular|/|request|=sqrt(5/14)=0.597614，故A。"
+  }
+ ],
+ "pick": "A"
+}

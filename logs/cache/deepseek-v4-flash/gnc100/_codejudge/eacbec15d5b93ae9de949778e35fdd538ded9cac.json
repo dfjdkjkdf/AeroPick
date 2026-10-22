@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 在 FINE/HOLD 中使用本周期提出的积分并保持 FAULT 锁存，而 B 误用上一周期积分且会把 FAULT 解锁为 OFF，功能不符。",
+ "_usage": {
+  "prompt": 15543,
+  "completion": 13149
+ }
+}

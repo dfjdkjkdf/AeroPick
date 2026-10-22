@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "有效输入且无限制，滤波功率4<=释放阈值10，需求要求进入RECOVERING并置clean=1。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "有效输入且无限制，滤波功率0<=释放阈值0，需求要求进入RECOVERING并置clean=1。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "max_torque_slew_nm_per_cycle=0不满足正数要求，无效输入应锁存FAULT。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "release_cycles=0不在1..20范围内，无效输入应锁存FAULT。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "release_cycles=21不在1..20范围内，无效输入应锁存FAULT。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "wheel_count=3不满足恰好四个轮子的要求，无效输入应锁存FAULT。"
+  }
+ ],
+ "pick": "B"
+}

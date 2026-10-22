@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "实现A在NULL时仍按可用输出置0/0/INF并返回ADCS_E_NULL，校验、归一化、投影及严格椭圆判据均符合需求，且归一化失败统一映射为ADCS_E_RANGE。",
+ "_usage": {
+  "prompt": 9097,
+  "completion": 9496
+ }
+}

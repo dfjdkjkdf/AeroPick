@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "field_body_t 为 NULL 时应返回 ADCS_E_NULL 并将 command 清零，A 符合且未崩溃。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "field_rate_t_s 为 NULL 时应返回 ADCS_E_NULL 并将 command 清零，A 符合且未崩溃。"
+  }
+ ],
+ "pick": "A"
+}

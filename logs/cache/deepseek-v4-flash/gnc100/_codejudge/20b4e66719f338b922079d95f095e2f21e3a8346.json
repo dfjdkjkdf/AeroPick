@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly handles state transitions, FAULT latching with zeroed vector outputs, and disable reset, whereas A mishandles persistent FAULT/disable and C increments elapsed on DUMPING entry.",
+ "_usage": {
+  "prompt": 16572,
+  "completion": 29860
+ }
+}

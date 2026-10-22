@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "四元数含 NAN 属于非有限输入，需求规定非有限应返回 ADCS_E_RANGE。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "四元数含 INFINITY 属于非有限输入，需求规定非有限应返回 ADCS_E_RANGE。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "covariance_i 含 NAN 属于非有限输入，需求规定非有限应返回 ADCS_E_RANGE。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "四元数全为 NAN 属于非有限输入，需求规定非有限应返回 ADCS_E_RANGE。"
+  }
+ ],
+ "pick": "A"
+}

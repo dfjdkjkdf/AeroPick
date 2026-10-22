@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "实现A严格遵循需求规定的错误码映射（非有限/零/平行输入均返回ADCS_E_DEGENERATE）、TRIAD构建步骤及DCM行序要求，功能逻辑与规范完全一致。",
+ "_usage": {
+  "prompt": 10092,
+  "completion": 4572
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "B builds r1=(1,0,0), r2=normalize(cross(r1,s))=(0,0,1), r3=cross(r2,r1)=(0,1,0), giving the required row order and sine=1."
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "B gives r1=(0,1,0), r2=(1,0,0), r3=(0,0,1), matching the required primary/third/second rows; C instead uses secondary as row2."
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "B uses second=normalized cross(primary,secondary) and third=cross(second,primary), and returns the normalized separation sine 0.882955; A's sine is unscaled and C's basis rows differ."
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "B matches the TRIAD row construction and normalized separation sine 0.816497; A returns 1.41421 and C's basis rows differ."
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "B matches the required TRIAD basis and normalized separation sine 0.95119; A's sine is unscaled and C's basis differs."
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "Primary norm 1e-6 exceeds ADCS_EPS_NORM, so B succeeds with the identity-like TRIAD basis and sine=1."
+  }
+ ],
+ "pick": "B"
+}

@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "body_vectors 为 NULL，需求规定返回 ADCS_E_NULL 且失败输出全零，故 davenport_k.m[0][0] 应为 0。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "inertial_vectors 为 NULL，需求规定返回 ADCS_E_NULL 且失败输出全零，故 davenport_k.m[0][0] 应为 0。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "weight_sum 为 NULL，需求规定返回 ADCS_E_NULL 且失败输出全零，故 davenport_k.m[0][0] 应为 0。"
+  }
+ ],
+ "pick": "B"
+}

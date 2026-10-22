@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C normalizes with the correct near-zero threshold, rejects collinear pairs via cross norm <=1e-8, avoids acos, sets failure outputs to INFINITY, and returns the required status codes.",
+ "_usage": {
+  "prompt": 9686,
+  "completion": 2403
+ }
+}

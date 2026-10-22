@@ -1,0 +1,183 @@
+{
+ "key": "6379b8fe9f0d331ce44a7a46a0d6559035010aad",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = 1.0; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = 2.0; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = -1.0; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = 0.0; q->x = 3.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = 0.0; q->x = -3.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = 0.0; q->x = 0.0; q->y = 0.0; q->z = 5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = 0.0; q->x = 0.0; q->y = 0.0; q->z = -5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = -2.0; q->x = -3.0; q->y = -4.0; q->z = -5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = 2.0; q->x = 3.0; q->y = 4.0; q->z = 5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q->w = 0.5; q->x = 0.5; q->y = 0.5; q->z = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q->w = 0.0; q->x = 0.0; q->y = -1.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q->w = 0.0; q->x = 0.0; q->y = 1.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q->w = -1.0; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q->w = 1.0e-13; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q->w = 1.0e-12; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q->w = 1.0e-11; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q->w = 1.0; q->x = 1.0e-300; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q->w = -1.0e-13; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "canonical = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q->w = 0.0; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q->w = NAN; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q->w = 0.0; q->x = NAN; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q->w = 0.0; q->x = 0.0; q->y = 0.0; q->z = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q->w = 0.0; q->x = 0.0; q->y = -INFINITY; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q->w = 1.0e-300; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q->w = INFINITY; q->x = 0.0; q->y = 0.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "q->w = 0.0; q->x = 1.0; q->y = 0.0; q->z = 0.0;",
+    "q->w = 0.0; q->x = -1.0; q->y = 0.0; q->z = 0.0;",
+    "q->w = 0.0; q->x = 1.0; q->y = -1.0; q->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "q->w = -3.0; q->x = 0.0; q->y = 0.0; q->z = 9.0;",
+    "q->w = 3.0; q->x = 0.0; q->y = 0.0; q->z = -9.0;",
+    "q->w = 0.0; q->x = 0.0; q->y = 1.0; q->z = 1.0;"
+   ]
+  }
+ ]
+}

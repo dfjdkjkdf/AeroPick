@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确校验空指针、非有限输入和退化四元数，并按 C_BI P_I C_BI^T 完成变换；C 会将非有限四元数误报为 ADCS_E_DEGENERATE。",
+ "_usage": {
+  "prompt": 9383,
+  "completion": 6902
+ }
+}

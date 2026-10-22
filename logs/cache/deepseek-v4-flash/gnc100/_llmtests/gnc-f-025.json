@@ -1,0 +1,143 @@
+{
+ "key": "5579d69ed77f59d5dd199c935e087dabdc6b5105",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 0.1;\nsigma->y = 0.2;\nsigma->z = 0.3;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = -0.5;\nsigma->y = 0.0;\nsigma->z = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 0.0;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 1.5;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = -1.5;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 1.4142135623730951;\nsigma->y = 1.4142135623730951;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 1.0e-12;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 100.0;\nsigma->y = 200.0;\nsigma->z = 300.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 1.0;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = -1.0;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 0.0;\nsigma->y = 1.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 0.0;\nsigma->y = 0.0;\nsigma->z = -1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 0.999999999999;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sigma->x = 1.000000000001;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 0.5773502691896258;\nsigma->y = 0.5773502691896258;\nsigma->z = 0.5773502691896258;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 0.8;\nsigma->y = 0.8;\nsigma->z = 0.8;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sigma = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "shadow = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "switched = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sigma->x = NAN;\nsigma->y = 0.0;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sigma->x = 0.0;\nsigma->y = INFINITY;\nsigma->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sigma->x = 0.0;\nsigma->y = 0.0;\nsigma->z = -INFINITY;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sigma->x = 1.0e308;\nsigma->y = 1.0e308;\nsigma->z = 1.0e308;"
+   ]
+  }
+ ]
+}

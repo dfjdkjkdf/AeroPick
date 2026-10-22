@@ -1,0 +1,131 @@
+{
+ "key": "6302e1aa5d2cb5a93e597a2d41c81a96825d06ec",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "position_m->x = 6378100.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "position_m->x = 6378100.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "position_m->x = 0.0;\nposition_m->y = 6378100.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "position_m->x = 0.0;\nposition_m->y = 0.0;\nposition_m->z = 6378100.0;\nsun_direction->x = 0.0;\nsun_direction->y = 0.0;\nsun_direction->z = -1.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = 6378100.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = 6378100.0 + 1.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = 6378100.0 - 1.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = 6378100.0;\nposition_m->y = 6378100.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = 6378100.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -0.7071067811865475;\nsun_direction->y = 0.7071067811865475;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m = NULL;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sun_direction = NULL;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "earth_radius_m = -1.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "earth_radius_m = 0.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "eclipse = NULL;\nearth_radius_m = 6378100.0;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "behind_m = NULL;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "miss_m = NULL;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = INFINITY;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = 0.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sun_direction->x = 0.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = 6378100.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0 + 1.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = 6378100.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6378100.0 - 1.0;\neclipse = &eclipse_var;\nbehind_m = &behind_var;\nmiss_m = &miss_var;"
+   ]
+  }
+ ]
+}

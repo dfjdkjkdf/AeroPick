@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "wheels为NULL且count!=4等违反有效性约束，需求规定应锁存FAULT(2)，A符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "count!=4、required=0、restart<=stop等违反配置有效性，应锁存FAULT(2)，A符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试2，多项配置无效，应锁存FAULT(2)，A符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "stop=-1.0违反stop>=0约束，应锁存FAULT(2)，A符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "restart(默认0)不大于stop(1.0)且count!=4等，应锁存FAULT(2)，A符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "required=0违反1~20约束且count!=4等，应锁存FAULT(2)，A符合。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9383,
+  "completion": 4160
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A validates all FAULT conditions before handling disable, so invalid inputs latch FAULT as required; B bypasses validation when enable=0.",
+ "_usage": {
+  "prompt": 12095,
+  "completion": 25194
+ }
+}

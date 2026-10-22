@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C严格遵循需求中非有限输入应返回ADCS_E_DEGENERATE的错误码映射，并在所有失败路径中正确将输出置零，完全符合边界与失败处理契约。",
+ "_usage": {
+  "prompt": 8762,
+  "completion": 2248
+ }
+}

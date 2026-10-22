@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确使用 adcs_bdot_state_t 临时状态并遵循复位、拒绝样本保留历史、错误时零输出及 alpha=1 的约定。",
+ "_usage": {
+  "prompt": 10415,
+  "completion": 12681
+ }
+}

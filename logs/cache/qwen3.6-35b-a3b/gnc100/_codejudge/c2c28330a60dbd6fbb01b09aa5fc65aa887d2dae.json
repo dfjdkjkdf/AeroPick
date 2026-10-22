@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "严格遵循需求将非有限向量映射为ADCS_E_DEGENERATE并保证各失败路径显式归零，A/C错误返回了ADCS_E_NOT_FINITE且C未在各错误分支置零。",
+ "_usage": {
+  "prompt": 9053,
+  "completion": 3019
+ }
+}

@@ -1,0 +1,1 @@
+{"prompt_sha1": "14849977eb6747ac18f974233cf717262107943a", "discrete": [["gb_input.enable", null, ["0", "1"]]], "continuous": [["gb_input.sample.x", [3], -1000000.0, 1000000.0], ["gb_config.stationary_limit", null, 0.0, 1000000.0], ["gb_config.required", null, 2.0, 100.0]], "outputs": []}

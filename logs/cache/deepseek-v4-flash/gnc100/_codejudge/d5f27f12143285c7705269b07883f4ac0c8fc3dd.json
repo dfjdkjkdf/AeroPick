@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A best matches the required phase/output behavior, correctly keeping payload off when disabled and counting WARMUP samples, whereas B sets heater incorrectly and C enables payload when disabled.",
+ "_usage": {
+  "prompt": 13681,
+  "completion": 42655
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "初始为IDLE，enable=1且样本范数≤阈值，计数增至1小于required(3)，按需求表应转入COLLECT(mode=1)并累加和向量；A的sum_energy=0.03精确匹配sum向量点积，符合累加与能量发布要求。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "逻辑同测试1，计数1<required(2)，状态应为COLLECT(1)；sum_energy=1.0精确匹配样本范数平方，A正确。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "边界浮点值意图满足≤条件，状态机逻辑与测试2一致，A输出mode=1及对应能量符合COLLECT态累加行为。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "参数与测试1相同，A正确触发COLLECT状态并发布累加能量。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "参数与测试2相同，A正确保持COLLECT状态并计算能量。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "参数与测试2相同，A正确实现状态转移与能量累加。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9826,
+  "completion": 4429
+ }
+}

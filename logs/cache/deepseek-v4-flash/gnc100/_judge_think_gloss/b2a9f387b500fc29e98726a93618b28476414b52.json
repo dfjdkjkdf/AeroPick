@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "无法判断",
+   "reason": "按需求有效输入应得 direction=(1,0,0), resultant=1；A 数值不符，B 错误返回 RANGE。"
+  },
+  {
+   "id": 2,
+   "correct": "无法判断",
+   "reason": "按需求有效输入应得 direction=(1,0,0), resultant=1；A 数值不符，B 错误返回 RANGE。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "weight=0 违反需求应返回 ADCS_E_RANGE 且输出清零，B 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "weight<0 违反需求应返回 ADCS_E_RANGE 且输出清零，B 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "weight=NAN 违反需求应返回 ADCS_E_RANGE 且输出清零，B 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "weight=INFINITY 违反需求应返回 ADCS_E_RANGE 且输出清零，B 符合。"
+  }
+ ],
+ "pick": "B"
+}

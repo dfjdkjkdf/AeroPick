@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "candidate 为 NULL 应先返回 ADCS_E_NULL；失败输出要求 repaired 为单位阵且 correction_norm 为 INFINITY，B 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "repaired 为 NULL 应返回 ADCS_E_NULL；失败时 correction_norm 应置 INFINITY，B 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "correction_norm 为 NULL 应返回 ADCS_E_NULL；失败时 repaired 应置单位阵，B 符合。"
+  }
+ ],
+ "pick": "B"
+}

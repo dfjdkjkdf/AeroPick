@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定空指针检查优先并返回ADCS_E_NULL(1)，实现A正确返回1且不崩溃，符合规范；实现B崩溃，违反需求。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，传入torque_nm=NULL时应优先触发指针检查返回ADCS_E_NULL(1)，实现A行为正确，实现B崩溃违规。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9399,
+  "completion": 2703
+ }
+}

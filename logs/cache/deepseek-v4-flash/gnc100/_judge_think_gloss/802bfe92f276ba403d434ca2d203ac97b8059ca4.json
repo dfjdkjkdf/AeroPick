@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "measured torque norm is 0 ≤ ADCS_EPS_NORM, so geometry is invalid and commands/expected torque must be zero and FAULT latched."
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "on the second call measured torque is zero, making geometry invalid, so expected torque must be zero and FAULT latched."
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "measured torque is zero, an invalid geometry, so command and expected torque must be zero with FAULT latched."
+  }
+ ],
+ "pick": "B"
+}

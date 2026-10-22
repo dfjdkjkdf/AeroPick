@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 在检查 NULL 前安全地将非空输出清零并将 angle 置为 INFINITY，且按 measured*conjugate(predicted) 归一化、w 正化并计算最短旋转向量。",
+ "_usage": {
+  "prompt": 9437,
+  "completion": 1786
+ }
+}

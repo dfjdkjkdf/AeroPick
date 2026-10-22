@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C正确将非有限输入与退化场统一返回ADCS_E_DEGENERATE，所有失败路径均按要求清零输出，且优先使用标准归一化原语，完全契合需求。",
+ "_usage": {
+  "prompt": 9412,
+  "completion": 2693
+ }
+}

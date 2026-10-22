@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "enable=0 时需求规定进入 OFF 并复位滤波器，零场不应优先导致 FAULT。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "首次接受更新仅初始化不同iator，返回速率不作为连续 quiet 计数；表中 OFF 首次更新下一模式为 ACTIVE。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "零场向量属于退化场，应锁存 FAULT 且不更新滤波器状态。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "零场向量属于退化场，应锁存 FAULT 且不初始化滤波器。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "零场向量属于退化场，应锁存 FAULT 且不初始化滤波器。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "零场向量属于退化场，应锁存 FAULT 且不初始化滤波器。"
+  }
+ ],
+ "pick": "A"
+}

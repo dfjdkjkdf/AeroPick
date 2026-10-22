@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C validates pointers, finite inputs, and non-finite/non-positive dt, zeroes output on range failures, then computes the exact backward difference.",
+ "_usage": {
+  "prompt": 8573,
+  "completion": 4454
+ }
+}

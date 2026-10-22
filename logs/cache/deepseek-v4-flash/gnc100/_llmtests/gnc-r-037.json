@@ -1,0 +1,173 @@
+{
+ "key": "6302e1aa5d2cb5a93e597a2d41c81a96825d06ec",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "position_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "position_m->x = -7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "position_m->x = -7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = -1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "position_m->x = 0.0;\nposition_m->y = -7000000.0;\nposition_m->z = 0.0;\nsun_direction->x = 0.0;\nsun_direction->y = 1.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "position_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 2.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = -6371000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = -6371000.001;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = -6370999.999;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = 0.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = -1000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = -7000000.0;\nposition_m->y = 6371000.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = -7000000.0;\nposition_m->y = 6371000.001;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = -7000000.0;\nposition_m->y = 6370999.999;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "position_m->x = -7000000.0;\nposition_m->y = 1.0e-9;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m = NULL;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sun_direction = NULL;\nposition_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "eclipse = NULL;\nposition_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "behind_m = NULL;\nposition_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "miss_m = NULL;\nposition_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = NAN;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = INFINITY;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = NAN;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 0.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0e-15;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = -6371000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "position_m->x = 7000000.0;\nposition_m->y = 0.0;\nposition_m->z = 0.0;\nsun_direction->x = 1.0;\nsun_direction->y = 0.0;\nsun_direction->z = 0.0;\nearth_radius_m = INFINITY;"
+   ]
+  }
+ ]
+}

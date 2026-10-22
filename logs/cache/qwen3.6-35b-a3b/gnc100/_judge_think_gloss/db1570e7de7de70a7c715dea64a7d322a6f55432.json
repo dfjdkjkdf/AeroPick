@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定非有限磁场输入应返回ADCS_E_DEGENERATE(3)，A返回的4不符合要求。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求明确规定非有限请求向量输入应返回ADCS_E_DEGENERATE(3)，A返回的4不符合要求。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "需求明确规定非有限磁场输入应返回ADCS_E_DEGENERATE(3)，A返回的4不符合要求。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9132,
+  "completion": 2123
+ }
+}

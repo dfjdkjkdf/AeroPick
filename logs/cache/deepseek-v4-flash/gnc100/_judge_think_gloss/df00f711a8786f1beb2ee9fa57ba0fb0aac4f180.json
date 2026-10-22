@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "未规定",
+   "reason": "需求仅规定错误码，未规定错误时输出指针的值。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "B 的 mechanical_power=1.5 符合 P_mech=sum(u_i*omega_i)。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "B 的 mechanical_power=6 和 bus_power=6.66667 符合定义。"
+  },
+  {
+   "id": 4,
+   "correct": "未规定",
+   "reason": "需求仅规定非有限力矩应返回 ADCS_E_RANGE，未规定输出值。"
+  },
+  {
+   "id": 5,
+   "correct": "未规定",
+   "reason": "需求仅规定非有限力矩应返回 ADCS_E_RANGE，未规定输出值。"
+  },
+  {
+   "id": 6,
+   "correct": "未规定",
+   "reason": "轴归一化失败应返回 ADCS_E_RANGE，但输出值未规定。"
+  }
+ ],
+ "pick": "B"
+}

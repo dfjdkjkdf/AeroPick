@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly implements the full normative state machine, including FAULT latch preservation and enable=0 OFF reset, which A and C omit/mishandle.",
+ "_usage": {
+  "prompt": 14498,
+  "completion": 24078
+ }
+}

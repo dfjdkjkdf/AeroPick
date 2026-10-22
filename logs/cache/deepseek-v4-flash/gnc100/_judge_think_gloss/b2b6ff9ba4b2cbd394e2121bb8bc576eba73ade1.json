@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B|C",
+   "reason": "angle=1.0 rad 等于 reject_rad，按表 angle>=reject_rad 应进入 REJECT 并使 rejects 增到 1。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "enable=0 时决策 ACCEPT 且 rejects 清零，但仍应计算并发布相对旋转 innovation=pi/2 和轴 (1,0,0)。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "第二次 enable=0 清为 ACCEPT/0，但仍发布同一相对旋转轴和 innovation=1.0。"
+  }
+ ],
+ "pick": "C"
+}

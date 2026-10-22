@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确限定enable必须为0或1，-1属非法配置，触发锁存FAULT逻辑，正确输出应为RS_FAULT(4)，A符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，enable=2超出允许值范围，属非法配置，应输出RS_FAULT(4)，A符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "需求要求residual_weight_floor_rad必须为正数，-0.1违反约束，应锁存FAULT(4)，A符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "需求要求0<output_alpha<=1，0.0不满足严格大于0的条件，属非法配置，应输出RS_FAULT(4)，A符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "同上，1.1超出上限1，属非法配置，应输出RS_FAULT(4)，A符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "需求要求switch_confirm_cycles等计数参数必须在1..20范围内，0越界非法，应锁存FAULT(4)，A符合。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9843,
+  "completion": 3751
+ }
+}

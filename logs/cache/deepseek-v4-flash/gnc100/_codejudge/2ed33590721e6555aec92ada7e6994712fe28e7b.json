@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly keeps NORMAL unless a limit occurs, whereas B incorrectly enters RECOVERING from NORMAL whenever filtered power is low.",
+ "_usage": {
+  "prompt": 14584,
+  "completion": 14995
+ }
+}

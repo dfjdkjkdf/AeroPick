@@ -1,0 +1,274 @@
+{
+ "key": "03f2790111ed15e7781ba26cfbc540fba9e65d9b",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.field_body_t = NULL;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.measured_torque_nm = NULL;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_config.test_axis_body.x = 0.0;",
+    "pt_config.test_axis_body.y = 0.0;",
+    "pt_config.test_axis_body.z = 0.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_config.test_dipole_a_m2 = -1.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_config.test_dipole_a_m2 = 0.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_config.min_fraction = 0.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_config.min_fraction = 1.5;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_config.confirm_samples = 0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_config.confirm_samples = 21;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_config.max_samples_per_phase = 0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_config.max_samples_per_phase = 201;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 2;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pt_input.enable = 0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pt_input.enable = 1;",
+    "pt_config.test_axis_body.x = 1.0;",
+    "pt_config.test_axis_body.y = 0.0;",
+    "pt_config.test_axis_body.z = 0.0;",
+    "pt_config.test_dipole_a_m2 = 10.0;",
+    "pt_config.min_fraction = 0.5;",
+    "pt_config.confirm_samples = 3;",
+    "pt_config.max_samples_per_phase = 10;",
+    "pt_input.field_body_t->x = 0.0;",
+    "pt_input.field_body_t->y = 1.0;",
+    "pt_input.field_body_t->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pt_input.enable = 1;",
+    "pt_config.test_axis_body.x = 1.0;",
+    "pt_config.test_axis_body.y = 0.0;",
+    "pt_config.test_axis_body.z = 0.0;",
+    "pt_config.test_dipole_a_m2 = 10.0;",
+    "pt_config.min_fraction = 0.5;",
+    "pt_config.confirm_samples = 2;",
+    "pt_config.max_samples_per_phase = 5;",
+    "pt_input.field_body_t->x = 0.0;",
+    "pt_input.field_body_t->y = 1.0;",
+    "pt_input.field_body_t->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pt_input.enable = 1;",
+    "pt_config.test_axis_body.x = 1.0;",
+    "pt_config.test_axis_body.y = 0.0;",
+    "pt_config.test_axis_body.z = 0.0;",
+    "pt_config.test_dipole_a_m2 = 10.0;",
+    "pt_config.min_fraction = 0.5;",
+    "pt_config.confirm_samples = 1;",
+    "pt_config.max_samples_per_phase = 3;",
+    "pt_input.field_body_t->x = 0.0;",
+    "pt_input.field_body_t->y = 1.0;",
+    "pt_input.field_body_t->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 1.0;",
+    "GncRepoPolarityTestStep();",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 1.0;",
+    "GncRepoPolarityTestStep();",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 1.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pt_input.enable = 1;",
+    "pt_config.test_axis_body.x = 1.0;",
+    "pt_config.test_axis_body.y = 0.0;",
+    "pt_config.test_axis_body.z = 0.0;",
+    "pt_config.test_dipole_a_m2 = 10.0;",
+    "pt_config.min_fraction = 0.5;",
+    "pt_config.confirm_samples = 2;",
+    "pt_config.max_samples_per_phase = 3;",
+    "pt_input.field_body_t->x = 0.0;",
+    "pt_input.field_body_t->y = 1.0;",
+    "pt_input.field_body_t->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 1.0;",
+    "GncRepoPolarityTestStep();",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 1.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pt_input.enable = 1;",
+    "pt_config.test_axis_body.x = 1.0;",
+    "pt_config.test_axis_body.y = 0.0;",
+    "pt_config.test_axis_body.z = 0.0;",
+    "pt_config.test_dipole_a_m2 = 10.0;",
+    "pt_config.min_fraction = 0.5;",
+    "pt_config.confirm_samples = 2;",
+    "pt_config.max_samples_per_phase = 3;",
+    "pt_input.field_body_t->x = 0.0;",
+    "pt_input.field_body_t->y = 1.0;",
+    "pt_input.field_body_t->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pt_input.enable = 1;",
+    "pt_config.test_axis_body.x = 1.0;",
+    "pt_config.test_axis_body.y = 0.0;",
+    "pt_config.test_axis_body.z = 0.0;",
+    "pt_config.test_dipole_a_m2 = 10.0;",
+    "pt_config.min_fraction = 0.5;",
+    "pt_config.confirm_samples = 2;",
+    "pt_config.max_samples_per_phase = 3;",
+    "pt_input.field_body_t->x = 0.0;",
+    "pt_input.field_body_t->y = 1.0;",
+    "pt_input.field_body_t->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 5.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;",
+    "pt_config.test_axis_body.x = 1.0;",
+    "pt_config.test_axis_body.y = 0.0;",
+    "pt_config.test_axis_body.z = 0.0;",
+    "pt_config.test_dipole_a_m2 = 10.0;",
+    "pt_config.min_fraction = 0.5;",
+    "pt_config.confirm_samples = 2;",
+    "pt_config.max_samples_per_phase = 3;",
+    "pt_input.field_body_t->x = 0.0;",
+    "pt_input.field_body_t->y = 0.0;",
+    "pt_input.field_body_t->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;",
+    "pt_input.measured_torque_nm->y = 0.0;",
+    "pt_input.measured_torque_nm->z = 10.0;",
+    "GncRepoPolarityTestStep();"
+   ]
+  }
+ ]
+}

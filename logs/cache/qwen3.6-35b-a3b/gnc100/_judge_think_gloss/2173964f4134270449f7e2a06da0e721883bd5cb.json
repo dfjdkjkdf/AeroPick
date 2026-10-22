@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定空指针输入应返回ADCS_E_NULL且失败时输出必须强制设为INFINITY和-INFINITY；B实现正确赋值，A未按要求覆写导致输出为默认值0，不符合需求。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同理，target为NULL同样进入空指针错误处理分支，B严格按需求将required_rate和margin置为inf与-inf，A的输出0违背了“Failure outputs are INFINITY and -INFINITY”的强制规定。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 8858,
+  "completion": 2509
+ }
+}

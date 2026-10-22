@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "enable=0 应复位且不处理观测，used_count 应为 0，C 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "body 为 NULL 应锁存 FAULT 且不报告解，used_count 与 worst_residual 应为 0，C 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "inertial 为 NULL 应锁存 FAULT，输出不应有有效解，C 的 0/0 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "weights 为 NULL 应锁存 FAULT，C 的 0/0 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "权重 0 非正应锁存 FAULT，C 的 0/0 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "权重 -1 非正应锁存 FAULT，C 的 0/0 符合。"
+  }
+ ],
+ "pick": "C"
+}

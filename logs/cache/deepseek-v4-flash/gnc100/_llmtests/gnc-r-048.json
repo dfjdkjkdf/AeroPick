@@ -1,0 +1,137 @@
+{
+ "key": "37907707bd28d1470a0a2e0ecc16784f58724288",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "predicted = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "measured = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rotation_vector = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "angle = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "predicted->w = 0.0;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "measured->w = 0.0;\nmeasured->x = 0.0;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "predicted->w = NAN;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "measured->w = INFINITY;\nmeasured->x = 0.0;\nmeasured->y = 1.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 1.0;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 0.0;\nmeasured->w = 1.0;\nmeasured->x = 0.0;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 1.0;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 0.0;\nmeasured->w = 0.0;\nmeasured->x = 1.0;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.7071067811865476;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 0.7071067811865476;\nmeasured->w = 0.7071067811865476;\nmeasured->x = 0.0;\nmeasured->y = 0.0;\nmeasured->z = 0.7071067811865476;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.5;\npredicted->x = 0.5;\npredicted->y = 0.5;\npredicted->z = 0.5;\nmeasured->w = 0.5;\nmeasured->x = -0.5;\nmeasured->y = 0.5;\nmeasured->z = -0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 2.0;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 0.0;\nmeasured->w = 0.0;\nmeasured->x = 3.0;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 1.0;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 0.0;\nmeasured->w = -1.0;\nmeasured->x = 0.0;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 0.0;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 1.0;\nmeasured->w = 0.0;\nmeasured->x = 0.0;\nmeasured->y = 0.0;\nmeasured->z = -1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 1.0;\npredicted->x = 1.0e-12;\npredicted->y = 0.0;\npredicted->z = 0.0;\nmeasured->w = 1.0;\nmeasured->x = 0.0;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 1.0;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 0.0;\nmeasured->w = 1.0;\nmeasured->x = 1.0e-16;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.0;\npredicted->x = 1.0;\npredicted->y = 0.0;\npredicted->z = 0.0;\nmeasured->w = 0.0;\nmeasured->x = 1.0;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.7071067811865476;\npredicted->x = 0.7071067811865476;\npredicted->y = 0.0;\npredicted->z = 0.0;\nmeasured->w = -0.7071067811865476;\nmeasured->x = -0.7071067811865476;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 1.0;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 0.0;\nmeasured->w = 0.0;\nmeasured->x = 0.0;\nmeasured->y = 0.0;\nmeasured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.0;\npredicted->x = 0.0;\npredicted->y = 1.0;\npredicted->z = 0.0;\nmeasured->w = 0.0;\nmeasured->x = 0.0;\nmeasured->y = 0.0;\nmeasured->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.0;\npredicted->x = 0.0;\npredicted->y = 0.0;\npredicted->z = 1.0;\nmeasured->w = 0.0;\nmeasured->x = 0.0;\nmeasured->y = 1.0;\nmeasured->z = 0.0;"
+   ]
+  }
+ ]
+}

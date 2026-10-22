@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "有效使能且OFF应进入COARSE，本拍只完成该一步，不应再计入COARSE转FINE证据，故transition_samples为0；C符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "rate等于rate_enter时按OFF的严格大于条件不进入RATE_DAMP而进入COARSE，本拍不计后续证据，C的transition_samples=0符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "与测试1相同，OFF首拍进入COARSE且不累计下一级证据，C符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "与测试1相同，OFF首拍进入COARSE且不累计下一级证据，C符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "应使用完整旋转矢量e_x≈0.199337，COARSE输出-kp*e_x≈-0.0996687，C的扭矩符合且transition_samples按一拍一步为0。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "应使用完整旋转矢量e_x≈0.394791，COARSE输出-kp*e_x≈-0.197396，C的扭矩符合且transition_samples按一拍一步为0。"
+  }
+ ],
+ "pick": "C"
+}

@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定状态检查顺序第一项为任意指针NULL则返回ADCS_E_NULL(1)且失败输出清零，B正确实现该契约，A发生空指针解引用崩溃。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同上，resultant参数为NULL时应优先触发空指针检查返回1并将方向与幅值输出置零，B符合规范，A崩溃。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9063,
+  "completion": 1826
+ }
+}

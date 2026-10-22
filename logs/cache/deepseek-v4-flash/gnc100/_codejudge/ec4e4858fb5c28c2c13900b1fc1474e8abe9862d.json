@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确使用归一化、符号对齐和 2*acos(|dot|) 的符号无关分离角，并用 ADCS_CLAMP 与 adcs_quat_abs_dot 表达算法；A 功能也正确但未优先使用 ADCS_CLAMP，B 的分离角少乘 2。",
+ "_usage": {
+  "prompt": 9290,
+  "completion": 3748
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "NULL body is invalid and must latch FAULT; no accepted solution exists, so used_count should be 0."
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "NULL inertial is invalid and must latch FAULT; no accepted solution exists, so used_count should be 0."
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "NULL weights is invalid and must latch FAULT; no accepted solution exists, so used_count should be 0."
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "Zero weight is nonpositive and invalid, must latch FAULT; used_count should be 0."
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "Negative weight is nonpositive and invalid, must latch FAULT; used_count should be 0."
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "Nonfinite body observation is invalid, must latch FAULT; used_count should be 0."
+  }
+ ],
+ "pick": "A"
+}

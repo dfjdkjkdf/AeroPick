@@ -1,0 +1,278 @@
+{
+ "key": "70afa6433a83633c2fa10ad114ee33dea38f7064",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.wheels = NULL;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.wheel_count = 3;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.wheel_count = 4;",
+    "mb_config.kp_s_inv = -1.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.wheel_count = 4;",
+    "mb_config.ki_s2_inv = -1.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.wheel_count = 4;",
+    "mb_config.dt_s = -0.1;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.wheel_count = 4;",
+    "mb_config.enter_error_nms = 2.0;",
+    "mb_config.exit_error_nms = 1.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.wheel_count = 4;",
+    "mb_config.settle_cycles = 0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.wheel_count = 4;",
+    "mb_config.settle_cycles = 21;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mb_input.enable = 1;",
+    "mb_input.wheel_count = 4;",
+    "mb_input.wheels[0].axis_body.x = 1.0; mb_input.wheels[0].axis_body.y = 0.0; mb_input.wheels[0].axis_body.z = 0.0;",
+    "mb_input.wheels[0].inertia_kg_m2 = 1.0; mb_input.wheels[0].speed_rad_s = 100.0;",
+    "mb_input.wheels[1].axis_body.x = 0.0; mb_input.wheels[1].axis_body.y = 1.0; mb_input.wheels[1].axis_body.z = 0.0;",
+    "mb_input.wheels[1].inertia_kg_m2 = 1.0; mb_input.wheels[1].speed_rad_s = 100.0;",
+    "mb_input.wheels[2].axis_body.x = 0.0; mb_input.wheels[2].axis_body.y = 0.0; mb_input.wheels[2].axis_body.z = 1.0;",
+    "mb_input.wheels[2].inertia_kg_m2 = 1.0; mb_input.wheels[2].speed_rad_s = 100.0;",
+    "mb_input.wheels[3].axis_body.x = 1.0; mb_input.wheels[3].axis_body.y = 1.0; mb_input.wheels[3].axis_body.z = 1.0;",
+    "mb_input.wheels[3].inertia_kg_m2 = 1.0; mb_input.wheels[3].speed_rad_s = 100.0;",
+    "adcs_vec3_normalize(&mb_input.wheels[3].axis_body, 1e-12, &mb_input.wheels[3].axis_body);",
+    "mb_config.target_nms.x = 0.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.target_slew_nms_per_cycle = 10.0;",
+    "mb_config.enter_error_nms = 1.0;",
+    "mb_config.exit_error_nms = 2.0;",
+    "mb_config.kp_s_inv = 1.0;",
+    "mb_config.ki_s2_inv = 0.1;",
+    "mb_config.dt_s = 0.1;",
+    "mb_config.integral_limit_nms_s = 100.0;",
+    "mb_config.torque_limit_nm = 5.0;",
+    "mb_config.max_wheel_speed_rad_s = 6000.0;",
+    "mb_config.settle_cycles = 5;",
+    "mb_state.mode = MB_OFF;",
+    "mb_state.target_initialized = 0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_state.mode = MB_RAMP;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 10.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_output.momentum_nms.x = 100.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_state.mode = MB_BIAS;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 49.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 0.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_state.settled = 0;",
+    "mb_output.momentum_nms.x = 50.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_state.mode = MB_HOLD;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 50.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 10.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_state.settled = 5;",
+    "mb_output.momentum_nms.x = 50.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_state.mode = MB_HOLD;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 50.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 10.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_state.settled = 5;",
+    "mb_output.momentum_nms.x = 53.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_state.mode = MB_BIAS;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 49.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 0.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_state.settled = 0;",
+    "mb_output.momentum_nms.x = 50.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.enter_error_nms = 1.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_state.mode = MB_BIAS;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 48.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 0.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_state.settled = 0;",
+    "mb_output.momentum_nms.x = 50.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.enter_error_nms = 1.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_state.mode = MB_HOLD;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 50.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 10.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_state.settled = 5;",
+    "mb_output.momentum_nms.x = 52.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.exit_error_nms = 2.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_state.mode = MB_HOLD;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 50.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 10.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_state.settled = 5;",
+    "mb_output.momentum_nms.x = 52.1; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.exit_error_nms = 2.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_state.mode = MB_RAMP;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 40.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_output.momentum_nms.x = 100.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.target_slew_nms_per_cycle = 10.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_state.mode = MB_RAMP;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 40.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_output.momentum_nms.x = 100.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.target_slew_nms_per_cycle = 0.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.wheel_count = 4;",
+    "mb_input.wheels[0].speed_rad_s = 7000.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_state.mode = MB_BIAS;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 49.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 0.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_state.settled = 0;",
+    "mb_output.momentum_nms.x = 50.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.kp_s_inv = 0.0;",
+    "mb_config.ki_s2_inv = 0.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_state.mode = MB_BIAS;",
+    "mb_state.target_initialized = 1;",
+    "mb_state.commanded_target_nms.x = 49.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 0.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_state.settled = 0;",
+    "mb_output.momentum_nms.x = 50.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.torque_limit_nm = 0.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_state.mode = MB_FAULT;",
+    "mb_state.target_initialized = 0;",
+    "mb_state.commanded_target_nms.x = 0.0; mb_state.commanded_target_nms.y = 0.0; mb_state.commanded_target_nms.z = 0.0;",
+    "mb_state.integral_error_nms_s.x = 0.0; mb_state.integral_error_nms_s.y = 0.0; mb_state.integral_error_nms_s.z = 0.0;",
+    "mb_output.momentum_nms.x = 100.0; mb_output.momentum_nms.y = 0.0; mb_output.momentum_nms.z = 0.0;",
+    "mb_config.target_nms.x = 50.0; mb_config.target_nms.y = 0.0; mb_config.target_nms.z = 0.0;",
+    "mb_config.kp_s_inv = 1.0;",
+    "GncRepoMomentumBiasStep();"
+   ]
+  }
+ ]
+}

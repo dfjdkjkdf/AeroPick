@@ -1,0 +1,153 @@
+{
+ "key": "f21eefc663763414261811c3e6d32dc5ea830c1c",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "mh_config.required = 4;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = 2.0;\nmh_input.sample->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mh_config.required = 5;\nmh_config.minimum_span = 0.5;\nmh_config.max_rejected_windows = 3;\nmh_input.enable = 1;\nmh_input.sample->x = -1.5;\nmh_input.sample->y = 0.25;\nmh_input.sample->z = 4.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mh_config.required = 4;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mh_config.required = 100;\nmh_config.minimum_span = 2.5;\nmh_config.max_rejected_windows = 1000;\nmh_input.enable = 1;\nmh_input.sample->x = 5.0;\nmh_input.sample->y = -5.0;\nmh_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mh_config.required = 3;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mh_config.required = 101;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mh_config.required = 10;\nmh_config.minimum_span = 0.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mh_config.required = 10;\nmh_config.minimum_span = -1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mh_config.required = 10;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 1001;\nmh_input.enable = 1;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mh_config.required = 10;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mh_config.required = 10;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = NAN;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mh_config.required = 10;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = INFINITY;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mh_config.required = 4;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 0;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = 2.0;\nmh_input.sample->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mh_config.required = 4;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 3.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 0.0;\nmh_input.sample->y = 3.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mh_config.required = 3;\nmh_config.minimum_span = 5.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;",
+    "mh_input.sample->x = 2.0;\nmh_input.sample->y = 2.0;\nmh_input.sample->z = 2.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mh_config.required = 2;\nmh_config.minimum_span = 5.0;\nmh_config.max_rejected_windows = 2;\nmh_input.enable = 1;\nmh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;",
+    "mh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;",
+    "mh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mh_config.required = 2;\nmh_config.minimum_span = 5.0;\nmh_config.max_rejected_windows = 1;\nmh_input.enable = 1;\nmh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;",
+    "mh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mh_config.required = 2;\nmh_config.minimum_span = 1.0;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 0.0;\nmh_input.sample->y = 0.0;\nmh_input.sample->z = 0.0;",
+    "mh_input.sample->x = 2.0;\nmh_input.sample->y = 2.0;\nmh_input.sample->z = 2.0;",
+    "mh_input.enable = 0;",
+    "mh_input.enable = 1;\nmh_input.sample->x = -1.0;\nmh_input.sample->y = -1.0;\nmh_input.sample->z = -1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mh_config.required = 5;\nmh_config.minimum_span = 0.75;\nmh_config.max_rejected_windows = 4;\nmh_input.enable = 1;\nmh_input.sample->x = -2.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 0.5;",
+    "mh_input.sample->x = 4.0;\nmh_input.sample->y = -3.0;\nmh_input.sample->z = 2.5;",
+    "mh_input.sample->x = 0.5;\nmh_input.sample->y = 0.5;\nmh_input.sample->z = -1.0;",
+    "mh_input.sample->x = -1.0;\nmh_input.sample->y = 2.0;\nmh_input.sample->z = 1.5;",
+    "mh_input.sample->x = 3.0;\nmh_input.sample->y = -0.5;\nmh_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mh_config.required = 4;\nmh_config.minimum_span = 1.5;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;",
+    "mh_input.sample->x = -0.5;\nmh_input.sample->y = -0.5;\nmh_input.sample->z = -0.5;",
+    "mh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mh_config.required = 10;\nmh_config.minimum_span = INFINITY;\nmh_config.max_rejected_windows = 0;\nmh_input.enable = 1;\nmh_input.sample->x = 1.0;\nmh_input.sample->y = 1.0;\nmh_input.sample->z = 1.0;"
+   ]
+  }
+ ]
+}

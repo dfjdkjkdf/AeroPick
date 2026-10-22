@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "First sample increments count; two valid samples with required=3 give good=2, matching C."
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "Two consecutive valid samples with required=2 give READY and good=2, matching C."
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "NULL sample must latch FAULT with failure defaults; C sets previous.w=0."
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "Zero quaternion must latch FAULT with failure defaults; C sets previous.w=0."
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "Nonfinite quaternion must latch FAULT with failure defaults; C sets previous.w=0."
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "Nonfinite quaternion must latch FAULT with failure defaults; C sets previous.w=0."
+  }
+ ],
+ "pick": "C"
+}

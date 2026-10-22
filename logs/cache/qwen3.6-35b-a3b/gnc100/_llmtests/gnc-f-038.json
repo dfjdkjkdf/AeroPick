@@ -1,0 +1,126 @@
+{
+ "key": "11e619f81d464541178e93437bc4d572a6b8b4d0",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "temperature = NULL;\ntemperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage = NULL;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance = NULL;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature = NULL;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent = NULL;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower = NULL;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\ntotal_power = NULL;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "temperature = NULL;\nvoltage = NULL;\nresistance = NULL;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature = NULL;\ncurrent = NULL;\npower = NULL;\ntotal_power = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage = NULL;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance = NULL;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature = NULL;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent = NULL;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower = NULL;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\ntotal_power = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = NAN;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = INFINITY;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = NAN;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = -1.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 0.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = NAN;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = -10.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = NAN;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = -5.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = NAN;\ndt = 1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = -1.0;\nnext_temperature->x = 0.0;\nnext_temperature->y = 0.0;\nnext_temperature->z = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\npower->x = 0.0;\npower->y = 0.0;\npower->z = 0.0;\n*total_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "temperature->x = 300.0;\ntemperature->y = 300.0;\ntemperature->z = 300.0;\nvoltage->x = 12.0;\nvoltage->y = 12.0;\nvoltage->z = 12.0;\nresistance->x = 4.0;\nresistance->y = 4.0;\nresistance->z = 4.0;\nthermal_capacity = 100.0;\nthermal_resistance = 10.0;\nambient = 293.0;\ndt = 1.0;\nnext_temperature->x = temperature->x;\nnext_temperature->y = temperature->y;\nnext_temperature->z = temperature->z;\ncurrent->x = voltage->x / resistance->x;\ncurrent->y = voltage->y / resistance->y;\ncurrent->z = voltage->z / resistance->z;\npower->x = (voltage->x * voltage->x) / resistance->x;\npower->y = (voltage->y * voltage->y) / resistance->y;\npower->z = (voltage->z * voltage->z) / resistance->z;\n*total_power = power->x + power->y + power->z;",
+    "temperature->x = next_temperature->x;\ntemperature->y = next_temperature->y;\ntemperature->z = next_temperature->z;\nnext_temperature->x = temperature->x;\nnext_temperature->y = temperature->y;\nnext_temperature->z = temperature->z;\ncurrent->x = voltage->x / resistance->x;\ncurrent->y = voltage->y / resistance->y;\ncurrent->z = voltage->z / resistance->z;\npower->x = (voltage->x * voltage->x) / resistance->x;\npower->y = (voltage->y * voltage->y) / resistance->y;\npower->z = (voltage->z * voltage->z) / resistance->z;\n*total_power = power->x + power->y + power->z;"
+   ]
+  }
+ ]
+}

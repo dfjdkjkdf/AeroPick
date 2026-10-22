@@ -1,0 +1,175 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:** I am an aerospace GNC software review expert. I need to evaluate two different implementations (A and B) of a C function based *only* on the provided requirements. There are 6 tests where A and B produce different outputs for `qo_output.usable`. I need to determine which implementation is correct for each test, explain why briefly, and then pick the overall better implementation. Output must be JSON.
+
+2.  **Analyze the Requirements:**
+    *   **Function/Module:** QUEST observation-geometry supervisor.
+    *   **Inputs:** body vectors, reference vectors, weights, count. Config: minimum_weight, minimum_separation_sine, required_good, max_consecutive_bad. State: enable, good, bad_streak.
+    *   **Validation/Rejection:**
+        *   Normalize each valid pair with linked routines.
+        *   Accumulate weighted alignment.
+        *   Reject geometry when either the first two body vectors or first two reference vectors are too parallel.
+        *   "A usable set needs at least two observations, total weight >= minimum_weight, and both cross norms >= minimum_separation_sine." (Note: "cross norms" here likely refers to the sine of the angle between the first two vectors in body and reference frames, i.e., separation sines).
+    *   **State Machine / Counters:**
+        *   `WAIT` requires `required_good` consecutive usable sets before `SOLVE`.
+        *   Each usable set clears a consecutive-bad-set counter (`bad_streak = 0`).
+        *   An unusable but well-formed set does not immediately discard accumulated good progress: it increments the bad-set counter and enters `HOLD` (preserving `good` and, if applicable, an existing SOLVE's validity) as long as the counter stays <= `max_consecutive_bad`. Exceeding `max_consecutive_bad` clears both counters and returns to `WAIT`.
+        *   Invalid flags, NULL arrays, nonfinite/nonpositive weights, degenerate vectors, or invalid configuration latch `FAULT` regardless of counters. Disable resets `WAIT` and clears both counters.
+    *   **Decision Table (Normative):**
+        *   Condition: `total weight < minimum_weight`, OR either separation sine below limit, AND incremented `bad_streak <= max_consecutive_bad` -> `usable = 0`, Mode: HOLD, preserve `good`, increment `bad_streak`.
+        *   Condition: Same as above BUT incremented `bad_streak > max_consecutive_bad` -> `usable = 0`, Mode: WAIT, `good = 0`, `bad_streak = 0`.
+        *   Condition: All three values `>=` limits -> `usable = count` (validated observations), Mode: SOLVE iff incremented `good >= required_good`, otherwise WAIT; increment `good`; reset `bad_streak = 0`.
+        *   Condition: `enable == 0` -> `usable = 0`, Mode: WAIT, `good = 0`, `bad_streak = 0`.
+        *   Condition: Malformed input/configuration -> `usable = 0`, Mode: FAULT, preserve, preserve.
+    *   **Validity Checks:**
+        *   `count` must be 2 or 3 (otherwise malformed).
+        *   `minimum_weight` finite and > 0.
+        *   `minimum_separation_sine` finite in (0, 1].
+        *   `required_good` in 1..10.
+        *   `max_consecutive_bad` <= 10.
+        *   Output `usable` is the number of validated observations.
+        *   `total_weight` is weight sum.
+        *   `weighted_body` = sum w_i * unit(body_i).
+    *   **Key Logic for `usable`:** The requirement says "Output `usable` is the number of validated observations". In the decision table, for a "Usable" set, it says `| 1 | ...`. Wait, the table column header says `Usable | Next mode...`. The `1` likely means boolean true (set is usable), or maybe it means `usable = count`? Let's re-read carefully: "Output `usable` is the number of validated observations". So if the set is usable, `usable` should equal `count` (which is 2 in all tests). If not usable, `usable` should be 0.
+    *   Let's check the decision table row: `all three values >= their limits | 1 | SOLVE iff...`. This `1` probably means `usable = 1` (boolean flag for usability) or maybe it's a typo in the prompt and means `usable = count`. Given the output struct has `uint32_t usable`, and the text says "Output `usable` is the number of validated observations", it strongly implies `usable = count` when successful, else `0`.
+    *   Let's verify the conditions for a usable set:
+        1. `count` >= 2 (here count=2, so OK).
+        2. `total_weight >= minimum_weight`.
+        3. Both cross norms (separation sines) >= `minimum_separation_sine`.
+    *   Separation sine calculation: For two vectors v1, v2, sine of angle = norm(cross(v1, v2)) / (norm(v1)*norm(v2)). Since they are normalized, it's just `norm(cross(v1, v2))`. Or equivalently `sqrt(1 - dot(v1,v2)^2)`.
+    *   The requirement says: "reject geometry when either the first two body vectors or first two reference vectors are too parallel." This matches checking the sine of the angle between vector 0 and vector 1.
+
+3.  **Analyze Each Test Case:**
+
+    *   **Test 1:**
+        *   Inputs: count=2. Body: [1,0,0], [0,1,0]. Ref: [1,0,0], [0,1,0]. Weights: [1.0, 1.0]. Total weight = 2.0.
+        *   Config: min_weight = 1.5. min_sep_sine = 0.5. req_good = 1. max_bad = 3.
+        *   Check weight: 2.0 >= 1.5 -> Pass.
+        *   Check separation: Body vectors are orthogonal. Dot=0. Sine = sqrt(1-0) = 1.0 >= 0.5 -> Pass. Ref same -> Pass.
+        *   All conditions met. Set is usable.
+        *   `usable` should be `count` = 2.
+        *   A says 1, B says 2. B is correct.
+
+    *   **Test 2:**
+        *   Inputs: count=2. Body: [1,0,0], [0.9999999, 0.0001, 0]. Ref: same. Weights: [1.0, 1.0]. Total weight = 2.0.
+        *   Config: min_weight = 1.5. min_sep_sine = 0.0001. req_good = 1. max_bad = 3.
+        *   Check weight: 2.0 >= 1.5 -> Pass.
+        *   Check separation: Vectors are nearly parallel. Cross product magnitude ≈ sin(angle). Angle ≈ atan(0.0001/0.9999999) ≈ 0.0001 rad. Sin ≈ 0.0001.
+        *   Actually, let's compute exactly: v1=[1,0,0], v2=[c,s,0] where c≈1, s=1e-4. Cross = [0,0,s]. Norm = s = 0.0001.
+        *   min_sep_sine = 0.0001. Condition: sine >= 0.0001. It is exactly 0.0001 (or extremely close due to float representation, but logically meets threshold). Even if slightly less, it's borderline. But given it's a boundary test, it likely passes or is designed to pass. Let's assume it passes or is intended to be usable. If it passes, usable=2.
+        *   Wait, the prompt says "boundary". Usually boundary tests check exact thresholds. 0.0001 >= 0.0001 is true. So usable=2.
+        *   A says 1, B says 2. B is correct.
+
+    *   **Test 3:**
+        *   Same as Test 1 & 5 & 6 essentially. Orthogonal vectors, weight=2, min_weight=1.5, min_sep=0.5. All pass.
+        *   `usable` should be 2.
+        *   A=1, B=2. B is correct.
+
+    *   **Test 4:**
+        *   Same inputs as Test 1, but `req_good = 2`.
+        *   Conditions for usability still pass. Usability depends on weight and separation, not on `req_good`. `req_good` only affects whether the mode transitions to SOLVE or stays WAIT.
+        *   `usable` should still be 2.
+        *   A=1, B=2. B is correct.
+
+    *   **Test 5:**
+        *   Same as Test 1. `usable` = 2.
+        *   A=1, B=2. B is correct.
+
+    *   **Test 6:**
+        *   Same as Test 1. `usable` = 2.
+        *   A=1, B=2. B is correct.
+
+    *   Wait, all tests have identical inputs except Test 2 (boundary) and Test 4 (req_good=2). In all cases, the geometric and weight conditions are satisfied. Therefore, the observation set is valid/usable. According to the requirement, "Output `usable` is the number of validated observations." So `usable` must equal `count` (which is 2).
+    *   Implementation A returns `usable = 1`. Implementation B returns `usable = 2`.
+    *   Clearly, B matches the requirement. A seems to be returning something else (maybe a boolean flag instead of count, or counting only one vector?).
+    *   Let's double check the exact wording: "Output `usable` is the number of validated observations". Yes, it's a count. So for count=2, it should be 2.
+    *   Is there any trick? "A usable set needs at least two observations..." -> count=2 satisfies this.
+    *   "total weight >= minimum_weight" -> 2.0 >= 1.5. OK.
+    *   "both cross norms >= minimum_separation_sine" -> sine is 1.0 or ~0.0001. Both >= limits. OK.
+    *   So set is usable. `usable` = 2.
+    *   Therefore, B is correct for all tests.
+
+4.  **Structure the Output:**
+    *   Need to produce JSON with `tests` array and `pick`.
+    *   For each test, provide `id`, `correct`, `reason`.
+    *   Reason should be concise, referencing the requirement.
+    *   Format: `{"tests":[{"id":1,"correct":"B","reason":"需求规定usable为有效观测数量，当前输入满足重量与分离度阈值，故应为2。"},{"id":2,...},...]}`
+    *   Check Test 2 again: sine is exactly 0.0001. min_sep_sine is 0.0001. Condition `>=` holds. So usable=2.
+    *   All tests point to B.
+    *   I will draft the reasons concisely.
+
+    Draft:
+    Test 1: 需求明确“Output usable是有效观测的数量”。输入满足总重≥最小权重且两向量正交（分离正弦值1.0≥0.5），几何有效，故usable应为count=2。B正确。
+    Test 2: 边界测试，向量夹角正弦值≈0.0001，刚好等于minimum_separation_sine阈值，满足“>=”条件；总重2.0≥1.5。集合有效，usable应为2。B正确。
+    Test 3: 同测试1，几何与权重均达标，usable应为2。B正确。
+    Test 4: required_good仅影响状态机跳转至SOLVE的时机，不改变当前帧是否可用的判定。条件满足时usable仍为2。B正确。
+    Test 5: 同测试1，条件满足，usable应为2。B正确。
+    Test 6: 同测试1，条件满足，usable应为2。B正确。
+    Pick: B
+
+    Wait, let's verify if "usable" could mean something else. The struct definition: `typedef struct { qo_mode_t mode; uint32_t good,usable; double total_weight,... } qo_output_t;`
+    The requirement says: "Output `usable` is the number of validated observations". This is unambiguous.
+    Could A be returning `good` or a boolean? Doesn't matter, B matches the spec.
+    One minor point: Test 2's sine might be slightly less than 0.0001 due to floating point precision? `[1,0,0]` and `[0.9999999, 0.0001, 0]`. Cross norm is exactly `0.0001` mathematically. In double precision, it will be represented accurately enough. The condition is `>=`. It should pass. Even if it fails by epsilon, the test is labeled "boundary", usually implying it hits the threshold. Given A and B differ, and B gives 2, B is highly likely correct. I'll stick with B.
+
+    Let's construct the JSON carefully.
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "需求规定usable为有效观测数量，当前输入满足重量与分离度阈值，集合有效，故应为2。"},
+        {"id": 2, "correct": "B", "reason": "边界条件下分离正弦值约等于阈值0.0001，满足>=条件且总重达标，集合有效，故应为2。"},
+        {"id": 3, "correct": "B", "reason": "同测试1，几何正交且权重达标，集合有效，故应为2。"},
+        {"id": 4, "correct": "B", "reason": "required_good仅决定模式跳转时机，不改变当前帧可用性判定，条件满足则usable应为2。"},
+        {"id": 5, "correct": "B", "reason": "同测试1，条件满足，集合有效，故应为2。"},
+        {"id": 6, "correct": "B", "reason": "同测试1，条件满足，集合有效，故应为2。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Check constraints: "只依据需求判断", "按需求逐条推理", "最后综合所有测试，选出最符合需求的一种实现", "只输出 JSON".
+    The prompt asks for reasoning in the output? It says "请**只依据需求**判断... 按需求逐条推理... 最后综合... 只输出 JSON：{...}". I will put the reasoning inside the `reason` field as requested ("一句话").
+    I will ensure the JSON matches exactly.
+    One detail: Test 2's sine calculation: `v1=[1,0,0]`, `v2=[0.9999999, 0.0001, 0]`. Cross = `[0,0, 0.0001]`. Norm = 0.0001. Exactly matches threshold. So it passes.
+    All good.
+    I will generate the JSON now. 
+    Self-Correction/Verification during thought:
+    Could `usable` mean something else like "number of pairs"? No, "number of validated observations". Observations count is `count`.
+    Could the requirement imply that `usable` is a boolean? "Output `usable` is the number of validated observations". It explicitly says number.
+    The decision table says `| 1 | ...` under `Usable` column. This might be confusing, but it likely means "True" or "Set is usable". The output variable `usable` in the struct is `uint32_t`, and the text clarifies it's a count.
+    I'm confident B is correct.
+    Output matches request.✅
+    Proceed. 
+    Generating response. 
+    `{ "tests": [ ... ], "pick": "B" }` format. All reasons are one sentence. Matches perfectly. 
+    Final check of the prompt: "只输出 JSON：{"tests":[...],"pick":"A|B"}"
+    I will strictly output only the JSON. No extra text.
+    Done. 
+    Output Generation. 
+    *(Self-Correction/Refinement during drafting)*: 
+    Wait, let's look at Test 2 again. `minimum_separation_sine = 0.0001`. The vectors are `[1,0,0]` and `[0.9999999, 0.0001, 0]`. The cross product magnitude is exactly `0.0001`. So `sine >= 0.0001` is true. It passes.
+    What if the implementation A returns 1 because it treats `usable` as a boolean flag (1 for usable, 0 for not)? That would explain A=1 across all tests. But the spec says "number of validated observations". So B is definitely correct per spec.
+    I will keep the reasons concise.
+    Ready. 
+    Output matches the required JSON structure.✅
+    Proceeds. 
+    [Output Generation] -> *See response.* 
+    *(Note: I will ensure the JSON is perfectly formatted and contains exactly what's asked.)*
+    `{ "tests": [ { "id": 1, "correct": "B", "reason": "需求明确usable为有效观测数量，当前输入满足总重及分离度阈值，几何有效，故应为2。" }, ... ] }`
+    All good. 
+    Output matches. 
+    [Done.] 
+    *(Self-Correction/Verification during output gen prep)*: 
+    I'll double check the exact wording for reason to be strictly one sentence as requested.
+    "需求明确usable为有效观测数量，当前输入满足总重及分离度阈值，几何有效，故应为2。" (1 sentence)
+    "边界条件下分离正弦值等于阈值0.0001，满足>=条件且总重达标，集合有效，故应为2。" (1 sentence)
+    "同测试1，几何正交且权重达标，集合有效，故应为2。" (1 sentence)
+    "required_good仅决定模式跳转时机，不改变当前帧可用性判定，条件满足则usable应为2。" (1 sentence)
+    "同测试1，条件满足，集合有效，故应为2。" (1 sentence)
+    "同测试1，条件满足，集合有效，故应为2。" (1 sentence)
+    All good.
+    Final JSON construction.✅
+    Output matches request.✅
+    Proceeds. 
+    [Output Generation] (matches the final JSON)
+    *(Done.)*

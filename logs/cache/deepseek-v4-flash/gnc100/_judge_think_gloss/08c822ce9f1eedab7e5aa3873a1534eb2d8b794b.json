@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "enable==0 应复位/关闭，输出余弦应清零；A=0，B仍计算为1。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "第三次调用 enable=0 应复位输出并令 correction zero；A全零，B保留/计算非零余弦、角度和轴。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "第二次调用 enable=0 应复位输出；A全零，B仍输出非零计算值。"
+  }
+ ],
+ "pick": "A"
+}

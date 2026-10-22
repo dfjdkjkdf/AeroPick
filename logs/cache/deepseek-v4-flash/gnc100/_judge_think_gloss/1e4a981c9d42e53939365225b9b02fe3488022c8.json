@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "a与b均为有限非零，点积为0且叉积范数为2e300，按定义 angle=atan2(2e300,0)=π/2，应返回 ADCS_OK。"
+  }
+ ],
+ "pick": "A"
+}

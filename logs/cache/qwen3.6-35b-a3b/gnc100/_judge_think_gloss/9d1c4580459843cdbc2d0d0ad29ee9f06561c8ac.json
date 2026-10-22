@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定拒绝NULL指针应返回ADCS_E_NULL(1)且失败输出归零，A正确返回1、输出清零且不崩溃，完全符合；B实现崩溃或返回异常。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同理，direction参数为NULL时A按需求拦截并返回1、输出归零，B未做空指针防护导致异常。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同理，magnitude参数为NULL时A按需求拦截并返回1、输出归零，B未做空指针防护导致异常。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9317,
+  "completion": 2578
+ }
+}

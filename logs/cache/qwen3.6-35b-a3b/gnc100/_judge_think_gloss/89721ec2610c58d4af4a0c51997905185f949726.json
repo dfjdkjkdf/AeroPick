@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定空指针触发失败处理，必须输出单位阵与非负校正范数INFINITY，仅A同时满足两项输出。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "输入矩阵第二行为零向量，违反‘前两行非零’前提，按检查顺序触发退化失败，应输出INFINITY，A符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测2，输入为退化矩阵，A正确输出INFINITY。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测2，A正确输出INFINITY。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "同测2，A正确输出INFINITY。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "输入全零矩阵首行非零条件不满足，触发退化失败，A正确输出INFINITY。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9330,
+  "completion": 4171
+ }
+}

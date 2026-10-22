@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "A遗漏outlier_mask赋值，C错误将禁用状态判定为故障，B完整准确实现需求逻辑与输出。",
+ "_usage": {
+  "prompt": 16139,
+  "completion": 5239
+ }
+}

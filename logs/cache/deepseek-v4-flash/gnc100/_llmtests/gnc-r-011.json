@@ -1,0 +1,209 @@
+{
+ "key": "3d975ccdd02cf49ff8d41f30a14e14d0ab842ddf",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 3;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 3;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = -7000000.0;\nep_input.position_eci_m->y = 1000000.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 3;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = -7000000.0;\nep_input.position_eci_m->y = 6371000.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 3;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = -7000000.0;\nep_input.position_eci_m->y = 6370999.9;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 3;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 0.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_ECLIPSE;\nep_state.elapsed = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_ECLIPSE;\nep_state.elapsed = 0;",
+    "ep_input.position_eci_m->x = 7000000.0;",
+    "ep_input.position_eci_m->x = 7000000.0;",
+    "ep_input.position_eci_m->x = 7000000.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.75;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_WARMUP;\nep_state.elapsed = 2;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.75;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_LOADWAIT;\nep_state.elapsed = 0;",
+    "ep_input.battery_soc = 0.7;",
+    "ep_input.battery_soc = 0.85;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.8;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_LOADWAIT;\nep_state.elapsed = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 5;",
+    "ep_input.battery_soc = 0.49;",
+    "ep_input.battery_soc = 0.6;",
+    "ep_input.battery_soc = 0.85;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.5;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 3;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.6;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_LOADSHED;\nep_state.elapsed = 0;",
+    "ep_input.battery_soc = 0.8;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.6;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_LOADSHED;\nep_state.elapsed = 0;",
+    "ep_input.position_eci_m->x = -7000000.0;\nep_input.position_eci_m->y = 1000000.0;",
+    "ep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 3;\nep_config.warmup_cycles = 3;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = -7000000.0;\nep_input.position_eci_m->y = 1000000.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_WARMUP;\nep_state.elapsed = 2;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 100;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 8000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_RECOVERY;\nep_state.elapsed = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_WARMUP;\nep_state.elapsed = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m = NULL;\nep_input.sun_direction_eci->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = NAN;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = INFINITY;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = NAN;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 0.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 0;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 101;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 1.5;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.9;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 2;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 0;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = -7000000.0;\nep_input.position_eci_m->y = 1000000.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 42;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = -1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 1;\nep_config.warmup_cycles = 1;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = -7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_SUN;\nep_state.elapsed = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_config.earth_radius_m = 6371000.0;\nep_config.recovery_cycles = 2;\nep_config.warmup_cycles = 2;\nep_config.payload_on_soc = 0.8;\nep_config.payload_off_soc = 0.5;\nep_input.enable = 1;\nep_input.battery_soc = 0.9;\nep_input.position_eci_m->x = 7000000.0;\nep_input.position_eci_m->y = 0.0;\nep_input.position_eci_m->z = 0.0;\nep_input.sun_direction_eci->x = 1.0;\nep_input.sun_direction_eci->y = 0.0;\nep_input.sun_direction_eci->z = 0.0;\nep_state.mode = EP_FAULT;\nep_state.elapsed = 7;",
+    "ep_input.battery_soc = 0.6;"
+   ]
+  }
+ ]
+}

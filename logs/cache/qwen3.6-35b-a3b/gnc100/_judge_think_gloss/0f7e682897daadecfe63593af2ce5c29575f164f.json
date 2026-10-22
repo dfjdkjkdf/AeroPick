@@ -1,0 +1,34 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确要求失败时输出INFINITY，B的angle=inf符合该规定，A输出0不符。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同上，body指针为空触发空指针错误处理分支，B按要求输出INFINITY。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同上，reference指针为空，B输出INFINITY符合需求描述。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "output指针innovation为空属严重参数校验失败，函数应直接返回ADCS_E_NULL(1)且严禁越界写入；A安全返回1，B发生崩溃严重违反API契约。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "output指针angle为空同理，A正确拦截并返回1，B崩溃违规；对输出指针的保护优先于数值赋初值。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9111,
+  "completion": 4537
+ }
+}

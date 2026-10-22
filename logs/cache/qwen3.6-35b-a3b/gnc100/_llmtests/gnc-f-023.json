@@ -1,0 +1,125 @@
+{
+ "key": "3c7b9bfe0e048293ff69ddc4f7b6f87d676558bb",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "requested = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "voltage = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "realized = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mask = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "area_turns[0] = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "resistance[0] = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "area_turns[0] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "resistance[0] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested->x = 0.0; requested->y = 0.0; requested->z = 0.0;\narea_turns[0] = 1.0; area_turns[1] = 1.0; area_turns[2] = 1.0;\nresistance[0] = 1.0; resistance[1] = 1.0; resistance[2] = 1.0;\nvoltage_limit[0] = 10.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;\nrequested->x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "area_turns[0] = 1.0; area_turns[1] = 1.0; area_turns[2] = 1.0;\nresistance[0] = 1.0; resistance[1] = 1.0; resistance[2] = 1.0;\nvoltage_limit[0] = 10.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;\nrequested->x = INFINITY;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested->x = 0.0; requested->y = 0.0; requested->z = 0.0;\narea_turns[0] = 1.0; area_turns[1] = 1.0; area_turns[2] = 1.0;\nresistance[0] = 1.0; resistance[1] = 1.0; resistance[2] = 1.0;\nvoltage_limit[0] = 10.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested->x = 1.0; requested->y = 0.0; requested->z = 0.0;\narea_turns[0] = 1.0; area_turns[1] = 1.0; area_turns[2] = 1.0;\nresistance[0] = 1.0; resistance[1] = 1.0; resistance[2] = 1.0;\nvoltage_limit[0] = 10.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested->x = 5.0; requested->y = 0.0; requested->z = 0.0;\narea_turns[0] = 1.0; area_turns[1] = 1.0; area_turns[2] = 1.0;\nresistance[0] = 1.0; resistance[1] = 1.0; resistance[2] = 1.0;\nvoltage_limit[0] = 5.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested->x = -5.0; requested->y = 0.0; requested->z = 0.0;\narea_turns[0] = 1.0; area_turns[1] = 1.0; area_turns[2] = 1.0;\nresistance[0] = 1.0; resistance[1] = 1.0; resistance[2] = 1.0;\nvoltage_limit[0] = 5.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested->x = 6.0; requested->y = 0.0; requested->z = 0.0;\narea_turns[0] = 1.0; area_turns[1] = 1.0; area_turns[2] = 1.0;\nresistance[0] = 1.0; resistance[1] = 1.0; resistance[2] = 1.0;\nvoltage_limit[0] = 5.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested->x = -6.0; requested->y = 0.0; requested->z = 0.0;\narea_turns[0] = 1.0; area_turns[1] = 1.0; area_turns[2] = 1.0;\nresistance[0] = 1.0; resistance[1] = 1.0; resistance[2] = 1.0;\nvoltage_limit[0] = 5.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested->x = 1.0; requested->y = 2.0; requested->z = 3.0;\narea_turns[0] = 1.0; area_turns[1] = 2.0; area_turns[2] = 3.0;\nresistance[0] = 1.0; resistance[1] = 2.0; resistance[2] = 3.0;\nvoltage_limit[0] = 10.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested->x = 1.0; requested->y = 2.0; requested->z = 3.0;\narea_turns[0] = 1.0; area_turns[1] = 2.0; area_turns[2] = 3.0;\nresistance[0] = 1.0; resistance[1] = 2.0; resistance[2] = 3.0;\nvoltage_limit[0] = 1.0; voltage_limit[1] = 4.0; voltage_limit[2] = 9.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested->x = 1.0; requested->y = 2.0; requested->z = 3.0;\narea_turns[0] = 1.0; area_turns[1] = 2.0; area_turns[2] = 3.0;\nresistance[0] = 1.0; resistance[1] = 2.0; resistance[2] = 3.0;\nvoltage_limit[0] = 0.0; voltage_limit[1] = 0.0; voltage_limit[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "area_turns[0] = 1.0; area_turns[1] = 1.0; area_turns[2] = 1.0;\nresistance[0] = 1.0; resistance[1] = 1.0; resistance[2] = 1.0;\nvoltage_limit[0] = 10.0; voltage_limit[1] = 10.0; voltage_limit[2] = 10.0;\nrequested->x = 1.0; requested->y = 1.0; requested->z = 1.0;\narea_turns[0] = NAN;"
+   ]
+  }
+ ]
+}

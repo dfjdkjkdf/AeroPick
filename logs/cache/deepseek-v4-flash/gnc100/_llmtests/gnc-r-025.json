@@ -1,0 +1,142 @@
+{
+ "key": "94dee85f338c526a68267d8bd711866bde6b31ef",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 1;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 3;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 3;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 2;\nqn_state.initialized = 1;\nqn_state.previous.w = 1.0;\nqn_state.previous.x = 0.0;\nqn_state.previous.y = 0.0;\nqn_state.previous.z = 0.0;\nqn_input.sample = (adcs_quat_t[]){ {0.9238795325112867, 0.3826834323650898, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {0.9238795325112867, 0.3826834323650898, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 0.0;\nqn_config.step_limit_rad = 0.0;\nqn_config.required = 1;\nqn_state.initialized = 1;\nqn_state.previous.w = 1.0;\nqn_state.previous.x = 0.0;\nqn_state.previous.y = 0.0;\nqn_state.previous.z = 0.0;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 20;\nqn_state.initialized = 1;\nqn_state.previous.w = 1.0;\nqn_state.previous.x = 0.0;\nqn_state.previous.y = 0.0;\nqn_state.previous.z = 0.0;\nqn_state.good = 0;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 0.0;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 1;\nqn_state.initialized = 1;\nqn_state.previous.w = 1.0;\nqn_state.previous.x = 0.0;\nqn_state.previous.y = 0.0;\nqn_state.previous.z = 0.0;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 1e-9} };"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 1;\nqn_state.initialized = 1;\nqn_state.previous.w = 1.0;\nqn_state.previous.x = 0.0;\nqn_state.previous.y = 0.0;\nqn_state.previous.z = 0.0;\nqn_input.sample = (adcs_quat_t[]){ {-1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 1;\nqn_input.sample = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 1;\nqn_input.sample = (adcs_quat_t[]){ {0.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 1;\nqn_input.sample = (adcs_quat_t[]){ {NAN, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 1;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, INFINITY, 0.0} };"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = -1.0;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 1;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = -0.1;\nqn_config.required = 1;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 4.0;\nqn_config.required = 1;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 0;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 21;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qn_input.enable = 0;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 1;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 3;\nqn_state.mode = QN_READY;\nqn_state.good = 2;\nqn_state.initialized = 1;\nqn_state.previous.w = 1.0;\nqn_state.previous.x = 0.0;\nqn_state.previous.y = 0.0;\nqn_state.previous.z = 0.0;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 3.14159265358979323846264338327950288;\nqn_config.required = 2;\nqn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {2.0, 0.0, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qn_input.enable = 1;\nqn_config.norm_error_limit = 1e-6;\nqn_config.step_limit_rad = 0.1;\nqn_config.required = 2;\nqn_state.initialized = 1;\nqn_state.previous.w = 1.0;\nqn_state.previous.x = 0.0;\nqn_state.previous.y = 0.0;\nqn_state.previous.z = 0.0;\nqn_input.sample = (adcs_quat_t[]){ {0.9238795325112867, 0.3826834323650898, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {0.9238795325112867, 0.3826834323650898, 0.0, 0.0} };",
+    "qn_input.sample = (adcs_quat_t[]){ {1.0, 0.0, 0.0, 0.0} };"
+   ]
+  }
+ ]
+}

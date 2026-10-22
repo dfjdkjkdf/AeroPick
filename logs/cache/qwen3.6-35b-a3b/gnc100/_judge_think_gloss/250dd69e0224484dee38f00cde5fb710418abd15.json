@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定当两个输出指针均存在时发生错误必须写入accepted=identity且separation_rad=INFINITY，B完全符合该条件分支，A/C未正确写入默认值。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "accepted为NULL时仅触发返回ADCS_E_NULL，需求未要求在单指针缺失时修改剩余输出，B返回0符合逻辑限定，A返回inf属于越界实现。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同理separation_rad为NULL时不满足‘双指针均存在’的强写条件，B保留0合理，A强行写1违背需求条件句。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "零向量样本触发退化错误，双指针均存在时应按需求写入identity与INFINITY，B正确执行，A/C中A错误C虽同结果但综合前测B更严谨。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "极小范数样本判定为退化并走错误分支，双指针存在时强制写默认值的逻辑生效，B行为一致且严格匹配需求。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "含INF的样本触发非法/退化错误处理，同T4/T5，B始终遵守‘双指针存在则写默认值、否则不覆盖’的条件规则。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9362,
+  "completion": 3412
+ }
+}

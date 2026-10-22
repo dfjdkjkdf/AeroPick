@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "norm=1 达到饱和阈值，应报 SATURATED 且限幅后方向保持为 (1,0,0)，B 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "norm=1 达到饱和阈值，应报 SATURATED 且限幅后保持负方向 (-1,0,0)，B 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "norm=0.05 等于恢复阈值且当前 SATURATED，应进入 RECOVERING 并将 clean 增到 1，B 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "norm 略大于恢复阈值且小于饱和阈值、当前 RECOVERING，应报 SATURATED 并清零 clean，B 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "norm 略小于饱和阈值且当前 SATURATED，应报 SATURATED 且保留接近原值的限幅输出，B 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "norm=0 不超过恢复阈值且当前 SATURATED，应进入 RECOVERING 并将 clean 增到 1，B 符合。"
+  }
+ ],
+ "pick": "B"
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly zeroes available body/recovered outputs and sets error to INFINITY even on NULL-return failures, whereas B and C only return ADCS_E_NULL without satisfying the failure-output requirement.",
+ "_usage": {
+  "prompt": 8882,
+  "completion": 1355
+ }
+}

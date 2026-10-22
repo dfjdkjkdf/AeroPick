@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "dt_s=-1 非正，输入无效，应锁存 FAULT 且输出电压为 0。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "dt_s=0 非正，输入无效，应锁存 FAULT 且输出电压为 0。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "第4次 enable=0，禁用调用应进入 OFF 并清零 trip_count，而非 FAULT。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "第1次预测温度 349.965<350 仍为 DRIVE，第2次禁用应进入 OFF 并清零 trip_count，而非 FAULT。"
+  }
+ ],
+ "pick": "B"
+}

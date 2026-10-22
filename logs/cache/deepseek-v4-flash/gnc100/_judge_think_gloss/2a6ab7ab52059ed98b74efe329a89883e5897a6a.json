@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "Returns ADCS_OK, nonnegative loss, and worst index matching the specified Wahba residual."
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "Returns ADCS_OK with the expected weighted loss and worst index."
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "Returns ADCS_OK with loss essentially zero within roundoff."
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "Returns ADCS_OK with the expected weighted loss and worst index."
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "Invalid nonpositive weights must yield ADCS_E_RANGE and failure default worst_index=SIZE_MAX."
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "Null input must yield ADCS_E_NULL and failure defaults loss=INFINITY, worst_index=SIZE_MAX."
+  }
+ ],
+ "pick": "C"
+}

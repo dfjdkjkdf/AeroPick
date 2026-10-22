@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "零场向量属于退化场，需求要求latch FAULT；A输出FAULT且未初始化滤波器，符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "零场向量属于退化场，需求要求latch FAULT；A输出FAULT且未初始化滤波器，符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "零场向量属于退化场，需求要求latch FAULT；A输出FAULT且未初始化滤波器，符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "零场向量属于退化场，需求要求latch FAULT；A输出FAULT且未初始化滤波器，符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "零场向量属于退化场，需求要求latch FAULT；A输出FAULT且未初始化滤波器，符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "零场向量属于退化场，需求要求latch FAULT；A输出FAULT且未初始化滤波器，符合。"
+  }
+ ],
+ "pick": "A"
+}

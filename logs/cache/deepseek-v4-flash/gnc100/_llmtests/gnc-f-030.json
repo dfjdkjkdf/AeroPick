@@ -1,0 +1,173 @@
+{
+ "key": "79c2f39ab39d3880622b471ed43d25ff904569d0",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel_torque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_torque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mechanical_power = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bus_power = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 17;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 16; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 100.0; wheel_torque[0] = 0.01; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 100.0; wheel_torque[0] = 0.01; efficiency = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "efficiency = 0.0; count = 1; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 0.01;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "efficiency = -0.5; count = 1; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 0.01;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "efficiency = 1.0000001; count = 1; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 0.01;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "efficiency = 0.0 / 0.0; count = 1; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 0.01;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "efficiency = 1.0 / 0.0; count = 1; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 0.01;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 100.0; wheel_torque[0] = 0.02; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 100.0; wheels[1].axis_body.y = 1.0; wheels[1].inertia_kg_m2 = 0.2; wheels[1].speed_rad_s = -50.0; wheel_torque[0] = 0.02; wheel_torque[1] = 0.01; efficiency = 0.85;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 3; wheels[0].axis_body.x = 1.0; wheels[0].axis_body.y = 0.0; wheels[0].axis_body.z = 0.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 100.0; wheels[1].axis_body.x = 0.0; wheels[1].axis_body.y = 1.0; wheels[1].axis_body.z = 0.0; wheels[1].inertia_kg_m2 = 0.1; wheels[1].speed_rad_s = 100.0; wheels[2].axis_body.x = 0.0; wheels[2].axis_body.y = 0.0; wheels[2].axis_body.z = 1.0; wheels[2].inertia_kg_m2 = 0.1; wheels[2].speed_rad_s = 100.0; wheel_torque[0] = 0.01; wheel_torque[1] = 0.02; wheel_torque[2] = 0.03; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 0.0; wheels[0].axis_body.y = 0.0; wheels[0].axis_body.z = 0.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 0.01; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 1.0; wheels[0].axis_body.y = 0.0; wheels[0].axis_body.z = 0.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 0.0 / 0.0; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 1.0; wheels[0].axis_body.y = 0.0; wheels[0].axis_body.z = 0.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 1.0 / 0.0; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 1.0; wheels[0].axis_body.y = 0.0; wheels[0].axis_body.z = 0.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 0.0 / 0.0; wheel_torque[0] = 0.01; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 1.0; wheels[0].axis_body.y = 0.0; wheels[0].axis_body.z = 0.0; wheels[0].inertia_kg_m2 = 1.0 / 0.0; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 0.01; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 1.0; wheels[0].axis_body.y = 0.0; wheels[0].axis_body.z = 0.0; wheels[0].inertia_kg_m2 = -0.1; wheels[0].speed_rad_s = 10.0; wheel_torque[0] = 0.01; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 2; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 10.0; wheels[1].axis_body.x = 0.0; wheels[1].axis_body.y = 0.0; wheels[1].axis_body.z = 0.0; wheels[1].inertia_kg_m2 = 0.1; wheels[1].speed_rad_s = 10.0; wheel_torque[0] = 0.01; wheel_torque[1] = 0.01; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 1.0; wheels[0].axis_body.y = 0.0; wheels[0].axis_body.z = 0.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 0.0; wheel_torque[0] = 0.01; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 1; wheels[0].axis_body.x = 1.0; wheels[0].axis_body.y = 0.0; wheels[0].axis_body.z = 0.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 100.0; wheel_torque[0] = -0.02; efficiency = 0.9;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2; wheels[0].axis_body.x = 1.0; wheels[0].inertia_kg_m2 = 0.1; wheels[0].speed_rad_s = 100.0; wheels[1].axis_body.y = 1.0; wheels[1].inertia_kg_m2 = 0.1; wheels[1].speed_rad_s = -100.0; wheel_torque[0] = 0.02; wheel_torque[1] = -0.02; efficiency = 0.8;"
+   ]
+  }
+ ]
+}

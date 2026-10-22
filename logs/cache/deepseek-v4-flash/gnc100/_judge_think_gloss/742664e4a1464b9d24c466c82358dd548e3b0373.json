@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "Identity gives zero angle and no nonzero slew axis, so stored slew_axis remains zero."
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "Identity gives zero angle and no nonzero slew axis, so stored slew_axis remains zero."
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "Rate rises from 0 toward target 0.01, so mode is ACCEL."
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "Rate rises from 0 toward the braking envelope, so mode is ACCEL."
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "q and -q are the same orientation, giving zero angle and no nonzero slew axis."
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "q and -q are the same orientation, giving zero angle and no nonzero slew axis."
+  }
+ ],
+ "pick": "B"
+}

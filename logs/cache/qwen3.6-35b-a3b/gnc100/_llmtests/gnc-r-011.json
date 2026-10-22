@@ -1,0 +1,225 @@
+{
+ "key": "3d975ccdd02cf49ff8d41f30a14e14d0ab842ddf",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "ep_input.position_eci_m = NULL;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_input.sun_direction_eci = NULL;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.earth_radius_m = -100.0;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.recovery_cycles = 0;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.warmup_cycles = 101;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_input.battery_soc = -0.1;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_input.battery_soc = 1.1;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_config.payload_on_soc = 0.8;",
+    "ep_config.payload_off_soc = 0.9;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_input.enable = 2;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ep_input.enable = 0;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_input.enable = 1;",
+    "ep_input.position_eci_m->x = 6371000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "ep_input.sun_direction_eci->x = 1.0; ep_input.sun_direction_eci->y = 0.0; ep_input.sun_direction_eci->z = 0.0;",
+    "ep_config.earth_radius_m = 6371000.0;",
+    "ep_config.recovery_cycles = 1;",
+    "ep_config.warmup_cycles = 1;",
+    "ep_config.payload_on_soc = 0.5;",
+    "ep_config.payload_off_soc = 0.4;",
+    "ep_input.battery_soc = 0.6;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_SUN && ep_output.payload_on == 1"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_input.enable = 1;",
+    "ep_input.position_eci_m->x = -6372000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "ep_input.sun_direction_eci->x = 1.0; ep_input.sun_direction_eci->y = 0.0; ep_input.sun_direction_eci->z = 0.0;",
+    "ep_config.earth_radius_m = 6371000.0;",
+    "ep_config.recovery_cycles = 1;",
+    "ep_config.warmup_cycles = 1;",
+    "ep_config.payload_on_soc = 0.5;",
+    "ep_config.payload_off_soc = 0.4;",
+    "ep_input.battery_soc = 0.6;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_ECLIPSE && ep_output.heater_on == 1 && ep_output.payload_on == 0"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_input.enable = 1;",
+    "ep_input.position_eci_m->x = -6372000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "ep_input.sun_direction_eci->x = 1.0; ep_input.sun_direction_eci->y = 0.0; ep_input.sun_direction_eci->z = 0.0;",
+    "ep_config.earth_radius_m = 6371000.0;",
+    "ep_config.recovery_cycles = 2;",
+    "ep_config.warmup_cycles = 1;",
+    "ep_config.payload_on_soc = 0.5;",
+    "ep_config.payload_off_soc = 0.4;",
+    "ep_input.battery_soc = 0.6;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_input.position_eci_m->x = 6372000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_RECOVERY",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_WARMUP",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_SUN && ep_output.payload_on == 1"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_input.enable = 1;",
+    "ep_input.position_eci_m->x = 6372000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "ep_input.sun_direction_eci->x = 1.0; ep_input.sun_direction_eci->y = 0.0; ep_input.sun_direction_eci->z = 0.0;",
+    "ep_config.earth_radius_m = 6371000.0;",
+    "ep_config.recovery_cycles = 1;",
+    "ep_config.warmup_cycles = 1;",
+    "ep_config.payload_on_soc = 0.6;",
+    "ep_config.payload_off_soc = 0.5;",
+    "ep_input.battery_soc = 0.55;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_LOADWAIT && ep_output.payload_on == 0",
+    "ep_input.battery_soc = 0.65;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_SUN && ep_output.payload_on == 1"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_input.enable = 1;",
+    "ep_input.position_eci_m->x = 6372000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "ep_input.sun_direction_eci->x = 1.0; ep_input.sun_direction_eci->y = 0.0; ep_input.sun_direction_eci->z = 0.0;",
+    "ep_config.earth_radius_m = 6371000.0;",
+    "ep_config.recovery_cycles = 1;",
+    "ep_config.warmup_cycles = 1;",
+    "ep_config.payload_on_soc = 0.5;",
+    "ep_config.payload_off_soc = 0.4;",
+    "ep_input.battery_soc = 0.5;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_SUN && ep_output.payload_on == 1",
+    "ep_input.battery_soc = 0.3;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_LOADSHED && ep_output.payload_on == 0",
+    "ep_input.battery_soc = 0.55;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_SUN && ep_output.payload_on == 1"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ep_input.enable = 1;",
+    "ep_input.position_eci_m->x = -6371000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "ep_input.sun_direction_eci->x = 1.0; ep_input.sun_direction_eci->y = 0.0; ep_input.sun_direction_eci->z = 0.0;",
+    "ep_config.earth_radius_m = 6371000.0;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ep_input.enable = 1;",
+    "ep_input.position_eci_m->x = 6371000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "ep_input.sun_direction_eci->x = 1.0; ep_input.sun_direction_eci->y = 0.0; ep_input.sun_direction_eci->z = 0.0;",
+    "ep_config.earth_radius_m = 6371000.0;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ep_input.enable = 1;",
+    "ep_input.position_eci_m->x = 6372000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "ep_input.sun_direction_eci->x = 1.0; ep_input.sun_direction_eci->y = 0.0; ep_input.sun_direction_eci->z = 0.0;",
+    "ep_config.earth_radius_m = 6371000.0;",
+    "ep_config.recovery_cycles = 1;",
+    "ep_config.warmup_cycles = 1;",
+    "ep_config.payload_on_soc = 0.5;",
+    "ep_config.payload_off_soc = 0.4;",
+    "ep_input.battery_soc = 0.5;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_input.position_eci_m->x = -6372000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "GncRepoEclipsePayloadStep();",
+    "ep_output.mode == EP_ECLIPSE",
+    "ep_input.position_eci_m->x = 6372000.0; ep_input.position_eci_m->y = 0.0; ep_input.position_eci_m->z = 0.0;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_input.position_eci_m->x = NAN;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ep_input.sun_direction_eci->x = INFINITY;",
+    "GncRepoEclipsePayloadStep();"
+   ]
+  }
+ ]
+}

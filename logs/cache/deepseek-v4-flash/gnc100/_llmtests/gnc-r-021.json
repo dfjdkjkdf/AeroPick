@@ -1,0 +1,204 @@
+{
+ "key": "aa78c940e7bdeecc92a7f6cad2bb77975e554dfc",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 2;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 3;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.body[2].x = 0.0; qo_input.body[2].y = 0.0; qo_input.body[2].z = 1.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.reference[2].x = 0.0; qo_input.reference[2].y = 0.0; qo_input.reference[2].z = 1.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 2.0;\nqo_input.weights[2] = 3.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qo_config.minimum_weight = 3.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qo_config.minimum_weight = 3.0001;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.5;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 1.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 1.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.5;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 1.0; qo_input.body[1].y = 0.4; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 1.0; qo_input.reference[1].y = 0.9; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.5;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 1.0; qo_input.body[1].y = 0.6; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 1.0; qo_input.reference[1].y = 0.1; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 1;\nqo_input.body = NULL;\nqo_input.reference = NULL;\nqo_input.weights = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body = NULL;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference = NULL;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 0.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = -1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 0.0/0.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 0.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 0.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 1.5;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 11;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 11;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 0;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 3;\nqo_config.max_consecutive_bad = 2;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;",
+    "qo_input.body[1].x = 0.0; qo_input.body[1].y = 0.0; qo_input.body[1].z = 1.0;",
+    "qo_input.weights[0] = 0.1;",
+    "qo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.weights[0] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 2;\nqo_config.max_consecutive_bad = 1;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;",
+    "qo_input.weights[0] = 0.1;",
+    "qo_input.weights[0] = 0.1;",
+    "qo_input.weights[0] = 1.0;",
+    "qo_input.enable = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 2;\nqo_config.max_consecutive_bad = 2;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;",
+    "qo_input.weights[0] = 1.0;",
+    "qo_input.weights[0] = 0.1;",
+    "qo_input.weights[0] = 0.1;",
+    "qo_input.weights[0] = 0.1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 3;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;",
+    "qo_input.body[1].x = 0.0; qo_input.body[1].y = 0.0; qo_input.body[1].z = 1.0;",
+    "qo_input.body[1].x = 0.0; qo_input.body[1].y = 0.0; qo_input.body[1].z = 1.0;",
+    "qo_input.body[1].x = 0.0; qo_input.body[1].y = 0.0; qo_input.body[1].z = 1.0;",
+    "qo_input.body[1].x = 0.0; qo_input.body[1].y = 0.0; qo_input.body[1].z = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 2;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;",
+    "qo_input.weights[0] = 0.1;",
+    "qo_input.weights[0] = 0.1;",
+    "qo_input.weights[0] = 0.1;",
+    "qo_input.weights[0] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 10;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 4;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.body[2].x = 0.0; qo_input.body[2].y = 0.0; qo_input.body[2].z = 1.0;\nqo_input.body[3].x = 1.0; qo_input.body[3].y = 1.0; qo_input.body[3].z = 1.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.reference[2].x = 0.0; qo_input.reference[2].y = 0.0; qo_input.reference[2].z = 1.0;\nqo_input.reference[3].x = 0.0; qo_input.reference[3].y = 0.0; qo_input.reference[3].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;\nqo_input.weights[2] = 1.0;\nqo_input.weights[3] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 0;\nqo_input.weights[0] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 0.0/0.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qo_config.minimum_weight = 1.0;\nqo_config.minimum_separation_sine = 0.1;\nqo_config.required_good = 1;\nqo_config.max_consecutive_bad = 3;\nqo_input.enable = 1;\nqo_input.count = 2;\nqo_input.body[0].x = 1.0; qo_input.body[0].y = 0.0; qo_input.body[0].z = 0.0;\nqo_input.body[1].x = 0.0; qo_input.body[1].y = 1.0; qo_input.body[1].z = 0.0;\nqo_input.reference[0].x = 1.0; qo_input.reference[0].y = 0.0; qo_input.reference[0].z = 0.0;\nqo_input.reference[1].x = 0.0; qo_input.reference[1].y = 1.0/0.0; qo_input.reference[1].z = 0.0;\nqo_input.weights[0] = 1.0;\nqo_input.weights[1] = 1.0;"
+   ]
+  }
+ ]
+}

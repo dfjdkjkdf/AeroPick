@@ -1,0 +1,169 @@
+{
+ "key": "6812fab33701ae81af44813a2418dfd6708c263c",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_rate_t_s = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "command = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_rate_t_s->y = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "normalized_gain_nm_s_t = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "max_dipole_a_m2 = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "normalized_gain_nm_s_t = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "max_dipole_a_m2 = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0e-13;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0e-12;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0e-12;\nfield_body_t->y = 1.0e-12;\nfield_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 2.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 0.0;\nfield_rate_t_s->y = 1.0e-4;\nfield_rate_t_s->z = 0.0;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 2.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 0.0;\nfield_rate_t_s->y = 1.0e-4;\nfield_rate_t_s->z = 1.0e-4;\nnormalized_gain_nm_s_t = 0.0;\nmax_dipole_a_m2 = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 2.0e-5;\nfield_body_t->y = 1.0e-5;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 1.0e-4;\nfield_rate_t_s->y = 0.0;\nfield_rate_t_s->z = 0.0;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 0.0;\nfield_rate_t_s->y = 1.0e-4;\nfield_rate_t_s->z = 0.0;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 0.0;\nfield_rate_t_s->y = 1.0e-4;\nfield_rate_t_s->z = 0.0;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 0.0;\nfield_rate_t_s->y = 1.0e-4;\nfield_rate_t_s->z = 0.0;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 2.0e-5;\nfield_body_t->z = 2.0e-5;\nfield_rate_t_s->x = -3.0e-4;\nfield_rate_t_s->y = 3.0e-4;\nfield_rate_t_s->z = -3.0e-4;\nnormalized_gain_nm_s_t = 2.0;\nmax_dipole_a_m2 = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 2.0e-5;\nfield_body_t->z = 2.0e-5;\nfield_rate_t_s->x = 5.0e-4;\nfield_rate_t_s->y = 5.0e-4;\nfield_rate_t_s->z = 5.0e-4;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 0.0001;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = -1.0e-5;\nfield_body_t->y = 2.0e-5;\nfield_body_t->z = -2.0e-5;\nfield_rate_t_s->x = -5.0e-4;\nfield_rate_t_s->y = 5.0e-4;\nfield_rate_t_s->z = 5.0e-4;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 2.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 1.0e-4;\nfield_rate_t_s->y = 0.0;\nfield_rate_t_s->z = 0.0;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 2.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = -1.0e-4;\nfield_rate_t_s->y = 0.0;\nfield_rate_t_s->z = 0.0;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 0.0;\nfield_rate_t_s->y = 1.0e-4;\nfield_rate_t_s->z = 0.0;\nnormalized_gain_nm_s_t = 1.0e-6;\nmax_dipole_a_m2 = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 0.0;\nfield_rate_t_s->y = INFINITY;\nfield_rate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "field_body_t->x = 2.0e-5;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nfield_rate_t_s->x = 0.0;\nfield_rate_t_s->y = 1.0e-4;\nfield_rate_t_s->z = 0.0;\nnormalized_gain_nm_s_t = 1.0;\nmax_dipole_a_m2 = 10.0;",
+    "field_body_t->y = 1.0e-5;",
+    "field_rate_t_s->y = 2.0e-4;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,151 @@
+{
+ "key": "bf8f26ac7ce7b7385f41c8a98392dcdb34b02923",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 1.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.0;\nsa_input.sun->y = 1.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 3.0;\nsa_input.sun->y = 4.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 0.6;\nsa_input.boresight->y = 0.8;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 0;\nsa_input.sun->x = 1.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_ACTIVE;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.8;\nsa_input.sun->y = 0.6;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.0;\nsa_input.sun->y = 0.6;\nsa_input.sun->z = 0.8;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.5;\nsa_input.sun->y = 0.8660254037844386;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_ACTIVE;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.3;\nsa_input.sun->y = 0.9539392014169457;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_ACTIVE;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_cosine = 0.5;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.5;\nsa_input.sun->y = 0.8660254037844386;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_cosine = 1.0;\nsa_config.exit_cosine = 0.0;\nsa_input.enable = 1;\nsa_input.sun->x = 1.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_config.enter_cosine = 1.0;\nsa_config.exit_cosine = 0.0;\nsa_input.enable = 1;\nsa_input.sun->x = 0.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 1.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_ACTIVE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = -1.0;\nsa_input.enable = 1;\nsa_input.sun->x = 1.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_cosine = 1.0;\nsa_config.exit_cosine = 1.0;\nsa_input.enable = 1;\nsa_input.sun->x = 1.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_cosine = 0.5;\nsa_config.exit_cosine = 0.8;\nsa_input.enable = 1;\nsa_input.sun->x = 1.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun = NULL;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 1.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight = NULL;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 1.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 0.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = NAN;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 1.0;\nsa_input.sun->y = 0.0;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = INFINITY;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.9;\nsa_input.sun->y = 0.4358898943540674;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;",
+    "sa_input.sun->x = 0.7;\nsa_input.sun->y = 0.714142842854285;\nsa_input.sun->z = 0.0;",
+    "sa_input.sun->x = 0.4;\nsa_input.sun->y = 0.916515138991168;\nsa_input.sun->z = 0.0;",
+    "sa_input.sun->x = 0.2;\nsa_input.sun->y = 0.9797958971132712;\nsa_input.sun->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.9;\nsa_input.sun->y = 0.4358898943540674;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_ACTIVE;",
+    "sa_input.sun->x = 0.6;\nsa_input.sun->y = 0.8;\nsa_input.sun->z = 0.0;",
+    "sa_input.enable = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.5;\nsa_input.enable = 1;\nsa_input.sun->x = 0.9;\nsa_input.sun->y = 0.4358898943540674;\nsa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0;\nsa_input.boresight->y = 0.0;\nsa_input.boresight->z = 0.0;\nsa_state.mode = SA_OFF;",
+    "sa_input.enable = 0;",
+    "sa_input.enable = 1;\nsa_input.sun->x = 0.5;\nsa_input.sun->y = 0.8660254037844386;\nsa_input.sun->z = 0.0;",
+    "sa_input.enable = 1;\nsa_input.sun->x = 0.3;\nsa_input.sun->y = 0.9539392014169457;\nsa_input.sun->z = 0.0;"
+   ]
+  }
+ ]
+}

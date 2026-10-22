@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求规定enable=0时进入OFF且校正轴为零，A模式为OFF且角度归零符合预期；C模式正确但角度异常。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "输入向量归一化后点积约0.5，满足OFF转ACTIVE边界条件，A计算的角度acos(0.5)≈1.0472符合需求。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "需求明确NULL向量需触发并锁存FAULT，B输出模式2(FAULT)正确，A未处理故障。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "boresight为NULL同样触发FAULT逻辑，B输出模式2符合安全规范。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "sun为零向量属退化情况，需求规定需锁存FAULT，B输出模式2正确。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "sun含NAN属非有限值，需求规定需锁存FAULT，B输出模式2正确。"
+  }
+ ],
+ "pick": "C",
+ "_usage": {
+  "prompt": 9915,
+  "completion": 5688
+ }
+}

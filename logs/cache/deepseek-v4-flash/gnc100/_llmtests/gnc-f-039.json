@@ -1,0 +1,131 @@
+{
+ "key": "768f76749933d2d4a1744219163310889b791ee3",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "first_field_t->x = 1.0e-5; first_field_t->y = -2.0e-5; first_field_t->z = 3.0e-5; first_time_s = 0.0; second_field_t->x = 5.0e-5; second_field_t->y = 2.0e-5; second_field_t->z = -1.0e-5; second_time_s = 1.0; query_time_s = 0.25;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 2.0; first_field_t->z = 3.0; first_time_s = 10.0; second_field_t->x = 4.0; second_field_t->y = 5.0; second_field_t->z = 6.0; second_time_s = 10.5; query_time_s = 10.4;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "first_field_t->x = -1.5e-6; first_field_t->y = 0.0; first_field_t->z = 2.5e-6; first_time_s = 100.0; second_field_t->x = 3.5e-6; second_field_t->y = -1.0e-6; second_field_t->z = -2.5e-6; second_time_s = 100.002; query_time_s = 100.001;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = 1.0e-5; first_field_t->y = 2.0e-5; first_field_t->z = 3.0e-5; first_time_s = 1.0; second_field_t->x = 4.0e-5; second_field_t->y = 5.0e-5; second_field_t->z = 6.0e-5; second_time_s = 2.0; query_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = 1.0e-5; first_field_t->y = 2.0e-5; first_field_t->z = 3.0e-5; first_time_s = 1.0; second_field_t->x = 4.0e-5; second_field_t->y = 5.0e-5; second_field_t->z = 6.0e-5; second_time_s = 2.0; query_time_s = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = 1.0e-5; first_field_t->y = 2.0e-5; first_field_t->z = 3.0e-5; first_time_s = 1.0; second_field_t->x = 4.0e-5; second_field_t->y = 5.0e-5; second_field_t->z = 6.0e-5; second_time_s = 2.0; query_time_s = 1.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = 0.0; first_field_t->y = 0.0; first_field_t->z = 0.0; first_time_s = 0.0; second_field_t->x = 0.0; second_field_t->y = 0.0; second_field_t->z = 0.0; second_time_s = 1.0; query_time_s = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t = NULL; first_time_s = 0.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t = NULL; second_time_s = 1.0; query_time_s = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 0.5; interpolated_field_t = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = NAN; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = INFINITY; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t->x = NAN; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t->x = 1.0; second_field_t->y = -INFINITY; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = NAN; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = INFINITY; query_time_s = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 1.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 2.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 1.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = -0.001;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0; first_field_t->y = 1.0; first_field_t->z = 1.0; first_time_s = 0.0; second_field_t->x = 1.0; second_field_t->y = 1.0; second_field_t->z = 1.0; second_time_s = 1.0; query_time_s = 1.001;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确使用并检查 adcs_vec3_normalize 与 adcs_limit_scalar，且所有错误路径都会清零输出；B 忽略限幅返回值，C 在限幅中途失败时可能未清零已写入输出。",
+ "_usage": {
+  "prompt": 10909,
+  "completion": 18485
+ }
+}

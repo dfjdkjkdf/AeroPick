@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "仅实现A在所有错误分支中均按要求将输出向量置零，严格满足了需求中'failure zero'的输出契约。",
+ "_usage": {
+  "prompt": 8769,
+  "completion": 2661
+ }
+}

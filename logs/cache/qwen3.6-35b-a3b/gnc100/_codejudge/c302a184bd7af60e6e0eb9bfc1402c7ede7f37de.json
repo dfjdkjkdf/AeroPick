@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C在校验前统一将输出置零，严格满足“failure output zero”契约并符合航天软件防御性编程规范，逻辑最清晰健壮。",
+ "_usage": {
+  "prompt": 9626,
+  "completion": 2535
+ }
+}

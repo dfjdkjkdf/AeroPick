@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly validates NULL/error conditions, zeros outputs on failure, uses adcs_limit_scalar with status checking, and applies each axis independently to compute limited, residual, mask, and norm.",
+ "_usage": {
+  "prompt": 9673,
+  "completion": 12268
+ }
+}

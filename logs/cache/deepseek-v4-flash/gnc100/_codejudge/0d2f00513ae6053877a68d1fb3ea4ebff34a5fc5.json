@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly implements modified Gram-Schmidt with right-handed basis, validates null/nonfinite/degenerate in order, checks both row norms and collinearity, sets failure outputs to identity/INFINITY, and computes the correction norm.",
+ "_usage": {
+  "prompt": 10031,
+  "completion": 16660
+ }
+}

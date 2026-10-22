@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "enable=-1违反“enable必须为0或1”配置要求，触发非法配置锁存FAULT，故障安全态应默认输出单位四元数(w=1)，A符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "enable=2属非法配置，同样触发FAULT锁存并输出单位四元数作为安全缺省值，A正确。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "residual_weight_floor_rad为负违反“正数”要求，非法配置锁存FAULT，应输出单位四元数，A正确。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "output_alpha=0.0违反“(0,1]”区间要求，非法配置锁存FAULT，应输出单位四元数，A正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "output_alpha=1.1超出允许范围，非法配置锁存FAULT，应输出单位四元数，A正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "switch_confirm_cycles=0不在“1..20”计数范围内，非法配置锁存FAULT，应输出单位四元数，A正确。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9603,
+  "completion": 4046
+ }
+}

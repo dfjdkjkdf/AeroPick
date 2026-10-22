@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "计算得whitened向量为(2.7956,0,0)，NIS≈7.8155大于reject_threshold(7.815)，按决策表应判定为REJECT并将连续拒绝计数+1至1，B/C输出正确。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "residual指针为NULL违反非空要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C输出正确。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "variance指针为NULL违反非空要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C输出正确。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "variance存在0值不满足严格正数要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C输出正确。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "variance存在负值不满足严格正数要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C输出正确。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "variance存在INF值不满足有限性要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C输出正确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9980,
+  "completion": 5035
+ }
+}

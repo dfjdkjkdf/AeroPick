@@ -1,0 +1,177 @@
+{
+ "key": "74dd5a21200a9da98ce87bc004a30980aeee9478",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q1 = {0.707, 0.707, 0.0, 0.0};\nsh_input.q_bi = &q1;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {0.707, 0.707, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q2 = {0.707, -0.707, 0.0, 0.0};\nsh_input.q_bi = &q2;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {0.707, 0.707, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 3;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_init = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_init;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 1;\nadcs_quat_t held_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = held_q;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 1;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 2;\nadcs_quat_t held_q2 = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = held_q2;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 2;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_FAULT;\nsh_output.dropouts = 3;\nadcs_quat_t fault_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = fault_q;\nsh_state.mode = SH_FAULT;\nsh_state.dropouts = 3;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 2;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_fault = {0.0, 1.0, 0.0, 0.0};\nsh_input.q_bi = &q_fault;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {0.0, 1.0, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 1;\nadcs_quat_t held_q = {0.0, 1.0, 0.0, 0.0};\nsh_state.last_q_bi = held_q;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 1;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_FAULT;\nsh_output.dropouts = 2;\nadcs_quat_t fault_q2 = {0.0, 1.0, 0.0, 0.0};\nsh_state.last_q_bi = fault_q2;\nsh_state.mode = SH_FAULT;\nsh_state.dropouts = 2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sh_config.max_hold_cycles = 1;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_max = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_max;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_FAULT;\nsh_output.dropouts = 1;\nadcs_quat_t fault_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = fault_q;\nsh_state.mode = SH_FAULT;\nsh_state.dropouts = 1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sh_config.max_hold_cycles = 20;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_big = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_big;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 1;\nadcs_quat_t held_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = held_q;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 0;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_err = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_err;",
+    "sh_output.mode = SH_FAULT;\nsh_output.dropouts = 0;\nadcs_quat_t identity_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = identity_q;\nsh_state.mode = SH_FAULT;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 21;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_err = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_err;",
+    "sh_output.mode = SH_FAULT;\nsh_output.dropouts = 0;\nadcs_quat_t identity_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = identity_q;\nsh_state.mode = SH_FAULT;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 0;\nsh_input.valid = 1;\nadcs_quat_t q_off = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_off;",
+    "sh_output.mode = SH_OFF;\nsh_output.dropouts = 0;\nadcs_quat_t identity_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = identity_q;\nsh_state.mode = SH_OFF;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_hold = {0.0, 1.0, 0.0, 0.0};\nsh_input.q_bi = &q_hold;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 1;\nadcs_quat_t last_q = {0.0, 1.0, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 1;",
+    "sh_input.valid = 1;\nadcs_quat_t q_resume = {0.0, 1.0, 0.0, 0.0};\nsh_input.q_bi = &q_resume;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t resumed_q = {0.0, 1.0, 0.0, 0.0};\nsh_state.last_q_bi = resumed_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_nan = {0.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_nan;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t identity_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = identity_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi = NULL;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t identity_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = identity_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_first = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_first;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 1;\nadcs_quat_t held_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = held_q;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 1;",
+    "sh_input.valid = 1;\nadcs_quat_t q_good = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_good;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t good_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = good_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_identity = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_identity;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_small = {0.9999, 0.01, 0.0, 0.0};\nsh_input.q_bi = &q_small;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {0.9999, 0.01, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_start = {0.0, 0.0, 0.0, 1.0};\nsh_input.q_bi = &q_start;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {0.0, 0.0, 0.0, 1.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 1;\nadcs_quat_t held_q = {0.0, 0.0, 0.0, 1.0};\nsh_state.last_q_bi = held_q;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 1;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 2;\nadcs_quat_t held_q2 = {0.0, 0.0, 0.0, 1.0};\nsh_state.last_q_bi = held_q2;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 2;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 3;\nadcs_quat_t held_q3 = {0.0, 0.0, 0.0, 1.0};\nsh_state.last_q_bi = held_q3;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 3;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_HOLD;\nsh_output.dropouts = 4;\nadcs_quat_t held_q4 = {0.0, 0.0, 0.0, 1.0};\nsh_state.last_q_bi = held_q4;\nsh_state.mode = SH_HOLD;\nsh_state.dropouts = 4;",
+    "sh_input.valid = 0;",
+    "sh_output.mode = SH_FAULT;\nsh_output.dropouts = 5;\nadcs_quat_t fault_q = {0.0, 0.0, 0.0, 1.0};\nsh_state.last_q_bi = fault_q;\nsh_state.mode = SH_FAULT;\nsh_state.dropouts = 5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_inf = {INFINITY, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_inf;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t identity_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = identity_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_neg_w = {-0.707, 0.707, 0.0, 0.0};\nsh_input.q_bi = &q_neg_w;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {0.707, 0.707, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_off_reset = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_off_reset;",
+    "sh_output.mode = SH_OFF;\nsh_output.dropouts = 0;\nadcs_quat_t identity_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = identity_q;\nsh_state.mode = SH_OFF;\nsh_state.dropouts = 0;",
+    "sh_input.enable = 1;",
+    "sh_output.mode = SH_OFF;\nsh_output.dropouts = 0;\nadcs_quat_t identity_q2 = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = identity_q2;\nsh_state.mode = SH_OFF;\nsh_state.dropouts = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nadcs_quat_t q_exact = {1.0, 0.0, 0.0, 0.0};\nsh_input.q_bi = &q_exact;",
+    "sh_output.mode = SH_TRACK;\nsh_output.dropouts = 0;\nadcs_quat_t last_q = {1.0, 0.0, 0.0, 0.0};\nsh_state.last_q_bi = last_q;\nsh_state.mode = SH_TRACK;\nsh_state.dropouts = 0;"
+   ]
+  }
+ ]
+}

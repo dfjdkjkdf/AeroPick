@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "gain为NULL触发首条空指针检查，需求规定返回ADCS_E_NULL(1)并清零输出，B/C返回1符合，A直接崩溃。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "gain为NULL触发空指针检查，应返回ADCS_E_NULL(1)，B/C返回1符合，A崩溃。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "field_direction为NULL触发空指针检查，应返回ADCS_E_NULL(1)，B/C返回1符合，A崩溃。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "scheduled_axis_gain为NULL触发空指针检查，应返回ADCS_E_NULL(1)，B/C返回1符合，A崩溃。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "field含NAN属非有限值，按需求检查顺序应优先返回ADCS_E_RANGE(2)，C返回2正确，B误报3，A虽码正确但前序已崩溃。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "field含INF属非有限值，同上应返回ADCS_E_RANGE(2)，C返回2正确。"
+  }
+ ],
+ "pick": "C",
+ "_usage": {
+  "prompt": 10429,
+  "completion": 4413
+ }
+}

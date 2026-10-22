@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A在所有错误返回分支（NULL、RANGE、DEGENERATE）均显式将输出命令清零，严格遵循了需求中“Failure output zero”的契约，而B和C在NULL分支未清零可能残留旧数据。",
+ "_usage": {
+  "prompt": 9818,
+  "completion": 2244
+ }
+}

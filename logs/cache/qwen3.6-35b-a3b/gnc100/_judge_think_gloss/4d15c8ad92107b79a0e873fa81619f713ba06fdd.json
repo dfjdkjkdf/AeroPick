@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确区分了错误类型：非有限矩阵返回ADCS_E_NOT_FINITE(4)，而无效向量返回ADCS_E_RANGE(2)，本题输入为非有限向量应触发后者，故B正确。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "输入向量含NAN同样属于无效向量，依需求规定的向量处理分支应返回ADCS_E_RANGE(2)，故B正确。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "惯性向量含INFINITY属无效向量输入，依据需求中向量与矩阵的错误码映射规则，应返回ADCS_E_RANGE(2)，故B正确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9679,
+  "completion": 2946
+ }
+}

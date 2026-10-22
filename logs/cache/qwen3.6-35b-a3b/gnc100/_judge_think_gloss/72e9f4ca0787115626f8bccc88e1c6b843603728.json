@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定接口需对空指针进行校验并返回ADCS_E_NULL，A实现正确拦截并返回错误码，B未做防护直接崩溃。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 8981,
+  "completion": 2137
+ }
+}

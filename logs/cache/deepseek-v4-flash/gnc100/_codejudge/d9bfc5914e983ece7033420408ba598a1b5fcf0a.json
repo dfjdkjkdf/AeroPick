@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly validates axes against unit norm using ADCS_EPS_NORM and computes residual as -sum(axis_i * torque_i) with equal wheel torques.",
+ "_usage": {
+  "prompt": 10273,
+  "completion": 3969
+ }
+}

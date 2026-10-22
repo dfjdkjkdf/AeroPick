@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C validates inputs and commits outputs only after processing or on failure, sets required failure defaults, and correctly computes weighted loss with lowest-index tie-breaking.",
+ "_usage": {
+  "prompt": 9924,
+  "completion": 24617
+ }
+}

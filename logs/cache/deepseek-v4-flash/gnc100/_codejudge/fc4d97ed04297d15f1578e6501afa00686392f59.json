@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 直接按规范实现 q_b * conj(q_a) 并计算 2*acos(clamp(abs(q_rel.w),0,1))。",
+ "_usage": {
+  "prompt": 8579,
+  "completion": 10794
+ }
+}

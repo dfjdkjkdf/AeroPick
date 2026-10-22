@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "enable=1 应从 OFF 进入 ARMING；dumpable≈1.414 < start=2.0，未达 high 条件，ARMING 非指令模式，dipole/torque 应为 0，故 C。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "wheel3 轴为零向量属于无效轮几何，应锁存 FAULT 并零向量输出；未 disable 时不应清零计数器，high_cycles 保持 1，故 C。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "第一次无效轮几何锁存 FAULT；第二次 enable=0 是 disable，应复位所有状态回到 OFF，故 C。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "wheel3 轴零向量无效，应锁存 FAULT；非 accepted 调用不推进 elapsed 且无效不要求清零 elapsed，保持 1，故 C。"
+  }
+ ],
+ "pick": "C"
+}

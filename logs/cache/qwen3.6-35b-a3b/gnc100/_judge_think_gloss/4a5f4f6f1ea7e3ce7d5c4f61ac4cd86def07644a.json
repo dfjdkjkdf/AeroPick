@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "速率范数约1.73e-6低于阈值1e-3且为首拍，按需求应被接受并更新窗口计数与均值，A输出count=1及对应均值符合COLLECT态逻辑，B全零未执行更新。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同测试1配置，首拍低速率样本应正常入库更新状态，A符合需求，B未处理。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "速率范数约1.73e-3超过stationary_limit，按需求应以RATE拒绝并清空当前窗口、递增rejected_windows至1，A输出完全匹配，B未记录拒绝。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测试3逻辑，速率轻微超限仍触发RATE拒绝与计数器递增，A符合需求。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "同测试1，首拍接受并更新状态，A正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "同测试1，首拍接受并更新状态，A正确。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 11253,
+  "completion": 3540
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "primary为零向量，需求规定退化时condition_proxy应为INFINITY，A=inf符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "primary和secondary均为零向量，需求规定退化时condition_proxy应为INFINITY，A=inf符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "primary含NaN，属无效向量，需求规定退化时condition_proxy应为INFINITY，A=inf符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "secondary含INFINITY，属无效向量，需求规定退化时condition_proxy应为INFINITY，A=inf符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "primary含NaN，属无效向量，需求规定退化时condition_proxy应为INFINITY，A=inf符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "secondary含NaN，属无效向量，需求规定退化时condition_proxy应为INFINITY，A=inf符合。"
+  }
+ ],
+ "pick": "A"
+}

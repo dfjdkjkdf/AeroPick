@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 完整校验使能、遥测和配置并正确锁存 FAULT，COOL 模式下以零电压计算发热，且 DRIVE 的 trip 计数与 FAULT 逻辑符合规范。",
+ "_usage": {
+  "prompt": 12548,
+  "completion": 28536
+ }
+}

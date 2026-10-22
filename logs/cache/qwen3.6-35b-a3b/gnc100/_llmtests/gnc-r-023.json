@@ -1,0 +1,150 @@
+{
+ "key": "bb6ce4d5bccb52c686768bea4d7c6860171771cd",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "md_input.enable = 0;\nmd_input.demand = 0;",
+    "GncRepoDumpDutyStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "md_config.on_cycles = 3;\nmd_config.rest_cycles = 2;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms->x = 1.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_state.mode = MD_IDLE;\nmd_state.elapsed = 0;\nmd_state.saturated_on_cycles = 0;\nmd_state.rest_target = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;",
+    "GncRepoDumpDutyStep();",
+    "md_state.elapsed = 1;",
+    "GncRepoDumpDutyStep();",
+    "md_state.elapsed = 2;",
+    "GncRepoDumpDutyStep();",
+    "md_state.mode = MD_REST;\nmd_state.elapsed = 0;",
+    "GncRepoDumpDutyStep();",
+    "md_state.elapsed = 1;",
+    "GncRepoDumpDutyStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms->x = 1.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_state.mode = MD_IDLE;\nmd_state.elapsed = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;",
+    "GncRepoDumpDutyStep();",
+    "md_state.mode = MD_REST;\nmd_state.elapsed = 0;",
+    "GncRepoDumpDutyStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "md_config.on_cycles = 100;\nmd_config.rest_cycles = 100;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 100;\nmd_input.momentum_nms->x = 1.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_state.mode = MD_IDLE;\nmd_state.elapsed = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;",
+    "GncRepoDumpDutyStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 0;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 0;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = -1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = -1.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 101;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms = NULL;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms->x = 1.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t = NULL;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms->x = 1.0; md_input.momentum_nms->y = NAN; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = INFINITY;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "md_config.on_cycles = 2;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 5;\nmd_input.momentum_nms->x = 100.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_state.mode = MD_IDLE;\nmd_state.elapsed = 0;\nmd_state.saturated_on_cycles = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;",
+    "GncRepoDumpDutyStep();\nmd_output.saturation_mask = 7;",
+    "md_state.elapsed = 1;\nmd_state.saturated_on_cycles = 1;",
+    "GncRepoDumpDutyStep();\nmd_output.saturation_mask = 0;",
+    "md_state.mode = MD_REST;\nmd_state.elapsed = 0;\nmd_state.rest_target = 6;",
+    "GncRepoDumpDutyStep();",
+    "md_state.elapsed = 1;",
+    "GncRepoDumpDutyStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "md_config.on_cycles = 2;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms->x = 1.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_state.mode = MD_IDLE;\nmd_state.elapsed = 0;\nmd_input.enable = 1;\nmd_input.demand = 1;",
+    "GncRepoDumpDutyStep();",
+    "md_state.elapsed = 1;",
+    "GncRepoDumpDutyStep();",
+    "md_state.mode = MD_REST;\nmd_state.elapsed = 0;\nmd_state.rest_target = 1;",
+    "GncRepoDumpDutyStep();",
+    "md_state.mode = MD_IDLE;\nmd_state.elapsed = 0;",
+    "md_input.demand = 0;",
+    "GncRepoDumpDutyStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "md_config.on_cycles = 2;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms->x = 1.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_state.mode = MD_ON;\nmd_state.elapsed = 1;\nmd_state.saturated_on_cycles = 0;",
+    "GncRepoDumpDutyStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "md_config.on_cycles = 2;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms->x = 1.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_state.mode = MD_REST;\nmd_state.elapsed = 0;\nmd_state.rest_target = 1;",
+    "GncRepoDumpDutyStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms->x = 0.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 1.0; md_input.field_body_t->z = 0.0;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "md_config.on_cycles = 1;\nmd_config.rest_cycles = 1;\nmd_config.gain_s_inv = 1.0;\nmd_config.max_dipole_a_m2 = 10.0;\nmd_config.extra_rest_per_saturated_cycle = 0;\nmd_input.momentum_nms->x = 1.0; md_input.momentum_nms->y = 0.0; md_input.momentum_nms->z = 0.0;\nmd_input.field_body_t->x = 0.0; md_input.field_body_t->y = 0.0; md_input.field_body_t->z = 0.0;\nmd_input.enable = 1;\nmd_input.demand = 1;"
+   ]
+  }
+ ]
+}

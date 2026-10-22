@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "实现B完整实现了FAULT锁存与READY冻结机制，统一在末尾动态发布sum_energy，状态机流转严格对齐需求表格，功能最准确。",
+ "_usage": {
+  "prompt": 11622,
+  "completion": 4406
+ }
+}

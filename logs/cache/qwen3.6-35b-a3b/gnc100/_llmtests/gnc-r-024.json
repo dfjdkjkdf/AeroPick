@@ -1,0 +1,218 @@
+{
+ "key": "f72f5505eb3ecc92f6d3805df5f769782136a3a9",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.current_q_bi = NULL;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.target_q_bi = NULL;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.rate_rad_s = NULL;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_config.angle_limit_rad = -1.0;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_config.rate_limit_rad_s = -1.0;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_config.required = 0;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_config.required = 21;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_config.angle_limit_rad = INFINITY;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_config.rate_limit_rad_s = NAN;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 1.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 0.1;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 1.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 0.1;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 3;",
+    "GncRepoAttitudeSettleStep();",
+    "GncRepoAttitudeSettleStep();",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 1.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 0.1;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 1;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 0.9950041652780258; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.09983341664682815;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 0.1;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 1;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 1.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = ADCS_PI + 1.0;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 1;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ag_input.enable = 0;",
+    "ag_input.current_q_bi->w = 1.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 0.1;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 1;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 1.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.5; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 0.1;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 1;",
+    "GncRepoAttitudeSettleStep();",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 1.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = INFINITY; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 0.1;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 1;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 0.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 1.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 3.14;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 1;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 1.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 0.1;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 2;",
+    "GncRepoAttitudeSettleStep();",
+    "ag_input.rate_rad_s->x = 0.2; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeSettleStep();",
+    "ag_input.rate_rad_s->x = 0.0; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;",
+    "ag_input.current_q_bi->w = 1.0; ag_input.current_q_bi->x = 0.0; ag_input.current_q_bi->y = 0.0; ag_input.current_q_bi->z = 0.0;",
+    "ag_input.target_q_bi->w = 1.0; ag_input.target_q_bi->x = 0.0; ag_input.target_q_bi->y = 0.0; ag_input.target_q_bi->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.1; ag_input.rate_rad_s->y = 0.0; ag_input.rate_rad_s->z = 0.0;",
+    "ag_config.angle_limit_rad = 0.1;",
+    "ag_config.rate_limit_rad_s = 0.1;",
+    "ag_config.required = 1;",
+    "GncRepoAttitudeSettleStep();"
+   ]
+  }
+ ]
+}

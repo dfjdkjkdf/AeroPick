@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 与 B、C 逻辑等价，但 A 直接按需求顺序检查 previous_enabled 在阈值之前，且无多余局部变量，功能完全符合规范。",
+ "_usage": {
+  "prompt": 9913,
+  "completion": 26463
+ }
+}

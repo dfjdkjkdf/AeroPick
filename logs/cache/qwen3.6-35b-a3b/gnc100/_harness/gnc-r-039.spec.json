@@ -1,0 +1,1 @@
+{"prompt_sha1": "d429c7869f4a8bbd1d02c77352b21795ce4126ac", "discrete": [["valid", null, ["0", "1"]]], "continuous": [["dcm", [3, 3], -1000000.0, 1000000.0], ["tolerance", null, 0.0, 1000000.0]], "outputs": [["determinant", null, [-1000000.0, 1000000.0]], ["orthogonality_error", null, [0.0, 1000000.0]]]}

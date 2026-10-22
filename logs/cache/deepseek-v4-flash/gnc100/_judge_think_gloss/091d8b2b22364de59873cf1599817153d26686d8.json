@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "OFF with cosine 0<0.8 stays OFF; correction is boresight×sun = +z."
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "enable=0 disables/resets supervisor, so cosine is reset to 0."
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "OFF with cosine=0.8>=enter enters ACTIVE; correction is boresight×sun = +z."
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "OFF with cosine 0<enter stays OFF; boresight×sun gives y=-0.8,z=0.6."
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "ACTIVE with cosine=0.5<=exit leaves to OFF; correction is boresight×sun = +z."
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "ACTIVE with cosine=0.3<=exit leaves to OFF; correction is boresight×sun = +z."
+  }
+ ],
+ "pick": "A"
+}

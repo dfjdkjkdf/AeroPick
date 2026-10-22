@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B正确优先处理了disable状态并清零计数器，而A错误地将disable与非法输入混判为FAULT导致状态机逻辑违反需求。",
+ "_usage": {
+  "prompt": 12083,
+  "completion": 3107
+ }
+}

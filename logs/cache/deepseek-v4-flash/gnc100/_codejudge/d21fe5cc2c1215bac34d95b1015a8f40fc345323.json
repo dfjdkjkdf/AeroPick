@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 按定义依次计算 dB/dt=-ω×B、m=-gain·dB/dt、τ=m×B、power=τ·ω，并在空/非法输入失败时把输出置零，符合接口与输出契约。",
+ "_usage": {
+  "prompt": 8834,
+  "completion": 16638
+ }
+}

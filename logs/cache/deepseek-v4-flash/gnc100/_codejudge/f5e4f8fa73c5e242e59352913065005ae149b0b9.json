@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly validates inputs, counts consecutive adequate cycles, transitions IDLE→NEGATIVE→PASS/FAULT, and publishes the post-transition command, whereas A always faults from a validation bug and C publishes the wrong command in NEGATIVE/PASS.",
+ "_usage": {
+  "prompt": 14158,
+  "completion": 10558
+ }
+}

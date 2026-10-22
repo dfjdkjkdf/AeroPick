@@ -1,0 +1,29 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "轴向投影为正判定为光照，首次有效光照调用应进入RECOVERY状态且计数器置1，严格符合需求“this call is recovery sample 1”。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "位置向量与太阳光方向共线且投影大于0属光照条件，状态机首次进入光照阶段elapsed应初始化为1。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "输入与测试2一致，光照状态下状态机推进后elapsed计数不应清零，A实现符合规范。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同上，光照阶段计数器初始值或当前周期计数应为1，B实现的0不符合需求定义。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10482,
+  "completion": 5425
+ }
+}

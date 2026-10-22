@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "enable未赋值默认为0，按需求决策表第一行强制进入OFF态且good清零，A的mode与state.mode均为0符合，B未更新旧态，C误入FAULT。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同测试1，前置OFF态下enable=0仍应维持OFF，A状态正确保持0，B/C异常。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "前置MONITOR态但enable=0，需求明确优先级高于历史状态，强制转OFF，A正确置0，B保留1、C误报3均错。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "前置READY态同理，enable=0强制覆盖转OFF，A正确置0，B保留2、C误报3均错。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "enable=1但其余参数均为默认0/NULL，属非法配置/观测，需求规定直接锁死FAULT，A正确触发3，B漏检，C虽触发但前期逻辑已失效。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "同测试5，非法输入下必须进FAULT态，A符合需求，B/C表现不一致或错误。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9815,
+  "completion": 3786
+ }
+}

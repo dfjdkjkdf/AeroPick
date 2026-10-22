@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "零磁场向量为退化场，需求要求退化场锁存 FAULT；B 输出 FAULT 且滤波器未初始化。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "零磁场向量为退化场，需求要求退化场锁存 FAULT；B 输出 FAULT 且滤波器未初始化。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "零磁场向量为退化场，需求要求退化场锁存 FAULT；B 输出 FAULT 且滤波器未初始化。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "零磁场向量为退化场，需求要求退化场锁存 FAULT；B 输出 FAULT 且滤波器未初始化。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "零磁场向量为退化场，需求要求退化场锁存 FAULT；B 输出 FAULT 且滤波器未初始化。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "零磁场向量为退化场，需求要求退化场锁存 FAULT；B 输出 FAULT 且滤波器未初始化。"
+  }
+ ],
+ "pick": "B"
+}

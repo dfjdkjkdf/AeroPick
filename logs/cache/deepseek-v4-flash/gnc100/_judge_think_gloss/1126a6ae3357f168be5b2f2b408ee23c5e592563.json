@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "A applies the acceleration-limited step 0.3 rad about the relative axis, matching the commanded rate; B jumps directly to the target angle."
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "A applies the rate-limited step 0.2 rad about y, while B applies the full 90° target rotation."
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "A applies the rate-limited step 0.1 rad about z, while B applies the full 90° target rotation."
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "A rotates the current quaternion by the limited 0.2 rad toward identity, while B outputs the full relative quaternion instead of the commanded slew step."
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "A applies min(rate, angle)=0.01 rad and remains in ACCEL while the rate is rising; B jumps to the full target and incorrectly reports CRUISE."
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "A applies the limited 0.1 rad step toward the 180° target, while B jumps directly to the full target quaternion."
+  }
+ ],
+ "pick": "A"
+}

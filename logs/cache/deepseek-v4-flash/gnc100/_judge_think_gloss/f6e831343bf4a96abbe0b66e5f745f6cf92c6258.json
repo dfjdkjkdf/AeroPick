@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "q_bi为NULL属失败，需求要求失败时将error置INFINITY"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "inertial为NULL属失败，需求要求失败时将error置INFINITY"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "body为NULL属失败，需求要求失败时将error置INFINITY"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "recovered为NULL属失败，需求要求失败时将error置INFINITY"
+  }
+ ],
+ "pick": "B"
+}

@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求规定disable时强制复位OFF模式并清零所有计数器，A符合；B错误置位FAULT且未清零。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "配置违反hold_exit_rad<=fine_enter_rad契约属无效配置，需求规定应拒绝执行并递增bad_samples，A符合；B未校验配置。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试2的无效配置触发拒绝逻辑，应输出零力矩且bad_samples加1，A符合；B无视校验输出了控制律计算值。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测试2，无效配置拒绝逻辑生效，A符合；B未处理。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "同测试4，A严格遵循需求中的配置校验与拒绝流程。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "同测试4，A正确拦截了无效配置并执行拒绝流程。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 12426,
+  "completion": 3601
+ }
+}

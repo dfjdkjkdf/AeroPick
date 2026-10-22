@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A|C",
+   "reason": "predicted 为 NULL 应失败且 angle 置 INFINITY；A、C 的 angle=inf，B=0 不符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A|C",
+   "reason": "measured 为 NULL 应失败且 angle 置 INFINITY；A、C 的 angle=inf，B=0 不符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "rotation_vector 为 NULL 应返回 ADCS_E_NULL；angle 有效时应置 INFINITY，C 返回 1 且 angle=inf 且不崩溃。"
+  },
+  {
+   "id": 4,
+   "correct": "B|C",
+   "reason": "angle 为 NULL 应返回 ADCS_E_NULL 并将 rotation_vector 清零；B、C 均不崩溃且 rotation_vector 为 0。"
+  }
+ ],
+ "pick": "C"
+}

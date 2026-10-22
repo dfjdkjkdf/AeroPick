@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A|B",
+   "reason": "field含NAN属非有限值，按状态检查顺序应优先返回ADCS_E_RANGE(2)，A/B符合，C返回4不符。"
+  },
+  {
+   "id": 2,
+   "correct": "A|B",
+   "reason": "field含INFINITY属非有限值，同T1应返回ADCS_E_RANGE(2)，A/B符合，C返回4不符。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "min_gain<0触发ADCS_E_RANGE，需求明确失败输出为零，A返回0正确，B/C未拦截错误。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "max_gain<min_gain触发ADCS_E_RANGE，失败输出应清零，A返回0正确，B/C未拦截错误。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "max_gain(默认0)<min_gain(10)触发ADCS_E_RANGE，失败输出应清零，A返回0正确，B/C未拦截错误。"
+  },
+  {
+   "id": 6,
+   "correct": "B|C",
+   "reason": "标注为boundary合法用例，场强归一化方向分量理论值为1，B/C输出正确，A误判为错误返回0。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9714,
+  "completion": 5045
+ }
+}

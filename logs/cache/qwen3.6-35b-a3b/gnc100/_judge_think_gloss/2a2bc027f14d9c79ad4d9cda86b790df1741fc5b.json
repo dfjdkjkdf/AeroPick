@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "field_body_t为NULL属非法输入，需求规定应进入FAULT并保留历史/拒绝计数（初始为0），cosine输出0符合安全默认，C输出1无依据。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "三次调用均传入零向量场和零dt，严重违反非退化及dt>0要求，属非法输入应latch FAULT且保留rejects为0，C错误递增至5。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试2，非法输入不触发连续性校验与reject计数，C输出5违反“保留历史/拒绝计数”的需求。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测试2、3，非法输入状态下rejects应保持初始值0，C输出5错误。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "max_rejects=21超出需求规定的1..20有效范围，属非法配置应直接FAULT且保留rejects为0，C输出21错误。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "disable状态需求明确规定进入INIT模式并清零历史/拒绝计数，cosine输出0符合规范，C输出1无依据。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9619,
+  "completion": 3788
+ }
+}

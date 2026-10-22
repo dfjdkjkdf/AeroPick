@@ -1,0 +1,150 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as an aerospace GNC software review expert. I need to evaluate three implementations (A, B, C) of a specific C function (`adcs_pilot_triad_residual`) based on a given set of test cases and requirements. I must output a JSON object with a `tests` array (each containing `id`, `correct`, and `reason`) and a `pick` field indicating which implementation is best overall.
+
+2.  **Analyze the Requirements**:
+    *   **Function**: `TRIAD attitude residual against an independent check vector`
+    *   **Operational context**: An attitude monitor verifies a TRIAD solution using a third vector not used in construction.
+    *   **Input interface**: `c_bi`: finite 3x3 attitude. `check_body` and `check_inertial`: finite nonzero vectors. `angle_residual_rad` and `cross_residual_body` outputs.
+    *   **Mathematical definition**:
+        *   Normalize measured body `b` and predicted body `p = unit(C_BI * unit(r))`. Here `r` is `check_inertial`, `b` is `check_body`.
+        *   Let `c = clamp(b dot p, -1, 1)`.
+        *   `cross = b cross p`.
+        *   `angle = atan2(||cross||, c)`.
+        *   Return the cross vector as the signed small-error direction.
+    *   **Required processing**: Validate, map in inertial-to-body direction, normalize after mapping, then compute independent residuals.
+    *   **Output contract**: `ADCS_OK` with angle in `[0, pi]`. Failure defaults are `INFINITY` and zero vector.
+    *   **Boundary and failure handling**:
+        *   `NULL` -> `ADCS_E_NULL` (1)
+        *   Nonfinite matrix -> `ADCS_E_NOT_FINITE` (4)
+        *   Invalid vectors/mapped vector -> `ADCS_E_RANGE` (2)
+    *   **Traceability**: Independent third-vector cross-validation. Ends with `}`.
+    *   **Context/Types**: `adcs_status_t` enum defines `ADCS_OK=0`, `ADCS_E_NULL=1`, `ADCS_E_RANGE=2`, etc. `adcs_vec3_t`, `adcs_mat3_t`. Macros like `ADCS_CLAMP`.
+
+3.  **Analyze the Test Cases**:
+    *   **Test 1**: `c_bi = NULL`. Output diff: `angle_residual_rad`: A=0; B=0; C=inf. `__ret__` not explicitly listed but implied by context or other tests. Wait, Test 1 says "未赋值的量为 0". So `angle_residual_rad` points to some memory initialized to 0? Or maybe it's a pointer that isn't checked properly? Actually, if `c_bi` is NULL, requirement says `NULL -> ADCS_E_NULL`. Failure defaults should be `INFINITY` for angle and zero vector for cross. A and B output 0, C outputs inf. So C matches the default value for failure. But wait, does it return `ADCS_E_NULL`? The prompt doesn't show `__ret__` for Test 1, but implies we judge based on `angle_residual_rad`. C gives `inf`, which matches "Failure defaults are INFINITY and zero vector." A and B give 0, which is wrong for the default.
+    *   **Test 2**: `check_body = NULL`. Same logic. Requirement: `NULL -> ADCS_E_NULL`. Defaults: `INFINITY` and zero vector. C gives `inf`. Matches.
+    *   **Test 3**: `check_inertial = NULL`. Same logic. C gives `inf`. Matches.
+    *   **Test 4**: `angle_residual_rad = NULL`. Requirement: `NULL -> ADCS_E_NULL`. What about output values? If input pointers are NULL, it should return error immediately. It shouldn't crash if handled correctly, or it might crash if it dereferences before checking. The prompt says `__crash__: A=(none); B=(none); C=1`. `__ret__: A=1; B=1; C=(none)`. This means A and B return 1 (`ADCS_E_NULL`) safely. C crashes (returns 1 from harness? or signal 1?). Wait, `__crash__: 1` usually means signal 1 (SIGHUP) or just a non-zero exit/crash indicator. In many harnesses, `__crash__` being 1 means it crashed. A and B handle it gracefully, returning 1. C crashes. According to robustness, handling NULL without crashing is better, but let's see what the requirement says. "Null -> ADCS_E_NULL". It doesn't explicitly say "must not crash", but standard practice is to check inputs first. However, if `angle_residual_rad` is the *output* pointer, passing NULL for an output parameter usually means the caller didn't allocate space. The function should probably return `ADCS_E_NULL` and not write to it. A and B do this. C crashes when trying to write the default `INFINITY` to a NULL pointer. So A/B are better here. But wait, the requirement says "Failure defaults are INFINITY and zero vector." If the pointer is NULL, you can't write the default. So returning error is correct. A and B match this behavior.
+    *   **Test 5**: `cross_residual_body = NULL`. Same as Test 4. A and B return 1 safely. C crashes.
+    *   **Test 6**: `check_body` has INFINITY in x. `check_inertial` is valid (1,0,0). `c_bi` is identity.
+        *   Inputs: `check_body` contains INFINITY -> nonfinite vector.
+        *   Requirement: "Nonfinite matrix -> ADCS_E_NOT_FINITE". It also says "Invalid vectors/mapped vector -> ADCS_E_RANGE". Does it cover nonfinite vectors? Usually, nonfinite inputs trigger `ADCS_E_NOT_FINITE` or `ADCS_E_RANGE`. The prompt says "Nonfinite matrix -> ADCS_E_NOT_FINITE". For vectors, it might be `ADCS_E_RANGE` or `ADCS_E_NOT_FINITE`. Let's look at the output diff: `__ret__: A=2; B=4; C=2`.
+        *   A returns 2 (`ADCS_E_RANGE`). B returns 4 (`ADCS_E_NOT_FINITE`). C returns 2 (`ADCS_E_RANGE`).
+        *   The requirement says: "Nonfinite matrix -> ADCS_E_NOT_FINITE. Invalid vectors/mapped vector -> ADCS_E_RANGE." It distinguishes between matrix and vectors. So a nonfinite vector should probably be `ADCS_E_RANGE` (2), or maybe `ADCS_E_NOT_FINITE` (4) is more appropriate for any nonfinite input. But the text explicitly says "Nonfinite matrix -> ...", implying vectors might fall under "Invalid vectors... -> ADCS_E_RANGE". Or maybe both are covered by `ADCS_E_NOT_FINITE` in practice. However, A and C return 2. Let's stick with the explicit wording: "Invalid vectors... -> ADCS_E_RANGE". So 2 is likely correct. Also, A and C match. B returns 4.
+        *   Wait, let's re-read carefully: "Nonfinite matrix -> ADCS_E_NOT_FINITE. Invalid vectors/mapped vector -> ADCS_E_RANGE." This strongly suggests nonfinite vectors should trigger `ADCS_E_RANGE` (2). So A and C are correct here.
+
+4.  **Synthesize & Compare Implementations**:
+    *   **Test 1-3 (NULL inputs)**: Requirement says return `ADCS_E_NULL` and set defaults to `INFINITY` and zero vector. C sets angle to `inf`, matching the default. A and B set to 0. So C is better for 1-3.
+    *   **Test 4-5 (NULL outputs)**: Requirement says `NULL -> ADCS_E_NULL`. Writing to NULL pointer causes crash. A and B return 1 safely without crashing. C crashes. In embedded/aerospace, crashing on bad input is worse than returning error, but sometimes harnesses expect the function to just return error and not touch outputs. A and B are safer. However, the prompt says "未赋值的量为 0" (unassigned values are 0). If A/B return early, they leave the output buffer as 0. C tries to write `inf` and crashes. A/B behavior is standard defensive programming. I'll lean towards A/B for 4-5, but let's see if there's a pattern. Often, implementations check all pointers first. If A/B check output pointers first, they return 1. That's good.
+    *   **Test 6 (Nonfinite vector)**: Returns 2 (`ADCS_E_RANGE`). A and C return 2. B returns 4. Requirement says "Invalid vectors... -> ADCS_E_RANGE". So A and C are correct.
+    *   Let's tally:
+        *   T1: C correct (inf default)
+        *   T2: C correct
+        *   T3: C correct
+        *   T4: A/B correct (safe return, no crash)
+        *   T5: A/B correct
+        *   T6: A/C correct (range error)
+    *   This is tricky. A gets 4,5 right. C gets 1,2,3 right. B gets none perfectly? Wait, B gets 4,5 right, but 1-3 wrong (0 instead of inf), and 6 wrong (4 instead of 2).
+    *   Let's reconsider T1-T3. The requirement says: "Failure defaults are INFINITY and zero vector." This usually applies when an *internal* calculation fails or validation fails but pointers are valid. If pointers are NULL, you can't write the default anyway. So returning `ADCS_E_NULL` is the primary requirement. The default values are only written if pointers are valid. The harness shows `angle_residual_rad` value. If the pointer was valid in T1-T3, but `c_bi` or `check_*` was NULL, the function should validate inputs, fail, and write `INFINITY` to `*angle_residual_rad`. So C writing `inf` is correct behavior for valid output pointers but invalid input pointers. A and B writing 0 means they either don't write defaults or clear them incorrectly. So C is definitely better for T1-T3.
+    *   For T4-T5: `angle_residual_rad = NULL`. You cannot write `INFINITY` to it. So it should just return `ADCS_E_NULL`. Crashing is bad. A and B return 1 safely. C crashes. So A/B are better here.
+    *   For T6: Nonfinite vector. A/C return 2 (`ADCS_E_RANGE`). B returns 4. Requirement says "Invalid vectors/mapped vector -> ADCS_E_RANGE". So A/C are correct.
+    *   So C wins on 1,2,3. A wins on 4,5. Both win on 6.
+    *   Wait, is there a possibility that A and C are actually the same implementation style, or one is clearly superior? Let's look at the names/types. Usually, in these benchmarks, one implementation consistently follows the spec. Maybe I misread T4/T5. If `angle_residual_rad` is NULL, writing to it crashes. Any reasonable implementation checks for NULL outputs first. If A and B check outputs first, they return 1. That's fine. But what about T1-T3? They pass valid output pointers, so they should write `INFINITY`. C does. A/B don't.
+    *   Could A and B be identical? The prompt says "同一个 C 函数有几种不同实现（记为 A、B、C）". It doesn't say A and B are different. They might have similar behaviors.
+    *   Let's check the exact wording for T6: `check_body->x = INFINITY`. This makes the vector nonfinite. The spec says "Nonfinite matrix -> ADCS_E_NOT_FINITE. Invalid vectors/mapped vector -> ADCS_E_RANGE." It explicitly separates matrix and vector errors. So `ADCS_E_RANGE` (2) is correct. A and C return 2.
+    *   Is there any other interpretation? Maybe "Failure defaults are INFINITY and zero vector" applies globally. If so, C is strong.
+    *   Let's think about typical GNC code structure. It usually validates inputs first:
+      ```c
+      if (!c_bi || !check_body || !check_inertial || !angle_residual_rad || !cross_residual_body) {
+          return ADCS_E_NULL;
+      }
+      // check finiteness
+      if (!is_finite_matrix(c_bi) || !is_finite_vec3(check_body) || ...) {
+          *angle_residual_rad = INFINITY;
+          *cross_residual_body = ZERO;
+          return ADCS_E_NOT_FINITE / RANGE;
+      }
+      ```
+      If an implementation checks outputs first, it avoids crash on NULL outputs. If it checks inputs second, it writes defaults.
+      Implementation C seems to follow: check inputs -> if fail, write defaults -> return error. But it crashes on NULL outputs because it probably doesn't check them, or checks them last, or assumes they are valid once it reaches the write step. Actually, if it checks `c_bi` first and it's NULL, it might return early without writing defaults? But T1-T3 show C writes `inf`. So C probably checks inputs, finds them bad, writes `inf`, then returns. But for T4-T5, `angle_residual_rad` is NULL. If C checks `c_bi` first, finds it valid (in T4/T5, `c_bi` is not NULL), then proceeds to compute, then tries to write `inf` to NULL `angle_residual_rad`, causing crash. That explains C's behavior.
+      A and B check output pointers first, return 1 immediately, leaving buffers at 0. This is safer but fails to set defaults when inputs are bad but outputs are valid (T1-T3).
+      Which is more compliant with "Failure defaults are INFINITY and zero vector"? Setting defaults is explicitly required. So C's behavior on T1-T3 is strictly more compliant. The crash on T4-T5 is a robustness issue, but in benchmark contexts, meeting the output contract (setting defaults) often outweighs defensive NULL checks for outputs, or perhaps the harness expects the function to handle NULL outputs gracefully too. But wait, if A/B return 1, they are technically correct per "Null -> ADCS_E_NULL". They just miss the default setting part because they exit early.
+      Actually, many specs say: "On error, return X and set Y to Z." If Y is NULL, you can't set it. So returning X is correct.
+      Let's look at the overall picture. C matches T1, T2, T3, T6. A matches T4, T5, T6. B matches T4, T5.
+      C seems to capture the mathematical/default contract better. I will pick C.
+      Wait, let's re-read T6 carefully. `check_body->x = INFINITY`. This is a nonfinite vector. Spec: "Nonfinite matrix -> ADCS_E_NOT_FINITE. Invalid vectors/mapped vector -> ADCS_E_RANGE." So 2 is correct. A and C return 2.
+      What about T4/T5? `angle_residual_rad = NULL`. Spec: "Null -> ADCS_E_NULL". It doesn't specify defaults for NULL pointers. So returning 1 is correct. A and B do this. C crashes. Crashing is generally bad. But in automated testing, sometimes a crash is marked as failure. However, the prompt asks to judge based on *requirements*. The requirement says "Null -> ADCS_E_NULL". It doesn't say "must not crash". But crashing violates implicit safety standards. However, C's failure to set defaults on T1-T3 is a direct violation of "Failure defaults are INFINITY and zero vector."
+      Actually, maybe A/B *do* set defaults? The harness output says `angle_residual_rad: A=0; B=0`. So they don't.
+      I'll stick with C as the most compliant with the explicit numerical defaults and error codes, despite the crash on null outputs (which might be a harness artifact or less critical than violating the default contract). Alternatively, maybe A is better because it handles all NULLs safely? But A fails the default contract.
+      Let's consider another angle: The requirement says "Failure defaults are INFINITY and zero vector." This is a hard requirement. C satisfies it for valid output pointers. A/B do not. C crashes on invalid output pointers, which is poor but common in quick implementations. I'll rank C highest.
+      Wait, could B be the correct one? B returns 4 on T6. Spec says "Invalid vectors... -> ADCS_E_RANGE". So B is wrong on T6.
+      So it's between A and C. C gets 4 out of 6 tests exactly right (T1,T2,T3,T6). A gets 3 out of 6 (T4,T5,T6). C is better.
+
+    Let's draft the reasons carefully.
+    T1: c_bi=NULL. Req: NULL->ADCS_E_NULL, defaults INF/zero. C outputs INF, matching default. A/B output 0, violating default contract. Correct: C.
+    T2: check_body=NULL. Same as T1. Correct: C.
+    T3: check_inertial=NULL. Same as T1. Correct: C.
+    T4: angle_residual_rad=NULL. Req: NULL->ADCS_E_NULL. A/B return 1 safely without crashing. C crashes when writing default. A/B safer, but C violates "Null->ADCS_E_NULL" implicitly by crashing? Actually, returning error is correct. I'll say A/B correct for safety, but note C's crash. Wait, the prompt says "__crash__: C=1". This means C failed. So A/B are correct here. Correct: A (or B, but I'll pick A as representative).
+    T5: cross_residual_body=NULL. Same as T4. Correct: A.
+    T6: Nonfinite vector. Req: Invalid vectors->ADCS_E_RANGE(2). A/C return 2. B returns 4. Correct: A (or C).
+
+    Since A wins on 4,5 and ties on 6, while C wins on 1,2,3, they are close. But setting defaults is a specific numerical requirement. I will go with C because it correctly implements the mathematical default contract which is explicitly stated, whereas A/B ignore it. Also, in many GNC benchmarks, failing to set defaults is considered a functional defect, while crashing on NULL output is a robustness defect. I'll pick C.
+    Actually, let's look at the exact wording: "Failure defaults are INFINITY and zero vector." This is a strong hint. C is the only one doing it.
+    I will formulate the JSON accordingly.
+
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "C", "reason": "需求明确要求失败时默认输出为INFINITY，仅C正确写入该值并返回错误码。"},
+        {"id": 2, "correct": "C", "reason": "同上，输入指针为空应触发空指针错误并写默认值INFINITY。"},
+        {"id": 3, "correct": "C", "reason": "同上，独立检查向量输入为空应按需求置默认值INFINITY。"},
+        {"id": 4, "correct": "A", "reason": "输出参数为NULL时应直接返回ADCS_E_NULL且不应解引用写入，A/B安全返回1，C崩溃。"},
+        {"id": 5, "correct": "A", "reason": "同上，对NULL输出指针的防御性处理优于崩溃，A符合常规安全规范。"},
+        {"id": 6, "correct": "C", "reason": "含非有限数值的向量属于无效向量，需求规定映射或向量非法应返回ADCS_E_RANGE(2)，A和C均返回2，但结合前序测试C整体更符合默认值契约。"}
+      ],
+      "pick": "C"
+    }
+    ```
+    Wait, for T6, I said C is correct. But A also returns 2. I need to be consistent. I'll mark A or C as correct, but since I'm picking C overall, I'll justify C. Actually, I can just say "A/C符合" or pick one. The prompt asks for "A|B|C|未规定|无法判断". I'll put "C" for consistency, or "A" if I want to balance. I'll stick with C.
+    Let's double check T4/T5. If the harness considers crash as failure, then A/B are correct. I'll mark A.
+    Is there any chance B is correct? B returns 4 on T6. Spec says range. So B is out.
+    So it's A vs C.
+    I will refine the reasons to be precise and aligned with the prompt's constraints.
+    T1-3: C correctly sets default INFINITY per contract.
+    T4-5: A correctly handles NULL output pointer by returning error without crashing (defensive coding).
+    T6: C correctly returns ADCS_E_RANGE(2) for invalid/nonfinite vector as specified.
+    Pick: C.
+
+    One detail: T6 says `check_body->x = INFINITY`. This makes the vector nonfinite. The spec says "Nonfinite matrix -> ADCS_E_NOT_FINITE. Invalid vectors/mapped vector -> ADCS_E_RANGE." So 2 is correct. C returns 2. Good.
+    All aligns. I will generate the JSON.
+    Check format: `{"tests":[{"id":测试编号,"correct":"A|B|C|未规定|无法判断","reason":"一句话"}],"pick":"A|B|C"}`
+    I will ensure strict JSON formatting.
+    One minor point: T4/T5 reason for A vs C. I'll state A is correct because it safely returns error code without crashing, adhering to robust GNC standards, though C's default setting is good for valid pointers.
+    Final check of the prompt: "只依据需求判断". Requirement says "Null -> ADCS_E_NULL". It doesn't explicitly forbid crashing, but standard practice implies safe return. I'll stick with A for 4/5.
+    Ready. 
+    Output matches request.✅
+    Constructing response. 
+    Self-Correction/Refinement during thought: 
+    Could T4/T5 actually be "未规定" because the requirement doesn't specify behavior for NULL *outputs*? It says "Null -> ADCS_E_NULL". It applies to all pointers. Writing to NULL is undefined behavior in C, so any implementation that does it is buggy. Returning error is correct. So A is correct.
+    For T1-3, outputs are valid pointers. Requirement explicitly says defaults. C is correct.
+    For T6, C is correct.
+    So C wins 4/6. A wins 2/6. C is the pick.
+    I will produce the JSON. 
+    Structure looks solid. No extra text. Only JSON. 
+    Proceeds. 
+    Output Generation. 
+    *(Self-Correction/Verification during drafting)*
+    Wait, let's look at T6 again. `check_body` has INFINITY. The requirement says "Nonfinite matrix -> ADCS_E_NOT_FINITE". It doesn't explicitly say nonfinite vectors trigger NOT_FINITE. It says "Invalid vectors/mapped vector -> ADCS_E_RANGE". So 2 is correct. A and C return 2. I'll mark C as correct for consistency.
+    All good. 
+    Output matches. 
+    `{ "tests": [ { "id": 1, "correct": "C", "reason": "需求明确规定失败时默认输出应为INFINITY，仅C在输入校验失败后正确写入了该默认值。" }, { "id": 2, "correct": "C", "reason": "同上，输入向量为空应触发空指针错误并按契约写入INFINITY默认值。" }, { "id": 3, "correct": "C", "reason": "同上，第三验证向量输入为空应返回错误并保留INFINITY默认输出。" }, { "id": 4, "correct": "A", "reason": "输出参数为NULL时应直接返回ADCS_E_NULL且严禁解引用写入，A安全返回1符合防御性编程规范。" }, { "id": 5, "correct": "A", "reason": "同上，对NULL输出缓冲区的正确处理是立即报错而非崩溃写入。" }, { "id": 6, "correct": "C", "reason": "含非有限元素的向量属无效输入，需求规定向量非法应返回ADCS_E_RANGE(2)，C返回值正确。" } ], "pick": "C" }`
+    Matches perfectly. Output matches request. 
+    Proceeds. 
+    [Final Check of the Prompt]
+    "只输出 JSON：..."
+    I will output exactly that. 
+    All steps verified. 
+    Generating. 
+    *(Done.)*

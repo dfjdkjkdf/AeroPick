@@ -1,0 +1,102 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as an aerospace GNC software review expert. I need to evaluate three different C implementations (A, B, C) of a function based on a provided requirement document and test cases. I must only output a JSON object with the correct implementation for each test and a final pick.
+
+2.  **Analyze the Requirement**:
+    *   **Functionality**: Cylindrical Earth-shadow payload supervisor with battery-hysteresis load management.
+    *   **Inputs/Outputs**: `position_eci_m` (Earth to spacecraft), `sun_direction_eci` (Earth to Sun). Normalize sun direction. Eclipse condition: projection on sun direction < 0 AND perpendicular distance to sun line < earth_radius_m. Equality is sunlight.
+    *   **State Machine/Logic**:
+        *   Eclipse -> ECLIPSE mode, payload off, heater on. Elapsed=0.
+        *   Sunlight after eclipse -> RECOVERY mode. This call is recovery sample 1.
+        *   Sunlight in RECOVERY -> WARMUP after `recovery_cycles` consecutive samples. WARMUP starts at sample 1.
+        *   Sunlight in WARMUP, `warmup_cycles` reached, `battery_soc >= payload_on_soc` -> SUN mode, payload on.
+        *   Sunlight in WARMUP, `warmup_cycles` reached, `battery_soc < payload_on_soc` -> LOADWAIT mode, payload off.
+        *   Sunlight in LOADWAIT -> SUN once `battery_soc >= payload_on_soc`, else LOADWAIT. Payload off until SUN.
+        *   Sunlight in SUN, `battery_soc < payload_off_soc` -> LOADSHED mode, payload off, no counter reset.
+        *   Sunlight in LOADSHED -> SUN once `battery_soc >= payload_on_soc`, else LOADSHED. Payload off until SUN.
+        *   Eclipse preempts every sunlight phase.
+        *   `payload_on` true only in SUN mode.
+        *   Disable resets SUN with payload off.
+        *   **Fault Conditions**: NULL inputs, degenerate/nonfinite vectors, nonpositive radius, counters outside 1..100, nonfinite/out-of-[0,1] battery_soc or SoC thresholds, or `payload_off_soc > payload_on_soc`. Also enable != 0 or 1. Latch FAULT.
+    *   **Output Structure**: `ep_output_t` contains `mode`, `elapsed`, `payload_on`, `heater_on`, `axial_m`, `cross_track_m`.
+    *   **Enums**: `EP_SUN=0`, `EP_ECLIPSE=1`, `EP_RECOVERY=2`, `EP_WARMUP=3`, `EP_FAULT=4`, `EP_LOADWAIT=5`, `EP_LOADSHED=6`.
+
+3.  **Analyze the Test Cases**:
+    All tests are "error" type, meaning they test fault conditions. The prompt says: "未赋值的量为 0" (unassigned values are 0). The tests only modify one parameter before calling the function once. We compare `ep_state.mode` (which likely maps to `ep_output.mode`).
+    *   Test 1: `position_eci_m = NULL`. Fault condition: "NULL ... latch FAULT". Expected mode: EP_FAULT (4). A=0, B=0, C=4. -> C matches requirement.
+    *   Test 2: `sun_direction_eci = NULL`. Fault condition: "NULL ... latch FAULT". Expected mode: EP_FAULT (4). A=0, B=0, C=4. -> C matches.
+    *   Test 3: `earth_radius_m = -100.0`. Fault condition: "nonpositive radius ... latch FAULT". Expected mode: EP_FAULT (4). A=0, B=0, C=4. -> C matches.
+    *   Test 4: `recovery_cycles = 0`. Fault condition: "counters outside 1..100 ... latch FAULT". Expected mode: EP_FAULT (4). A=0, B=0, C=4. -> C matches.
+    *   Test 5: `warmup_cycles = 101`. Fault condition: "counters outside 1..100 ... latch FAULT". Expected mode: EP_FAULT (4). A=0, B=0, C=4. -> C matches.
+    *   Test 6: `battery_soc = -0.1`. Fault condition: "nonfinite/out-of-[0,1] battery_soc ... latch FAULT". Expected mode: EP_FAULT (4). A=0, B=0, C=4. -> C matches.
+
+    Wait, all tests show A=0 (SUN), B=0 (SUN), C=4 (FAULT). The requirement explicitly states that these conditions should latch FAULT. Therefore, C is correct for all tests.
+
+4.  **Verify Reasoning against Requirements**:
+    *   Requirement: "NULL, degenerate/nonfinite vectors, nonpositive radius, counters outside 1..100, nonfinite/out-of-[0,1] battery_soc or SoC thresholds, or payload_off_soc greater than payload_on_soc latch FAULT."
+    *   Test 1: `position_eci_m` is NULL -> Fault.
+    *   Test 2: `sun_direction_eci` is NULL -> Fault.
+    *   Test 3: `earth_radius_m` = -100.0 (nonpositive) -> Fault.
+    *   Test 4: `recovery_cycles` = 0 (outside 1..100) -> Fault.
+    *   Test 5: `warmup_cycles` = 101 (outside 1..100) -> Fault.
+    *   Test 6: `battery_soc` = -0.1 (out of [0,1]) -> Fault.
+    *   In all cases, the correct behavior per requirement is to enter/latch FAULT mode (mode index 4).
+    *   Implementation C outputs 4 for all tests. Implementations A and B output 0 (SUN), which ignores the fault conditions.
+    *   Therefore, C is definitively correct.
+
+5.  **Format Output**:
+    Construct the JSON as requested.
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "C", "reason": "需求规定NULL输入应置位FAULT，测试1中position_eci_m为NULL，正确模式应为4，仅C符合。"},
+        {"id": 2, "correct": "C", "reason": "需求规定NULL输入应置位FAULT，测试2中sun_direction_eci为NULL，正确模式应为4，仅C符合。"},
+        {"id": 3, "correct": "C", "reason": "需求规定非正半径应置位FAULT，测试3中earth_radius_m为-100.0，正确模式应为4，仅C符合。"},
+        {"id": 4, "correct": "C", "reason": "需求规定计数器需在1..100范围内，测试4中recovery_cycles为0越界，应置位FAULT，正确模式为4，仅C符合。"},
+        {"id": 5, "correct": "C", "reason": "需求规定计数器需在1..100范围内，测试5中warmup_cycles为101越界，应置位FAULT，正确模式为4，仅C符合。"},
+        {"id": 6, "correct": "C", "reason": "需求规定电池SOC需在[0,1]范围内，测试6中battery_soc为-0.1越界，应置位FAULT，正确模式为4，仅C符合。"}
+      ],
+      "pick": "C"
+    }
+    ```
+
+    Check constraints: "只依据需求判断", "只输出 JSON". The reasoning matches perfectly. The enum values are given in the code context: `typedef enum { EP_SUN=0,EP_ECLIPSE=1,EP_RECOVERY=2,EP_WARMUP=3,EP_FAULT=4,EP_LOADWAIT=5,EP_LOADSHED=6 } ep_mode_t;`. So mode 4 is indeed FAULT.
+    All tests point to C. No ambiguity.
+    I will generate the exact JSON requested.✅
+    One minor thing: The prompt says "ep_state.mode：A=0；B=0；C=4". It refers to `ep_state.mode`, but the output struct has `ep_output_t`. Probably a typo in the prompt or they share state, but it doesn't change the logic. Mode 4 is FAULT.
+    I'll produce the JSON. 
+    Structure matches request.
+    Ready. 
+    Output matches exactly. 
+    Proceeds. 
+    [Self-Correction/Verification during thought]
+    - Check requirement text: "NULL, degenerate/nonfinite vectors, nonpositive radius, counters outside 1..100, nonfinite/out-of-[0,1] battery_soc or SoC thresholds, or payload_off_soc greater than payload_on_soc latch FAULT."
+    - Test 1: NULL vector -> FAULT. Correct.
+    - Test 2: NULL vector -> FAULT. Correct.
+    - Test 3: negative radius -> FAULT. Correct.
+    - Test 4: counter 0 -> outside 1..100 -> FAULT. Correct.
+    - Test 5: counter 101 -> outside 1..100 -> FAULT. Correct.
+    - Test 6: soc -0.1 -> out of [0,1] -> FAULT. Correct.
+    - All align with C=4. A and B return 0 (SUN), ignoring faults.
+    - Conclusion is solid.
+    - JSON format strictly followed.
+    - Output generation. 
+    [Done] 
+    Output Generation. 
+    *(Self-Correction/Refinement during drafting)*: I will make sure the JSON keys match exactly what's requested: `{"tests":[{"id":测试编号,"correct":"A|B|C|未规定|无法判断","reason":"一句话"}],"pick":"A|B|C"}`. I will use integer IDs as in the prompt. All good. 
+    Proceeds. 
+    [Output Generation] -> *See response.* 
+    *(Note: I'll keep the reasons concise as requested.)* 
+    `{"tests":[{"id":1,"correct":"C","reason":"需求明确NULL输入需触发FAULT状态(模式4)，仅C实现正确返回4。"},{"id":2,"correct":"C","reason":"需求明确NULL输入需触发FAULT状态(模式4)，仅C实现正确返回4。"},{"id":3,"correct":"C","reason":"需求明确非正半径需触发FAULT状态(模式4)，仅C实现正确返回4。"},{"id":4,"correct":"C","reason":"需求明确计数器越界(不在1..100)需触发FAULT状态(模式4)，仅C实现正确返回4。"},{"id":5,"correct":"C","reason":"需求明确计数器越界(不在1..100)需触发FAULT状态(模式4)，仅C实现正确返回4。"},{"id":6,"correct":"C","reason":"需求明确SOC越界(不在[0,1])需触发FAULT状态(模式4)，仅C实现正确返回4。"}],"pick":"C"}` 
+    Matches perfectly.✅
+    Output matches response. 
+    [Final Check of the Prompt]: "只输出 JSON：..." -> I will output only the JSON block.
+    All set. 
+    *Self-Correction/Note during thought*: The prompt says `ep_state.mode`, but the struct is `ep_output_t`. It's likely a copy-paste artifact in the prompt, but doesn't affect the logical deduction. I will stick to the deduction.
+    The enum definition confirms `EP_FAULT=4`.
+    Everything is consistent.
+    Proceeds. 
+    [Output Generation] (matches the refined JSON)
+    `{ "tests": [ ... ], "pick": "C" }` -> formatted correctly. 
+    Done. 
+    [Output Generation] -> *Proceeds*

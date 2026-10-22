@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 最符合需求，正确实现了校验、限幅、热积分及 DRIVE/COOL/FAULT 状态转移；A 未更新状态温度，B 在 COOL 下错误计入加热且未正确锁存 FAULT。",
+ "_usage": {
+  "prompt": 12499,
+  "completion": 24376
+ }
+}

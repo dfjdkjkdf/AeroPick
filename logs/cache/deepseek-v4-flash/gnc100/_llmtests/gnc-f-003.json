@@ -1,0 +1,151 @@
+{
+ "key": "28b0c37f56e50e1c4183c64eaf02eb0804bc0fd0",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 0.0; sb->z = 1.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 0.0; si->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = 0.6; pb->y = 0.8; pb->z = 0.0;\nsb->x = -0.8; sb->y = 0.6; sb->z = 0.0;\npi->x = 0.0; pi->y = 0.6; pi->z = 0.8;\nsi->x = 0.0; si->y = -0.8; si->z = 0.6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = 3.0; pb->y = 4.0; pb->z = 12.0;\nsb->x = -4.0; sb->y = 3.0; sb->z = 0.0;\npi->x = 0.0; pi->y = 0.0; pi->z = 5.0;\nsi->x = 5.0; si->y = 0.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = -1.0e-9; pb->y = 1.0e-9; pb->z = 1.0e-9;\nsb->x = 1.0e-9; sb->y = -1.0e-9; sb->z = 1.0e-9;\npi->x = 1.0e-9; pi->y = 1.0e-9; pi->z = -1.0e-9;\nsi->x = 1.0e-9; si->y = 1.0e-9; si->z = 1.0e-9;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pb->x = 1.0; pb->y = 2.0; pb->z = 3.0;\nsb->x = 4.0; sb->y = 5.0; sb->z = 6.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0e-6; sb->z = 1.0e-6;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0e-9; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 1.0; sb->y = 1.0e-9; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pb->x = 1.0e-13; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sb = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "si = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "out = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 0.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 2.0; sb->y = 0.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 3.0; si->y = 0.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 0.0/0.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0/0.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 0.0/0.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 1.0/0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0e-308; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 0.0; pi->y = 1.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 0.0; si->z = 1.0;",
+    "sb->x = 0.0; sb->y = 0.0; sb->z = 1.0;\nsi->x = 1.0; si->y = 0.0; si->z = 0.0;",
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 1.0; sb->y = 0.0; sb->z = 0.0;"
+   ]
+  }
+ ]
+}

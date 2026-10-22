@@ -1,0 +1,167 @@
+{
+ "key": "d52bd7394310b2c7965f2f8a1a6554ad15a3d1df",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "field->x = 3.0; field->y = 4.0; field->z = 0.0; base_gain = 2.0; reference_field = 5.0; min_gain = 0.0; max_gain = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field->x = -1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field->x = 0.0; field->y = 2.0; field->z = 0.0; base_gain = 3.0; reference_field = 6.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field->x = 2.0; field->y = 0.0; field->z = 2.0; base_gain = 5.0; reference_field = 4.0; min_gain = 0.0; max_gain = 20.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = 5.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 5.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = 0.0; field->y = 1.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 0.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 5.0; max_gain = 5.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 5.0; max_gain = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = 10.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = 0.001; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 1000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 0.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0; field = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0; gain = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0; field_direction = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0; scheduled_axis_gain = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0 / 0.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 0.0 / 0.0; field->y = 1.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = -1.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0 / 0.0; reference_field = 1.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 0.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = -5.0; min_gain = 0.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = -1.0; max_gain = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 0.0; max_gain = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0; base_gain = 1.0; reference_field = 1.0; min_gain = 6.0; max_gain = 5.0;"
+   ]
+  }
+ ]
+}

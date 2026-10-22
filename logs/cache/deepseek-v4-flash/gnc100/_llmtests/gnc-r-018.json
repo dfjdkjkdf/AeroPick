@@ -1,0 +1,158 @@
+{
+ "key": "76797424fd31aecf80c1725edadd084c6f759f47",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.95;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = 0.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sd_input.enable = 0;\nsd_state.mode = 1;\nsd_state.initialized = 1;\nsd_state.rejects = 2;\nsd_state.reacquire_count = 1;\nsd_state.reference.x = 1.0;\nsd_state.reference.y = 0.0;\nsd_state.reference.z = 0.0;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_state.mode = 1;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_state.reference.y = 0.0;\nsd_state.reference.z = 0.0;\nsd_input.sun_body->x = 0.9;\nsd_input.sun_body->y = 0.4358898943540674;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_state.mode = 1;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_state.reference.y = 0.0;\nsd_state.reference.z = 0.0;\nsd_input.sun_body->x = 0.89;\nsd_input.sun_body->y = 0.4559605251423181;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 1.0;\nsd_config.minimum_cosine = 0.5;\nsd_config.max_rejects = 1;\nsd_config.reacquire_confirm = 1;\nsd_state.mode = 1;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_state.reference.y = 0.0;\nsd_state.reference.z = 0.0;\nsd_input.sun_body->x = 0.0;\nsd_input.sun_body->y = 1.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 20;\nsd_config.reacquire_confirm = 2;\nsd_state.mode = 1;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_state.reference.y = 0.0;\nsd_state.reference.z = 0.0;\nsd_input.sun_body->x = -1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 2;\nsd_config.reacquire_confirm = 2;\nsd_state.mode = 1;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_input.sun_body->x = -1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;",
+    "sd_input.sun_body->x = -1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.8;\nsd_config.max_rejects = 1;\nsd_config.reacquire_confirm = 2;\nsd_state.mode = 1;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_input.sun_body->x = -1.0;",
+    "sd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;",
+    "sd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.8;\nsd_config.max_rejects = 1;\nsd_config.reacquire_confirm = 3;\nsd_state.mode = 3;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_state.reacquire_count = 1;\nsd_input.sun_body->x = -1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.8;\nsd_config.max_rejects = 1;\nsd_config.reacquire_confirm = 2;\nsd_state.mode = 3;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_state.reacquire_count = 1;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.8;\nsd_config.max_rejects = 2;\nsd_config.reacquire_confirm = 1;\nsd_state.mode = 4;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = NAN;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = INFINITY;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = 0.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 1.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 1.5;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 1.2;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.8;\nsd_config.max_rejects = 21;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.8;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 0;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 2;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_input.sun_body->x = 1.0;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.8;\nsd_config.max_rejects = 3;\nsd_config.reacquire_confirm = 2;\nsd_state.mode = 3;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_input.sun_body->x = NAN;\nsd_input.sun_body->y = 0.0;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.8;\nsd_config.max_rejects = 1;\nsd_config.reacquire_confirm = 1;\nsd_state.mode = 3;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_state.reference.y = 0.0;\nsd_state.reference.z = 0.0;\nsd_input.sun_body->x = 0.8;\nsd_input.sun_body->y = 0.6;\nsd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_input.enable = 1;\nsd_config.alpha = 0.5;\nsd_config.minimum_cosine = 0.9;\nsd_config.reacquire_min_cosine = 0.8;\nsd_config.max_rejects = 1;\nsd_config.reacquire_confirm = 1;\nsd_state.mode = 3;\nsd_state.initialized = 1;\nsd_state.reference.x = 1.0;\nsd_state.reference.y = 0.0;\nsd_state.reference.z = 0.0;\nsd_input.sun_body->x = 0.79;\nsd_input.sun_body->y = 0.6131052146770069;\nsd_input.sun_body->z = 0.0;"
+   ]
+  }
+ ]
+}

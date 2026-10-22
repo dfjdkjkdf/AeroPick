@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "b1 为空应触发 ADCS_E_NULL，失败时非空输出应按合同置 INFINITY，C 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "b2 为空应触发 ADCS_E_NULL，失败时非空输出应按合同置 INFINITY，C 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "r1 为空应触发 ADCS_E_NULL，失败时非空输出应按合同置 INFINITY，C 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "r2 为空应触发 ADCS_E_NULL，失败时非空输出应按合同置 INFINITY，C 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "body_angle 为空应触发 ADCS_E_NULL，失败时其余非空输出应为 INFINITY，C 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "inertial_angle 为空应触发 ADCS_E_NULL，失败时其余非空输出应为 INFINITY，C 符合。"
+  }
+ ],
+ "pick": "C"
+}

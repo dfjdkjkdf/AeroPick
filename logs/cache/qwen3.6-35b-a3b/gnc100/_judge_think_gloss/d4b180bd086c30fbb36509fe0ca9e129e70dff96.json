@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定执行顺序为“先初始化输出，再检查wheels是否为空”，空指针应返回ADCS_E_NULL(1)。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同理，需求规定speed_limits为空时也应直接返回ADCS_E_NULL(1)，实现B完全符合该分支逻辑。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 8931,
+  "completion": 2483
+ }
+}

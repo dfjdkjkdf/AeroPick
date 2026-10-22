@@ -1,0 +1,5404 @@
+[
+ {
+  "t": "gnc-r-026",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "7a8c492d522929ed3ee3615e4ece9a2e96341cfe",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-047",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "538c3a0fd159ca9d0dc304ee5c072911969f2395",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-017",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "72e9f4ca0787115626f8bccc88e1c6b843603728",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-036",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "4845fd2b9bdbe7f962b94dd4f1816cdaec7e9ec0",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-044",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "7e48fafce1b08fcdd4b03ffccd2dbf1a0d527be5",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-006",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "8d2268227c4da11bfc0f2bee5e9471dda14bb4c7",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-047",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "3f2616ccd1f3c641f0b8d4759456dbbfcfd94409",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-001",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "e0691cd8dc7233c71c508fbc5455fd9dabd79f77",
+  "judge": 0.5,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.5,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-032",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "7a6da1ae7c8898c0197afca71b2ff43eac37e9cf",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-023",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "332c1e6fe314ab5e5a7ee15efaa7ab8691af735e",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-023",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "f2a18ce86e7d64944f5cb466bc4ad16b0a63afff",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-026",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "f9b49aca5b3945d58486b79faedea501b991b73f",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-033",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "295f0c59737e060d0de73daad746f559df35f0b5",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-022",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "77ecfdc950152dc8caa9ea4f468d26d30783d926",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-012",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "7f0945849aa03e5ae8e580943951747d8742d400",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-001",
+  "p": 1,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "fc290cec7c846bbc5ca326d5484acfe3552b9503",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-041",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "d5b18c3fa3cf591a763ff1e8cd6e2ab7f04a00bc",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-002",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "8f76108023a87031bcec99e23815769f513aee00",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-030",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "d78138d34933dea3d9cee439283f44ec92065aa2",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-007",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "a4e8563692985fc210d1c74af9565b9a886ea3da",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-005",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "773e20ba32065c63ddfb9b80a62e633d087312a2",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-032",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "53c4b857f4a51fc64b35b46958e5a1a67784f598",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-042",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "500f6dc3ea1ee80571ec0af0d30742496381e0e9",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-013",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "a77d32eb1f2c25d3d8fe716e4f39beabfaf037e4",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-033",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "d4fcc0676d5deac8c8759b1d889b88f5d671beb9",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-023",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "9c3b5c40b5621a0f300e7989a78ea8ecb59a8157",
+  "judge": 0.5,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 0.5,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-007",
+  "p": 1,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "9c2dd548bc44e08beb4f95727c2b790865736cd5",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-015",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "04d6f4d834be1b6691ca467b5f7010457f447b71",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-050",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "32f47d130a5fbf989d05910121730cfd50c996ef",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-011",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "86c29f04fb0a70975ffa8db294993b11e4666547",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-027",
+  "p": 2,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "b8447a546ce5f3d65c36b88e3dd774cbdbbd3f9d",
+  "judge": 0.5,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.5,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-002",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "7d7cf3f332d2e30c51be65e2a8deed905cad37b5",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-027",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "40b66a441d25f6c42256042d3c748af41bedfa9b",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-042",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "da5b23f54ff32e2328dcd3514ffeec10bb1ea9d7",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-027",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "dff7b424c1f499469aca364cca4ce8665618776f",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-029",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "fa7ec391280232a2dace4d910b03242441b3c2ee",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-012",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "2b4dc20cc18a72c1a44d87377a6b4ca1afa9b048",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-011",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "d5f8ae5cb589301a9bd41db9629d6b74fb1a8b77",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-019",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "4292f2b2c4063656786fd48b3810dd0afd757ab7",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-018",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "f827dbe871a8b1a9ef0e387035c5ab270330d9b4",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-014",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "6fcd241c32c2341831fe3add6f429775e5739e07",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-038",
+  "p": 1,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "49c038b8d6a8945e9fda86f599cbb93a6118813f",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-042",
+  "p": 1,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "753b08730812bf8f79afe9053a35564a2f926414",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-040",
+  "p": 2,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "c67c5ec18441d38bedd48191058316d09ce192ad",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-009",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "aab53bee87f4b8974cf4a7346ac8d25850fdc9d5",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-044",
+  "p": 3,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "ab55c1b4119ab350aa4bf020f74e48a5401bc39f",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-050",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "2959240991e69ee1860b483e4395734bf5be0b55",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-045",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "89070b46872a9af99d9e806e4ff6d7329c62a339",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-035",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "3b1295c0f40cfbfee4e2b74cea490c1ab82e6991",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-021",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "d37e09fb0d25dee1dc28f7a6a50b4be08b352e58",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-010",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "9ff057a3f722d294147f636131015868e3cde885",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-004",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "3d7992931cf2c06c13b4ac9639c92f23c9cdb2a2",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-005",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "b025c9f6c3d5f386ab329bd1295b949131deeafd",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-012",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "e6436b30b0545cb93fd5a0257e927bf63534a55d",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-050",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "ddc3e1b9398e48c8d169689c6842406e9208740b",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-015",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "3e44b4c14bdb7d5856e8825e86e31c7627d8db40",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-020",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "e25a51a6cf84e4a99939d732d1ac1fff46a837be",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-029",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "21154e83f6e560e5e0d3380027a97958e7996db8",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-037",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "ac3c19b1d1079d3727db1c7556aaf813f6e7fa05",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-029",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "7372ceaeb685cb3ab408edd27ff8384791db7d4a",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-022",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "2a2bc027f14d9c79ad4d9cda86b790df1741fc5b",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-044",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "9bb5734094968253414848f1b8b773dd2562ce47",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-021",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "b30869b154cef4f54dc4ee6585f324735c74a2e0",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-012",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "70f04157920fba9043c0a0a339acd441c45412f7",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-013",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "22b94b793ea8baa1166268c4ee308097c74db105",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-002",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "ac0aa16fbc0d45d4a7d4bb92e66b09261cf27792",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-006",
+  "p": 3,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "8d2268227c4da11bfc0f2bee5e9471dda14bb4c7",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-032",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "7a6da1ae7c8898c0197afca71b2ff43eac37e9cf",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-041",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "2a401cef820ba8978d60d37bbe9547ace534400a",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-046",
+  "p": 2,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "62b2ebde8fad0e17b707cfbe685067843716d185",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-013",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "077587f7342fd6dee6946597e56b6e435eb6e81c",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-037",
+  "p": 3,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "f1feef8fe698e5efd98397e3a51fa4c46038d2a4",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-039",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "0aabe51b170c78bf3b6c8d49ea874533ca3f41a7",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-009",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "5feb31d923066f44309d95779f3dcd44990f4fbe",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-010",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "4a5f4f6f1ea7e3ce7d5c4f61ac4cd86def07644a",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-035",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "45b64c83bb1984436da59ae8bbf32b1f9b5c27c2",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-041",
+  "p": 2,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "019a05f1362aca3d92bcefc8e1b29d907ab92603",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-030",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "85cd7b2f16eb7f75f24c245f4b545af4fe9e5da4",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-033",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "1dbc76a1976025583858391f056ab20f488d046a",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-041",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "183049bb0c0330d113459e734534e48f417b3271",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-022",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "f63ba17d542566406120c1dda1a058ab20b1a481",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-024",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "2f26d60f0db9e61a425d2be5f4c9c6e042c3a0ee",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-039",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "2540b7d188d5ebd80dd6238714df51a5a9ed38c4",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-005",
+  "p": 1,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "31e58889c31b0a5038104194680569c494220da6",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-016",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "f19057d6ee9679fff01cba3b81529936c063a0f1",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-023",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "13f99b3c8c7ac97ac7ae4fda73ab04de81f9fecb",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-014",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "88c12525c3bd2e4265cc27f0b96aca5f8205832c",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-039",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "e1044be9def3ede00de5ddd1535eb56450c1811a",
+  "judge": 0.5,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.5,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-049",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "2be06beec73808b6579be87d94f37a4f4e558aa5",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-011",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "02facd48ce9d473085c13cbd6ccf818123ba671a",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-009",
+  "p": 1,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "8aa0fcb490d96bf447e5ea10145a7408eaf4d58e",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-018",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "bce702a2f886c39455404fc69d4bbc1227f84891",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-047",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "3f2616ccd1f3c641f0b8d4759456dbbfcfd94409",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-024",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "af015d8655ce4bb05de64947be714f0ad513a13f",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-020",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "df599b5155f578279eabbd9e516767b6e3dbfb3e",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-034",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "2d0ef2371c089ea2fddf5edd29466842d4510720",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-043",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "ff41d59a0743e3bba1891369dc4178a084144799",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-010",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "8f4447da5f041e14615c0cdd53b2968458dede17",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-009",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "0c14ec2c0c1546502433bb14b0823fe376fdb681",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-030",
+  "p": 1,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "64a71d3e50de005e4e3e14a08ea63b8af8b4372c",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-001",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "2f1bf1a4c24adf34e3d84a72df469adff89081db",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-029",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "92e24bebe1edc801b6f546d8184b56d4650686b5",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-047",
+  "p": 2,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "3bbeb0cc5da456ce7f6f3a4b3975eed1931a0ffd",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-002",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "da4a0f4e3331ab074492b3c85ada54de0dd5b34b",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-048",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "61b4f604584ee1c8eb8116935fb960fc8ed1281b",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-039",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "a04aa94ffbe0f36f372286a4763f09494c92e354",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-048",
+  "p": 1,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "5088949f3c906a6aa9d5624717780387d9a395d8",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-014",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "89721ec2610c58d4af4a0c51997905185f949726",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-040",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "8fc96d6abe9dfe724bc13aef71412dd6aeac6cd1",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-016",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "6909597fd0ae4cf372bb391706491584b74136e5",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-021",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "80e15b4363e0566874c0a81f411a25351d539bc9",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-037",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "2e3a1532997cefc48d09047859efe244b0acbca0",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-044",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "d4d3d5a632a1ed3b11ef4595925724a1f9b4de67",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-042",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "97f4b8b92b6bf44660e32b5bad5e93ac1fd8e3ac",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-018",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "533a249ef65abd4ac79bba0ef0c438775a91bbcf",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-017",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "72e9f4ca0787115626f8bccc88e1c6b843603728",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-034",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "250dd69e0224484dee38f00cde5fb710418abd15",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-025",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "a7d0378ef90ef7f20a8fd2ce860f9439a22acb62",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-030",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "64a71d3e50de005e4e3e14a08ea63b8af8b4372c",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-035",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "945c0270ff0953c3135042730dd818c676616bd4",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-015",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "603894e1ea15ee4dab26518099c0f15ed9bd5ac4",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-020",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "252aed981f3177abd6c4fc591ae0a16d24407a8a",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-041",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "2ed791ca509567cd34e50c8ddc7541293ccdf705",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-036",
+  "p": 1,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "8f0065d08e442cd3ef721db601492dead77e2770",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-034",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "73fb8766e44950852ecea6a5a0271292280137ee",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-048",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "beaf31394045de90143949cc53b1d98475b48751",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-010",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "60440f00ea262ff1116f737e96c793d647b12240",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-004",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "240467110d6eed59d1394c6c6b3607cd7aa90c15",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-049",
+  "p": 3,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "7380923a0bcd1d9c7adfc246ce7bffc4db965961",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-004",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "47d1081de48623cea4daeaf5f4744a736f142bff",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-025",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "5bb3f4e25ed5c43579efbe84a5949f02d4263747",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-027",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "5af9648afc4adfc6188ee00ab18e11fd8a767253",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-036",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "d2fb14f99b065be2960c507f685a38f9387c309e",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-012",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "adbe2b991ed1d73df349b3c4e69f63b4022e4007",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-050",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "c00d1597a6ece93a4006f8f81238b56cffe17d79",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-048",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "0f7e682897daadecfe63593af2ce5c29575f164f",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-036",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "85598617e0a754081f1834ee2af6df23c9b81b00",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-024",
+  "p": 2,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "d4b180bd086c30fbb36509fe0ca9e129e70dff96",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-045",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "9d1c4580459843cdbc2d0d0ad29ee9f06561c8ac",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-034",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "73fb8766e44950852ecea6a5a0271292280137ee",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-014",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "690e2182530b15b90c68ea652181fb7bbef530af",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-018",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "bc36810c297fba89c0d2dc614ff4af721c764a08",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-006",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "dc0c07bad0674a92f8e743c4d78d1a9afa701bb1",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-047",
+  "p": 1,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "e37a41472ea7d04f1275aa9e11605fc221153f71",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-046",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "290dbb5be0c8a2df52b0b79514417fdbcc20152e",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-032",
+  "p": 1,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "73f4dee94a1aa017351d8c64ae44020bca30b091",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-011",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "bff4a7e32c5a2b90bfad305b2596b464204fd2ce",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-035",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "945c0270ff0953c3135042730dd818c676616bd4",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-014",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "6545cb49d9248252cbd1e3f65efb5c642ff5eb6b",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-037",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "2c6cc191588769e855fa2938c43ce5b589d2c61c",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-022",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "97901db76e106cac85a78be419b42fb755b97a8d",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-030",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "11d98b748aa66c00d4a0a4967b39c713105a71f7",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-008",
+  "p": 1,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "e3441abc65d008dbda3023e91251775105b2209f",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-044",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "45aac73da24742b71c06ad0b7d66de7f115d654e",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-005",
+  "p": 2,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "87bfadf2c209050ae352bb6af1ecb96e18684080",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-043",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "1593bdef9fe9facdb961d8a177d6964a50211f86",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-020",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "31b6037b162c9a7cc56b6575b35ff85b4fc9770b",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-001",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "9587d24e3bff6b5d4bbcf39e676022d4db3ef2a2",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-029",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "8c4e3205f8ada42fd35433a51f00b5e4428130e0",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-042",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "a2365a9496a9df5a4d5e9fb65406a38c297c7a9a",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-016",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "f19057d6ee9679fff01cba3b81529936c063a0f1",
+  "judge": 0.5,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.5,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-026",
+  "p": 1,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "261ee0ee300d1044633250693dbeaca9929a70bb",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-015",
+  "p": 1,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "6385bf705ece2b107db63e585edeb727adf0205c",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-049",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "5c77e3194644f58a72904fa78749b8cc853c4d45",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-024",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "5c8622f00265f40f0175fccb749797413f613008",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-018",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "fa1f5d95a6d040c998ceb34b0be020d9ee0a9f74",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-034",
+  "p": 2,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "8442af16ac9d24a5409abd593623e4e412ec2a9f",
+  "judge": 0.5,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.5,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-046",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "3c8d252a7f10c9f0eecd7d4cbeb10031e8875061",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-022",
+  "p": 2,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "52eaea7faf9c90908edc94b901d3b564a35ce625",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-023",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "e928208e99b578ffc3367529f973c7fb61706034",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-039",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "b6b55a26f89f6050aadf2815d2c647a92b7b7f0c",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-025",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "5b9c55a7ebe0fba5aba13a7f52ab3d44afc94ff0",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-004",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "240467110d6eed59d1394c6c6b3607cd7aa90c15",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-004",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "810ce9b96d0a2b6bda92dd8c3284ccdcfc2a5a2b",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-033",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "14d82fbea955ed8dee949e1b459ae9f6bf4985ae",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-037",
+  "p": 3,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "2c6cc191588769e855fa2938c43ce5b589d2c61c",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-045",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "9d1c4580459843cdbc2d0d0ad29ee9f06561c8ac",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-036",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "717ec43c875ea29cc9ff73ac669405eb42fc0f95",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-031",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "52dcf704109013fa20726fa8a71a2b4f2ffd10be",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-037",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "0e4faea63317b937fb11ecdbc50e454425ef8d65",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-034",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "0bfe2e56af8acd1fde2e35a9c999a2b70b899eb3",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-045",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "89070b46872a9af99d9e806e4ff6d7329c62a339",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-033",
+  "p": 2,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "cf4ce5193f1681a007324808791089c1a64eb47c",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-028",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "385d15ae7cd35006e51e6d7dfa5a3b170f24ad30",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-008",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "cc7a97d7b5236a2525e97b638347abe3e833d345",
+  "judge": 0.5,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.5,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-043",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "1593bdef9fe9facdb961d8a177d6964a50211f86",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-027",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "3b913be0c502f0b41a18ef0ea7be72f50f0e7294",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-049",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "5c77e3194644f58a72904fa78749b8cc853c4d45",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-048",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "5088949f3c906a6aa9d5624717780387d9a395d8",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-046",
+  "p": 1,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "b77bfd2304c1a68270c54cd0a4d05a7f48b9c998",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-009",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "db435ac5c652c29e5c85de961488467cf1881255",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-043",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "1b2574ca382b2de95006b32773e4ef012d2793b4",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-028",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "a46a3091b62dd3493e62611abbc1366cebbf943f",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-018",
+  "p": 1,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "64463d58b7af01c9c94d37168eb5ff9dd18a7519",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-048",
+  "p": 2,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "a898ae0fa3557d2daef31ab2d44dcfdea546ac65",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-031",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "52dcf704109013fa20726fa8a71a2b4f2ffd10be",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-046",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "2173964f4134270449f7e2a06da0e721883bd5cb",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-032",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "7a6da1ae7c8898c0197afca71b2ff43eac37e9cf",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-020",
+  "p": 3,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "1644fee1ed33d2358e21baa859d89ea85f68a095",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.3333333333333333,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-030",
+  "p": 2,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "1138ccd2d074fb01ddf7f3bab321076f577fdbdc",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-013",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "66239031e3b358ae7dfb9ecb650cde23dce4e6f7",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-025",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "b71e004242f2254cd8f6097ccc7d88c56ced3cbc",
+  "judge": 0.5,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.5,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-024",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "fa9b92672207e6294f41c3878aca61863ccbcb35",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-042",
+  "p": 2,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "a1cbe977d124abd4b1be76a9091eef4d65c5d141",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-023",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "66a3a8905a27950f441a7db1fbb7aeb4e3b77099",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-r-049",
+  "p": 2,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "2be06beec73808b6579be87d94f37a4f4e558aa5",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-017",
+  "p": 2,
+  "S": [
+   true,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "4cd193c48e50f9c15aee2cd9113c684ce2f37de7",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-008",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "bc9814ac689b75c3650f5236d5c933fc2710851f",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-015",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "4d15c8ad92107b79a0e873fa81619f713ba06fdd",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-032",
+  "p": 2,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "b0a67b6cb2a15a933fded8ec0acdad40942710f3",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-035",
+  "p": 2,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "d8a46fd8f4ae146a08eb03241dc23620d3c786e8",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-040",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "db1570e7de7de70a7c715dea64a7d322a6f55432",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-047",
+  "p": 3,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "7f9abe8534a8ac89fcb0df4a73c5daafa66a607b",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-022",
+  "p": 3,
+  "S": [
+   true,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    1,
+    2
+   ],
+   [
+    0
+   ]
+  ],
+  "prompt_key": "2b1a584455fa4db026f0f4b6ab66fd6a94134ce4",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-014",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "68518c19fc543c2bbf059b23cb818e558bd33b92",
+  "judge": 0.0,
+  "path": "judged",
+  "hier": 0.0,
+  "final": 0.0,
+  "any_correct": false
+ },
+ {
+  "t": "gnc-f-033",
+  "p": 1,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "df0edaddc2e284d8856b7532ee151f18479823fc",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-046",
+  "p": 1,
+  "S": [
+   false,
+   false,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "222b312b08c12ae1c31a3eabbe26d2b010c925f2",
+  "judge": 0.5,
+  "path": "judged",
+  "hier": 0.5,
+  "final": 0.5,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-035",
+  "p": 2,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "945c0270ff0953c3135042730dd818c676616bd4",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-r-041",
+  "p": 1,
+  "S": [
+   false,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "ac6b25b8405c342d5433ed9001ec1d443b6b136e",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 0.6666666666666666,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-007",
+  "p": 3,
+  "S": [
+   true,
+   true,
+   false
+  ],
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2
+   ]
+  ],
+  "prompt_key": "bc73238edbf6d0e2aa24c4b20bd18b05cae3c127",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ },
+ {
+  "t": "gnc-f-020",
+  "p": 2,
+  "S": [
+   true,
+   true,
+   true
+  ],
+  "groups": [
+   [
+    0,
+    2
+   ],
+   [
+    1
+   ]
+  ],
+  "prompt_key": "1b43dd514777341134e441b346e3a74ef404e6d6",
+  "judge": 1.0,
+  "path": "judged",
+  "hier": 1.0,
+  "final": 1.0,
+  "any_correct": true
+ }
+]

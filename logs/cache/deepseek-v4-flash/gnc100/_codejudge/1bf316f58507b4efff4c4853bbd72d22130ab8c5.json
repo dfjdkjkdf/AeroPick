@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 在检查空指针前先清零有效输出，确保包括空指针在内的所有失败路径都满足“failure output zero”，其余校验和插值公式也完全符合需求。",
+ "_usage": {
+  "prompt": 8960,
+  "completion": 1015
+ }
+}

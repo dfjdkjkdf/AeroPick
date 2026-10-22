@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A同时满足空指针返回ADCS_E_NULL（可写时输出无穷）、非有限或退化范数返回ADCS_E_DEGENERATE、归一化后夹取余弦并比较角度，且失败输出无穷；B/C在空指针失败时未按要求写出无穷值。",
+ "_usage": {
+  "prompt": 9787,
+  "completion": 1146
+ }
+}

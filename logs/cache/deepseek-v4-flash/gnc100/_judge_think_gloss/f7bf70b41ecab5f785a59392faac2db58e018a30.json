@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求规定失败时默认输出 INFINITY 和 SIZE_MAX，B 在 c_bi 为空时设置该默认值。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求规定失败时默认输出 INFINITY 和 SIZE_MAX，B 在 body_vectors 为空时设置该默认值。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "需求规定失败时默认输出 INFINITY 和 SIZE_MAX，B 在 inertial_vectors 为空时设置该默认值。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "需求规定失败时默认输出 INFINITY 和 SIZE_MAX，B 在 weights 为空时设置该默认值。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "loss 为空导致 ADCS_E_NULL，非空输出 worst_index 应按失败默认置为 SIZE_MAX。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "worst_index 为空导致 ADCS_E_NULL，非空输出 loss 应按失败默认置为 INFINITY。"
+  }
+ ],
+ "pick": "B"
+}

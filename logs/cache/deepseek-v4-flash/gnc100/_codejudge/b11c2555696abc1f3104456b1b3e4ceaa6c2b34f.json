@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 最符合需求：正确执行 IDLE/ON/REST 转换，ON 时调用原语并发布卸载输出与力矩，REST 时输出零，并按饱和周期计算自适应休息。",
+ "_usage": {
+  "prompt": 13270,
+  "completion": 27535
+ }
+}

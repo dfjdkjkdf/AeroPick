@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "corrected_t 为 NULL 时需求规定 Null -> ADCS_E_NULL，应返回 1 且不得解引用崩溃；A 返回 1，B 崩溃。"
+  }
+ ],
+ "pick": "A"
+}

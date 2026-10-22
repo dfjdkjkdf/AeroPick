@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "Both residuals equal, normalized fusion weights are 0.5 each; A matches."
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "Triad residual is better, normalized weights are star=1/3 and triad=2/3; A matches."
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "Star residual is better, normalized weights are star=2/3 and triad=1/3; A matches."
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "Both residuals at max usable limit and equal, normalized weights are 0.5 each; A matches."
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "Disagreement equals fuse threshold and is allowed, equal residuals give normalized weights 0.5 each; A matches."
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "Same fusion as test 2 with confirm=1, still fused with normalized weights star=1/3 and triad=2/3; A matches."
+  }
+ ],
+ "pick": "A"
+}

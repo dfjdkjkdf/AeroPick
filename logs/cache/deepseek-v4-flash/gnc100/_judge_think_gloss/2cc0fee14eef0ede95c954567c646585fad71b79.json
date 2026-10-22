@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "首样本有限且速率范数小于 stationary_limit，应被接受并计数，A 正确。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "速率范数等于 stationary_limit，按“at most”应接受，A 正确。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "速率范数超过 stationary_limit，应触发 RATE 拒绝并递增 rejected_windows，A 正确。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "零速率样本有效且低于限值，应接受并计数，A 正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "零速率样本有效且低于限值，应接受并计数，A 正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "有限样本速率范数低于 stationary_limit，应接受并计数，A 正确。"
+  }
+ ],
+ "pick": "A"
+}

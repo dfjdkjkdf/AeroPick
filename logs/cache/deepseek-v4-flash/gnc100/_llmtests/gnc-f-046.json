@@ -1,0 +1,161 @@
+{
+ "key": "75a0be1cc0f067ad0ca4cd299f2836d40337d0b7",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "current = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "target = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "required_rate = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "margin = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "current->w = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "current->x = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "target->y = -INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "duration = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "duration = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "duration = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "max_rate = -0.001;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "max_rate = NAN;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 1.0;\ntarget->w = 1.0;\nmax_rate = 1.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = 1.0;\ntarget->w = 0.0;\ntarget->x = 1.0;\nmax_rate = 2.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = 1.0;\ntarget->w = -1.0;\nmax_rate = 2.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = 0.5;\ncurrent->x = 0.5;\ncurrent->y = 0.5;\ncurrent->z = 0.5;\ntarget->w = 0.5;\ntarget->x = 0.5;\ntarget->y = 0.5;\ntarget->z = 0.5;\nmax_rate = 1.0;\nduration = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 1.0;\ntarget->w = 0.6;\ntarget->x = 0.8;\nmax_rate = 1.0;\nduration = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 1.0;\ntarget->w = 0.0;\ntarget->x = 1.0;\nmax_rate = 3.141592653589793;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 1.0;\ntarget->w = 0.0;\ntarget->x = 1.0;\nmax_rate = ADCS_PI;\nduration = 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = 2.0;\ntarget->w = 0.0;\ntarget->x = 2.0;\nmax_rate = 2.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = -1.0;\ntarget->w = 1.0;\nmax_rate = 5.0;\nduration = 0.25;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 1.0;\ncurrent->x = 0.0;\ntarget->w = 0.999999999;\ntarget->x = 0.000000001;\nmax_rate = 1.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 1.0e-13;\ncurrent->x = 0.0;\ntarget->w = 1.0;\nmax_rate = 1.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 0.6;\ncurrent->x = 0.8;\ntarget->w = 1.0;\nmax_rate = 0.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "current->w = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 1.0;\nmax_rate = 1.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "current->w = 1.0;\ntarget->w = 0.0;\ntarget->x = 0.0;\ntarget->y = 0.0;\ntarget->z = 0.0;\nmax_rate = 1.0;\nduration = 1.0;"
+   ]
+  }
+ ]
+}

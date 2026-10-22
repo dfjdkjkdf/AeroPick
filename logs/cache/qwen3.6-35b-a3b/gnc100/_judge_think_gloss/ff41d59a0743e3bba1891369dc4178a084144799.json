@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定NULL输入属于失败情况，必须将output的body和recovered清零，并将error置为INFINITY，实现A符合该要求。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，inertial为NULL同样触发空指针失败分支，error应被强制设为INFINITY而非0。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 8811,
+  "completion": 1474
+ }
+}

@@ -1,0 +1,1 @@
+{"prompt_sha1": "3eebb88cf02715e67ed84071742b8296243a1a38", "discrete": [["primary", null, ["0", "1"]], ["secondary", null, ["0", "1"]]], "continuous": [["primary.x", [3], -1000000.0, 1000000.0], ["secondary.x", [3], -1000000.0, 1000000.0]], "outputs": [["separation_rad", null, [0.0, 3.141592653589793]], ["cross_sine", null, [0.0, 1.0]], ["condition_proxy", null, null]]}

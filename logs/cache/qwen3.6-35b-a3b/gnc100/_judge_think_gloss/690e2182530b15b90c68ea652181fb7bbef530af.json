@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "accept_threshold不小于reject_threshold违反配置约束，属非法输入，按需求应锁定FAULT状态且因未评估测量而输出INF诊断值及use_measurement=0。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "max_consecutive_reject为0超出合法区间[1,20]，属非法输入，按需求应锁定FAULT状态并输出INF诊断值。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "max_consecutive_reject为21超出合法区间[1,20]，属非法输入，按需求应锁定FAULT状态并输出INF诊断值。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9718,
+  "completion": 2729
+ }
+}

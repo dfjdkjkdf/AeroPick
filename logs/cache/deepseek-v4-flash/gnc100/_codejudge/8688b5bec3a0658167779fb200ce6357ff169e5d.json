@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 对空指针安全处理（仅在输出可写时置单位阵和零），并在 TRIAD/归一化失败时正确返回状态且钳位 alignment，A 未置输出、B 会解引用空输出指针。",
+ "_usage": {
+  "prompt": 9027,
+  "completion": 7004
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定任意输入指针为NULL时返回ADCS_E_NULL(枚举值为1)，A正确返回状态码并按要求将输出置零，B因未做空指针检查直接解引用导致崩溃，严重违反需求。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，perpendicular为NULL时应触发空指针保护返回ADCS_E_NULL，A符合防御性编程与需求规范，B非法访问内存导致崩溃。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同上，fraction为NULL时应返回ADCS_E_NULL，A实现了完整的输入校验与失败清零逻辑，B崩溃且未处理异常，不符合需求。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9042,
+  "completion": 2071
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A validates the entire wheel array before accumulation, correctly rejects all specified invalid inputs, zeros the output on failure, and accumulates normalized per-wheel momentum in index order using the provided helpers.",
+ "_usage": {
+  "prompt": 9452,
+  "completion": 27082
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "首次有效样本应初始化参考并视为接受，余弦为1。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "首次有效样本归一化后初始化参考，余弦应为1。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "enable=0应进入OFF并清参考和计数器，C的mode=0且清零。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "enable=2为非二进制标志，应锁存FAULT，A/B正确，选A。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "LOST下非有限向量应锁存FAULT并保留参考，B/C保留，选C。"
+  }
+ ],
+ "pick": "A"
+}

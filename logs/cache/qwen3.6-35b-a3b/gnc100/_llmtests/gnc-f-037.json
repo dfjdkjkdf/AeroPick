@@ -1,0 +1,126 @@
+{
+ "key": "feffe5c1d1d990569bbc20ab0c2cc31f899948a1",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance_i = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance_b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 0.0;\nq_bi->x = 0.0;\nq_bi->y = 0.0;\nq_bi->z = 1e-13;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 0.0;\nq_bi->x = 0.0;\nq_bi->y = 0.0;\nq_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0;\nq_bi->x = INFINITY;\nq_bi->y = 0.0;\nq_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0;\nq_bi->x = NAN;\nq_bi->y = 0.0;\nq_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance_i->m[0][0] = 1.0;\nq_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = 1.0;\nq_bi->x = 0.0;\nq_bi->y = 0.0;\nq_bi->z = 0.0;\ncovariance_i->m[0][0] = 1.0;\ncovariance_i->m[1][1] = 2.0;\ncovariance_i->m[2][2] = 3.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = cos(ADCS_PI/4.0);\nq_bi->x = sin(ADCS_PI/4.0);\nq_bi->y = 0.0;\nq_bi->z = 0.0;\ncovariance_i->m[0][0] = 1.0;\ncovariance_i->m[1][1] = 0.0;\ncovariance_i->m[2][2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = cos(ADCS_PI/6.0);\nq_bi->x = 0.0;\nq_bi->y = sin(ADCS_PI/6.0);\nq_bi->z = 0.0;\ncovariance_i->m[0][0] = 0.0;\ncovariance_i->m[1][1] = 1.0;\ncovariance_i->m[2][2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = cos(ADCS_PI/6.0);\nq_bi->x = 0.0;\nq_bi->y = 0.0;\nq_bi->z = sin(ADCS_PI/6.0);\ncovariance_i->m[0][0] = 0.0;\ncovariance_i->m[1][1] = 0.0;\ncovariance_i->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = 0.5;\nq_bi->x = 0.5;\nq_bi->y = 0.5;\nq_bi->z = 0.5;\ncovariance_i->m[0][0] = 1.0;\ncovariance_i->m[1][1] = 1.0;\ncovariance_i->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = 0.0;\nq_bi->x = 0.0;\nq_bi->y = 0.0;\nq_bi->z = 1.0;\ncovariance_i->m[0][0] = 1.0;\ncovariance_i->m[1][1] = 2.0;\ncovariance_i->m[2][2] = 3.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = -1.0;\nq_bi->x = 0.0;\nq_bi->y = 0.0;\nq_bi->z = 0.0;\ncovariance_i->m[0][0] = 1.0;\ncovariance_i->m[1][1] = 2.0;\ncovariance_i->m[2][2] = 3.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 1.0;\nq_bi->x = 0.0;\nq_bi->y = 0.0;\nq_bi->z = 0.0;\ncovariance_i->m[0][0] = 1.0;\ncovariance_i->m[0][1] = 0.5;\ncovariance_i->m[0][2] = 0.0;\ncovariance_i->m[1][0] = 0.5;\ncovariance_i->m[1][1] = 1.0;\ncovariance_i->m[1][2] = 0.0;\ncovariance_i->m[2][0] = 0.0;\ncovariance_i->m[2][1] = 0.0;\ncovariance_i->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 0.0;\nq_bi->x = 0.7071067811865476;\nq_bi->y = 0.7071067811865476;\nq_bi->z = 0.0;\ncovariance_i->m[0][0] = 1.0;\ncovariance_i->m[1][1] = 1.0;\ncovariance_i->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 1e-12;\nq_bi->x = sqrt(1.0 - 1e-24);\nq_bi->y = 0.0;\nq_bi->z = 0.0;\ncovariance_i->m[0][0] = 1.0;\ncovariance_i->m[1][1] = 2.0;\ncovariance_i->m[2][2] = 3.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0;\nq_bi->x = 0.0;\nq_bi->y = 0.0;\nq_bi->z = 0.0;\ncovariance_i->m[0][0] = 1.0;\ncovariance_i->m[1][1] = INFINITY;\ncovariance_i->m[2][2] = 3.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "q_bi = NULL;",
+    "q_bi = &dummy_q_bi;"
+   ]
+  }
+ ]
+}

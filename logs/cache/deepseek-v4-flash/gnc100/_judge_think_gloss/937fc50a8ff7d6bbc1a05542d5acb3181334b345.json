@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": "1",
+   "correct": "A",
+   "reason": "输出指针为 NULL，需求规定返回 ADCS_E_NULL，A 返回 1 且不崩溃，B 崩溃。"
+  }
+ ],
+ "pick": "A"
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确按 boresight × sun 计算修正轴，并在 enable==0 时复位清零；B/C 将叉乘顺序颠倒或未正确复位。",
+ "_usage": {
+  "prompt": 10504,
+  "completion": 24518
+ }
+}

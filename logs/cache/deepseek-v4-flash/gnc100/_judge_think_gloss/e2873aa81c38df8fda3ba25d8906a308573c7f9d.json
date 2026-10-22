@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "enable=0 时 disabled 优先，仅重置为 SUN/payload off/elapsed zero，不应计算更新 eclipse 几何量，故 axial/cross 保持为 0。"
+  }
+ ],
+ "pick": "B"
+}

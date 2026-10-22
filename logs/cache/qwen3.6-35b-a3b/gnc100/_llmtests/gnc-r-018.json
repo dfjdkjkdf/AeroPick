@@ -1,0 +1,336 @@
+{
+ "key": "76797424fd31aecf80c1725edadd084c6f759f47",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.sun_body = NULL;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_config.alpha = -0.1;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_config.alpha = 1.1;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_config.minimum_cosine = -1.1;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_config.maximum_cosine = 1.1;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_config.reacquire_min_cosine = -1.1;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_config.reacquire_confirm = 0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_config.max_rejects = 21;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sd_input.sun_body->x = 0.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.99;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.85;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.85;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.7;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.9;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.8999999;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.8;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.8;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.5;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;",
+    "sd_input.sun_body->x = 0.7999999;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sd_config.alpha = 0.5;",
+    "sd_config.minimum_cosine = 0.9;",
+    "sd_config.reacquire_min_cosine = 0.8;",
+    "sd_config.max_rejects = 3;",
+    "sd_config.reacquire_confirm = 2;",
+    "sd_input.sun_body->x = 1.0;",
+    "sd_input.sun_body->y = 0.0;",
+    "sd_input.sun_body->z = 0.0;",
+    "sd_input.enable = 0;"
+   ]
+  }
+ ]
+}

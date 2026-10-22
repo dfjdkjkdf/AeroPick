@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "enable=1且配置有效，首采样误差与步长满足限制，required=1时计数增至1>=1，应READY。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "首采样合格但计数增至1<required=3，应MONITOR。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "与测试2相同，计数1<required=3，应MONITOR。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "采样与上一姿态夹角pi/4且在限制内，计数从0增至1<required=2，应MONITOR。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "norm_error=0、step=0均等于限制，required=1时计数增至1>=1，应READY。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "合格但计数从0增至1<required=20，应MONITOR。"
+  }
+ ],
+ "pick": "B"
+}

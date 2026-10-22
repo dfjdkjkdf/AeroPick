@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求表格首行明确规定enable==0时下一状态为OFF(0)，静态变量默认初始化为0，故应输出OFF而非FAULT。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同上，enable默认为0触发OFF规则，优先级高于字段有效性检查，正确输出为OFF(0)。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同上，enable为0强制进入OFF状态，符合规范表格第一行定义。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同上，enable为0时状态机按表格第一行执行，下一状态为OFF(0)。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "同上，enable为0覆盖其他条件，正确输出应为OFF(0)。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "同上，依据规范表格第一行，enable==0对应OFF模式，实现B正确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9446,
+  "completion": 4264
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A performs null checks first, zeros available outputs on all failures, validates finiteness and nonnegative limits, clamps each axis with exact saturation bits, and computes tau = m_limited × B correctly.",
+ "_usage": {
+  "prompt": 9883,
+  "completion": 1901
+ }
+}

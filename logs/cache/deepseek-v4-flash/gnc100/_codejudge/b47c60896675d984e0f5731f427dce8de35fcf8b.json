@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确处理 NULL、无效 fraction 和端点，并按要求执行最短弧 SLERP 与归一化；A 在输出指针为空时会解引用，C 未校验 fraction 是否越界。",
+ "_usage": {
+  "prompt": 10063,
+  "completion": 2872
+ }
+}

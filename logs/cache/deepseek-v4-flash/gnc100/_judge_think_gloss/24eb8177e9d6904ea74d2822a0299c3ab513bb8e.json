@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "reset=0 且首次有效样本应置 initialized=1、保存 field/time、rejects 不变，A 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "严格更新时间的有效后续样本应保存新 field/time 并清除 rejects，A 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "时间不严格更新应返回 ADCS_E_RANGE、保留历史并 rejects+1，A 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "时间倒退应拒绝并保留历史、rejects+1，A 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "范数<=1e-12 为拒绝样本，应保留历史并 rejects+1，A 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "有效后续样本应保存 field/time 并保持 initialized=1，A 符合。"
+  }
+ ],
+ "pick": "A"
+}

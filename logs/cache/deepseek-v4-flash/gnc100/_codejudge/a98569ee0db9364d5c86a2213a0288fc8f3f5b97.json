@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确区分参数/非有限矩阵错误与诊断结果：仅对空指针、非法容差或非有限矩阵返回错误，并对有限矩阵计算 determinant 和 C*C^T 误差，用 valid 标记 det>0 且 err<=tolerance。",
+ "_usage": {
+  "prompt": 8689,
+  "completion": 9186
+ }
+}

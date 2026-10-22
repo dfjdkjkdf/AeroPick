@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确‘First sample initializes’，time=-1.0为有限值且无前序时间不构成非递增违规，应正常初始化状态，A符合而B未初始化违背核心契约。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "需求首句强约束‘First sample initializes and yields zero’，首次调用必须优先完成状态初始化并返回零指令，近零B的DEGENERATE属控制律计算阶段的异常处理，不应覆盖首次初始化的硬性要求，故A正确。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 8916,
+  "completion": 4071
+ }
+}

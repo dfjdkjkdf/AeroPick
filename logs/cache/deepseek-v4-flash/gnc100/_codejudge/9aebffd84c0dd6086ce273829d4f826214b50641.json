@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 先处理 enable==0 复位，再在启用时校验并计算/发布，且 COMPLETE 与 restart 状态迁移完全符合规范表。",
+ "_usage": {
+  "prompt": 11181,
+  "completion": 13244
+ }
+}

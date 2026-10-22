@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 在验证、首样本初始化、状态机与命令限制上总体符合需求；A 进入 RECOVERY 时直接清零并跳过 slew，B 首样本未求和且不能锁存 FAULT。",
+ "_usage": {
+  "prompt": 19489,
+  "completion": 25295
+ }
+}

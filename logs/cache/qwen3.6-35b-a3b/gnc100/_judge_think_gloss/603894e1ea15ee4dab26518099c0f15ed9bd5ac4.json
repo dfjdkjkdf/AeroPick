@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定禁用(enable=0)时应直接进入OFF模式并重置全部状态，不校验指针或配置有效性；实现A输出OFF(0)严格符合该行为，实现B误报FAULT(3)。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9609,
+  "completion": 1801
+ }
+}

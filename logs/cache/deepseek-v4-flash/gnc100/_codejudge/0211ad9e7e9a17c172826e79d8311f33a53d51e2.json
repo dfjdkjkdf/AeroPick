@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确处理禁用优先、FAULT 锁存、LOST 重捕获和归一化融合失败，而 A 在禁用前校验配置、B 初始化时错误置 accepted 且未保护融合归一化。",
+ "_usage": {
+  "prompt": 13854,
+  "completion": 30564
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly uses GNC primitives for bias/half-span/span, handles insufficient windows and chronic FAULT latch, and keeps READY until disabled; A fails FAULT latch and B incorrectly restarts after READY.",
+ "_usage": {
+  "prompt": 13192,
+  "completion": 18914
+ }
+}

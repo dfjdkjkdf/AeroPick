@@ -1,0 +1,171 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a given requirement specification. I will be given test cases where A and B produce different outputs (specifically `saturation_mask`). I must determine which implementation's output matches the requirement for each test, and finally pick the overall better implementation. The output must be strictly JSON.
+
+2.  **Analyze the Requirement**:
+    *   **Function**: Torque allocation for an orthogonal three-wheel cluster.
+    *   **Context**: Maps desired spacecraft body torque into motor torques for three orthogonal reaction wheels.
+    *   **Input**: `wheel_axes_body[3]` (finite unit mutually orthogonal axes), `desired_body_torque_nm` (finite vector), `wheel_torque_limit_nm[3]` (finite nonnegative limits).
+    *   **Output**: `wheel_torque_nm[3]`, `achieved_body_torque_nm`, `saturation_mask`.
+    *   **Mathematical Definition**:
+        *   Spacecraft torque = - wheel torque.
+        *   Unconstrained motor command: $u_i = -\mathbf{a}_i \cdot \boldsymbol{\tau}_{\text{desired}}$.
+        *   Clamp each $u_i$ independently.
+        *   Achieved spacecraft torque = $-\sum u_i \mathbf{a}_i$.
+    *   **Required Processing**:
+        *   Validate triad to 1e-10 norm/orthogonality tolerance before committing.
+        *   Allocate, clamp, reconstruct achieved torque.
+    *   **Output Contract**:
+        *   `ADCS_OK` with commands and mask bit `i` for a clamped wheel.
+        *   Failure outputs zero.
+    *   **Boundary and Failure Handling**:
+        *   Null pointers -> `ADCS_E_NULL` (takes precedence).
+        *   Invalid axes, vector, or limits -> `ADCS_E_RANGE`.
+    *   **Traceability/Binding Table**:
+        *   Row 0: Axis `[0]`, Limit `[0]`, Mask value `1u << 0` (1)
+        *   Row 1: Axis `[1]`, Limit `[1]`, Mask value `1u << 1` (2)
+        *   Row 2: Axis `[2]`, Limit `[2]`, Mask value `1u << 2` (4)
+    *   **Key Logic Extraction**:
+        *   For each wheel $i$:
+            *   Compute unconstrained command: $u_i^* = -\mathbf{a}_i \cdot \boldsymbol{\tau}_{\text{des}}$
+            *   Clamp: $u_i = \text{clamp}(u_i^*, -L_i, L_i)$ where $L_i = \text{limit}[i]$
+            *   If clamped (i.e., $|u_i^*| > L_i$), set mask bit $i$ to 1. Otherwise 0.
+            *   Achieved torque $\boldsymbol{\tau}_{\text{ach}} = -\sum u_i \mathbf{a}_i$.
+        *   Since axes are orthogonal unit vectors, $\mathbf{a}_i \cdot \boldsymbol{\tau}_{\text{des}}$ is just the projection of the desired torque onto axis $i$. Let's denote components of $\boldsymbol{\tau}_{\text{des}}$ in this basis as $\tau_{x}, \tau_{y}, \tau_{z}$. Then $u_i^* = -\tau_i$.
+        *   Clamping condition: $|u_i^*| > L_i \iff |\tau_i| > L_i$.
+        *   Mask bit $i$ is 1 if saturated, 0 otherwise.
+        *   Return code: `ADCS_OK` if successful, else error codes.
+
+3.  **Analyze Test Cases**:
+
+    *   **Test 1**:
+        *   Axes: Identity matrix (X, Y, Z aligned with body frame).
+        *   Desired torque: $(1.0, 0.0, 0.0)$
+        *   Limits: $(1.0, 1.0, 1.0)$
+        *   Calculation:
+            *   $u_0^* = -(1.0) = -1.0$. Clamp to $[-1, 1] \rightarrow -1.0$. $|-1.0| \le 1.0$, so not saturated. Mask bit 0 = 0.
+            *   $u_1^* = -0.0 = 0.0$. Clamp $\rightarrow 0.0$. Not saturated. Mask bit 1 = 0.
+            *   $u_2^* = -0.0 = 0.0$. Clamp $\rightarrow 0.0$. Not saturated. Mask bit 2 = 0.
+            *   Expected saturation_mask = 0.
+        *   Outputs: A=0, B=1.
+        *   Conclusion: A matches requirement.
+
+    *   **Test 2**:
+        *   Axes: Identity.
+        *   Desired torque: $(0.0, 0.0, 0.0)$
+        *   Limits: $(0.0, 0.0, 0.0)$
+        *   Calculation:
+            *   $u_0^* = 0$. Clamp to $[0, 0] \rightarrow 0$. $|0| \le 0$, so not saturated? Wait, strict inequality for saturation? Usually saturation means the command exceeds the limit before clamping. If limit is 0, any non-zero command saturates. Here command is 0. So mask should be 0.
+            *   Let's check requirement wording: "mask bit i for a clamped wheel". If $u_i^*$ equals limit exactly, it's at the boundary. Typically not considered saturated unless strictly greater. Even if limit is 0, $u_i^*=0$, so no saturation.
+            *   Expected saturation_mask = 0.
+        *   Outputs: A=0, B=7.
+        *   Conclusion: A matches requirement. (B incorrectly flags all as saturated, possibly due to checking `abs(u) >= limit` or handling zero limits poorly).
+
+    *   **Test 3**:
+        *   Axes: Identity.
+        *   Desired torque: $(1.0, 1.0, 1.0)$
+        *   Limits: $(1.0, 1.0, 1.0)$
+        *   Calculation:
+            *   $u_0^* = -1.0$. Limit 1.0. $|-1.0| \le 1.0$. Not saturated. Mask bit 0 = 0.
+            *   Similarly for 1 and 2. All at boundary.
+            *   Expected saturation_mask = 0.
+        *   Outputs: A=0, B=7.
+        *   Conclusion: A matches requirement.
+
+    *   **Test 4**:
+        *   Axes: Identity.
+        *   Desired torque: $(-1.0, -1.0, -1.0)$
+        *   Limits: $(1.0, 1.0, 1.0)$
+        *   Calculation:
+            *   $u_0^* = -(-1.0) = 1.0$. Limit 1.0. $|1.0| \le 1.0$. Not saturated. Mask bit 0 = 0.
+            *   Similarly for 1 and 2.
+            *   Expected saturation_mask = 0.
+        *   Outputs: A=0, B=7.
+        *   Conclusion: A matches requirement.
+
+    Wait, let's double check the math definition: "unconstrained motor command $u_i=-a_i \cdot \tau_{\text{desired}}$".
+    In Test 1: $\tau_{\text{des}} = (1,0,0)$, $a_0=(1,0,0)$. Dot product = 1. $u_0 = -1$. Limit = 1. $|u_0| = 1 \le 1$. Not saturated.
+    In Test 3: $\tau_{\text{des}} = (1,1,1)$, $a_0=(1,0,0)$. Dot = 1. $u_0 = -1$. Limit = 1. Not saturated.
+    In Test 4: $\tau_{\text{des}} = (-1,-1,-1)$, $a_0=(1,0,0)$. Dot = -1. $u_0 = 1$. Limit = 1. Not saturated.
+    All tests have desired torque magnitude equal to limits along each axis. So technically, they are at the exact boundary. Standard clamping logic usually treats equality as not saturated (or sometimes saturated depending on implementation, but "clamped" implies the raw value exceeded the limit). Given A returns 0 consistently, it aligns with standard behavior where saturation only occurs when strictly exceeding the limit. B returns 7 (all bits set), which implies B uses `>=` or has a bug with boundary conditions.
+
+    Let's verify the "saturation mask" definition from the prompt: "mask bit i for a clamped wheel". If $u_i$ was clamped, it means $|u_i^*| > L_i$. If $|u_i^*| == L_i$, it wasn't really "clamped" in the sense of being cut off, it's just at the limit. So mask should be 0.
+
+    Therefore, for all 4 tests, A's output (0) is correct according to the mathematical definition and typical engineering practice for torque allocation. B's output (1 or 7) indicates incorrect boundary handling (likely using `<=` or mishandling zeros).
+
+    Let's quickly consider if there's any trick. "Clamp each u_i independently." "Achieved spacecraft torque is -sum u_i a_i."
+    The requirement says: "Validate the complete triad to 1e-10 norm/orthogonality tolerance before committing, allocate, clamp, and reconstruct achieved torque."
+    All inputs in tests are perfectly orthogonal unit vectors, finite, non-negative limits. So validation passes.
+    The calculation is straightforward.
+    Tests 1-4 all result in expected mask = 0.
+    A gives 0. B gives non-zero.
+    So A is correct for all tests.
+
+    One minor point: Test 2 has limits = 0.0. Desired torque = 0.0. $u_i^* = 0$. Clamp to [0,0] -> 0. Saturation mask? If limit is 0, can it ever not saturate? Only if command is exactly 0. Here it is exactly 0. So mask should be 0. A is correct.
+
+    Conclusion stands: A is correct for all tests. Pick A.
+
+    Structure the JSON output as requested.
+    Format:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "..." },
+        ...
+      ],
+      "pick": "A"
+    }
+    ```
+    I will draft concise reasons based on the dot product and clamping logic.
+    Test 1: Desired torque projects exactly to limits, |u_i|=L_i, not strictly exceeding, so mask=0. A matches.
+    Test 2: Zero torque and zero limits yield u_i=0, within bounds, mask=0. A matches.
+    Test 3: Components match limits exactly, boundary case not saturated, mask=0. A matches.
+    Test 4: Negative torque yields positive u_i matching limit exactly, boundary case not saturated, mask=0. A matches.
+    Overall: A correctly implements strict inequality for saturation detection, while B incorrectly flags boundary/exact-match cases as saturated.
+
+    Check constraints: "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}"
+    I will ensure the output matches exactly.
+    One detail: The prompt says "测试 1（类型 boundary...）", I'll use id 1, 2, 3, 4.
+    Reasons should be one sentence each.
+    All good.
+    Proceed. 
+    Self-Correction/Verification during thought:
+    Could "clamped" mean anything else? "Clamp each u_i independently." Usually means `max(min(u, limit), -limit)`. Saturation mask bit i is set if `abs(u_unclamped) > limit`. This is standard.
+    What about precision? 1e-10 tolerance is for validation, not clamping.
+    The tests are clearly designed to test boundary conditions. A handles them correctly by returning 0. B returns 7, likely due to `>=` or floating point comparison issues.
+    I will formulate the response. 
+    Output matches request.✅
+    JSON structure:
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "期望力矩分量绝对值等于限幅值，未严格超限，不应置位饱和掩码，A输出0符合定义。"},
+        {"id": 2, "correct": "A", "reason": "零力矩与零限幅下命令值为0，处于边界内未超限，饱和掩码应为0，A正确。"},
+        {"id": 3, "correct": "A", "reason": "各轴力矩分量绝对值恰等于限幅值1.0，属临界不超限状态，掩码应为0，A符合需求。"},
+        {"id": 4, "correct": "A", "reason": "负向力矩经反号后命令值为正且恰等于限幅1.0，未严格超限，掩码应为0，A正确。"}
+      ],
+      "pick": "A"
+    }
+    Checks out. Output matches exactly. 
+    One thing: The prompt says "测试 1（类型 boundary；未赋值的量为 0；共调用 1 次，比较最后一次调用后的输出）". I will just use id 1, 2, 3, 4 as requested.
+    All good. 
+    Generating response. 
+    [Done] 
+    Output Generation. 
+    *(Self-Correction/Refinement during drafting)*: 
+    I should make sure the JSON keys match exactly: `"id"`, `"correct"`, `"reason"`, `"pick"`.
+    The reason should be concise.
+    I will produce the exact JSON. 
+    Final Check of the prompt: "Your generation must end with this function's closing brace `}`; the harness appends none of its own." -> This is a generic instruction from the prompt template, but here I am asked to output JSON. I will just output the JSON as requested. The instruction "Your generation must end with this function's closing brace `}`" seems to be a leftover from a code generation prompt, but the explicit instruction says "只输出 JSON：{...}". I will follow the explicit JSON instruction. Actually, the prompt says "只输出 JSON：{"tests":[...],"pick":"A|B"}". I will strictly output that.
+    Ready. 
+    Output matches. 
+    Proceeds. 
+    [Output Generation] -> *See response.* 
+    *(Note: I will ensure the JSON is valid and strictly follows the format.)*
+    `{ "tests": [ { "id": 1, "correct": "A", "reason": "期望力矩分量绝对值等于限幅值，未严格超限，不应置位饱和掩码，A输出0符合数学定义。" }, { "id": 2, "correct": "A", "reason": "零力矩与零限幅下计算命令值为0，处于安全边界内，饱和掩码应为0，A正确。" }, { "id": 3, "correct": "A", "reason": "各轴力矩分量恰等于限幅值1.0，属临界不超限状态，掩码应为0，A符合需求。" }, { "id": 4, "correct": "A", "reason": "负向力矩反号后命令值恰等于限幅1.0，未严格超限，掩码应为0，A正确。" } ], "pick": "A" }`
+    Matches perfectly.✅
+    Output matches request. 
+    [Done] 
+    *(Self-Correction/Note during thought)*: The prompt says "Your generation must end with this function's closing brace `}`; the harness appends none of its own." This is likely a copy-paste artifact from a coding task. I will ignore it as it contradicts "只输出 JSON". I will output only the JSON.
+    All set. 
+    Output Generation. 
+    *(Proceeds)*

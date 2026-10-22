@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "enable=0 是禁用，需求规定禁用复位所有状态，bad_samples 应清零，A=0 正确。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "OFF 下有效样本按 SEARCH 处理，角度0<=enter且 acquire_samples=1，good_samples 应为1，A 正确。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "一般几何正旋转轴为 measured×target=(0,0,1)，正增益下力矩沿 +z 限幅为1，A 正确。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "反平行时按 x,y,z 顺序选与 measured 最不对齐的基 y，measured×y=(0,0,1)，正增益下力矩 +z，A 正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "反平行且三轴等对齐时按 x,y,z 顺序选 x，measured×x 归一化后为 (0,0.707,-0.707)，正增益下 A 正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "与测试2相同，OFF 下有效样本进入 SEARCH，acquire_samples=1 后 good_samples=1，A 正确。"
+  }
+ ],
+ "pick": "A"
+}

@@ -1,0 +1,161 @@
+{
+ "key": "a8a09c75134ccccde519fc8f46354f5e3bf8effb",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = -5.0;\nrequest->y = 0.5;\nrequest->z = 2.0;\naxes[0].x = 0.0;\naxes[0].y = 0.0;\naxes[0].z = 1.0;\naxes[1].x = 1.0;\naxes[1].y = 0.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 1.0;\naxes[2].z = 0.0;\ncount = 3;\ntorque_limit_nm = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 3.0;\nrequest->y = 4.0;\nrequest->z = 0.0;\naxes[0].x = 2.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 3.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 5.0;\ncount = 3;\ntorque_limit_nm = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 10.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 10.0000001;\nrequest->y = 0.0;\nrequest->z = 0.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 0.0;\nrequest->y = -10.0;\nrequest->z = 0.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\naxes[0].x = 3.0;\naxes[0].y = 0.0;\naxes[0].z = 4.0;\naxes[1].x = -4.0;\naxes[1].y = 0.0;\naxes[1].z = 3.0;\naxes[2].x = 0.0;\naxes[2].y = 1.0;\naxes[2].z = 0.0;\ncount = 3;\ntorque_limit_nm = 20.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0e-13;\nrequest->y = -1.0e-13;\nrequest->z = 0.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0e-15;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request = NULL;\naxes[0].x = 1.0;\naxes[1].y = 1.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes = NULL;\nrequest->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mask = NULL;\nrequest->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel_torque = NULL;\nrequest->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 2;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 4;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = NAN;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = INFINITY;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 0.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0e-13;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 1.0;\naxes[1].y = 0.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.7071067811865476;\naxes[2].y = 0.7071067811865476;\naxes[2].z = 0.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes[0].x = NAN;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = INFINITY;\nrequest->y = 0.0;\nrequest->z = 0.0;\naxes[0].x = 1.0;\naxes[0].y = 0.0;\naxes[0].z = 0.0;\naxes[1].x = 0.0;\naxes[1].y = 1.0;\naxes[1].z = 0.0;\naxes[2].x = 0.0;\naxes[2].y = 0.0;\naxes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 1.0;"
+   ]
+  }
+ ]
+}

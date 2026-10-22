@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "依需求公式q_rel.w≈0.707，代入angle=2*acos(0.707)得≈1.5708，A吻合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "依需求q_rel.w=0，代入公式得angle=2*acos(0)=π≈3.14159，A吻合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "依需求q_rel.w=0，代入公式得angle=π≈3.14159，A吻合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "依需求q_rel.w=0，代入公式得angle=π≈3.14159，A吻合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "依需求q_rel.w=0，代入公式得angle=π≈3.14159，A吻合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "依需求q_rel.w<0需取反，取反后w≈0.707，代入公式得angle≈1.5708，A吻合。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9639,
+  "completion": 4580
+ }
+}

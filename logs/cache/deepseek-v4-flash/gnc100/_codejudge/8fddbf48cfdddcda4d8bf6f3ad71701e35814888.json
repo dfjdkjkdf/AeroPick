@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 严格按需求先处理 enable=0 复位，完整校验 NULL/非有限/零四元数及配置，使用 adcs_quat_normalize 和 adcs_quat_abs_dot 计算范数误差与符号不变步长，质量越限时置 MONITOR/good=0 且不更新历史，合格时递增并按 required 决定 READY。",
+ "_usage": {
+  "prompt": 11735,
+  "completion": 16611
+ }
+}

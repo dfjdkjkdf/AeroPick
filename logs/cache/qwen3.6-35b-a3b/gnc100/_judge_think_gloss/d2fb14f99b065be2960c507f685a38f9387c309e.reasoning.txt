@@ -1,0 +1,112 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:**
+    - I am a GNC (Guidance, Navigation, and Control) software review expert.
+    - I need to evaluate two implementations (A and B) of a C function based on a given requirement.
+    - I only have the requirement, context (types, macros, constants), and one test case with divergent outputs.
+    - I must judge which implementation's output matches the requirement for this test, based *only* on the requirement.
+    - Output format: JSON with specific structure.
+
+2.  **Analyze the Requirement:**
+    - **Function Purpose:** Gyro saturation recovery supervisor.
+    - **Input/State:** Valid enabled sample is a non-NULL finite body rate.
+    - **Configuration:** `recovered_rad_s`, `saturated_rad_s`, `required_clean`.
+    - **Constraints/Preconditions:** "Require binary enable, 0 <= recovered < saturated, and required_clean in 1..20. NULL, nonfinite, or invalid configuration latches FAULT and zeros vector output until disable."
+    - **Recovery Table:**
+        - `norm >= saturated_rad_s` / any -> SATURATED, clear to zero
+        - `norm <= recovered_rad_s` / SATURATED or RECOVERING -> RECOVERING until `required_clean`, then NOMINAL, increment
+        - `recovered_rad_s < norm < saturated_rad_s` / SATURATED or RECOVERING -> SATURATED, clear to zero
+        - `norm < saturated_rad_s` / NOMINAL -> NOMINAL, unchanged
+        - Disabled -> NOMINAL, clear to zero
+    - **Output:** Publish measured norm, energy (`rate dot rate`), direction-preserving rate capped to `saturated_rad_s`.
+    - **Fault Handling:** "NULL, nonfinite, or invalid configuration latches FAULT and zeros vector output until disable."
+
+3.  **Analyze Test Case 1:**
+    - **Inputs/State before call 1:**
+        - `gr_config.recovered_rad_s = -0.1;`
+        - `gr_config.saturated_rad_s = 1.0;`
+        - `gr_config.required_clean = 5;`
+        - `gr_input.enable = 1;` (Enabled)
+        - `gr_input.rate_rad_s->x = 0.5; y=0.0; z=0.0;` (Non-NULL, finite, norm = 0.5)
+        - `gr_state.mode = GR_NOMINAL;`
+        - `gr_state.clean = 0;`
+    - **Divergent Outputs:**
+        - A: `capped_rate.x=0.5`, `energy=0.25`, `mode=0(NOMINAL)`, `norm=0.5`, `state.mode=0(NOMINAL)`
+        - B: `capped_rate.x=0`, `energy=0`, `mode=3(FAULT)`, `norm=0`, `state.mode=3(FAULT)`
+    - **Check Requirements against Inputs:**
+        - Configuration check: `0 <= recovered < saturated` -> `-0.1 < 1.0` is true, but `-0.1 >= 0` is **FALSE**.
+        - Requirement explicitly states: "Require binary enable, 0 <= recovered < saturated, and required_clean in 1..20. NULL, nonfinite, or invalid configuration latches FAULT and zeros vector output until disable."
+        - Since `recovered_rad_s = -0.1` violates `0 <= recovered`, this is an **invalid configuration**.
+        - Therefore, the function should latch FAULT and zero vector output.
+        - This matches Implementation B's behavior exactly.
+        - Implementation A ignores the constraint and proceeds as if valid, which violates the requirement.
+
+4.  **Formulate Reasoning:**
+    - The requirement explicitly states: "Require ... 0 <= recovered < saturated ... invalid configuration latches FAULT and zeros vector output until disable."
+    - Test input sets `recovered_rad_s = -0.1`, violating `0 <= recovered`.
+    - Thus, the correct behavior is to enter FAULT mode and zero all outputs.
+    - Implementation B correctly implements this fault handling. Implementation A incorrectly processes the data.
+    - Conclusion: B is correct for this test.
+
+5.  **Construct JSON Output:**
+    - Structure: `{"tests":[{"id":1,"correct":"B","reason":"..."}],"pick":"B"}`
+    - Reason needs to be concise, one sentence.
+    - Draft reason: 需求明确要求配置参数必须满足 0 <= recovered < saturated，测试输入 recovered_rad_s=-0.1 违反该约束，属于无效配置，应按需求进入 FAULT 模式并清零输出，实现 B 符合此规定。
+    - Check format: `{"tests":[{"id":1,"correct":"B","reason":"需求明确要求配置参数必须满足 0 <= recovered < saturated，测试输入 recovered_rad_s=-0.1 违反该约束，属于无效配置，应按需求进入 FAULT 模式并清零输出，实现 B 符合此规定。"}],"pick":"B"}`
+
+    Wait, let's double check the exact wording of the prompt: "只依据需求判断：在每个测试上，哪一种实现的输出符合需求。"
+    The prompt says: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will follow this exactly.
+
+    Let's verify everything carefully.
+    - Requirement: "Require binary enable, 0 <= recovered < saturated, and required_clean in 1..20. NULL, nonfinite, or invalid configuration latches FAULT and zeros vector output until disable."
+    - Test input: `recovered_rad_s = -0.1`, `saturated_rad_s = 1.0`. Condition `0 <= recovered` fails.
+    - Behavior: Latch FAULT, zero outputs.
+    - Output B: mode=3 (FAULT), zeros. Matches.
+    - Output A: mode=0, norm=0.5, etc. Fails.
+    - Conclusion stands.
+
+    One minor point: The prompt says "类型 error；未赋值的量为 0". This is just test harness metadata. Doesn't change logic.
+    The JSON structure requires `"id":测试编号`. I'll use `1`.
+    Reason should be one sentence.
+    All good.
+
+    Final check of the prompt: "只输出 JSON：..."
+    I will generate exactly that.
+    Structure:
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "B",
+          "reason": "需求明确规定配置需满足 0 <= recovered < saturated，测试输入 recovered_rad_s 为负值属无效配置，应触发 FAULT 锁存并清零输出，实现 B 完全符合该要求。"
+        }
+      ],
+      "pick": "B"
+    }
+    ```
+    Matches requirements perfectly. Proceeds. 
+    Self-Correction/Refinement during thought: 
+    Check if `required_clean = 5` is within 1..20? Yes. But `recovered` fails. So invalid config triggers fault. Correct.
+    The prompt asks for `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`. I will strictly output this JSON.
+    All steps verified. Output matches. 
+    Generating response. 
+    [Output Generation] -> JSON string.✅
+    Note: I'll make sure the JSON is valid and matches the requested schema exactly. No extra text.
+    `{"tests":[{"id":1,"correct":"B","reason":"需求明确规定配置需满足 0 <= recovered < saturated，测试输入 recovered_rad_s 为负值属无效配置，应触发 FAULT 锁存并清零输出，实现 B 完全符合该要求。"}],"pick":"B"}`
+    Done. 
+    Output matches exactly. 
+    Proceeds. 
+    [Final Check of the Prompt]
+    "只依据需求判断... 最后综合所有测试，选出最符合需求的一种实现。" -> Only one test provided. Pick B.
+    Format: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    All good. 
+    Output Generation. 
+    *(Self-Correction/Verification during generation prep)*
+    Wait, the prompt says `测试 1（类型 error；未赋值的量为 0；共调用 1 次，比较最后一次调用后的输出）`. The ID is 1.
+    The reason should be one sentence. I'll keep it concise.
+    Everything is solid.✅
+    Output matches request. 
+    Proceeds. 
+    `[Output Generation]` -> *Proceeds*

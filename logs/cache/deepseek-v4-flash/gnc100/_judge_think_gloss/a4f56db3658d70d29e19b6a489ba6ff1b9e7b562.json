@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "count=16 且未赋值的 speed_limits[1..14] 为 0，触发非正速度限制的 ADCS_E_RANGE，输出应保持默认 minimum_margin=inf、limiting_index=SIZE_MAX、reserve_vector=0。"
+  }
+ ],
+ "pick": "B"
+}

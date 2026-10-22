@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "需求明确规定NULL输入须置FAULT模式，B/C输出3正确而A输出0错误；C将历史状态设为单位四元数(w=1)符合故障安全默认值规范。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "需求规定零四元数属非法输入应置FAULT，B/C输出3正确，C的历史默认值更符合GNC工程惯例。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "需求规定非有限值四元数应直接置FAULT，B/C输出3正确。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "需求规定norm_error_limit小于0属无效配置应置FAULT，B/C输出3正确。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "需求规定required需在1~20范围内，当前未赋值即为0属非法配置应置FAULT，B/C输出3正确。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "输入条件与测试5完全一致，逻辑判定相同，B/C输出3正确。"
+  }
+ ],
+ "pick": "C",
+ "_usage": {
+  "prompt": 9574,
+  "completion": 3503
+ }
+}

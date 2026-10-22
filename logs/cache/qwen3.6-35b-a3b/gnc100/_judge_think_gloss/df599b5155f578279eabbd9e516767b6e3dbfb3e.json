@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "输入满足有效条件，但实现均按首拍拒绝处理；A正确转入HOLD模式并输出Identity四元数(w=1)，符合‘拒绝前首样消耗保持预算并发布Identity’及状态机表格逻辑，B滞留OFF违规，C输出零值四元数无效。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "四元数符号差异不改变首拍拒绝分支，A仍正确执行HOLD跳转与Identity发布，严格遵循需求约定的降级处理流程。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "输入为单位四元数时，A稳定输出HOLD状态与w=1的Identity，状态流转符合规范，优于B的OFF停滞和C的零值输出。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "输入纯虚四元数，A的处理结果一致，维持HOLD状态与合法Identity输出，符合需求表格中关于首拍拒绝的明确约束。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "max_hold_cycles=1边界下，A正确消耗保持预算并锁定在HOLD模式，输出合规，符合需求对保持预算消耗的刚性规定。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "max_hold_cycles=20边界下，A行为与单周期调用一致，HOLD状态与Identity输出符合规范，无越界或非法状态。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10158,
+  "completion": 6692
+ }
+}

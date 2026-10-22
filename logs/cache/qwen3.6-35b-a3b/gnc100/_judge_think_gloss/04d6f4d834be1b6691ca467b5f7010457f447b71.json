@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "阈值为负且三轴样本均为NULL，需求明确规定此类非法输入/配置必须直接锁存FAULT。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "重入阈值大于主阈值且样本为NULL，违反校验规则，应锁存FAULT。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "重入阈值为NaN非有限数且样本为NULL，触发非法输入保护，应锁存FAULT。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "隔离确认值越界（0）且样本为NULL，不满足合法配置条件，应锁存FAULT。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "隔离确认值越界（21）且样本为NULL，超出允许范围，应锁存FAULT。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "重入确认值越界（0）且样本为NULL，配置非法，应锁存FAULT。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 10350,
+  "completion": 2966
+ }
+}

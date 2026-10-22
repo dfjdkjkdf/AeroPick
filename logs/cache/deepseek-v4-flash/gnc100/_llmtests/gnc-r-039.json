@@ -1,0 +1,164 @@
+{
+ "key": "9c16820772241538858318f60dd32e607978f4cb",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 0.0; dcm->m[0][1] = -1.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 1.0; dcm->m[1][1] = 0.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = -1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = -1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 0.36; dcm->m[0][1] = 0.48; dcm->m[0][2] = -0.8;\ndcm->m[1][0] = -0.8; dcm->m[1][1] = 0.6; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.48; dcm->m[2][1] = 0.64; dcm->m[2][2] = 0.6;\ntolerance = 1e-9;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0 + 1e-8; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-7;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0 + 1e-7; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-7;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0 + 1e-6; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-7;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 1e-7; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-7;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 1e-7; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0000000001; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-12;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm = NULL;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "valid = NULL;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "determinant = NULL;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "orthogonality_error = NULL;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "tolerance = -1e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "tolerance = (double)NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "tolerance = (double)INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = (double)NAN; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = (double)INFINITY;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = -1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 0.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 0.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 0.0;\ntolerance = 1e-6;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 2.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 2.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 2.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 2.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;",
+    "dcm->m[0][0] = 0.0; dcm->m[0][1] = -1.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 1.0; dcm->m[1][1] = 0.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;",
+    "dcm->m[0][0] = -1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = -1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 1e-6;",
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;\ndcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;\ndcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m[2][2] = 1.0;\ntolerance = 0.0;"
+   ]
+  }
+ ]
+}

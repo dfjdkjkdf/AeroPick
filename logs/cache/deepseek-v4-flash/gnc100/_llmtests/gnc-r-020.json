@@ -1,0 +1,141 @@
+{
+ "key": "74dd5a21200a9da98ce87bc004a30980aeee9478",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 0.6;\nsh_input.q_bi->x = 0.8;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 2.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = -1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sh_config.max_hold_cycles = 1;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sh_config.max_hold_cycles = 20;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 0;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 21;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 0.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = NAN;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = INFINITY;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 0;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 0;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 3;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;",
+    "sh_input.valid = 0;",
+    "sh_input.valid = 0;",
+    "sh_input.valid = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 2;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;",
+    "sh_input.valid = 0;",
+    "sh_input.valid = 0;",
+    "sh_input.valid = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 3;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;",
+    "sh_input.valid = 0;",
+    "sh_input.valid = 1;\nsh_input.q_bi->w = 0.7071067811865476;\nsh_input.q_bi->x = 0.7071067811865476;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 3;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;",
+    "sh_input.valid = 0;\nsh_input.valid = 0;",
+    "sh_input.valid = 0;\nsh_input.valid = 0;",
+    "sh_input.valid = 0;\nsh_input.valid = 0;",
+    "sh_input.valid = 0;\nsh_input.valid = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 5;\nsh_input.enable = 1;\nsh_input.valid = 0;",
+    "sh_input.valid = 0;",
+    "sh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sh_config.max_hold_cycles = 3;\nsh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 1.0;\nsh_input.q_bi->x = 0.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;",
+    "sh_input.enable = 0;",
+    "sh_input.enable = 1;\nsh_input.valid = 1;\nsh_input.q_bi->w = 0.0;\nsh_input.q_bi->x = 1.0;\nsh_input.q_bi->y = 0.0;\nsh_input.q_bi->z = 0.0;"
+   ]
+  }
+ ]
+}

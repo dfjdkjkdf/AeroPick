@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "按TRIAD构造C_BI后，check_ref映射到body并归一化为(1,0,0)，与check_body归一化点积为1。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同一TRIAD构造下，check_ref映射到body并归一化为(-1,0,0)，与check_body点积为-1。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "按该TRIAD构造，check_ref映射到body后为x方向，而check_body为y方向，点积应为0。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "任一新空指针失败应按需求返回单位阵、零对齐和状态，A的对角线为1符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "任一新空指针失败应按需求返回单位阵、零对齐和状态，A的对角线为1符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "任一新空指针失败应按需求返回单位阵、零对齐和状态，A的对角线为1符合。"
+  }
+ ],
+ "pick": "A"
+}

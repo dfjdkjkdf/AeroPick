@@ -1,0 +1,134 @@
+{
+ "key": "b67ec512cf5ac4d70da995b098bf77333dbf7eec",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_COOL;\nmt_state.winding_temperature_k = 410.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_COOL;\nmt_state.winding_temperature_k = 340.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 400.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_COOL;\nmt_state.winding_temperature_k = 350.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 50.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 2;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 390.0;\nmt_state.trip_count = 0;",
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 50.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 2;\nmt_state.mode = MT_COOL;\nmt_state.winding_temperature_k = 410.0;\nmt_state.trip_count = 1;",
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 50.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 2;\nmt_state.mode = MT_COOL;\nmt_state.winding_temperature_k = 410.0;\nmt_state.trip_count = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry = NULL;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 0;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = NAN;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = -5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 450.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 1001;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = INFINITY;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 25.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 0.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_FAULT;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 5;",
+    "mt_input.enable = 0;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_FAULT;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 1;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 400.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 1;\nmt_state.mode = MT_COOL;\nmt_state.winding_temperature_k = 410.0;\nmt_state.trip_count = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = -1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 0.0;\nmt_config.thermal_resistance_k_w = 10.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mt_input.enable = 1;\nmt_input.telemetry->requested_voltage_v = 10.0;\nmt_input.telemetry->ambient_temperature_k = 300.0;\nmt_input.telemetry->dt_s = 1.0;\nmt_config.max_voltage_v = 20.0;\nmt_config.resistance_ohm = 5.0;\nmt_config.capacity_j_k = 100.0;\nmt_config.thermal_resistance_k_w = 0.0;\nmt_config.trip_temperature_k = 400.0;\nmt_config.reset_temperature_k = 350.0;\nmt_config.max_trip_cycles = 0;\nmt_state.mode = MT_DRIVE;\nmt_state.winding_temperature_k = 300.0;\nmt_state.trip_count = 0;"
+   ]
+  }
+ ]
+}

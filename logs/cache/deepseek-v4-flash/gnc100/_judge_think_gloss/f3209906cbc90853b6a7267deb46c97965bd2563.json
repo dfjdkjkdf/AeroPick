@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "count=4但仅首轮有效，adcs_wheel_momentum在零轴轮上失败，应latch FAULT且不发布部分动量/误差，B的零输出正确。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "与测试1同为无效wheels，应latch FAULT，B的零输出正确。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "wheels无效导致adcs_wheel_momentum失败，应latch FAULT，B未发布部分动量。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "wheels无效，required=20不影响无效周期处理，B的零输出正确。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "wheels无效，stop=0边界不改变FAULT处理，B的零输出正确。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "即使原mode=COMPLETE，无效wheels仍应latch FAULT，B未保留/发布部分动量。"
+  }
+ ],
+ "pick": "B"
+}

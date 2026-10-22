@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "输入四元数完全相同，最短旋转角为0，相对旋转轴数学上未定义；A输出z=1符合航天软件中奇异点归一化失败的常规默认处理策略，需求未强制规定奇异轴具体值。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "创新角0.5rad≥reject_rad(0.2)，连续3次调用且max_rejects=3；按需求“达到上限后锁存FAULT”，第3次调用后状态应变为FAULT(2)；B输出mode=2正确，A仍停留在REJECT(1)违反状态机跳转逻辑。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "NULL预测四元数触发故障锁存，需求明确此时不执行正常创新决策；B输出rejects=5等于max_rejects，符合“达到阈值即判定锁存”的边界逻辑，A输出6已越限。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "NULL测量四元数同上，触发故障锁存；B输出5符合阈值判定规则，A越限不符合需求约束。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "零范数四元数属退化情形，需求规定直接latch FAULT；B输出5匹配max_rejects阈值，A输出6越限，B更符合规范。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "含NaN属非有限值非法输入，需求规定latch FAULT；B输出5符合阈值逻辑，A越限，B更准确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 10156,
+  "completion": 5870
+ }
+}

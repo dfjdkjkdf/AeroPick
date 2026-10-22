@@ -1,0 +1,1 @@
+{"prompt_sha1": "fd3943cc48ec9f85e55c1fa5c60d852120fa6dd7", "discrete": [["reset", null, ["0", "1"]]], "continuous": [["field.x", [3], -1000000.0, 1000000.0], ["time_s", null, -1000000.0, 1000000.0], ["gain", null, 0.0, 1000000.0], ["limit", null, 0.0, 1000000.0]], "outputs": [["command.command", [3], null], ["command.saturated_axes", null, null], ["torque", [3], null]]}

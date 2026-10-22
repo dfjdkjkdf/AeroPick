@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "四元数最短旋转角公式为 2*acos(|dot|)，A输出符合理论值，B/C漏乘2倍系数导致结果减半。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "输入为单位四元数绕Y轴转0.1rad，规范角度应为2*acos(cos(0.1))=0.2，A正确，B/C仅为一半。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "输入角度参数为0.2rad，规范最短角应为0.4，A正确，B/C计算值偏小一半。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "输入角度参数为0.25rad，规范最短角应为0.5，A正确，B/C未遵循四元数夹角定义。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "需求明确要求NULL四元数需锁存FAULT，A正确置位FAULT且未异常篡改rejects计数，B/C处理违背需求。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "同测5，NULL测量值应触发FAULT保护，A符合故障锁存逻辑，B/C未能正确响应。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10138,
+  "completion": 3675
+ }
+}

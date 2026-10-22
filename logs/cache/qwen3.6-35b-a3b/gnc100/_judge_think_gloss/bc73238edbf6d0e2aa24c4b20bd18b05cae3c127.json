@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求“Boundary and failure handling”明确指定非有限四元数应返回ADCS_E_DEGENERATE(3)，测试1的target含INFINITY属非有限输入，A返回3严格符合需求，B返回4不符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，测试2的estimated含NAN同样触发非有限条件，按需求应返回ADCS_E_DEGENERATE(3)，A正确而B错误。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9064,
+  "completion": 2259
+ }
+}

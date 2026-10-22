@@ -1,0 +1,125 @@
+{
+ "key": "8d9ab23fa74fd434153888bff871cc84c41caeda",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "requested = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "realized = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*lost_torque = 0.0;\nlost_torque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*mask = 0;\nmask = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested->x = 1.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 0.0; field->y = 1.0; field->z = 0.0;\naxis_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested->x = 5.0; requested->y = 5.0; requested->z = 5.0;\nfield->x = 1.0; field->y = 1.0; field->z = 1.0;\naxis_limit = 20.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested->x = 10.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 1.0; field->y = 0.0; field->z = 0.0;\naxis_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested->x = 10.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 1.0; field->y = 0.0; field->z = 0.0;\naxis_limit = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested->x = 0.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 1.0; field->y = 0.0; field->z = 0.0;\naxis_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested->x = 1.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 0.0; field->y = 0.0; field->z = 0.0;\naxis_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested->x = 1.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 1e-13; field->y = 0.0; field->z = 0.0;\naxis_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested->x = 1.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 1.0; field->y = 0.0; field->z = 0.0;\naxis_limit = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested->x = 1.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 1.0; field->y = 0.0; field->z = 0.0;\naxis_limit = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested->x = INFINITY; requested->y = 0.0; requested->z = 0.0;\nfield->x = 1.0; field->y = 0.0; field->z = 0.0;\naxis_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested->x = 1.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = NAN; field->y = 0.0; field->z = 0.0;\naxis_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested->x = 1.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 1.0; field->y = 0.0; field->z = 0.0;\naxis_limit = NAN;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested->x = 100.0; requested->y = 100.0; requested->z = 100.0;\nfield->x = 1.0; field->y = 0.0; field->z = 0.0;\naxis_limit = 50.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested->x = 0.0; requested->y = 0.0; requested->z = 0.0;\nfield->x = 0.0; field->y = 1.0; field->z = 0.0;\naxis_limit = 10.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定空指针输入应返回ADCS_E_NULL(1)，实现B正确返回1且未异常退出，实现A崩溃/无输出违反空值处理约定"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同上，空指针参数触发的空值检查应返回ADCS_E_NULL(1)，实现B符合边界与失败处理要求"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 8995,
+  "completion": 1881
+ }
+}

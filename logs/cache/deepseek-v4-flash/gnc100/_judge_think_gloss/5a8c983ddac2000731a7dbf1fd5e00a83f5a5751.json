@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "输入有效，应返回ADCS_OK；A返回0并给出对称矩阵，B/C错误返回E_RANGE。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "输入有效，应返回ADCS_OK；A返回0并给出对称矩阵，B/C错误返回E_RANGE。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "输入有效，应返回ADCS_OK；A返回0，B错误返回E_RANGE，C矩阵不符合需求。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "输入有效，应返回ADCS_OK；A返回0并正确归一化，B/C错误返回E_RANGE。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "输入有效，应返回ADCS_OK；A的输出与需求公式完全一致，B/C不符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "边界输入count=2仍有效，应返回ADCS_OK；A返回0，B/C错误返回E_RANGE。"
+  }
+ ],
+ "pick": "A"
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "进入 DERATE 后制动力矩与转速反向，能量应按 energy += -power*dt_s 累积为正 1.6 J。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "达到 trip 进入 BRAKE，制动力矩反向于转速，耗散能量累计为正 2.4 J。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "进入 DERATE，制动力矩反向于转速，耗散能量累计为正 2.0 J。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "与测试 3 条件相同，耗散能量符号应为正 2.0 J。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "超过 trip 进入 BRAKE，制动力矩反向于转速，耗散能量累计为正 2.8 J。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "与测试 5 条件相同，耗散能量符号应为正 2.8 J。"
+  }
+ ],
+ "pick": "A"
+}

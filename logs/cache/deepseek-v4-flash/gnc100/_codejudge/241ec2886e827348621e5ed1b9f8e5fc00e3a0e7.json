@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly checks NULL, nonfinite inputs/determinant, determinant and norm thresholds, zeros outputs on failure, and computes calibrated=soft_iron*(raw-hard_iron) with unit direction and magnitude.",
+ "_usage": {
+  "prompt": 9734,
+  "completion": 26250
+ }
+}

@@ -1,0 +1,131 @@
+{
+ "key": "bc9b919fab5eb5232550fcff0b82f199f68fafc7",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "m->x = 1.0;\nm->y = 2.0;\nm->z = 3.0;\nb->x = 4.0;\nb->y = 5.0;\nb->z = 6.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "m->x = -1.0;\nm->y = 0.5;\nm->z = 2.5;\nb->x = 3.0;\nb->y = -4.0;\nb->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "m->x = 1.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 0.0;\nb->y = 1.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "m->x = 0.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 1.0;\nb->y = 2.0;\nb->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "m->x = 1.0;\nm->y = -1.0;\nm->z = 0.5;\nb->x = -2.0;\nb->y = 2.0;\nb->z = -1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = 1.0e-300;\nm->y = 2.0e-300;\nm->z = -3.0e-300;\nb->x = 4.0e-300;\nb->y = -5.0e-300;\nb->z = 6.0e-300;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = 1.0e300;\nm->y = 1.0e300;\nm->z = 1.0e300;\nb->x = 1.0e300;\nb->y = -1.0e300;\nb->z = 1.0e300;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = 1.0;\nm->y = 0.0;\nm->z = 0.0;\nb->x = 1.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = 0.0;\nm->y = 1.0;\nm->z = 0.0;\nb->x = 0.0;\nb->y = 0.0;\nb->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = 0.0;\nm->y = 0.0;\nm->z = 1.0;\nb->x = 0.0;\nb->y = 0.0;\nb->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "m->x = -0.0;\nm->y = -0.0;\nm->z = -0.0;\nb->x = 1.0;\nb->y = 2.0;\nb->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "authority = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = 1.0 / 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->y = -1.0 / 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b->z = 1.0 / 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = 0.0 / 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "b->y = 0.0 / 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "m->x = 1.0;\nm->y = 0.0 / 0.0;\nm->z = 2.0;\nb->x = 3.0;\nb->y = 4.0;\nb->z = 5.0;"
+   ]
+  }
+ ]
+}

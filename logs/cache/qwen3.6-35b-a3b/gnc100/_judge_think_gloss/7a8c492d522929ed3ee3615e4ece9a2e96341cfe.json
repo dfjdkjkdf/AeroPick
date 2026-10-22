@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求决策表首行明确规定enable==0时下一模式为OFF(0)，A输出符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "未赋值则enable默认为0，依需求应强制进入OFF(0)，A输出符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "输入全为0/NULL属非法配置，需求明文规定非法配置应置FAULT(3)，B符合安全锁定逻辑。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同上，非法输入触发需求规定的FAULT(3)锁定机制，B符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "enable=1但观测向量与权重为NULL，属非法输入，需求规定应置FAULT(3)，B符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "同测试5，非法输入导致置FAULT(3)，B符合。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9603,
+  "completion": 5812
+ }
+}

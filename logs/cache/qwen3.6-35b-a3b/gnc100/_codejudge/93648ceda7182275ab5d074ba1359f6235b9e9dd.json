@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "实现B严格遵循需求规定的错误码（null wheels/speed_limits必须返回ADCS_E_NULL而非ADCS_E_RANGE），且校验顺序、最小余量首次索引查找及储备向量累加逻辑均与需求定义完全一致。",
+ "_usage": {
+  "prompt": 9387,
+  "completion": 2418
+ }
+}

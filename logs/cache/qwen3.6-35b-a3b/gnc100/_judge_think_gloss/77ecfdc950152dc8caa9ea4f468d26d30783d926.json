@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "输入含NULL字段属非法输入，需求规定应直接锁存FAULT且rejects保持0，B错误赋值为5。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "enable开启但字段为空/dt为0，非法输入触发FAULT锁定，rejects应为0。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试2，非法输入导致状态机进入并锁定FAULT，rejects保持0。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测试2，非法输入持续触发FAULT，rejects不增加。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "max_rejects=0越界属非法配置，需求规定应直接锁存FAULT且不更新历史，rejects为0。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "max_rejects=21越界属非法配置，触发FAULT锁定，rejects应为0。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9938,
+  "completion": 4707
+ }
+}

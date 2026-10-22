@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求规定传入NULL指针应返回ADCS_E_NULL(1)且输出清零，A与B均返回1且输出为0，C崩溃；结合后续数值测试A逻辑完整。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，command为NULL时按需求应返回1并清零输出，A符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同上，torque为NULL时按需求应返回1并清零输出，A符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "需求明确alpha=1为未滤波差分，rate.x理论值为(1.1-1.0)/(1.0-0.0)=0.1，A输出精确匹配，B/C错误输出0。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "同理rate.x理论值为(1.0-0)/1.0=1.0，A输出正确，验证了核心差分计算逻辑。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "序列调用下rate.x仍为0.1，证明A正确实现了历史状态初始化与连续差分更新，B/C未能正确计算。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10057,
+  "completion": 4870
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 的实现最简洁，直接使用 second_time_s <= first_time_s 判断 reversed/equal，且所有边界和插值逻辑均符合需求。",
+ "_usage": {
+  "prompt": 9213,
+  "completion": 12364
+ }
+}

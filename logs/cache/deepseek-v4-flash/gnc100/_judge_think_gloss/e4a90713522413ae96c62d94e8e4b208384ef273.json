@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "Disabled resets only the decision/count; the published shortest innovation and relative axis remain computed, giving 90° about x (angle 1.5708, axis.x=1)."
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "First enabled call exceeds reject and increments REJECT, but disabled second call still publishes computed innovation 1 rad and x-axis while resetting decision/count."
+  }
+ ],
+ "pick": "A"
+}

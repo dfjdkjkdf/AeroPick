@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B validates null/amplitude/axes, zeroes outputs on range failures, sets equal wheel torques, and computes residual as -sum(axis_i*amplitude) exactly.",
+ "_usage": {
+  "prompt": 9362,
+  "completion": 11958
+ }
+}

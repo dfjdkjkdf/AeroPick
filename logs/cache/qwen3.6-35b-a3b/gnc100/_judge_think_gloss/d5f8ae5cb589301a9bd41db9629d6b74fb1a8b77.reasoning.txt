@@ -1,0 +1,140 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a given requirement and test cases. I must output a JSON with my judgment for each test case and a final pick.
+
+2.  **Analyze the Requirement**:
+    *   **Function**: `adcs_wheel_momentum` (inferred from context and traceability).
+    *   **Operational context**: Reconstructs total stored momentum for an arbitrary non-orthogonal wheel cluster.
+    *   **Input interface**: `wheels`: array of count 1..16. Each axis_body is finite and nonzero, inertia_kg_m2 is finite >0, speed_rad_s finite. Output: momentum.
+    *   **Mathematical definition**: For wheel k, normalize its supplied body-axis direction $a_k$ and compute $h_k = J_k \omega_k a_k$. Total body momentum is the vector sum of all $h_k$. Signed wheel speed determines direction.
+    *   **Required processing**: Validate the complete array first so malformed later entries cannot leave a partial result; then accumulate in index order.
+    *   **Output contract**: `ADCS_OK` with momentum in N m s. Failure output is zero.
+    *   **Boundary and failure handling**: Null -> `ADCS_E_NULL`. count outside 1..16, invalid axis, nonpositive or nonfinite inertia, or nonfinite speed -> `ADCS_E_RANGE`.
+    *   **Traceability**: Rigid rotor angular momentum $h=J\omega$ along spin axis.
+
+3.  **Analyze the Provided Code Context**:
+    *   The prompt includes a lot of code, but importantly, it shows an implementation of `adcs_wheel_momentum` near the end:
+      ```c
+      adcs_status_t adcs_wheel_momentum(const adcs_wheel_t *wheels, size_t count, adcs_vec3_t *h) {
+          size_t i;
+          adcs_vec3_t axis, term;
+          if ((wheels == NULL) || (h == NULL))
+              return ADCS_E_NULL;
+          *h = (adcs_vec3_t){0, 0, 0};
+          for (i = 0; i < count; i++) {
+              if ((!isfinite(wheels[i].inertia_kg_m2)) || (!isfinite(wheels[i].speed_rad_s)) ||
+                  (wheels[i].inertia_kg_m2 < 0.0) ||
+                  adcs_vec3_normalize(&wheels[i].axis_body, ADCS_EPS_NORM, &axis) != ADCS_OK)
+                  return ADCS_E_RANGE;
+              term = adcs_vec3_scale(&axis, wheels[i].inertia_kg_m2 * wheels[i].speed_rad_s);
+              *h = adcs_vec3_add(h, &term);
+          }
+          return ADCS_OK;
+      }
+      ```
+    *   Wait, this code *violates* the requirement "Validate the complete array first so malformed later entries cannot leave a partial result". It validates and accumulates in the same loop. If a later entry is invalid, it returns `ADCS_E_RANGE`, but the accumulation for previous valid entries has already happened. However, the requirement says "Failure output is zero." This implies that if validation fails at any point, the output should be zeroed out. The provided code zeros `*h` initially, but doesn't zero it out on error inside the loop. Actually, it just returns early. So if it fails at index 1, `*h` still contains the result from index 0. This violates "Failure output is zero" and "Validate the complete array first...".
+    *   But I don't see the code for A and B. I only have the tests and the requirement. I must deduce which behavior matches the requirement based on the test outputs.
+    *   Let's look at the test cases carefully. They are building up data incrementally over multiple calls. Wait, "共调用 8 次，比较最后一次调用后的输出" (Called 8 times total, compare output after the last call). The assignments happen between calls? Or before specific calls? The format says:
+      "第1次调用前赋值：count = 2;"
+      "第2次调用前赋值：wheels[0].axis_body.x = 1.0;"
+      ...
+      This looks like a stateful harness where variables are set incrementally across calls. But the function itself is called repeatedly? Or is it just one logical test split into steps? Actually, it says "共调用 8 次，比较最后一次调用后的输出". This implies the function is called 8 times. But wait, `adcs_wheel_momentum` takes `count` and `wheels` array. It doesn't maintain state between calls. Why would it be called 8 times with incremental assignments? Maybe the harness re-calls the function each time, or maybe it's just describing how the test setup progresses. Actually, it might be a single test case where the harness sets up data step-by-step, but the function is only evaluated at the end? Or maybe it's a typo in the prompt format, and it means "setup steps"? No, it explicitly says "共调用 X 次". This is unusual for a pure function. Perhaps it's a stateful wrapper or the harness calls it repeatedly. Regardless, I need to focus on the mathematical outcome based on the final state of the inputs.
+    *   Let's reconstruct the input state after all assignments for Test 1:
+      - `count = 2`
+      - `wheels[0]`: axis=(1,0,0), J=1.0, omega=1.0
+      - `wheels[1]`: axis=(0,1,0), J=0.0 (default), omega=0.0 (default) -> Wait, the prompt says "未赋值的量为 0" (unassigned quantities are 0).
+      - So `wheels[1].inertia_kg_m2 = 0.0`, `wheels[1].speed_rad_s = 0.0`.
+      - According to requirement: "inertia_kg_m2 is finite >0". Here it is 0. So it's invalid!
+      - Wait, does the harness actually call the function with these values? If `wheels[1].inertia_kg_m2 = 0`, it violates ">0". So it should return `ADCS_E_RANGE` and output zero.
+      - But the test output difference is about `momentum_body_nms.y`: A=0, B=1.
+      - If B outputs 1, it means B computed $h_1 = J_1 \omega_1 a_1$. But $J_1=0, \omega_1=0$, so $h_1=0$. How could y be 1?
+      - Wait, maybe `wheels[1]` was assigned differently? Let's re-read carefully:
+        "第7次调用前赋值：wheels[1].axis_body.x = 0.0;"
+        "第8次调用前赋值：wheels[1].axis_body.y = 1.0;"
+        Unassigned: `wheels[1].z=0`, `inertia=0`, `speed=0`.
+        If inertia and speed are 0, momentum contribution is 0. Total momentum should be $h_0 = 1*1*(1,0,0) + 0 = (1,0,0)$. So y component should be 0.
+        Why does B give y=1? Maybe B ignores unassigned values or treats them differently? Or maybe the harness actually initializes the array properly before calling, and the "assignments" are just showing what was changed from default? The prompt says "未赋值的量为 0". So yes, they are 0.
+        Wait, maybe the test is checking something else. Let's look at Test 2:
+        `wheels[1].axis_body.x = -1.0`. Others default to 0.
+        Output diff: x component. A=0, B=-1.
+        Again, if J=0, omega=0, contribution is 0. So total x should be 1 (from wheel 0). But diff says A=0, B=-1. This implies the output is *only* considering wheel 1? Or maybe wheel 0 wasn't set correctly? No, wheel 0 was set in steps 2-6.
+        Actually, maybe the function is called *each time* during the assignments? "共调用 8 次". If it's called 8 times, and we compare the output after the last call, maybe the output persists? No, it's a pure function returning via pointer.
+        Let's reconsider: Perhaps the "assignments" are actually setting up the array, and the function is called once at the end? But it says "共调用 8 次". This is weird. Maybe it's a stateful test harness that calls the function repeatedly, and the output is compared each time? Or maybe it's just poorly phrased, and it means the test setup takes 8 steps, and the function is called once at the end. I will assume the function is called once with the fully assembled data, or the output after the last call reflects the final state.
+        Given the outputs A=0, B=1 (for y), and A=0, B=-1 (for x), it strongly suggests that Implementation B is computing the momentum based on `wheels[1]`'s axis directly, ignoring the fact that J and omega are 0, OR it's treating unassigned values as 1? No, that doesn't make sense.
+        Wait! Look at the requirement: "For wheel k, normalize its supplied body-axis direction a_k and compute h_k=J_k omega_k a_k."
+        If J=0 or omega=0, h_k=0.
+        Why would B output 1 or -1? Maybe B is computing just the normalized axis? Or maybe B is ignoring the multiplication by J and omega? Or maybe B is using `wheels[1].axis_body` directly as the momentum vector? That would match: axis=(0,1,0) -> y=1. axis=(-1,0,0) -> x=-1.
+        This suggests Implementation B might be buggy: it computes `h = a_k` instead of `J*omega*a_k`, or it forgets to multiply by J and omega.
+        What about Implementation A? A outputs 0 for y/x components. Since J=0, omega=0, the correct momentum should be `(1,0,0)` from wheel 0. So y=0, x=1. A gives y=0, x=0. Wait, A gives x=0 in Test 2? But wheel 0 has x=1. If A outputs 0 for everything, maybe A also has a bug, or maybe A zeros out the output on error? But there is no error here. All inputs are finite. J=0 is not >0, so it's an error per requirement ("inertia_kg_m2 is finite >0"). If it's an error, output should be zero. So A outputs 0, which matches "Failure output is zero". B outputs 1/-1, which ignores the error condition and just outputs the axis.
+        Therefore, A is correct because it detects J<=0 as invalid and returns error/zero output. B is incorrect because it proceeds anyway.
+
+    *   Let's verify this hypothesis against Test 3:
+        `count = 16`
+        `wheels[0]`: axis=(1,0,0), J=1, omega=1
+        `wheels[1]`: axis=(0,1,0), J=0, omega=0
+        Output diff: y component. A=0, B=1.
+        Same situation. J=0 violates ">0". Correct behavior: detect error, return `ADCS_E_RANGE`, output zero. So y should be 0. A gives 0. B gives 1.
+        Conclusion holds: A follows requirement (validates J>0, zeros output on failure), B ignores validation/multiplication.
+
+    *   Wait, let's double check the exact wording: "inertia_kg_m2 is finite >0". Yes, 0 is not >0. So it's a range error.
+    *   Requirement: "Validate the complete array first so malformed later entries cannot leave a partial result; then accumulate in index order."
+    *   Requirement: "Failure output is zero."
+    *   So if any wheel has J<=0, the whole operation fails, output must be zero.
+    *   Implementation A outputs 0. Matches requirement.
+    *   Implementation B outputs the axis vector of the second wheel. Ignores J and omega, and ignores validation. Fails requirement.
+    *   Therefore, A is correct for all three tests.
+
+    *   Let's construct the reasoning carefully.
+    *   Test 1: Input state has `wheels[1].inertia_kg_m2 = 0` (default/unassigned). Requirement states `inertia_kg_m2` must be `>0`. Thus, input is invalid (`ADCS_E_RANGE`). Requirement mandates "Failure output is zero." A outputs 0 for y-component (and presumably others), matching requirement. B outputs 1, indicating it computed `h` without checking J>0 or multiplying by J/omega, likely just outputting the normalized axis. A is correct.
+    *   Test 2: Similar. `wheels[1].inertia_kg_m2 = 0`. Invalid. Output should be zero. A gives 0. B gives -1 (axis x-component). A is correct.
+    *   Test 3: Similar. `count=16`, but only first two wheels set. Rest default to 0. `wheels[1].inertia=0`. Invalid. Output should be zero. A gives 0. B gives 1. A is correct.
+    *   Overall pick: A.
+
+    *   Check for any pitfalls: Could "未赋值的量为 0" mean something else? In C, global/static arrays are zero-initialized. Local arrays are not. But the prompt explicitly says "未赋值的量为 0", so we take it as 0.
+    *   Could the requirement allow J=0? "inertia_kg_m2 is finite >0". Explicitly >0. So J=0 is invalid.
+    *   Does A's code in the prompt match this? The prompt shows *one* reference implementation, but says there are two different implementations A and B. The reference code actually has a bug (doesn't validate first, doesn't zero on error), but that's irrelevant. I'm judging A vs B based on the test outputs.
+    *   The outputs clearly show A produces zero vectors (or zero components) when invalid inputs are present, while B produces non-zero axis directions. This aligns perfectly with A implementing the validation and zero-on-failure rule, and B skipping it.
+    *   I will formulate the JSON response accordingly.
+
+    Structure of JSON:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求明确要求inertia_kg_m2需大于0，测试中wheel[1]惯性矩为0属非法输入，按需求应返回错误并将动量清零；A输出0符合“失败输出为零”的契约，B直接输出了轴向量方向，未做校验与限幅/乘法。"},
+        {"id": 2, "correct": "A", "reason": "同上，wheel[1]惯性矩为0触发范围错误，正确行为应为全零输出；A输出0符合要求，B输出-1仅为轮轴x分量，未执行J*omega计算且忽略了非法值处理。"},
+        {"id": 3, "correct": "A", "reason": "wheel[1]惯性矩为0导致整体输入非法，需求规定失败时输出必须为零；A输出0正确，B输出1违背了校验与清零要求。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Wait, let's verify the exact wording of the prompt for test IDs. It says "测试 1", "测试 2", "测试 3". I'll use 1, 2, 3.
+    Reason needs to be concise.
+    Check requirement again: "Validate the complete array first so malformed later entries cannot leave a partial result; then accumulate in index order." This implies strict validation. If any entry is bad, fail entirely. Output zero.
+    A's behavior matches this.
+    B's behavior matches a naive loop that multiplies nothing or just uses axis.
+    All good.
+
+    One minor point: The prompt says "共调用 8 次，比较最后一次调用后的输出". This might imply statefulness, but for a pure function `adcs_wheel_momentum`, it shouldn't matter. The final state of memory is what matters. The output difference is consistent with the analysis.
+    I will produce the JSON.
+    Double check format: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I'll stick to this.
+    Reason drafting:
+    Test 1: 需求规定inertia_kg_m2须>0，测试中wheel[1]惯性矩默认为0属非法输入。按“失败输出为零”及先完整校验的要求，正确结果应为全零向量。A输出y=0符合规范，B输出y=1表明其跳过了合法性检查且未执行J×ω计算（仅返回了单位轴方向）。
+    Test 2: 同理，wheel[1]惯性矩为0触发ADCS_E_RANGE，预期输出为零。A输出x=0正确；B输出x=-1同样为忽略校验与乘法的错误实现。
+    Test 3: 输入结构与测试1一致，wheel[1]惯性矩为0导致整体非法，预期输出为零。A输出y=0正确，B输出y=1违规。
+    Pick: A
+    All matches requirement strictly.
+    Output matches requested JSON format.
+    Ready. 
+    Self-Correction/Refinement during thought: 
+    Could "未赋值的量为 0" refer to the array elements not being touched, but maybe the harness initializes them to 1? No, it explicitly says 0.
+    Could B be correct because it handles J=0 gracefully by outputting 0? But B outputs 1/-1. So B definitely doesn't multiply by J.
+    So A is definitively correct.
+    The reasoning is solid.
+    I will generate the JSON now. 
+    One detail: The prompt asks for "一句话" (one sentence) for reason. I'll keep it concise.
+    Format check: `{"tests":[{"id":1,"correct":"A","reason":"..."},{"id":2,...},{"id":3,...}],"pick":"A"}`
+    All good. 
+    Output matches. 
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

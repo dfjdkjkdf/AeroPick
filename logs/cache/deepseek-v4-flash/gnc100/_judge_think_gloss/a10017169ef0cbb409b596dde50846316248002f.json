@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "predicted=NULL triggers ADCS_E_NULL failure, so angle must be INFINITY."
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "measured=NULL triggers ADCS_E_NULL failure, so angle must be INFINITY."
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "rotation_vector=NULL triggers ADCS_E_NULL failure, and angle must be INFINITY on any failure."
+  }
+ ],
+ "pick": "B"
+}

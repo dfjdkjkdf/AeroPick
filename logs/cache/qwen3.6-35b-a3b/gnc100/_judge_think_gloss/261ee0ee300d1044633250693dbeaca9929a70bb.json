@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求状态契约第一条明确“any NULL pointer -> ADCS_E_NULL”，测试1中primary_index为NULL，应返回ADCS_E_NULL(1)，A返回1符合，B返回2错误。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同理，geometry_quality为NULL同样触发任意NULL指针检查，应返回ADCS_E_NULL(1)，A符合需求。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 8882,
+  "completion": 2351
+ }
+}

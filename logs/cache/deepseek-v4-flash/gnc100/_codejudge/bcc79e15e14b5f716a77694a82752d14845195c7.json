@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B uses adcs_wheel_momentum and implements the required LIMITED/RECOVERING/NORMAL clean-sample state machine correctly, whereas A mishandles NORMAL-to-RECOVERING transitions and omits the mandated adcs_wheel_momentum validation.",
+ "_usage": {
+  "prompt": 15254,
+  "completion": 14867
+ }
+}

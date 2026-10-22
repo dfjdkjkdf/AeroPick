@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求要求验证所有轴且非法输入返回ADCS_E_RANGE并清零输出，A正确拦截了NAN并返回状态码2及零值。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "需求要求验证输入有限性，INFINITY属非法输入应返回ADCS_E_RANGE并清零输出，A正确拦截。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "需求要求校准参数为正有限值，NAN属非法输入应返回ADCS_E_RANGE并清零输出，A正确拦截。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9761,
+  "completion": 2482
+ }
+}

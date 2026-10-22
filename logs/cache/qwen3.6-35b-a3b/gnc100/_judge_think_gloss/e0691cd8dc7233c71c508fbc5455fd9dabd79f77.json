@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "输入为reset=0的有效首拍，需求明确规定valid first sample需store field/time初始化历史，A正确更新状态而B未更新。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同测试1，有效首拍必须prime history，A符合需求中“store field/time”的规定。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试1，需求表格明确指出有效首拍应记录场向量与时间至持久状态，A正确实现。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测试1，尽管标签为error但输入参数均合法，属有效首拍场景，A正确存储历史而B遗漏。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "同测试1，需求要求首拍接受后记录当前场与时间，A符合规范而B未记录。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "虽数值微调但仍为reset=0的有效首拍，需求强制要求store field/time，A正确而B未更新状态。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10474,
+  "completion": 2812
+ }
+}

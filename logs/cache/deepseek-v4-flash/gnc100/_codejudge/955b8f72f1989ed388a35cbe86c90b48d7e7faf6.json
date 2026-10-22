@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确实现配置校验、余量滞回切换、融合加权输出与故障锁存（无效配置和超时故障均置 primary=FAULT），而 B/C 未真正锁存 FAULT。",
+ "_usage": {
+  "prompt": 17103,
+  "completion": 23553
+ }
+}

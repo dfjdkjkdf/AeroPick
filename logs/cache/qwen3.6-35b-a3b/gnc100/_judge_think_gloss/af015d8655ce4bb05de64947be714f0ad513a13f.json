@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定输入指针为NULL时latch FAULT，对应枚举值2。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "目标四元数为NULL属无效遥测，按需求必须latch FAULT（模式2）。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "角速度向量为NULL属无效遥测，按需求必须latch FAULT（模式2）。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "角度限幅为负数直接触发“negative limits”故障条款，应latch FAULT（模式2）。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "速率限幅为负数直接触发“negative limits”故障条款，应latch FAULT（模式2）。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "required计数为0超出1..20合法区间，按需求应latch FAULT（模式2）。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9365,
+  "completion": 2840
+ }
+}

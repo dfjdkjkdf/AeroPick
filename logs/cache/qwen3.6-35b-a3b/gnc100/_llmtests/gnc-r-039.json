@@ -1,0 +1,241 @@
+{
+ "key": "9c16820772241538858318f60dd32e607978f4cb",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm = NULL;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = (int){0};",
+    "determinant = (double){0.0};",
+    "orthogonality_error = (double){0.0};",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = (int){0};",
+    "determinant = (double){0.0};",
+    "orthogonality_error = (double){0.0};",
+    "tolerance = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 0.0; dcm->m[0][1] = -1.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 1.0; dcm->m[1][1] = 0.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = (int){0};",
+    "determinant = (double){0.0};",
+    "orthogonality_error = (double){0.0};",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 0.0; dcm->m[0][1] = 1.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = -1.0; dcm->m[1][1] = 0.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = (int){0};",
+    "determinant = (double){0.0};",
+    "orthogonality_error = (double){0.0};",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm = (adcs_mat3_t *)0x12345678;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = -INFINITY;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = (int){0};",
+    "determinant = (double){0.0};",
+    "orthogonality_error = (double){0.0};",
+    "tolerance = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 1.0e-7; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = -1.0e-7; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = (int){0};",
+    "determinant = (double){0.0};",
+    "orthogonality_error = (double){0.0};",
+    "tolerance = 1.0e-7;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 2.0e-7; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = -2.0e-7; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = (int){0};",
+    "determinant = (double){0.0};",
+    "orthogonality_error = (double){0.0};",
+    "tolerance = 1.0e-7;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = NAN;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = INFINITY;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = -1.0;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 0.7071067811865475; dcm->m[0][1] = -0.7071067811865475; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.7071067811865475; dcm->m[1][1] = 0.7071067811865475; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = (int){0};",
+    "determinant = (double){0.0};",
+    "orthogonality_error = (double){0.0};",
+    "tolerance = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = NULL;",
+    "determinant = NULL;",
+    "orthogonality_error = NULL;",
+    "tolerance = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "dcm->m[0][0] = 1.0; dcm->m[0][1] = 0.0; dcm->m[0][2] = 0.0;",
+    "dcm->m[1][0] = 0.0; dcm->m[1][1] = 1.0; dcm->m[1][2] = 0.0;",
+    "dcm->m[2][0] = 0.0; dcm->m[2][1] = 0.0; dcm->m->m[2][2] = 1.0;",
+    "valid = (int){0};",
+    "determinant = (double){0.0};",
+    "orthogonality_error = (double){0.0};",
+    "tolerance = 1.0e-12;"
+   ]
+  }
+ ]
+}

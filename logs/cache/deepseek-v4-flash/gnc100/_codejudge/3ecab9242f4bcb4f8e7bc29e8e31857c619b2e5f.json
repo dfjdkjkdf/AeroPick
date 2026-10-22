@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly implements per-axis current/power and thermal integration, checks all NULL and RANGE conditions in the required order, and has no extra scope or unused variables.",
+ "_usage": {
+  "prompt": 9808,
+  "completion": 31060
+ }
+}

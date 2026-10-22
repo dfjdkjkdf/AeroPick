@@ -1,0 +1,30 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "dt_s=0 且 wheels=NULL 均无效，应闩锁 FAULT 并清零，B 输出 FAULT。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "首拍零加速度，预测=3.0 达到 trip，进入 ACTIVE；原始力矩 -1.5 经限幅 -1 再受 slew 限制为 -0.1，故 x 轴饱和/斜率掩码置位。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "第三拍加速度 -21，预测 20.5≥trip，WATCH 转 ACTIVE；原始力矩 -0.25 仅受 slew 限制到 -0.1，斜率掩码置位。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "预测 3.5≥trip，进入 ACTIVE；原始力矩 -1.75 先限幅 -1 再 slew 到 -0.1，饱和与斜率掩码置位。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "速度 -3.5 使预测幅值≥trip；原始力矩 +1.75 先限幅 +1 再 slew 到 +0.1，饱和与斜率掩码置位。"
+  }
+ ],
+ "pick": "B"
+}

@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确最大绝对速度达到warn_rad_s（含）时进入DERATE模式，A输出1符合状态机逻辑，B输出0(NORMAL)未响应阈值。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "需求明确速度达到trip_rad_s（含）时应直接切入BRAKE模式，A输出2正确，B输出0未响应跳变条件。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "需求规定必须恰好验证四个轮子，数量不符属无效输入应立即锁存FAULT，A输出模式4正确，B输出0错误。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "wheel指针为NULL属于无效遥测输入，需求要求立即触发FAULT并清零命令，A输出4正确，B输出0错误。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "阈值配置不满足release<warn<trip的严格递增约束，属非法参数应触发FAULT，A输出4正确，B输出0错误。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "需求强制要求brake_torque_nm>=derate_torque_nm，此处10<15违反约束，应触发FAULT，A输出4正确，B输出0错误。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 12045,
+  "completion": 5295
+ }
+}

@@ -1,0 +1,178 @@
+{
+ "key": "55528456077f69226a1cdf072e23b65565fd6b2a",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 1.0;\nig_input.residual->y = 2.0;\nig_input.residual->z = 2.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 5.0;\nig_input.residual->y = 0.0;\nig_input.residual->z = 0.0;\nig_input.variance->x = 5.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 10.0;\nig_input.residual->y = 0.0;\nig_input.residual->z = 0.0;\nig_input.variance->x = 10.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 6.0;\nig_input.residual->y = 0.0;\nig_input.residual->z = 0.0;\nig_input.variance->x = 6.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 2.0;\nig_input.residual->y = 3.0;\nig_input.residual->z = 6.0;\nig_input.variance->x = 4.0;\nig_input.variance->y = 9.0;\nig_input.variance->z = 36.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 0;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 100.0;\nig_input.residual->y = 100.0;\nig_input.residual->z = 100.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual = NULL;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = NAN;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = INFINITY;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 0.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = -1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = NAN;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 5.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 6.0;\nig_config.reject_threshold = 5.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = -1.0;\nig_config.reject_threshold = 5.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 0;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 21;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 0.0;\nig_input.residual->y = 0.0;\nig_input.residual->z = 0.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;",
+    "ig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;",
+    "ig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;",
+    "ig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;",
+    "ig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 1;\nig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;",
+    "ig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;",
+    "ig_input.residual->x = 6.0;\nig_input.residual->y = 0.0;\nig_input.residual->z = 0.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;",
+    "ig_input.enable = 1;\nig_input.residual->x = 6.0;\nig_input.residual->y = 0.0;\nig_input.residual->z = 0.0;",
+    "ig_input.enable = 1;\nig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;",
+    "ig_input.residual->x = 6.0;\nig_input.residual->y = 0.0;\nig_input.residual->z = 0.0;",
+    "ig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;",
+    "ig_input.residual->x = 6.0;\nig_input.residual->y = 0.0;\nig_input.residual->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;",
+    "ig_input.enable = 0;",
+    "ig_input.enable = 1;\nig_input.residual->x = 1.0;\nig_input.residual->y = 1.0;\nig_input.residual->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 3;\nig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;",
+    "ig_input.residual = NULL;",
+    "ig_input.residual->x = 0.0;\nig_input.residual->y = 0.0;\nig_input.residual->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ig_input.enable = 1;\nig_config.accept_threshold = 5.0;\nig_config.reject_threshold = 10.0;\nig_config.max_consecutive_reject = 20;\nig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;\nig_input.variance->x = 1.0;\nig_input.variance->y = 1.0;\nig_input.variance->z = 1.0;",
+    "ig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;",
+    "ig_input.residual->x = 20.0;\nig_input.residual->y = 20.0;\nig_input.residual->z = 20.0;"
+   ]
+  }
+ ]
+}

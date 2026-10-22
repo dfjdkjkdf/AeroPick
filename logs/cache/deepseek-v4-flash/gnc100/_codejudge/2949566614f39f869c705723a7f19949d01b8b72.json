@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B正确使用现有辅助函数计算C*C^T-I的Frobenius范数，并求有符号行列式，且完整处理空指针与非有限值失败输出。",
+ "_usage": {
+  "prompt": 8692,
+  "completion": 20328
+ }
+}

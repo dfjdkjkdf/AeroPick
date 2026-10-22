@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly handles validation, Welford updates, rejection/fault latching, READY drift discard, and output rules, whereas B can leave a stale rejection in FAULT and C wrongly publishes frozen bias/variance when drift restarts collection.",
+ "_usage": {
+  "prompt": 18428,
+  "completion": 24995
+ }
+}

@@ -1,0 +1,215 @@
+{
+ "key": "e0011b94e148d981defcf5413df16d2c6f86f92e",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 1.0;\nqs_config.max_accel_rad_cycle2 = 0.5;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 1.0;\nqs_input.target_q_bi->x = 0.0;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 1.0;\nqs_config.max_accel_rad_cycle2 = 0.3;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 5;\nqs_input.current_q_bi->w = 1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 0.9238795325;\nqs_input.target_q_bi->x = 0.3826834324;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.2;\nqs_config.settle_angle_rad = 0.02;\nqs_config.settle_rate_rad_cycle = 0.02;\nqs_config.settle_cycles = 2;\nqs_input.current_q_bi->w = 1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 0.7071067812;\nqs_input.target_q_bi->x = 0.0;\nqs_input.target_q_bi->y = 0.7071067812;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.4;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.05;\nqs_config.settle_rate_rad_cycle = 0.05;\nqs_config.settle_cycles = 4;\nqs_input.current_q_bi->w = 1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 0.7071067812;\nqs_input.target_q_bi->x = 0.0;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.7071067812;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.6;\nqs_config.max_accel_rad_cycle2 = 0.2;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 0.9238795325;\nqs_input.current_q_bi->x = 0.3826834324;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 1.0;\nqs_input.target_q_bi->x = 0.0;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 1.0;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 1;\nqs_input.current_q_bi->w = 1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 1.0;\nqs_input.target_q_bi->x = 0.0;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.01;\nqs_config.max_accel_rad_cycle2 = 0.01;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 1;\nqs_input.current_q_bi->w = 1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 0.9999;\nqs_input.target_q_bi->x = 0.01;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 3.14159265358979323846;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 1.0;\nqs_config.settle_rate_rad_cycle = 1.0;\nqs_config.settle_cycles = 20;\nqs_input.current_q_bi->w = 1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 0.0;\nqs_input.target_q_bi->x = 1.0;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.5;\nqs_config.settle_rate_rad_cycle = 0.5;\nqs_config.settle_cycles = 20;\nqs_input.current_q_bi->w = 1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 0.0;\nqs_input.target_q_bi->x = 0.0;\nqs_input.target_q_bi->y = 1.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.0;\nqs_config.settle_rate_rad_cycle = 0.0;\nqs_config.settle_cycles = 1;\nqs_input.current_q_bi->w = 1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 0.999999;\nqs_input.target_q_bi->x = 0.001414;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.1;\nqs_config.settle_rate_rad_cycle = 0.1;\nqs_config.settle_cycles = 5;\nqs_input.current_q_bi->w = -1.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 1.0;\nqs_input.target_q_bi->x = 0.0;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.1;\nqs_config.settle_rate_rad_cycle = 0.1;\nqs_config.settle_cycles = 5;\nqs_input.current_q_bi->w = 0.5;\nqs_input.current_q_bi->x = 0.5;\nqs_input.current_q_bi->y = 0.5;\nqs_input.current_q_bi->z = 0.5;\nqs_input.target_q_bi->w = -0.5;\nqs_input.target_q_bi->x = -0.5;\nqs_input.target_q_bi->y = -0.5;\nqs_input.target_q_bi->z = -0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi = NULL;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = -0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = -0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = -0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.6;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 0;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 21;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 4.0;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 0.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = NAN;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = INFINITY;\nqs_input.target_q_bi->x = 0.0;\nqs_input.target_q_bi->y = 0.0;\nqs_input.target_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.25;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 0.9238795325;\nqs_input.target_q_bi->x = 0.3826834324;",
+    "qs_state.commanded_rate_rad_cycle = 0.2;",
+    "qs_state.commanded_rate_rad_cycle = 0.45;",
+    "qs_state.commanded_rate_rad_cycle = 0.45;\nqs_input.target_q_bi->w = 0.99995;\nqs_input.target_q_bi->x = 0.01;",
+    "qs_input.target_q_bi->w = 0.999995;\nqs_input.target_q_bi->x = 0.00316;",
+    "qs_input.target_q_bi->w = 0.9999995;\nqs_input.target_q_bi->x = 0.001;",
+    "qs_input.target_q_bi->w = 0.9999999;\nqs_input.target_q_bi->x = 0.000316;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.25;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 0.9238795325;\nqs_input.target_q_bi->x = 0.3826834324;\nqs_state.axis_valid = 1;\nqs_state.previous_axis.x = 1.0;\nqs_state.commanded_rate_rad_cycle = 0.4;",
+    "qs_input.target_q_bi->w = 0.9238795325;\nqs_input.target_q_bi->x = -0.3826834324;",
+    "qs_state.commanded_rate_rad_cycle = 0.4;\nqs_input.target_q_bi->x = -0.3826834324;",
+    "qs_input.target_q_bi->x = -0.3826834324;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_input.enable = 0;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 1.0;",
+    "qs_input.enable = 1;\nqs_input.target_q_bi->w = 0.9238795325;\nqs_input.target_q_bi->x = 0.3826834324;",
+    "qs_state.commanded_rate_rad_cycle = 0.5;",
+    "qs_state.commanded_rate_rad_cycle = 0.5;",
+    "qs_state.commanded_rate_rad_cycle = 0.5;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 1.0;\nqs_state.settled = 2;\nqs_state.mode = 4;",
+    "qs_input.target_q_bi->w = 0.9238795325;\nqs_input.target_q_bi->x = 0.3826834324;",
+    "qs_input.target_q_bi->w = 1.0;\nqs_input.target_q_bi->x = 0.0;",
+    "qs_input.target_q_bi->w = 1.0;\nqs_input.target_q_bi->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 10.0;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 0.7071067812;\nqs_input.target_q_bi->y = 0.7071067812;",
+    "qs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.2;",
+    "qs_state.commanded_rate_rad_cycle = 0.3;",
+    "qs_input.target_q_bi->w = 0.9238795325;\nqs_input.target_q_bi->x = 0.3826834324;\nqs_state.axis_valid = 1;\nqs_state.previous_axis.y = 1.0;",
+    "qs_state.previous_axis.y = 1.0;\nqs_input.target_q_bi->x = 0.3826834324;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.2;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 2;\nqs_input.current_q_bi->w = 1.0;\nqs_input.target_q_bi->w = 0.9238795325;\nqs_input.target_q_bi->x = 0.3826834324;",
+    "qs_state.commanded_rate_rad_cycle = 0.5;",
+    "qs_state.commanded_rate_rad_cycle = 0.5;\nqs_input.target_q_bi->w = 0.9999;\nqs_input.target_q_bi->x = 0.01;",
+    "qs_input.target_q_bi->w = 0.99995;\nqs_input.target_q_bi->x = 0.01;",
+    "qs_input.target_q_bi->w = 0.99999;\nqs_input.target_q_bi->x = 0.005;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qs_input.enable = 1;\nqs_config.max_rate_rad_cycle = 0.5;\nqs_config.max_accel_rad_cycle2 = 0.1;\nqs_config.settle_angle_rad = 0.01;\nqs_config.settle_rate_rad_cycle = 0.01;\nqs_config.settle_cycles = 3;\nqs_input.current_q_bi->w = 2.0;\nqs_input.current_q_bi->x = 0.0;\nqs_input.current_q_bi->y = 0.0;\nqs_input.current_q_bi->z = 0.0;\nqs_input.target_q_bi->w = 0.5;\nqs_input.target_q_bi->x = 0.5;\nqs_input.target_q_bi->y = 0.5;\nqs_input.target_q_bi->z = 0.5;"
+   ]
+  }
+ ]
+}

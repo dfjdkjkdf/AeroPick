@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B follows modified Gram-Schmidt with correct ADCS_EPS_COLLINEAR threshold for the projected remainder and sets identity/INFINITY on nonfinite/degenerate failures, matching the required output contract.",
+ "_usage": {
+  "prompt": 10208,
+  "completion": 20564
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "key": "2746d1a04baa44279731108fad59f16062a0e47d",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "a = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "b = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = 0.0; b->y = 1.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = 1.0; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = -1.0; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 1.0; a->z = 0.0;\nb->x = 1.0; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 2.0; a->z = 3.0;\nb->x = 4.0; b->y = 5.0; b->z = 6.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 10.0; a->y = 20.0; a->z = 30.0;\nb->x = 1.0; b->y = 2.0; b->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1e-13; a->y = 0.0; a->z = 0.0;\nb->x = 1.0; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 0.0; a->y = 0.0; a->z = 0.0;\nb->x = 1.0; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = 0.0; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = 1.0 + 1e-13; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = -1.0 - 1e-13; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = NAN; a->y = 0.0; a->z = 0.0;\nb->x = 1.0; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = INFINITY; a->y = 0.0; a->z = 0.0;\nb->x = 1.0; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = NAN; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = INFINITY; b->y = 0.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*angle_rad = NULL;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = 0.0; b->y = 1.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = 0.0; b->y = 1.0; b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "*angle_rad = 0.0;\na->x = 1.0; a->y = 0.0; a->z = 0.0;\nb->x = 0.0; b->y = 1.0; b->z = 0.0;\na->x = 0.0; a->y = 0.0; a->z = 0.0;"
+   ]
+  }
+ ]
+}

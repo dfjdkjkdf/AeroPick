@@ -1,0 +1,125 @@
+{
+ "key": "2d2e1544925323a117c2f1f53e0a217ab2e0c7c0",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 0.0;\nfield_body_t->y = 1.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 1.0;\ngain = 2.5;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 0.5;\nfield_body_t->y = 0.5;\nfield_body_t->z = 0.7071067811865475;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = -0.2;\nbody_rate_rad_s->z = 0.3;\ngain = 0.5;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 1.0;\nfield_body_t->y = 1.0;\nfield_body_t->z = 1.0;\nbody_rate_rad_s->x = 1.0;\nbody_rate_rad_s->y = 1.0;\nbody_rate_rad_s->z = 1.0;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 0.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1e-15;\nfield_body_t->y = 1e-15;\nfield_body_t->z = 1e-15;\nbody_rate_rad_s->x = 1e-15;\nbody_rate_rad_s->y = 1e-15;\nbody_rate_rad_s->z = 1e-15;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 1.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t = NULL;\nbody_rate_rad_s = &rate_vec;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t = &field_vec;\nbody_rate_rad_s = NULL;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t = &field_vec;\nbody_rate_rad_s = &rate_vec;\ngain = 1.0;\npredicted_power_w = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t = &field_vec;\nbody_rate_rad_s = &rate_vec;\ngain = -1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = NAN;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = INFINITY;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 1.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 0.0;\nfield_body_t->y = 1.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field_body_t->x = 0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 1.0;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1e-10;\nfield_body_t->y = 1e-10;\nfield_body_t->z = 1e-10;\nbody_rate_rad_s->x = 1e-10;\nbody_rate_rad_s->y = 1e-10;\nbody_rate_rad_s->z = 1e-10;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field_body_t->x = 1e10;\nfield_body_t->y = 1e10;\nfield_body_t->z = 1e10;\nbody_rate_rad_s->x = 1e10;\nbody_rate_rad_s->y = 1e10;\nbody_rate_rad_s->z = 1e10;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = NAN;\nbody_rate_rad_s->z = 0.0;\ngain = 1.0;\npredicted_power_w = &power_buf[0];"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ngain = NAN;\npredicted_power_w = &power_buf[0];"
+   ]
+  }
+ ]
+}

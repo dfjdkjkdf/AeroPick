@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "有限矩阵且容差有效，应返回 ADCS_OK 并报告计算值；误差约2e-7>tol，valid应为0，故B符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "有限矩阵且容差有效，应返回 ADCS_OK 并报告计算值；误差约2e-6>tol，valid应为0，故B符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "有限矩阵且容差有效，应返回 ADCS_OK 并报告计算值；误差约1.414e-7>tol，valid应为0，故B符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "有限矩阵且容差有效，应返回 ADCS_OK 并报告det与误差；误差约2e-10>tol，valid应为0，故B符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "有限矩阵且容差有效，虽det=-1导致不接收，但仍应返回 ADCS_OK 并报告det，故B符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "零矩阵有限且容差有效，det=0且C*C^T误差为sqrt(3)，应返回 ADCS_OK 并报告，故B符合。"
+  }
+ ],
+ "pick": "B"
+}

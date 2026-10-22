@@ -1,0 +1,121 @@
+{
+ "key": "6a550aaaab1af773d1c64c1b0c386dc64d5a017b",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 10.0;\nwheel->speed_rad_s = 5.0;\nmotor_torque = 1.0;\ndt = 1.0;\nspeed_limit = 100.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 0.0;\nwheel->axis_body.y = 1.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 5.0;\nwheel->speed_rad_s = -2.0;\nmotor_torque = -10.0;\ndt = 0.5;\nspeed_limit = 10.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 9.0;\nmotor_torque = 1.0;\ndt = 1.0;\nspeed_limit = 10.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 11.0;\nmotor_torque = -1.0;\ndt = 1.0;\nspeed_limit = 10.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = NULL;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 1.0;\nnext_wheel = NULL;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 1.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = NULL;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 1.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 0.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 1.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 0.0;\nwheel->speed_rad_s = 1.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = -1.0;\nwheel->speed_rad_s = 1.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 1.0;\nmotor_torque = 1.0;\ndt = 0.0;\nspeed_limit = 10.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 1.0;\nmotor_torque = 1.0;\ndt = -1.0;\nspeed_limit = 10.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 1.0;\nmotor_torque = 1.0;\ndt = 1.0;\nspeed_limit = 0.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 1.0;\nmotor_torque = 1.0;\ndt = 1.0;\nspeed_limit = -1.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = NAN;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 1.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = INF;\nwheel->speed_rad_s = 1.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 9.5;\nmotor_torque = 1.0;\ndt = 1.0;\nspeed_limit = 10.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;",
+    "wheel->speed_rad_s = next_wheel->speed_rad_s;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wheel = &test_wheel;\nwheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 9.6;\nmotor_torque = 1.0;\ndt = 1.0;\nspeed_limit = 10.0;\nnext_wheel = &test_next_wheel;\nnext_momentum = &test_next_mom;\nsaturated = &test_sat;",
+    "wheel->speed_rad_s = next_wheel->speed_rad_s;"
+   ]
+  }
+ ]
+}

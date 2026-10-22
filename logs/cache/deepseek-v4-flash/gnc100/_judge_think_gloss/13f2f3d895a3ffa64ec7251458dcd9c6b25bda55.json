@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "第四次调用进入FINE，FINE的PID应使用本周期提出的积分项，得到A的-0.101662。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "FINE模式单周期应使用本周期提出的积分项，A的-0.201343符合PID要求。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "HOLD因速率超阈值转FINE后，FINE应使用本周期提出的积分项，A的-0.204343符合要求。"
+  }
+ ],
+ "pick": "A"
+}

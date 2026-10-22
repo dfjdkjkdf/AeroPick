@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "pb为NULL属于Any null失败，需求规定若out存在则失败时写入单位阵，B输出对角为1符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "sb为NULL属于Any null失败，需求规定若out存在则失败时写入单位阵，B输出对角为1符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "pi为NULL属于Any null失败，需求规定若out存在则失败时写入单位阵，B输出对角为1符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "si为NULL属于Any null失败，需求规定若out存在则失败时写入单位阵，B输出对角为1符合。"
+  }
+ ],
+ "pick": "B"
+}

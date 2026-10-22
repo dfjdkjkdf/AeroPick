@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "有效正交轴、请求有限且限幅为正，应返回OK；轮力矩=-轴·request，achieved=-request，residual=request-achieved。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "轴仍为置换后的正交单位轴，应返回OK；C的轮力矩与重建/残差符号和幅值符合需求。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "零请求且几何有效，应返回OK并输出全零；A/B错误返回退化。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "非单位但可归一化的正交轴有效，C先归一化后计算且未超限，结果符合需求。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "轮力矩恰为-10，等于对称限幅边界，不应视为受限；应返回OK，C输出正确。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "轮力矩-10.0000001超出10限幅，应限到-10、mask置位并返回OK；C符合。"
+  }
+ ],
+ "pick": "C"
+}

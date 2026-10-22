@@ -1,0 +1,1 @@
+{"prompt_sha1": "9e220f4fbce6fca83d67864c066498db1377d5a5", "discrete": [["adcs_status_t", null, ["0", "1", "2"]]], "continuous": [["axes", [4, 3], -1.0, 1.0], ["amplitude_nm", null, -1000000.0, 1000000.0]], "outputs": [["wheel_torque_nm", [4], null], ["spacecraft_residual_nm", null, null]]}

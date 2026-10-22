@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 严格按 q_target⊗conj(q_estimated) 计算、取最短表示并转换，且在所有失败路径上清零输出，满足需求契约。",
+ "_usage": {
+  "prompt": 9475,
+  "completion": 9349
+ }
+}

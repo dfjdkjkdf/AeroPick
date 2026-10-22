@@ -1,0 +1,133 @@
+{
+ "key": "70b88d3e7868c91a744be40ed4b4e8d1010ce487",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0e-6;\ncurrent->y = 2.0e-6;\ncurrent->z = 3.0e-6;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 1.0e-5;\nprevious->y = -2.0e-5;\nprevious->z = 3.0e-5;\nprevious_time_s = 10.0;\ncurrent->x = 2.0e-5;\ncurrent->y = -1.0e-5;\ncurrent->z = 0.0;\ncurrent_time_s = 10.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = -1.0e-3;\nprevious->y = 1.0e-3;\nprevious->z = -1.0e-3;\nprevious_time_s = 100.0;\ncurrent->x = -1.0e-3;\ncurrent->y = 1.0e-3;\ncurrent->z = -1.0e-3;\ncurrent_time_s = 100.001;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 0.1;\nprevious->y = 0.2;\nprevious->z = 0.3;\nprevious_time_s = 0.0;\ncurrent->x = 0.1;\ncurrent->y = 0.2;\ncurrent->z = 0.3;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 5.0;\ncurrent->x = 1.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time_s = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time_s = 1.0e-12;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 1.0e-6;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = -1.0;\ncurrent->x = 2.0e-6;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time_s = -0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous = NULL;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 2.0;\nprevious->z = 3.0;\nprevious_time_s = 0.0;\ncurrent = NULL;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 2.0;\nprevious->z = 3.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;\nrate_t_s = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = NAN;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = INFINITY;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = -INFINITY;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = NAN;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = -INFINITY;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = NAN;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 1.0;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 2.0;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0e-6;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time_s = 1.0;",
+    "previous->x = 1.0e-6;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 1.0;\ncurrent->x = 3.0e-6;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time_s = 2.0;",
+    "previous->x = 3.0e-6;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 2.0;\ncurrent->x = 6.0e-6;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time_s = 3.0;"
+   ]
+  }
+ ]
+}

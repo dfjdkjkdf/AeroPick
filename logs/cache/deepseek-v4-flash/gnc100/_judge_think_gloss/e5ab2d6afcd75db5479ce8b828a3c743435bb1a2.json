@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "达到 required=3 后 evidence 应饱和在 3，额外合格周期不继续增加到 4。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "零四元数为退化遥测，应锁存 FAULT 并保持进入故障前的 good=2，后续合格周期不得恢复递增到 3。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "required=20 时 good 应封顶在 20，已达 required 后的合格周期不得递增到 21。"
+  }
+ ],
+ "pick": "A"
+}

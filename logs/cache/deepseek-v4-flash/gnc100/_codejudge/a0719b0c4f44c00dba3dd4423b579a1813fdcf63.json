@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly handles malformed wheels via adcs_wheel_momentum, detects target changes to enter RAMP and transitions to BIAS upon reaching the target, and implements the specified PI/P control, integral clamping, freeze logic, and saturation mask for PI modes.",
+ "_usage": {
+  "prompt": 18114,
+  "completion": 23868
+ }
+}

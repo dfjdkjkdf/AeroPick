@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定输入指针为NULL时返回ADCS_E_NULL(1)且失败时输出清零，实现A正确返回1并清零，实现B崩溃。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同样因spacecraft_residual_nm为NULL触发空指针校验，需求要求返回ADCS_E_NULL并清零，实现A符合契约，实现B崩溃。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9328,
+  "completion": 2500
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C正确校验配置与使能，禁用时复位滤波器，使用adcs_bdot_update处理非递增时间，并严格按QUIET/ACTIVE/FAULT表转换及发布速率范数与能量。",
+ "_usage": {
+  "prompt": 12194,
+  "completion": 24970
+ }
+}

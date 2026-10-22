@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B正确校验所有无效条件并锁存FAULT、在禁用时仍计算并发布角度/速率/能量，且按表处理SETTLED与SLEW证据增减。",
+ "_usage": {
+  "prompt": 10936,
+  "completion": 14039
+ }
+}

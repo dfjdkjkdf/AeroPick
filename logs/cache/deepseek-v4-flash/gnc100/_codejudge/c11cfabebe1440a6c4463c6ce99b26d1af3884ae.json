@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B preserves accepted history and updates state mode on rejects/faults, while A incorrectly outputs the current field as accepted on REJECT/FAULT and never updates ms_state.mode.",
+ "_usage": {
+  "prompt": 9913,
+  "completion": 24042
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "输入为NULL，需求明确规定触发空指针失败分支，失败契约强制要求correction_norm输出INFINITY。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "第二行全零违反“首两行非零”约束并触发退化检查，依失败契约correction_norm应输出INFINITY。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同测试2，第二行为零向量属几何退化，依需求失败输出应为INFINITY。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同测试2，第二行为零向量属几何退化，依需求失败输出应为INFINITY。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "同测试2，第二行为零向量属几何退化，依需求失败输出应为INFINITY。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "第一行全零违反非零约束且触发退化/空值检查，依失败契约correction_norm应为INFINITY。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9237,
+  "completion": 3292
+ }
+}

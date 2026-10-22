@@ -1,0 +1,168 @@
+{
+ "key": "df1b93691455c2515bf455bc8d7a9467c3328fbf",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "body_vectors = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "predicted_body_vectors = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*weights = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rms_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 32;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 1;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = 1.0; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "*weights = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = 1.0; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "body_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;",
+    "predicted_body_vectors[1].x = 0.0; predicted_body_vectors[1].y = 1.0; predicted_body_vectors[1].z = 0.0;",
+    "*weights = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 1;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = -1.0; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "*weights = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1;",
+    "body_vectors[0].x = 0.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = 1.0; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "*weights = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "*weights = -1.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = 1.0; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "*weights = 0.0;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = 1.0; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 3;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = 1.0; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "body_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;",
+    "predicted_body_vectors[1].x = 0.0; predicted_body_vectors[1].y = 1.0; predicted_body_vectors[1].z = 0.0;",
+    "body_vectors[2].x = 0.0; body_vectors[2].y = 0.0; body_vectors[2].z = 1.0;",
+    "predicted_body_vectors[2].x = 0.0; predicted_body_vectors[2].y = 0.0; predicted_body_vectors[2].z = 1.0;",
+    "*weights = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = 1.0; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "body_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;",
+    "predicted_body_vectors[1].x = 0.0; predicted_body_vectors[1].y = 1.0; predicted_body_vectors[1].z = 0.0;",
+    "*weights = 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = 1.0; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "body_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;",
+    "predicted_body_vectors[1].x = 0.0; predicted_body_vectors[1].y = 1.0; predicted_body_vectors[1].z = 0.0;",
+    "*weights = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = 0.9999999999999999; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "*weights = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = -0.9999999999999999; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "*weights = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = INFINITY; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "*weights = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;",
+    "body_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;",
+    "predicted_body_vectors[0].x = NAN; predicted_body_vectors[0].y = 0.0; predicted_body_vectors[0].z = 0.0;",
+    "*weights = 1.0;"
+   ]
+  }
+ ]
+}

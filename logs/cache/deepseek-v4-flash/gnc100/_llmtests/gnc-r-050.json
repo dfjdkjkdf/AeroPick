@@ -1,0 +1,167 @@
+{
+ "key": "4840b034faf8e6dc3b48a070eafec43a3165feb5",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 2.0; inertial->m[2][2] = 3.0;\ninertial->m[0][1] = 0.1; inertial->m[0][2] = 0.2; inertial->m[1][2] = 0.3;\ninertial->m[1][0] = 0.1; inertial->m[2][0] = 0.2; inertial->m[2][1] = 0.3;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = 0.7071067811865476; q_bi->x = 0.7071067811865476; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = 0.5; q_bi->x = 0.5; q_bi->y = 0.5; q_bi->z = 0.5;\ninertial->m[0][0] = 2.0; inertial->m[1][1] = 4.0; inertial->m[2][2] = 6.0;\ninertial->m[0][1] = -0.5; inertial->m[1][0] = -0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 0.0; inertial->m[1][1] = 0.0; inertial->m[2][2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0e-300; inertial->m[1][1] = 1.0e-300; inertial->m[2][2] = 1.0e-300;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0e300; inertial->m[1][1] = 1.0e300; inertial->m[2][2] = 1.0e300;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;\ninertial->m[0][1] = 1.0e-15; inertial->m[1][0] = -1.0e-15;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;\ninertial->m[0][1] = 1.0e-8; inertial->m[1][0] = -1.0e-8;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 0.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 1.0e-13; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 1.0e-6; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 2.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "q_bi->w = 1.0e-13; q_bi->x = 1.0e-13; q_bi->y = 1.0e-13; q_bi->z = 1.0e-13;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi = NULL;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0;\ninertial = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;\nbody = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;\ntrace = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;\nsymmetry_error = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = NAN; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = INFINITY; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = NAN; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = INFINITY; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = -1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[1][1] = -0.001; inertial->m[0][0] = 1.0; inertial->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 2.0; inertial->m[2][2] = 3.0;",
+    "q_bi->w = 0.7071067811865476; q_bi->x = 0.7071067811865476; q_bi->y = 0.0; q_bi->z = 0.0;",
+    "q_bi->w = 0.5; q_bi->x = 0.5; q_bi->y = 0.5; q_bi->z = 0.5;",
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "q_bi->w = 1.0; q_bi->x = 0.0; q_bi->y = 0.0; q_bi->z = 0.0;\ninertial->m[0][0] = 1.0; inertial->m[1][1] = 1.0; inertial->m[2][2] = 1.0;\ninertial->m[0][1] = 0.25; inertial->m[1][0] = 0.25;",
+    "inertial->m[0][1] = -0.25; inertial->m[1][0] = -0.25;",
+    "inertial->m[1][2] = 0.5; inertial->m[2][1] = -0.5;",
+    "inertial->m[0][2] = 0.0; inertial->m[2][0] = 0.0;"
+   ]
+  }
+ ]
+}

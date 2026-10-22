@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确将 usable 输出为已验证观测数，并符合 disable 优先、HOLD/WAIT/FAULT 计数及几何判据；A 把 usable 错设为布尔值且禁用处理顺序不符。",
+ "_usage": {
+  "prompt": 11712,
+  "completion": 13223
+ }
+}

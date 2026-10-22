@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "第2次调用从IDLE开始ON且on_cycles=1，该ON拍完成后应进入REST，elapsed清零，rest_target=rest_cycles=1，A符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "第3次调用是第3个ON拍，应输出ON模式且elapsed=3，完成后状态才转REST；A符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "第2次调用是第2个ON拍，应输出ON模式且elapsed=2，完成后状态才转REST；A符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "首次ON调用计算出的dipole被max_dipole饱和，saturation_mask非零，应使saturated_on_cycles从0增为1；A（及C）符合。"
+  }
+ ],
+ "pick": "A"
+}

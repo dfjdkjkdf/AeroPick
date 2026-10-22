@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "q 为 NULL 属于空指针失败，且 out 存在，需求要求失败时写入单位四元数，out.w 应为 1。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "w 为 NULL 属于空指针失败，且 out 存在，需求要求失败时写入单位四元数，out.w 应为 1。"
+  }
+ ],
+ "pick": "A"
+}

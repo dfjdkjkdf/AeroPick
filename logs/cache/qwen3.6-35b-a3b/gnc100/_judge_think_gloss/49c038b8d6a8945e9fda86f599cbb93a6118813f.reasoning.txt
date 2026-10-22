@@ -1,0 +1,102 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task**: I am an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based *only* on the provided requirements. I'm given test cases where outputs differ, and I must determine which implementation is correct for each test, then pick the overall best one. The output must be a specific JSON format.
+
+2.  **Analyze the Requirements**:
+    *   **Function**: `adcs_pilot_coil_thermal_step` (inferred from context and signature at the end).
+    *   **Core Logic**: "Three-axis magnetic-coil thermal propagation. Compute per-axis current and Joule power, subtract conductive loss to ambient, integrate the temperature vector, and report total electrical power."
+    *   **Normative Math**:
+        *   For axis `i`: `I_i = V_i / R_i`
+        *   `P_i = V_i^2 / R_i`
+        *   `T_i_next = T_i + dt * (P_i - (T_i - ambient) / thermal_resistance) / thermal_capacity`
+        *   Return `total_power = sum_i(P_i)`
+    *   **Binding**: X/0 -> voltage.x, resistance.x -> current.x, power.x. Same for Y/1 and Z/2.
+    *   **Status Contract**:
+        *   NULL pointer -> `ADCS_E_NULL` (checked first)
+        *   `ADCS_E_RANGE` if: any temp, voltage, resistance component or ambient is nonfinite; any resistance <= 0; thermal_capacity or thermal_resistance nonfinite or <= 0; dt nonfinite or < 0.
+    *   **Input/Output Parameters** (from signature):
+        `const adcs_vec3_t *temperature`, `const adcs_vec3_t *voltage`, `const adcs_vec3_t *resistance`, `double thermal_capacity`, `double thermal_resistance`, `double ambient`, `double dt`, `adcs_vec3_t *next_temperature`, `adcs_vec3_t *current`, `adcs_vec3_t *power`, `double *total_power`
+        Returns `adcs_status_t`.
+
+3.  **Analyze Test Case 1**:
+    *   **Inputs**:
+        *   `temperature`: {300.0, 300.0, 300.0}
+        *   `voltage`: {12.0, 12.0, 12.0}
+        *   `resistance`: {4.0, 4.0, 4.0}
+        *   `thermal_capacity`: 100.0
+        *   `thermal_resistance`: 10.0
+        *   `ambient`: 293.0
+        *   `dt`: 1.0
+        *   Outputs pre-initialized in prompt? Wait, the prompt says "未赋值的量为 0；共调用 1 次...". It lists assignments before call 1, but some look like they are describing what the code *should* do or maybe just setting up variables. Actually, it says:
+          `next_temperature->x = temperature->x; ...` etc. This looks like the test harness setup or maybe part of the prompt confusingly listing what A/B compute? No, it says "第1次调用前赋值：... next_temperature->x = temperature->x; ...". This might be irrelevant initialization or just stating initial state. The key is the inputs to the function.
+        *   Let's calculate expected outputs manually using the normative math.
+    *   **Calculations for Axis i (all axes identical here)**:
+        *   $V = 12.0$, $R = 4.0$
+        *   $I = V/R = 12.0 / 4.0 = 3.0$
+        *   $P = V^2 / R = 144.0 / 4.0 = 36.0$
+        *   $T_{initial} = 300.0$, $ambient = 293.0$, $R_{th} = 10.0$, $C_{th} = 100.0$, $dt = 1.0$
+        *   Conductive loss term: $(T_i - ambient) / thermal\_resistance = (300.0 - 293.0) / 10.0 = 7.0 / 10.0 = 0.7$
+        *   Net heat generation rate: $P_i - loss = 36.0 - 0.7 = 35.3$
+        *   Temperature change: $dt \times (net\_heat) / C_{th} = 1.0 \times 35.3 / 100.0 = 0.353$
+        *   $T_{next} = T_i + \Delta T = 300.0 + 0.353 = 300.353$
+        *   $total\_power = P_x + P_y + P_z = 36.0 + 36.0 + 36.0 = 108.0$
+    *   **Compare with Outputs**:
+        *   A: `next_temperature.y` = 300.035, `next_temperature.z` = 300.035
+        *   B: `next_temperature.y` = 300.353, `next_temperature.z` = 300.353
+        *   My calculation gives 300.353. So B matches the normative definition exactly. A seems to have a decimal shift error (0.353 vs 0.035), likely dividing by 1000 somewhere or misplacing a decimal.
+    *   **Check Status Contract**: All inputs are finite, resistances > 0, capacities > 0, dt >= 0. So return should be `ADCS_OK`. Both presumably handle this, but the question focuses on numerical output.
+    *   **Conclusion for Test 1**: B is correct. A has a calculation bug.
+
+4.  **Synthesize Reasoning**:
+    *   Need to follow the prompt's instruction: "按需求逐条推理这个输入应走的分支和应得到的结果（数值可近似估算，看符号、量级、是否清零/置默认值、状态/模式、返回码）。"
+    *   Calculate expected values step-by-step.
+    *   Point out that B's result (300.353) matches the formula $T_i + dt \times (P_i - (T_i - ambient)/R_{th}) / C_{th} = 300 + 1 \times (36 - 0.7)/100 = 300.353$.
+    *   A's result (300.035) deviates by a factor of 10, indicating a bug.
+    *   Therefore, B is correct for Test 1.
+    *   Since only Test 1 is provided, the pick is B.
+
+    Structure the JSON output carefully.
+    Fields required: `tests` (array of objects with `id`, `correct`, `reason`), `pick` ("A" or "B").
+    Reason should be concise.
+
+    Draft Reason: 根据需求公式计算，单轴焦耳热功率 $P=12^2/4=36W$，散热项 $(300-293)/10=0.7W$，温升 $\Delta T=1.0\times(36-0.7)/100=0.353K$，故下一时刻温度应为 $300.353$。实现B输出正确，实现A存在数量级误差（小数点错位），故B符合需求。
+
+    Check constraints: "只依据需求判断", "只输出JSON".
+    Format:
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "B",
+          "reason": "根据需求公式计算，单轴功率P=36W，散热项0.7W，温升dt*(36-0.7)/100=0.353，目标温度应为300.353。实现B结果精确匹配，实现A存在数量级误差，故B符合需求。"
+        }
+      ],
+      "pick": "B"
+    }
+    ```
+    Double check the prompt's test description: "测试 1（类型 sequence；未赋值的量为 0；共调用 1 次，比较最后一次调用后的输出）". The ID should be 1.
+    Everything aligns. I will generate the JSON. 
+    One minor point: The prompt says "next_temperature.y：A=300.035；B=300.353". My calculation confirms 300.353.
+    The reason is solid.
+    Output matches requirement.✅
+    Proceed. 
+    Self-Correction/Verification during thought:
+    - Check formula: `T_i_next=T_i+dt*(P_i-(T_i-ambient)/thermal_resistance)/thermal_capacity`
+    - Values: T=300, dt=1, P=36, ambient=293, R_th=10, C_th=100.
+    - (300-293)/10 = 0.7
+    - 36 - 0.7 = 35.3
+    - 35.3 / 100 = 0.353
+    - 300 + 0.353 = 300.353. Correct.
+    - A gives 300.035. Clearly wrong.
+    - JSON structure matches request.
+    - All good. 
+    Output generation. 
+    `{ "tests": [{ "id": 1, "correct": "B", "reason": "依据需求公式计算：单轴功率P=12²/4=36W，散热项(300-293)/10=0.7W，温升ΔT=1.0×(36-0.7)/100=0.353K，故下一时刻温度应为300.353。实现B结果完全吻合，实现A存在数量级误差，因此B符合需求。" }], "pick": "B" }`
+    Matches perfectly.✅
+    Final Output Generation. 
+    *(Self-Correction/Refinement during drafting)*: I'll make sure the JSON is strictly valid and follows the exact keys requested. The prompt asks for `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`.
+    All set. 
+    Output matches response. 
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "速率范数超过 stationary_limit，应拒绝并清窗，has_previous 不应为1。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "第二次样本变化超过 max_sample_delta，应拒绝并清窗，has_previous 应清零。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "速率范数超过 stationary_limit，应拒绝并清窗，has_previous 应为0。"
+  }
+ ],
+ "pick": "A"
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "C 返回 ADCS_OK 并给出非默认输出，A/B 错误返回 RANGE。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "输入有效，C 返回 ADCS_OK；A/B 错误返回 RANGE。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "输入有效，C 返回 ADCS_OK；A/B 错误返回 RANGE。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "边界输入仍有效，C 返回 ADCS_OK；A/B 错误返回 RANGE。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "空指针应返回 ADCS_E_NULL，失败默认 loss=INFINITY、worst_index=SIZE_MAX，C 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "空指针应返回 ADCS_E_NULL，失败默认 loss=INFINITY、worst_index=SIZE_MAX，C 符合。"
+  }
+ ],
+ "pick": "C"
+}

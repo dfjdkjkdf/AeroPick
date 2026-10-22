@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly zeroes commanded rate and applied step at HOLD after settling, while B continues applying a nonzero step in HOLD, violating the settle/HOLD requirement.",
+ "_usage": {
+  "prompt": 13171,
+  "completion": 35123
+ }
+}

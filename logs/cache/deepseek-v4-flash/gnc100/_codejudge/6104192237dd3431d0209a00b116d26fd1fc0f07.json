@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly resets the rate before accelerating on axis reversal and holds current attitude on disable, while B violates the specified order by accelerating before resetting and emits identity on disable.",
+ "_usage": {
+  "prompt": 13530,
+  "completion": 32224
+ }
+}

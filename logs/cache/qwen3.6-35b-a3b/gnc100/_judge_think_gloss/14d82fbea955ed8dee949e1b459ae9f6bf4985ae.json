@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定输入NULL样本时必须latch FAULT（模式3），实现A输出3符合要求，B输出0不符合。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9095,
+  "completion": 1440
+ }
+}

@@ -1,0 +1,138 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a provided requirement, a set of test cases with divergent outputs, and context code. I must output a JSON object with my judgment for each test and a final pick.
+
+2.  **Analyze the Requirement**:
+    *   **Function**: Magnetic reaction-wheel momentum unloading (`adcs_momentum_unload_dipole` or similar, based on context).
+    *   **Operational context**: Reduces stored wheel momentum using magnetic torque, respecting dipole limit.
+    *   **Input interface**: `momentum_error_nms` (finite body vector), `field_body_t` (finite body vector), `torque_gain_s_inv >= 0`, `max_dipole_a_m2 >= 0`. Outputs: `command` (dipole), `achievable_torque_nm`.
+    *   **Mathematical definition**: `tau_d = -gain * h_err`. `tau = m x B`. Minimum-norm dipole for component perpendicular to B: `m = (B x tau_d) / ||B||^2`. If `||m|| > max_dipole`, scale uniformly. Then `tau = m x B`.
+    *   **Required processing**: Validate, compute projection solution, apply norm saturation (not axis clipping), set `saturated_axes=7` when scaled or `0` otherwise.
+    *   **Output contract**: Return `ADCS_OK` with dipole and physically achievable torque. Both outputs zero on failure.
+    *   **Boundary and failure handling**:
+        *   Null pointers -> `ADCS_E_NULL` (pointer checks take precedence over all other checks).
+        *   Invalid gain/limit/vector -> `ADCS_E_RANGE`.
+        *   `||B|| <= 1e-12 T` -> `ADCS_E_DEGENERATE`.
+    *   **Traceability**: spacecraft magnetic momentum dumping via cross-product pseudoinverse.
+
+3.  **Analyze the Context Code**:
+    The provided context includes a reference implementation of `adcs_momentum_unload_dipole`:
+    ```c
+    adcs_status_t adcs_momentum_unload_dipole(const adcs_vec3_t *herr, const adcs_vec3_t *field,
+                                              double gain, double maxdip, adcs_actuator_command_t *cmd,
+                                              adcs_vec3_t *torque) {
+        adcs_vec3_t desired, cross;
+        double b2, scale, n;
+        if ((herr == NULL) || (field == NULL) || (cmd == NULL) || (torque == NULL))
+            return ADCS_E_NULL;
+        if ((!adcs_is_finite_vec3(herr)) || (!adcs_is_finite_vec3(field)) || (!isfinite(gain)) ||
+            (!isfinite(maxdip)) || (gain < 0.0) || (maxdip < 0.0))
+            return ADCS_E_RANGE;
+        b2 = adcs_vec3_dot(field, field);
+        if (b2 <= ADCS_EPS_NORM * ADCS_EPS_NORM) { // 1e-24
+            cmd->command = (adcs_vec3_t){0, 0, 0};
+            cmd->saturated_axes = 0U;
+            *torque = cmd->command;
+            return ADCS_E_DEGENERATE;
+        }
+        desired = adcs_vec3_scale(herr, -gain);
+        cross = adcs_vec3_cross(field, &desired);
+        cmd->command = adcs_vec3_scale(&cross, 1.0 / b2);
+        n = adcs_vec3_norm(&cmd->command);
+        cmd->saturated_axes = 0U;
+        if (n > maxdip) {
+            scale = maxdip / n;
+            cmd->command = adcs_vec3_scale(&cmd->command, scale);
+            cmd->saturated_axes = 7U;
+        }
+        *torque = adcs_vec3_cross(&cmd->command, field);
+        return ADCS_OK;
+    }
+    ```
+    This matches the requirement exactly. It handles null pointers first, then range/finiteness, then degeneracy, then computes, saturates by norm, sets flags, and returns status. On failure (NULL/RANGE/DEGENERATE), it should ideally zero outputs before returning error, though the requirement says "Both outputs zero on failure." The reference implementation zeros `cmd->command` and `cmd->saturated_axes` on DEGENERATE, but doesn't explicitly zero on NULL/RANGE before returning. However, the prompt says "Both outputs zero on failure" is part of the Output contract. I will assume correct implementations zero outputs on failure.
+
+4.  **Analyze Test Cases**:
+    All tests have `__crash__: A=1; B=(no output)` and `__ret__: A=(no output); B=1`.
+    Wait, `__crash__: 1` means the implementation crashed or timed out. `__ret__` shows the return value.
+    For Test 1: Inputs are all NULL. `momentum_error_nms=NULL`, `field_body_t=NULL`, `command=NULL`, `achievable_torque_nm=NULL`.
+    According to requirement: "Null -> ADCS_E_NULL (pointer checks take precedence over all other checks)."
+    Expected behavior: Return `ADCS_E_NULL` (which is 1). Do not crash. Zero outputs if possible/safe, but since pointers are NULL, it can't write to them. So just return 1.
+    Implementation A: Crashes (`__crash__: 1`). This is a clear violation of robustness/null-pointer handling. It tries to dereference NULL pointers before checking them, or crashes during execution.
+    Implementation B: Returns 1 (`__ret__: 1`). Outputs are 0 (as expected/defaulted by harness or safe fallback). This matches the requirement perfectly.
+
+    Tests 2, 3, 4 follow the exact same pattern: some pointer is NULL or invalid/non-null garbage address, leading to A crashing and B returning 1.
+    Test 2: `momentum_error_nms=(adcs_vec3_t*)0x1` (invalid pointer), others NULL.
+    Test 3: `momentum_error_nms=(adcs_vec3_t*)0x1`, `field_body_t=(adcs_vec3_t*)0x2`, others NULL.
+    Test 4: Adds `command=(adcs_actuator_command_t*)0x3`, `achievable_torque_nm=NULL`.
+    In all these, at least one required pointer is NULL or invalid. The requirement says pointer checks take precedence. A crashes, meaning it lacks proper null/valid pointer checks or dereferences prematurely. B returns 1 correctly.
+
+    Let's verify the return code: `ADCS_E_NULL` is defined as 1 in the enum. So returning 1 is correct.
+    The outputs being 0 is also consistent with "Both outputs zero on failure" (though with NULL pointers, the harness might just report initial/default values, or B handles it safely).
+
+    Therefore, for all four tests, B is correct, A is incorrect (crashes).
+
+5.  **Formulate Reasoning per Test**:
+    *   **Test 1**: All pointers NULL. Requirement mandates `ADCS_E_NULL` (1) with precedence over other checks. A crashes (dereferences NULL), violating robustness. B returns 1 correctly. -> B correct.
+    *   **Test 2**: `momentum_error_nms` points to 0x1 (invalid), others NULL. Same logic. A crashes, B returns 1. -> B correct.
+    *   **Test 3**: Two invalid pointers, others NULL. Same logic. A crashes, B returns 1. -> B correct.
+    *   **Test 4**: Three invalid pointers, `achievable_torque_nm` NULL. Same logic. A crashes, B returns 1. -> B correct.
+
+    All tests point to B being the only valid implementation regarding null/invalid pointer handling.
+
+6.  **Construct JSON Output**:
+    Need to follow the exact format: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will translate the reasoning into concise sentences as requested.
+
+    Test 1: B正确。需求明确要求空指针检查优先并返回ADCS_E_NULL(1)，A崩溃属非法越界访问，B正确返回1且无异常。
+    Test 2: B正确。同测试1逻辑，输入含非法指针及空指针，A崩溃违规，B安全返回错误码1。
+    Test 3: B正确。多路非法指针与空指针并存，A崩溃违反鲁棒性要求，B按规范返回1。
+    Test 4: B正确。包含命令与输出指针为空/非法，A崩溃，B正确拦截并返回1。
+    Pick: B
+
+    Check constraints: "只依据需求判断", "逐条推理", "只输出JSON".
+    The reasoning matches the requirement strictly. The reference code in context also does null check first, confirming B's behavior aligns with standard/correct implementation patterns implied by the spec. A clearly fails basic safety checks.
+
+    One minor point: The prompt says `__crash__: 1` means crash/timeout. `__ret__: 1` means return value is 1. `ADCS_E_NULL` is 1. So B returns 1. Correct.
+    All tests are identical in nature regarding pointer validity.
+    I will generate the JSON now. 
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "需求明确空指针检查优先应返回ADCS_E_NULL(1)，A崩溃属非法解引用，B安全返回1符合规范。"},
+        {"id": 2, "correct": "B", "reason": "输入含非法地址及空指针，A崩溃违反鲁棒性要求，B正确拦截并返回错误码1。"},
+        {"id": 3, "correct": "B", "reason": "多路非法/空指针输入下A崩溃，B按需求优先进行指针合法性校验并返回1，行为合规。"},
+        {"id": 4, "correct": "B", "reason": "命令与扭矩输出指针为空/非法，A崩溃，B正确执行空指针检查并返回1，符合失败处理契约。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Double check format: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    Matches exactly.
+    All reasoning is tight and directly references the requirement's "pointer checks take precedence" and "Null -> ADCS_E_NULL".
+    Ready. 
+    Output matches response. 
+    Self-Correction/Refinement during thought: 
+    Should I mention that outputs are zero? The requirement says "Both outputs zero on failure." The harness reports 0, which is fine. The key differentiator is crash vs return 1. I'll keep reasons concise.
+    The ID in JSON should be integer as per example `{"id":测试编号}`.
+    All good. 
+    Proceed. 
+    Output Generation. 
+    `[Done]` 
+    *Self-Correction/Verification during generation prep*:
+    Check enum: `ADCS_E_NULL = 1`. Correct.
+    Check requirement: "Null -> ADCS_E_NULL (pointer checks take precedence over all other checks)." Correct.
+    Check test data: `__crash__: A=1` means A crashes. `__ret__: B=1` means B returns 1.
+    Conclusion stands firmly on B.
+    JSON structure matches request.
+    Output matches exactly. 
+    Proceeds. 
+    [Output Generation] -> *See response.* 
+    *(Note: I will ensure the JSON is strictly formatted as requested.)* 
+    `{ "tests": [ { "id": 1, "correct": "B", "reason": "需求明确要求空指针检查优先并返回ADCS_E_NULL(1)，A崩溃属非法解引用，B安全返回1符合规范。" }, ... ] }` 
+    All steps verified.✅
+    Output matches. 
+    [Final Check of the Prompt]: "只输出 JSON：..."
+    I will output only the JSON string. No extra text. 
+    Proceeds. 
+    *(Done.)*

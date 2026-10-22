@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求行序为 [primary, third=cross(second,primary), second]，此处应为单位阵，A/C 的 DCM 符合而 B 不符。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "此处应为 row0=y,row1=z,row2=x，A/C 的 DCM 符合而 B 不符。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "A 的 DCM 行序正确且 separation_sine=0.882955 为两观测夹角正弦；B 的 third 非单位向量，C 的 sine 未除以 secondary 模。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "A 的 DCM 与 sine=0.816497（两观测夹角正弦）符合需求；B 的 DCM 不正交，C 的 sine 偏大。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "A 的 DCM 与 sine=0.95119（两观测夹角正弦）符合需求；B 的 DCM 不正交，C 的 sine 偏大。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "1e-6 大于 ADCS_EPS_NORM，不按零输入退化；A 输出单位阵符合需求，B 行序错误。"
+  }
+ ],
+ "pick": "A"
+}

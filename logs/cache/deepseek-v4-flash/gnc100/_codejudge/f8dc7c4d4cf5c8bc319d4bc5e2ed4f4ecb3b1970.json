@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 先完成所有输入校验再进行计算，确保任何非法输入时输出保持初始化值，并直接返回 adcs_wheel_momentum 的状态。",
+ "_usage": {
+  "prompt": 9436,
+  "completion": 12600
+ }
+}

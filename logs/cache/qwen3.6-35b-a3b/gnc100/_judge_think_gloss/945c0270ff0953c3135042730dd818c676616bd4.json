@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定轴向量非有限(NAN)或speed_limit≤0时必须返回ADCS_E_RANGE(2)，实现A返回2完全匹配，实现B返回4(ADCS_E_NOT_FINITE)违背了需求指定的错误码映射。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 8943,
+  "completion": 2390
+ }
+}

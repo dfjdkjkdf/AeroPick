@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确处理 NULL 时对可用输出清零，按顺序拒绝无效计数、权重和样本，并正确计算加权归一化方向及 resultant。",
+ "_usage": {
+  "prompt": 9686,
+  "completion": 5181
+ }
+}

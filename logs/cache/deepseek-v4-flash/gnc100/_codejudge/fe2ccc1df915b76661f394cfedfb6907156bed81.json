@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly normalizes the axis, integrates and clamps speed with the correct saturated flag, and handles all null/finite/range cases as specified.",
+ "_usage": {
+  "prompt": 9263,
+  "completion": 25317
+ }
+}

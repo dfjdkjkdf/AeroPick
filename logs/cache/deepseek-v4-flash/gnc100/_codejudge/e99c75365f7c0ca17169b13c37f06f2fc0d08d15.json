@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确初始化局部速率向量以避免未初始化/NaN 传播，并完整满足 NULL、有限性、错误传播及清零输出等需求；B 将未初始化的 *rate 传入滤波器，C 遗漏了 previous 的 NULL/有限性检查。",
+ "_usage": {
+  "prompt": 9905,
+  "completion": 24666
+ }
+}

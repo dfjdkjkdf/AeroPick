@@ -1,0 +1,1 @@
+{"prompt_sha1": "eb347a466494feda26a937202e92d9119472507a", "discrete": [["body_primary", null, ["0", "1"]], ["body_secondary", null, ["0", "1"]], ["ref_primary", null, ["0", "1"]], ["ref_secondary", null, ["0", "1"]], ["check_body", null, ["0", "1"]], ["check_ref", null, ["0", "1"]]], "continuous": [["c_bi", [3, 3], -1.0, 1.0], ["alignment", null, -1.0, 1.0]], "outputs": []}

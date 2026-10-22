@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "实现C严格遵循了需求中失败时输出无穷大及非有限/退化条件返回ADCS_E_DEGENERATE的明确约定，且数学计算与边界处理完全匹配。",
+ "_usage": {
+  "prompt": 10385,
+  "completion": 2341
+ }
+}

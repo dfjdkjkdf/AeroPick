@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A validates axis finiteness/normalization plus inertia and speed, computes energy and momentum correctly, and zeroes all outputs on adcs_wheel_momentum failure, best matching the failure-zeroing requirement.",
+ "_usage": {
+  "prompt": 9417,
+  "completion": 23333
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "需求明确规定输入为NULL时返回ADCS_E_NULL，且失败情况下的输出契约为infinity，C输出inf符合需求。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "body_b为NULL触发空指针校验，按需求应报ADCSE_NULL并输出失败值inf，C正确。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "inertial_a为NULL触发空指针校验，按需求应报ADCSE_NULL并输出失败值inf，C正确。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "inertial_b为NULL触发空指针校验，按需求应报ADCSE_NULL并输出失败值inf，C正确。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "未赋值向量默认为零向量，其欧氏范数0<=1e-12触发ADCSE_DEGENERATE，按需求失败输出应为inf，C正确。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "仅body_a有效，其余向量为零导致范数<=1e-12触发ADCSE_DEGENERATE，按需求失败输出应为inf，C正确。"
+  }
+ ],
+ "pick": "C",
+ "_usage": {
+  "prompt": 9226,
+  "completion": 2498
+ }
+}

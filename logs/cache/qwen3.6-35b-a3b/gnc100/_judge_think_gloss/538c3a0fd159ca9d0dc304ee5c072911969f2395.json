@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求规定任意空指针返回ADCS_E_NULL(1)，A正确返回1且未崩溃，B/C异常。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同测试1，空指针参数校验与错误码返回符合需求。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试1，空指针参数校验与错误码返回符合需求。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测试1，空指针参数校验与错误码返回符合需求。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "需求明确规定非有限输入返回ADCS_E_RANGE(2)，A/B符合，C返回ADCS_E_NOT_FINITE(4)违背需求。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "同测试5，非有限磁场向量输入的错误码返回符合需求。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9921,
+  "completion": 2918
+ }
+}

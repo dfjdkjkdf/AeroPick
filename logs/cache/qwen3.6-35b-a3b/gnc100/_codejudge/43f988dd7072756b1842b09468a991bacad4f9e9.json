@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B严格遵循需求，正确调用指定函数，完整映射NULL/RANGE/DEGENERATE错误码，并在所有失败路径清零输出，逻辑严密符合航天GNC规范。",
+ "_usage": {
+  "prompt": 9884,
+  "completion": 4289
+ }
+}

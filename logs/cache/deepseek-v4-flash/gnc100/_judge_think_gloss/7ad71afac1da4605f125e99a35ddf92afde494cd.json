@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "第3次 enable=0 时需求规定 Disable clears everything，应回到 IDLE，A=0 符合，B 置 FAULT 不符合。"
+  }
+ ],
+ "pick": "A"
+}

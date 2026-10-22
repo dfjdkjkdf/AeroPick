@@ -1,0 +1,127 @@
+{
+ "key": "91a2c9205e1030004ce91a0ae176d9749c9bb886",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "axes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "axes[0].x = 1.0/sqrt(3.0); axes[0].y = 1.0/sqrt(3.0); axes[0].z = 1.0/sqrt(3.0);\naxes[1].x = 1.0/sqrt(3.0); axes[1].y = -1.0/sqrt(3.0); axes[1].z = -1.0/sqrt(3.0);\naxes[2].x = -1.0/sqrt(3.0); axes[2].y = 1.0/sqrt(3.0); axes[2].z = -1.0/sqrt(3.0);\naxes[3].x = -1.0/sqrt(3.0); axes[3].y = -1.0/sqrt(3.0); axes[3].z = 1.0/sqrt(3.0);\namplitude_nm = 5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "axes[0].x = 1.0/sqrt(3.0); axes[0].y = 1.0/sqrt(3.0); axes[0].z = 1.0/sqrt(3.0);\naxes[1].x = 1.0/sqrt(3.0); axes[1].y = -1.0/sqrt(3.0); axes[1].z = -1.0/sqrt(3.0);\naxes[2].x = -1.0/sqrt(3.0); axes[2].y = 1.0/sqrt(3.0); axes[2].z = -1.0/sqrt(3.0);\naxes[3].x = -1.0/sqrt(3.0); axes[3].y = -1.0/sqrt(3.0); axes[3].z = 1.0/sqrt(3.0);\namplitude_nm = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "axes[0].x = 1.0/sqrt(3.0); axes[0].y = 1.0/sqrt(3.0); axes[0].z = 1.0/sqrt(3.0);\naxes[1].x = 1.0/sqrt(3.0); axes[1].y = -1.0/sqrt(3.0); axes[1].z = -1.0/sqrt(3.0);\naxes[2].x = -1.0/sqrt(3.0); axes[2].y = 1.0/sqrt(3.0); axes[2].z = -1.0/sqrt(3.0);\naxes[3].x = -1.0/sqrt(3.0); axes[3].y = -1.0/sqrt(3.0); axes[3].z = 1.0/sqrt(3.0);\namplitude_nm = 1e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "spacecraft_residual_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel_torque_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "amplitude_nm = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "amplitude_nm = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "amplitude_nm = -INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes[0].x = NAN; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = INFINITY; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "axes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = 1.0 + 1e-14;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "axes[0].x = 0.9999999999999999; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes[0].x = 0.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "axes[0].x = 1.0/sqrt(3.0); axes[0].y = 1.0/sqrt(3.0); axes[0].z = 1.0/sqrt(3.0);\naxes[1].x = 1.0/sqrt(3.0); axes[1].y = -1.0/sqrt(3.0); axes[1].z = -1.0/sqrt(3.0);\naxes[2].x = -1.0/sqrt(3.0); axes[2].y = 1.0/sqrt(3.0); axes[2].z = -1.0/sqrt(3.0);\naxes[3].x = -1.0/sqrt(3.0); axes[3].y = -1.0/sqrt(3.0); axes[3].z = 1.0/sqrt(3.0);\namplitude_nm = 1.0;",
+    "amplitude_nm = 0.0;",
+    "amplitude_nm = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = 1.0;\nspacecraft_residual_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "axes[0].x = 0.5773502691896257; axes[0].y = 0.5773502691896257; axes[0].z = 0.5773502691896257;\naxes[1].x = 0.5773502691896257; axes[1].y = -0.5773502691896257; axes[1].z = -0.5773502691896257;\naxes[2].x = -0.5773502691896257; axes[2].y = 0.5773502691896257; axes[2].z = -0.5773502691896257;\naxes[3].x = -0.5773502691896257; axes[3].y = -0.5773502691896257; axes[3].z = 0.5773502691896257;\namplitude_nm = 100.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes[0].x = 0.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 0.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 0.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "axes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = DBL_MIN;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "axes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\naxes[3].x = 0.0; axes[3].y = 0.0; axes[3].z = 0.0;\namplitude_nm = DBL_MAX;"
+   ]
+  }
+ ]
+}

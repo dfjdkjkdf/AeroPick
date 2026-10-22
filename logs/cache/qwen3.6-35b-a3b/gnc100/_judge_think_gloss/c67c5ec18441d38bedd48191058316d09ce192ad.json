@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求规定空指针应返回ADCS_E_NULL(1)，B返回1且将fraction置0符合规范，C异常"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求规定空指针应返回ADCS_E_NULL(1)，B返回1且将fraction置0符合规范"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "需求规定空指针应返回ADCS_E_NULL(1)，B返回1且将fraction置0符合规范"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "需求明确规定非有限磁场应返回ADCS_E_DEGENERATE(3)，B返回3符合，A返回4不符"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "需求明确规定非有限请求应返回ADCS_E_DEGENERATE(3)，B返回3符合，A返回4不符"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "同测试4，磁场含无穷大属非有限量，需求规定返回3，B符合规范"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9486,
+  "completion": 4723
+ }
+}

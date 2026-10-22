@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "未规定",
+   "reason": "两个惯性向量相同但体向量不同，不存在唯一 q_BI；需求未规定不一致/退化情况。"
+  },
+  {
+   "id": 2,
+   "correct": "无法判断",
+   "reason": "正确解应为绕 y 轴 45° 的 (0.9239,0,0.3827,0)，A、B 均不符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "两对向量均为恒等映射，正确输出单位四元数，A 输出 (1,0,0,0)。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "out=NULL 应返回 ADCS_E_NULL，B 返回 1 且不崩溃。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "r[0] 为零向量属坏向量，失败应输出 identity，A 输出 identity。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "r[1] 含 inf 属坏向量，失败应输出 identity，A 输出 identity。"
+  }
+ ],
+ "pick": "A"
+}

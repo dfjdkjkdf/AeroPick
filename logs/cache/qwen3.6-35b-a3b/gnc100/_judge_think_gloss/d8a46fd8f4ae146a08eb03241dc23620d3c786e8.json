@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定输入指针为NULL时返回ADCS_E_NULL(1)，A正确校验并返回1，B未判空导致崩溃"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "limited指针为NULL时同样需返回ADCS_E_NULL(1)，A正确处理，B越界写入崩溃"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9199,
+  "completion": 2607
+ }
+}

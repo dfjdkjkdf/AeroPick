@@ -1,0 +1,124 @@
+Here's a thinking process:
+
+1.  **Analyze User Input:**
+    *   **Role:** Aerospace GNC Software Review Expert.
+    *   **Task:** Evaluate two implementations (A and B) of the same C function against a given requirement. Determine which implementation's output matches the requirement for each test case, based *only* on the requirement.
+    *   **Requirement Summary:**
+        *   Function: `Four-wheel tetrahedral null-space torque`
+        *   Context: Momentum manager injects null-space wheel torque without disturbing spacecraft torque.
+        *   Input: Four finite unit wheel axes, finite scalar amplitude.
+        *   Output: Four-torque output (`wheel_torque_nm`), residual spacecraft torque (`spacecraft_residual_nm`).
+        *   Math Definition: Symmetric tetrahedral cluster ordered (+++),(+--),(-+-),(--+). Wheel torques `[a,a,a,a]`. Residual spacecraft torque is `-sum(axis_i * tau_i)`.
+        *   Required Processing: Validate supplied axes against unit norm and compute physical residual from them.
+        *   Output Contract: `ADCS_OK` with equal wheel torques and residual; failure outputs zero.
+        *   Boundary/Failure Handling: `NULL` -> `ADCS_E_NULL`; invalid axes/amplitude -> `ADCS_E_RANGE`.
+        *   Traceability/Signature hint: Ends with closing brace `}`. The provided code snippet shows the signature:
+          `adcs_status_t adcs_pilot_tetra_null_torque(const adcs_vec3_t axes[4], double amplitude_nm, double wheel_torque_nm[4], adcs_vec3_t *spacecraft_residual_nm)`
+    *   **Context Code:** Provides types, macros, helper functions. Confirms return type `adcs_status_t`, input/output parameters.
+    *   **Test Cases Provided:**
+        *   **Test 1:** Error type. `spacecraft_residual_nm = NULL`. No axes or amplitude set (defaults to 0 due to "未赋值的量为 0"). Call 1 time. Compare last call output.
+            *   Diff: A returns `__ret__=1` (`ADCS_E_NULL`), `crash`=none. Sets `residual` fields to 0, `torque` fields to 0.
+            *   B returns `__ret__=(no output)` (likely crashed or didn't write?), `crash`=1. Wait, the table says `__crash__: A=(无输出); B=1`. This usually means B crashed. `__ret__: A=1; B=(无输出)`. So A returned 1 (`ADCS_E_NULL`). B crashed.
+            *   Requirement says: `Null -> ADCS_E_NULL`. Which null? The input pointers. `spacecraft_residual_nm` is NULL. So it should return `ADCS_E_NULL`. It should also handle failure by outputting zero.
+        *   **Test 2:** Error type. Axes are `[1,0,0]`, `[0,1,0]`, `[0,0,1]`, `[0,0,0]`. Amplitude = 1.0. `spacecraft_residual_nm = NULL`.
+            *   Axes[3] is zero vector, not unit norm. Also `spacecraft_residual_nm` is NULL.
+            *   Diff: Same as Test 1. A returns 1, sets outputs to 0. B crashes.
+            *   Requirement says: `invalid axes/amplitude -> ADCS_E_RANGE`. Also `NULL -> ADCS_E_NULL`.
+            *   Both tests have `spacecraft_residual_nm = NULL`. According to requirement, `NULL` input pointer should trigger `ADCS_E_NULL`.
+            *   Implementation A correctly identifies NULL pointer, returns `ADCS_E_NULL` (which is 1), and sets outputs to zero (as per "failure outputs zero").
+            *   Implementation B crashes (`__crash__: 1`). Crashing is never correct.
+    *   **Analysis of Tests vs Requirement:**
+        *   Requirement explicitly states: `Null -> ADCS_E_NULL`. This applies to input pointers like `axes`, `amplitude_nm` (scalar, can't be null), `wheel_torque_nm`, `spacecraft_residual_nm`.
+        *   In both tests, `spacecraft_residual_nm` is explicitly set to `NULL`.
+        *   Therefore, the function must detect this NULL pointer and return `ADCS_E_NULL` (value 1).
+        *   Implementation A returns 1 (`ADCS_E_NULL`) and zeros out outputs. This matches the requirement perfectly.
+        *   Implementation B crashes. This violates robustness and basic software engineering principles, and definitely doesn't match the requirement.
+        *   For Test 2, axes[3] is also invalid (zero norm), which would normally trigger `ADCS_E_RANGE`, but the NULL check typically happens first in C APIs. Even if range check happened first, returning an error code and zeroing outputs is correct. A does exactly that. B crashes.
+        *   Conclusion: A is correct for both tests. B is incorrect. Pick A.
+
+2.  **Formulate Reasoning (Mental Refinement):**
+    *   *Test 1:* Input has `spacecraft_residual_nm = NULL`. Requirement mandates `Null -> ADCS_E_NULL`. A returns 1 (`ADCS_E_NULL`) and zeroes outputs, matching "failure outputs zero". B crashes. A is correct.
+    *   *Test 2:* Input has `spacecraft_residual_nm = NULL` (and invalid axis). Requirement mandates `Null -> ADCS_E_NULL` (pointer check usually precedes data validation). A returns 1 and zeroes outputs. B crashes. A is correct.
+    *   Overall: A consistently handles the NULL pointer contract and failure-zeroing contract correctly. B fails catastrophically.
+
+    I will structure the output strictly as requested: JSON format with `tests` array and `pick` field. Each test gets an ID, correct status, and a one-sentence reason.
+
+    Check JSON structure requirement: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will map Test 1 to id 1, Test 2 to id 2.
+    Reasons need to be concise and directly reference the requirement.
+    Test 1 reason: 需求明确规定输入指针为NULL时返回ADCS_E_NULL且失败输出清零，实现A正确返回1并清零，实现B崩溃。
+    Test 2 reason: 同样因输出指针为NULL触发空指针保护，需求要求返回ADCS_E_NULL并清零，实现A符合，实现B崩溃。
+    Pick: A
+
+    Double check constraints: "只依据需求判断", "按需求逐条推理...最后综合所有测试，选出最符合需求的一种实现。只输出 JSON".
+    I will ensure the JSON matches exactly.
+    One minor point: The prompt says `__crash__: A=（无输出）；B=1`. This means B crashed. `__ret__: A=1；B=（无输出）`. A returned 1. `ADCS_E_NULL` is 1. Matches perfectly.
+    All good. Proceed. 
+    Output generation. 
+    Structure:
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "A",
+          "reason": "需求明确规定输入指针为NULL时返回ADCS_E_NULL(1)且失败时输出清零，实现A正确返回1并清零，实现B发生崩溃。"
+        },
+        {
+          "id": 2,
+          "correct": "A",
+          "reason": "同理，因spacecraft_residual_nm为NULL触发空指针校验，需求要求返回ADCS_E_NULL并清零，实现A符合契约，实现B崩溃。"
+        }
+      ],
+      "pick": "A"
+    }
+    ```
+    Checks:
+    - Only JSON output? Yes.
+    - Follows schema? Yes.
+    - Reasons align with requirement? Yes.
+    - Correctly identifies A as better? Yes.
+    Ready. 
+    Self-Correction/Verification during thought:
+    Wait, let's carefully read the test description format: `测试 1（类型 error；未赋值的量为 0；共调用 1 次，比较最后一次调用后的输出）`. I'll use id 1 and 2.
+    The prompt says `__crash__: A=（无输出）；B=1`. In testing frameworks, `__crash__: 1` often means crash occurred. So B crashed.
+    `__ret__: A=1；B=（无输出）`. A returned 1. `ADCS_E_NULL` is defined as 1.
+    Requirement: `Null -> ADCS_E_NULL`. `failure outputs zero.`
+    Everything aligns perfectly.
+    I will generate the exact JSON.✅
+    One detail: The prompt says "只输出 JSON". I will strictly output only the JSON block.
+    Final check of the prompt: "请**只依据需求**判断：在每个测试上，哪一种实现的输出符合需求。"
+    All conditions met. Proceeds. 
+    Output matches the refined JSON. 
+    [Done] 
+    Generating response. 
+    *(Self-Correction/Refinement during generation prep)*: 
+    I should make sure the JSON keys match exactly: `"tests"`, `"id"`, `"correct"`, `"reason"`, `"pick"`.
+    The values for `correct` must be exactly `"A"`, `"B"`, `"未规定"`, or `"无法判断"`.
+    The reason should be one sentence.
+    All good. 
+    Output matches. 
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "A",
+          "reason": "需求明确规定输入指针为NULL时返回ADCS_E_NULL(1)且失败时输出清零，实现A正确返回1并清零，实现B崩溃。"
+        },
+        {
+          "id": 2,
+          "correct": "A",
+          "reason": "同样因输出指针为NULL触发空指针校验，需求要求返回ADCS_E_NULL并清零，实现A符合契约，实现B崩溃。"
+        }
+      ],
+      "pick": "A"
+    }
+    ```
+    This is solid. Proceeds. 
+    [Output Generation] -> *Proceeds* ✅
+    *(Note: I will output exactly the JSON as requested.)* 
+    [Final Check of the Prompt]: "只输出 JSON：{"tests":[...],"pick":"..."}"
+    All constraints satisfied. 
+    Output Generation. 
+    *(Done.)*

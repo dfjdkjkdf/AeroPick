@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 最符合需求：NULL 及退化/非有限失败时会将可用的 body/recovered 清零并把 error 置为 INFINITY，同时正确使用归一化四元数、DCM 和转置完成往返误差计算。",
+ "_usage": {
+  "prompt": 9002,
+  "completion": 3991
+ }
+}

@@ -1,0 +1,164 @@
+{
+ "key": "5b38aad01118fb7db68958ca88fb8eb21f032de5",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[0].y = 0.0;\nwa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[1].z = 0.0;\nwa_input.axes[2].x = 0.0;\nwa_input.axes[2].y = 0.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = -0.2;\nwa_input.requested_torque_nm->z = 0.3;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 10.0;\nwa_config.release_cycles = 3U;\nwa_config.restore_cycles = 3U;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 0.0;\nwa_input.axes[0].y = 1.0;\nwa_input.axes[0].z = 0.0;\nwa_input.axes[1].x = 0.0;\nwa_input.axes[1].y = 0.0;\nwa_input.axes[1].z = 1.0;\nwa_input.axes[2].x = 1.0;\nwa_input.axes[2].y = 0.0;\nwa_input.axes[2].z = 0.0;\nwa_input.requested_torque_nm->x = 0.5;\nwa_input.requested_torque_nm->y = 0.5;\nwa_input.requested_torque_nm->z = 0.5;\nwa_config.wheel_limit_nm[0] = 0.5;\nwa_config.wheel_limit_nm[1] = 0.5;\nwa_config.wheel_limit_nm[2] = 0.5;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 5.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 5.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 5.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 1.0;\nwa_input.requested_torque_nm->y = 1.0;\nwa_input.requested_torque_nm->z = 1.0;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.6000000001;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_config.wheel_limit_nm[0] = 0.6;\nwa_config.wheel_limit_nm[1] = 0.6;\nwa_config.wheel_limit_nm[2] = 0.6;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 100.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 100.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 100.0;\nwa_config.release_cycles = 2U;\nwa_config.restore_cycles = 2U;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.3;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 0.2;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 0.2;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 0.2;\nwa_config.release_cycles = 2U;\nwa_config.restore_cycles = 2U;\nwa_state.previous_wheel_torque_nm[0] = 0.0;\nwa_state.previous_wheel_torque_nm[1] = 0.0;\nwa_state.previous_wheel_torque_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 3U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.2;\nwa_input.requested_torque_nm->y = 0.3;\nwa_input.requested_torque_nm->z = 0.4;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 10.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm = NULL;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes = NULL;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.1;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.1;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 0.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.1;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = -1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = NAN;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = INFINITY;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.1;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 2;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.1;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 1U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.1;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.1;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 0U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.1;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 21U;\nwa_config.restore_cycles = 1U;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 2.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 10.0;\nwa_config.release_cycles = 2U;\nwa_config.restore_cycles = 2U;",
+    "wa_input.requested_torque_nm->x = 0.0;",
+    "wa_input.requested_torque_nm->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 1.0;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 10.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 2U;",
+    "wa_input.available_mask = 3U;",
+    "wa_input.available_mask = 7U;",
+    "wa_input.available_mask = 7U;",
+    "wa_input.available_mask = 7U;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.5;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 10.0;\nwa_config.release_cycles = 5U;\nwa_config.restore_cycles = 2U;\nwa_state.mode = 1;\nwa_state.clean_count = 0U;",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.5;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 10.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 10.0;\nwa_config.release_cycles = 2U;\nwa_config.restore_cycles = 1U;\nwa_state.mode = 2;\nwa_state.previous_wheel_torque_nm[0] = 0.0;\nwa_state.previous_wheel_torque_nm[1] = 0.0;\nwa_state.previous_wheel_torque_nm[2] = 0.0;",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.1;\nwa_input.requested_torque_nm->z = 0.1;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;\nwa_state.mode = 4;\nwa_state.previous_wheel_torque_nm[0] = 5.0;",
+    "wa_input.enable = 0;",
+    "wa_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 0.05;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;\nwa_state.previous_wheel_torque_nm[0] = 0.0;",
+    "wa_input.requested_torque_nm->x = 0.0;",
+    "wa_input.requested_torque_nm->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wa_input.enable = 1;\nwa_input.axis_count = 3;\nwa_input.available_mask = 7U;\nwa_input.axes[0].x = 1.0;\nwa_input.axes[1].y = 1.0;\nwa_input.axes[2].z = 1.0;\nwa_input.requested_torque_nm->x = 0.1;\nwa_input.requested_torque_nm->y = 0.0;\nwa_input.requested_torque_nm->z = 0.0;\nwa_config.wheel_limit_nm[0] = 1.0;\nwa_config.wheel_limit_nm[1] = 1.0;\nwa_config.wheel_limit_nm[2] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[0] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[1] = 1.0;\nwa_config.max_wheel_slew_nm_per_cycle[2] = 1.0;\nwa_config.release_cycles = 1U;\nwa_config.restore_cycles = 1U;",
+    "wa_input.available_mask = 6U;",
+    "wa_input.available_mask = 7U;",
+    "wa_input.available_mask = 6U;",
+    "wa_input.available_mask = 7U;"
+   ]
+  }
+ ]
+}

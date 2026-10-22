@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "全可用无限制，需求要求按 -axis·τ 分配，A 的 wheel0=-0.1 且 achieved=-τ、residual=2τ，符合按 sum(axis*wheel) 重构；B/C 符号相反。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "全可用无限制，按 -axis·τ 分配得 wheel0=-0.5、achieved=-0.5、residual=1.0，A 输出符合；B/C 为正号。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "边界全可用无限制，按 -axis·τ 分配得 wheel0=-1、achieved=-1、residual=2，A 输出符合；B/C 为正号。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "请求 0.6000000001 超过限幅 0.6，按 -axis·τ 得 -0.6000000001 截断为 -0.6，A 输出 wheel=-0.6、residual≈1.2，符合；B/C 正向限幅 residual≈1e-10。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "请求 0.3 超过 slew 0.2，按 -axis·τ 得 -0.3，从 0 限速到 -0.2，A 输出 wheel=-0.2、residual=0.5，符合；B/C 正向。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "available_mask=3 缺 wheel2 应 DEGRADED，A 按 -axis·τ 得 wheel0=-0.2、wheel1=-0.3 且 mode=2，符合；B 模式 NORMAL 错，C 符号正错。"
+  }
+ ],
+ "pick": "A"
+}

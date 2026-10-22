@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly implements the normative ON/REST cycle timing and publishes computed ON outputs with zero REST outputs, whereas A/B have transition or off-by-one errors.",
+ "_usage": {
+  "prompt": 12743,
+  "completion": 18676
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A matches the decision table: it preserves reject evidence during hysteresis and fault latches, and treats disabled as reset/accept before NULL checks, whereas B wrongly clears rejects on invalid faults and faults disabled calls with NULL.",
+ "_usage": {
+  "prompt": 10440,
+  "completion": 9792
+ }
+}

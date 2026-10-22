@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确处理空指针并将所有失败输出置零/INFINITY，按 b×p 与 atan2(||b×p||, clamp(dot)) 计算且用 ADCS_EPS_NORM 判定零向量；A 空指针失败未设置输出，C 用 0.0 作零范数阈值不符合上下文零向量判定。",
+ "_usage": {
+  "prompt": 9417,
+  "completion": 5485
+ }
+}

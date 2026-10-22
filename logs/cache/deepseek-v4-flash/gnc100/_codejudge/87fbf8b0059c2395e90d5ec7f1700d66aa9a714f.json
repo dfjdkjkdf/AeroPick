@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 在入口先将输出清零，使用 adcs_quat_normalize 处理退化/非有限，并按 C_BI P_I C_BI^T 正确计算。",
+ "_usage": {
+  "prompt": 9402,
+  "completion": 15682
+ }
+}

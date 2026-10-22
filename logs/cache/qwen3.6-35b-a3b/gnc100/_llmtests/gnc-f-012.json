@@ -1,0 +1,128 @@
+{
+ "key": "5c4157705382606899f860991c768fd7a797aa17",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "enabled = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "excess = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "command = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous_enabled = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "start_threshold = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "stop_threshold = start_threshold + 1.0;\nstart_threshold = stop_threshold + 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gain = NAN;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum->x = 100.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 150.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 149.999999; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "momentum->x = 160.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;",
+    "momentum->x = 120.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;",
+    "momentum->x = 90.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;",
+    "momentum->x = 110.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 100.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 100.000001; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum->x = 0.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = INFINITY; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 100.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = INFINITY; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 200.0; momentum->y = 0.0; momentum->z = 0.0;\nfield->x = 0.0; field->y = 0.0; field->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 150.0;\nstop_threshold = 100.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  }
+ ]
+}

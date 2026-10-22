@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求表首行规定任意状态且enable==0时直接输出OFF及零修正轴，A符合；B因未优先处理使能标志而误触发FAULT。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "初始OFF态下cosine(0.995)>=enter(0.9)，应按表转入ACTIVE并计算非平行修正轴与夹角，B符合；A误触发FAULT。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "边界条件cosine(0.5)>=enter(0.5)应转入ACTIVE，角度应为acos(0.5)≈1.0472，正交轴为Z向，B完全匹配；A误触发FAULT。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "cosine(0.499999)<enter(0.5)应保持OFF态，但仍需报告当前余弦值与非平行修正轴，B符合；A误触发FAULT。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "配置exit(0.9)>enter(0.8)违反'-1<=exit<enter<=1'要求，需求明确指示应latch FAULT，B正确拦截；A忽略故障条件。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "显式置OFF后按逻辑正常转入ACTIVE，输出与Test 2一致，B符合；A误触发FAULT。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 10268,
+  "completion": 4537
+ }
+}

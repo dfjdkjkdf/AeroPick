@@ -1,0 +1,139 @@
+{
+ "key": "2fbff184f3028b702d402fc40a5a0e219fee562f",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "reset = 1;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque);"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "reset = 1;\nsm_state.initialized = 0;\nsm_state.previous.x = 0.0;\nsm_state.previous.y = 0.0;\nsm_state.previous.z = 0.0;\nsm_state.previous_time = 0.0;\nsm_state.rejects = 0;",
+    "field->x = 0.1;\nfield->y = 0.2;\nfield->z = 0.3;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque);"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "reset = 0;\nfield->x = 0.15;\nfield->y = 0.25;\nfield->z = 0.35;\ntime_s = 101.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque);"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "reset = 0;\nfield->x = 0.15;\nfield->y = 0.25;\nfield->z = 0.35;\ntime_s = 101.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "reset = 0;\nfield->x = 0.15;\nfield->y = 0.25;\nfield->z = 0.35;\ntime_s = 101.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 0.15;\nfield->y = 0.25;\nfield->z = 0.35;\ntime_s = 101.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 0.15;\nfield->y = 0.25;\nfield->z = 0.35;\ntime_s = 101.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 2;\nfield->x = 0.1;\nfield->y = 0.2;\nfield->z = 0.3;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = -1;\nfield->x = 0.1;\nfield->y = 0.2;\nfield->z = 0.3;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield = NULL;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 1;\nfield = NULL;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 0.1;\nfield->y = 0.2;\nfield->z = 0.3;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand = NULL;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 0.1;\nfield->y = 0.2;\nfield->z = 0.3;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque = NULL;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 0.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 1e-13;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 0.1;\nfield->y = 0.2;\nfield->z = 0.3;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 0.1;\nfield->y = 0.2;\nfield->z = 0.3;\ntime_s = 100.0;\ngain = 1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 0.1;\nfield->y = 0.2;\nfield->z = 0.3;\ntime_s = 100.0;\ngain = -1.0;\nlimit = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield->x = 0.1;\nfield->y = 0.2;\nfield->z = 0.3;\ntime_s = 100.0;\ngain = 1.0;\nlimit = -1.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ntorque->x = 0.0;\ntorque->y = 0.0;\ntorque->z = 0.0;",
+    "GncRepoSafeBdot(reset, field, time_s, gain, limit, command, torque)"
+   ]
+  }
+ ]
+}

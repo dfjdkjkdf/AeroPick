@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "实现A在所有错误分支均严格按契约将输出矩阵清零，满足“失败输出零”要求，而B和C在NULL/RANGE分支未清零。",
+ "_usage": {
+  "prompt": 9809,
+  "completion": 3552
+ }
+}

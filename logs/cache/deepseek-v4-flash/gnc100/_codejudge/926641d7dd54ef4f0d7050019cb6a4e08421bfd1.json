@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 按顺序检查错误并对所有失败（包括 NULL）清零输出，且卸载非 OK 时原样返回。",
+ "_usage": {
+  "prompt": 10027,
+  "completion": 7842
+ }
+}

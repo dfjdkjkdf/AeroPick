@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B directly implements the required linear interpolation formula with correct validation and failure handling.",
+ "_usage": {
+  "prompt": 9123,
+  "completion": 18548
+ }
+}

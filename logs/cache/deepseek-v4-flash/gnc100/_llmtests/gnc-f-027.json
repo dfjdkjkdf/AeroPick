@@ -1,0 +1,131 @@
+{
+ "key": "8ca33e0ccb04405ae961ec775088be5e53b5317f",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nvectors[2].x = 0.0;\nvectors[2].y = 0.0;\nvectors[2].z = 1.0;\nweights[0] = 0.25;\nweights[1] = 0.5;\nweights[2] = 2.0;\ncount = 3;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vectors[0].x = 0.6;\nvectors[0].y = 0.8;\nvectors[0].z = 0.0;\nvectors[1].x = -0.8;\nvectors[1].y = 0.6;\nvectors[1].z = 0.0;\nweights[0] = 3.0;\nweights[1] = 0.125;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vectors[0].x = 2.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 5.0;\nvectors[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vectors[0].x = 0.5773502691896258;\nvectors[0].y = 0.5773502691896258;\nvectors[0].z = 0.5773502691896258;\nvectors[1].x = 0.7071067811865476;\nvectors[1].y = 0.7071067811865476;\nvectors[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nweights[0] = 1.0;\ncount = 1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nweights[0] = 1.0;\ncount = 33;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nweights[0] = 1.0;\ncount = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vectors[0].x = 0.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nweights[0] = 0.0;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nweights[0] = -1.0;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vectors = NULL;\nweights[0] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nweights = NULL;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nweights[0] = 1.0;\ncount = 2;\ninformation = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vectors[0].x = NAN;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vectors[0].x = INFINITY;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nweights[0] = NAN;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vectors[0].x = 1.0;\nvectors[0].y = 0.0;\nvectors[0].z = 0.0;\nvectors[1].x = 0.0;\nvectors[1].y = 1.0;\nvectors[1].z = 0.0;\nweights[0] = INFINITY;\nweights[1] = 1.0;\ncount = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 33;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;\nvectors[0].x = 1.0;\nweights[0] = 1.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "OFF 且 cosine=0<enter 保持 OFF，校正轴按 boresight×sun 计算，B 的 +z 符合需求。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "enable=0 时需求规定 disable resets，输出应复位，B 的 cosine=0 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "OFF 且 cosine=0.8>=enter 转 ACTIVE，校正轴按 boresight×sun 计算，B 的 +z 符合需求。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "校正轴为归一化 boresight×sun，B 得到 (0,-0.8,0.6)，符合需求。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "ACTIVE 且 cosine=0.5<=exit 应转 OFF，校正轴仍按 boresight×sun 计算，B 的 +z 符合需求。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "ACTIVE 且 cosine=0.3<=exit 应转 OFF，校正轴仍按 boresight×sun 计算，B 的 +z 符合需求。"
+  }
+ ],
+ "pick": "B"
+}

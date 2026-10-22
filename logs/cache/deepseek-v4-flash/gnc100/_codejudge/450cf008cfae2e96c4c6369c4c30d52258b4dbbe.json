@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 最符合需求：优先处理 enable==0 清状态，FAULT 锁存且可被 disable 清除，并正确实现 LOST 重捕获与参考冻结/混合逻辑。",
+ "_usage": {
+  "prompt": 13598,
+  "completion": 15586
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "key": "9f1be460bebabdcc140f7fbcc8e3b6be9d17c87a",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "estimated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "target = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "error = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "estimated->w = 1.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 1.0; target->x = 0.0; target->y = 0.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "estimated->w = 1.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 0.9961947; target->x = 0.0871557; target->y = 0.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "estimated->w = 1.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 0.0; target->x = 0.0; target->y = 1.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "estimated->w = 0.0; estimated->x = 1.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 0.0; target->x = 0.0; target->y = 1.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "estimated->w = 0.0; estimated->x = 0.0; estimated->y = 1.0; estimated->z = 0.0;\ntarget->w = 0.0; target->x = 0.0; target->y = 0.0; target->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "estimated->w = 0.70710678; estimated->x = 0.70710678; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 0.70710678; target->x = -0.70710678; target->y = 0.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "estimated->w = 0.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 1.0;\ntarget->w = 0.0; target->x = 0.0; target->y = 0.0; target->z = -1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "estimated->w = 1.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = -1.0; target->x = 0.0; target->y = 0.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "estimated->w = 0.5; estimated->x = 0.5; estimated->y = 0.5; estimated->z = 0.5;\ntarget->w = 0.5; target->x = -0.5; target->y = -0.5; target->z = -0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "estimated->w = 0.0; estimated->x = 1.0; estimated->y = 1.0; estimated->z = 0.0;\ntarget->w = 0.0; target->x = 0.0; target->y = 1.0; target->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "estimated->w = 0.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 1.0; target->x = 0.0; target->y = 0.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "estimated->w = 1.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 0.0; target->x = 0.0; target->y = 0.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "estimated->w = 1.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = INFINITY; target->x = 0.0; target->y = 0.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "estimated->w = NAN; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 1.0; target->x = 0.0; target->y = 0.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "estimated->w = 1.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 1e-13; target->x = 1e-13; target->y = 1e-13; target->z = 1e-13;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "estimated->w = 0.9999999999999999; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 0.9999999999999999; target->x = 1e-15; target->y = 0.0; target->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "estimated->w = 1.0; estimated->x = 0.0; estimated->y = 0.0; estimated->z = 0.0;\ntarget->w = 0.0; target->x = 0.0; target->y = 0.0; target->z = 0.0;",
+    "target->w = 1.0; target->x = 0.0; target->y = 0.0; target->z = 0.0;"
+   ]
+  }
+ ]
+}

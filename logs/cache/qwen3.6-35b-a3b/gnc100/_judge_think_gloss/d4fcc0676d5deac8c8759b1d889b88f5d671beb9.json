@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定“NULL/nonfinite sample ... latches FAULT”，首次调用sample为NULL，状态应立即锁定为FAULT(3)，B输出3符合，A输出0错误。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "未赋值量默认为0，导致required=0（超出合法范围4~100）且sample为NULL，均触发“invalid configuration”与“NULL sample”条件，必须latch FAULT(3)，B正确。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同上，非法配置与空样本触发fault锁定，状态应变为FAULT(3)，B输出3正确。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同上，非法配置与空样本触发fault锁定，状态应变为FAULT(3)，B输出3正确。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "同上，非法配置与空样本触发fault锁定，状态应变为FAULT(3)，B输出3正确。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "同上，非法配置与空样本触发fault锁定，状态应变为FAULT(3)，B输出3正确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9454,
+  "completion": 3286
+ }
+}

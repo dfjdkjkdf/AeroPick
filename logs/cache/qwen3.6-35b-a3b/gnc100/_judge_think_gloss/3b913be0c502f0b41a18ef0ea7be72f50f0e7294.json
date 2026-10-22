@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定边界与失败处理中'Null -> ADCS_E_NULL'，测试传入输出矩阵指针为NULL，实现B正确返回1（即ADCS_E_NULL）符合契约且保证程序安全，实现A崩溃违反空指针防护要求。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 8926,
+  "completion": 1781
+ }
+}

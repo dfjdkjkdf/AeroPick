@@ -1,0 +1,125 @@
+{
+ "key": "75a0be1cc0f067ad0ca4cd299f2836d40337d0b7",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "current = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "target = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*required_rate = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*margin = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "duration = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "duration = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "max_rate = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "max_rate = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "max_rate = -INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "duration = NAN;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = 1.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 1.0;\ntarget->x = 0.0;\ntarget->y = 0.0;\ntarget->z = 0.0;\nmax_rate = 1.0;\nduration = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = 1.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 0.0;\ntarget->x = 1.0;\ntarget->y = 0.0;\ntarget->z = 0.0;\nmax_rate = 1.0;\nduration = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = 0.7071067811865475;\ncurrent->x = 0.7071067811865475;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 0.7071067811865475;\ntarget->x = -0.7071067811865475;\ntarget->y = 0.0;\ntarget->z = 0.0;\nmax_rate = 1.0;\nduration = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = 1.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 0.0;\ntarget->x = 0.0;\ntarget->y = 1.0;\ntarget->z = 0.0;\nmax_rate = 1.0;\nduration = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 1.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 1.0;\ntarget->x = 0.0;\ntarget->y = 0.0;\ntarget->z = 0.0;\nmax_rate = 0.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 1.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 0.0;\ntarget->x = 1.0;\ntarget->y = 0.0;\ntarget->z = 0.0;\nmax_rate = 3.141592653589793;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "current->w = 1.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 0.0;\ntarget->x = 1.0;\ntarget->y = 0.0;\ntarget->z = 0.0;\nmax_rate = 3.141592653589793;\nduration = 1.0e-9;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "current->w = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 1.0;\ntarget->x = 0.0;\ntarget->y = 0.0;\ntarget->z = 0.0;\nmax_rate = 1.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "current->w = 1.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ntarget->w = 0.0;\ntarget->x = 0.0;\ntarget->y = 0.0;\ntarget->z = 0.0;\nmax_rate = 1.0;\nduration = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "current->w = 0.5;\ncurrent->x = 0.5;\ncurrent->y = 0.5;\ncurrent->z = 0.5;\ntarget->w = 0.5;\ntarget->x = 0.5;\ntarget->y = 0.5;\ntarget->z = 0.5;\nmax_rate = 1.0;\nduration = 1.0;"
+   ]
+  }
+ ]
+}

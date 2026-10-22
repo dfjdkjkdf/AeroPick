@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C matches the quaternion geodesic formula and also sets distance to INFINITY on null/invalid failures when the output pointer is available.",
+ "_usage": {
+  "prompt": 8586,
+  "completion": 842
+ }
+}

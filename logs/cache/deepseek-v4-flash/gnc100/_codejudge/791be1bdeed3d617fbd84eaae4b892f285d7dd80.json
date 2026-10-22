@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确调用 adcs_wheel_momentum，按归一化轴计算 tau=-Σu·a，累加带符号的 u·ω，并且仅对正的 u·ω 按效率计入总线功率，同时按要求的顺序检查状态。",
+ "_usage": {
+  "prompt": 9258,
+  "completion": 17481
+ }
+}

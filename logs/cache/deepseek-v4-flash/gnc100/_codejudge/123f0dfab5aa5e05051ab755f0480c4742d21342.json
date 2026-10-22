@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A implements the exact Euclidean-norm slew, zeroes outputs on all failures including NULL cases, and correctly handles small nonzero deltas without an extra degenerate threshold.",
+ "_usage": {
+  "prompt": 8994,
+  "completion": 7556
+ }
+}

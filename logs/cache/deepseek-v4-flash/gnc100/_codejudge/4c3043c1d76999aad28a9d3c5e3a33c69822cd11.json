@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确处理空指针并对失败输出清零，投影和按 b2 归一化正确，且使用单一欧氏范数限幅并仅在缩放时置 saturated_axes=7。",
+ "_usage": {
+  "prompt": 9493,
+  "completion": 2067
+ }
+}

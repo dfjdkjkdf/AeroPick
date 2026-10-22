@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 在非有限速率输入时置 FAULT，且总体符合 Welford、拒绝计数与 READY 漂移逻辑；B 未将无效速率视为 FAULT 且初始无法进入 COLLECT。",
+ "_usage": {
+  "prompt": 14363,
+  "completion": 10618
+ }
+}

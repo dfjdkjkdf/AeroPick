@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly sets failure defaults, validates statuses, maps inertial to body then normalizes, and computes the TRIAD residuals exactly as specified.",
+ "_usage": {
+  "prompt": 9653,
+  "completion": 3856
+ }
+}

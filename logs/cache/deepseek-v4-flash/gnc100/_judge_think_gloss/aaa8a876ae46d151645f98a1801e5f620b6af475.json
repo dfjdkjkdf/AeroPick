@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "输入有效，需求要求返回ADCS_OK并输出对称H；C返回0且矩阵对称，A/B返回ADCS_E_RANGE。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "输入有效，C返回ADCS_OK且矩阵对称，A/B返回ADCS_E_RANGE。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "输入有效，C返回ADCS_OK且矩阵更接近H=Σw(I-uu^T)，A矩阵明显错误，B返回ADCS_E_RANGE。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "输入有效，C返回ADCS_OK且矩阵对称，A/B返回ADCS_E_RANGE。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "C输出与H=Σw(I-uu^T)完全一致，A矩阵错误，B返回ADCS_E_RANGE。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "输入有效，C返回ADCS_OK且矩阵对称，A/B返回ADCS_E_RANGE。"
+  }
+ ],
+ "pick": "C"
+}

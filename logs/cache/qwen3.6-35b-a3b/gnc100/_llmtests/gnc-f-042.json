@@ -1,0 +1,261 @@
+{
+ "key": "d52bd7394310b2c7965f2f8a1a6554ad15a3d1df",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "field = NULL;",
+    "gain = NULL;",
+    "field_direction = NULL;",
+    "scheduled_axis_gain = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = NULL;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = NULL;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = NAN; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = INFINITY; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = -1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = NAN;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 0.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = -100.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = -1.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = -1.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 1.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 10.0;",
+    "max_gain = 5.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = 0.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = ADCS_EPS_NORM / 2.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field->x = 50000.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field->x = 10000.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "field->x = 100000.0; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 0.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = 35355.33905932738; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 1.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "field->x = 15811.388300841896; field->y = 0.0; field->z = 0.0;",
+    "base_gain = 1.0;",
+    "reference_field = 50000.0;",
+    "min_gain = 1.0;",
+    "max_gain = 10.0;",
+    "gain = &dummy_g;",
+    "field_direction = &dummy_fd;",
+    "scheduled_axis_gain = &dummy_sag;"
+   ]
+  }
+ ]
+}

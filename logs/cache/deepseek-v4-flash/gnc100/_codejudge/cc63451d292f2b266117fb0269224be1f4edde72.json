@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确处理了 gap 重新 priming、拒绝样本归零、FAULT 零输出和 COMPLETE 重启等核心状态机逻辑，而 A 在故障时仍生成 dipole 且未检查空指针/dt<=0，B 重新 priming 未复位滤波器并使用未初始化 rate。",
+ "_usage": {
+  "prompt": 17788,
+  "completion": 31810
+ }
+}

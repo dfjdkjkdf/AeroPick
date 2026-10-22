@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确使用 ADCS_EPS_NORM 归一化并按定义计算，s≤1e-8 时返回 DEGENERATE 并设置输出，满足全部需求。",
+ "_usage": {
+  "prompt": 9137,
+  "completion": 18357
+ }
+}

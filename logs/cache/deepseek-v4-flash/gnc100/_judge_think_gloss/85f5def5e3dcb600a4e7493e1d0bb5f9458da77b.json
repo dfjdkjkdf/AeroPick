@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "wheels为NULL应返回ADCS_E_NULL并按要求输出零且fastest=SIZE_MAX，只有C的fastest为SIZE_MAX。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "四个轮均有效，动量应为(-3,2,3)，能量15，模sqrt22，最快索引3，A完全符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "有效输入下总动量(0,0,-4)，能量11，最快索引1，A符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "总动量(0,1,1)，模sqrt2，能量26，最快索引0，A符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "总动量(6,-3,3)，模sqrt54，能量18，最快索引0，A符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "所有速度为零时仍为有效输入，最快索引应是第一个最大|速度|的轮，即0，且返回成功，A符合。"
+  }
+ ],
+ "pick": "A"
+}

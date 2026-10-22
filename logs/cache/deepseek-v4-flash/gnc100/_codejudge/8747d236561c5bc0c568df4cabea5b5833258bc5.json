@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确锁存 FAULT 并安全处理 NULL 轴，而 B 未锁存 FAULT 且会空指针崩溃，C 存在缺失轮判断错误和禁用顺序错误。",
+ "_usage": {
+  "prompt": 16424,
+  "completion": 29644
+ }
+}

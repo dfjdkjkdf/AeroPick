@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B validates all inputs before allocation, uses per-row limits and mask bits, reconstructs -Σu_i a_i, and zeros outputs on range failures.",
+ "_usage": {
+  "prompt": 11255,
+  "completion": 11375
+ }
+}

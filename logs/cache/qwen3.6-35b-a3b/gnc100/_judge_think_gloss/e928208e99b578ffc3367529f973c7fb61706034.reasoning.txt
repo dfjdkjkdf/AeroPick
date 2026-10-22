@@ -1,0 +1,148 @@
+Here's a thinking process:
+
+1.  **Understand the Goal:** The user wants me to act as an aerospace GNC software review expert. I need to evaluate three different implementations (A, B, C) of a C function based on a provided requirement specification and test cases. I must output a JSON with the correct implementation for each test and a final pick.
+
+2.  **Analyze the Requirement Specification:**
+    *   **Functionality:** Momentum-dump duty sequencer with saturation-adaptive rest.
+    *   **State Machine Table:**
+        *   `Disabled or demand absent`: Dipole/torque = zero. Next state = IDLE, elapsed & saturated-cycle count = 0.
+        *   `Demand begins in IDLE`: Dipole/torque = computed unload outputs. This call is ON cycle one.
+        *   `ON`: Dipole/torque = recomputed unload outputs. After exactly `on_cycles` calls enter REST.
+        *   `REST`: Dipole/torque = zero. After exactly the burst's rest target calls enter IDLE.
+    *   **ON Cycle Details:**
+        *   Use `adcs_momentum_unload_dipole` and publish its achievable torque output.
+        *   Each ON cycle whose `saturation_mask` is nonzero increments a per-burst saturated-cycle counter.
+        *   When burst's `on_cycles` complete, REST duration = `rest_cycles + saturated_cycle_count * extra_rest_per_saturated_cycle`. Saturated-cycle counter resets for next burst.
+    *   **Error Handling:** Invalid flags, NULL/nonfinite/degenerate telemetry or configuration latch FAULT. Require `on_cycles` and `rest_cycles` in 1..100, nonnegative finite gain/max dipole, and `extra_rest_per_saturated_cycle` at most 100.
+    *   **Physics/Output Details:**
+        *   `dissipative_power = torque_nm dot momentum_nms` (zero when not computed in ON).
+        *   `elapsed` is number of calls completed in current mode, resets to 0 on transition.
+    *   **Context/Types:**
+        *   `md_input_t`, `md_config_t`, `md_state_t`, `md_output_t` are defined.
+        *   `md_output_t` contains: `mode`, `elapsed`, `saturation_mask`, `dipole_a_m2`, `torque_nm`, `dissipative_power`.
+        *   Note: The requirement says "Next-state rule" but doesn't explicitly show the fault state in the table, though it mentions latching FAULT. The enum has `MD_FAULT=3`.
+        *   The tests only call once from `MD_IDLE` with `enable=1`, `demand=1`. So it should transition to `ON`.
+
+3.  **Analyze Test Cases:**
+    All tests start from `MD_IDLE`, `enable=1`, `demand=1`. According to the requirement: "Demand begins in IDLE -> computed unload outputs, this call is ON cycle one". So the first call should output the computed dipole/torque for ON cycle 1.
+    Let's compute the expected values manually using `adcs_momentum_unload_dipole` logic from the context code, or just trust the requirement's instruction to use that primitive.
+    Inputs common to tests 1-3 & 5:
+    `momentum_nms` = [1.0, 0.0, 0.0]
+    `field_body_t` = [0.0, 1.0, 0.0]
+    `gain_s_inv` = 1.0
+    `max_dipole_a_m2` = 10.0
+    `herr` = [-momentum_nms]? Wait, `adcs_momentum_unload_dipole` takes `herr` (momentum error/nms), `field`, `gain`, `maxdip`.
+    Inside `adcs_momentum_unload_dipole`:
+    `desired = adcs_vec3_scale(herr, -gain)` -> `[-1.0, 0, 0]`
+    `cross = adcs_vec3_cross(field, &desired)` -> `[0,1,0] x [-1,0,0] = [0, 0, -1]`? Wait, cross product: y*des_z - z*des_y = 0; z*des_x - x*des_z = 0*(-1) - 0*0 = 0; x*des_y - y*des_x = 0*0 - 1*(-1) = 1. So cross = [0, 0, 1].
+    `cmd->command = adcs_vec3_scale(&cross, 1.0 / b2)`. `b2 = field.x^2 + field.y^2 + field.z^2 = 1.0`. So command = [0, 0, 1].
+    Norm of command = 1.0. `maxdip` = 10.0. Not saturated.
+    `cmd->saturated_axes` = 0.
+    `*torque = adcs_vec3_cross(&cmd->command, field)` -> `[0,0,1] x [0,1,0] = [-1, 0, 0]`.
+    So expected: `dipole_a_m2` = [0, 0, 1], `torque_nm` = [-1, 0, 0].
+    `dissipative_power = torque_nm dot momentum_nms` = [-1, 0, 0] · [1, 0, 0] = -1.0.
+    Wait, the requirement says `dissipative_power = torque_nm dot momentum_nms`. But sometimes power is defined as `-torque·momentum` or similar. Let's stick to the exact wording: `torque_nm dot momentum_nms`. That gives -1.0.
+    Let's check the test outputs:
+    A: dipole.z=1, dissipative=0, torque.x=-1
+    B: dipole.z=0, dissipative=0, torque.x=0
+    C: dipole.z=1, dissipative=-1, torque.x=-1
+    Based on my manual calculation matching `adcs_momentum_unload_dipole` in the context, C matches perfectly for dipole.z=1, torque.x=-1. Dissipative power = -1 matches C. A has dissipative=0, which contradicts "dissipative_power = torque_nm dot momentum_nms". B has zeros, likely ignoring the demand or defaulting to idle.
+    So for Tests 1, 2, 3, 5, C seems correct.
+
+    Let's verify Test 4:
+    `momentum_nms` = [100.0, 0, 0]
+    `field_body_t` = [0, 1, 0]
+    `gain` = 1.0, `maxdip` = 10.0
+    `desired` = [-100, 0, 0]
+    `cross` = `[0,1,0] x [-100,0,0]` = `[0, 0, 100]`
+    `command` = `[0, 0, 100]` (since b2=1)
+    Norm = 100 > maxdip(10). Scales by 10/100 = 0.1. Command becomes `[0, 0, 10]`.
+    `saturated_axes` = 7U (all axes? Wait, the code sets `cmd->saturated_axes = 7U` if norm > maxdip. It doesn't check individual axes here, just scales all. The requirement says "Each ON cycle whose saturation_mask is nonzero increments...". The output struct has `saturation_mask`. In the context code, it's set to 7U. Test 4 shows A and C have `saturation_mask`=7. Matches.
+    `torque` = `cross(command, field)` = `[0,0,10] x [0,1,0]` = `[-10, 0, 0]`.
+    `dissipative_power` = `torque · momentum` = `[-10, 0, 0] · [100, 0, 0]` = `-1000`.
+    Test 4 outputs: A: dipole.z=10, dissipative=0, mask=7, torque.x=-10. C: dipole.z=10, dissipative=-1000, mask=7, torque.x=-10.
+    Again, C matches the physics (`dissipative_power = -1000`). A misses it. B is zero.
+
+    Conclusion so far: C correctly implements the computation. A computes dipole/torque/mask correctly but sets `dissipative_power` to 0 incorrectly. B does nothing (zeros out everything).
+    Therefore, C is the correct implementation for all tests.
+
+4.  **Structure the Reasoning (Internal Check):**
+    *   Requirement states: "During ON use adcs_momentum_unload_dipole and publish its achievable torque output." -> Tests 1-5 start from IDLE with demand=1, so first call enters ON cycle 1. Outputs should be computed via the primitive.
+    *   Primitive calculation yields dipole.z=1 (or 10), torque.x=-1 (or -10). Matches A and C. B is wrong.
+    *   Requirement states: "dissipative_power = torque_nm dot momentum_nms (zero when not computed in ON)". Since it's ON, it must be computed. Dot product gives -1 or -1000. C matches this. A incorrectly sets it to 0.
+    *   Saturation mask: Requirement says "Each ON cycle whose saturation_mask is nonzero increments...". Context code sets it to 7U when scaled. A and C match. B is 0.
+    *   State transition: First call from IDLE with demand goes to ON. Elapsed should be 0 or 1 depending on definition ("elapsed is the number of calls completed in the current mode"). Usually, after the call, elapsed might be 1, but the tests don't compare elapsed. They compare outputs.
+    *   All tests consistently point to C being correct. A fails on dissipative_power. B fails on everything except maybe defaults.
+
+    Let's double check the exact wording for dissipative_power: "dissipative_power = torque_nm dot momentum_nms (zero when not computed in ON)."
+    In Test 1: torque.x=-1, momentum.x=1 -> dot = -1. C says -1. A says 0. So C is right.
+    In Test 4: torque.x=-10, momentum.x=100 -> dot = -1000. C says -1000. A says 0. So C is right.
+    The pattern is clear. C implements the spec fully. A omits dissipative power calculation. B ignores the demand/state machine.
+
+    I will formulate the JSON response accordingly.
+    Tests 1, 2, 3, 4, 5 all clearly favor C.
+    Reason for each: C correctly computes dipole/torque via the specified primitive, calculates dissipative_power as the dot product per requirement, and handles saturation masking correctly, whereas A incorrectly zeroes dissipative_power and B outputs zeros.
+
+    Check constraints: "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|C|未规定|无法判断","reason":"一句话"}],"pick":"A|B|C"}"
+    I will generate exactly that.
+    One minor point: Test 2 and 3 have `extra_rest_per_saturated_cycle` = 0 and 100 respectively, but since it's the first call in ON, `rest_target` isn't computed yet. So they behave identically to Test 1 regarding outputs. C remains correct.
+    All good.
+    Output matches requirement format.
+    Proceed. 
+    Self-Correction/Verification during thought:
+    Could `dissipative_power` be defined differently in some contexts? The prompt explicitly says `dissipative_power = torque_nm dot momentum_nms`. So -1 is correct.
+    Could `elapsed` matter? Not compared in outputs.
+    Could `saturation_mask` in output struct be named differently? The test output says `md_output.saturation_mask`. The context struct says `saturation_mask`. Matches.
+    Everything aligns perfectly with C.
+    I will produce the JSON. 
+    Structure:
+    {
+      "tests": [
+        {"id": 1, "correct": "C", "reason": "C正确调用了卸载力矩计算并发布结果，且按需求公式计算了耗散功率(torque·momentum=-1)，而A错误清零了耗散功率，B直接输出零。"},
+        {"id": 2, "correct": "C", "reason": "同上，首拍进入ON周期，C正确计算力矩与耗散功率(-1)，符合需求。"},
+        {"id": 3, "correct": "C", "reason": "同上，参数变化不影响首拍ON状态下的力矩与耗散功率计算逻辑，C仍正确。"},
+        {"id": 4, "correct": "C", "reason": "C正确触发饱和限幅并输出mask=7，且按点积公式算出耗散功率为-1000，A再次错误清零该值。"},
+        {"id": 5, "correct": "C", "reason": "同测试1逻辑，C完整实现需求规定的力矩计算与耗散功率输出。"}
+      ],
+      "pick": "C"
+    }
+    Checks: Format matches request. Reasons are concise. Logic strictly follows the prompt's requirement text. No extra fluff. Ready. 
+    One detail: The prompt says "dissipative_power = torque_nm dot momentum_nms (zero when not computed in ON)". In Test 1, it IS computed in ON, so it shouldn't be zero. C is -1. Correct.
+    All tests point to C.
+    Output generation. 
+    [Done] 
+    Output matches the requested JSON format exactly.✅
+    Final Review of the prompt: "只依据需求判断... 最后综合所有测试，选出最符合需求的一种实现。只输出 JSON..."
+    All conditions met. 
+    Proceeds. 
+    [Output Generation] -> *Self-Correction/Refinement during generation prep*: 
+    I should ensure the JSON keys match exactly: `"id"`, `"correct"`, `"reason"`, `"pick"`.
+    The test IDs are 1, 2, 3, 4, 5.
+    Reasons should be one sentence each.
+    I will construct it carefully. 
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "C", "reason": "C正确调用卸载函数输出力矩，并按需求公式计算耗散功率为-1，A错误清零该值，B全零不符合ON周期规则。"},
+        {"id": 2, "correct": "C", "reason": "首拍进入ON周期，C正确计算力矩及耗散功率(-1)，符合需求；A/B分别存在清零或全零错误。"},
+        {"id": 3, "correct": "C", "reason": "仅配置参数不同，首拍ON周期行为不变，C仍正确输出力矩与耗散功率(-1)。"},
+        {"id": 4, "correct": "C", "reason": "C正确执行饱和限幅(mask=7)并输出对应力矩，且按点积算出耗散功率为-1000，A再次遗漏该计算。"},
+        {"id": 5, "correct": "C", "reason": "逻辑同测试1，C完整实现需求规定的ON周期力矩发布与耗散功率计算。"}
+      ],
+      "pick": "C"
+    }
+    ```
+    Matches perfectly. Output matches request.✅
+    Final Output Generation. 
+    *(Self-Correction/Verification during thought)*: Wait, let's verify the dot product sign. `torque_nm.x = -1`, `momentum_nms.x = 1`. Dot product = -1. Correct.
+    What about `dissipative_power` definition in GNC? Sometimes it's `-T·h` for dumping, but the prompt explicitly defines it as `torque_nm dot momentum_nms`. I must follow the prompt exactly. So -1 is correct.
+    All good. 
+    Output matches. 
+    Proceeds. 
+    [Output Generation] (matches the refined JSON)
+    `{ "tests": [ ... ], "pick": "C" }`
+    Done. 
+    [Final Check of the Prompt]: "只输出 JSON：{...}" -> I will output strictly the JSON. No markdown if possible, or standard markdown JSON block. The prompt says "只输出 JSON：...", I'll provide just the JSON string.
+    All set. 
+    Output Generation. 
+    *(Done.)*

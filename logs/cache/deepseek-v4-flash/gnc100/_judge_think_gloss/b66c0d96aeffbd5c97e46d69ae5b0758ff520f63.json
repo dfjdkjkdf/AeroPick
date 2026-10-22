@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "enable=0 应置 OFF 且不运行求解，输出解字段保持默认，C 的 q_bi.w=0 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "body=NULL 无效输入应锁存 FAULT 且不产生解，C 的 q_bi.w=0、used_count=0 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "inertial=NULL 无效输入应锁存 FAULT 且不产生解，C 的 q_bi.w=0、used_count=0 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "weights=NULL 无效输入应锁存 FAULT 且不产生解，C 的 q_bi.w=0、used_count=0 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "weight=0 为非正权重无效输入，应锁存 FAULT 且不产生解，C 的输出符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "weight<0 为非正权重无效输入，应锁存 FAULT 且不产生解，C 的输出符合。"
+  }
+ ],
+ "pick": "C"
+}

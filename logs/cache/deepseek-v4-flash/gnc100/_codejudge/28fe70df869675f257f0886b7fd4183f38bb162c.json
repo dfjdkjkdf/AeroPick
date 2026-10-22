@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly latches FAULT, validates all inputs, uses GNC primitives, and implements the phase machine with heater on during RECOVERY/WARMUP and payload on only in SUN.",
+ "_usage": {
+  "prompt": 14154,
+  "completion": 29394
+ }
+}

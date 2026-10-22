@@ -1,0 +1,30 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "pb 为 NULL 应返回 ADCS_E_NULL 且 out 存在时写单位阵，B 的对角元为 1 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "sb 为 NULL 应返回 ADCS_E_NULL 且 out 存在时写单位阵，B 的对角元为 1 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "pi 为 NULL 应返回 ADCS_E_NULL 且 out 存在时写单位阵，B 的对角元为 1 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "si 为 NULL 应返回 ADCS_E_NULL 且 out 存在时写单位阵，B 的对角元为 1 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "out 为 NULL 属于 Any null，应返回 ADCS_E_NULL(1)，B 的返回值为 1 符合。"
+  }
+ ],
+ "pick": "B"
+}

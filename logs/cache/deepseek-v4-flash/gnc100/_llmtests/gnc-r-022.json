@@ -1,0 +1,162 @@
+{
+ "key": "2a9adc1dbd28ed489615bcfb3668f5e138d197f2",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 1.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.8;\npg_config.max_rejects = 5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.02;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 3;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 1.0;\npg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.5;\npg_config.minimum_cosine = 0.9;\npg_config.max_rejects = 4;",
+    "pg_input.field_body_t->x = 0.6;\npg_input.field_body_t->y = 0.8;\npg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 0;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.0;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = -0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 1.0;\npg_config.max_rejects = 7;",
+    "pg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = -1.0;\npg_config.max_rejects = 7;",
+    "pg_input.field_body_t->x = -1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 1;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 1.0;\npg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 20;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 1.0;\npg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t = NULL;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = NAN;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = INFINITY;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = NAN;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = NAN;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 1.5;\npg_config.max_rejects = 7;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 21;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 3;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 1.0;\npg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 1.0;",
+    "pg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 3;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 1.0;\npg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 1.0;\npg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 1.0;\npg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.5;\npg_config.max_rejects = 3;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 1.0;\npg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 1.0;",
+    "pg_input.enable = 0;",
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;\npg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;\npg_input.dt_s = 0.1;\npg_config.minimum_cosine = 0.99;\npg_config.max_rejects = 2;",
+    "pg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.1;\npg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.2;\npg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;\npg_input.field_body_t->y = 0.0;\npg_input.field_body_t->z = 0.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly normalizes the primary, forms the normalized cross as the second vector, computes third=cross(second,primary), returns the true separation sine, and zeroes outputs on non-NULL failures; A misuses the raw secondary for third, and B uses an identity matrix on failure and an unnormalized sine.",
+ "_usage": {
+  "prompt": 9339,
+  "completion": 13444
+ }
+}

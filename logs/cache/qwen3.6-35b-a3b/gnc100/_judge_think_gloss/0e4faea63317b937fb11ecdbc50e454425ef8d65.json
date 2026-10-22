@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求规定NULL输入返回ADCS_E_NULL(1)，且失败时必须将miss置为INFINITY；B正确返回1并重置miss，A错返2，C未按要求重置miss。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同测试1逻辑，sun_direction为NULL时B正确返回1且按需求重置miss为inf，A/C存在返回值或重置缺陷。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "eclipse输出指针为NULL时应返回ADCS_E_NULL(1)并安全退出；A直接崩溃，B正确返回1符合需求。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "behind_m指针为NULL时应返回1；A崩溃，B符合需求的安全防御规范。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "miss_m指针为NULL时应返回1；A崩溃，B符合需求。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "需求明确指定非有限数据应返回ADCS_E_RANGE(2)；A严格遵循该错误码映射，B/C返回ADCS_E_NOT_FINITE(4)与需求文本不符。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9815,
+  "completion": 5343
+ }
+}

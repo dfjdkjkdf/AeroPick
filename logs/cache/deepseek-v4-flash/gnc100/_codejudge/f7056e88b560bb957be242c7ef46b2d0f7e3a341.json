@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确校验 NULL、数量、轮子有效性和失败输出，并使用 adcs_wheel_momentum 原语计算轮系角动量，最符合需求。",
+ "_usage": {
+  "prompt": 9875,
+  "completion": 3674
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A follows the required check order, computes the inverse-square gain, clamps correctly, returns the unit field direction and scaled gain, and zeroes outputs on all failures without early input corruption.",
+ "_usage": {
+  "prompt": 9364,
+  "completion": 31183
+ }
+}

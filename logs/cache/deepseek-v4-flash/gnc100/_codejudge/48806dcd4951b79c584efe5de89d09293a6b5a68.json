@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 使用 adcs_limit_scalar 对每个轴独立限幅，并通过限幅后值是否变化来准确置位饱和位，同时错误处理和失败清零均符合需求。",
+ "_usage": {
+  "prompt": 10302,
+  "completion": 25439
+ }
+}

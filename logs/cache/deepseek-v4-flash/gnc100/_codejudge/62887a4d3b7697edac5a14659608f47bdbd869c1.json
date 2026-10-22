@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly validates null/count/vectors/weights, delegates to adcs_quest, and writes identity on all failures; B misses identity on null and A reimplements with a different diagonal shift.",
+ "_usage": {
+  "prompt": 9616,
+  "completion": 15748
+ }
+}

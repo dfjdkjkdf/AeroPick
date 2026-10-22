@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B implements the exact shadow rule and zeros the output coordinates/flag on null or nonfinite errors, satisfying the error output contract; A and C leave outputs untouched on error.",
+ "_usage": {
+  "prompt": 8599,
+  "completion": 718
+ }
+}

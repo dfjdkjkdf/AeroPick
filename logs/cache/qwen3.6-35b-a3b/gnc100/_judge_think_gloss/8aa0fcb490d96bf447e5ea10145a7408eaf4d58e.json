@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定空指针输入返回ADCS_E_NULL且失败时输出必须置为默认值INFINITY和SIZE_MAX，A实现完全符合，B/C仅清零不符。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，body_vectors为空触发空指针校验与失败默认值赋INFINITY/SIZE_MAX。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同上，inertial_vectors为空触发空指针校验与失败默认值赋INFINITY/SIZE_MAX。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同上，weights为空触发空指针校验与失败默认值赋INFINITY/SIZE_MAX。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "loss输出指针为空属无效输入，函数应按失败处理并将worst_index置为SIZE_MAX，A符合规范。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "worst_index输出指针为空属无效输入，函数应按失败处理并将loss置为INFINITY，A符合规范。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9365,
+  "completion": 3220
+ }
+}

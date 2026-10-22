@@ -1,0 +1,156 @@
+{
+ "key": "d3392340d5b3728670a804a12db0a67cc0f33fbd",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wd_state.mode = WD_OFF;\nwd_input.enable = 1;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.5;\nwd_config.gain_s_inv = 0.1;\nwd_config.max_dipole_a_m2 = 10.0;\nwd_config.max_wheel_speed_rad_s = 1000.0;\nwd_config.required_high = 2;\nwd_config.required_low = 2;\nwd_config.minimum_dump_cycles = 3;\nwd_config.cooldown_cycles = 2;\nwd_input.wheel_count = 4;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].inertia_kg_m2 = 0.01;\nwd_input.wheels[0].speed_rad_s = 0.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[1].inertia_kg_m2 = 0.01;\nwd_input.wheels[1].speed_rad_s = 0.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[2].inertia_kg_m2 = 0.01;\nwd_input.wheels[2].speed_rad_s = 0.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;\nwd_input.field_body_t->y = 0.0;\nwd_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wd_state.mode = WD_OFF;\nwd_input.enable = 1;\nwd_config.start_nms = 2.0;\nwd_config.stop_nms = 1.0;\nwd_config.gain_s_inv = 0.5;\nwd_config.max_dipole_a_m2 = 5.0;\nwd_config.max_wheel_speed_rad_s = 500.0;\nwd_config.required_high = 3;\nwd_config.required_low = 2;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheel_count = 4;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].inertia_kg_m2 = 0.1;\nwd_input.wheels[0].speed_rad_s = 10.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[1].inertia_kg_m2 = 0.1;\nwd_input.wheels[1].speed_rad_s = 10.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[2].inertia_kg_m2 = 0.1;\nwd_input.wheels[2].speed_rad_s = 10.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 1.0;\nwd_input.field_body_t->x = 0.0;\nwd_input.field_body_t->y = 0.0;\nwd_input.field_body_t->z = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wd_state.mode = WD_OFF;\nwd_input.enable = 1;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.999;\nwd_config.gain_s_inv = 0.0;\nwd_config.max_dipole_a_m2 = 0.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 100;\nwd_config.cooldown_cycles = 100;\nwd_input.wheel_count = 4;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].inertia_kg_m2 = 1.0;\nwd_input.wheels[0].speed_rad_s = 0.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[1].inertia_kg_m2 = 1.0;\nwd_input.wheels[1].speed_rad_s = 0.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[2].inertia_kg_m2 = 1.0;\nwd_input.wheels[2].speed_rad_s = 0.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 3;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 10.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.4;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 10.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 2;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 2.0;\nwd_config.stop_nms = 1.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 10.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 1.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = -1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = -1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 0;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 101;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 0;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.field_body_t = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 100.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].speed_rad_s = 200.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wd_input.enable = 1;\nwd_input.wheel_count = 4;\nwd_config.start_nms = INFINITY;\nwd_config.stop_nms = 0.0;\nwd_config.gain_s_inv = 1.0;\nwd_config.max_dipole_a_m2 = 1.0;\nwd_config.max_wheel_speed_rad_s = 1.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wd_state.mode = WD_OFF;\nwd_input.enable = 1;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.5;\nwd_config.gain_s_inv = 0.1;\nwd_config.max_dipole_a_m2 = 10.0;\nwd_config.max_wheel_speed_rad_s = 100.0;\nwd_config.required_high = 2;\nwd_config.required_low = 2;\nwd_config.minimum_dump_cycles = 2;\nwd_config.cooldown_cycles = 2;\nwd_input.wheel_count = 4;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].inertia_kg_m2 = 0.1;\nwd_input.wheels[0].speed_rad_s = 20.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[1].inertia_kg_m2 = 0.1;\nwd_input.wheels[1].speed_rad_s = 0.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[2].inertia_kg_m2 = 0.1;\nwd_input.wheels[2].speed_rad_s = 0.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 0.0;\nwd_input.field_body_t->y = 0.0;\nwd_input.field_body_t->z = 1.0;",
+    "wd_input.wheels[0].speed_rad_s = 0.0;",
+    "wd_input.wheels[0].speed_rad_s = 0.0;",
+    "wd_input.wheels[0].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wd_state.mode = WD_ARMING;\nwd_state.high_cycles = 1;\nwd_state.low_cycles = 0;\nwd_state.elapsed = 0;\nwd_input.enable = 1;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.5;\nwd_config.gain_s_inv = 0.1;\nwd_config.max_dipole_a_m2 = 10.0;\nwd_config.max_wheel_speed_rad_s = 1000.0;\nwd_config.required_high = 2;\nwd_config.required_low = 2;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheel_count = 4;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].inertia_kg_m2 = 0.1;\nwd_input.wheels[0].speed_rad_s = 20.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[1].inertia_kg_m2 = 0.1;\nwd_input.wheels[1].speed_rad_s = 0.0;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[2].inertia_kg_m2 = 0.1;\nwd_input.wheels[2].speed_rad_s = 0.0;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 0.0;\nwd_input.field_body_t->y = 0.0;\nwd_input.field_body_t->z = 1.0;",
+    "wd_input.wheels[0].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wd_state.mode = WD_DUMPING;\nwd_state.high_cycles = 0;\nwd_state.low_cycles = 0;\nwd_state.elapsed = 0;\nwd_input.enable = 1;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.5;\nwd_config.gain_s_inv = 0.1;\nwd_config.max_dipole_a_m2 = 10.0;\nwd_config.max_wheel_speed_rad_s = 100.0;\nwd_config.required_high = 1;\nwd_config.required_low = 2;\nwd_config.minimum_dump_cycles = 2;\nwd_config.cooldown_cycles = 2;\nwd_input.wheel_count = 4;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].inertia_kg_m2 = 0.1;\nwd_input.wheels[0].speed_rad_s = 2.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[1].inertia_kg_m2 = 0.1;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[2].inertia_kg_m2 = 0.1;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 0.0;\nwd_input.field_body_t->y = 0.0;\nwd_input.field_body_t->z = 1.0;",
+    "wd_input.wheels[0].speed_rad_s = 0.0;",
+    "wd_input.wheels[0].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wd_state.mode = WD_COOLDOWN;\nwd_state.high_cycles = 0;\nwd_state.low_cycles = 0;\nwd_state.elapsed = 0;\nwd_input.enable = 1;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.5;\nwd_config.gain_s_inv = 0.1;\nwd_config.max_dipole_a_m2 = 10.0;\nwd_config.max_wheel_speed_rad_s = 100.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 2;\nwd_input.wheel_count = 4;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].inertia_kg_m2 = 0.1;\nwd_input.wheels[0].speed_rad_s = 20.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[1].inertia_kg_m2 = 0.1;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[2].inertia_kg_m2 = 0.1;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 0.0;\nwd_input.field_body_t->y = 0.0;\nwd_input.field_body_t->z = 1.0;",
+    "wd_config.start_nms = 0.5;\nwd_config.stop_nms = 0.1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wd_state.mode = WD_OFF;\nwd_input.enable = 1;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.5;\nwd_config.gain_s_inv = 0.1;\nwd_config.max_dipole_a_m2 = 10.0;\nwd_config.max_wheel_speed_rad_s = 100.0;\nwd_config.required_high = 1;\nwd_config.required_low = 1;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheel_count = 4;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].inertia_kg_m2 = 0.1;\nwd_input.wheels[0].speed_rad_s = 20.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[1].inertia_kg_m2 = 0.1;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[2].inertia_kg_m2 = 0.1;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 0.0;\nwd_input.field_body_t->y = 0.0;\nwd_input.field_body_t->z = 1.0;",
+    "wd_input.enable = 0;",
+    "wd_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wd_state.mode = WD_DUMPING;\nwd_state.high_cycles = 0;\nwd_state.low_cycles = 0;\nwd_state.elapsed = 1;\nwd_input.enable = 1;\nwd_config.start_nms = 1.0;\nwd_config.stop_nms = 0.5;\nwd_config.gain_s_inv = 0.1;\nwd_config.max_dipole_a_m2 = 10.0;\nwd_config.max_wheel_speed_rad_s = 100.0;\nwd_config.required_high = 1;\nwd_config.required_low = 3;\nwd_config.minimum_dump_cycles = 1;\nwd_config.cooldown_cycles = 1;\nwd_input.wheel_count = 4;\nwd_input.wheels[0].axis_body.x = 1.0;\nwd_input.wheels[0].inertia_kg_m2 = 0.1;\nwd_input.wheels[0].speed_rad_s = 2.0;\nwd_input.wheels[1].axis_body.y = 1.0;\nwd_input.wheels[1].inertia_kg_m2 = 0.1;\nwd_input.wheels[2].axis_body.z = 1.0;\nwd_input.wheels[2].inertia_kg_m2 = 0.1;\nwd_input.wheels[3].axis_body.x = 0.0;\nwd_input.wheels[3].axis_body.y = 0.0;\nwd_input.wheels[3].axis_body.z = 0.0;\nwd_input.field_body_t->x = 0.0;\nwd_input.field_body_t->y = 0.0;\nwd_input.field_body_t->z = 1.0;",
+    "wd_input.wheels[0].speed_rad_s = 0.0;",
+    "wd_input.wheels[0].speed_rad_s = 2.0;",
+    "wd_input.wheels[0].speed_rad_s = 0.0;",
+    "wd_input.wheels[0].speed_rad_s = 0.0;"
+   ]
+  }
+ ]
+}

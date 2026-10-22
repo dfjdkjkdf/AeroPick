@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "field_body_t 为 NULL 属无效场/遥测，应锁存 FAULT、零向量输出且不崩溃，C 满足。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "wheel[3] 轴为零向量属无效轮几何，应锁存 FAULT；需求未要求 FAULT 清零高计数，故 high_cycles 应保持 1。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "第二次调用虽有 enable=0，但轮几何仍无效，无效输入应继续锁存 FAULT，不能早退为 OFF。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "无效轮几何应锁存 FAULT；elapsed 不属于需求规定在 FAULT 中清零的量，应保持 1。"
+  }
+ ],
+ "pick": "C"
+}

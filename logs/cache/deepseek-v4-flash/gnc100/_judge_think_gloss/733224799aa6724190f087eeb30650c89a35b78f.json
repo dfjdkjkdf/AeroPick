@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "enable=0时需求要求进入IDLE并清零，C输出mode=0符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "有效静止样本且计数未达required，应累计并发布能量，C的sum_energy=1符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "有效静止样本且计数未达required，应累计并发布能量，C的sum_energy=0.25符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "有效静止样本且计数未达required，应累计并发布能量，C的sum_energy=0.25符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "有效静止样本且计数未达required，应累计并发布能量，C的sum_energy=0.25符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "有效静止样本且计数未达required，应累计并发布能量，C的sum_energy=1符合。"
+  }
+ ],
+ "pick": "C"
+}

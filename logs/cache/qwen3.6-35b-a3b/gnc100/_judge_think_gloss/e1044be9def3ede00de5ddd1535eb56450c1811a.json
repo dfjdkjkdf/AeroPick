@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定空指针输入应返回ADCS_E_NULL（值为1），实现A正确返回1且未崩溃，实现B因未校验空指针导致崩溃，违背需求。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 8965,
+  "completion": 2023
+ }
+}

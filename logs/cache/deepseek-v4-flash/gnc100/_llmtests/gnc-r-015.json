@@ -1,0 +1,143 @@
+{
+ "key": "e365145233435715ac3fe73149239623e185204b",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.1;\ngv_input.gyro[0]->y = 0.2;\ngv_input.gyro[0]->z = 0.3;\ngv_input.gyro[1]->x = 0.1;\ngv_input.gyro[1]->y = 0.2;\ngv_input.gyro[1]->z = 0.3;\ngv_input.gyro[2]->x = 0.1;\ngv_input.gyro[2]->y = 0.2;\ngv_input.gyro[2]->z = 0.3;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 2.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 5.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 5.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 1.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 1.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 1;\ngv_config.reentry_confirm = 1;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 3.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.0;\ngv_config.reentry_threshold_rad_s = 0.0;\ngv_config.isolate_confirm = 1;\ngv_config.reentry_confirm = 1;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 1.0;\ngv_config.isolate_confirm = 20;\ngv_config.reentry_confirm = 20;\ngv_input.gyro[0]->x = 0.1;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.1;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.1;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gv_input.enable = 0;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 7;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 1.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = -0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 21;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 0;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = -1.0;\ngv_config.reentry_threshold_rad_s = 0.0;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = NAN;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = INFINITY;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 5.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;",
+    "gv_input.gyro[2]->x = 5.0;",
+    "gv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 5.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;",
+    "gv_input.gyro[2]->x = 5.0;",
+    "gv_input.gyro[2]->x = 5.0;",
+    "gv_input.gyro[2]->x = 0.1;",
+    "gv_input.gyro[2]->x = 0.1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0]->x = 0.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 5.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;",
+    "gv_input.gyro[2]->x = 5.0;",
+    "gv_input.gyro[2]->x = 5.0;",
+    "gv_input.enable = 0;",
+    "gv_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 1.0;\ngv_config.reentry_threshold_rad_s = 0.5;\ngv_config.isolate_confirm = 1;\ngv_config.reentry_confirm = 1;\ngv_input.gyro[0]->x = 5.0;\ngv_input.gyro[0]->y = 0.0;\ngv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 5.0;\ngv_input.gyro[1]->y = 0.0;\ngv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0;\ngv_input.gyro[2]->y = 0.0;\ngv_input.gyro[2]->z = 0.0;",
+    "gv_input.gyro[0]->x = 5.0;\ngv_input.gyro[1]->x = 5.0;",
+    "gv_input.gyro[0]->x = 0.0;\ngv_input.gyro[1]->x = 0.0;"
+   ]
+  }
+ ]
+}

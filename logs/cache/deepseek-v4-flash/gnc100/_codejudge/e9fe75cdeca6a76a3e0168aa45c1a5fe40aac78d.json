@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C正确实现了连续切换确认、使用原始权重1/(floor+residual)融合、以及双源不可用时的NONE/FAULT输出；A错误地归一化了权重并提前清除FAULT，B的切换确认计数被每次重置导致无法累计。",
+ "_usage": {
+  "prompt": 16961,
+  "completion": 16734
+ }
+}

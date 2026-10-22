@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A validates all axes before conversion, applies per-coil limits and saturation bits correctly, and zeros outputs on both null and range failures as required.",
+ "_usage": {
+  "prompt": 9998,
+  "completion": 935
+ }
+}

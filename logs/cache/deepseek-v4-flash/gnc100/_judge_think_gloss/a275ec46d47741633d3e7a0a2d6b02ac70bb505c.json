@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "Demand begins in IDLE with on_cycles=1, so this call is ON cycle one and after exactly one ON call it must enter REST; output mode should be REST."
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "First ON call from IDLE counts as one completed ON cycle, so elapsed should be 1."
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "First ON call from IDLE counts as one completed ON cycle, so elapsed should be 1."
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "First ON call from IDLE counts as one completed ON cycle, so elapsed should be 1."
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "Disabled forces IDLE with elapsed and saturated-cycle count zero; rest_target is not specified to be cleared, so retaining 5 is correct."
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "Demand absent forces IDLE with elapsed and saturated-cycle count zero; rest_target is not specified to be cleared, so retaining 6 is correct."
+  }
+ ],
+ "pick": "A"
+}

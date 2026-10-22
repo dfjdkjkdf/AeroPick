@@ -1,0 +1,30 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "有效后续样本且时间严格增大，应保持 initialized=1 并更新 previous/time，A 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "有效后续样本，应保持 initialized=1 并更新 previous.x 和 previous_time，A 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "gain=0 非负且有效，应保持 initialized=1 并更新 previous.y/time，A 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "limit=0 非负有效，限幅后 x/y 轴应饱和，saturated_axes=3，且状态正确更新，A 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "有效后续样本，应保持 initialized=1 并更新 previous.x/time，A 符合。"
+  }
+ ],
+ "pick": "A"
+}

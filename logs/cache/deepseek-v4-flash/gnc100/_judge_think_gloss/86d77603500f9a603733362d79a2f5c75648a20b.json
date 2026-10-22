@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "第3次调用 enable=0，需求规定 Disable 清除全部状态（含拒绝计数），模式应回到 IDLE(0)，因此 B 正确。"
+  }
+ ],
+ "pick": "B"
+}

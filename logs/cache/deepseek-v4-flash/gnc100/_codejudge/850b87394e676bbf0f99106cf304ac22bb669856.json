@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A best matches the required -axis·requested allocation, correctly faults on fewer than two usable wheels, handles missing wheels as DEGRADED, and uses the required LIMITED/DEGRADED/RECOVERING state logic with inclusive release/restore counts.",
+ "_usage": {
+  "prompt": 16202,
+  "completion": 28245
+ }
+}

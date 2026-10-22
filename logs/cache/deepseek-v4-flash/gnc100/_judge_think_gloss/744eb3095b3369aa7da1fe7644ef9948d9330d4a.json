@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "NULL 输入属于失败，需求规定失败时 distance_rad 为 INFINITY。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "NULL 输入属于失败，需求规定失败时 distance_rad 为 INFINITY。"
+  }
+ ],
+ "pick": "B"
+}

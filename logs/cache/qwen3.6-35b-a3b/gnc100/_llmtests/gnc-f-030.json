@@ -1,0 +1,128 @@
+{
+ "key": "79c2f39ab39d3880622b471ed43d25ff904569d0",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wheels = NULL;\nwheel_torque = NULL;\nmomentum = NULL;\nbody_torque = NULL;\nmechanical_power = NULL;\nbus_power = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = NULL;\ncount = 1;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = NULL;\ncount = 1;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 0;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 17;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nefficiency = -1.0;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nefficiency = 1.1;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nefficiency = INFINITY;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nefficiency = NAN;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 0.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = 1.0;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = NAN;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = 1.0;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = NAN;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = 1.0;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = 0.0;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = -1.0;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheels = (adcs_wheel_t[2]){0};\nwheel_torque = (double[2]){0};\ncount = 2;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheels[1].axis_body.x = 0.0;\nwheels[1].axis_body.y = 1.0;\nwheels[1].axis_body.z = 0.0;\nwheels[1].inertia_kg_m2 = 1.0;\nwheels[1].speed_rad_s = 1.0;\nwheel_torque[0] = 1.0;\nwheel_torque[1] = 1.0;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = -1.0;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = 1.0;\nefficiency = 1.0;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = 1.0;\nefficiency = 0.0;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wheels = (adcs_wheel_t[1]){0};\nwheel_torque = (double[1]){0};\ncount = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = 1.0;\nefficiency = 0.9;\nmomentum = (adcs_vec3_t){0};\nbody_torque = (adcs_vec3_t){0};\nmechanical_power = 0.0;\nbus_power = 0.0;",
+    "wheels[0].speed_rad_s = -1.0;",
+    "wheel_torque[0] = 1.0;",
+    "wheels[0].speed_rad_s = 1.0;\nwheel_torque[0] = -1.0;"
+   ]
+  }
+ ]
+}

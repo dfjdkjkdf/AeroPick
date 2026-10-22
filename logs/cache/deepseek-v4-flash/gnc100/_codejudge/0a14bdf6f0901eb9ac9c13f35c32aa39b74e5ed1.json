@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly implements the Rodrigues formula with right-handed cross product, handles null/invalid inputs per spec, and zeros the output on failures.",
+ "_usage": {
+  "prompt": 9095,
+  "completion": 14104
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 在空指针等失败时正确写入 INFINITY/SIZE_MAX 默认值，并先完整校验再计算，加权损失与并列取最小索引均符合需求。",
+ "_usage": {
+  "prompt": 9769,
+  "completion": 9162
+ }
+}

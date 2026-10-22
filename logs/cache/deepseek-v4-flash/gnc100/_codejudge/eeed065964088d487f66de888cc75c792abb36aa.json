@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly preserves isolation/streak state on invalid-input FAULT, resets all state only on disable, and follows the normative voter table using the post-update isolation count.",
+ "_usage": {
+  "prompt": 16299,
+  "completion": 21090
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "key": "d3d19c36ef32f33109cb5fff23bf9547e7369b72",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wheels = NULL;\ncount = 0;\nfield = NULL;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = NULL;\ncommand = NULL;\ntorque = NULL;\nenergy = NULL;\ndissipation = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = (adcs_wheel_t*)0x1234;\ncount = 1;\nfield = &dummy_field;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels[0];\ncount = 0;\nfield = &dummy_field;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels[0];\ncount = 17;\nfield = &dummy_field;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels[0];\ncount = 1;\nfield = (adcs_vec3_t*)0x5678;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels[0];\ncount = 1;\nfield = &dummy_field_nan;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels_inf;\ncount = 1;\nfield = &dummy_field;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels_zero_inertia;\ncount = 1;\nfield = &dummy_field;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels_neg_inertia;\ncount = 1;\nfield = &dummy_field;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels_nan_speed;\ncount = 1;\nfield = &dummy_field;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels_bad_axis;\ncount = 1;\nfield = &dummy_field;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheels = &dummy_wheels_normal;\ncount = 1;\nfield = &dummy_field_normal;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheels = &dummy_wheels_normal;\ncount = 16;\nfield = &dummy_field_normal;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheels = &dummy_wheels_normal;\ncount = 1;\nfield = &dummy_field_zero;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheels = &dummy_wheels_normal;\ncount = 1;\nfield = &dummy_field_normal;\ngain = 0.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheels = &dummy_wheels_normal;\ncount = 1;\nfield = &dummy_field_normal;\ngain = 1.0;\ndipole_limit = 0.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels_normal;\ncount = 1;\nfield = &dummy_field_normal;\ngain = -1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = &dummy_wheels_normal;\ncount = 1;\nfield = &dummy_field_normal;\ngain = 1.0;\ndipole_limit = -1.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wheels = &dummy_wheels_normal;\ncount = 1;\nfield = &dummy_field_normal;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;",
+    "wheels = &dummy_wheels_normal;\ncount = 1;\nfield = &dummy_field_zero;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheels = &dummy_wheels_multi[0];\ncount = 4;\nfield = &dummy_field_normal;\ngain = 1.0;\ndipole_limit = 10.0;\nmomentum = &dummy_mom;\ncommand = &dummy_cmd;\ntorque = &dummy_tor;\nenergy = &dummy_e;\ndissipation = &dummy_d;"
+   ]
+  }
+ ]
+}

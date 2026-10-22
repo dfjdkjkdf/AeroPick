@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly keeps disabled state in NORMAL and zeros commands, while B can enter BRAKE/DERATE and apply torque even when disabled, violating the disable reset requirement; A's limited-mask bug is telemetry-only.",
+ "_usage": {
+  "prompt": 13691,
+  "completion": 28516
+ }
+}

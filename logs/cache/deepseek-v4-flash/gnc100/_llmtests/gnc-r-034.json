@@ -1,0 +1,226 @@
+{
+ "key": "81795200ccf34bf635d8e980f5a11dd9bf077d05",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = -1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.0;\nsample->x = 1.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.0;\nsample->x = -1.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.5;\nsample->x = 0.5;\nsample->y = 0.5;\nsample->z = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = -0.5;\nsample->x = -0.5;\nsample->y = -0.5;\nsample->z = -0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 1;\nqc_state.previous.w = 1.0;\nqc_state.previous.x = 0.0;\nqc_state.previous.y = 0.0;\nqc_state.previous.z = 0.0;\nsample->w = 0.7071067811865476;\nsample->x = 0.7071067811865476;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 1;\nqc_state.previous.w = 1.0;\nqc_state.previous.x = 0.0;\nqc_state.previous.y = 0.0;\nqc_state.previous.z = 0.0;\nsample->w = -0.7071067811865476;\nsample->x = -0.7071067811865476;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 1;\nqc_state.previous.w = 0.0;\nqc_state.previous.x = 1.0;\nqc_state.previous.y = 0.0;\nqc_state.previous.z = 0.0;\nsample->w = 0.0;\nsample->x = -1.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 2.0;\nsample->x = 2.0;\nsample->y = 2.0;\nsample->z = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 1.0e-13;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 1.0e-12;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 1.0e-11;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = -0.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 1.0e-300;\nsample->x = 1.0e-300;\nsample->y = 1.0e-300;\nsample->z = 1.0e-300;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qc_state.initialized = 1;\nqc_state.previous.w = 1.0;\nqc_state.previous.x = 0.0;\nqc_state.previous.y = 0.0;\nqc_state.previous.z = 0.0;\nsample->w = 0.0;\nsample->x = 1.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "accepted = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "separation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample = NULL;\naccepted = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample = NULL;\nseparation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "accepted = NULL;\nseparation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample = NULL;\naccepted = NULL;\nseparation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample->w = NAN;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample->w = 1.0;\nsample->x = NAN;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample->w = 1.0;\nsample->x = 0.0;\nsample->y = INFINITY;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sample->w = 1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = -INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qc_state.initialized = 1;\nqc_state.previous.w = NAN;\nqc_state.previous.x = 0.0;\nqc_state.previous.y = 0.0;\nqc_state.previous.z = 0.0;\nsample->w = 1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = -1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "sample->w = -0.7071067811865476;\nsample->x = -0.7071067811865476;",
+    "sample->w = 0.7071067811865476;\nsample->x = 0.7071067811865476;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "qc_state.initialized = 0;\nsample->w = 1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qc_state.initialized = 1;\nqc_state.previous.w = 1.0;\nqc_state.previous.x = 0.0;\nqc_state.previous.y = 0.0;\nqc_state.previous.z = 0.0;\nsample->w = 0.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "sample->w = 1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "sample->w = 1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qc_state.initialized = 0;\nsample->w = 0.5;\nsample->x = 0.5;\nsample->y = 0.5;\nsample->z = 0.5;",
+    "sample->w = -0.5;\nsample->x = -0.5;\nsample->y = -0.5;\nsample->z = -0.5;",
+    "sample->w = 0.5;\nsample->x = 0.5;\nsample->y = 0.5;\nsample->z = 0.5;",
+    "sample->w = -0.5;\nsample->x = 0.5;\nsample->y = -0.5;\nsample->z = 0.5;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qc_state.initialized = 1;\nqc_state.previous.w = 0.0;\nqc_state.previous.x = 1.0;\nqc_state.previous.y = 0.0;\nqc_state.previous.z = 0.0;\nsample->w = 0.0;\nsample->x = 1.0;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "sample->w = 1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "sample->w = -1.0;\nsample->x = 0.0;\nsample->y = 0.0;\nsample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qc_state.initialized = 1;\nqc_state.previous.w = 1.0;\nqc_state.previous.x = 0.0;\nqc_state.previous.y = 0.0;\nqc_state.previous.z = 0.0;\naccepted = NULL;\nsample->w = 0.7071067811865476;\nsample->x = 0.7071067811865476;\nsample->y = 0.0;\nsample->z = 0.0;",
+    "accepted->w = 0.0;\naccepted->x = 0.0;\naccepted->y = 0.0;\naccepted->z = 0.0;"
+   ]
+  }
+ ]
+}

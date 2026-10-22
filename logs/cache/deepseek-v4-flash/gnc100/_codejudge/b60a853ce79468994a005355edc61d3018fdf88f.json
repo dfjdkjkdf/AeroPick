@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确归一化、首样本按 w≥0 规范化、后续与历史对齐，并使用 adcs_quat_abs_dot 以 2*acos(abs(dot)) 计算符号不变分离角，且错误时不更新历史。",
+ "_usage": {
+  "prompt": 9401,
+  "completion": 5890
+ }
+}

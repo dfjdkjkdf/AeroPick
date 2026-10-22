@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A implements the required normalize, exact left-multiplied body-rate propagation with correct half-angle/order, result normalization, w>=0 canonicalization, and writes identity on every failure.",
+ "_usage": {
+  "prompt": 9501,
+  "completion": 20403
+ }
+}

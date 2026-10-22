@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly validates inputs, normalizes and orthogonality-checks axes, applies adcs_limit_scalar with saturation mask, reconstructs torque/residual, and returns status; B lacks a return and mishandles NULL outputs, while C omits NULL checks for several output pointers.",
+ "_usage": {
+  "prompt": 10619,
+  "completion": 12554
+ }
+}

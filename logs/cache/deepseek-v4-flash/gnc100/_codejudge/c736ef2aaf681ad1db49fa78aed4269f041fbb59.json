@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 在 null 失败时也按输出契约将 RMS 置零，并正确按权重归一化计算角度平方均值开方；A/C 在 null 时未置零输出。",
+ "_usage": {
+  "prompt": 9367,
+  "completion": 653
+ }
+}

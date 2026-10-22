@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly validates finite unit axes, returns E_RANGE with zeroed outputs for invalid amplitude/axes, and computes residual as -sum(axis_i*amplitude); B fails to enforce unit norm and unsafe null handling, while C uses an inappropriate collinearity tolerance for unit-norm validation.",
+ "_usage": {
+  "prompt": 9664,
+  "completion": 7666
+ }
+}

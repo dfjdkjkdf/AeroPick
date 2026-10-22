@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C implements the required normalization sequence (normalize check_inertial, map to body, normalize mapped and body, compute b×p angle) and sets INFINITY/zero failure defaults, including for NULL inputs when outputs are available.",
+ "_usage": {
+  "prompt": 10020,
+  "completion": 5887
+ }
+}

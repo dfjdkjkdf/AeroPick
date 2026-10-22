@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确校验 enable 为 0/1，并使用 acos 计算角度残差及单点剔除重试，最符合需求。",
+ "_usage": {
+  "prompt": 13924,
+  "completion": 18358
+ }
+}

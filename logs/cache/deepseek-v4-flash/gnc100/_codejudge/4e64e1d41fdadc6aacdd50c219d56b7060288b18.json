@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确使用独立的 adcs_bdot_state_t 并调用 bdot_update/bdot_dipole，状态更新与错误处理符合需求；B/C 将不兼容的 sm_state_t 直接传给 adcs_bdot_update，导致状态错误。",
+ "_usage": {
+  "prompt": 10021,
+  "completion": 12813
+ }
+}

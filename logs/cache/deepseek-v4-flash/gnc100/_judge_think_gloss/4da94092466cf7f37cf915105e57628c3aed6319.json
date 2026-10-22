@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "输入轴不是单位向量，需求要求校验单位范数并以 ADCS_E_RANGE 失败且输出清零，A 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "spacecraft_residual_nm 为 NULL，需求要求返回 ADCS_E_NULL 且失败输出清零，A 符合且未崩溃。"
+  }
+ ],
+ "pick": "A"
+}

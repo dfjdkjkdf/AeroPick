@@ -1,0 +1,141 @@
+{
+ "key": "d0cf03a1fbf43ab51d1a81bc449565a63d306175",
+ "tests": [
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_input.enable = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 0.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = 1.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.5;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.5;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;",
+    "gb_input.sample->x = 0.5;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.5;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;",
+    "gb_input.sample->x = 2.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 3;\ngb_input.sample->x = 1.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;",
+    "gb_input.sample->x = 0.0;\ngb_input.sample->y = 1.0;",
+    "gb_input.sample->y = 0.0;\ngb_input.sample->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 3;\ngb_input.sample->x = 1.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;",
+    "gb_input.sample->x = 2.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;",
+    "gb_input.sample->x = 0.0;\ngb_input.sample->y = 1.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.5;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;",
+    "gb_input.sample->x = 0.5;",
+    "gb_input.enable = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.5;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;",
+    "gb_input.sample->x = 0.5;",
+    "gb_input.sample->x = 1.5;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = NAN;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = INFINITY;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = -1.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = NAN;\ngb_config.required = 2;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 0;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 1;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 100;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 1;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 101;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 2;\ngb_config.stationary_limit = 1.0;\ngb_config.required = 2;\ngb_input.sample->x = 0.0;\ngb_input.sample->y = 0.0;\ngb_input.sample->z = 0.0;"
+   ]
+  }
+ ]
+}

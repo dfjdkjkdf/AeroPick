@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确检查所有空指针（含 corrected_t），先减 bias 再按规范行乘 C，失败时输出置零；A 功能相同但不如 B 使用现有辅助函数，C 漏检 corrected_t 空指针。",
+ "_usage": {
+  "prompt": 9499,
+  "completion": 12863
+ }
+}

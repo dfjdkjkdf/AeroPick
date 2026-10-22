@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly computes/publishes angle/rate/energy before disabled handling, caps good count at required, and handles invalid/limited cases per the decision table.",
+ "_usage": {
+  "prompt": 11098,
+  "completion": 13242
+ }
+}

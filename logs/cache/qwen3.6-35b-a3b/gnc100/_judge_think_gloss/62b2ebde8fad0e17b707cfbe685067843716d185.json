@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定失败时输出零和SIZE_MAX，A的fastest为SIZE_MAX符合，B为0不符。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同测试1，错误路径下fastest必须为SIZE_MAX，A符合需求。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试1，错误路径下fastest必须为SIZE_MAX，A符合需求。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "count=3不满足“恰好分析四个飞轮”的要求，触发错误分支，fastest应为SIZE_MAX，A正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "count=1同样不满足数量约束，按需求应走错误分支返回SIZE_MAX，A正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "第4个飞轮轴向量模为0导致无法归一化，属于malformed wheel，按需求应判定为失败并清零所有输出且fastest置为SIZE_MAX，A完全符合，B未处理该异常。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9588,
+  "completion": 3892
+ }
+}

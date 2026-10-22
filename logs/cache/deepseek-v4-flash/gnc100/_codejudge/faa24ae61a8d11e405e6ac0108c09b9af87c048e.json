@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确校验配置与输入并锁存 FAULT，按连续性规则仅在速率合格时更新历史、超限时保留历史并在达到 max_rejects 时进入故障。",
+ "_usage": {
+  "prompt": 11592,
+  "completion": 18890
+ }
+}

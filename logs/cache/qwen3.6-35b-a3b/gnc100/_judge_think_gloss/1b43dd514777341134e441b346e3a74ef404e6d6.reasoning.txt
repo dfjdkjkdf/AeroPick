@@ -1,0 +1,84 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:** I am an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function (`adcs_pilot_rodrigues`) based on a given requirement. I'm provided with one test case where outputs differ. I must judge which implementation's output matches the requirement, reasoning step-by-step based *only* on the requirement. Finally, output a specific JSON format.
+
+2.  **Analyze the Requirement:**
+    *   **Function:** Rodrigues vector rotation.
+    *   **Operational context:** Rotates a body vector about a commanded body axis.
+    *   **Input interface:** Finite vector, finite nonzero axis, finite angle in radians, and output.
+    *   **Mathematical definition:** Normalize axis u and return $v \cos(a) + (u \times v)\sin(a) + u(u \cdot v)(1-\cos(a))$.
+    *   **Required processing:** Use right-handed cross product, preserve vector magnitude.
+    *   **Output contract:** `ADCS_OK` with rotated vector; failure output zero.
+    *   **Boundary and failure handling:**
+        *   Null -> `ADCS_E_NULL`
+        *   invalid axis/vector/angle -> `ADCS_E_RANGE`
+    *   **Traceability:** Rodrigues rotation formula. Ends with `}`.
+
+3.  **Analyze the Test Case:**
+    *   **Inputs:**
+        *   `vector`: (1.0, 0.0, 0.0) - Finite, valid.
+        *   `axis`: (INFINITY, 0.0, 0.0) - **Not finite**. The requirement says "finite nonzero axis". INFINITY violates "finite".
+        *   `angle_rad`: 1.0 - Finite, valid.
+    *   **Expected Behavior per Requirement:**
+        *   Input check: `axis` contains `INFINITY`, so it's not finite. This falls under "invalid axis... -> ADCS_E_RANGE".
+        *   Output contract for failure: "failure output zero." So `rotated` should be `(0, 0, 0)`.
+        *   Return code: `ADCS_E_RANGE` (which is 2).
+    *   **Observed Outputs:**
+        *   A: `__ret__` = 2, `rotated.y` = 0, `rotated.z` = 0. (Implies `rotated.x` is also 0 or uninitialized but likely 0 due to "output zero"). Matches expectation perfectly.
+        *   B: `__ret__` = 0, `rotated.y` = nan, `rotated.z` = nan. (Returns OK but produces NaNs because it tried to compute with INFINITY). Violates requirement.
+
+4.  **Evaluate Implementation A vs B against Requirement:**
+    *   Requirement explicitly states: "Finite vector, finite nonzero axis, finite angle in radians" as input interface constraints.
+    *   Boundary/failure: "invalid axis/vector/angle -> ADCS_E_RANGE".
+    *   Output contract: "failure output zero."
+    *   Test input has `axis->x = INFINITY`. This is invalid/non-finite.
+    *   Therefore, the function should return `ADCS_E_RANGE` (2) and set the output vector to zeros.
+    *   Implementation A returns 2 and outputs 0s. Matches requirement.
+    *   Implementation B returns 0 and outputs NaNs. Fails requirement checks and output contract.
+
+5.  **Formulate Reasoning (Internal Draft):**
+    *   需求明确规定输入接口为“Finite vector, finite nonzero axis, finite angle”，且边界处理要求“invalid axis/vector/angle -> ADCS_E_RANGE”。
+    *   测试输入中 `axis->x = INFINITY`，不满足“finite axis”条件，属于无效轴。
+    *   根据需求，函数应返回错误码 `ADCS_E_RANGE`（值为2），且按“failure output zero”约定将输出向量清零。
+    *   实现A返回2且输出为0，完全符合需求；实现B返回0并产生NaN，未进行有限性校验且违反失败输出约定。
+    *   因此A正确。
+
+6.  **Check Constraints & Format:**
+    *   Must output ONLY JSON.
+    *   Format: `{"tests":[{"id":1,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    *   Ensure reason is concise.
+    *   Check IDs: Test 1.
+    *   Pick: A.
+
+    Structure:
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "A",
+          "reason": "需求要求输入轴必须为有限值，INFINITY属无效轴应返回ADCS_E_RANGE(2)并将输出置零；实现A返回2且输出为0符合要求，实现B返回0且产生NaN违反需求。"
+        }
+      ],
+      "pick": "A"
+    }
+    ```
+
+7.  **Final Verification:**
+    *   Does it match the prompt's exact JSON structure? Yes.
+    *   Is the reasoning strictly based on the requirement? Yes, cites "finite axis", "invalid -> ADCS_E_RANGE", "failure output zero".
+    *   Are there any other tests? Only Test 1 is provided.
+    *   Output matches exactly. Ready. 
+    One minor point: The prompt says `rotated.y：A=0；B=nan` and `rotated.z：A=0；B=nan`. It doesn't specify `rotated.x`, but "failure output zero" implies all components are zero. A's behavior aligns. B's NaN is clearly wrong.
+    All good. Output matches request.✅
+    Proceed. 
+    Generate response. 
+    `[Output Generation]` -> matches the drafted JSON. 
+    Self-Correction/Refinement during thought: 
+    Check if `ADCS_E_RANGE` is indeed 2. From enum: `ADCS_OK = 0, ADCS_E_NULL = 1, ADCS_E_RANGE = 2`. Correct.
+    Check requirement wording: "invalid axis/vector/angle -> ADCS_E_RANGE". Correct.
+    Check output contract: "failure output zero". Correct.
+    Everything aligns perfectly. No extra text. JSON only.✅
+    Output matches exactly. 
+    Proceeds. 
+    `[Done]`

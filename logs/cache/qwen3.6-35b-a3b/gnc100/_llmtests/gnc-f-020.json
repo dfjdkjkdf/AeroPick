@@ -1,0 +1,128 @@
+{
+ "key": "89c99b87a995a83141f380691e94986b09454284",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 0.0;\naxis->y = 1.0;\naxis->z = 0.0;\nangle_rad = ADCS_PI / 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 0.0;\naxis->y = 1.0;\naxis->z = 0.0;\nangle_rad = -ADCS_PI / 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 0.0;\naxis->y = 1.0;\naxis->z = 0.0;\nangle_rad = ADCS_TWO_PI;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vector->x = 0.0;\nvector->y = 1.0;\nvector->z = 0.0;\naxis->x = 0.0;\naxis->y = 1.0;\naxis->z = 0.0;\nangle_rad = ADCS_PI / 4.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vector->x = 0.0;\nvector->y = 0.0;\nvector->z = 1.0;\naxis->x = 0.0;\naxis->y = 0.0;\naxis->z = 1.0;\nangle_rad = ADCS_PI / 3.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 1.0;\nvector->z = 1.0;\naxis->x = 1.0;\naxis->y = 0.0;\naxis->z = 0.0;\nangle_rad = ADCS_PI / 6.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vector->x = 0.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 1.0;\naxis->y = 0.0;\naxis->z = 0.0;\nangle_rad = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 0.0;\naxis->y = 1.0;\naxis->z = 0.0;\nangle_rad = 1e-15;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 0.0;\naxis->y = 1.0;\naxis->z = 0.0;\nangle_rad = -1e-15;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vector = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axis = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rotated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axis->x = 0.0;\naxis->y = 0.0;\naxis->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vector->x = 0.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 0.0;\naxis->y = 0.0;\naxis->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 1.0;\naxis->y = 0.0;\naxis->z = 0.0;\nangle_rad = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 1.0;\naxis->y = 0.0;\naxis->z = 0.0;\nangle_rad = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vector->x = INFINITY;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 1.0;\naxis->y = 0.0;\naxis->z = 0.0;\nangle_rad = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = INFINITY;\naxis->y = 0.0;\naxis->z = 0.0;\nangle_rad = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 0.0;\nvector->z = 0.0;\naxis->x = 0.0;\naxis->y = 1.0;\naxis->z = 0.0;\nangle_rad = ADCS_PI / 2.0;",
+    "vector->x = rotated->x;\nvector->y = rotated->y;\nvector->z = rotated->z;\nangle_rad = ADCS_PI / 2.0;",
+    "vector->x = rotated->x;\nvector->y = rotated->y;\nvector->z = rotated->z;\nangle_rad = ADCS_PI / 2.0;",
+    "vector->x = rotated->x;\nvector->y = rotated->y;\nvector->z = rotated->z;\nangle_rad = ADCS_PI / 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "vector->x = 1.0;\nvector->y = 2.0;\nvector->z = 3.0;\naxis->x = 0.0;\naxis->y = 0.0;\naxis->z = 1.0;\nangle_rad = ADCS_PI;"
+   ]
+  }
+ ]
+}

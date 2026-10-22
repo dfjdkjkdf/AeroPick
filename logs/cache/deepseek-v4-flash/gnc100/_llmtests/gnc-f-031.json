@@ -1,0 +1,171 @@
+{
+ "key": "a60637c01138571514c6dc690103c860bf2a15dd",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.01;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 0.01;\ncovariance->m[1][1] = 0.02;\ncovariance->m[2][2] = 0.03;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = -0.2;\nbody_rate_rad_s->z = 0.3;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0001;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[0][1] = 0.1;\ncovariance->m[0][2] = -0.05;\ncovariance->m[1][0] = 0.1;\ncovariance->m[1][1] = 2.0;\ncovariance->m[1][2] = 0.02;\ncovariance->m[2][0] = -0.05;\ncovariance->m[2][1] = 0.02;\ncovariance->m[2][2] = 3.0;\nbody_rate_rad_s->x = 0.5;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.5;\nprocess_noise_rad2_s = 1e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 0.1;\ncovariance->m[1][1] = 0.1;\ncovariance->m[2][2] = 0.1;\nbody_rate_rad_s->x = -1.0;\nbody_rate_rad_s->y = 2.0;\nbody_rate_rad_s->z = -3.0;\ndt_s = 1.0;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.0;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.3;\nbody_rate_rad_s->y = 0.4;\nbody_rate_rad_s->z = 0.5;\ndt_s = 0.0;\nprocess_noise_rad2_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "covariance->m[0][0] = 0.0;\ncovariance->m[1][1] = 0.0;\ncovariance->m[2][2] = 0.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.0;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 1e-12;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[0][1] = 0.0;\ncovariance->m[0][2] = 0.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[1][2] = 0.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 1.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 1.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 1.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance = NULL;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_rate_rad_s = NULL;\ncovariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "propagated = NULL;\ncovariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = NAN;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = INFINITY;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = NAN;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = -INFINITY;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = -0.001;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = -1e-9;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = NAN;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = INFINITY;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.2;\nbody_rate_rad_s->y = -0.1;\nbody_rate_rad_s->z = 0.05;\ndt_s = 0.05;\nprocess_noise_rad2_s = 1e-5;",
+    "covariance->m[0][0] = 1.0001;\ncovariance->m[1][1] = 1.0001;\ncovariance->m[2][2] = 1.0001;\ndt_s = 0.05;",
+    "dt_s = 0.05;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.0;\nprocess_noise_rad2_s = 0.0;",
+    "dt_s = 0.0;\nprocess_noise_rad2_s = 0.0;",
+    "dt_s = 0.0;\nbody_rate_rad_s->x = 0.1;\nprocess_noise_rad2_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "covariance->m[0][0] = 1e12;\ncovariance->m[1][1] = 1e12;\ncovariance->m[2][2] = 1e12;\nbody_rate_rad_s->x = 1e-3;\nbody_rate_rad_s->y = 1e-3;\nbody_rate_rad_s->z = 1e-3;\ndt_s = 1e-3;\nprocess_noise_rad2_s = 1e-12;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 0.5;\ncovariance->m[0][1] = 0.25;\ncovariance->m[1][0] = 0.25;\ncovariance->m[1][1] = 0.5;\ncovariance->m[2][2] = 0.5;\nbody_rate_rad_s->x = -0.7;\nbody_rate_rad_s->y = 0.9;\nbody_rate_rad_s->z = -1.1;\ndt_s = 0.02;\nprocess_noise_rad2_s = 2.5e-4;"
+   ]
+  }
+ ]
+}

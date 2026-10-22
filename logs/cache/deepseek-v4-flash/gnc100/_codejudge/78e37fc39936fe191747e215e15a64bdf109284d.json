@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly validates binary enable and uses raw fields for stored history and published rate; A normalizes rate/history incorrectly, while C fails to reject non-binary enable.",
+ "_usage": {
+  "prompt": 11766,
+  "completion": 30877
+ }
+}

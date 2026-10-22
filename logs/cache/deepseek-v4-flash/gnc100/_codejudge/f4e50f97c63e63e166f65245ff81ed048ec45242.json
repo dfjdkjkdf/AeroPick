@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly handles nulls, invalid parameters, normalization, sign-invariant geodesic angle, and failure outputs; C fails to set the non-null output when one output pointer is NULL.",
+ "_usage": {
+  "prompt": 9074,
+  "completion": 18390
+ }
+}

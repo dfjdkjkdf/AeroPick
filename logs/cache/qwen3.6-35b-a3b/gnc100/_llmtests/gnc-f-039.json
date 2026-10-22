@@ -1,0 +1,126 @@
+{
+ "key": "768f76749933d2d4a1744219163310889b791ee3",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "first_field_t->x = 0.0;\nfirst_field_t->y = 0.0;\nfirst_field_t->z = 0.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 10.0;\nsecond_field_t->y = 10.0;\nsecond_field_t->z = 10.0;\nsecond_time_s = 10.0;\nquery_time_s = 0.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 1.0;\nfirst_field_t->z = 1.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 2.0;\nsecond_field_t->y = 2.0;\nsecond_field_t->z = 2.0;\nsecond_time_s = 10.0;\nquery_time_s = 10.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = -1e-9;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = 10.0 + 1e-9;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t = NULL;\nfirst_time_s = 0.0;\nsecond_field_t->x = 1.0;\nsecond_field_t->y = 2.0;\nsecond_field_t->z = 3.0;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t = NULL;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = INFINITY;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = NAN;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = NAN;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = NAN;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = INFINITY;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 10.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 0.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 5.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 5.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = 0.0;\nfirst_field_t->y = 0.0;\nfirst_field_t->z = 0.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 0.0;\nsecond_field_t->y = 0.0;\nsecond_field_t->z = 0.0;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = -1.0;\nfirst_field_t->y = -2.0;\nfirst_field_t->z = -3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 1.0;\nsecond_field_t->y = 2.0;\nsecond_field_t->z = 3.0;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = 0.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = 10.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "first_field_t->x = 1.0;\nfirst_field_t->y = 2.0;\nfirst_field_t->z = 3.0;\nfirst_time_s = 0.0;\nsecond_field_t->x = 4.0;\nsecond_field_t->y = 5.0;\nsecond_field_t->z = 6.0;\nsecond_time_s = 10.0;\nquery_time_s = 5.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;",
+    "first_field_t->x = 4.0;\nfirst_field_t->y = 5.0;\nfirst_field_t->z = 6.0;\nfirst_time_s = 10.0;\nsecond_field_t->x = 7.0;\nsecond_field_t->y = 8.0;\nsecond_field_t->z = 9.0;\nsecond_time_s = 20.0;\nquery_time_s = 15.0;\ninterpolated_field_t->x = 0.0;\ninterpolated_field_t->y = 0.0;\ninterpolated_field_t->z = 0.0;"
+   ]
+  }
+ ]
+}

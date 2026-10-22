@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "enable=0 为禁用，需求要求 Disable resets OFF，模式应为 OFF(0) 而非 FAULT(4)。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "enable=0 为禁用，即使 wheels 未提供也应重置为 OFF(0)，不是 FAULT(4)。"
+  }
+ ],
+ "pick": "A"
+}

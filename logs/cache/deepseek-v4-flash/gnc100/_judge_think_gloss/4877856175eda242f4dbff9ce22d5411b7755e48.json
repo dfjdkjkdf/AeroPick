@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "C_BI 将惯性 z 映射到体 x，check_ref 归一化后与 check_body 同向，alignment=1，B 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "check_ref=-z 惯性映射到体 -x，与归一化 check_body=+x 点积为 -1，B 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "check_ref=y 惯性经 C_BI 映射到体 x，与 check_body=y 正交，alignment=0，B 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "空指针失败应按需求返回单位阵和零 alignment，B 的对角线为 1 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "空指针失败应按需求返回单位阵和零 alignment，B 的对角线为 1 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "空指针失败应按需求返回单位阵和零 alignment，B 的对角线为 1 符合。"
+  }
+ ],
+ "pick": "B"
+}

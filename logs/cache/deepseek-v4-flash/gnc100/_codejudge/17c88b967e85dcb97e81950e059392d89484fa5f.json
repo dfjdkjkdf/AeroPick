@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确校验非法 enable/配置，按 reentry_threshold 判断隔离传感器恢复，并在更新 streaks 后用隔离状态分类投票。",
+ "_usage": {
+  "prompt": 14869,
+  "completion": 7834
+ }
+}

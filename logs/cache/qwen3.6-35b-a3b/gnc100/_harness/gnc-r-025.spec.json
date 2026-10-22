@@ -1,0 +1,1 @@
+{"prompt_sha1": "c1a196ec73f85fcaf3e3c6c5eb3cf31cf6846c74", "discrete": [["qn_input.enable", null, ["0", "1"]]], "continuous": [["qn_output.mode", null, 0.0, 3.0], ["qn_output.good", null, 0.0, 20.0], ["qn_output.norm_error", null, -1000000.0, 1000000.0], ["qn_output.step_rad", null, -1000000.0, 1000000.0]], "outputs": [["qn_output.normalized", [4], null]]}

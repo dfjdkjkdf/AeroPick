@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "dt=0且wheels=NULL均为无效配置/输入，应锁存FAULT并清零命令，A满足。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "首拍加速度为0，预测最大速度为2.0，达到warn未达trip，应进WATCH且动量为(2,0,0)。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "预测最大速度3.0达到trip，应进ACTIVE；命令经幅值限幅和基于dt的slew限幅后为-0.1，A符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "四轮动量按轴求和应得(-0.850481,1.64952,0.524519)，A正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "四轮动量应为(2,1,1)，模长sqrt(6)=2.44949，A正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "预测最大速度2.5达到warn未达trip=4，应进WATCH且动量为2.5，A正确。"
+  }
+ ],
+ "pick": "A"
+}

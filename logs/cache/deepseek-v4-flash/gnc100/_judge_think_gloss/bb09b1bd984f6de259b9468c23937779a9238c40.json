@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "IDLE 投影合格且 confirm_samples=1 达到，应转 NEGATIVE，发布转后负向命令 -x，B 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "投影合格但 confirm_samples=2 未达到，模式仍为 IDLE，发布仍为 +2y，B 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "投影合格且 confirm_samples=1 达到，应转 NEGATIVE，发布转后命令 -unit_axis，B 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "投影恰好达到 0.5 倍阈值，应确认并转 NEGATIVE，发布 -x，B 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "投影低于阈值，应保持 IDLE 并增加 sample_count，发布仍为 +x，B 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "min_fraction=1 时投影等于期望平方范数，仍算合格并转 NEGATIVE，发布 -x，B 符合。"
+  }
+ ],
+ "pick": "B"
+}

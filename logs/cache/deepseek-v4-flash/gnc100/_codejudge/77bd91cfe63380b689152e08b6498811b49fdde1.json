@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly validates inputs, reports weighted mean alignment and sum-weighted body, checks geometry via cross norms, and implements the required WAIT/HOLD/SOLVE/FAULT counter behavior with usable as the validated-observation count.",
+ "_usage": {
+  "prompt": 13157,
+  "completion": 11662
+ }
+}

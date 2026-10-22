@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求表格明确规定递增count≥required时需转入READY态并发布sum/count，A正确计算并输出了三次采样的均值。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "样本范数≤stationary_limit且两次调用后count等于required，触发发布条件，A正确输出累积均值。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试2的边界情况，达到required次数后状态机应发布mean，A符合规范而B错误保持零值。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "两次有效采样后count达required，按需求须发布sum/count，A正确计算并返回了偏置均值。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "逻辑同测试4，满足批处理完成条件即应输出均值，A实现完全匹配需求。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "同上，达到required次数后必须发布计算后的均值，A符合需求描述。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10254,
+  "completion": 3336
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly moves the stored rate toward min(max_rate, braking envelope) without clamping it to angle, applies min(rate, angle) to form the command quaternion, resets rate on reversal, clears history on disable/fault, and enforces HOLD with zero rate; A mis-clamps stored rate to angle and fails to clear previous axis, while B outputs the relative quaternion as command and leaves nonzero rate in HOLD.",
+ "_usage": {
+  "prompt": 15402,
+  "completion": 22350
+ }
+}

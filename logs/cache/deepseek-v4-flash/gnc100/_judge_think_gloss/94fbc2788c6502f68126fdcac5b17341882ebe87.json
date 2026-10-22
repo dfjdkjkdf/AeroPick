@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "Valid single wheel; A returns ADCS_OK=0, B returns garbage."
+  },
+  {
+   "id": 2,
+   "correct": "无法判断",
+   "reason": "Valid 3 wheels; correct energy=175, but A=0 and B=50."
+  },
+  {
+   "id": 3,
+   "correct": "无法判断",
+   "reason": "Valid 2 wheels; correct energy=95, but A=0 and B=5."
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "Valid zero-speed wheel; A returns ADCS_OK=0, B returns garbage."
+  },
+  {
+   "id": 5,
+   "correct": "无法判断",
+   "reason": "Valid 16 wheels; correct energy=8, but A=0 and B=0.5."
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "Valid axis norm 1e-11 > EPS; A returns ADCS_OK=0, B returns garbage."
+  }
+ ],
+ "pick": "A"
+}

@@ -1,0 +1,138 @@
+{
+ "key": "91bc7cdf38d1717d72608b16228b91ed6895becc",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){1, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){0.995, 0.0998, 0, 0};"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.1), sin(0.1), 0, 0};"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_REJECT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.2), sin(0.2), 0, 0};"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 3;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.25), sin(0.25), 0, 0}",
+    "/* Step 2: Increment rejects */\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.25), sin(0.25), 0, 0}",
+    "/* Step 3: Increment rejects */\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.25), sin(0.25), 0, 0}",
+    "/* Step 4: Latch Fault */\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.25), sin(0.25), 0, 0}"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\nst_input.predicted = NULL;\n*st_input.measured = (adcs_quat_t){1, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\nst_input.measured = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){0, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){NAN, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){INFINITY, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.2;\nst_config.reject_rad = 0.1;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){1, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = -0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){1, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = ADCS_PI + 1.0;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){1, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 0;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){1, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 21;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){1, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st_input.enable = 2;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){1, 0, 0, 0};"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "st_input.enable = 0;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_REJECT;\nst_state.rejects = 5;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.3), sin(0.3), 0, 0};"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.15), sin(0.15), 0, 0}",
+    "/* Step 2: Hysteresis preserves ACCEPT */\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.15), sin(0.15), 0, 0}",
+    "/* Step 3: Hysteresis preserves ACCEPT */\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.15), sin(0.15), 0, 0}"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_REJECT;\nst_state.rejects = 2;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.15), sin(0.15), 0, 0}",
+    "/* Step 2: Hysteresis preserves REJECT */\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.15), sin(0.15), 0, 0}",
+    "/* Step 3: Hysteresis preserves REJECT */\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){cos(0.15), sin(0.15), 0, 0}"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){0, 1, 0, 0};\n*st_input.measured = (adcs_quat_t){0, 1, 0, 0};"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st_input.enable = 1;\nst_config.accept_rad = 0.1;\nst_config.reject_rad = 0.2;\nst_config.max_rejects = 5;\nst_state.mode = ST_ACCEPT;\nst_state.rejects = 0;\n*st_input.predicted = (adcs_quat_t){1, 0, 0, 0};\n*st_input.measured = (adcs_quat_t){-1, 0, 0, 0};"
+   ]
+  }
+ ]
+}

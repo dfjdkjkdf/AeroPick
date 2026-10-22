@@ -1,0 +1,1 @@
+{"prompt_sha1": "94e21297c5b28ffe285aea88e9f871a02c85f6cb", "discrete": [], "continuous": [["fraction", null, 0.0, 1.0]], "outputs": [["interpolated_q_bi.w", null, [-1.0, 1.0]], ["interpolated_q_bi.x", null, [-1.0, 1.0]], ["interpolated_q_bi.y", null, [-1.0, 1.0]], ["interpolated_q_bi.z", null, [-1.0, 1.0]]]}

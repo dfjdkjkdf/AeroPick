@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定空指针应返回ADCS_E_NULL(枚举值为1)且错误输出清零，实现A返回1并清零输出完全符合，实现B发生崩溃不符合容错规范。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "需求对output指针为NULL的情况统一要求返回ADCS_E_NULL(1)并将错误输出置零，实现A行为正确，实现B崩溃。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9011,
+  "completion": 2431
+ }
+}

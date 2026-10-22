@@ -1,0 +1,75 @@
+Here's a thinking process:
+
+1.  **Analyze User Input:**
+    *   **Role:** Aerospace GNC Software Review Expert.
+    *   **Task:** Evaluate two implementations (A and B) of a C function against a given requirement for a specific test case. Output only JSON with the format specified.
+    *   **Requirement Summary:** Robust three-gyro voter with persistent isolation.
+        *   Inputs: `enable` (binary), 3 gyro pointers (`gyro[0..2]`), config (`threshold_rad_s`, `reentry_threshold_rad_s`, `isolate_confirm`, `reentry_confirm`).
+        *   Pre-conditions/Validation: Pointers must be non-NULL and finite. Thresholds must be positive/finite, reentry <= threshold. Confirm counts in 1..20. Invalid inputs latch FAULT. Disable resets all state including isolation/streaks to OFF/zero output.
+        *   Voting Logic:
+            *   Compute component-wise median of 3 raw sensors.
+            *   Compute Euclidean distance of each sensor from median.
+            *   Outlier if distance > threshold_rad_s.
+            *   Isolation logic: Bad streak on consecutive outlier flags (reset when agrees). Reaches `isolate_confirm` -> isolated. Isolated sensor judged against `reentry_threshold_rad_s`. Good streak accumulates on agreement (reset on disagreement). Reaches `reentry_confirm` -> clears isolation & streaks.
+            *   Voting modes based on isolated count & outlier count:
+                *   0 isolated: 0 outliers -> NOMINAL (median); 1 outlier -> DEGRADED (mean of other 2); 2/3 outliers -> latched FAULT (zero).
+                *   1 isolated: ignore isolated. If remaining 2 agree (dist <= threshold) -> DEGRADED (mean); else -> latched FAULT (zero).
+                *   2/3 isolated: latched FAULT (zero).
+            *   Outputs: `mode`, `voted_rate_rad_s`, `distance_rad_s[3]`, `outlier_mask`.
+            *   Table provided summarizes modes.
+        *   Specific constraint for this test: `gv_input.enable = 0;` (Disabled).
+        *   Requirement explicitly states: "Disable resets all state including isolation and streaks." Also: "n/a | disabled | OFF | zero".
+        *   Test 1 details: `enable = 0`. All gyros are NULL. Config is set. Output difference: A says mode=0 (OFF), B says mode=3 (FAULT). State mode also differs similarly.
+        *   The prompt says: `/* Disable should reset state and output OFF/Zero regardless of inputs */` (This is actually a comment in the test harness, but it aligns perfectly with the requirement: "Disable resets all state including isolation and streaks." and the table says `disabled -> OFF`).
+        *   Wait, the requirement says: "Invalid binary enable... latch FAULT." But here enable is 0, which is valid (false/disabled). So it should just go to OFF state/output zero.
+        *   Therefore, when `enable == 0`, the function should immediately or effectively output `OFF` mode and zero output, resetting state. It should NOT latch FAULT just because inputs are NULL while disabled. The requirement says disable resets everything. So A (mode=0/OFF) is correct. B (mode=3/FAULT) incorrectly latches fault despite being disabled.
+
+2.  **Evaluate Test 1 against Requirements:**
+    *   Input: `enable = 0`.
+    *   Requirement: "Disable resets all state including isolation and streaks." Table: `disabled -> OFF`.
+    *   Expected Output: `mode = OFF` (which corresponds to enum value 0, as seen in `typedef enum { GV_OFF=0,GV_NOMINAL=1,GV_DEGRADED=2,GV_FAULT=3 } gv_mode_t;`).
+    *   Implementation A outputs `mode = 0` (GV_OFF). Correct.
+    *   Implementation B outputs `mode = 3` (GV_FAULT). Incorrect. It probably checks for NULL pointers first and faults out before handling the disable condition, or mishandles the enable flag.
+    *   Reasoning: According to the requirement, when `enable` is false (0), the voter should enter the `OFF` state and reset all internal state, ignoring input validity. Implementation A correctly follows this by outputting `OFF` (0). Implementation B incorrectly returns `FAULT` (3), likely due to checking pointer validity before checking the enable flag, or failing to handle the disabled case properly.
+
+3.  **Format Output:**
+    *   Need to produce JSON exactly as requested.
+    *   Structure: `{"tests":[{"id":1,"correct":"A","reason":"需求明确规定禁用(enable=0)时应重置所有状态并输出OFF(0)，与输入有效性无关；实现A输出OFF符合需求，实现B错误地返回了FAULT。"}],"pick":"A"}`
+    *   Check constraints: "只输出 JSON", "按需求逐条推理...", "最后综合所有测试，选出最符合需求的一种实现。" (Only one test provided here).
+    *   Ensure tone matches expert review.
+    *   Verify enum mapping: `GV_OFF=0`, `GV_FAULT=3`. Matches.
+    *   Check requirement text: "Disable resets all state including isolation and streaks." / Table: `n/a | disabled | OFF | zero`. Clearly supports A.
+    *   Draft JSON carefully.
+
+    Let's double check the exact wording for the reason. It should be concise.
+    "需求明确规定禁用(enable=0)时直接输出OFF模式并清零状态，不检查输入有效性；实现A输出OFF(0)正确，实现B误报FAULT(3)。"
+    Matches perfectly.
+
+    One minor point: The prompt says "测试 1（类型 error；未赋值的量为 0；共调用 1 次，比较最后一次调用后的输出）". This implies the test harness might have pre-initialized variables to 0, but that doesn't change the logic.
+    The output format requires: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will fill in `id: 1`, `correct: "A"`, `reason: "..."`, `pick: "A"`.
+
+    All steps verified. Proceed. 
+    Self-Correction/Refinement during thought: 
+    Wait, does the requirement say "Invalid binary enable... latch FAULT"? Yes. But 0 is a valid binary enable (off). So it's fine.
+    The comment in the test `/* Disable should reset state and output OFF/Zero regardless of inputs */` confirms the expected behavior.
+    I will construct the JSON exactly.
+    Output matches request.✅
+    Final JSON:
+    ```json
+    {"tests":[{"id":1,"correct":"A","reason":"需求明确规定禁用(enable=0)时应进入OFF模式并重置所有状态，不校验输入有效性；实现A输出OFF(0)符合规范，实现B误报FAULT(3)。"}],"pick":"A"}
+    ```
+    Checks: 
+    - Only JSON? Yes.
+    - Format matches? Yes.
+    - Reason concise? Yes.
+    - Correct per req? Yes.
+    Ready. 
+    Output generation. 
+    *(Self-Correction/Verification during drafting)*: 
+    I should make sure the JSON keys match exactly: `tests`, `id`, `correct`, `reason`, `pick`.
+    The prompt says: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will output exactly that. No extra text.
+    All good. 
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

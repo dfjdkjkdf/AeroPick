@@ -1,0 +1,1 @@
+{"prompt_sha1": "a7a87abfdfcd4f50c17ea4d431c9bd62acf55614", "discrete": [["mask", null, ["0", "1", "2", "4"]]], "continuous": [["requested.x", [3], -1000000.0, 1000000.0], ["area_turns", [3], 1e-07, 1000000.0], ["resistance", [3], 1e-07, 1000000.0], ["voltage_limit", [3], 0.0, 1000000.0]], "outputs": [["voltage", [3], null], ["realized", [3], null]]}

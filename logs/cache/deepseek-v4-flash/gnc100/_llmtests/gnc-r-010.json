@@ -1,0 +1,193 @@
+{
+ "key": "6808bd166d8cd94c77ff26fb3b4b26dc4ad27868",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.002;\ngb_input.rate_rad_s->z = 0.003;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.1;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.1000001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.0;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.05;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.0;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0500001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0011;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0009;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.001;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.0;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.05;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = NAN;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = -0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 2;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 101;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 0;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 21;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 0;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = -0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = INFINITY;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 2;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.5;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.5;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0011;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0012;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0013;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0011;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0012;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.1;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.1;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0011;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0012;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.enable = 0;",
+    "gb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0011;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.0012;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.0;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.002;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.02;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.02;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.02;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.0;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.002;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.05;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.019;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.05;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.rate_rad_s->x = 0.05;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 20;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.0;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;",
+    "gb_input.enable = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = 0.01;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = NAN;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 0.1;\ngb_config.max_sample_delta_rad_s = 0.05;\ngb_config.max_stddev_rad_s = NAN;\ngb_config.required_samples = 3;\ngb_config.max_rejected_windows = 5;\ngb_config.drift_limit_rad_s = 0.02;\ngb_config.drift_confirm_samples = 3;\ngb_input.enable = 1;\ngb_input.rate_rad_s->x = 0.001;\ngb_input.rate_rad_s->y = 0.0;\ngb_input.rate_rad_s->z = 0.0;"
+   ]
+  }
+ ]
+}

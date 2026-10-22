@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确锁存 FAULT 直到 disable，使用 adcs_quat_normalize 及相对/符号无关四元数原语完成符号对齐和 relative_step_rad 计算，并符合 hold-buffer 表。",
+ "_usage": {
+  "prompt": 11282,
+  "completion": 10819
+ }
+}

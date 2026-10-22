@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C validates inputs, zeroes output on range failures, accumulates all nine entries, and explicitly symmetrizes H, while B fails to zero on invalid count.",
+ "_usage": {
+  "prompt": 9929,
+  "completion": 11008
+ }
+}

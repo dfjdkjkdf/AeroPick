@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定空指针应返回ADCS_E_NULL且失败时输出零矩阵，实现B正确返回错误码1并清零输出，实现A崩溃违反要求。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 8968,
+  "completion": 1847
+ }
+}

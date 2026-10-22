@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求规定norm≥saturated时模式应置为SATURATED并清零，A输出正确。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "需求规定norm≥saturated时模式应置为SATURATED并清零，A输出正确。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "需求规定norm≥saturated时模式应置为SATURATED并清零，A输出正确。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "需求规定Disabled时模式强制为NOMINAL且清零，A输出正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "需求规定故障为锁存(latch)状态直至禁用，当前enable=1故应保持FAULT，A输出正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "需求规定norm≥saturated时模式应置为SATURATED并清零，A输出正确。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10079,
+  "completion": 4288
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "COOL 下预测温度 299.99<=reset=300，应零电压转 DRIVE，B 的 heating=0 且 mode=1 符合"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "COOL 下预测温度 300.989>reset=300，应零电压保持 COOL，B 的 heating=0、温度 300.989 符合"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "telemetry 为 NULL 属无效输入，应锁存 FAULT，B 的 mode=3 符合"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "请求电压 INF 非有限，应锁存 FAULT，B 的 mode=3 符合"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "请求电压 NAN 非有限，应锁存 FAULT，B 的 mode=3 符合"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "dt=-1 非正，应锁存 FAULT，B 的 mode=3 符合"
+  }
+ ],
+ "pick": "B"
+}

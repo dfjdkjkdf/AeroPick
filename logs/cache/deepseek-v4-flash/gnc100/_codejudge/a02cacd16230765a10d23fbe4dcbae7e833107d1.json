@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "只有 C 使用 TRIAD 得到的 C_BI 映射 check_ref，再与归一化 check_body 做点积，并按要求处理失败返回单位阵、零对齐及状态码和钳位。",
+ "_usage": {
+  "prompt": 8989,
+  "completion": 2938
+ }
+}

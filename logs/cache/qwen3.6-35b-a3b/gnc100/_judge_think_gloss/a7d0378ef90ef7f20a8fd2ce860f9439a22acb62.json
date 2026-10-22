@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "NULL样本触发需求规定的FAULT条件，A返回模式3正确且清零历史符合故障默认值约定。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "零四元数触发需求规定的FAULT条件，A返回模式3正确。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "非有限值触发需求规定的FAULT条件，A返回模式3正确。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "norm_error_limit为负违反有效配置要求，应置FAULT，A返回模式3正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "required默认为0超出[1,20]范围属非法配置，应置FAULT，A正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "同测试5，非法配置触发FAULT，A正确。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9520,
+  "completion": 3751
+ }
+}

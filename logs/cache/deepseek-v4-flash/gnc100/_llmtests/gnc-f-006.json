@@ -1,0 +1,155 @@
+{
+ "key": "387b739032deb85dd8f6702bfffdfc51ae36d1b5",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nmomentum_error_nms->y = 0.0;\nmomentum_error_nms->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nmomentum_error_nms->y = 2.0;\nmomentum_error_nms->z = 3.0;\nfield_body_t->x = 0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 1.0;\ntorque_gain_s_inv = 0.5;\nmax_dipole_a_m2 = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 5.0;\nmomentum_error_nms->y = -2.0;\nmomentum_error_nms->z = 1.0;\nfield_body_t->x = 0.01;\nfield_body_t->y = 0.02;\nfield_body_t->z = 0.03;\ntorque_gain_s_inv = 2.0;\nmax_dipole_a_m2 = 50.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nmomentum_error_nms->y = 1.0;\nmomentum_error_nms->z = 1.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 1.0;\nfield_body_t->z = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "torque_gain_s_inv = 0.0;\nfield_body_t->x = 1.0;\nmomentum_error_nms->x = 100.0;\nmax_dipole_a_m2 = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 0.0;\nmomentum_error_nms->y = 0.0;\nmomentum_error_nms->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mentum_error_nms->x = 1.0;\nmomentum_error_nms->y = 0.0;\nmomentum_error_nms->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 0.0;\nmomentum_error_nms->y = 1.0;\nmomentum_error_nms->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0e-9;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->z = 1.0e-13;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0e-6;\nfield_body_t->y = 1.0e-6;\nfield_body_t->z = 1.0e-6;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1000.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms = NULL;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t = NULL;\nmomentum_error_nms->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "command = NULL;\nmomentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "achievable_torque_nm = NULL;\nmomentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = NAN;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = INFINITY;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = NAN;\nmomentum_error_nms->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field_body_t->x = INFINITY;\nmomentum_error_nms->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = -1.0;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = NAN;\nmax_dipole_a_m2 = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = NAN;"
+   ]
+  }
+ ]
+}

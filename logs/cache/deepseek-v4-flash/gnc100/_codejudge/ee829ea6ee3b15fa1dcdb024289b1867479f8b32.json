@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 按 B-dot 物理定义直接计算，并显式保证成功输出 predicted_power_w 非正，同时正确处理空指针和非法输入并置零。",
+ "_usage": {
+  "prompt": 8717,
+  "completion": 6323
+ }
+}

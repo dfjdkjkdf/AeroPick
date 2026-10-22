@@ -1,0 +1,131 @@
+{
+ "key": "8e3689ce69b502b9902fb655d15186497e583652",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 0.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Step 1: Initialize history with zero speed\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 0.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Step 2: Speed increases, predicted max reaches warn (10), enters WATCH\nwo_input.wheels[0].speed_rad_s = 9.0;\nwo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Step 3: Speed increases further, predicted max reaches trip (20), enters ACTIVE\nwo_input.wheels[0].speed_rad_s = 19.0;\nwo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Step 4: Stay in ACTIVE for minimum_active_cycles (2)\nwo_input.wheels[0].speed_rad_s = 19.0;\nwo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Step 5: Start release evidence (need 2 consecutive samples <= release=5)\nwo_input.wheels[0].speed_rad_s = 4.0;\nwo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Step 6: Second release sample, enters RECOVERY\nwo_input.wheels[0].speed_rad_s = 4.0;\nwo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Step 7: In RECOVERY, no trip, increment recovery_count\nwo_input.wheels[0].speed_rad_s = 0.0;\nwo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Step 8: Second recovery sample, enters OFF\nwo_input.wheels[0].speed_rad_s = 0.0;\nwo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "// Test exactly at warn threshold\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 9.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "// Test exactly at trip threshold\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 19.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "// Null wheels pointer\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "// NaN in wheel speed\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = INFINITY;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "// Invalid config: dt_s <= 0\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 0.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = -0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "// Invalid config: gain < 0\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 0.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = -1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "// Invalid config: release >= warn\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 0.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 10.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "// Invalid config: count != 4\nwo_input.enable = 1;\nwo_input.count = 3;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 0.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Test saturation mask: torque limit exceeded\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 19.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 19.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 19.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 19.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 100.0; wo_config.torque_limit = 1.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Test slew mask: slew limit exceeded\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 19.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 100.0; wo_config.torque_slew = 0.1;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Test DISABLE resets state\nwo_input.enable = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "// Test ENABLE after DISABLE re-initializes\nwo_input.enable = 1;\nwo_input.count = 4;\nwo_input.wheels[0].axis_body.x = 1.0; wo_input.wheels[0].axis_body.y = 0.0; wo_input.wheels[0].axis_body.z = 0.0;\nwo_input.wheels[0].inertia_kg_m2 = 1.0; wo_input.wheels[0].speed_rad_s = 0.0;\nwo_input.wheels[1].axis_body.x = 0.0; wo_input.wheels[1].axis_body.y = 1.0; wo_input.wheels[1].axis_body.z = 0.0;\nwo_input.wheels[1].inertia_kg_m2 = 1.0; wo_input.wheels[1].speed_rad_s = 0.0;\nwo_input.wheels[2].axis_body.x = 0.0; wo_input.wheels[2].axis_body.y = 0.0; wo_input.wheels[2].axis_body.z = 1.0;\nwo_input.wheels[2].inertia_kg_m2 = 1.0; wo_input.wheels[2].speed_rad_s = 0.0;\nwo_input.wheels[3].axis_body.x = 0.0; wo_input.wheels[3].axis_body.y = 0.0; wo_input.wheels[3].axis_body.z = 0.0;\nwo_input.wheels[3].inertia_kg_m2 = 1.0; wo_input.wheels[3].speed_rad_s = 0.0;\nwo_config.release_rad_s = 5.0; wo_config.warn_rad_s = 10.0; wo_config.trip_rad_s = 20.0;\nwo_config.dt_s = 0.1; wo_config.prediction_horizon_s = 1.0;\nwo_config.gain = 1.0; wo_config.torque_limit = 10.0; wo_config.torque_slew = 5.0;\nwo_config.minimum_active_cycles = 2; wo_config.release_cycles = 2; wo_config.recovery_cycles = 2;"
+   ]
+  }
+ ]
+}

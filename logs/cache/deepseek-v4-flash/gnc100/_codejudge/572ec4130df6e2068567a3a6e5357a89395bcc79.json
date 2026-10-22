@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确处理 NULL/RANGE 失败时输出清零，并使用 adcs_vec3_normalize 且 minimum_norm=0，符合按范数限幅及 max_delta_nm=0 的规范。",
+ "_usage": {
+  "prompt": 8902,
+  "completion": 7587
+ }
+}

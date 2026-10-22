@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "sample=NULL且两个输出指针有效，应返回ADCS_E_NULL并写accepted=identity、separation=INF；B符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "accepted=NULL应先返回ADCS_E_NULL，B返回1，A返回3不符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "separation_rad=NULL应先返回ADCS_E_NULL，B返回1，A返回3不符合。"
+  },
+  {
+   "id": 4,
+   "correct": "未规定",
+   "reason": "accepted=NULL时应返回ADCS_E_NULL，但需求未规定此时是否写separation_rad。"
+  },
+  {
+   "id": 5,
+   "correct": "未规定",
+   "reason": "separation_rad=NULL时应返回ADCS_E_NULL，但需求未规定此时是否写accepted。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "accepted与separation_rad均NULL应先返回ADCS_E_NULL，B返回1，A返回3不符合。"
+  }
+ ],
+ "pick": "B"
+}

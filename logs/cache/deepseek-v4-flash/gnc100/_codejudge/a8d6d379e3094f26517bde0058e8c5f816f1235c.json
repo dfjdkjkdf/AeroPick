@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly commands only in DUMPING and zeros command outputs in all non-commanding modes including COOLDOWN entry, whereas A wrongly commands in ARMING and B fails to zero on COOLDOWN entry.",
+ "_usage": {
+  "prompt": 17481,
+  "completion": 32062
+ }
+}

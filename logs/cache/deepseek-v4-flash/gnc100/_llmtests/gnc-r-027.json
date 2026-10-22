@@ -1,0 +1,199 @@
+{
+ "key": "99a4b67e1173d68bf72dcea5efd42a42e0c7928e",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 0;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "bd_config.alpha = 0.5;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 1.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 2;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 0.0;\nbd_input.time_s = 1.0;",
+    "bd_input.field->x = 0.0;\nbd_input.time_s = 2.0;",
+    "bd_input.field->x = 5.0;\nbd_input.time_s = 3.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 0.5;\nbd_input.time_s = 1.0;",
+    "bd_input.field->x = 3.0;\nbd_input.time_s = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 1.0;\nbd_input.time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 1.0000001;\nbd_input.time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 1.0;\nbd_input.time_s = 1.0;",
+    "bd_input.field->x = 1.0 + 2.0;\nbd_input.time_s = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 1.0;\nbd_input.time_s = 1.0;",
+    "bd_input.field->x = 1.0 + 1.9999999;\nbd_input.time_s = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 0.0;\nbd_config.restart_rate = 1.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 0.0;\nbd_input.time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "bd_config.alpha = 0.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 100.0;\nbd_input.time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 20;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.time_s = 1.0;",
+    "bd_input.time_s = 2.0;",
+    "bd_input.time_s = 3.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 21;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field = NULL;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = NAN;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = INFINITY;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = NAN;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = 1.5;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = -1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 1.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 2;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 2;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.time_s = 1.0;",
+    "bd_input.enable = 0;\nbd_input.time_s = 2.0;",
+    "bd_input.enable = 1;\nbd_input.field->x = 1.0;\nbd_input.time_s = 3.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 0;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 1.0;\nbd_input.time_s = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = INFINITY;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 2;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 5.0;\nbd_input.time_s = 1.0;",
+    "bd_input.field->x = 0.0;\nbd_input.time_s = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "bd_config.alpha = 0.0;\nbd_config.quiet_rate = 0.0;\nbd_config.restart_rate = 1.0e-9;\nbd_config.required_quiet = 20;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.time_s = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "bd_config.alpha = 1.0;\nbd_config.quiet_rate = 1.0;\nbd_config.restart_rate = 2.0;\nbd_config.required_quiet = 1;\nbd_input.enable = 1;\nbd_input.field->x = 0.0;\nbd_input.field->y = 0.0;\nbd_input.field->z = 0.0;\nbd_input.time_s = 0.0;",
+    "bd_input.field->x = 3.0;\nbd_input.time_s = 1.0;",
+    "bd_input.field->x = 3.0;\nbd_input.time_s = 1.0;"
+   ]
+  }
+ ]
+}

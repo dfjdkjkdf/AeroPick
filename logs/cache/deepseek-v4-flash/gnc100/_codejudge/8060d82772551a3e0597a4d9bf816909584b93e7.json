@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 实现了逐轴校验、严格限幅、正确的 realized 计算和 mask 初始化，并在失败时清零输出；B 未在空指针失败时清零，C 未初始化成功路径的 mask。",
+ "_usage": {
+  "prompt": 10298,
+  "completion": 15495
+ }
+}

@@ -1,0 +1,161 @@
+{
+ "key": "554f9129a65587883d6d26de3eef615082c6b443",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 1.0; secondary->y = 1.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 1.0; primary->y = 2.0; primary->z = 3.0; secondary->x = -4.0; secondary->y = 5.0; secondary->z = -6.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 0.0; primary->y = 0.0; primary->z = 5.0; secondary->x = 3.0; secondary->y = 4.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 2.0; primary->y = -3.0; primary->z = 4.0; secondary->x = -1.0; secondary->y = 0.5; secondary->z = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = -1.0; secondary->y = 0.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 1.0; secondary->y = 0.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 1.0e-9; secondary->y = 0.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 1.0e-8; secondary->y = 0.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0e-8; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0e-7; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0e-9; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 0.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 1.0; secondary->y = 0.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 0.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 0.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0e12; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0e12; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 1.0; secondary->y = 1.0e-8; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary = NULL; secondary->x = 1.0; secondary->y = 0.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0; secondary->z = 0.0; separation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0; secondary->z = 0.0; cross_sine = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0; secondary->z = 0.0; condition_proxy = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = NAN; primary->y = 0.0; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = INFINITY; secondary->y = 0.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0; primary->y = NAN; primary->z = 0.0; secondary->x = 0.0; secondary->y = 1.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0; primary->y = 0.0; primary->z = 0.0; secondary->x = -NAN; secondary->y = 0.0; secondary->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 0.6; primary->y = 0.8; primary->z = 0.0; secondary->x = 0.8; secondary->y = -0.6; secondary->z = 0.0;"
+   ]
+  }
+ ]
+}

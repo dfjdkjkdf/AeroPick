@@ -1,0 +1,29 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定非有限(nonfinite)输入应返回ADCS_E_DEGENERATE(3)，测试1含NAN违反有限性要求，故B正确。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求明确规定非有限(nonfinite)输入应返回ADCS_E_DEGENERATE(3)，测试2含INF违反有限性要求，故B正确。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "需求明确规定非有限(nonfinite)输入应返回ADCS_E_DEGENERATE(3)，测试3含NAN违反有限性要求，故B正确。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "需求明确规定非有限(nonfinite)输入应返回ADCS_E_DEGENERATE(3)，测试4含INF违反有限性要求，故B正确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9204,
+  "completion": 3191
+ }
+}

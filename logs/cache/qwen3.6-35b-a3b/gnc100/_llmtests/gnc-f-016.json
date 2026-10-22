@@ -1,0 +1,125 @@
+{
+ "key": "0a44770558d6154ed3a90dd2ac56cdcd8494505d",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "body_vectors = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "inertial_vectors = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*weights = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "davenport_k = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "weight_sum = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 33;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;\nweights[0] = 1.0;\nweights[1] = 1.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 2;\nweights[0] = 1.0e-15;\nweights[1] = 1.0e-15;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 2;\nweights[0] = -1.0;\nweights[1] = 1.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 2;\nweights[0] = 1.0;\nweights[1] = 0.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 2;\nweights[0] = 1.0;\nweights[1] = 1.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 0.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 2;\nweights[0] = 1.0;\nweights[1] = 1.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = INFINITY; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 3;\nweights[0] = 1.0;\nweights[1] = 2.0;\nweights[2] = 3.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;\nbody_vectors[2].x = 0.0; body_vectors[2].y = 0.0; body_vectors[2].z = 1.0;\ninertial_vectors[2].x = 0.0; inertial_vectors[2].y = 0.0; inertial_vectors[2].z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;\nweights[0] = 1.0;\nweights[1] = 1.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 0.0; inertial_vectors[0].y = 1.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = -1.0; inertial_vectors[1].y = 0.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 2;\nweights[0] = 1.0;\nweights[1] = 1.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 1.0; body_vectors[1].y = 0.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 1.0; inertial_vectors[1].y = 0.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 4;\nweights[0] = 1.0;\nweights[1] = 1.0;\nweights[2] = 1.0;\nweights[3] = 1.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;\nbody_vectors[2].x = 0.0; body_vectors[2].y = 0.0; body_vectors[2].z = 1.0;\ninertial_vectors[2].x = 0.0; inertial_vectors[2].y = 0.0; inertial_vectors[2].z = 1.0;\nbody_vectors[3].x = 1.0; body_vectors[3].y = 1.0; body_vectors[3].z = 1.0;\ninertial_vectors[3].x = 1.0; inertial_vectors[3].y = 1.0; inertial_vectors[3].z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 2;\nweights[0] = NAN;\nweights[1] = 1.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;\nweights[0] = 1.0;\nweights[1] = 1.0;\nbody_vectors[0].x = 0.7071067811865475; body_vectors[0].y = 0.7071067811865475; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 1.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 0.0;\nbody_vectors[1].x = -0.7071067811865475; body_vectors[1].y = 0.7071067811865475; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 0.0; inertial_vectors[1].y = 1.0; inertial_vectors[1].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 2;\nweights[0] = 1.0;\nweights[1] = 1.0;\nbody_vectors[0].x = 1.0; body_vectors[0].y = 0.0; body_vectors[0].z = 0.0;\ninertial_vectors[0].x = 0.0; inertial_vectors[0].y = 0.0; inertial_vectors[0].z = 1.0;\nbody_vectors[1].x = 0.0; body_vectors[1].y = 1.0; body_vectors[1].z = 0.0;\ninertial_vectors[1].x = 1.0; inertial_vectors[1].y = 0.0; inertial_vectors[1].z = 0.0;"
+   ]
+  }
+ ]
+}

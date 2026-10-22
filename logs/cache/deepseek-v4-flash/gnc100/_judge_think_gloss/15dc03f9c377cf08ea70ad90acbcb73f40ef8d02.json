@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "首次有效样本应初始化参考，随后与其自身比较得 cosine=1、innovation=0。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "首次有效样本同样应先初始化参考，归一化后与自身比较得 cosine=1、innovation=0。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "enable=0 时必须进入 OFF 并清空参考、计数器及初始化标志。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "FAULT 已锁存且不受输入影响，也不应因输入有效而更新 cosine，故保持默认 0。"
+  }
+ ],
+ "pick": "A"
+}

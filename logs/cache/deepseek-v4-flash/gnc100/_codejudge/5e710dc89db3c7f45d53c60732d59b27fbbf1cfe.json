@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确归一化 primary 并用 normalized cross(primary,secondary) 作为 second，third=cross(second,primary)，行顺序 primary/third/second，且 separation sine 除以 secondary 范数得到真实正弦。",
+ "_usage": {
+  "prompt": 9503,
+  "completion": 3973
+ }
+}

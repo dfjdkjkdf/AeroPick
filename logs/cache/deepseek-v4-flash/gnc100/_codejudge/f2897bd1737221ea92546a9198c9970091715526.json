@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 完整验证输入并在失败时设置 INFINITY/SIZE_MAX，正确按 C_BI 惯性到体系计算残差且平局保留最低索引，最符合需求。",
+ "_usage": {
+  "prompt": 9720,
+  "completion": 6398
+ }
+}

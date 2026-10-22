@@ -1,0 +1,134 @@
+{
+ "key": "cb1a63f612f73397e5b514f80ed701c3fd93314d",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.0;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.5;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 1.0;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.1;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 3;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 2.0;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;",
+    "gr_input.rate_rad_s->x = 0.5;\ngr_state.mode = GR_SATURATED;\ngr_state.clean = 0;",
+    "gr_input.rate_rad_s->x = 0.05;\ngr_state.mode = GR_RECOVERING;\ngr_state.clean = 1;",
+    "gr_input.rate_rad_s->x = 0.05;\ngr_state.mode = GR_RECOVERING;\ngr_state.clean = 2;",
+    "gr_input.rate_rad_s->x = 0.05;\ngr_state.mode = GR_RECOVERING;\ngr_state.clean = 3;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 1;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 2.0;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;",
+    "gr_input.rate_rad_s->x = 0.5;\ngr_state.mode = GR_SATURATED;\ngr_state.clean = 0;",
+    "gr_input.rate_rad_s->x = 0.05;\ngr_state.mode = GR_RECOVERING;\ngr_state.clean = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s = NULL;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 0;\ngr_input.rate_rad_s->x = 0.5;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.0;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_FAULT;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.99;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_SATURATED;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.11;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_RECOVERING;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gr_config.recovered_rad_s = 1.5;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.5;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gr_config.recovered_rad_s = -0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.5;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 0;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.5;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 21;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.5;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.0;\ngr_input.rate_rad_s->y = 0.5;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.0;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.5;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 0.1;\ngr_input.rate_rad_s->y = 0.1;\ngr_input.rate_rad_s->z = 0.1;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 2;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = 2.0;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;",
+    "gr_input.rate_rad_s->x = 0.5;\ngr_state.mode = GR_SATURATED;\ngr_state.clean = 0;",
+    "gr_input.rate_rad_s->x = 0.05;\ngr_state.mode = GR_RECOVERING;\ngr_state.clean = 1;",
+    "gr_input.rate_rad_s->x = 0.05;\ngr_state.mode = GR_RECOVERING;\ngr_state.clean = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gr_config.recovered_rad_s = 0.1;\ngr_config.saturated_rad_s = 1.0;\ngr_config.required_clean = 5;\ngr_input.enable = 1;\ngr_input.rate_rad_s->x = INFINITY;\ngr_input.rate_rad_s->y = 0.0;\ngr_input.rate_rad_s->z = 0.0;\ngr_state.mode = GR_NOMINAL;\ngr_state.clean = 0;"
+   ]
+  }
+ ]
+}

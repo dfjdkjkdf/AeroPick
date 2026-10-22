@@ -1,0 +1,125 @@
+{
+ "key": "28b0c37f56e50e1c4183c64eaf02eb0804bc0fd0",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = 0.0; pb->y = 1.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 0.0; sb->z = 1.0;\npi->x = 0.0; pi->y = 1.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 0.0; si->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = 1.0; pb->y = 1.0; pb->z = 0.0;\nsb->x = -1.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = 1.0; pb->y = 2.0; pb->z = 3.0;\nsb->x = 4.0; sb->y = 5.0; sb->z = 6.0;\npi->x = 7.0; pi->y = 8.0; pi->z = 9.0;\nsi->x = 10.0; si->y = 11.0; si->z = 12.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0e-9; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0e-9; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sb = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "si = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "out = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 0.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 1.0; sb->y = 0.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 2.0; sb->y = 0.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 0.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 2.0; si->y = 0.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = INFINITY; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = NAN; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = INFINITY; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pb->x = 1.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 1.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;\nout->m[0][0] = 0.0; out->m[0][1] = 0.0; out->m[0][2] = 0.0;\nout->m[1][0] = 0.0; out->m[1][1] = 0.0; out->m[1][2] = 0.0;\nout->m[2][0] = 0.0; out->m[2][1] = 0.0; out->m[2][2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pb->x = 0.0; pb->y = 0.0; pb->z = 1.0;\nsb->x = 1.0; sb->y = 0.0; sb->z = 0.0;\npi->x = 0.0; pi->y = 1.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 0.0; si->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pb->x = 0.0; pb->y = 0.0; pb->z = 0.0;\nsb->x = 0.0; sb->y = 0.0; sb->z = 0.0;\npi->x = 1.0; pi->y = 0.0; pi->z = 0.0;\nsi->x = 0.0; si->y = 1.0; si->z = 0.0;"
+   ]
+  }
+ ]
+}

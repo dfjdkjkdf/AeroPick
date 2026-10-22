@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "第二帧率=1e-5<=stop，应计入一次good，故good=1。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "第二帧率=1e-6<=stop，应计入一次good，故good=1。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "第二帧率=9e-5<=stop，应计入一次good，故good=1。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "间隔0.1<=max_sample_gap_s，第二帧率=1e-5<=stop，应计入good=1。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "enable=2非二进制标志，应按拒绝样本处理：bad=1、输出清零且不初始化/不prime。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "field为NaN导致adcs_bdot_update失败，应按拒绝样本处理，field_magnitude_t应清零。"
+  }
+ ],
+ "pick": "B"
+}

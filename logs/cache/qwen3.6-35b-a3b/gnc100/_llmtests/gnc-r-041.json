@@ -1,0 +1,125 @@
+{
+ "key": "82e1683f86d6a1f5db81654b20d8b9676a812225",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 1.0;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = 0.0;\nsecondary->y = 1.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 0.0;\nprimary->y = 1.0;\nprimary->z = 0.0;\nsecondary->x = 0.0;\nsecondary->y = 0.0;\nsecondary->z = 1.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 0.0;\nprimary->y = 0.0;\nprimary->z = 1.0;\nsecondary->x = 1.0;\nsecondary->y = 0.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 1.0;\nprimary->y = 1.0;\nprimary->z = 1.0;\nsecondary->x = 1.0;\nsecondary->y = -1.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = 1.0;\nsecondary->y = 0.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = -1.0;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = 1.0;\nsecondary->y = 0.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "secondary = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "basis = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*separation_sine = 0.0;\nseparation_sine = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 0.0;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = 1.0;\nsecondary->y = 0.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = 0.0;\nsecondary->y = 0.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = NAN;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = 0.0;\nsecondary->y = 1.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0;\nprimary->y = INFINITY;\nprimary->z = 0.0;\nsecondary->x = 0.0;\nsecondary->y = 1.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = NAN;\nsecondary->y = 1.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1e-15;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = 0.0;\nsecondary->y = 1.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "primary->x = 1.0;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = 1e-15;\nsecondary->y = 1.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 0.7071067811865476;\nprimary->y = 0.7071067811865476;\nprimary->z = 0.0;\nsecondary->x = -0.7071067811865476;\nsecondary->y = 0.7071067811865476;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "primary->x = 0.0;\nprimary->y = 0.0;\nprimary->z = 1.0;\nsecondary->x = 0.0;\nsecondary->y = 1.0;\nsecondary->z = 0.0;\nbasis->m[3][3] = 0.0;\n*separation_sine = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary->x = 1.0;\nprimary->y = 0.0;\nprimary->z = 0.0;\nsecondary->x = 0.0;\nsecondary->y = 0.0;\nsecondary->z = 0.0;\nbasis = NULL;\n*separation_sine = 0.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly restores the original sign for all finite inputs, including negative zero, and follows the decision table exactly.",
+ "_usage": {
+  "prompt": 9302,
+  "completion": 12963
+ }
+}

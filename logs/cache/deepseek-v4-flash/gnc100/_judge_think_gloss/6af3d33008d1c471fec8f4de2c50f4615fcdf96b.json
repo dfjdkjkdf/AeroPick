@@ -1,0 +1,10 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "previous 为 NULL 时需求要求返回 ADCS_E_NULL 且失败输出清零；A 返回 1 并清零输出，B 崩溃不符合。"
+  }
+ ],
+ "pick": "A"
+}

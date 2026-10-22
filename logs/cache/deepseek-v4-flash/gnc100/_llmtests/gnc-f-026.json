@@ -1,0 +1,162 @@
+{
+ "key": "506468b008a55a3505259f754e46f3f4d36e758c",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "body_a = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ref_a = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ref_b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary_index = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "geometry_quality = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "c_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "variance_a = 0.0;\nvariance_b = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "variance_a = 1.0;\nvariance_b = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "variance_a = -1.0;\nvariance_b = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "variance_a = NAN;\nvariance_b = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "variance_a = 1.0;\nvariance_b = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 0.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 1.0;\nref_a->x = 1.0;\nref_b->y = 1.0;\nvariance_a = 1.0;\nvariance_b = 2.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 1e-13;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nref_a->x = 1.0;\nref_b->y = 1.0;\nvariance_a = 1.0;\nvariance_b = 2.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = NAN;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nref_a->x = 1.0;\nref_b->y = 1.0;\nvariance_a = 1.0;\nvariance_b = 2.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 1.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nref_a->x = 2.0;\nref_b->y = 3.0;\nvariance_a = 1.0;\nvariance_b = 2.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 3.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 6.0;\nbody_b->y = 0.0;\nbody_b->z = 0.0;\nref_a->x = 1.0;\nref_b->x = 2.0;\nvariance_a = 1.0;\nvariance_b = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 3.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 1e-9;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_a->x = 1.0;\nref_b->x = 1e-9;\nref_b->y = 1.0;\nvariance_a = 1.0;\nvariance_b = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 1.0;\nbody_b->y = 0.0;\nbody_b->z = 0.0;\nref_a->x = 1.0;\nref_b->x = 1.0;\nvariance_a = 1.0;\nvariance_b = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_a->x = 1.0;\nref_a->y = 0.0;\nref_a->z = 0.0;\nref_b->x = 0.0;\nref_b->y = 1.0;\nref_b->z = 0.0;\nvariance_a = 1.0;\nvariance_b = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_a->x = 1.0;\nref_b->y = 1.0;\nvariance_a = 0.5;\nvariance_b = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_a->x = 1.0;\nref_b->y = 1.0;\nvariance_a = 1.0;\nvariance_b = 3.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_a->x = 1.0;\nref_b->y = 1.0;\nvariance_a = 3.0;\nvariance_b = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 0.9;\nbody_a->y = 0.1;\nbody_a->z = 0.0;\nbody_b->x = 0.2;\nbody_b->y = 0.9;\nbody_b->z = 0.3;\nref_a->x = 0.9;\nref_a->y = 0.1;\nref_a->z = 0.0;\nref_b->x = 0.2;\nref_b->y = 0.9;\nref_b->z = 0.3;\nvariance_a = 2.0;\nvariance_b = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_a->x = 1.0;\nref_b->y = 1.0;\nvariance_a = 1e-300;\nvariance_b = 1e-300;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_a->x = 1.0;\nref_b->y = 1.0;\nvariance_a = 1.0;\nvariance_b = 4.0;",
+    "variance_a = 4.0;\nvariance_b = 1.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,127 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:** I am an aerospace GNC software review expert. I need to evaluate three different implementations (A, B, C) of a C function based on a provided requirement specification and a set of test cases where their outputs differ. I must *only* use the requirement to determine which implementation is correct for each test case, then pick the overall best implementation. Output format must be strict JSON.
+
+2.  **Analyze the Requirement Specification:**
+    *   **Function Purpose:** Residual-weighted redundant attitude-source manager. Manages STAR and TRIAD sources.
+    *   **Usability Condition:** A source is usable when its quaternion normalizes and its finite residual is at most `max_residual_rad`.
+    *   **Primary/Candidate Logic:** Maintain a primary STAR or TRIAD source. If both usable, alternative must beat primary residual by at least `switch_margin_rad` for `switch_confirm_cycles` consecutive samples before switching. Loss of primary switches immediately to other usable source.
+    *   **Fusion Logic:** Compute sign-invariant disagreement angle between usable sources. When both usable and disagreement <= `fuse_angle_rad`, sign-align TRIAD to STAR and form normalized weighted quaternion using weights `1/(residual_weight_floor_rad + residual)`. Publish `FUSED` while maintaining primary-switching evidence. Above fusion threshold, publish primary quaternion.
+    *   **Blending/Output:** Sign-align selected quaternion to previous publication, blend by `output_alpha`, normalize. Published blend = `normalize((1-output_alpha)*previous + output_alpha*selected)`.
+    *   **Outage/Fault Logic:** If neither usable, publish `NONE` and identity, increment outage, latch `FAULT` at `max_outage_cycles`. Disable resets sources, evidence, previous attitude. Invalid configuration latches `FAULT`.
+    *   **Parameter Validation (Invalid Configuration):** Require nonnegative finite residual, fusion, and margin limits; positive residual weight floor; `0 < output_alpha <= 1`; counts in `1..20`; `fuse_angle_rad <= ADCS_PI`; `enable` must be 0 or 1 (other values are invalid configuration).
+    *   **Default Primary:** When no STAR/TRIAD primary is held, STAR becomes primary if usable, otherwise TRIAD.
+    *   **State/Output Structures:** The context defines `rs_input_t`, `rs_config_t`, `rs_state_t`, `rs_output_t`. The function is `GncRepoSourceSelectStep(void)`. It updates global/static state variables.
+    *   **Key Validation Rules from Text:**
+        *   `enable` must be 0 or 1. Other values -> invalid configuration -> latch FAULT.
+        *   `residual_weight_floor_rad` > 0 (positive).
+        *   `0 < output_alpha <= 1`.
+        *   `switch_confirm_cycles`, `max_outage_cycles` in 1..20.
+        *   `fuse_angle_rad <= ADCS_PI`.
+        *   Nonnegative finite residual, fusion, margin limits.
+        *   Invalid configuration -> latch FAULT. What does "latch FAULT" mean for output? `rs_output.source` should likely be `RS_FAULT` (4). State might reset/disable. `rs_state.previous_q_bi` probably gets reset to identity (w=1, x=y=z=0) or kept as is? The text says "Disable resets sources, evidence, and previous attitude." This implies resetting previous attitude to identity or zeroing it. Usually, identity quaternion is w=1. But let's check the test outputs.
+
+3.  **Analyze Test Cases & Differences:**
+    All tests are type "error", called once, uninitialized amounts are 0.
+    Common outputs across A, B, C for these error tests:
+    *   `rs_output.source`: A=4 (RS_FAULT), B=0 (RS_NONE), C=4 (RS_FAULT)
+    *   `rs_state.previous_q_bi.w`: A=0, B=1, C=0
+    *   `rs_state.primary`: A=0 (RS_NONE), B=4 (RS_FAULT), C=0 (RS_NONE)
+
+    Let's map enum values from context:
+    `typedef enum { RS_NONE = 0, RS_STAR = 1, RS_TRIAD = 2, RS_FUSED = 3, RS_FAULT = 4 } rs_source_t;`
+    So:
+    A: source=4 (FAULT), prev_q_bi.w=0, primary=0 (NONE)
+    B: source=0 (NONE), prev_q_bi.w=1, primary=4 (FAULT)
+    C: source=4 (FAULT), prev_q_bi.w=0, primary=0 (NONE)
+
+    Wait, the requirement says: "Invalid configuration latches FAULT." This strongly points to `source` being `RS_FAULT` (4). So B is likely wrong because it outputs `RS_NONE` (0).
+    What about `rs_state.previous_q_bi.w`? The requirement says: "Disable resets sources, evidence, and previous attitude." Resetting previous attitude usually means setting it to identity (w=1) or zeroing it? In aerospace, quaternions are often initialized to identity (1,0,0,0) or zero. But "reset" could mean zero out. However, looking at standard practices and the fact that A and C have w=0, while B has w=1. If it's reset to zero, w=0 makes sense. Or maybe identity? Let's re-read carefully: "Disable resets sources, evidence, and previous attitude." It doesn't specify to what value. But typically, resetting a quaternion to identity is common, or zeroing is used for "invalid". Given A and C agree on w=0, and B differs, B is likely incorrect on this point too, or maybe B's behavior matches identity but fails elsewhere. Actually, many GNC systems reset to identity (1,0,0,0) or zero. But since A and C match, they are more likely correct.
+
+    Let's check each test's trigger condition against the validation rules:
+    *   Test 1: `rs_input.enable = -1`. Rule: "`enable` must be 0 or 1 (other values are invalid configuration)". Invalid config -> latch FAULT. So output should be FAULT (4). A & C say 4. B says 0. -> A/C correct.
+    *   Test 2: `rs_input.enable = 2`. Same rule. Invalid -> FAULT (4). A & C correct.
+    *   Test 3: `rs_config.residual_weight_floor_rad = -0.1`. Rule: "positive residual weight floor". Negative -> invalid -> FAULT (4). A & C correct.
+    *   Test 4: `rs_config.output_alpha = 0.0`. Rule: "`0 < output_alpha <= 1`". 0.0 violates strict inequality -> invalid -> FAULT (4). A & C correct.
+    *   Test 5: `rs_config.output_alpha = 1.1`. Rule: "`0 < output_alpha <= 1`". 1.1 violates upper bound -> invalid -> FAULT (4). A & C correct.
+    *   Test 6: `rs_config.switch_confirm_cycles = 0`. Rule: "counts in 1..20". 0 violates lower bound -> invalid -> FAULT (4). A & C correct.
+
+    All 6 tests trigger invalid configuration conditions explicitly stated in the requirement. Therefore, the correct output for `rs_output.source` must be `RS_FAULT` (4). Implementations A and C produce 4. Implementation B produces 0 (`RS_NONE`), which contradicts the explicit "Invalid configuration latches FAULT" rule. So B is definitely wrong.
+
+    Now, distinguishing between A and C. They have identical outputs in all 6 tests according to the prompt:
+    A: source=4, prev_q_bi.w=0, primary=0
+    C: source=4, prev_q_bi.w=0, primary=0
+    Since they are identical in the provided differences, either A or C could be considered correct, or the prompt expects me to pick one arbitrarily if they match, or perhaps there's a subtle difference I missed? The prompt says "输出差异：" lists them. For all 6 tests, A and C outputs are exactly the same. B is different.
+    Therefore, A and C are equally correct based on the given data. I will pick A (or C) as the representative, or note that A and C are consistent with requirements. The prompt asks to pick one: "pick":"A|B|C". I'll go with A.
+
+    Let's double check the exact wording for fault handling: "Invalid configuration latches FAULT." This means `source` should be `RS_FAULT` (4).
+    "Disable resets sources, evidence, and previous attitude." Resetting previous attitude to 0 vector/quaternion is plausible, or maybe identity. But A and C both show w=0. I'll assume w=0 is correct for "reset" in this context, or at least consistent.
+    `rs_state.primary` is 0 (`RS_NONE`). After fault latch, primary is likely cleared/reset to NONE. Matches A & C.
+
+    Reasoning for each test:
+    Tests 1-6 all violate specific parameter constraints listed in the requirement (`enable` not 0/1, `residual_weight_floor_rad` not positive, `output_alpha` not in (0,1], `switch_confirm_cycles` not in 1..20). The requirement explicitly states: "Invalid configuration latches FAULT." Thus, `rs_output.source` must be `RS_FAULT` (4). Implementations A and C correctly output 4. Implementation B incorrectly outputs `RS_NONE` (0). Regarding `previous_q_bi.w` and `primary`, A and C consistently show reset/clear values (0), aligning with "Disable resets...". B shows inconsistent values (w=1, primary=4). Therefore, A (and C) conform to the requirement. I will select A as the final pick.
+
+    Structure the JSON output carefully.
+    Format:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求明确规定enable必须为0或1，-1属非法配置，应锁存FAULT(4)，A符合。"},
+        {"id": 2, "correct": "A", "reason": "同上，enable=2非法，应输出FAULT(4)，A符合。"},
+        {"id": 3, "correct": "A", "reason": "需求要求residual_weight_floor_rad为正数，-0.1非法，应锁存FAULT(4)，A符合。"},
+        {"id": 4, "correct": "A", "reason": "需求要求0<output_alpha<=1，0.0越界非法，应锁存FAULT(4)，A符合。"},
+        {"id": 5, "correct": "A", "reason": "需求要求0<output_alpha<=1，1.1越界非法，应锁存FAULT(4)，A符合。"},
+        {"id": 6, "correct": "A", "reason": "需求要求计数在1..20范围内，0越界非法，应锁存FAULT(4)，A符合。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Check consistency with prompt: "只依据需求判断... 最后综合所有测试，选出最符合需求的一种实现。"
+    All tests point to A (and C). I'll stick with A.
+    One minor point: The prompt says "未赋值的量为 0". So initially everything is 0. When invalid config is detected, it latches FAULT. `rs_output.source` becomes 4. `rs_state.previous_q_bi` resets. If reset to 0, w=0. `rs_state.primary` resets to 0 (NONE). This matches A & C perfectly.
+    B outputs source=0 (NONE), which contradicts "latches FAULT".
+    So A is correct.
+
+    I will generate the JSON exactly as requested.
+    Double check the enum: `RS_FAULT = 4`. Correct.
+    Check constraint wording: "enable must be 0 or 1 (other values are invalid configuration)" -> Tests 1, 2.
+    "positive residual weight floor" -> Test 3.
+    "0 < output_alpha <= 1" -> Tests 4, 5.
+    "counts in 1..20" -> Test 6.
+    All explicitly covered.
+    Reasoning is solid.
+    Output matches requested format.
+    Proceed. 
+    One thing: The prompt says "如果需求对这个输入的行为没有规定，记为'未规定'". But here it is explicitly规定的.
+    I will write concise reasons.
+    Final JSON construction. 
+    Self-Correction/Refinement during thought: 
+    Should I mention C? The prompt asks to pick one. I'll pick A. Reasons can just reference A.
+    All good. 
+    Output matches. 
+    Proceeds. 
+    Generating response. 
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求明确限定enable必须为0或1，-1属非法配置，触发锁存FAULT逻辑，正确输出应为4，A符合。"},
+        {"id": 2, "correct": "A", "reason": "同上，enable=2超出允许值范围，属非法配置，应输出FAULT(4)，A符合。"},
+        {"id": 3, "correct": "A", "reason": "需求要求residual_weight_floor_rad必须为正数，-0.1违反约束，应锁存FAULT(4)，A符合。"},
+        {"id": 4, "correct": "A", "reason": "需求要求0<output_alpha<=1，0.0不满足严格大于0的条件，属非法配置，应输出FAULT(4)，A符合。"},
+        {"id": 5, "correct": "A", "reason": "同上，1.1超出上限1，属非法配置，应输出FAULT(4)，A符合。"},
+        {"id": 6, "correct": "A", "reason": "需求要求switch_confirm_cycles等计数参数必须在1..20范围内，0越界非法，应锁存FAULT(4)，A符合。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Checks out. Matches all constraints. Outputs strictly JSON. No extra text. Ready. 
+    One detail: `rs_state.previous_q_bi.w` is 0 in A/C. The requirement says "Disable resets sources, evidence, and previous attitude." Resetting to zero vector is standard for "disabled/reset" state in some frameworks, or it could be identity. But since A and C match, and B differs, picking A is safe. I'll stick with it.
+    All good. 
+    Output generation. 
+    [Done] 
+    *Self-Correction/Verification during generation prep*: 
+    Wait, the prompt says "未赋值的量为 0". So initial state is all zeros. When fault is latched, it disables/resets. `previous_q_bi` being reset to 0 (w=0) makes sense if it's a raw reset. If it were identity, it would be 1. B has 1, but B fails on source=0. So A/C's w=0 is consistent with a hard reset to zero. 
+    The reasoning holds. 
+    Final JSON matches exactly. 
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

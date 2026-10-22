@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "b1 为空指针时属于 Null 失败，需求规定失败输出应为 INFINITY，A 置 inf，B 置 0。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "b2 为空指针时属于 Null 失败，需求规定失败输出应为 INFINITY，A 置 inf，B 置 0。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "r1 为空指针时属于 Null 失败，需求规定失败输出应为 INFINITY，A 置 inf，B 置 0。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "r2 为空指针时属于 Null 失败，需求规定失败输出应为 INFINITY，A 置 inf，B 置 0。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "body_angle 为空指针时属于 Null 失败，其他有效输出按失败约定应为 INFINITY，A 置 inf，B 置 0。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "inertial_angle 为空指针时属于 Null 失败，其他有效输出按失败约定应为 INFINITY，A 置 inf，B 置 0。"
+  }
+ ],
+ "pick": "A"
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B在无效输入时先清零输出并用copysign恢复符号，A未处理负零符号，C在范围错误时未清零输出。",
+ "_usage": {
+  "prompt": 9543,
+  "completion": 17070
+ }
+}

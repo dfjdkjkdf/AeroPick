@@ -1,0 +1,205 @@
+{
+ "key": "f72f5505eb3ecc92f6d3805df5f769782136a3a9",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 1;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;",
+    "ag_state.good = 1;",
+    "ag_state.good = 2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 5;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;",
+    "ag_state.good = 4;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 7;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 0.8775825618903728;\nag_input.target_q_bi->x = 0.479425538604203;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.2;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 4;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 0.8775825618903728;\nag_input.target_q_bi->x = 0.479425538604203;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.2;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 0.8775825618903728;\nag_input.target_q_bi->x = 0.479425538604203;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.2000000001;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 0.8775825618903728;\nag_input.target_q_bi->x = 0.479425538604203;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.1999999999;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 0.8775825618903728;\nag_input.target_q_bi->x = 0.479425538604203;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.2000000001;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.1;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = -1.0;\nag_input.target_q_bi->x = -0.1;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 2.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 0.5;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 0;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;",
+    "ag_state.good = 5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 3;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi = NULL;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi = NULL;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 0.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = INFINITY;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = -0.1;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = -0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 4.0;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 0;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 21;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = NAN;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = INFINITY;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.target_q_bi->w = 1.0;\nag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.5;",
+    "ag_input.rate_rad_s->x = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 2;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;",
+    "ag_state.mode = AG_SETTLED;\nag_state.good = 1;",
+    "ag_input.current_q_bi->w = 0.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;",
+    "ag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 2;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;",
+    "ag_config.required = 0;",
+    "ag_input.enable = 0;",
+    "ag_input.enable = 1;\nag_config.required = 2;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 3;\nag_input.enable = 1;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 1.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0;",
+    "ag_input.rate_rad_s->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ag_input.enable = 1;\nag_config.angle_limit_rad = 0.5;\nag_config.rate_limit_rad_s = 0.2;\nag_config.required = 20;\nag_input.current_q_bi->w = 1.0;\nag_input.current_q_bi->x = 0.0;\nag_input.current_q_bi->y = 0.0;\nag_input.current_q_bi->z = 0.0;\nag_input.target_q_bi->w = 1.0;\nag_input.target_q_bi->x = 0.0;\nag_input.target_q_bi->y = 0.0;\nag_input.target_q_bi->z = 0.0;\nag_input.rate_rad_s->x = 0.0;\nag_input.rate_rad_s->y = 0.0;\nag_input.rate_rad_s->z = 0.0;",
+    "ag_state.good = 19;",
+    "ag_state.good = 20;"
+   ]
+  }
+ ]
+}

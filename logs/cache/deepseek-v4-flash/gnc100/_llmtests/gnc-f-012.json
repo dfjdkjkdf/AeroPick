@@ -1,0 +1,224 @@
+{
+ "key": "5c4157705382606899f860991c768fd7a797aa17",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum->x = 5.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum->x = 3.0;\nmomentum->y = 4.0;\nmomentum->z = 0.0;\nfield->x = 0.0;\nfield->y = 1.0e-5;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 2.0;\ndipole_limit = 5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 1.0;\nmomentum->z = 1.0;\nfield->x = 1.0e-5;\nfield->y = 2.0e-5;\nfield->z = 3.0e-5;\nprevious_enabled = 0;\nstart_threshold = 1.0;\nstop_threshold = 0.5;\ngain = 1.0;\ndipole_limit = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum->x = 0.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 0.0;\nfield->y = 0.0;\nfield->z = 0.0;\ngain = 1.0;\ndipole_limit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 2.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 1.9999999999999998;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 1.0000000000000002;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 0.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 0.0;\nstop_threshold = 0.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 2.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 0.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 1.0e-8;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum->x = 1.0e12;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum = NULL;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field = NULL;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "enabled = NULL;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "excess = NULL;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "command = NULL;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque = NULL;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 0.0 / 0.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0 / 0.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 0.0 / 0.0;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 2;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = -1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 0.0 / 0.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0 / 0.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = -1.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 2.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 3.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum->x = 1.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 2.0;\nstop_threshold = 3.0;\ngain = 1.0;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "momentum->x = 0.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;",
+    "momentum->x = 2.0;",
+    "momentum->x = 5.0;",
+    "momentum->x = 1.5;",
+    "momentum->x = 0.5;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "momentum->x = 5.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 0;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;",
+    "momentum->x = 1.0;",
+    "momentum->x = 1.0000000000000002;",
+    "momentum->x = 0.9999999999999999;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "momentum->x = 5.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 0.0;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 10.0;",
+    "field->x = 1.0e-5;",
+    "field->x = 1.0e-5;\nfield->y = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "momentum->x = 5.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\nprevious_enabled = 1;\nstart_threshold = 2.0;\nstop_threshold = 1.0;\ngain = 1.0;\ndipole_limit = 1.0e-12;",
+    "dipole_limit = 1.0e6;",
+    "gain = 0.0;",
+    "dipole_limit = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "momentum->x = 0.0;\nmomentum->y = 0.0;\nmomentum->z = 0.0;\nfield->x = 1.0e-5;\nfield->y = 1.0e-5;\nfield->z = 1.0e-5;\nprevious_enabled = 0;\nstart_threshold = 1.0;\nstop_threshold = 0.5;\ngain = 1.0;\ndipole_limit = 10.0;",
+    "momentum->x = 1.0;\nmomentum->y = 1.0;",
+    "momentum->x = 0.5;\nmomentum->y = 0.5;",
+    "momentum->x = 0.0;\nmomentum->y = 0.0;"
+   ]
+  }
+ ]
+}

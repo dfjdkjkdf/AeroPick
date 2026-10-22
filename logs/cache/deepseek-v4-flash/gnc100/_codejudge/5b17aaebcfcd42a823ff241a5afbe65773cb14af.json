@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly validates inputs, zeroes valid outputs on failure, clamps per axis with the exact saturation mask, and computes tau = limited_dipole × field.",
+ "_usage": {
+  "prompt": 9969,
+  "completion": 1322
+ }
+}

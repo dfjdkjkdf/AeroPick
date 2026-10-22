@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "有效样本速率均为1e-5≤0.001，第4拍达到required_good=3进入COMPLETE且需求未要求清零good，故good=3，B符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "required_good=2，第2、3拍速率1e-6≤0.001，第3拍进入COMPLETE且good=2，B符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "1e-6在[min,max]边界内被接受，后两拍速率满足≤0.001，第3拍达到required_good=2，good=2，B符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "enable=2为无效二进制标志，应按拒绝样本处理：bad=1、不初始化/不置primed、零发布，B符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "field为NaN，样本无效/更新失败，拒绝样本应发布零场强而非NaN，B符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "field为Inf，样本无效/更新失败，拒绝样本应发布零场强而非Inf，B符合。"
+  }
+ ],
+ "pick": "B"
+}

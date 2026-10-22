@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly implements normalize(body), normalize(C_BI*normalize(reference)), mandatory b×p and atan2(||cross||,clamp(dot)), and sets zero/INFINITY on null and all range failures, whereas B and C return null failures without setting outputs.",
+ "_usage": {
+  "prompt": 9357,
+  "completion": 3483
+ }
+}

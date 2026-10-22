@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "仅A在规范化失败时严格按需求将输出距离赋值为INFINITY，B和C遗漏了该关键容错逻辑，其余数学计算均正确。",
+ "_usage": {
+  "prompt": 8753,
+  "completion": 2774
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "需求要求构造右手正交基且矩阵行为[primary, third, second]，B/C输出为单位阵符合数学推导，A存在符号与位置错误。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "按TRIAD算法手工推演期望矩阵元素，B/C输出与需求一致，A不符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "同上，B/C正确实现了向量归一化、叉乘及行排列顺序，A结果错误。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "代入非单位/非正交向量验算，B/C的浮点输出与TRIAD标准公式计算结果完全吻合，A偏差显著。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "需求明文规定非有限输入应返回ADCS_E_DEGENERATE(3)，C严格遵循，A/B使用了枚举中的E_NOT_FINITE(4)。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "同上，无穷大属非有限量，依据需求字面约束应返回3，C正确。"
+  }
+ ],
+ "pick": "C",
+ "_usage": {
+  "prompt": 10050,
+  "completion": 6196
+ }
+}

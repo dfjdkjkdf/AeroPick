@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定空指针应返回ADCS_E_NULL(1)，B安全返回且未崩溃，A崩溃违规。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "covariance为空指针，B正确拦截并返回1，A崩溃。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "输出指针propagated为空，需求规定空指针返回ADCS_E_NULL(1)，B符合，A崩溃。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "body_rate_rad_s为空指针，B按规范返回1安全退出，A崩溃。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "虽dt为负但propagated为NULL，按规范空指针检查优先，B返回1合规且不崩溃，A崩溃。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "噪声为负但propagated为NULL，B返回1合规，A崩溃。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 10836,
+  "completion": 3777
+ }
+}

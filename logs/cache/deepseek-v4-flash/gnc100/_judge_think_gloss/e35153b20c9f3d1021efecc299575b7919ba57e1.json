@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "首次有效非零有限磁场应初始化历史并进入 TRACK，mode=1，B 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "磁场 (0.1,0,0) 非零且配置有效，首次调用应进入 TRACK，B 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "磁场 (0.1000000001,0,0) 非零且配置有效，首次调用应进入 TRACK，B 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "首次有效非零有限磁场应初始化历史并进入 TRACK，B 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "首次有效非零有限磁场应初始化历史并进入 TRACK，B 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "max_rejects=2 有效，首次有效磁场仍应进入 TRACK，B 符合。"
+  }
+ ],
+ "pick": "B"
+}

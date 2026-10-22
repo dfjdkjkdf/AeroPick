@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求规定恢复期需递增计数器，B由1增至2符合逻辑，A/C未递增。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "计数达到阈值时应转入标称态并重置计数，B输出0符合清零重置逻辑。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "禁用状态需清零输出，A/B均符合，A在此项表现一致。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "故障状态需锁存FAULT直至禁用，A保持3符合锁存要求，B/C违规跳变。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "非法配置需锁存FAULT并清零输出，A正确，B/C忽略异常继续计算。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "计数达阈值应立即切NOMINAL并重置，B输出0及模式0匹配，A/C未切换。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 10510,
+  "completion": 9066
+ }
+}

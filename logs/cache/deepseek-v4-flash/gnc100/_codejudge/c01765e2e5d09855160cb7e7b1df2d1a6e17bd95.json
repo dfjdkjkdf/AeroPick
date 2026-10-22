@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly sets rotation_vector to zero and angle to INFINITY on all failures, including NULL, and uses GNC primitives for the normative measured*conjugate(predicted) computation.",
+ "_usage": {
+  "prompt": 9348,
+  "completion": 1303
+ }
+}

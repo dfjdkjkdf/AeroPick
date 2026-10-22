@@ -1,0 +1,152 @@
+{
+ "key": "669d1834595da16b7aabd354c5a85f250d173b1c",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.star_q_bi->x = 0.0;\nrs_input.star_q_bi->y = 0.0;\nrs_input.star_q_bi->z = 0.0;\nrs_input.triad_q_bi->w = 1.0;\nrs_input.triad_q_bi->x = 0.0;\nrs_input.triad_q_bi->y = 0.0;\nrs_input.triad_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.05;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.05;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;\nrs_state.primary = RS_STAR;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 0.7071067811865476;\nrs_input.triad_q_bi->x = 0.7071067811865476;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.04;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 0.7071067811865476;\nrs_input.triad_q_bi->x = 0.7071067811865476;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 0.5;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 0.7071067811865476;\nrs_input.triad_q_bi->x = 0.7071067811865476;\nrs_state.previous_q_bi.w = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.1;\nrs_input.triad_residual_rad = 0.1;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.1000001;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 0.7071067811865476;\nrs_input.triad_q_bi->x = 0.7071067811865476;\nrs_config.fuse_angle_rad = 1.5707963267948966;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 1;\nrs_config.max_outage_cycles = 1;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.05;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;\nrs_state.primary = RS_STAR;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 20;\nrs_config.max_outage_cycles = 20;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.0;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.0;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 0.7071067811865476;\nrs_input.triad_q_bi->x = 0.7071067811865476;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = -0.01;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 2;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.0;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 3.15;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.5;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi = NULL;\nrs_input.triad_q_bi->w = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.0;\nrs_input.triad_residual_rad = 0.0;\nrs_input.star_q_bi->w = 0.0;\nrs_input.star_q_bi->x = 0.0;\nrs_input.star_q_bi->y = 0.0;\nrs_input.star_q_bi->z = 0.0;\nrs_input.triad_q_bi->w = 0.0;\nrs_input.triad_q_bi->x = 0.0;\nrs_input.triad_q_bi->y = 0.0;\nrs_input.triad_q_bi->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 2;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;",
+    "rs_input.star_residual_rad = 0.5;\nrs_input.triad_residual_rad = 0.5;",
+    "rs_input.star_residual_rad = 0.5;\nrs_input.triad_residual_rad = 0.5;",
+    "rs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.05;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;\nrs_state.primary = RS_STAR;",
+    "rs_input.star_residual_rad = 0.05;\nrs_input.triad_residual_rad = 0.02;",
+    "rs_input.star_residual_rad = 0.05;\nrs_input.triad_residual_rad = 0.02;",
+    "rs_input.star_residual_rad = 0.05;\nrs_input.triad_residual_rad = 0.02;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "rs_config.max_residual_rad = 0.1;\nrs_config.fuse_angle_rad = 0.5;\nrs_config.switch_margin_rad = 0.05;\nrs_config.residual_weight_floor_rad = 0.01;\nrs_config.output_alpha = 1.0;\nrs_config.switch_confirm_cycles = 3;\nrs_config.max_outage_cycles = 10;\nrs_input.enable = 1;\nrs_input.star_residual_rad = 0.02;\nrs_input.triad_residual_rad = 0.02;\nrs_input.star_q_bi->w = 1.0;\nrs_input.triad_q_bi->w = 1.0;\nrs_state.primary = RS_STAR;",
+    "rs_input.star_residual_rad = 0.5;",
+    "rs_input.star_residual_rad = 0.5;",
+    "rs_input.star_residual_rad = 0.5;"
+   ]
+  }
+ ]
+}

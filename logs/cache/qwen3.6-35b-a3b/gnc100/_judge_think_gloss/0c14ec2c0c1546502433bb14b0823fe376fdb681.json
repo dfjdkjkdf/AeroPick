@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确禁止空指针（malformed wheels），此类非法输入必须锁存FAULT模式，B输出4符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求强制要求四轮配置（Require four wheels），三轮属于无效配置，应锁存FAULT，B输出4符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "未赋值量默认为0，违反需求中dt、增益、slew须为正数且settle_cycles须在1~20的校验规则，属无效配置应锁存FAULT，B输出4符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同上，零值配置参数触发非法配置保护逻辑，应返回FAULT(4)，B正确。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "同上，非法配置参数导致系统应进入FAULT状态，B正确。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "同上，非法配置参数导致系统应进入FAULT状态，B正确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9664,
+  "completion": 3098
+ }
+}

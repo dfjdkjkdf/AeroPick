@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "零位置向量退化应锁存 FAULT；需求未规定 FAULT 时清零 elapsed，A 保持 5 符合，C 无依据清零。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "ECLIPSE 后进入 RECOVERY，需求仅规定 ECLIPSE 时 heater on，故 RECOVERY heater off，A=0 正确。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试 2，ECLIPSE 后 RECOVERY 的 heater 应为 off，A=0 正确。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "SUN 且 soc>=off，无状态迁移，elapsed 无需清零，A 保持 5 正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "soc==off 不满足严格小于，保持 SUN，elapsed 无需清零，A=3 正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "第 3 次为 ECLIPSE 后 RECOVERY，heater 仅 ECLIPSE 为 on，故 A=0 正确。"
+  }
+ ],
+ "pick": "A"
+}

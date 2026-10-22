@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly zeroes output on failure, validates non-finite inputs, normalizes q, and computes C_BI P_I C_BI^T.",
+ "_usage": {
+  "prompt": 9501,
+  "completion": 7099
+ }
+}

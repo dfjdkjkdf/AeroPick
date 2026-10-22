@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "输入四元数含NaN属非法/退化输入，需求明确规定此类情况必须返回ADCS_E_RANGE并将输出重置为零矩阵、trace=0及symmetry_error=INF，B严格遵循该错误处理逻辑，而A未作校验直接透传输入矩阵。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "全零四元数为严重退化输入，需求规定需返回ADCS_E_RANGE并给出规定的失败输出，B正确拦截并返回了标准错误码与默认值，A忽略退化条件导致计算结果错误。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9427,
+  "completion": 2205
+ }
+}

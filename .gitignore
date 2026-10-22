@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+openrouter.key
+.env
+eval/includes/*.a
+eval/includes/*.h
+.DS_Store

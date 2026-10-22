@@ -1,0 +1,126 @@
+{
+ "key": "a60637c01138571514c6dc690103c860bf2a15dd",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance = NULL;\nbody_rate_rad_s = NULL;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\ncovariance = NULL;\nbody_rate_rad_s = NULL;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\ncovariance = (adcs_mat3_t*)1; // Valid pointer but invalid content for test harness context, usually handled by null check first\n// Reverting to standard NULL input for body_rate to trigger ADCS_E_NULL if covariance is valid\nbody_rate_rad_s = NULL;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\nbody_rate_rad_s = NULL;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = -0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = -0.1;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = NAN;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = INFINITY;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = NAN;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = INFINITY;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.0;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.0;\nprocess_noise_rad2_s = 1e-9;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.1;\nbody_rate_rad_s->z = 0.1;\ndt_s = 0.1;\nprocess_noise_rad2_s = 1e-6;\npropagated = NULL;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "covariance->m[0][0] = 1.0;\ncovariance->m[1][1] = 1.0;\ncovariance->m[2][2] = 1.0;\nbody_rate_rad_s->x = 0.0;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;",
+    "covariance->m[0][0] = propagated->m[0][0];\ncovariance->m[0][1] = propagated->m[0][1];\ncovariance->m[0][2] = propagated->m[0][2];\ncovariance->m[1][0] = propagated->m[1][0];\ncovariance->m[1][1] = propagated->m[1][1];\ncovariance->m[1][2] = propagated->m[1][2];\ncovariance->m[2][0] = propagated->m[2][0];\ncovariance->m[2][1] = propagated->m[2][1];\ncovariance->m[2][2] = propagated->m[2][2];\nbody_rate_rad_s->x = 0.1;\nbody_rate_rad_s->y = 0.0;\nbody_rate_rad_s->z = 0.0;\ndt_s = 0.1;\nprocess_noise_rad2_s = 0.0;\npropagated = NULL;"
+   ]
+  }
+ ]
+}

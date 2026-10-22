@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "wheels/field 为 NULL 属无效输入，应锁存 FAULT 并清零向量输出且不崩溃；C 无崩溃。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "wheel3 轴为零向量导致无效轮几何，应锁存 FAULT；需求未规定 FAULT 清零计数器，故 high_cycles 应保持 1。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "enable=0 是有效禁用，应重置全部状态到 OFF，而不是保持 FAULT。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "wheel3 轴为零向量导致无效轮几何，应锁存 FAULT；需求未规定 FAULT 清零 elapsed，故 elapsed 应保持 1。"
+  }
+ ],
+ "pick": "C"
+}

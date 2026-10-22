@@ -1,0 +1,1 @@
+{"prompt_sha1": "0751e2b146931fd23246446d3b59de03801828f0", "discrete": [], "continuous": [["q_bi.w", null, -1.0, 1.0], ["q_bi.x", null, -1.0, 1.0], ["q_bi.y", null, -1.0, 1.0], ["q_bi.z", null, -1.0, 1.0], ["inertial.m", [3, 3], -1000000.0, 1000000.0]], "outputs": [["body.m", [3, 3], null]]}

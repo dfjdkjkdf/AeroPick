@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "场强5e-5低于下限1e-4触发拒绝逻辑，需求明确规定拒绝样本需“increment bad”，A正确递增计数器，B未递增违规。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同测试1场景，场强超限导致拒绝；A正确维护bad状态机以符合需求，B遗漏关键状态更新。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "输入NULL指针视为无效/拒绝样本，需求强制要求“increment bad”，A输出bad=1完全合规，B输出0不合规。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "filter_alpha=-0.1越界触发非法配置处理（按拒绝样本），A正确递增bad计数满足需求，B未递增。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "filter_alpha=1.1越界触发拒绝处理，A正确递增bad计数符合需求规定，B未递增。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "coarse_gain为负违反“nonnegative gains”约束触发拒绝，A正确递增bad计数符合需求，B未递增。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 11421,
+  "completion": 5319
+ }
+}

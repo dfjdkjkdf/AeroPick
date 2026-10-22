@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 使用 ADCS_CLAMP 进行分量限幅，并正确完成空指针/范围检查、饱和掩码设置及基于 GNC 原语的力矩与损失力矩计算。",
+ "_usage": {
+  "prompt": 9744,
+  "completion": 14535
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "Implementation B correctly follows the specified status ordering, normalization mapping to ADCS_E_RANGE, separation degeneracy check, TRIAD argument order, and variance-based primary selection and quality reporting.",
+ "_usage": {
+  "prompt": 9161,
+  "completion": 17082
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确‘Disable clears it’且OFF模式需清零证据与积分，禁用输入应直接重置故障计数器至0并保持OFF模式；B在禁用时错误递增bad_samples并提前锁死FAULT状态。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "需求规定‘Accepted cycles reset bad_samples to 0’，该测试为合法接受周期，A正确将bad_samples清零，B错误输出1，违反接受后复位规则。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10336,
+  "completion": 3691
+ }
+}

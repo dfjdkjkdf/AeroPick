@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A|B",
+   "reason": "enable=2 是非二进制标志，应作为拒绝样本并令 bad_samples=1。"
+  },
+  {
+   "id": 2,
+   "correct": "A|B",
+   "reason": "valid=-1 是非二进制标志，应作为拒绝样本并令 bad_samples=1。"
+  },
+  {
+   "id": 3,
+   "correct": "未规定",
+   "reason": "同向平行时叉积为零，需求只规定反平行回退，未规定该 rotation_axis 输出。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "有效样本在 OFF 中应按 SEARCH 处理；角度超窗，good_samples 应为 0，模式为 SEARCH。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "反平行角度 pi 超窗，模式为 SEARCH 且无连续入窗样本，good_samples 应为 0。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "反平行角度 pi 超窗，模式为 SEARCH 且无连续入窗样本，good_samples 应为 0。"
+  }
+ ],
+ "pick": "C"
+}

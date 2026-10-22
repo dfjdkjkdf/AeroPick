@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C best satisfies the validation, Schmitt quantization to max_dipole, pulse cancellation, thermal/inhibit sequencing, and disable/FAULT handling, while A and B contain multiple functional errors (e.g., A's missing binary-enable/request validation and cancellation emission, B's broken reversal check and disable/thermal-max behavior).",
+ "_usage": {
+  "prompt": 15383,
+  "completion": 35465
+ }
+}

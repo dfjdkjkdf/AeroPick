@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "校准矩阵含 NAN，属于非有限输入，需求要求返回 ADCS_E_NOT_FINITE 并将失败输出清零。 "
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "校准矩阵含 INFINITY，属于非有限输入，需求要求返回 ADCS_E_NOT_FINITE 并将失败输出清零。 "
+  }
+ ],
+ "pick": "B"
+}

@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "body_a 为零向量导致 adcs_triad 返回 ADCS_E_DEGENERATE 并置 C_BI 为单位阵，需求要求原样返回该非 OK 状态。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "body_a 范数 1e-13 小于 ADCS_EPS_NORM，adcs_triad 返回 ADCS_E_DEGENERATE 并置单位阵。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "body_a 含 NaN 使 adcs_triad 内部归一化失败并返回 ADCS_E_DEGENERATE，同时置单位阵。"
+  }
+ ],
+ "pick": "A"
+}

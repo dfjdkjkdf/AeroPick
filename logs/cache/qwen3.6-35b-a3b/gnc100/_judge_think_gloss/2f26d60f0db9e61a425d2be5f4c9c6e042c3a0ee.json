@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定NULL指针输入应锁定FAULT状态（mode=2），B/C输出正确，A错误。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求明确规定NULL指针输入应锁定FAULT状态（mode=2），B/C输出正确，A错误。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "需求明确规定NULL指针输入应锁定FAULT状态（mode=2），B/C输出正确，A错误。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "需求明确规定负限幅值应锁定FAULT状态（mode=2），B/C输出正确，A错误。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "需求明确规定负限幅值应锁定FAULT状态（mode=2），B/C输出正确，A错误。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "需求明确规定计数需处于1~20范围内，0属越界应锁定FAULT状态（mode=2），B/C输出正确，A错误。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9395,
+  "completion": 3332
+ }
+}

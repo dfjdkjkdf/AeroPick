@@ -1,0 +1,115 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:** I am an aerospace GNC software review expert. I need to evaluate three implementations (A, B, C) of a specific C function based on a provided requirement and test cases. I must output a JSON with my reasoning and final pick.
+
+2.  **Analyze the Requirement:**
+    *   **Function Purpose:** `Wheel-cluster speed reserve. Validate and normalize each wheel axis, find the minimum signed speed margin, accumulate the corresponding directional momentum reserve, and return current linked-library cluster momentum.`
+    *   **Definitions:**
+        *   `margin_i = speed_limits[i] - |speed_rad_s_i|`
+        *   `minimum_margin` is the smallest margin, `limiting_index` its first index.
+        *   `reserve_vector = sum_i inertia_i * margin_i * normalize(axis_i)`
+        *   `momentum` comes from `adcs_wheel_momentum(wheels, count, momentum)`.
+    *   **Failure Handling:**
+        *   `Null minimum_margin/limiting_index/momentum/reserve_vector -> ADCS_E_NULL (nothing written).`
+        *   Otherwise outputs are first set to: `minimum_margin=INFINITY`, `limiting_index=SIZE_MAX`, `momentum=reserve_vector=0`.
+        *   Then null `wheels/speed_limits -> ADCS_E_NULL`.
+        *   `count` outside 1..16 -> `ADCS_E_RANGE`.
+        *   Any nonfinite or nonpositive speed limit, nonfinite or nonpositive inertia, nonfinite speed, or axis with norm <= ADCS_EPS_NORM (or nonfinite) -> `ADCS_E_RANGE`.
+    *   **Context Code:** Provides types, macros, helper functions, and a stub for `adcs_pilot_wheel_reserve`. The stub signature is:
+        `adcs_status_t adcs_pilot_wheel_reserve(const adcs_wheel_t *wheels, const double *speed_limits, size_t count, double *minimum_margin, size_t *limiting_index, adcs_vec3_t *momentum, adcs_vec3_t *reserve_vector)`
+    *   **Key Logic from Failure Handling:**
+        *   Check pointers first. If `minimum_margin`, `limiting_index`, `momentum`, or `reserve_vector` are NULL -> return `ADCS_E_NULL`, do nothing to outputs.
+        *   Else, initialize outputs: `*minimum_margin = INFINITY; *limiting_index = SIZE_MAX; *momentum = {0}; *reserve_vector = {0};`
+        *   Then check `wheels` or `speed_limits` NULL -> return `ADCS_E_NULL`.
+        *   Check `count` in [1, 16] -> if not, return `ADCS_E_RANGE`.
+        *   Loop through wheels: check validity of limits, inertia, speed, axis norm. If invalid -> return `ADCS_E_RANGE`.
+        *   Calculate margins, find min, compute reserve vector, call `adcs_wheel_momentum`.
+
+3.  **Analyze Test 1:**
+    *   Input: `wheels = NULL`
+    *   Other inputs assumed valid/not NULL based on context (implied, as only `wheels` is explicitly set to NULL). Let's assume `speed_limits`, `count`, `minimum_margin`, `limiting_index`, `momentum`, `reserve_vector` are valid pointers.
+    *   According to requirement: "Otherwise outputs are first set to minimum_margin=INFINITY, limiting_index=SIZE_MAX, momentum=reserve_vector=0; then null wheels/speed_limits -> ADCS_E_NULL".
+    *   So, expected behavior: Outputs should be initialized to defaults (`INFINITY`, `SIZE_MAX`, `{0}`, `{0}`), then return `ADCS_E_NULL`.
+    *   Wait, let's re-read carefully: "Otherwise outputs are first set to minimum_margin=INFINITY, limiting_index=SIZE_MAX, momentum=reserve_vector=0; then null wheels/speed_limits -> ADCS_E_NULL"
+    *   This means if pointers are valid, we set defaults, then check `wheels`/`speed_limits`. Since `wheels` is NULL, it returns `ADCS_E_NULL`. The outputs remain at their default values.
+    *   What are the default values? `minimum_margin = INFINITY`, `limiting_index = SIZE_MAX` (which is ~1.84467e+19 for 64-bit unsigned long), `momentum = {0,0,0}`, `reserve_vector = {0,0,0}`.
+    *   Test 1 Output differences:
+        *   `__ret__`: A=1 (`ADCS_E_NULL`), B=2 (`ADCS_E_RANGE`), C=1 (`ADCS_E_NULL`)
+        *   `limiting_index`: A=1.84467e+19 (`SIZE_MAX`), B=1.84467e+19, C=0
+        *   `minimum_margin`: A=inf, B=inf, C=0
+    *   Matching against requirement: Return code should be 1 (`ADCS_E_NULL`). Outputs should be defaults. So A matches perfectly. B returns 2 (wrong). C returns 1 but outputs are 0 (didn't initialize defaults before returning error, or handled order differently).
+    *   Conclusion for Test 1: A is correct.
+
+4.  **Analyze Test 2:**
+    *   Input: `speed_limits = NULL`
+    *   Similar to Test 1. Pointers for outputs are valid. `wheels` is presumably valid (or at least not the focus).
+    *   According to requirement: Initialize outputs to defaults first. Then check `null wheels/speed_limits -> ADCS_E_NULL`.
+    *   Expected: Return 1 (`ADCS_E_NULL`), outputs = defaults (`INFINITY`, `SIZE_MAX`, `{0}`).
+    *   Test 2 Output differences: Identical to Test 1.
+        *   `__ret__`: A=1, B=2, C=1
+        *   `limiting_index`: A=SIZE_MAX, B=SIZE_MAX, C=0
+        *   `minimum_margin`: A=inf, B=inf, C=0
+    *   Conclusion for Test 2: A is correct.
+
+5.  **Synthesize & Verify:**
+    *   Requirement explicitly states the order of operations: validate output pointers -> initialize outputs to defaults -> validate input pointers/count/data -> return error codes.
+    *   Tests 1 & 2 trigger the "null wheels/speed_limits" error condition.
+    *   Because initialization happens *before* this check, outputs must hold the default values when the function returns `ADCS_E_NULL`.
+    *   Implementation A does exactly this: returns 1, outputs are defaults.
+    *   Implementation B returns 2 (`ADCS_E_RANGE`), which violates the explicit error code mapping.
+    *   Implementation C returns 1 but outputs are 0, meaning it either didn't initialize defaults or returned early without initializing. The requirement says "Otherwise outputs are first set to... then null wheels/speed_limits -> ADCS_E_NULL". So initialization is mandatory.
+    *   Therefore, A is the only correct implementation for these tests.
+    *   The prompt asks to judge based *only* on the requirement. Both tests point to A.
+    *   I will structure the JSON output accordingly.
+
+    Let's double check the exact wording: "Otherwise outputs are first set to minimum_margin=INFINITY, limiting_index=SIZE_MAX, momentum=reserve_vector=0; then null wheels/speed_limits -> ADCS_E_NULL"
+    This confirms initialization happens before the NULL check.
+    Test 1 & 2 show A has `__ret__`=1, `limiting_index`=SIZE_MAX, `minimum_margin`=inf. This matches perfectly.
+    B has `__ret__`=2. Incorrect.
+    C has `__ret__`=1, but outputs=0. Incorrect per requirement.
+
+    Reasoning for JSON:
+    Test 1: 需求明确规定先初始化输出为默认值(INFINITY/SIZE_MAX/0)，再检查输入指针。wheels为NULL时应返回ADCS_E_NULL(1)且保留默认值。A符合，B错返回码，C未初始化默认值。
+    Test 2: 同理，speed_limits为NULL时行为与测试1一致，A完全符合需求规定的顺序和返回值。
+    Pick: A
+
+    Check format requirements: "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|C|未规定|无法判断","reason":"一句话"}],"pick":"A|B|C"}"
+    I will generate exactly this.
+    One minor point: Test IDs are "测试 1" and "测试 2". I'll use "测试 1" and "测试 2" as keys/values.
+    All good. Proceed. 
+    Self-Correction/Refinement during thought: 
+    Wait, the prompt says "测试 1（类型 error；未赋值的量为 0；共调用 1 次，比较最后一次调用后的输出）". The ID in JSON should probably be 1 and 2. I'll use 1 and 2.
+    Let's verify `SIZE_MAX` value: typically `18446744073709551615` for 64-bit, which prints as `1.84467e+19`. Matches.
+    `ADCS_E_NULL` is 1. `ADCS_E_RANGE` is 2. Matches.
+    Everything aligns perfectly.
+    Output matches requested format.✅
+    Generate. 
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求明确要求先初始化输出为默认值(INFINITY/SIZE_MAX/0)，再校验输入指针；wheels为NULL时应返回ADCS_E_NULL(1)且保留已初始化的默认值，A完全符合，B错返回码，C未执行初始化。"},
+        {"id": 2, "correct": "A", "reason": "逻辑同测试1，speed_limits为NULL触发相同分支，A的返回码与输出默认值均严格遵循需求规定的执行顺序。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Checks out. Proceeds. 
+    One detail: "未赋值的量为 0" in the prompt description just means any other variables not mentioned are 0 by default in the harness. Doesn't affect the logic.
+    All good. 
+    Output matches exactly. 
+    Final Review of the prompt: "请**只依据需求**判断：在每个测试上，哪一种实现的输出符合需求。" -> Done.
+    Format: JSON only. -> Done.
+    Ready. 
+    Output Generation. 
+    *(Self-Correction/Verification during generation prep)*
+    Let's carefully read the failure handling again: "Null minimum_margin/limiting_index/momentum/reserve_vector -> ADCS_E_NULL (nothing written). Otherwise outputs are first set to minimum_margin=INFINITY, limiting_index=SIZE_MAX, momentum=reserve_vector=0; then null wheels/speed_limits -> ADCS_E_NULL;"
+    This strictly dictates:
+    1. Check output ptrs. If null -> E_NULL, done.
+    2. Else -> set defaults.
+    3. Check input ptrs. If null -> E_NULL. (Outputs keep defaults).
+    So A is definitively correct. B returns 2 (Range), C returns 1 but outputs 0 (skipped init or wrong order).
+    The reasoning is solid.
+    Output matches request.✅
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

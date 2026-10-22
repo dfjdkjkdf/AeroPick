@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "创新角约0.5rad≥reject_rad(0.2)，每次调用递增rejects，第3次达到max_rejects(3)后按需求应锁存FAULT；A正确进入故障态，B/C停留在REJECT。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "predicted为NULL触发退化/无效条件，需求明确要求立即锁存FAULT并清除证据；A将rejects清零符合故障初始化逻辑，B错误保留/累积至上限。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "measured为NULL同样触发无效条件，应立即锁存FAULT并清零计数；A正确，B错误。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "measured为零向量属退化四元数，需求规定立即锁存FAULT；A清零计数符合规范，B错误。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "measured含NAN属非有限值/配置无效，需求规定立即锁存FAULT；A处理正确，B错误。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "measured含INFINITY属非法输入，需求规定立即锁存FAULT；A处理正确，B错误。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10267,
+  "completion": 4984
+ }
+}

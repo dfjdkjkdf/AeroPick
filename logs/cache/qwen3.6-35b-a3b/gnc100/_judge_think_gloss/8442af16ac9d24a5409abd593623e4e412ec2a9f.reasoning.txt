@@ -1,0 +1,87 @@
+Here's a thinking process:
+
+1.  **Analyze User Input:**
+    *   **Role:** Aerospace GNC Software Review Expert.
+    *   **Task:** Evaluate two implementations (A and B) of a C function based on a given requirement. Only use the requirement to judge which implementation is correct for each test case. Output only JSON.
+    *   **Requirement:** "Magnetorquer dipole-to-PWM conversion"
+        *   Context: A B-dot command is converted to signed PWM duty while preserving requested average dipole.
+        *   Input interface: `finite requested vector`, `positive finite full_scale`, `minimum_duty` in `[0,1]`, `output command`.
+        *   Math definition: For each axis compute `d = m / full_scale`. Apply decision table:
+            *   `|d| == 0` -> `0`, promotion bit clear
+            *   `0 < |d| < minimum_duty` -> `minimum_duty`, promotion bit set
+            *   `minimum_duty <= |d| <= 1` -> `|d|`, promotion bit clear
+            *   `|d| > 1` -> `1`, promotion bit clear
+        *   Restore original sign after selecting magnitude.
+        *   Required processing: Apply minimum pulse after upper clipping; exact zero remains zero.
+        *   Output contract: `ADCS_OK` with duty vector and bit mask for minimum-pulse promotion; failure output zero.
+        *   Boundary/failure handling: Null -> `ADCS_E_NULL`; invalid numeric input -> `ADCS_E_RANGE`.
+        *   Traceability ends with closing brace `}`.
+    *   **Context Code:** Provides types (`adcs_vec3_t`, `adcs_actuator_command_t`, `adcs_status_t`, etc.), macros, helper functions, and a stub for the target function:
+      ```c
+      adcs_status_t adcs_pilot_dipole_pwm(const adcs_vec3_t *requested_a_m2, double full_scale_a_m2, double minimum_duty, adcs_actuator_command_t *duty) {
+      ```
+    *   **Test Case 1:**
+        *   Type: error
+        *   Pre-call assignment: `duty = NULL;`
+        *   Output difference:
+            *   `__crash__`: A=(no output); B=1
+            *   `__ret__`: A=1; B=(no output)
+            *   `duty.command.x/y/z`: A=0; B=(no output)
+            *   `duty.saturated_axes`: A=0; B=(no output)
+        *   Interpretation: Test passes `duty = NULL` as the output pointer. The requirement says: "Null -> ADCS_E_NULL". `ADCS_E_NULL` corresponds to value 1 in the enum.
+        *   Implementation A: Returns 1 (`ADCS_E_NULL`), sets `duty.command` to 0s and `saturated_axes` to 0 (though `duty` is NULL, so this might be a mock/test harness behavior or it handles NULL gracefully by not dereferencing but the test harness shows 0s, likely default initialized). Actually, if `duty` is NULL, setting its members would crash. The test shows `__crash__: A=(no output)`, meaning A did NOT crash. It returned 1. The test harness probably initializes `duty` to zeros before call or catches the null check. Wait, `duty = NULL` means the pointer itself is NULL. If A returns 1 without crashing, it correctly checks for NULL and returns early. B crashes or doesn't return? The test says `__crash__: B=1`, meaning B crashed/returned 1 unexpectedly? Or maybe B tried to dereference NULL and crashed, returning 1 from some other mechanism? Actually, `__crash__: B=1` usually means the test harness detected a crash or invalid state and assigned 1, or B returned 1 but crashed later? Let's stick to the core: Requirement says "Null -> ADCS_E_NULL". A returns 1 (`ADCS_E_NULL`) without crashing. This matches the requirement perfectly. B either crashes or behaves incorrectly. Given `__crash__: B=1`, it likely crashed on dereference. So A is correct.
+
+2.  **Evaluate Test 1 against Requirement:**
+    *   Input: `duty` pointer is `NULL`.
+    *   Requirement: "Boundary and failure handling: Null -> ADCS_E_NULL"
+    *   Expected behavior: Return `ADCS_E_NULL` (which is 1 per enum). Do not dereference `duty`.
+    *   Implementation A: Returns 1, no crash. Matches requirement.
+    *   Implementation B: Crashes or returns incorrectly. Does not match.
+    *   Conclusion for Test 1: A is correct. Reason: Requirement explicitly states Null input should return `ADCS_E_NULL` (value 1) without dereferencing; A returns 1 without crashing, matching the spec, while B crashes.
+
+3.  **Format Output:**
+    *   Need JSON structure: `{"tests":[{"id":1,"correct":"A","reason":"..."}],"pick":"A"}`
+    *   Draft reason: 需求明确规定空指针输入应返回ADCS_E_NULL(值为1)且不应解引用；实现A直接返回1且不崩溃，符合需求，而B发生崩溃。
+    *   Check constraints: "只输出 JSON", "按需求逐条推理...", "最后综合所有测试，选出最符合需求的一种实现。"
+    *   Since there's only one test provided, `pick` will be "A".
+
+    Let's refine the reason to be concise and strictly follow the prompt: "需求规定空指针应返回ADCS_E_NULL(即1)且不可解引用；A正确返回1且不崩溃，B崩溃违反安全与接口约定。"
+
+    Double check enum: `ADCS_E_NULL = 1`. Correct.
+    Test format: `{"tests":[{"id":1,"correct":"A","reason":"需求规定空指针应返回ADCS_E_NULL(即1)且不可解引用；A正确返回1且不崩溃，B崩溃违反接口约定。"}],"pick":"A"}`
+
+    All steps verified. Output matches request.✅
+    One minor point: The prompt says `__crash__: A=（无输出）；B=1`. This means A didn't crash, B crashed (harness recorded 1). `__ret__: A=1；B=（无输出）`. A returned 1. B didn't return normally. This confirms A handles NULL correctly.
+    I will generate the JSON exactly as requested. 
+    Structure:
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "A",
+          "reason": "需求明确规定空指针输入应返回ADCS_E_NULL(枚举值为1)且不得解引用；实现A直接返回1且不崩溃，完全符合需求，实现B发生崩溃。"
+        }
+      ],
+      "pick": "A"
+    }
+    ```
+    Matches all constraints. Proceeds. 
+    Self-Correction/Verification during thought: 
+    Check if any other tests are implied? The prompt only lists "测试 1". So only one entry in tests array.
+    Check enum values: `ADCS_OK = 0, ADCS_E_NULL = 1`. Correct.
+    Check requirement text: "Null -> ADCS_E_NULL". Correct.
+    Everything aligns. Output matches. 
+    Generate. 
+    [Output Generation] -> JSON string. 
+    Note: I will ensure strict JSON formatting as requested. No extra text. 
+    Final Check of the prompt: "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}"
+    Ready. 
+    Output matches response. 
+    [Done] 
+    *(Self-Correction/Refinement during generation prep)*: 
+    I'll make sure the JSON is perfectly formatted and contains exactly what's asked. The reason should be one sentence as requested.
+    `{"tests":[{"id":1,"correct":"A","reason":"需求规定空指针应返回ADCS_E_NULL(即1)且禁止解引用；A正确返回1且不崩溃，B崩溃违反接口安全约定。"}],"pick":"A"}`
+    Looks solid.✅
+    Output matches. 
+    [Proceeds]

@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "c为NULL应按空指针失败处理，失败时angle应输出INFINITY。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "body为NULL应按空指针失败处理，失败时angle应输出INFINITY。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "reference为NULL应按空指针失败处理，失败时angle应输出INFINITY。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "innovation为NULL应按空指针失败处理，angle仍应输出INFINITY。"
+  }
+ ],
+ "pick": "A"
+}

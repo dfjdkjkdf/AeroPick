@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A follows the normative table: OFF/FAULT reset history, quality violations return MONITOR without updating accepted history, and it uses the provided normalization/abs-dot primitives with clamping.",
+ "_usage": {
+  "prompt": 11555,
+  "completion": 10766
+ }
+}

@@ -1,0 +1,168 @@
+{
+ "key": "a494ca04b5c69f8d6b15313c020076d86f67dcdb",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.wheels = NULL;",
+    "wm_input.count = 4;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.wheels = (adcs_wheel_t*)0x1234;",
+    "wm_input.count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.wheels = (adcs_wheel_t*)0x1234;",
+    "wm_input.count = 5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_config.stop = -1.0;",
+    "wm_config.restart = 0.0;",
+    "wm_config.required = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_config.stop = 1.0;",
+    "wm_config.restart = 0.5;",
+    "wm_config.required = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_config.required = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_config.required = 21;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_config.target.x = INFINITY;",
+    "wm_config.target.y = 0.0;",
+    "wm_config.target.z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_config.stop = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_config.restart = NAN;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wm_input.enable = 0;",
+    "wm_state.mode = WM_ACTIVE;",
+    "wm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wm_input.enable = 1;",
+    "wm_config.target.x = 0.0; wm_config.target.y = 0.0; wm_config.target.z = 0.0;",
+    "wm_config.stop = 0.1;",
+    "wm_config.restart = 0.2;",
+    "wm_config.required = 2;",
+    "wm_input.wheels[0].axis_body.x = 1.0; wm_input.wheels[0].axis_body.y = 0.0; wm_input.wheels[0].axis_body.z = 0.0;",
+    "wm_input.wheels[0].inertia_kg_m2 = 1.0; wm_input.wheels[0].speed_rad_s = 0.0;",
+    "wm_input.wheels[1].axis_body.x = 0.0; wm_input.wheels[1].axis_body.y = 1.0; wm_input.wheels[1].axis_body.z = 0.0;",
+    "wm_input.wheels[1].inertia_kg_m2 = 1.0; wm_input.wheels[1].speed_rad_s = 0.0;",
+    "wm_input.wheels[2].axis_body.x = 0.0; wm_input.wheels[2].axis_body.y = 0.0; wm_input.wheels[2].axis_body.z = 1.0;",
+    "wm_input.wheels[2].inertia_kg_m2 = 1.0; wm_input.wheels[2].speed_rad_s = 0.0;",
+    "wm_input.wheels[3].axis_body.x = 0.0; wm_input.wheels[3].axis_body.y = 0.0; wm_input.wheels[3].axis_body.z = 0.0;",
+    "wm_input.wheels[3].inertia_kg_m2 = 1.0; wm_input.wheels[3].speed_rad_s = 0.0;",
+    "wm_state.mode = WM_ACTIVE; wm_state.good = 0;",
+    "wm_output.momentum.x = 0.0; wm_output.momentum.y = 0.0; wm_output.momentum.z = 0.0;",
+    "wm_output.error_norm = 0.05;",
+    "wm_output.error_energy = 0.0025;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wm_output.error_norm = 0.05;",
+    "wm_output.error_energy = 0.0025;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wm_output.error_norm = 0.05;",
+    "wm_output.error_energy = 0.0025;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_output.error_norm = 0.15;",
+    "wm_output.error_energy = 0.0225;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_output.error_norm = 0.2;",
+    "wm_output.error_energy = 0.04;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_output.error_norm = 0.25;",
+    "wm_output.error_energy = 0.0625;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wm_input.enable = 1;",
+    "wm_config.target.x = 10.0; wm_config.target.y = 0.0; wm_config.target.z = 0.0;",
+    "wm_config.stop = 0.1;",
+    "wm_config.restart = 0.2;",
+    "wm_config.required = 1;",
+    "wm_input.wheels[0].axis_body.x = 1.0; wm_input.wheels[0].axis_body.y = 0.0; wm_input.wheels[0].axis_body.z = 0.0;",
+    "wm_input.wheels[0].inertia_kg_m2 = 1.0; wm_input.wheels[0].speed_rad_s = 10.0;",
+    "wm_input.wheels[1].axis_body.x = 0.0; wm_input.wheels[1].axis_body.y = 1.0; wm_input.wheels[1].axis_body.z = 0.0;",
+    "wm_input.wheels[1].inertia_kg_m2 = 1.0; wm_input.wheels[1].speed_rad_s = 0.0;",
+    "wm_input.wheels[2].axis_body.x = 0.0; wm_input.wheels[2].axis_body.y = 0.0; wm_input.wheels[2].axis_body.z = 1.0;",
+    "wm_input.wheels[2].inertia_kg_m2 = 1.0; wm_input.wheels[2].speed_rad_s = 0.0;",
+    "wm_input.wheels[3].axis_body.x = 0.0; wm_input.wheels[3].axis_body.y = 0.0; wm_input.wheels[3].axis_body.z = 0.0;",
+    "wm_input.wheels[3].inertia_kg_m2 = 1.0; wm_input.wheels[3].speed_rad_s = 0.0;",
+    "wm_state.mode = WM_COMPLETE; wm_state.good = 1;",
+    "wm_output.momentum.x = 10.0; wm_output.momentum.y = 0.0; wm_output.momentum.z = 0.0;",
+    "wm_output.error_norm = 0.05;",
+    "wm_output.error_energy = 0.0025;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wm_output.error_norm = 0.25;",
+    "wm_output.error_energy = 0.0625;"
+   ]
+  }
+ ]
+}

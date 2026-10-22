@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C在所有错误分支（含空指针与非有限值检查）中均正确将输出向量置零，严格满足“Failure output is zero”的契约要求，而A和B在部分异常路径下遗漏了该处理。",
+ "_usage": {
+  "prompt": 9818,
+  "completion": 2925
+ }
+}

@@ -1,0 +1,92 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:**
+    *   I am an aerospace GNC (Guidance, Navigation, and Control) software review expert.
+    *   I need to evaluate two different implementations (A and B) of a C function based on a given requirement.
+    *   I only see the requirement, context/types/macros, and test cases with differing outputs. I don't see the actual code for A or B.
+    *   For each test case, I must determine which implementation's output matches the requirement, based *only* on the requirement.
+    *   Output must be a specific JSON format.
+
+2.  **Analyze the Requirement:**
+    *   **Functionality:** Magnetometer hard-iron min/max calibration with a chronic-insufficient-excitation latch.
+    *   **Core Logic:**
+        *   Track component extrema (`min`, `max`) over a window.
+        *   Calculate `bias = (max + min) / 2` and `half_span = (max - min) / 2`.
+        *   `READY` only when every `half_span >= minimum_span`.
+        *   Insufficient excitation restarts collection and increments `rejected_windows`.
+        *   `max_rejected_windows`: caps consecutive insufficient windows before giving up. If 0, unlimited (counter tracked but never blocks). Once `rejected_windows` reaches nonzero `max_rejected_windows`, the next insufficient window latches `FAULT` instead of restarting.
+        *   `Disable` clears everything including rejection counter.
+        *   `NULL/nonfinite sample or invalid configuration (including max_rejected_windows itself) latches FAULT.`
+        *   Normative math: `bias=(maximum+minimum)/2`, `half_span=(maximum-minimum)/2`, `span_norm=||half_span||`, `span_energy=half_span dot half_span`. Every component must meet `half_span >= minimum_span`.
+        *   Valid config: `required` in 4..100, `minimum_span` finite and > 0, `max_rejected_windows <= 1000`.
+    *   **State Machine/Mode Enum:** From context: `typedef enum{MH_IDLE=0,MH_COLLECT=1,MH_READY=2,MH_FAULT=3}mh_mode_t;`
+    *   **Key Triggers for FAULT:**
+        *   `NULL` sample.
+        *   Nonfinite sample.
+        *   Invalid configuration (including `max_rejected_windows` itself). The prompt says "invalid configuration (including max_rejected_windows itself)". Looking at valid config: `required` in 4..100, `minimum_span` finite & >0, `max_rejected_windows <= 1000`. What about `max_rejected_windows < 0`? It's a `uint32_t`, so it can't be negative. But maybe uninitialized or out of range? Wait, the requirement says "invalid configuration (including max_rejected_windows itself)". This might mean if `max_rejected_windows` is not within bounds or somehow invalid. But more importantly, `NULL` sample explicitly latches FAULT.
+        *   Let's check Test 1: `mh_input.sample = NULL;` -> Requirement says: "NULL/nonfinite sample ... latches FAULT." So mode should become `MH_FAULT` (3). Implementation A gives 3, B gives 0. A matches.
+        *   Tests 2-6: `mh_input.enable = 1;` (and presumably other fields are 0/uninitialized as per "未赋值的量为 0"). `mh_config` fields would be 0. `required`=0, `minimum_span`=0, `max_rejected_windows`=0.
+        *   Check validity of config: `required` must be in 4..100. Here it's 0. `minimum_span` must be > 0. Here it's 0. So configuration is **invalid**.
+        *   Requirement says: "NULL/nonfinite sample or invalid configuration (including max_rejected_windows itself) latches FAULT."
+        *   Therefore, any call with invalid configuration should latch FAULT (mode=3).
+        *   Implementations A give 3 for all tests 1-6. B gives 0.
+        *   So A matches the requirement for all these tests.
+
+3.  **Detailed Reasoning per Test:**
+    *   **Test 1:** Input `sample = NULL`. Requirement explicitly states: "NULL/nonfinite sample ... latches FAULT." Fault mode is 3. A outputs 3, B outputs 0. -> A correct.
+    *   **Tests 2-6:** Input `enable = 1`, others 0. Config has `required=0` (invalid, needs 4..100), `minimum_span=0` (invalid, needs >0). Requirement states: "invalid configuration ... latches FAULT." Fault mode is 3. A outputs 3, B outputs 0. -> A correct for all.
+    *   Note: The prompt says "共调用 1 次，比较最后一次调用后的输出". Since it's called once, the state transitions to FAULT immediately upon detecting the error condition.
+    *   All tests point to A being correct because they trigger explicit fault conditions defined in the requirements.
+
+4.  **Structure the Output:**
+    *   Need JSON format: `{"tests":[{"id":1,"correct":"A","reason":"..."}, ...], "pick":"A"}`
+    *   Draft reasons concisely as requested ("一句话").
+    *   Test 1: 需求明确规定“NULL样本会置位FAULT”，故障模式值为3，故A正确。
+    *   Test 2-6: 需求规定“无效配置（如required不在4~100、minimum_span不大于0）会置位FAULT”，测试中配置全为0属无效，应进入FAULT(3)，故A正确。
+    *   Pick: A
+
+    Let's verify enum values from context: `typedef enum{MH_IDLE=0,MH_COLLECT=1,MH_READY=2,MH_FAULT=3}mh_mode_t;` Matches perfectly.
+    Check requirement wording again: "NULL/nonfinite sample or invalid configuration (including max_rejected_windows itself) latches FAULT."
+    Tests 2-6 have `enable=1`, others 0. `mh_config` defaults to 0. `required=0` violates `4..100`. `minimum_span=0` violates `>0`. So invalid config -> FAULT.
+    All align.
+
+    One minor point: Test 2-6 are identical in description except ID. I will list them separately as requested.
+    Format:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求明确规定NULL样本会直接latch FAULT(模式值3)，A符合。"},
+        {"id": 2, "correct": "A", "reason": "配置项全为0导致required和minimum_span不满足有效范围，需求规定无效配置会latch FAULT(模式值3)，A符合。"},
+        {"id": 3, "correct": "A", "reason": "同上，无效配置触发需求规定的FAULT状态，A符合。"},
+        {"id": 4, "correct": "A", "reason": "同上，无效配置触发需求规定的FAULT状态，A符合。"},
+        {"id": 5, "correct": "A", "reason": "同上，无效配置触发需求规定的FAULT状态，A符合。"},
+        {"id": 6, "correct": "A", "reason": "同上，无效配置触发需求规定的FAULT状态，A符合。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Wait, the prompt says "只依据需求判断：在每个测试上，哪一种实现的输出符合需求。" and "最后综合所有测试，选出最符合需求的一种实现。"
+    I will keep reasons concise.
+    Check if any nuance missed: "Invalid configuration (including max_rejected_windows itself)" might refer to checking bounds. With 0, it's definitely invalid.
+    The output format requires exactly the JSON structure.
+    I will generate it now. 
+    Self-Correction/Refinement during thought: 
+    Should I combine reasons or keep them separate? The prompt asks for `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}]}`. I'll follow exactly.
+    All tests clearly point to FAULT(3). A gives 3. B gives 0 (IDLE). So A is correct.
+    Ready.✅
+    Output matches request. 
+    Proceeds. 
+    Generating response. 
+    *(Self-Correction/Verification during drafting)*
+    Let's double check the exact wording for config validity: "Valid configuration: required in 4..100, minimum_span finite and > 0, max_rejected_windows <= 1000."
+    Tests 2-6 have `mh_input.enable = 1;` and "未赋值的量为 0". This implies `mh_config.required = 0`, `mh_config.minimum_span = 0.0`, `mh_config.max_rejected_windows = 0`. 
+    `required=0` fails `4..100`. `minimum_span=0` fails `>0`. Thus invalid config. Requirement: "invalid configuration ... latches FAULT." FAULT = 3.
+    Test 1: `sample = NULL`. Requirement: "NULL ... latches FAULT." FAULT = 3.
+    Both match A.
+    All good. 
+    Output generation. 
+    `{ "tests": [ { "id": 1, "correct": "A", "reason": "需求明确说明NULL样本会直接latch FAULT(对应枚举值3)，A输出正确。" }, { "id": 2, "correct": "A", "reason": "配置默认全0导致required和minimum_span不满足有效区间，需求规定无效配置会latch FAULT(3)，A输出正确。" }, { "id": 3, "correct": "A", "reason": "同上，无效配置触发需求规定的FAULT状态，A正确。" }, { "id": 4, "correct": "A", "reason": "同上，无效配置触发需求规定的FAULT状态，A正确。" }, { "id": 5, "correct": "A", "reason": "同上，无效配置触发需求规定的FAULT状态，A正确。" }, { "id": 6, "correct": "A", "reason": "同上，无效配置触发需求规定的FAULT状态，A正确。" } ], "pick": "A" }`
+    Matches perfectly. No extra text. Proceeds. 
+    One detail: The prompt says "只输出 JSON". I will strictly output only the JSON.
+    Done. 
+    [Output Generation] -> *Proceeds*

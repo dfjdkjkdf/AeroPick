@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "首拍 priming，第二拍 dt=0.1 有效且 rate=1e-5≤fine_enter，进入 FINE 后用 fine_gain=2，B 的偶极输出符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "第二拍 rate=1e-6≤stop 且≤fine_enter，进入 FINE 并用 fine_gain=2，B 的偶极输出符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "第二拍 9e-5≤stop 记 good=1，第三拍 0≤stop 记 good=2，达到 required_good=2，B 输出 good=2。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "max_sample_gap=1 未超过，第二拍有效，与测试1相同进入 FINE 用 fine_gain，B 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "enable=2 非二进制无效，应按拒绝样本处理：不 priming、bad=1、发布零；B 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "field 为 NaN 使 adcs_bdot_update 失败，应按拒绝样本处理并发布零，B 的 field_magnitude=0 符合。"
+  }
+ ],
+ "pick": "B"
+}

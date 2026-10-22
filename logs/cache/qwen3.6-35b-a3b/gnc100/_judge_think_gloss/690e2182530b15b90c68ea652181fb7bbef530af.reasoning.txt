@@ -1,0 +1,108 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:** I am an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based *only* on the provided requirements. I'm given three test cases with different outputs for A and B. I must determine which implementation's output matches the requirement for each test, provide a one-sentence reason, and then pick the overall best implementation. The output must be strictly JSON.
+
+2.  **Analyze the Requirements:**
+    *   **Functionality:** Three-axis normalized-innovation-squared (NIS) gate.
+    *   **Inputs:** `residual` pointer, `variance` pointer. Also `enable`, `accept_threshold`, `reject_threshold`, `max_consecutive_reject`.
+    *   **Computation:** `whitened_i = residual_i / sqrt(variance_i)`. `NIS = whitened dot whitened` (sum of squares).
+    *   **Decision Table:**
+        *   `NIS <= accept_threshold`: ACCEPT, clear rejection evidence to zero.
+        *   `accept_threshold < NIS < reject_threshold`: preserve prior ACCEPT/REJECT. Increment count only if preserved decision is REJECT.
+        *   `NIS >= reject_threshold`: REJECT, increment count.
+        *   `consecutive_reject == max_consecutive_reject`: FAULT, retain count.
+    *   **Constraints/Validation:**
+        *   Disable resets ACCEPT.
+        *   Require binary enable, non-NULL finite residual and variance, each variance strictly positive, `0 <= accept_threshold < reject_threshold`, and `max_consecutive_reject` in 1..20.
+        *   Invalid input latches FAULT with `use_measurement=0`.
+        *   Any FAULT cycle that does not evaluate a measurement publishes `nis` and `whitened_norm` as `INFINITY`.
+        *   `use_measurement` is 1 exactly when published mode is ACCEPT.
+        *   Disable publishes ACCEPT with zero count, `nis` and `whitened_norm` 0, and `use_measurement=1`.
+        *   Report whitened norm as independent diagnostic.
+    *   **State/Output Variables:** `mode` (ACCEPT/REJECT/FAULT), `consecutive_reject`, `nis`, `whitened_norm`, `use_measurement`.
+
+3.  **Analyze Test 1:**
+    *   Inputs: `enable=1`, `accept_threshold=7.815`, `reject_threshold=2.0`, `max_consecutive_reject=3`. Residual=(0,0,0), Variance=(1,1,1).
+    *   Check constraints: `accept_threshold` (7.815) is NOT less than `reject_threshold` (2.0). Requirement says: `0<=accept_threshold<reject_threshold`. This is violated.
+    *   Constraint check also: `max_consecutive_reject=3` is in 1..20 (OK).
+    *   Since `accept_threshold >= reject_threshold`, this is an **invalid input**.
+    *   Requirement for invalid input: "Invalid input latches FAULT with use_measurement=0."
+    *   Also: "Any FAULT cycle that does not evaluate a measurement publishes nis and whitened_norm as INFINITY." Since it's invalid, it doesn't evaluate measurement -> `nis=INF`, `whitened_norm=INF`.
+    *   Expected Output: `mode=FAULT(2)`, `consecutive_reject` (retain or latch? requirement says "latches FAULT", usually means state becomes FAULT. Count behavior isn't explicitly detailed for fault entry but typically stays or increments, but key is `mode=2`). `nis=inf`, `whitened_norm=inf`, `use_measurement=0`.
+    *   Compare A vs B:
+        *   A: `mode=2(Fault)`, `nis=inf`, `use_measurement=0`, `whitened_norm=inf`. Matches perfectly.
+        *   B: `mode=0(Accept)`, `nis=0`, `use_measurement=1`, `whitened_norm=0`. Incorrect.
+    *   Conclusion for Test 1: A is correct. Reason: Invalid threshold ordering triggers FAULT latch with INF diagnostics and use_measurement=0 per spec.
+
+4.  **Analyze Test 2:**
+    *   Inputs: `enable=1`, `accept_threshold=2.0`, `reject_threshold=7.815`, `max_consecutive_reject=0`. Residual=(0,0,0), Variance=(1,1,1).
+    *   Check constraints: `accept_threshold < reject_threshold` (OK). But `max_consecutive_reject=0`. Requirement says: `max_consecutive_reject` in 1..20. This is violated.
+    *   Invalid input -> latches FAULT, `use_measurement=0`, `nis=INF`, `whitened_norm=INF`.
+    *   Compare A vs B:
+        *   A: `nis=inf`, `whitened_norm=inf`. Matches.
+        *   B: `nis=0`, `whitened_norm=0`. Incorrect.
+    *   Conclusion for Test 2: A is correct. Reason: Out-of-range max_consecutive_reject is invalid input, requiring FAULT latch with INF diagnostics.
+
+5.  **Analyze Test 3:**
+    *   Inputs: `enable=1`, `accept_threshold=2.0`, `reject_threshold=7.815`, `max_consecutive_reject=21`. Residual=(0,0,0), Variance=(1,1,1).
+    *   Check constraints: `max_consecutive_reject=21`. Requirement says: `max_consecutive_reject` in 1..20. Violated.
+    *   Invalid input -> latches FAULT, `use_measurement=0`, `nis=INF`, `whitened_norm=INF`.
+    *   Compare A vs B:
+        *   A: `mode=2(Fault)`, `nis=inf`, `use_measurement=0`, `whitened_norm=inf`. Matches.
+        *   B: `mode=0(Accept)`, `nis=0`, `use_measurement=1`, `whitened_norm=0`. Incorrect.
+    *   Conclusion for Test 3: A is correct. Reason: max_consecutive_reject out of valid range [1,20] constitutes invalid input, triggering FAULT state with INF diagnostics.
+
+6.  **Synthesize & Format Output:**
+    *   All three tests point to Implementation A being correct due to proper handling of invalid configuration parameters (threshold ordering, max_reject bounds).
+    *   Draft JSON structure:
+      ```json
+      {
+        "tests": [
+          {"id": 1, "correct": "A", "reason": "输入参数accept_threshold不小于reject_threshold违反约束，属非法输入，应按需求锁定FAULT状态并输出INF诊断值及use_measurement=0。"},
+          {"id": 2, "correct": "A", "reason": "max_consecutive_reject为0超出合法范围[1,20]，属非法输入，应触发FAULT锁存并输出INF诊断值。"},
+          {"id": 3, "correct": "A", "reason": "max_consecutive_reject为21超出合法范围[1,20]，属非法输入，应触发FAULT锁存并输出INF诊断值。"}
+        ],
+        "pick": "A"
+      }
+      ```
+    *   Check against constraints: "只依据需求判断", "逐条推理", "一句话原因", "JSON格式".
+    *   Refine reasons to be concise and strictly aligned with the prompt's request.
+    *   Test 1: 阈值顺序违规属非法输入，需求规定非法输入应锁定FAULT状态且未评估测量时nis与whitened_norm输出INF、use_measurement置0。
+    *   Test 2: max_consecutive_reject=0越界属非法输入，需求规定非法输入应锁定FAULT并输出INF诊断值。
+    *   Test 3: max_consecutive_reject=21越界属非法输入，需求规定非法输入应锁定FAULT并输出INF诊断值。
+    *   All match A. Pick A.
+    *   Verify JSON syntax. Ensure no extra text.
+    *   One minor point: The prompt says "Invalid input latches FAULT with use_measurement=0." and "Any FAULT cycle that does not evaluate a measurement publishes nis and whitened_norm as INFINITY." This perfectly matches A's outputs.
+    *   Ready. Output matches exactly.✅
+    *   Self-Correction/Verification during thought:
+        *   Check test 2 & 3 outputs from prompt: They only list differences for `nis` and `whitened_norm`. A has `inf`, B has `0`. This aligns with my reasoning.
+        *   The prompt asks for `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`.
+        *   I will format exactly as requested.
+        *   All good. Proceed. 
+        *   Output generation. 
+        *   Structure:
+          ```json
+          {
+            "tests": [
+              {"id": 1, "correct": "A", "reason": "accept_threshold大于reject_threshold违反配置约束，属非法输入，按需求应锁定FAULT状态且因未评估测量而输出INF诊断值及use_measurement=0。"},
+              {"id": 2, "correct": "A", "reason": "max_consecutive_reject为0超出合法区间[1,20]，属非法输入，按需求应锁定FAULT状态并输出INF诊断值。"},
+              {"id": 3, "correct": "A", "reason": "max_consecutive_reject为21超出合法区间[1,20]，属非法输入，按需求应锁定FAULT状态并输出INF诊断值。"}
+            ],
+            "pick": "A"
+          }
+          ```
+        *   Matches all constraints. Done. 
+        *   One detail: "未赋值的量为 0" in test description just means global/static vars are 0 initially. Doesn't change logic.
+        *   Final check of the prompt: "Report whitened norm as an independent diagnostic." "publishes nis and whitened_norm as INFINITY." Matches A.
+        *   All set. 
+        *   Output matches response. 
+        *   Proceeds. 
+        *   [Done] 
+        *   Output Generation. 
+        *   *(Self-Correction/Refinement during drafting)*: I should make sure the JSON keys exactly match the prompt: `"id"`, `"correct"`, `"reason"`, `"pick"`. The prompt uses Chinese numbers in examples but standard JSON expects strings or numbers. I'll use integers for id as requested `测试编号`. The prompt says `{"tests":[{"id":测试编号,...}]}`. I will use `1`, `2`, `3`.
+        *   All good. 
+        *   Output matches. 
+        *   [Final Check of the Prompt]: "只输出 JSON：..." -> I will strictly output only the JSON block.
+        *   Ready. 
+        *   Output Generation. 
+        *   `[Done]`

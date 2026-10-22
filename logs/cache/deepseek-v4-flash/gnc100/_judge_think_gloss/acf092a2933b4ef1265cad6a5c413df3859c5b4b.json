@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "未规定",
+   "reason": "需求未规定已在HOLD时settled计数器的值，仅该字段有差异。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "需求要求反转时先重置速率再同周期加速，A的0.25 rad步进符合。"
+  },
+  {
+   "id": 3,
+   "correct": "未规定",
+   "reason": "需求未规定进入HOLD后settled计数器的值，仅该字段有差异。"
+  }
+ ],
+ "pick": "A"
+}

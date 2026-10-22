@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 复用已验证的 adcs_triad 并补充非有限检查，功能正确且最符合需求。",
+ "_usage": {
+  "prompt": 8489,
+  "completion": 23825
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "NORMAL 下未达 warn，无制动扭矩，limited_mask 应为 0，B 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "速度仅到 release 未达 warn，仍为 NORMAL，无扭矩且 limited_mask 应为 0，B 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "DERATE 第二拍回零变化量恰好等于 slew，按阈值包含应视为受限，A 的 limited_mask=15 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "进入 BRAKE 后第二拍 elapsed 应递增为 1，A 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "enable=0 应复位 NORMAL、先前力矩与能量并清零命令，A 符合，B 仍维持 BRAKE。"
+  }
+ ],
+ "pick": "A"
+}

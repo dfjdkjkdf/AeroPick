@@ -1,0 +1,127 @@
+{
+ "key": "70b88d3e7868c91a744be40ed4b4e8d1010ce487",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 2.0;\nprevious->z = 3.0;\nprevious_time_s = 0.0;\ncurrent->x = 4.0;\ncurrent->y = 5.0;\ncurrent->z = 6.0;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = -1.0;\nprevious->y = -2.0;\nprevious->z = -3.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 2.0;\ncurrent->z = 3.0;\ncurrent_time_s = 2.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0e-9;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0e-15;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous = NULL;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent = NULL;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0;\nrate_t_s = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 1.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 0.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 0.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = INFINITY;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = NAN;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = NAN;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = INFINITY;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 2.0;\ncurrent->y = 2.0;\ncurrent->z = 2.0;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;",
+    "previous->x = 2.0;\nprevious->y = 2.0;\nprevious->z = 2.0;\nprevious_time_s = 1.0;\ncurrent->x = 4.0;\ncurrent->y = 4.0;\ncurrent->z = 4.0;\ncurrent_time_s = 2.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;",
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 1.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = 2.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = DBL_MIN;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 1.0;\nprevious->z = 1.0;\nprevious_time_s = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 1.0;\ncurrent->z = 1.0;\ncurrent_time_s = -1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 1e-10;\nprevious->y = 1e-10;\nprevious->z = 1e-10;\nprevious_time_s = 0.0;\ncurrent->x = 2e-10;\ncurrent->y = 2e-10;\ncurrent->z = 2e-10;\ncurrent_time_s = 1.0;\nrate_t_s->x = 0.0;\nrate_t_s->y = 0.0;\nrate_t_s->z = 0.0;"
+   ]
+  }
+ ]
+}

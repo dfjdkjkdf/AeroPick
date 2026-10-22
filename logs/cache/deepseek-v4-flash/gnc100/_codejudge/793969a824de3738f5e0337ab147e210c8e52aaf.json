@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly normalizes the axis, applies the right-handed Rodrigues formula, and returns zero output on all failures while mapping null/invalid inputs to the required statuses.",
+ "_usage": {
+  "prompt": 9093,
+  "completion": 14469
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定‘nonfinite or tiny norm -> ADCS_E_DEGENERATE’，输入含INFINITY属非有限值，应返回3，实现B符合需求。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求明确规定‘nonfinite or tiny norm -> ADCS_E_DEGENERATE’，输入含NAN属非有限值，应返回3，实现B符合需求。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 8822,
+  "completion": 2696
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "on_cycles=1时第2拍应从IDLE进入ON并算作ON第1拍，完成后下一状态转REST，C符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "on_cycles=3时第3拍为ON第3拍，完成后转REST且rest_target=2，C符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "on_cycles=2时第2拍为ON第2拍，完成后转REST且rest_target=3，C符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "两个ON拍均饱和，rest_target=2+2*1=4且计数器完成后清零，C符合。"
+  },
+  {
+   "id": 5,
+   "correct": "未规定",
+   "reason": "仅rest_target差异，需求未规定Disabled/Demand absent时是否清零rest_target。"
+  },
+  {
+   "id": 6,
+   "correct": "未规定",
+   "reason": "仅rest_target差异，需求未规定Demand absent时是否清零rest_target。"
+  }
+ ],
+ "pick": "C"
+}

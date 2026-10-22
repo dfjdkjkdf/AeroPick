@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 与 B 功能完全等价且均满足需求，A 更简洁直接。",
+ "_usage": {
+  "prompt": 8678,
+  "completion": 5705
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "key": "506468b008a55a3505259f754e46f3f4d36e758c",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "body_a = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ref_a = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ref_b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "primary_index = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "geometry_quality = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "c_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "variance_a = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "variance_a = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "variance_a = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "variance_a = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 0.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nref_a->x = 1.0;\nref_a->y = 0.0;\nref_a->z = 0.0;\nbody_b->x = 1.0;\nbody_b->y = 0.0;\nbody_b->z = 0.0;\nref_b->x = 1.0;\nref_b->y = 0.0;\nref_b->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nref_a->x = 1.0;\nref_a->y = 0.0;\nref_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_b->x = 0.0;\nref_b->y = 1.0;\nref_b->z = 0.0;\nvariance_a = 1.0;\nvariance_b = 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 0.0;\nbody_a->y = 1.0;\nbody_a->z = 0.0;\nref_a->x = 0.0;\nref_a->y = 1.0;\nref_a->z = 0.0;\nbody_b->x = 1.0;\nbody_b->y = 0.0;\nbody_b->z = 0.0;\nref_b->x = 1.0;\nref_b->y = 0.0;\nref_b->z = 0.0;\nvariance_a = 2.0;\nvariance_b = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nref_a->x = 1.0;\nref_a->y = 0.0;\nref_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_b->x = 0.0;\nref_b->y = 1.0;\nref_b->z = 0.0;\nvariance_a = 1.0;\nvariance_b = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nref_a->x = 1.0;\nref_a->y = 0.0;\nref_a->z = 0.0;\nbody_b->x = 1.0;\nbody_b->y = 1e-9;\nbody_b->z = 0.0;\nref_b->x = 1.0;\nref_b->y = 1e-9;\nref_b->z = 0.0;\nvariance_a = 1.0;\nvariance_b = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 1.0/sqrt(3);\nbody_a->y = 1.0/sqrt(3);\nbody_a->z = 1.0/sqrt(3);\nref_a->x = 1.0/sqrt(3);\nref_a->y = 1.0/sqrt(3);\nref_a->z = 1.0/sqrt(3);\nbody_b->x = 1.0/sqrt(2);\nbody_b->y = -1.0/sqrt(2);\nbody_b->z = 0.0;\nref_b->x = 1.0/sqrt(2);\nref_b->y = -1.0/sqrt(2);\nref_b->z = 0.0;\nvariance_a = 0.5;\nvariance_b = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nref_a->x = 1.0;\nref_a->y = 0.0;\nref_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_b->x = 0.0;\nref_b->y = 1.0;\nref_b->z = 0.0;\nvariance_a = 1.0;\nvariance_b = 1.0000000000000002;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0;\nbody_a->y = 0.0;\nbody_a->z = 0.0;\nref_a->x = 1.0;\nref_a->y = 0.0;\nref_a->z = 0.0;\nbody_b->x = 0.0;\nbody_b->y = 1.0;\nbody_b->z = 0.0;\nref_b->x = 0.0;\nref_b->y = 1.0;\nref_b->z = 0.0;\nvariance_a = 1.0000000000000002;\nvariance_b = 1.0;"
+   ]
+  }
+ ]
+}

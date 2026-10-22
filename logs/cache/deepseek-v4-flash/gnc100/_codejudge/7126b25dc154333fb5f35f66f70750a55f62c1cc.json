@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly maps check_ref via C_BI, normalizes both mapped check_ref and check_body, clamps the dot product, and returns identity/zero with the proper status on failures.",
+ "_usage": {
+  "prompt": 9069,
+  "completion": 8915
+ }
+}

@@ -1,0 +1,385 @@
+{
+ "key": "2a9adc1dbd28ed489615bcfb3668f5e138d197f2",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.field_body_t = NULL;",
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = -0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 0.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 0;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 21;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pg_input.enable = 0;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.8660254037844386;",
+    "pg_input.field_body_t->y = 0.5;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.8660254037844385;",
+    "pg_input.field_body_t->y = 0.5;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.9;",
+    "pg_config.max_rejects = 3;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.enable = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = -1.0;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 1.0;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.9999999999999999;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;",
+    "pg_input.field_body_t->y = 1.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;",
+    "pg_input.field_body_t->y = 1.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;",
+    "pg_input.field_body_t->y = 1.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;",
+    "pg_input.field_body_t->y = 1.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;",
+    "pg_input.field_body_t->y = 1.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 0.0;",
+    "pg_input.field_body_t->y = 1.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pg_input.enable = 1;",
+    "pg_config.minimum_cosine = 0.5;",
+    "pg_config.max_rejects = 5;",
+    "pg_input.dt_s = 0.1;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = 1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;",
+    "pg_input.field_body_t->x = -1.0;",
+    "pg_input.field_body_t->y = 0.0;",
+    "pg_input.field_body_t->z = 0.0;"
+   ]
+  }
+ ]
+}

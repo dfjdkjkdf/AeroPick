@@ -1,0 +1,127 @@
+{
+ "key": "712933a0a484436ef3b13960f436280960f1899d",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "raw_t->x = 1.0;\nraw_t->y = 2.0;\nraw_t->z = 3.0;\nbias_t->x = 0.1;\nbias_t->y = 0.2;\nbias_t->z = 0.3;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "raw_t->x = 10.0;\nraw_t->y = 20.0;\nraw_t->z = 30.0;\nbias_t->x = 5.0;\nbias_t->y = 10.0;\nbias_t->z = 15.0;\ncalibration->m[0][0] = 2.0;\ncalibration->m[0][1] = 0.5;\ncalibration->m[0][2] = -0.5;\ncalibration->m[1][0] = 0.5;\ncalibration->m[1][1] = 2.0;\ncalibration->m[1][2] = 0.5;\ncalibration->m[2][0] = -0.5;\ncalibration->m[2][1] = 0.5;\ncalibration->m[2][2] = 2.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "raw_t->x = 0.0;\nraw_t->y = 0.0;\nraw_t->z = 0.0;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "raw_t->x = 1.0;\nraw_t->y = 0.0;\nraw_t->z = 0.0;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 0.0;\ncalibration->m[0][1] = 1.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 0.0;\ncalibration->m[1][2] = 1.0;\ncalibration->m[2][0] = 1.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "raw_t->x = 1e-10;\nraw_t->y = 1e-10;\nraw_t->z = 1e-10;\nbias_t->x = 1e-10;\nbias_t->y = 1e-10;\nbias_t->z = 1e-10;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "raw_t->x = 1.0;\nraw_t->y = 1.0;\nraw_t->z = 1.0;\nbias_t->x = 1.0;\nbias_t->y = 1.0;\nbias_t->z = 1.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "bias_t = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "calibration = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "corrected_t = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t->x = NAN;\nraw_t->y = 0.0;\nraw_t->z = 0.0;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t->x = INFINITY;\nraw_t->y = 0.0;\nraw_t->z = 0.0;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t->x = -INFINITY;\nraw_t->y = 0.0;\nraw_t->z = 0.0;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t->x = 0.0;\nraw_t->y = NAN;\nraw_t->z = 0.0;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t->x = 0.0;\nraw_t->y = 0.0;\nraw_t->z = INFINITY;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t->x = 1.0;\nraw_t->y = 2.0;\nraw_t->z = 3.0;\nbias_t->x = NAN;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t->x = 1.0;\nraw_t->y = 2.0;\nraw_t->z = 3.0;\nbias_t->x = 0.0;\nbias_t->y = INFINITY;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t->x = 1.0;\nraw_t->y = 2.0;\nraw_t->z = 3.0;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = -INFINITY;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "raw_t->x = 1.0;\nraw_t->y = 2.0;\nraw_t->z = 3.0;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = NAN;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "raw_t->x = 1.0;\nraw_t->y = 0.0;\nraw_t->z = 0.0;\nbias_t->x = 0.0;\nbias_t->y = 0.0;\nbias_t->z = 0.0;\ncalibration->m[0][0] = 1.0;\ncalibration->m[0][1] = 0.0;\ncalibration->m[0][2] = 0.0;\ncalibration->m[1][0] = 0.0;\ncalibration->m[1][1] = 1.0;\ncalibration->m[1][2] = 0.0;\ncalibration->m[2][0] = 0.0;\ncalibration->m[2][1] = 0.0;\ncalibration->m[2][2] = 1.0;",
+    "raw_t->x = 2.0;\nraw_t->y = 0.0;\nraw_t->z = 0.0;",
+    "raw_t->x = 3.0;\nraw_t->y = 0.0;\nraw_t->z = 0.0;"
+   ]
+  }
+ ]
+}

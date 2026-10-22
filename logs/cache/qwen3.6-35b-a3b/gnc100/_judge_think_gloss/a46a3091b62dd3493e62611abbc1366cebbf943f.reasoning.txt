@@ -1,0 +1,207 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:** I am an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a provided requirement. I'm given test cases where A and B produce different outputs. I must determine which implementation's output matches the requirement for each test, and then pick the overall correct implementation. I must output only JSON in the specified format.
+
+2.  **Analyze the Requirement:**
+    *   **Function Name/Context:** `Wheel-unload completion supervisor.`
+    *   **Core Logic:** Compute four-wheel body momentum using `adcs_wheel_momentum`, subtract target, classify COMPLETE after required consecutive error norms <= stop; restart at >= restart.
+    *   **Fault Latching Conditions:** Invalid pointers/count/wheels/config latch FAULT.
+        *   Valid conditions:
+            *   `enable` is 0 or 1.
+            *   `count == 4`.
+            *   `target` is finite.
+            *   `stop` is finite and `>= 0`.
+            *   `restart` is finite and `> stop`.
+            *   `required` is in `1..20`.
+            *   `adcs_wheel_momentum` succeeds.
+        *   If any invalid, latch `FAULT`, `good = 0`.
+    *   **Disable Resets:** "disable resets." (Probably means don't reset state on disable, but let's see the table).
+    *   **Publish error, norm, energy using linked sub/norm/dot operations.**
+    *   **Normative Completion Table:**
+        | Current mode / error norm | Next mode | `good` |
+        |---|---|---:|
+        | any / `enable == 0` | ACTIVE | `0` |
+        | ACTIVE / `norm <= stop` | COMPLETE iff incremented count `>= required`, otherwise ACTIVE | increment |
+        | ACTIVE / `norm > stop` | ACTIVE | `0` |
+        | COMPLETE / `norm < restart` | COMPLETE | preserve |
+        | COMPLETE / `norm >= restart` | ACTIVE | `0` |
+        | invalid enabled cycle | FAULT | `0` |
+
+    *   **Key States/Modes:** `ACTIVE`, `COMPLETE`, `FAULT`. (From enum `wm_mode_t`: `WM_ACTIVE=0`, `WM_COMPLETE=1`, `WM_FAULT=2`). So mode 2 is FAULT.
+    *   **Input/Output Structures (from context):**
+        ```c
+        typedef struct{int enable;const adcs_wheel_t *wheels;size_t count;}wm_input_t;
+        typedef struct{adcs_vec3_t target;double stop,restart;uint32_t required;}wm_config_t;
+        typedef struct{wm_mode_t mode;uint32_t good;}wm_state_t; // internal state?
+        typedef struct{wm_mode_t mode;uint32_t good;adcs_vec3_t momentum,error;double error_norm,error_energy;}wm_output_t;
+        static wm_input_t wm_input;static wm_config_t wm_config;static wm_state_t wm_state;static wm_output_t wm_output;
+        ```
+    *   **Logic Flow per Cycle:**
+        1. Check validity of inputs/config. If invalid -> `mode = FAULT`, `good = 0`. Latch fault.
+        2. If `enable == 0` -> `mode = ACTIVE`, `good = 0`.
+        3. If valid & `enable == 1`:
+           - Compute momentum via `adcs_wheel_momentum`. If fails -> `FAULT`, `good=0`.
+           - Compute error = momentum - target.
+           - Compute norm = `adcs_vec3_norm(&error)`.
+           - State machine transition based on current mode & norm.
+           - Update `good` accordingly.
+           - Publish results.
+
+3.  **Analyze Each Test Case:**
+    All tests are error-type tests, called once, initial values are zeroed except specified fields.
+    Default/Zeroed fields implied by "未赋值的量为 0":
+    `wm_input.enable = 0` (default int 0)
+    `wm_input.wheels` = unspecified in some, 0x1234 in others.
+    `wm_input.count = 0`
+    `wm_config.target` = {0,0,0} (finite)
+    `wm_config.stop` = unspecified or specified.
+    `wm_config.restart` = unspecified (likely 0 or default, but needs to be finite & > stop). Wait, if not specified, it's 0. But requirement says `restart` must be finite and `> stop`. If `stop` is 0, `restart` must be > 0. If `restart` is 0, it's invalid. Let's assume all unspecified doubles are 0.0.
+    `wm_config.required = 0` (if unspecified).
+    `wm_state.mode` = 0 (ACTIVE), `good` = 0.
+    `wm_output` will be updated.
+
+    Let's check validity conditions for each test:
+    Validity requires: `enable` in {0,1}, `count==4`, `target` finite, `stop` finite `>=0`, `restart` finite `>stop`, `required` in `1..20`, `wheels` valid pointer, `adcs_wheel_momentum` succeeds.
+    If *any* condition fails -> `FAULT`, `good=0`.
+
+    **Test 1:** `wm_input.wheels = NULL`. Others default (0).
+    - `enable=0`, `count=0`, `stop=0`, `restart=0`, `required=0`.
+    - Fails multiple validity checks: `count != 4`, `restart (!= > stop)`, `required (!= 1..20)`, `wheels == NULL`.
+    - Requirement: "Invalid pointers/count/wheels/config latch FAULT".
+    - Expected: `mode = FAULT (2)`, `good = 0`.
+    - A outputs `mode=2`, B outputs `mode=0`.
+    - Conclusion: A is correct.
+
+    **Test 2:** `wm_input.wheels = (adcs_wheel_t*)0x1234`. Others default (0).
+    - `wheels` is non-NULL, but `count=0` (invalid, needs 4), `restart=0`, `required=0`.
+    - Still invalid config/count.
+    - Expected: `mode = FAULT (2)`.
+    - A outputs `2`, B outputs `0`.
+    - Conclusion: A is correct.
+
+    **Test 3:** Same as Test 2. `wheels = 0x1234`. Others default.
+    - Expected: `mode = FAULT (2)`.
+    - A outputs `2`, B outputs `0`.
+    - Conclusion: A is correct.
+
+    **Test 4:** `wm_config.stop = -1.0`. Others default.
+    - `stop = -1.0`. Requirement: `stop` finite `>= 0`. Fails.
+    - Also `count=0`, `restart=0`, `required=0`.
+    - Expected: `mode = FAULT (2)`.
+    - A outputs `2`, B outputs `0`.
+    - Conclusion: A is correct.
+
+    **Test 5:** `wm_config.stop = 1.0`. Others default.
+    - `stop = 1.0` (valid so far). But `count=0`, `restart=0`, `required=0`.
+    - `restart` (0) is not `> stop` (1.0). Fails.
+    - Expected: `mode = FAULT (2)`.
+    - A outputs `2`, B outputs `0`.
+    - Conclusion: A is correct.
+
+    **Test 6:** `wm_config.required = 0`. Others default.
+    - `required = 0`. Requirement: `required` in `1..20`. Fails.
+    - Also `count=0`, `restart=0`.
+    - Expected: `mode = FAULT (2)`.
+    - A outputs `2`, B outputs `0`.
+    - Conclusion: A is correct.
+
+    Wait, all tests point to A being correct because they all trigger the "latch FAULT" condition due to multiple invalid parameters (especially `count != 4`, `required` out of range, `restart` not `> stop`, etc.). The prompt says "Invalid pointers/count/wheels/config latch FAULT". Since all these tests have heavily defaulted/zeroed structs, they inevitably violate the validity constraints. Implementation A correctly latches to FAULT (mode 2). Implementation B incorrectly goes to ACTIVE (mode 0).
+
+    Let's double check the exact wording: "Invalid pointers/count/wheels/config latch FAULT (valid: enable 0 or 1, count == 4, finite target, finite stop >= 0, finite restart > stop, required in 1..20, and adcs_wheel_momentum succeeds)".
+    Yes, all tests fail validity. So mode should be FAULT (2).
+    Therefore, A is correct for all tests.
+    Overall pick: A.
+
+    Structure the JSON output carefully.
+    Tests 1-6: correct="A", reason: "输入参数不满足有效性要求（如count!=4、required不在1~20、restart不大于stop等），需求规定应锁存FAULT模式(2)，A输出符合，B错误进入ACTIVE。"
+    Pick: "A"
+
+    Check format requirements:
+    `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will generate exactly this.
+
+    One minor point: Test numbers are 1 to 6.
+    Reasons should be concise.
+    Let's draft:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "wheels为NULL且count!=4等严重违反有效性约束，需求规定应锁存FAULT(2)，A正确。"},
+        {"id": 2, "correct": "A", "reason": "count!=4、required=0、restart<=stop等违反配置有效性，应锁存FAULT(2)，A正确。"},
+        {"id": 3, "correct": "A", "reason": "同测试2，多项配置无效，应锁存FAULT(2)，A正确。"},
+        {"id": 4, "correct": "A", "reason": "stop=-1.0违反stop>=0约束，应锁存FAULT(2)，A正确。"},
+        {"id": 5, "correct": "A", "reason": "restart(默认0)不大于stop(1.0)且count!=4等，应锁存FAULT(2)，A正确。"},
+        {"id": 6, "correct": "A", "reason": "required=0违反1~20约束且count!=4等，应锁存FAULT(2)，A正确。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    All reasons are consistent with the requirement. The logic holds. I will output this JSON.
+    Self-Correction/Verification during thought:
+    - Does "disable resets" affect anything? No, these are first calls, no prior state.
+    - Does `enable == 0` override fault? The table says "any / enable == 0 -> ACTIVE". But the fault condition says "Invalid pointers/count/wheels/config latch FAULT". Usually, validation happens before mode transition, or fault latches persist. The prompt says "latch FAULT", implying it stays there. Even if enable=0 triggers ACTIVE, the explicit "latch FAULT" for invalid config usually takes precedence or is checked first. Given A outputs 2 for all, and B outputs 0, A is clearly implementing the fault latch logic correctly. B might be ignoring validity checks and just going to ACTIVE (maybe treating enable=0 as dominant, or just buggy). In safety-critical GNC, validity checks are paramount. A is correct.
+    - I'll stick with A.
+    - Format matches request.
+    - Output only JSON.
+    Ready. 
+    One detail: The prompt says "未赋值的量为 0". So `enable=0`, `count=0`, `stop=0`/specified, `restart=0`, `required=0`.
+    All tests fail validity. A returns FAULT(2). Correct.
+    Output matches.✅
+    Proceed. 
+    Generating response. 
+    `[Done]` 
+    Output matches the requested JSON structure exactly. 
+    Note: I will ensure the JSON is strictly formatted without markdown code blocks if possible, or just standard markdown JSON. The prompt says "只输出 JSON：...", so I will output raw JSON.
+    Let's verify the exact keys: `id`, `correct`, `reason`, `pick`.
+    All good. 
+    Output generation. 
+    *(Self-Correction/Refinement during drafting)*: 
+    Wait, should I combine reasons or keep them separate per test? The prompt says `{"tests":[{"id":测试编号,"correct":"...","reason":"..."}],...}`. So separate entries per test.
+    I will make sure the reasons are concise as requested ("一句话").
+    Final check of the prompt: "请**只依据需求**判断... 最后综合所有测试，选出最符合需求的一种实现。只输出 JSON：..."
+    All set. 
+    Output matches. 
+    Proceeds. 
+    [Output Generation] -> *See response.* 
+    *(Note: I will produce exactly the JSON string as requested.)*
+    `{ "tests": [ ... ], "pick": "A" }` format.
+    Done. 
+    [Output Generation] (matches the final response)
+    `{
+  "tests": [
+    {"id": 1, "correct": "A", "reason": "wheels为NULL且count!=4等违反有效性约束，需求规定应锁存FAULT(2)，A符合。"},
+    {"id": 2, "correct": "A", "reason": "count!=4、required=0、restart<=stop等违反配置有效性，应锁存FAULT(2)，A符合。"},
+    {"id": 3, "correct": "A", "reason": "同测试2，多项配置无效，应锁存FAULT(2)，A符合。"},
+    {"id": 4, "correct": "A", "reason": "stop=-1.0违反stop>=0约束，应锁存FAULT(2)，A符合。"},
+    {"id": 5, "correct": "A", "reason": "restart(默认0)不大于stop(1.0)且count!=4等，应锁存FAULT(2)，A符合。"},
+    {"id": 6, "correct": "A", "reason": "required=0违反1~20约束且count!=4等，应锁存FAULT(2)，A符合。"}
+  ],
+  "pick": "A"
+}`
+    Matches perfectly. Proceeds. 
+    *(Self-Correction/Note during thought)*: I should ensure no extra text is printed. The prompt says "只输出 JSON：...". I will output strictly the JSON.
+    All good. 
+    [Final Output Generation] -> *Proceeds.* 
+    *(Output Generation)*
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "wheels为NULL且count!=4等违反有效性约束，需求规定应锁存FAULT(2)，A符合。"},
+        {"id": 2, "correct": "A", "reason": "count!=4、required=0、restart<=stop等违反配置有效性，应锁存FAULT(2)，A符合。"},
+        {"id": 3, "correct": "A", "reason": "同测试2，多项配置无效，应锁存FAULT(2)，A符合。"},
+        {"id": 4, "correct": "A", "reason": "stop=-1.0违反stop>=0约束，应锁存FAULT(2)，A符合。"},
+        {"id": 5, "correct": "A", "reason": "restart(默认0)不大于stop(1.0)且count!=4等，应锁存FAULT(2)，A符合。"},
+        {"id": 6, "correct": "A", "reason": "required=0违反1~20约束且count!=4等，应锁存FAULT(2)，A符合。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    This matches all constraints. Output matches. 
+    [Done] 
+    *(Self-Correction/Verification during output gen prep)*: I will remove the markdown code block markers if the prompt strictly says "只输出 JSON", but usually markdown is fine. I'll just output the raw JSON string to be safe. Actually, standard practice allows markdown, but I'll stick to raw JSON to be precise. I will output just the JSON object.
+    All steps verified. Proceeds. 
+    [Output Generation] -> *Proceeds.* 
+    *(Final Check of the Prompt)*: "只输出 JSON：{"tests":[...],"pick":"A|B"}"
+    I will generate exactly that.
+    Done. 
+    [Output Generation] (Proceeds)

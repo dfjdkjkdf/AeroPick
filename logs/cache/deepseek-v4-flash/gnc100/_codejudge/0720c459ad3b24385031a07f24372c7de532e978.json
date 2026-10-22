@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C normalizes, applies the first-nonzero lexicographic sign rule, and sets identity on failure, fully satisfying the requirements.",
+ "_usage": {
+  "prompt": 8780,
+  "completion": 22336
+ }
+}

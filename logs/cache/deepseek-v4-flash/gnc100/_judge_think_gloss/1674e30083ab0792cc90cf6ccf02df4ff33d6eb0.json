@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "Accepted identity sample relative to the initial identity attitude gives relative_step_rad 0, not π."
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "After normalizing, the accepted sample relative to identity gives acos(0.6)=0.927295, matching C."
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "q=(2,0,0,0) normalizes to identity, so the relative step from identity is 0."
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "max_hold_cycles=1 is valid and the accepted identity sample yields relative_step_rad 0."
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "max_hold_cycles=20 is valid and the accepted identity sample yields relative_step_rad 0."
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "Invalid max_hold_cycles=0 must latch FAULT while retaining/defaulting identity, so q_bi.w and last_q_bi.w should be 1."
+  }
+ ],
+ "pick": "C"
+}

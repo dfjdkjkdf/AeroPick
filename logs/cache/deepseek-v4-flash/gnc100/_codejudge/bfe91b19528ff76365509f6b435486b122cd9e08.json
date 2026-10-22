@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 显式检查映射向量非有限并正确将零向量映射为 RANGE，且交叉与 atan2 顺序严格符合规范。",
+ "_usage": {
+  "prompt": 9219,
+  "completion": 25285
+ }
+}

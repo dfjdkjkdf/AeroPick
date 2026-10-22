@@ -1,0 +1,144 @@
+{
+ "key": "2fbff184f3028b702d402fc40a5a0e219fee562f",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "reset = 1;\nfield = NULL;\ntime_s = 0.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "reset = 0;\nfield->x = 2.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0e5;\nlimit = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "reset = 1;\nfield = NULL;\ntime_s = 0.0;\ngain = 1.0;\nlimit = 1.0;",
+    "reset = 0;\nfield->x = 2.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0e5;\nlimit = 1.0;",
+    "field->x = 2.0e-5;\nfield->y = 1.0e-6;\nfield->z = 0.0;\ntime_s = 2.0;\ngain = 1.0e5;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous.y = 0.0;\nsm_state.previous.z = 0.0;\nsm_state.previous_time = 5.0;\nsm_state.rejects = 3;\nreset = 0;\nfield->x = 1.5e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 6.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous.y = 0.0;\nsm_state.previous.z = 0.0;\nsm_state.previous_time = 1.0;\nreset = 0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous_time = 2.0;\nreset = 0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 0.0;\nsm_state.previous.y = 0.0;\nsm_state.previous.z = 0.0;\nsm_state.previous_time = 0.0;\nreset = 0;\nfield->x = 1.0e-13;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 0.0;\nsm_state.previous.y = 0.0;\nsm_state.previous.z = 0.0;\nsm_state.previous_time = 0.0;\nreset = 0;\nfield->x = 1.0e-6;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous_time = 0.0;\nreset = 0;\nfield->x = 1.0e-5;\nfield->y = 1.0e-5;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 0.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous_time = 0.0;\nreset = 0;\nfield->x = 1.0e-5;\nfield->y = 1.0e-5;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 1;\nfield = NULL;\ntime_s = 0.0;\ngain = 1.0;\nlimit = 1.0;\ncommand = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 1;\nfield = NULL;\ntime_s = 0.0;\ngain = 1.0;\nlimit = 1.0;\ntorque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 2;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = -1;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "reset = 0;\nfield = NULL;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous_time = 0.0;\nsm_state.rejects = 4;\nreset = 0;\nfield->x = NAN;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous_time = 0.0;\nreset = 0;\nfield->x = INFINITY;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous_time = 0.0;\nreset = 0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = NAN;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous_time = 0.0;\nreset = 0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = -1.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous_time = 0.0;\nreset = 0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0;\nlimit = NAN;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "reset = 1;\nfield = NULL;\ntime_s = 0.0;\ngain = 1.0;\nlimit = 1.0;",
+    "reset = 0;\nfield->x = 2.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.0;\ngain = 1.0e5;\nlimit = 1.0;",
+    "reset = 0;\nfield->x = NAN;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 2.0;\ngain = 1.0e5;\nlimit = 1.0;",
+    "reset = 0;\nfield->x = 2.2e-5;\nfield->y = 1.0e-6;\nfield->z = 0.0;\ntime_s = 3.0;\ngain = 1.0e5;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sm_state.initialized = 1;\nsm_state.previous.x = 1.0e-5;\nsm_state.previous.y = 0.0;\nsm_state.previous.z = 0.0;\nsm_state.previous_time = 1.0;\nsm_state.rejects = 2;\nreset = 0;\nfield->x = 1.2e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 1.5;\ngain = 1.0;\nlimit = 1.0;",
+    "reset = 1;\nfield = NULL;\ntime_s = 0.0;\ngain = 1.0;\nlimit = 1.0;",
+    "reset = 0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime_s = 2.0;\ngain = 1.0;\nlimit = 1.0;"
+   ]
+  }
+ ]
+}

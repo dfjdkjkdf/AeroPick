@@ -1,0 +1,131 @@
+{
+ "key": "cb7bb17064b1ce0ddb0c379f54ce3e1232ddfe85",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "c_bi = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "check_body = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "check_inertial = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "angle_residual_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "cross_residual_body = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "c_bi->m[0][0] = 1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 1.0;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;\ncheck_inertial->x = 1.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c_bi->m[0][0] = 0.0;\nc_bi->m[0][1] = -1.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 1.0;\nc_bi->m[1][1] = 0.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 0.0;\ncheck_body->y = 1.0;\ncheck_body->z = 0.0;\ncheck_inertial->x = 0.0;\ncheck_inertial->y = 1.0;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c_bi->m[0][0] = 0.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 1.0;\nc_bi->m[1][0] = 1.0;\nc_bi->m[1][1] = 0.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 1.0;\nc_bi->m[2][2] = 0.0;\ncheck_body->x = 0.0;\ncheck_body->y = 0.0;\ncheck_body->z = 1.0;\ncheck_inertial->x = 0.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c_bi->m[0][0] = 1.0/3.0;\nc_bi->m[0][1] = 2.0/3.0;\nc_bi->m[0][2] = 2.0/3.0;\nc_bi->m[1][0] = 2.0/3.0;\nc_bi->m[1][1] = -2.0/3.0;\nc_bi->m[1][2] = 1.0/3.0;\nc_bi->m[2][0] = 2.0/3.0;\nc_bi->m[2][1] = 1.0/3.0;\nc_bi->m[2][2] = -2.0/3.0;\ncheck_body->x = 1.0;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;\ncheck_inertial->x = 1.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "c_bi->m[0][0] = 1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 0.0;\ncheck_body->y = 0.0;\ncheck_body->z = 1.0;\ncheck_inertial->x = 0.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "check_body->x = INFINITY;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;\nc_bi->m[0][0] = 1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_inertial->x = 1.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "check_body->x = NAN;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;\nc_bi->m[0][0] = 1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_inertial->x = 1.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "check_body->x = 0.0;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;\nc_bi->m[0][0] = 1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_inertial->x = 1.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "check_inertial->x = INFINITY;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;\nc_bi->m[0][0] = 1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 1.0;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "check_inertial->x = 0.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;\nc_bi->m[0][0] = 1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 1.0;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "c_bi->m[0][0] = 1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 0.7071067811865475;\ncheck_body->y = 0.7071067811865475;\ncheck_body->z = 0.0;\ncheck_inertial->x = 0.7071067811865475;\ncheck_inertial->y = 0.7071067811865475;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c_bi->m[0][0] = 0.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = -1.0;\nc_bi->m[1][0] = 1.0;\nc_bi->m[1][1] = 0.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 1.0;\nc_bi->m[2][2] = 0.0;\ncheck_body->x = 0.0;\ncheck_body->y = 0.0;\ncheck_body->z = 1.0;\ncheck_inertial->x = 0.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = -1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c_bi->m[0][0] = 0.0;\nc_bi->m[0][1] = 1.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = -1.0;\nc_bi->m[1][1] = 0.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 0.0;\ncheck_body->y = 1.0;\ncheck_body->z = 0.0;\ncheck_inertial->x = 0.0;\ncheck_inertial->y = 1.0;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "c_bi->m[0][0] = 1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 0.0;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;\ncheck_inertial->x = 1.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "c_bi->m[0][0] = INFINITY;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 1.0;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;\ncheck_inertial->x = 1.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "c_bi->m[0][0] = -1.0;\nc_bi->m[0][1] = 0.0;\nc_bi->m[0][2] = 0.0;\nc_bi->m[1][0] = 0.0;\nc_bi->m[1][1] = 1.0;\nc_bi->m[1][2] = 0.0;\nc_bi->m[2][0] = 0.0;\nc_bi->m[2][1] = 0.0;\nc_bi->m[2][2] = 1.0;\ncheck_body->x = 1.0;\ncheck_body->y = 0.0;\ncheck_body->z = 0.0;\ncheck_inertial->x = 1.0;\ncheck_inertial->y = 0.0;\ncheck_inertial->z = 0.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "key": "a457741ee2fc063806ba3dceb34649e77730fa42",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 0.0; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 0.5; desired_body_torque_nm->y = 0.5; desired_body_torque_nm->z = 0.5;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 1.0; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 1.0000000001; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "desired_body_torque_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "achieved_body_torque_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*saturation_mask = 0;\nsaturation_mask = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 0.0; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = -1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 0.0; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = INFINITY; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = NAN; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 0.0; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;\nwheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 1.0; wheel_axes_body[1].y = 0.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 0.0; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = 0.0; wheel_torque_limit_nm[1] = 0.0; wheel_torque_limit_nm[2] = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 2.0; desired_body_torque_nm->y = 3.0; desired_body_torque_nm->z = 4.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel_axes_body[0].x = 0.0; wheel_axes_body[0].y = 1.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 0.0; wheel_axes_body[1].z = 1.0;\nwheel_axes_body[2].x = 1.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 0.0;\ndesired_body_torque_nm->x = 1.0; desired_body_torque_nm->y = 1.0; desired_body_torque_nm->z = 1.0;\nwheel_torque_limit_nm[0] = 2.0; wheel_torque_limit_nm[1] = 2.0; wheel_torque_limit_nm[2] = 2.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 0.9999999999; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 1.0; desired_body_torque_nm->y = 1.0; desired_body_torque_nm->z = 1.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 0.0; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;\nwheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = -1.0; desired_body_torque_nm->y = -1.0; desired_body_torque_nm->z = -1.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = -1.0000000001; desired_body_torque_nm->y = 0.0; desired_body_torque_nm->z = 0.0;\nwheel_torque_limit_nm[0] = 1.0; wheel_torque_limit_nm[1] = 1.0; wheel_torque_limit_nm[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel_axes_body[0].x = 1.0; wheel_axes_body[0].y = 0.0; wheel_axes_body[0].z = 0.0;\nwheel_axes_body[1].x = 0.0; wheel_axes_body[1].y = 1.0; wheel_axes_body[1].z = 0.0;\nwheel_axes_body[2].x = 0.0; wheel_axes_body[2].y = 0.0; wheel_axes_body[2].z = 1.0;\ndesired_body_torque_nm->x = 0.5; desired_body_torque_nm->y = 0.5; desired_body_torque_nm->z = 0.5;\nwheel_torque_limit_nm[0] = 0.6; wheel_torque_limit_nm[1] = 0.6; wheel_torque_limit_nm[2] = 0.6;"
+   ]
+  }
+ ]
+}

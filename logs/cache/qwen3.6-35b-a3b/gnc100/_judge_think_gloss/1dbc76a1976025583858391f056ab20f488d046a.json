@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定NULL样本会直接latch FAULT(模式值3)，A输出正确。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "未赋值字段默认为0导致required和minimum_span不满足有效范围，需求规定无效配置会latch FAULT(3)，A输出正确。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同上，无效配置触发需求规定的FAULT状态，A输出正确。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同上，无效配置触发需求规定的FAULT状态，A输出正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "同上，无效配置触发需求规定的FAULT状态，A输出正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "同上，无效配置触发需求规定的FAULT状态，A输出正确。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9412,
+  "completion": 2658
+ }
+}

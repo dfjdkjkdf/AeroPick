@@ -1,0 +1,29 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定任意NULL指针应返回ADCS_E_NULL(1)且清零输出，A正确拦截并返回1，B越界访问导致崩溃"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，对torque指针为NULL的防御性检查符合需求，B崩溃违规"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同上，对lost_torque指针为NULL的防御性检查符合需求，B崩溃违规"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同上，对mask指针为NULL的防御性检查符合需求，B崩溃违规"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9448,
+  "completion": 1984
+ }
+}

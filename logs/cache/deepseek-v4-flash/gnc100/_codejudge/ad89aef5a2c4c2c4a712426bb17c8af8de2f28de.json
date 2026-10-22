@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确校验二进制 enable、将 cosine 限幅且阈值相等时接受、达到 max_rejects 锁存 FAULT 并在禁用时复位；A 未校验二进制 enable 且禁用未复位状态模式，B 的 FAULT 未锁存。",
+ "_usage": {
+  "prompt": 11972,
+  "completion": 10692
+ }
+}

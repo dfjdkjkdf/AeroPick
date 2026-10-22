@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "按定义 atan2(0,1)=0，A 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "按定义 atan2(1,0)=π/2，A 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "按定义 atan2(1,0)=π/2，A 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "点积为 0 且叉积范数为 2，故 atan2(2,0)=π/2，A 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "点积为 24，叉积范数约 22.405，atan2 约 0.751 rad，A 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "点积为 -7.5，叉积范数约 16.086，atan2 约 2.007 rad，A 符合。"
+  }
+ ],
+ "pick": "A"
+}

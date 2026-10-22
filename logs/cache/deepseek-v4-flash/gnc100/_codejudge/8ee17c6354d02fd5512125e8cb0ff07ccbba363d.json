@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly zeroes outputs on failures and implements previous + max_delta*delta/||delta|| for valid cases, avoiding A/B's normalize minimum-norm rejection for small nonzero deltas.",
+ "_usage": {
+  "prompt": 8901,
+  "completion": 3834
+ }
+}

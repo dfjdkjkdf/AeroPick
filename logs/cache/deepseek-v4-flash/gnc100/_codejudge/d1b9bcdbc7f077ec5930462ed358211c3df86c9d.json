@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 在所有失败路径都清零输出并用 adcs_vec3_normalize 处理退化磁场；B 在 NULL 失败时未清零输出，C 手动冗余检查范数，因此 A 最符合需求。",
+ "_usage": {
+  "prompt": 9126,
+  "completion": 12593
+ }
+}

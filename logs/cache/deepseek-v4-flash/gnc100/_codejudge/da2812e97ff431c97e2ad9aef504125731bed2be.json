@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B explicitly validates finite inputs and sets all outputs to INFINITY on every failure, fully matching the contract.",
+ "_usage": {
+  "prompt": 9484,
+  "completion": 18576
+ }
+}

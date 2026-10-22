@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "正交输入下 second=normalize(p×s)=z，third=second×p=y，行应为 x,y,z 单位矩阵，C 符合且 sine=1。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "p=y,s=z 时 second=x、third=z，行应为 y,z,x，C 输出符合需求。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "C 的行序为 primary,third=second×primary,second=normalize(p×s)，且 sine=|p×s|/(|p||s|)=0.882955 符合需求。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "C 矩阵符合 TRIAD 行序，且 sine=0.816497 正确；B 的 sine 错用除以 primary 范数。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "C 矩阵符合 TRIAD 行序，且 sine=0.95119 正确；B 的 sine 错误。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "主向量范数 1e-6 仍非零且不平行，C 按单位正交基输出 identity，符合需求。"
+  }
+ ],
+ "pick": "C"
+}

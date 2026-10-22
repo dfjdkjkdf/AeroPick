@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确执行先减硬铁再乘软铁，复用 adcs_vec3_normalize 计算单位方向，并在失败时清零输出，最符合需求。",
+ "_usage": {
+  "prompt": 10170,
+  "completion": 3260
+ }
+}

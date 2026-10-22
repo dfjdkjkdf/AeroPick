@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "position为零向量属于退化向量，应latch FAULT；C进入FAULT且elapsed清零、payload off。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "日食转阳光后应进入RECOVERY，非日食阶段heater应为off，C符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "日食转阳光后应进入RECOVERY，非日食阶段heater应为off，C符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "WARMUP完成但SoC低于payload_on_soc，应进入LOADWAIT且heater off，C符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "LOADWAIT中SoC仍低于payload_on_soc，应保持LOADWAIT且heater off，C符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "LOADWAIT中SoC等于payload_on_soc，按“at or above”应进入SUN且heater off，C符合。"
+  }
+ ],
+ "pick": "C"
+}

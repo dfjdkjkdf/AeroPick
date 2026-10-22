@@ -1,0 +1,161 @@
+{
+ "key": "c3b1a1ad55f1fbf4e6acc357c77fac9e2ddaeec8",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "body_a = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "inertial_a = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "inertial_b = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mismatch_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 1.0; body_a->y = 0.0; body_a->z = 0.0;\nbody_b->x = 0.0; body_b->y = 1.0; body_b->z = 0.0;\ninertial_a->x = 1.0; inertial_b->y = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = 1.0;\ninertial_a->x = 1.0; inertial_b->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = -1.0;\ninertial_a->x = 1.0; inertial_b->x = -1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = 0.0; body_b->y = 1.0;\ninertial_a->x = 1.0; inertial_b->x = 0.0; inertial_b->y = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = 0.0; body_b->y = 1.0;\ninertial_a->x = 0.0; inertial_a->y = 1.0; inertial_b->x = 1.0; inertial_b->y = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 3.0; body_a->y = 4.0; body_b->x = -4.0; body_b->y = 3.0;\ninertial_a->x = 0.0; inertial_a->y = 2.0; inertial_a->z = 0.0; inertial_b->x = 0.0; inertial_b->y = 0.0; inertial_b->z = -5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 1.0e-6; body_a->y = 0.0; body_a->z = 0.0; body_b->x = 0.0; body_b->y = 1.0e-6; body_b->z = 0.0;\ninertial_a->x = 1.0e-6; inertial_b->y = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 1.0e-6; body_a->y = 0.0; body_a->z = 0.0; body_b->x = 1.0e-6; body_b->y = 0.0; body_b->z = 0.0;\ninertial_a->x = 1.0e-6; inertial_b->y = 1.0e-6;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 0.0; body_a->y = 0.0; body_a->z = 0.0; body_b->x = 1.0; inertial_a->x = 1.0; inertial_b->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = 1.0; body_b->y = 1.0; body_b->z = 1.0; inertial_a->x = 0.0; inertial_a->y = 0.0; inertial_a->z = 0.0; inertial_b->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = 1.0; inertial_a->x = 1.0; inertial_b->x = 1.0; inertial_b->y = 1.0; inertial_b->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0e-12; body_b->x = 1.0; inertial_a->x = 1.0; inertial_b->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0e-13; body_b->x = 1.0; inertial_a->x = 1.0; inertial_b->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 1.0e200; body_a->y = 1.0e200; body_a->z = 1.0e200; body_b->x = 1.0; inertial_a->x = 1.0; inertial_b->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = NAN; body_b->x = 1.0; inertial_a->x = 1.0; inertial_b->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = INFINITY; inertial_a->x = 1.0; inertial_b->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = 1.0; inertial_a->x = -INFINITY; inertial_b->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 1.0e-8; body_a->y = 0.0; body_a->z = 0.0; body_b->x = 0.0; body_b->y = 1.0e-8; body_b->z = 0.0;\ninertial_a->x = 0.0; inertial_a->y = 1.0e-8; inertial_a->z = 0.0; inertial_b->x = 0.0; inertial_b->y = 0.0; inertial_b->z = 1.0e-8;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "body_a->x = 2.0; body_a->y = -3.0; body_a->z = 5.0; body_b->x = -1.0; body_b->y = 4.0; body_b->z = 0.5;\ninertial_a->x = 7.0; inertial_a->y = 1.5; inertial_a->z = -2.0; inertial_b->x = 0.25; inertial_b->y = -6.0; inertial_b->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = 0.999999999; inertial_a->x = 1.0; inertial_b->x = 0.999999999;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "body_a->x = 1.0; body_b->x = -0.999999999; inertial_a->x = 1.0; inertial_b->x = -0.999999999;"
+   ]
+  }
+ ]
+}

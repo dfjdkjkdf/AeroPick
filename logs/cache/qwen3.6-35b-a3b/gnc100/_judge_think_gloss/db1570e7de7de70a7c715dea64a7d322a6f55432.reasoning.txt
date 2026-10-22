@@ -1,0 +1,98 @@
+Here's a thinking process:
+
+1.  **Understand the Goal:** The user wants me to act as an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a given requirement and three test cases where they produce different outputs. I must only use the provided requirements to judge which implementation is correct for each test case, then pick the overall better implementation. Output must be a specific JSON format.
+
+2.  **Analyze the Requirement:**
+    *   **Function Purpose:** Decompose requested torque into components parallel and perpendicular to a normalized magnetic field. Return controllable fraction = |perpendicular|/|request| (zero request -> 0).
+    *   **Error Handling:**
+        *   `NULL` -> `ADCS_E_NULL`
+        *   `nonfinite request`, or `nonfinite or degenerate field (norm <= ADCS_EPS_NORM)` -> `ADCS_E_DEGENERATE`
+        *   Failure outputs zero.
+    *   **Normative Math:**
+        *   `u = normalize(field)`
+        *   `parallel = (request dot u) u`
+        *   `perpendicular = request - parallel`
+        *   `controllable_fraction = ||perpendicular|| / ||request||` (fraction zero for zero request)
+    *   **Context/Constants:**
+        *   `ADCS_EPS_NORM = 1.0e-12`
+        *   `adcs_is_finite_vec3(v)` checks if all components are finite.
+        *   `adcs_vec3_normalize(in, minimum_norm, out)` returns `ADCS_E_DEGENERATE` if norm <= minimum_norm. It also checks for finiteness internally? Let's check the provided code for `adcs_vec3_normalize`: it checks `adcs_is_finite_vec3(in)` and returns `ADCS_E_NOT_FINITE` if not finite. Wait, the requirement says `nonfinite request, or nonfinite or degenerate field ... -> ADCS_E_DEGENERATE`. This is a slight mismatch with the helper function's return code (`ADCS_E_NOT_FINITE`), but the *requirement* explicitly states the error code should be `ADCS_E_DEGENERATE` for these cases. I will follow the explicit requirement text: "nonfinite request, or nonfinite or degenerate field (norm <= ADCS_EPS_NORM) -> ADCS_E_DEGENERATE."
+        *   Actually, let's re-read carefully: "NULL -> ADCS_E_NULL; nonfinite request, or nonfinite or degenerate field (norm <= ADCS_EPS_NORM) -> ADCS_E_DEGENERATE. Failure outputs zero."
+        *   So, if input is non-finite, return `ADCS_E_DEGENERATE`.
+        *   If field norm <= `ADCS_EPS_NORM`, return `ADCS_E_DEGENERATE`.
+        *   Otherwise, compute math.
+
+3.  **Analyze Test Cases:**
+
+    *   **Test 1:**
+        *   Input: `request = {1.0, 0.0, 0.0}`, `field = {inf, 0.0, 0.0}` (since `1.0/0.0` in IEEE 754 double is `inf`).
+        *   Condition: `field` contains a nonfinite value (`inf`).
+        *   Requirement: "nonfinite ... field ... -> ADCS_E_DEGENERATE" (which is 3).
+        *   Outputs: A=4 (`ADCS_E_NOT_FINITE`), B=3 (`ADCS_E_DEGENERATE`).
+        *   Judgment: B matches requirement exactly. A uses a different error code (maybe from a helper function, but requirement overrides). So B is correct.
+
+    *   **Test 2:**
+        *   Input: `request = {nan, 0.0, 0.0}` (since `0.0/0.0` is NaN), `field = {1.0, 0.0, 0.0}`.
+        *   Condition: `request` is nonfinite (NaN).
+        *   Requirement: "nonfinite request ... -> ADCS_E_DEGENERATE" (3).
+        *   Outputs: A=4, B=3.
+        *   Judgment: B matches requirement. A=4 is incorrect per explicit requirement. B is correct.
+
+    *   **Test 3:**
+        *   Input: `request = {1.0, 0.0, 0.0}`, `field = {1.0, inf, 0.0}`.
+        *   Condition: `field` is nonfinite.
+        *   Requirement: "nonfinite ... field ... -> ADCS_E_DEGENERATE" (3).
+        *   Outputs: A=4, B=3.
+        *   Judgment: B matches requirement. B is correct.
+
+4.  **Synthesize & Format Output:**
+    *   For each test, the reason should briefly state that the requirement explicitly mandates `ADCS_E_DEGENERATE` (value 3) for nonfinite inputs, making B correct and A incorrect.
+    *   Pick: B.
+    *   Construct JSON carefully.
+
+    Let's draft the JSON structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "需求明确规定非有限场输入应返回ADCS_E_DEGENERATE(3)，A返回4不符合要求。"},
+        {"id": 2, "correct": "B", "reason": "需求明确规定非有限请求输入应返回ADCS_E_DEGENERATE(3)，A返回4不符合要求。"},
+        {"id": 3, "correct": "B", "reason": "需求明确规定非有限场输入应返回ADCS_E_DEGENERATE(3)，A返回4不符合要求。"}
+      ],
+      "pick": "B"
+    }
+    ```
+
+5.  **Self-Correction/Verification:**
+    *   Check requirement text again: "NULL -> ADCS_E_NULL; nonfinite request, or nonfinite or degenerate field (norm <= ADCS_EPS_NORM) -> ADCS_E_DEGENERATE."
+    *   Error codes: `ADCS_E_NULL = 1`, `ADCS_E_RANGE = 2`, `ADCS_E_DEGENERATE = 3`, `ADCS_E_NOT_FINITE = 4`.
+    *   Tests show A=4, B=3. So B returns 3 (`ADCS_E_DEGENERATE`), which matches the requirement verbatim.
+    *   The reasoning is solid. No ambiguity.
+    *   Format matches request: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    *   I will ensure the JSON is strictly valid and follows the prompt's exact keys.
+    *   One minor point: The prompt says "只依据需求判断". I've done that.
+    *   All tests point to B. Pick is B.
+    *   Ready. Output matches exactly.✅
+    *   I will generate the JSON now. 
+    *   Self-Correction/Refinement during thought: Should I mention the exact enum values? Yes, it clarifies. The prompt asks for a one-sentence reason. I'll keep it concise.
+    *   Check JSON syntax: keys in double quotes, no trailing commas.
+    *   Structure:
+      ```json
+      {
+        "tests": [
+          {"id": 1, "correct": "B", "reason": "需求明确要求非有限输入（含无穷大或NaN）统一返回ADCS_E_DEGENERATE(3)，A返回的4不符合该规定。"},
+          {"id": 2, "correct": "B", "reason": "同上，需求规定非有限请求向量应返回ADCS_E_DEGENERATE(3)，A返回错误码4不符。"},
+          {"id": 3, "correct": "B", "reason": "同上，需求规定非有限磁场向量应返回ADCS_E_DEGENERATE(3)，A返回错误码4不符。"}
+        ],
+        "pick": "B"
+      }
+      ```
+    *   Matches perfectly. Proceeds. 
+    *   Output generation. 
+    *   *Self-Correction/Note during generation prep*: The prompt says `__ret__：A=4；B=3`. The enum shows `ADCS_E_DEGENERATE = 3`, `ADCS_E_NOT_FINITE = 4`. So B is definitely correct per requirement. I will output exactly as formulated.✅
+    *   Final check of the prompt: "只输出 JSON：..." -> I will output only the JSON block.
+    *   All good. 
+    *   Output matches response. 
+    *   Proceeds. 
+    *   [Done] 
+    *   Output Generation. 
+    *(Done.)*

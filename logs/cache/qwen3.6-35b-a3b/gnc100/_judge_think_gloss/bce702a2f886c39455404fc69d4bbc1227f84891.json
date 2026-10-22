@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求规定禁用时清零状态，第9次调用enable置1且输入为合法单位向量，符合‘uninitialized valid sample’条件，应初始化参考向量并进入TRACK态，故initialized应为1。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "测试配置与执行流程同测试1，首次启用接收合法向量必触发初始化逻辑，initialized正确值应为1。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "测试配置与执行流程同测试1，首次启用接收合法向量必触发初始化逻辑，initialized正确值应为1。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "测试配置与执行流程同测试1，首次启用接收合法向量必触发初始化逻辑，initialized正确值应为1。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "测试配置与执行流程同测试1，首次启用接收合法向量必触发初始化逻辑，initialized正确值应为1。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "测试配置与执行流程同测试1，首次启用接收合法向量必触发初始化逻辑，initialized正确值应为1。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10877,
+  "completion": 3496
+ }
+}

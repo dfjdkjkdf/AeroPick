@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "body_a 为 NULL 属 Null 失败，需求要求失败输出 infinity，A=0 不符，B=inf 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "body_b 为 NULL 属 Null 失败，需求要求失败输出 infinity，A=0 不符，B=inf 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "inertial_a 为 NULL 属 Null 失败，需求要求失败输出 infinity，A=0 不符，B=inf 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "inertial_b 为 NULL 属 Null 失败，需求要求失败输出 infinity，A=0 不符，B=inf 符合。"
+  }
+ ],
+ "pick": "B"
+}

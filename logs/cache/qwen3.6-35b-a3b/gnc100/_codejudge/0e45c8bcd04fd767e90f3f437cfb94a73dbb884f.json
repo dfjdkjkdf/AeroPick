@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B严格遵循需求将所有退化及非有限情况统一映射为ADCS_E_DEGENERATE，并正确复用上下文中已定义的基构建辅助函数，逻辑严密且无冗余；C错误地将非有限值返回为ADCS_E_NOT_FINITE，A则重复造轮子且未显式检查次要向量是否为零。",
+ "_usage": {
+  "prompt": 10502,
+  "completion": 3647
+ }
+}

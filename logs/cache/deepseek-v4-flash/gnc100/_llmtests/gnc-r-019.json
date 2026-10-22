@@ -1,0 +1,154 @@
+{
+ "key": "ed414ac9ade4a5b564a58a28104df169d68f153f",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].axis_body.y = 0.0;\nwp_input.wheels[0].axis_body.z = 0.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 100.0;\nwp_input.wheels[1].axis_body.x = 0.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].axis_body.z = 0.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 100.0;\nwp_input.wheels[2].axis_body.x = 0.0;\nwp_input.wheels[2].axis_body.y = 0.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 100.0;\nwp_input.wheels[3].axis_body.x = 0.7071067811865476;\nwp_input.wheels[3].axis_body.y = 0.7071067811865476;\nwp_input.wheels[3].axis_body.z = 0.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 100.0;\nwp_input.torque_nm[0] = 0.01;\nwp_input.torque_nm[1] = 0.01;\nwp_input.torque_nm[2] = 0.01;\nwp_input.torque_nm[3] = 0.01;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 0.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 0.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 0.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 0.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 0.0;\nwp_input.torque_nm[0] = 5.0;\nwp_input.torque_nm[1] = 5.0;\nwp_input.torque_nm[2] = 5.0;\nwp_input.torque_nm[3] = 5.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = 1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = 1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 0.0;\nwp_config.filter_alpha = 0.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 20;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = 1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = 1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 0.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 0.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.0;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.0;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.0;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.0;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = 1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = 1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 100.0;\nwp_config.regenerative_limit_w = 100.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 100.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 100.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 100.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 100.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = -1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = -1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 10.0;\nwp_config.regenerative_limit_w = 10.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = 1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = 1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 0.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = 1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = 1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 0.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 21;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 3;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 5;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels = NULL;\nwp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm = NULL;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = NAN;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = INFINITY;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = 1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = 1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 100.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = 1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = 1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = -0.5;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = 1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = 1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = -5.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 10.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 10.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 10.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 10.0;\nwp_input.torque_nm[0] = 1.0;\nwp_input.torque_nm[1] = 1.0;\nwp_input.torque_nm[2] = 1.0;\nwp_input.torque_nm[3] = 1.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = -1.0;\nwp_config.release_cycles = 3;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 100.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 100.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 100.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 100.0;\nwp_input.torque_nm[0] = 5.0;\nwp_input.torque_nm[1] = 5.0;\nwp_input.torque_nm[2] = 5.0;\nwp_input.torque_nm[3] = 5.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 100.0;\nwp_config.release_cycles = 3;",
+    "wp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;",
+    "wp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;",
+    "wp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;",
+    "wp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 100.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 100.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 100.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 100.0;\nwp_input.torque_nm[0] = 5.0;\nwp_input.torque_nm[1] = 5.0;\nwp_input.torque_nm[2] = 5.0;\nwp_input.torque_nm[3] = 5.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 100.0;\nwp_config.release_cycles = 3;",
+    "wp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;",
+    "wp_input.torque_nm[0] = 5.0;\nwp_input.torque_nm[1] = 5.0;\nwp_input.torque_nm[2] = 5.0;\nwp_input.torque_nm[3] = 5.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wp_input.enable = 0;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 100.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 100.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 100.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 100.0;\nwp_input.torque_nm[0] = 5.0;\nwp_input.torque_nm[1] = 5.0;\nwp_input.torque_nm[2] = 5.0;\nwp_input.torque_nm[3] = 5.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 100.0;\nwp_config.release_cycles = 3;",
+    "wp_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wp_input.enable = 1;\nwp_input.wheel_count = 4;\nwp_input.wheels[0].axis_body.x = 1.0;\nwp_input.wheels[0].inertia_kg_m2 = 0.1;\nwp_input.wheels[0].speed_rad_s = 100.0;\nwp_input.wheels[1].axis_body.y = 1.0;\nwp_input.wheels[1].inertia_kg_m2 = 0.1;\nwp_input.wheels[1].speed_rad_s = 100.0;\nwp_input.wheels[2].axis_body.z = 1.0;\nwp_input.wheels[2].inertia_kg_m2 = 0.1;\nwp_input.wheels[2].speed_rad_s = 100.0;\nwp_input.wheels[3].axis_body.x = 1.0;\nwp_input.wheels[3].inertia_kg_m2 = 0.1;\nwp_input.wheels[3].speed_rad_s = 100.0;\nwp_input.torque_nm[0] = 5.0;\nwp_input.torque_nm[1] = 5.0;\nwp_input.torque_nm[2] = 5.0;\nwp_input.torque_nm[3] = 5.0;\nwp_config.trip_filtered_w = 100.0;\nwp_config.release_filtered_w = 10.0;\nwp_config.filter_alpha = 1.0;\nwp_config.motoring_limit_w = 1000.0;\nwp_config.regenerative_limit_w = 1000.0;\nwp_config.max_torque_slew_nm_per_cycle = 100.0;\nwp_config.release_cycles = 3;",
+    "wp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;",
+    "wp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;",
+    "wp_input.torque_nm[0] = 0.0;\nwp_input.torque_nm[1] = 0.0;\nwp_input.torque_nm[2] = 0.0;\nwp_input.torque_nm[3] = 0.0;",
+    "wp_input.torque_nm[0] = 5.0;\nwp_input.torque_nm[1] = 5.0;\nwp_input.torque_nm[2] = 5.0;\nwp_input.torque_nm[3] = 5.0;"
+   ]
+  }
+ ]
+}

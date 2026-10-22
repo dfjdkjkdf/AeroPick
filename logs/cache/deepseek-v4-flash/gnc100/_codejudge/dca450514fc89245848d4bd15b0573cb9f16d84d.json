@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "Both B and C satisfy the requirements, but C explicitly sets all outputs to INFINITY on every failure path as required, while A omits this and B relies on pre-initialization.",
+ "_usage": {
+  "prompt": 9422,
+  "completion": 15723
+ }
+}

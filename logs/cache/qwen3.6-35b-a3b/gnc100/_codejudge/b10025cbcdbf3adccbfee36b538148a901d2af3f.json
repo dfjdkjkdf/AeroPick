@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "实现A严格遵守了需求中“Disable resets”的约束（FAULT状态一旦锁定将保持），而实现B错误地实现了内部自动复位；且A优先调用GNC原语处理向量归一化，更符合规范。",
+ "_usage": {
+  "prompt": 10739,
+  "completion": 2712
+ }
+}

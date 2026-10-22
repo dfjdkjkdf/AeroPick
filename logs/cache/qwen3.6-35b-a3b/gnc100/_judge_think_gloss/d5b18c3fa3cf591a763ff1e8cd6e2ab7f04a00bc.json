@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求规定NULL指针返回ADCS_E_NULL(1)，A正确返回1且未崩溃，符合空指针优先校验的安全编程规范。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "需求规定NULL指针返回ADCS_E_NULL(1)，A正确返回1；B/C可能未提前检查separation_sine指针导致访问越界或返回码记录异常。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "需求明确规定非有限输入(nonfinite)应返回ADCS_E_DEGENERATE(3)，A返回3严格符合需求映射，B/C返回4(ADCS_E_NOT_FINITE)违反需求。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测试3，INFINITY属于非有限值，需求强制要求返回DEGENERATE(3)，A行为完全一致。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "同测试3，secondary含NaN触发非有限分支，需求指定返回DEGENERATE(3)，A正确，B/C错误归类为NOT_FINITE。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "需求规定零向量返回DEGENERATE(3)，但软件工程中指针有效性校验优先级绝对高于内容校验，basis为NULL时应直接返回ADCS_E_NULL(1)，A正确处理了该优先级逻辑。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10029,
+  "completion": 4926
+ }
+}

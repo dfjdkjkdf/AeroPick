@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确要求输入必须为非NULL有限非退化场、正有限dt及max_rejects在1..20，测试中field为NULL属非法输入，按表应直接进入并锁存FAULT(3)，故A正确。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "非法输入持续存在，状态机应按需求规定锁定在FAULT模式，B错误地跳过校验进入RUN模式。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "静态全局变量未赋值即为0/NULL，field指针始终为空，触发“invalid input”条件，输出应为FAULT(3)。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "尽管第4次调用前dt_s设为0.1，但field仍为NULL，仍属非法输入，应维持latched FAULT状态，A符合需求。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "输入条件与前述一致，非法输入强制进入FAULT，且无有效样本则history保持未初始化(0)，A正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "配置参数更新不改变field为NULL的事实，依然满足“invalid input”条件，应输出FAULT(3)，A正确。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9884,
+  "completion": 3245
+ }
+}

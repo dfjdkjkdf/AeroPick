@@ -1,0 +1,135 @@
+{
+ "key": "e365145233435715ac3fe73149239623e185204b",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "gv_input.enable = 1;\nfor(int i=0;i<3;i++) gv_input.gyro[i] = NULL; /* Placeholder, harness sets valid pointers */\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\n/* Assume gyro pointers are set by harness to identical finite vectors */\n/* Test Case: All sensors agree perfectly within threshold -> NOMINAL */\ngv_input.gyro[0]->x = 0.1; gv_input.gyro[0]->y = 0.1; gv_input.gyro[0]->z = 0.1;\ngv_input.gyro[1]->x = 0.1; gv_input.gyro[1]->y = 0.1; gv_input.gyro[1]->z = 0.1;\ngv_input.gyro[2]->x = 0.1; gv_input.gyro[2]->y = 0.1; gv_input.gyro[2]->z = 0.1;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\n/* Test Case: One sensor slightly off but within threshold -> NOMINAL (0 outliers) */\ngv_input.gyro[0]->x = 0.1; gv_input.gyro[0]->y = 0.1; gv_input.gyro[0]->z = 0.1;\ngv_input.gyro[1]->x = 0.1; gv_input.gyro[1]->y = 0.1; gv_input.gyro[1]->z = 0.1;\ngv_input.gyro[2]->x = 0.101; gv_input.gyro[2]->y = 0.1; gv_input.gyro[2]->z = 0.1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\n/* Test Case: Sensor distance exactly equals threshold -> NOT outlier (strictly greater required) -> NOMINAL */\ngv_input.gyro[0]->x = 0.0; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.01; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\n/* Test Case: Sensor distance just above threshold -> 1 outlier -> DEGRADED */\ngv_input.gyro[0]->x = 0.0; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.010001; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\n/* Test Case: Two sensors outlying -> FAULT */\ngv_input.gyro[0]->x = 0.0; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.010001; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = -0.010001; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\n/* Step 1: Start isolation for Gyro 0. It is an outlier now. */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 2: Gyro 0 still outlier. Streak increments. */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 3: Gyro 0 still outlier. Streak reaches isolate_confirm (3). Latch isolated. */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\n/* Step 1: Enter isolated state for Gyro 0. */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 2: Gyro 0 isolated. Remaining two agree. Vote DEGRADED mean of 1&2. */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 3: Gyro 0 returns to normal range but still < reentry_threshold? No, it's back in nominal range relative to median of others? \n   Actually, if isolated, we check against reentry_threshold. \n   Let's make Gyro 0 close enough to pass reentry check immediately if streak logic allows.\n   Wait, requirement: 'agreement accumulates a good streak... reaching reentry_confirm clears isolation'.\n   If Gyro 0 is now 'agreeing' with the median of 1 and 2 (which is ~0), its distance is small.\n   Is small distance < reentry_threshold? Yes. So good streak increments. */\ngv_input.gyro[0]->x = 0.004; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 4: Good streak reaches 2. Clear isolation. */\ngv_input.gyro[0]->x = 0.004; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = -0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1] = NULL;\ngv_input.gyro[2] = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.02;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1] = NULL;\ngv_input.gyro[2] = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = NAN;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1] = NULL;\ngv_input.gyro[2] = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 0;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1] = NULL;\ngv_input.gyro[2] = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 21;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1] = NULL;\ngv_input.gyro[2] = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 0;\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1] = NULL;\ngv_input.gyro[2] = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 21;\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1] = NULL;\ngv_input.gyro[2] = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 0;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\n/* Disable should reset state and output OFF/Zero regardless of inputs */\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1] = NULL;\ngv_input.gyro[2] = NULL;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 2;\ngv_config.reentry_confirm = 2;\n/* Test isolation reset on agreement */\n/* Step 1: Gyro 0 bad streak starts */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 2: Gyro 0 agrees now! Bad streak resets. */\ngv_input.gyro[0]->x = 0.0; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 3: Gyro 0 goes bad again. Streak starts from 0 again, not carrying over. */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 2;\ngv_config.reentry_confirm = 2;\n/* Test good streak reset on disagreement while isolated */\n/* Pre-condition: Gyro 0 is already isolated from previous tests or setup */\n/* To simulate this cleanly, we rely on the fact that `gv_state` persists between calls in the harness context usually,\n   but here we must establish isolation first. Let's assume step 1 establishes isolation. */\n/* Step 1: Establish isolation for Gyro 0 */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 2: Gyro 0 is isolated. It is now 'close' (within reentry threshold) -> Good streak 1 */\ngv_input.gyro[0]->x = 0.004; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 3: Gyro 0 is isolated. It is now 'far' (> reentry threshold) -> Good streak resets to 0 */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.01;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\n/* Reentry threshold equals main threshold. Valid configuration. */\ngv_input.gyro[0]->x = 0.0; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.010001;\ngv_config.isolate_confirm = 3;\ngv_config.reentry_confirm = 2;\ngv_input.gyro[0] = NULL;\ngv_input.gyro[1] = NULL;\ngv_input.gyro[2] = NULL;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gv_input.enable = 1;\ngv_config.threshold_rad_s = 0.01;\ngv_config.reentry_threshold_rad_s = 0.005;\ngv_config.isolate_confirm = 2;\ngv_config.reentry_confirm = 2;\n/* Test 2 sensors isolated -> FAULT */\n/* Step 1: Isolate Gyro 0 */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.0; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;",
+    "/* Step 2: Isolate Gyro 1 as well */\ngv_input.gyro[0]->x = 0.010001; gv_input.gyro[0]->y = 0.0; gv_input.gyro[0]->z = 0.0;\ngv_input.gyro[1]->x = 0.010001; gv_input.gyro[1]->y = 0.0; gv_input.gyro[1]->z = 0.0;\ngv_input.gyro[2]->x = 0.0; gv_input.gyro[2]->y = 0.0; gv_input.gyro[2]->z = 0.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定输出指针为NULL时返回ADCS_E_NULL(1)且失败清零，A返回1且输出为0符合，C直接崩溃。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同测试1逻辑，需求要求realized指针为NULL时返回ADCS_E_NULL(1)，A行为完全符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同测试1逻辑，需求要求mask指针为NULL时返回ADCS_E_NULL(1)，A行为完全符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "需求规定输入非有限值(NaN)属非法输入，应返回ADCS_E_RANGE(2)且输出清零，B返回2并清零，A/C返回0且传播NaN，B符合。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "需求规定输入无穷大(INF)属非法输入，应返回ADCS_E_RANGE(2)且输出清零，B返回2并清零，A/C返回0且执行错误限幅计算，B符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "需求规定校准参数(area_turns)必须为正有限值，传入NaN应返回ADCS_E_RANGE(2)并清零，A返回2并清零符合，B返回0未拦截。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 10463,
+  "completion": 5348
+ }
+}

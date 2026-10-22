@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确实现了 ACTIVE 释放计数仅在 elapsed >= minimum_active_cycles 后开始，而 B 缺少 disable 重置处理，C 在 ACTIVE 中过早累积释放证据。",
+ "_usage": {
+  "prompt": 18451,
+  "completion": 29391
+ }
+}

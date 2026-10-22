@@ -1,0 +1,188 @@
+{
+ "key": "11e619f81d464541178e93437bc4d572a6b8b4d0",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "temperature->x = 25.0; temperature->y = 25.0; temperature->z = 25.0;\nvoltage->x = 1.0; voltage->y = 2.0; voltage->z = 3.0;\nresistance->x = 1.0; resistance->y = 2.0; resistance->z = 3.0;\nthermal_capacity = 10.0; thermal_resistance = 5.0; ambient = 20.0; dt = 0.1;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "temperature->x = 0.0; temperature->y = 0.0; temperature->z = 0.0;\nvoltage->x = 0.0; voltage->y = 0.0; voltage->z = 0.0;\nresistance->x = 1.0; resistance->y = 1.0; resistance->z = 1.0;\nthermal_capacity = 1.0; thermal_resistance = 1.0; ambient = 0.0; dt = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "temperature->x = 10.0; temperature->y = 20.0; temperature->z = 30.0;\nvoltage->x = -1.0; voltage->y = -2.0; voltage->z = 4.0;\nresistance->x = 2.0; resistance->y = 4.0; resistance->z = 8.0;\nthermal_capacity = 2.0; thermal_resistance = 4.0; ambient = 15.0; dt = 0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 0.0; temperature->y = 0.0; temperature->z = 0.0;\nvoltage->x = 0.0; voltage->y = 0.0; voltage->z = 0.0;\nresistance->x = 1.0; resistance->y = 1.0; resistance->z = 1.0;\nthermal_capacity = 1.0; thermal_resistance = 1.0; ambient = 0.0; dt = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 1.0; temperature->y = 1.0; temperature->z = 1.0;\nvoltage->x = 1.0; voltage->y = 1.0; voltage->z = 1.0;\nresistance->x = 1.0; resistance->y = 1.0; resistance->z = 1.0;\nthermal_capacity = 1.0; thermal_resistance = 1.0; ambient = 1.0; dt = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 5.0; temperature->y = 5.0; temperature->z = 5.0;\nvoltage->x = 1.0; voltage->y = 1.0; voltage->z = 1.0;\nresistance->x = 1.0; resistance->y = 2.0; resistance->z = 4.0;\nthermal_capacity = 1.0; thermal_resistance = 1.0; ambient = 5.0; dt = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "temperature->x = 1.0; temperature->y = 2.0; temperature->z = 3.0;\nvoltage->x = 1.0; voltage->y = 2.0; voltage->z = 3.0;\nresistance->x = 1.0; resistance->y = 1.0; resistance->z = 1.0;\nthermal_capacity = 0.5; thermal_resistance = 2.0; ambient = 0.0; dt = 2.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "temperature = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "voltage = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "resistance = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "next_temperature = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "current = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "power = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "total_power = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "resistance->x = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "resistance->y = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "resistance->z = -0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "thermal_capacity = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "thermal_capacity = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "thermal_resistance = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "thermal_resistance = -2.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt = -0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "temperature->x = 0.0/0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "voltage->y = 1.0/0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ambient = 0.0/0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dt = 1.0/0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "thermal_capacity = 0.0/0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "thermal_resistance = 1.0/0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "resistance->z = 0.0/0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "temperature->x = 30.0; temperature->y = 30.0; temperature->z = 30.0;\nvoltage->x = 1.0; voltage->y = 1.0; voltage->z = 1.0;\nresistance->x = 1.0; resistance->y = 1.0; resistance->z = 1.0;\nthermal_capacity = 1.0; thermal_resistance = 1.0; ambient = 0.0; dt = 0.1;",
+    "voltage->x = 8.0; voltage->y = 8.0; voltage->z = 8.0; dt = 0.5;",
+    "voltage->x = 0.0; voltage->y = 0.0; voltage->z = 0.0; dt = 1.0;",
+    "ambient = 30.0; dt = 0.25;"
+   ]
+  }
+ ]
+}

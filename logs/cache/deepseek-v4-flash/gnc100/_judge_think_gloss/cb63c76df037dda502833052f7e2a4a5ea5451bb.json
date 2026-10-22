@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "输出指针为 NULL 时应返回 ADCS_E_NULL 且不能崩溃，B 返回 1。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "fraction=-0.0001 不在 [0,1]，应返回 ADCS_E_RANGE(2)，B 返回 2。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "fraction=1.0001 不在 [0,1]，应返回 ADCS_E_RANGE(2)，B 返回 2。"
+  }
+ ],
+ "pick": "B"
+}

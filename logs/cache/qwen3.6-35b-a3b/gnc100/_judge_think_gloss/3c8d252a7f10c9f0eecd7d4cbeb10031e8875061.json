@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定NULL输入应返回错误码且失败时fastest需输出SIZE_MAX，B输出SIZE_MAX(约1.84e19)符合，A/C输出0违规。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求规定NULL指针应返回ADCS_E_NULL(1)并清零输出及置fastest为SIZE_MAX，B正确返回错误码且处理合规，A/C未置SIZE_MAX。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "属错误分支测试，需求强制要求失败时fastest输出SIZE_MAX，仅B满足，A/C输出0不符。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同上，错误路径下fastest必须为SIZE_MAX，B符合需求。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "同上，错误路径下fastest必须为SIZE_MAX，B符合需求。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "需求限定精确分析4个飞轮，count=3属wrong count触发ADCS_E_RANGE，失败时fastest应为SIZE_MAX，B符合。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9325,
+  "completion": 4411
+ }
+}

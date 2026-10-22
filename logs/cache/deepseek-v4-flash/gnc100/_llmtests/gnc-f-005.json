@@ -1,0 +1,145 @@
+{
+ "key": "f093a7625e8030fd04de8c3789559107c37cc824",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "st->initialized = 0;\nfield->x = 1.0;\nfield->y = 2.0;\nfield->z = 3.0;\ntime = 0.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 2.0;\nst->previous_field_t.z = 3.0;\nst->previous_time_s = 0.0;\nfield->x = 1.5;\nfield->y = 2.5;\nfield->z = 3.5;\ntime = 0.1;\nalpha = 0.2;\ngain = 2.0;\nlimit = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 0.0;\nst->previous_field_t.z = 0.0;\nst->previous_time_s = 1.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 0.0;\nst->previous_field_t.z = 0.0;\nst->previous_time_s = 1.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 0.999;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 0.0;\nst->previous_field_t.z = 0.0;\nst->previous_time_s = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 0.0;\nst->previous_field_t.z = 0.0;\nst->previous_time_s = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 1.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 0.0;\nst->previous_field_t.z = 0.0;\nst->previous_time_s = 0.0;\nfield->x = 2.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 0.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 0.0;\nst->previous_field_t.z = 0.0;\nst->previous_time_s = 0.0;\nfield->x = 2.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st = NULL;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field = NULL;\nst->initialized = 0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rate = NULL;\nst->initialized = 0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "cmd = NULL;\nst->initialized = 0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = NAN;\nst->initialized = 0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->y = INFINITY;\nst->initialized = 0;\nfield->x = 1.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "time = NAN;\nst->initialized = 0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "alpha = -0.1;\nst->initialized = 0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "alpha = 1.1;\nst->initialized = 0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gain = -1.0;\nst->initialized = 0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "limit = -1.0;\nst->initialized = 0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 0.0;\nst->previous_field_t.z = 0.0;\nst->previous_time_s = 2.0;\nfield->x = 1.5;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 2.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 0.0;\nst->previous_field_t.z = 0.0;\nst->previous_time_s = 2.0;\nfield->x = 0.0;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 3.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "st->initialized = 1;\nst->previous_field_t.x = 1.0;\nst->previous_field_t.y = 0.0;\nst->previous_field_t.z = 0.0;\nst->previous_time_s = 0.0;\nfield->x = 1.0 + 1e-7;\nfield->y = 0.0;\nfield->z = 0.0;\ntime = 1.0;\nalpha = 0.5;\ngain = 1e6;\nlimit = 1e-3;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "st->initialized = 0;\nfield->x = 1.0;\nfield->y = 2.0;\nfield->z = 3.0;\ntime = 0.0;\nalpha = 0.5;\ngain = 1.0;\nlimit = 10.0;",
+    "field->x = 1.2;\nfield->y = 2.0;\nfield->z = 3.0;\ntime = 0.1;",
+    "field->x = 1.2;\nfield->y = 2.2;\nfield->z = 3.0;\ntime = 0.2;"
+   ]
+  }
+ ]
+}

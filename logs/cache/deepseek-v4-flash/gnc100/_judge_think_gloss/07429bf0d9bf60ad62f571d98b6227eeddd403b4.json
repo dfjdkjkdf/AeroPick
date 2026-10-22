@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求要求 Schmitt 量化后按 max_dipole 输出并更新 last_capture，B 输出 100 且 last_capture=100。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "请求 3 匹配上次正极性且不低于 stop 阈值，应量化输出 +max_dipole=10 并更新 last_capture，B 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "请求等于 start 阈值，应触发量化输出 max_dipole=10 并更新 last_capture，B 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同测试 1，B 输出 100 并更新 last_capture=100。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "请求等于 start 阈值，应触发输出 max_dipole=100 并更新 last_capture，B 符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "请求等于 stop 阈值且匹配上次极性，应保持量化输出 max_dipole=100 并更新 last_capture，B 符合。"
+  }
+ ],
+ "pick": "B"
+}

@@ -1,0 +1,179 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:** I am an aerospace GNC software review expert. I need to evaluate three different implementations (A, B, C) of a single C function based *only* on the provided requirements. I must determine which implementation's output matches the requirements for each given test case, and then pick the overall best implementation. Output must be a specific JSON format.
+
+2.  **Analyze the Requirements:**
+    *   **Function Name/Context:** `adcs_pilot_tetra_null_torque` (from the C code context at the end).
+    *   **Purpose:** Four-wheel tetrahedral null-space torque injection without disturbing spacecraft torque.
+    *   **Input Interface:** `const adcs_vec3_t axes[4]`, `double amplitude_nm`, `double wheel_torque_nm[4]`, `adcs_vec3_t *spacecraft_residual_nm`.
+    *   **Mathematical Definition:** For symmetric tetrahedral cluster ordered (+++), (+--), (-+-), (--+), use wheel torques `[a, a, a, a]`. Residual spacecraft torque is `-sum(axis_i * tau_i)`. Note: The order matches the input array indices 0 to 3.
+    *   **Required Processing:** Validate supplied axes against unit norm. Compute physical residual from them.
+    *   **Output Contract:** `ADCS_OK` with equal wheel torques and residual; failure outputs zero.
+    *   **Boundary/Failure Handling:**
+        *   Null pointers -> `ADCS_E_NULL`
+        *   Invalid axes/amplitude -> `ADCS_E_RANGE`
+    *   **Traceability:** Reaction-wheel cluster null-space identity. Ends with `}`.
+
+3.  **Analyze Test Cases:**
+
+    *   **Test 1:**
+        *   Input: `spacecraft_residual_nm = NULL`; other inputs not explicitly set but implied as default/uninitialized (usually 0 in harness, but let's assume standard harness behavior where unassigned struct fields are 0). Actually, the prompt says "未赋值的量为 0". So axes are all zeros, amplitude is 0? Or maybe just `spacecraft_residual_nm` is NULL. Let's assume axes are zero vectors, amplitude is 0 or unspecified. Wait, the prompt says "未赋值的量为 0". So `axes[i] = {0,0,0}`, `amplitude_nm = 0.0`.
+        *   Behavior: `__crash__: A=无, B=1, C=无`. This means B crashes when `spacecraft_residual_nm` is NULL.
+        *   `__ret__: A=1, B=无, C=1`. Return codes: A returns 1 (`ADCS_E_NULL`), C returns 1 (`ADCS_E_NULL`). B doesn't return (crashes).
+        *   Outputs: All zeros for wheels and residual components.
+        *   Requirement check: "Null -> ADCS_E_NULL". Passing NULL for `spacecraft_residual_nm` should trigger `ADCS_E_NULL`. Failure outputs should be zero.
+        *   Conclusion for Test 1: A and C correctly handle the NULL pointer by returning `ADCS_E_NULL` (1) and setting outputs to zero. B crashes. So A and C are correct here. B is wrong.
+
+    *   **Test 2:**
+        *   Input Setup:
+            *   Call 1: Axes are exactly the symmetric tetrahedral configuration:
+                `axes[0] = (1,1,1)/√3` -> (+++)
+                `axes[1] = (1,-1,-1)/√3` -> (+--)
+                `axes[2] = (-1,1,-1)/√3` -> (-+-)
+                `axes[3] = (-1,-1,1)/√3` -> (--+)
+                `amplitude_nm = 1.0`
+            *   Call 2: `amplitude_nm = 0.0` (same axes)
+            *   Call 3: `amplitude_nm = -1.0` (same axes)
+        *   Expected Behavior per Math Def: Wheel torques `[a, a, a, a]`. Here `a = amplitude_nm`. So for call 1: `[1, 1, 1, 1]`. For call 2: `[0, 0, 0, 0]`. For call 3: `[-1, -1, -1, -1]`.
+        *   Residual: `-sum(axis_i * tau_i)`. Since `tau_i = a` for all i, residual = `-a * sum(axis_i)`.
+            Sum of axes: x: (1+1-1-1)/√3 = 0. y: (1-1+1-1)/√3 = 0. z: (1-1-1+1)/√3 = 0.
+            So residual should be `(0,0,0)` for all calls.
+        *   Return Code: Inputs are valid (unit norm axes, finite amplitude). Should return `ADCS_OK` (0).
+        *   Observed Outputs (Last call's output, i.e., Call 3):
+            *   `__ret__`: A=2 (`ADCS_E_RANGE`), B=0 (`ADCS_OK`), C=0 (`ADCS_OK`)
+            *   `wheel_torque_nm`: A=0, B=-1, C=-1 (for all 4 wheels)
+        *   Analysis:
+            *   Call 3 has `amplitude_nm = -1.0`. Is negative amplitude invalid? The requirement says "finite scalar amplitude". It doesn't explicitly forbid negative values. Usually, null-space torque can be positive or negative depending on momentum management direction. The math def says `[a,a,a,a]`. If `a=-1`, torques are `[-1,-1,-1,-1]`. This is physically valid.
+            *   Implementation A returns `ADCS_E_RANGE` (2) and outputs 0 for call 3. This implies A incorrectly rejects negative amplitude.
+            *   Implementations B and C return `ADCS_OK` (0) and output `-1` for all wheels. This matches the mathematical definition `[a,a,a,a]` with `a=-1`.
+            *   Therefore, B and C are correct for Test 2. A is incorrect.
+
+    *   **Test 3:**
+        *   Input:
+            *   `axes[0] = (1,0,0)`
+            *   `axes[1] = (0,1,0)`
+            *   `axes[2] = (0,0,1)`
+            *   `axes[3] = (0,0,0)` (Zero vector!)
+            *   `amplitude_nm = 1.0`
+            *   `spacecraft_residual_nm = NULL`
+        *   Requirement Check: "Validate the supplied axes against unit norm". `axes[3]` is a zero vector, norm is 0. Not unit norm. Also, it's degenerate for a tetrahedral cluster, but specifically fails unit norm validation.
+        *   Expected Behavior: Invalid axes -> `ADCS_E_RANGE` (2). Failure outputs zero.
+        *   Observed Outputs:
+            *   `__crash__`: A=无, B=1, C=无. (B returns 1 immediately? Wait, `__crash__: 1` usually means it crashed or returned early? The prompt says "__crash__: 1" means crash/timeout. But here B's return is "无输出". Actually, the table shows `__crash__` column. For B, it says `1`. This might mean B returned 1 instead of crashing, or the harness caught it. Let's look at `__ret__`: A=1, B=无输出, C=1. This is confusing. Usually `__crash__` indicates if it crashed. If B's `__crash__` is `1`, maybe it means it didn't crash but returned something else? Or maybe `1` in `__crash__` column means it hit an assertion/crash? Wait, the prompt says: "`__crash__: 1` 表示该实现在此测试上崩溃或超时。" So B crashed or timed out? But B's `__ret__` is "无输出", which aligns with crashing. A and C returned 1 (`ADCS_E_NULL`?).
+            *   Wait, `spacecraft_residual_nm` is NULL in Test 3 too! So A and C correctly catch the NULL pointer first and return `ADCS_E_NULL` (1). They don't even get to check the axes.
+            *   What about B? B crashes/times out (`__crash__: 1`, `__ret__: 无输出`). This means B fails to handle the NULL pointer safely, or handles it poorly leading to a crash. According to requirements, NULL -> `ADCS_E_NULL`. B violates this.
+            *   Outputs for A and C: All zeros. Matches "failure outputs zero".
+            *   So A and C are correct for Test 3. B is incorrect.
+
+4.  **Synthesize & Compare Implementations:**
+    *   **Test 1:** A (OK), B (Crash/Fail), C (OK). Both A and C handle NULL correctly.
+    *   **Test 2:** A (Fail - rejects negative amp), B (OK), C (OK). B and C handle valid negative amplitude correctly. A incorrectly treats it as range error.
+    *   **Test 3:** A (OK - catches NULL), B (Crash/Fail), C (OK - catches NULL). Both A and C handle NULL correctly.
+    *   **Comparison:** A fails Test 2. B fails Tests 1 & 3 (crashes on NULL). C passes all tests correctly according to requirements.
+    *   Therefore, C is the most compliant implementation.
+
+5.  **Draft Reasoning (Mental Refinement):**
+    *   *Test 1:* 需求规定空指针应返回 `ADCS_E_NULL` (1) 且输出清零。A和C均正确返回1并清零；B直接崩溃，不符合安全要求。
+    *   *Test 2:* 需求数学定义明确轮力矩为 `[a,a,a,a]`，幅值可为正负。第3次调用幅值为-1.0，合法有效，应返回 `ADCS_OK` (0) 并输出全-1。A错误返回 `ADCS_E_RANGE` (2) 并清零；B和C正确返回0并输出-1。
+    *   *Test 3:* 输入含零向量轴（非法单位范数）且 `spacecraft_residual_nm` 为NULL。按接口检查顺序，空指针优先触发 `ADCS_E_NULL` (1)。A和C正确拦截NULL并返回1、输出清零；B因未妥善处理空指针导致崩溃/异常退出。
+    *   *综合:* C在所有测试中行为均符合需求（正确处理空指针、支持合法负幅值、失败时清零）。A误拒负幅值，B存在空指针崩溃缺陷。故选C。
+
+    Check constraints: "只依据需求判断", "逐条推理", "最后综合选出最符合需求的一种实现", "只输出JSON".
+    The JSON structure required: `{"tests":[{"id":测试编号,"correct":"A|B|C|未规定|无法判断","reason":"一句话"}],"pick":"A|B|C"}`
+    I will format exactly as requested.
+
+    Let's double check Test 2's `__crash__` column. It's empty for all. That's fine.
+    Test 2 outputs: `wheel_torque_nm[0..3]` are all -1 for B and C. Matches `[a,a,a,a]` with a=-1.
+    Test 1 & 3: `__crash__` for B is `1`. This means B crashed. The prompt says `__crash__: 1` means crash/timeout. So B is definitely bad for null checks.
+    A returns 1 for Test 1 & 3. Correct.
+    A returns 2 for Test 2. Incorrect.
+    C returns 1 for Test 1 & 3. Returns 0 for Test 2. Correct.
+    Conclusion stands: C is the winner.
+
+    One minor point: Test 3 says `__crash__: B=1`. This confirms B crashed. A and C returned 1 (`ADCS_E_NULL`).
+    All aligns perfectly.
+
+    Construct JSON:
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "C",
+          "reason": "需求规定空指针需返回ADCS_E_NULL(1)且输出清零，A与C均正确，B崩溃违规，C更符合稳健性要求。"
+        },
+        {
+          "id": 2,
+          "correct": "C",
+          "reason": "需求数学定义轮力矩为[a,a,a,a]，负幅值属合法输入，B与C正确返回ADCS_OK(0)及对应力矩，A误判为范围错误(AE_RANGE)，C正确。"
+        },
+        {
+          "id": 3,
+          "correct": "C",
+          "reason": "含零向量轴且残差指针为空，需求要求空指针优先拦截返回ADCS_E_NULL(1)并清零，A与C正确，B崩溃违规，C正确。"
+        }
+      ],
+      "pick": "C"
+    }
+    ```
+    Wait, the prompt says "在每个测试上，哪一种实现的输出符合需求". I should pick one per test. For T1, both A and C are correct. I'll pick C as it's robust, or state C. The prompt says "选出最符合需求的一种实现" at the end. I'll just list C for each where it's correct, or note A/C are both correct but C wins overall. I'll stick to C for consistency, or specify A/C if needed. I'll just put C for all since C is the overall winner and matches T1/T3 too. Actually, for T1 and T3, A is also technically correct per spec, but C is better. I'll mark C.
+
+    Let's refine the reasons to be strictly one sentence as requested.
+    T1: 需求规定空指针应返回ADCS_E_NULL(1)且输出清零，A与C均符合，B崩溃违规，综合选C。
+    T2: 需求定义轮力矩为[a,a,a,a]，负幅值合法，B与C正确返回ADCS_OK(0)及-1力矩，A误报范围错误，C正确。
+    T3: 需求要求空指针优先拦截返回ADCS_E_NULL(1)并清零，A与C符合，B崩溃违规，C正确。
+    Pick: C
+
+    Check format: `{"tests":[{"id":测试编号,"correct":"A|B|C|未规定|无法判断","reason":"一句话"}],"pick":"A|B|C"}`
+    I will generate exactly this.
+    One detail: Test 1 `__crash__` column shows `B=1`. This means B crashed. So B is out.
+    Test 2: A returns 2 (AE_RANGE). B/C return 0. B/C correct.
+    Test 3: B crashes. A/C return 1. A/C correct.
+    Overall: C is flawless. A fails T2. B fails T1, T3.
+    All good.
+    Output matches request.✅
+    Proceed. 
+    Self-Correction/Verification during thought:
+    - Check requirement: "Null -> ADCS_E_NULL; invalid axes/amplitude -> ADCS_E_RANGE."
+    - Test 1: `spacecraft_residual_nm = NULL`. Should trigger ADCS_E_NULL. A&C return 1. Correct.
+    - Test 2: `amplitude_nm = -1.0`. Is it invalid? "finite scalar amplitude". No sign restriction. Math def says `[a,a,a,a]`. So -1 is fine. B&C correct.
+    - Test 3: `axes[3]` is zero vector. Fails unit norm. But `spacecraft_residual_nm` is NULL. Null check usually comes first in API contracts. Even if axes check came first, it would be ADCS_E_RANGE. But the output shows A&C return 1 (NULL), meaning they check null first. This is standard and safe. B crashes, so B is bad.
+    - Conclusion holds.
+    - JSON structure matches exactly.
+    - I will produce the JSON now. 
+    - One minor thing: The prompt says "只输出 JSON". I will ensure no extra text.
+    - Ready. 
+    Output Generation. 
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "C",
+          "reason": "需求规定空指针需返回ADCS_E_NULL(1)且输出清零，A与C均符合逻辑，B直接崩溃违反安全规范，C为最优解。"
+        },
+        {
+          "id": 2,
+          "correct": "C",
+          "reason": "需求数学定义明确力矩为[a,a,a,a]，负幅值属合法输入，B与C正确返回ADCS_OK(0)及对应值，A误报范围错误，C正确。"
+        },
+        {
+          "id": 3,
+          "correct": "C",
+          "reason": "需求要求空指针优先拦截返回ADCS_E_NULL(1)并清零，A与C符合，B因未处理空指针导致崩溃，C正确。"
+        }
+      ],
+      "pick": "C"
+    }
+    ```
+    Matches perfectly. Proceeds. 
+    Self-Correction/Note during generation prep: The prompt asks for "id":测试编号. I will use 1, 2, 3.
+    All good. 
+    Output matches response. 
+    [Done] 
+    *Self-Correction/Verification during output gen*: 
+    I'll make sure the JSON is strictly valid and matches the exact keys requested.
+    `{"tests":[{"id":1,"correct":"C","reason":"..."},{"id":2,"correct":"C","reason":"..."},{"id":3,"correct":"C","reason":"..."}],"pick":"C"}`
+    Looks solid. 
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

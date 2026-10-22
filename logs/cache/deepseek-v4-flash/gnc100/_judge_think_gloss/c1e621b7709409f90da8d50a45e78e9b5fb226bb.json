@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "未规定",
+   "reason": "零轴导致adcs_wheel_momentum失败，需求只规定返回ADCS_E_RANGE，未规定错误时输出值"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "C的mechanical_power=1.5符合P_mech=sum(u_i*omega_i)"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "C的mechanical_power=6、bus_power=6.66667符合规范公式"
+  },
+  {
+   "id": 4,
+   "correct": "未规定",
+   "reason": "非有限力矩应返回ADCS_E_RANGE，需求未规定错误时输出值"
+  },
+  {
+   "id": 5,
+   "correct": "未规定",
+   "reason": "非有限力矩应返回ADCS_E_RANGE，需求未规定错误时输出值"
+  },
+  {
+   "id": 6,
+   "correct": "未规定",
+   "reason": "零轴应返回ADCS_E_RANGE，需求未规定错误时输出值"
+  }
+ ],
+ "pick": "C"
+}

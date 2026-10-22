@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "covariance contains NaN, so requirement mandates ADCS_E_RANGE and zero output; A matches."
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "covariance contains INFINITY, so requirement mandates ADCS_E_RANGE and zero output; A matches."
+  }
+ ],
+ "pick": "A"
+}

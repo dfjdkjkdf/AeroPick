@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "实现A正确锁存了内部故障状态（mh_state.mode=MH_FAULT）以符合需求中“latches FAULT”的持久化要求，而实现B仅更新输出未改变内部状态，会导致故障触发后的下一周期继续误处理数据。",
+ "_usage": {
+  "prompt": 12140,
+  "completion": 5059
+ }
+}

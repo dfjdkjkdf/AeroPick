@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly computes momentum, body torque, mechanical power, and bus power while validating all status conditions and deferring output writes until success.",
+ "_usage": {
+  "prompt": 9290,
+  "completion": 14069
+ }
+}

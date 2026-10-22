@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "current为空应返回ADCS_E_NULL，且失败输出应为required_rate=+INF、margin=-INF，C符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "target为空应返回ADCS_E_NULL，且失败输出应为required_rate=+INF、margin=-INF，C符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "required_rate为空时，仍应将可用的margin按失败输出置为-INF，C符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "margin为空时，仍应将可用的required_rate按失败输出置为+INF，C符合。"
+  }
+ ],
+ "pick": "C"
+}

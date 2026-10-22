@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly subtracts bias, applies the full matching calibration rows, returns ADCS_OK, and handles null/non-finite inputs with zeroed output and correct error codes.",
+ "_usage": {
+  "prompt": 9195,
+  "completion": 13017
+ }
+}

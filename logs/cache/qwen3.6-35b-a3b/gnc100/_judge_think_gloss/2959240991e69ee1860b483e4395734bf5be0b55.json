@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求规定NULL输入应返回ADCS_E_NULL，且明确失败输出要求symmetry_error=INFINITY，B符合该约定。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同测试1，B正确识别NULL输入并按需求将symmetry_error置为INFINITY。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "需求规定body为NULL时返回ADCS_E_NULL，C返回1符合枚举定义；A/B直接崩溃未做指针保护。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "同测试3，C正确返回ADCS_E_NULL，符合空指针处理约定。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "同测试3，C正确返回ADCS_E_NULL，符合空指针处理约定。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "需求强制要求输入必须有限，NAN属malformed输入应返回ADCS_E_RANGE并将输出清零、symmetry_error置INF，B完全符合。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 10067,
+  "completion": 4856
+ }
+}

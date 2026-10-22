@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "当前速率为2.0 T/s超过阈值1.0且拒次数未超限，需求规定应进入REJECT(2)并保留历史，C误判为TRACK(1)。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "当前速率为3.0 T/s超过阈值1.0且拒次数未超限，需求规定应进入REJECT(2)并保留历史，C误判为TRACK(1)。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "使能关闭时需求明确要求清空历史与计数并置EMPTY(0)，C错误触发FAULT(3)。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "NULL指针属非法输入，需求要求立即锁存FAULT(3)，B错误保持EMPTY(0)。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "负dt属非法配置，需求要求立即锁存FAULT(3)，B错误保持EMPTY(0)。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "零矢量属退化无效输入，需求要求锁存FAULT(3)，B状态机未同步更新且C错误返回TRACK(1)。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10120,
+  "completion": 3911
+ }
+}

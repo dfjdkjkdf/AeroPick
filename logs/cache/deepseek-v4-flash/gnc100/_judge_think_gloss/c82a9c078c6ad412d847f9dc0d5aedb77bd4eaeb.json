@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "两源均可用但TRIAD未比主源STAR好出switch_margin_rad，不建立切换候选，故candidate应为0。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "TRIAD仅比STAR好0.03<0.05余量，不满足切换条件，candidate应为0。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "TRIAD残差0.05比STAR的0.02更差，不满足切换条件，candidate应为0。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "四元数夹角90°>0.5rad，不融合，故star_weight为0；且TRIAD未优出余量，candidate为0。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "夹角90°>0.5rad，不融合，star_weight为0；TRIAD未优出余量，candidate为0。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "夹角90°>0.5rad，不融合，star_weight为0；TRIAD未优出余量，candidate为0。"
+  }
+ ],
+ "pick": "C"
+}

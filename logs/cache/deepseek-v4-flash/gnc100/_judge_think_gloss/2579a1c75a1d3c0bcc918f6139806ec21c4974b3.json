@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "enable==0 仅将模式复位为 ACTIVE 且 good=0，需求仍要求用 adcs_wheel_momentum 计算并发布误差/范数/能量，故 A 的非零输出符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "首次调用 enable==0 时同样只复位完成状态，仍应计算并发布有效轮动量误差，故 A 的非零输出符合。"
+  }
+ ],
+ "pick": "A"
+}

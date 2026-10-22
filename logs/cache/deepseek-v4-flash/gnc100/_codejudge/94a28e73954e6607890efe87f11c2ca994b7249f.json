@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C is the only implementation that latches FAULT after invalid input or max consecutive rejections, skips measurement evaluation while already faulted, and publishes INF for non-evaluated FAULT cycles while preserving the required decision table and disable reset behavior.",
+ "_usage": {
+  "prompt": 11006,
+  "completion": 9126
+ }
+}

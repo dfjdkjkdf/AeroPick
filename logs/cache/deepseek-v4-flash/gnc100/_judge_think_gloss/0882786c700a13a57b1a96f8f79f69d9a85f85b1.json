@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "有限输入且 gain>=0，按公式 power=-gain*||ω×B||²≈-9e-8，A 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "有限输入正常计算，power=-gain*||ω×B||²≈-2.02e-7，A 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "有限输入正常计算，power=-gain*||ω×B||²≈-4.525e-6，A 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "有限输入仍在需求范围内，按公式 power=-gain*||ω×B||²=-9e8，A 符合。"
+  }
+ ],
+ "pick": "A"
+}

@@ -1,0 +1,140 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a given requirement document and a set of divergent test cases. I must output a JSON with my judgment for each test and a final pick (A or B).
+
+2.  **Analyze the Requirement**:
+    *   **Function**: Four-wheel momentum-bias target-ramp controller.
+    *   **Core Logic**:
+        *   Compute cluster momentum with `adcs_wheel_momentum`.
+        *   Maintain commanded target moving toward `target_nms` by at most `target_slew_nms_per_cycle` per axis.
+        *   Modes: RAMP, BIAS, HOLD, FAULT, OFF/INIT.
+        *   RAMP: proportional control only, clears integral. Enters when target changes or initially.
+        *   BIAS: PI control. Enters when error norm <= `enter_error_nms` for `settle_cycles` consecutive times? Wait, "reaching it enters BIAS". Actually: "A changing target enters RAMP; reaching it enters BIAS." Let's read carefully: "Maintain a commanded target that moves toward target_nms by at most target_slew_nms_per_cycle on each axis. A changing target enters RAMP; reaching it enters BIAS." This implies initial state is RAMP. When error <= enter_error_nms for settle_cycles, enters HOLD. HOLD exits to BIAS if error >= exit_error_nms.
+        *   PI torque = -kp*error - ki*integral_error. Clamp integral. Limit torque independently. Freeze saturated axis integral if update drives it farther into saturation.
+        *   Publish outputs.
+    *   **Fault/Error Handling**:
+        *   "Disable resets OFF, target initialization, and integral." -> Probably means no manual reset command, init happens automatically.
+        *   "Reject nonbinary enable, malformed wheels, invalid configuration, or any absolute wheel speed above max_wheel_speed_rad_s; these latch FAULT and zero vector outputs."
+        *   "Require four wheels, finite target and gains, 0 <= enter < exit, positive target slew, dt, integral limit, torque limit and speed limit, and settle_cycles in 1..20."
+        *   Fault conditions: NULL pointers, wrong wheel count, invalid config parameters, infinite values, speeds out of range. Latch FAULT and zero outputs.
+    *   **Initial State**: "on the first enabled call after reset the commanded target is initialized to the measured cluster momentum." -> So initially, error = 0? Or mode starts at RAMP? "A changing target enters RAMP". Initially, target is set to momentum, so error is ~0. But typically, controllers start in RAMP or BIAS. The text says "A changing target enters RAMP". If it's the first call, it initializes target to momentum. Then it probably goes to BIAS immediately if error is small, or stays in RAMP. But fault handling is explicit: "these latch FAULT and zero vector outputs."
+    *   **Key Fault Conditions from Text**:
+        *   `mb_input.wheels == NULL` -> "malformed wheels" or invalid input -> Latch FAULT.
+        *   `wheel_count != 4` -> "Require four wheels" -> Latch FAULT.
+        *   Invalid config -> Latch FAULT.
+        *   Output on FAULT: `mode = MB_FAULT` (which is 4 according to enum), outputs zeroed.
+
+3.  **Analyze Test Cases**:
+    *   All tests are error type, called once. Uninitialized variables are 0.
+    *   Test 1: `mb_input.wheels = NULL;` -> Mode: A=0 (OFF?), B=4 (FAULT).
+    *   Test 2: `mb_input.wheel_count = 3;` -> Mode: A=0, B=4.
+    *   Test 3-6: `mb_input.wheel_count = 4;` -> Mode: A=0, B=4. (Note: Tests 3-6 seem identical in the prompt, maybe different hidden configs? But the prompt only shows wheel_count=4. Regardless, they all differ in mode.)
+    *   Requirement says: "Reject ... malformed wheels ... these latch FAULT and zero vector outputs." Also "Require four wheels".
+    *   Therefore, any of these invalid inputs should result in FAULT mode (4).
+    *   Implementation A returns 0 (OFF/MB_OFF). Implementation B returns 4 (FAULT/MB_FAULT).
+    *   According to requirement, B is correct.
+
+4.  **Evaluate Each Test against Requirement**:
+    *   **Test 1**: `wheels = NULL`. Requirement: "malformed wheels... latch FAULT". Correct mode: 4. B matches.
+    *   **Test 2**: `wheel_count = 3`. Requirement: "Require four wheels". Correct mode: 4. B matches.
+    *   **Test 3-6**: `wheel_count = 4`. Wait, why would wheel_count=4 trigger a fault? The prompt says "未赋值的量为 0" (uninitialized quantities are 0). So other config fields like `kp`, `ki`, `dt`, `target_nms`, etc., are 0.
+    *   Requirement says: "Require ... finite target and gains, 0 <= enter < exit, positive target slew, dt, integral limit, torque limit and speed limit, and settle_cycles in 1..20."
+    *   Since they are 0, conditions like "positive target slew", "dt > 0", "gains > 0", "settle_cycles in 1..20" are violated. Thus, it's an invalid configuration.
+    *   Requirement: "invalid configuration... latch FAULT".
+    *   Correct mode: 4. B matches.
+
+5.  **Synthesize Reasoning**:
+    *   For all tests, the inputs violate explicit validation rules in the requirement (NULL wheels, wrong wheel count, zero/uninitialized config parameters violating "positive dt/gains/slew" and "settle_cycles in 1..20").
+    *   The requirement explicitly states that such invalid inputs must "latch FAULT and zero vector outputs".
+    *   MB_FAULT corresponds to enum value 4.
+    *   Implementation B returns 4, matching the requirement. Implementation A returns 0, which contradicts the explicit fault-handling rule.
+    *   Therefore, B is correct for all tests.
+
+6.  **Format Output**:
+    *   Construct JSON as requested.
+    *   Fields: `tests` array with `id`, `correct`, `reason`.
+    *   `pick`: "B".
+    *   Ensure reasons are concise and directly reference the requirement clauses.
+    *   Check enum: `MB_FAULT = 4`. Matches B's output.
+    *   Check uninitialized values: "未赋值的量为 0". This triggers the "positive dt/gains/slew" and "settle_cycles in 1..20" violations.
+    *   All align perfectly.
+
+    Draft JSON:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "需求明确要求拒绝空轮指针（malformed wheels）并锁存FAULT模式，B输出4正确。"},
+        {"id": 2, "correct": "B", "reason": "需求要求必须配置四个飞轮（Require four wheels），3个飞轮属无效配置应锁存FAULT，B输出4正确。"},
+        {"id": 3, "correct": "B", "reason": "未赋值参数为0，违反需求中dt、增益、目标 slew 需为正数及 settle_cycles 需在1..20 的校验要求，属无效配置应锁存FAULT，B输出4正确。"},
+        {"id": 4, "correct": "B", "reason": "同上，未初始化配置参数为0触发非法配置保护，应返回FAULT(4)，B正确。"},
+        {"id": 5, "correct": "B", "reason": "同上，非法配置参数导致应进入FAULT状态，B正确。"},
+        {"id": 6, "correct": "B", "reason": "同上，非法配置参数导致应进入FAULT状态，B正确。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Wait, let's double check the exact wording for tests 3-6. They are identical in the prompt. That's fine. I will just give them similar but slightly varied reasons if needed, or keep them consistent. The prompt says "测试 3... 测试 4... 测试 5... 测试 6..." all with `wheel_count = 4`. It's likely a template artifact, but I'll handle them consistently.
+    One minor point: `MB_OFF` is 0, `MB_FAULT` is 4. The requirement says "latch FAULT". So 4 is definitely correct.
+    Check enum definition:
+    ```c
+    typedef enum {
+        MB_OFF = 0,
+        MB_RAMP = 1,
+        MB_BIAS = 2,
+        MB_HOLD = 3,
+        MB_FAULT = 4
+    } mb_mode_t;
+    ```
+    Matches.
+    All reasoning holds. I will generate the JSON. 
+    One thing: The prompt says "只依据需求判断". I've done that.
+    I will format exactly as requested.
+    Output matches draft.✅
+    Proceed. 
+    Self-Correction/Refinement during thought: 
+    Should I mention "zero vector outputs"? The prompt only asks about `mode`. I'll stick to mode.
+    The reason can be unified or specific. I'll make them precise.
+    Test 1: NULL pointer -> malformed wheels -> FAULT.
+    Test 2: count=3 -> require 4 wheels -> FAULT.
+    Tests 3-6: count=4 but other params=0 -> violates positive dt/gains/slew & settle_cycles range -> invalid config -> FAULT.
+    All point to B.
+    JSON structure matches request.
+    Ready. 
+    Output Generation. 
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "需求明确禁止空指针（malformed wheels），此类非法输入必须锁存FAULT模式，B输出4符合。"},
+        {"id": 2, "correct": "B", "reason": "需求强制要求四轮配置（Require four wheels），三轮属于无效配置，应锁存FAULT，B输出4符合。"},
+        {"id": 3, "correct": "B", "reason": "未赋值量默认为0，违反需求中dt、增益、slew须为正数且settle_cycles须在1~20的校验规则，属无效配置应锁存FAULT，B输出4符合。"},
+        {"id": 4, "correct": "B", "reason": "同上，零值配置参数触发非法配置保护逻辑，应返回FAULT(4)，B正确。"},
+        {"id": 5, "correct": "B", "reason": "同上，非法配置参数导致系统应进入FAULT状态，B正确。"},
+        {"id": 6, "correct": "B", "reason": "同上，非法配置参数导致系统应进入FAULT状态，B正确。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Checks: 
+    - Format: JSON only.
+    - Keys: "tests", "pick".
+    - Test items: "id", "correct", "reason".
+    - Logic aligns with requirement.
+    - Enum values match.
+    - All good. 
+    Output matches exactly. 
+    Proceeds. 
+    [Final Check of the Prompt]
+    "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}"
+    Matches. 
+    Generating. 
+    *(Self-Correction/Verification during generation prep)*
+    Wait, let's verify the enum order again.
+    `MB_OFF = 0`, `MB_RAMP = 1`, `MB_BIAS = 2`, `MB_HOLD = 3`, `MB_FAULT = 4`.
+    Requirement: "latch FAULT and zero vector outputs."
+    So mode should be 4.
+    A=0, B=4. B is correct.
+    All tests have same divergence pattern. Reasoning is solid.
+    No extra text. Just JSON.
+    Done. 
+    Output Generation. 
+    *(Done.)*

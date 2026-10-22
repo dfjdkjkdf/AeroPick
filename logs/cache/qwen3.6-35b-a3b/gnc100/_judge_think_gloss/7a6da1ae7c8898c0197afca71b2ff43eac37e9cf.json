@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定非有限向量应返回ADCS_E_DEGENERATE(3)，A返回ADCS_E_NOT_FINITE(4)与需求映射不符。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同上，输入含NaN属于非有限向量，按需求边界处理条款应返回ADCS_E_DEGENERATE(3)。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 8970,
+  "completion": 2499
+ }
+}

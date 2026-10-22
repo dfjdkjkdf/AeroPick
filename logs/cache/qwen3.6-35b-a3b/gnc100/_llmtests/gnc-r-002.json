@@ -1,0 +1,152 @@
+{
+ "key": "5150cef1dec052412f989d001777c03866e9bc2c",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "ra_input.enable = 0;\nra_input.valid = 0;\nra_input.current_q_bi = NULL;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ra_input.enable = 1;\nra_input.valid = 2;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.0;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi = NULL;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi = NULL;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s = NULL;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "ra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = NAN;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.0;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.05;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();\nra_input.body_rate_rad_s->x = 0.005;\nra_input.current_q_bi->x = 0.01;\nra_input.current_q_bi->y = 0.01;\nra_input.current_q_bi->z = 0.01;",
+    "GncRepoAttitudeModeStep();\nra_input.body_rate_rad_s->x = 0.004;\nra_input.current_q_bi->x = 0.005;\nra_input.current_q_bi->y = 0.005;\nra_input.current_q_bi->z = 0.005;",
+    "GncRepoAttitudeModeStep();\nra_input.body_rate_rad_s->x = 0.003;\nra_input.current_q_bi->x = 0.002;\nra_input.current_q_bi->y = 0.002;\nra_input.current_q_bi->z = 0.002;",
+    "GncRepoAttitudeModeStep();\nra_input.body_rate_rad_s->x = 0.002;\nra_input.current_q_bi->x = 0.001;\nra_input.current_q_bi->y = 0.001;\nra_input.current_q_bi->z = 0.001;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.002;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();\nra_input.body_rate_rad_s->x = 0.006;\nra_input.current_q_bi->x = 0.08;\nra_input.current_q_bi->y = 0.08;\nra_input.current_q_bi->z = 0.08;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.002;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();\nra_input.body_rate_rad_s->x = 0.006;\nra_input.current_q_bi->x = 0.08;\nra_input.current_q_bi->y = 0.08;\nra_input.current_q_bi->z = 0.08;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.01;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.02;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.0;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 0;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.0;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 2;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.0;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();\nra_input.valid = 0;",
+    "GncRepoAttitudeModeStep();\nra_input.valid = 0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.0;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 0.999;\nra_input.current_q_bi->x = 0.04;\nra_input.current_q_bi->y = 0.04;\nra_input.current_q_bi->z = 0.04;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.0;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.0;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.005;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "ra_config.fine_enter_rad = 0.1;\nra_config.fine_exit_rad = 0.2;\nra_config.hold_enter_rad = 0.05;\nra_config.hold_exit_rad = 0.15;\nra_config.rate_enter_rad_s = 0.01;\nra_config.rate_exit_rad_s = 0.02;\nra_config.hold_rate_rad_s = 0.005;\nra_config.hold_rate_exit_rad_s = 0.01;\nra_config.kp = 1.0;\nra_config.kd = 0.5;\nra_config.ki = 0.1;\nra_config.dt_s = 0.1;\nra_config.integral_limit_rad_s = 1.0;\nra_config.torque_limit_nm = 10.0;\nra_config.rate_samples = 3;\nra_config.fine_samples = 3;\nra_config.hold_samples = 3;\nra_config.max_bad_samples = 5;\nra_input.enable = 1;\nra_input.valid = 1;\nra_input.current_q_bi->w = 1.0;\nra_input.current_q_bi->x = 0.0;\nra_input.current_q_bi->y = 0.0;\nra_input.current_q_bi->z = 0.0;\nra_input.target_q_bi->w = 1.0;\nra_input.target_q_bi->x = 0.0;\nra_input.target_q_bi->y = 0.0;\nra_input.target_q_bi->z = 0.0;\nra_input.body_rate_rad_s->x = 0.01;\nra_input.body_rate_rad_s->y = 0.0;\nra_input.body_rate_rad_s->z = 0.0;",
+    "GncRepoAttitudeModeStep();"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "输入四元数全零模为0，属无效/奇异姿态，需求明确规定无效时距离应返回INFINITY。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "输入b为零四元数，同样触发无效判定，需求规定应返回INFINITY。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "输入含INFINITY非有限值，无法参与有效归一化与运算，需求规定应返回INFINITY。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "输入含NAN非有限值，属无效姿态，需求规定应返回INFINITY。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "输入模约2e-20远小于EPS_QUAT(1e-12)阈值，归一化失败视为无效，应返回INFINITY。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "b为零四元数导致整体输入无效，需求规定应返回INFINITY。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9273,
+  "completion": 2611
+ }
+}

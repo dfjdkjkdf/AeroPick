@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "测试标记为error，需求明确规定失败时必须将输出清零且fastest置为SIZE_MAX，C严格遵循此规范，A/B返回0不符。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "同上，错误分支必须将fastest置为SIZE_MAX，C正确实现失败处理逻辑。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "同上，错误处理行为与需求字面约束一致。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "count=3违反“恰好四个”约束属于wrong count，应触发ADCS_E_RANGE并输出SIZE_MAX，C正确。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "需求明确限定“恰好四个”，count=1属wrong count应报错；C按失败规范输出SIZE_MAX，严格符合需求优先级高于测试标签的评审原则。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "W3轴范数为0触发malformed，按需求应报错并全量清零及fastest置SIZE_MAX；C完全匹配，A仅部分计算未清零，B数值异常。"
+  }
+ ],
+ "pick": "C",
+ "_usage": {
+  "prompt": 9669,
+  "completion": 5856
+ }
+}

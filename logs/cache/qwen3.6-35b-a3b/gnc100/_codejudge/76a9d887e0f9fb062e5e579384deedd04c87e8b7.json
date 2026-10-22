@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "实现A严格遵循需求中‘非法容差或非有限矩阵返回ADCS_E_RANGE’的明确错误码映射，而B和C误用了ADCS_E_NOT_FINITE且未完整校验容差有效性。",
+ "_usage": {
+  "prompt": 9004,
+  "completion": 1841
+ }
+}

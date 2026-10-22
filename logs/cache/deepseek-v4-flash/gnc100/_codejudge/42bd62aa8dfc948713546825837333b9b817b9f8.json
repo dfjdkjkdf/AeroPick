@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 完整实现了无效输入/配置的 FAULT 锁存、隔离/重入 streak 更新及基于更新后隔离状态的投票，而 A 未在无效路径更新状态模式，C 将非法 enable 错误地当作 OFF。",
+ "_usage": {
+  "prompt": 15677,
+  "completion": 19288
+ }
+}

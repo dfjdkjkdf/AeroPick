@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "Measured torque is zero, so geometry is invalid and latches FAULT with expected torque computed from zero command, giving y=0."
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "Second call has zero measured torque, invalid geometry latches FAULT and expected torque y=0."
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "Zero measured torque is invalid geometry, so expected torque y=0."
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "Enable=0 disables, resets to IDLE and clears counters, commands zero, so outputs match A."
+  }
+ ],
+ "pick": "A"
+}

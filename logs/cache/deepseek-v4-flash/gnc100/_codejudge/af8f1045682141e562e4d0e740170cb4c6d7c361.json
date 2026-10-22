@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 最接近需求：正确禁用清态、超时重初、COMPLETE 零输出和 slew/饱和掩码；B 将 enable=0 误判为拒绝且可空指针崩溃，C 在 COMPLETE 低速时仍生成非零偶极。",
+ "_usage": {
+  "prompt": 18317,
+  "completion": 26269
+ }
+}

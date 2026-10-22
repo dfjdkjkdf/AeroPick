@@ -1,0 +1,125 @@
+{
+ "key": "387b739032deb85dd8f6702bfffdfc51ae36d1b5",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms = NULL;\nfield_body_t = NULL;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand = NULL;\nachievable_torque_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms = (adcs_vec3_t*)0x1;\nfield_body_t = NULL;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand = NULL;\nachievable_torque_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms = (adcs_vec3_t*)0x1;\nfield_body_t = (adcs_vec3_t*)0x2;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand = NULL;\nachievable_torque_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms = (adcs_vec3_t*)0x1;\nfield_body_t = (adcs_vec3_t*)0x2;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand = (adcs_actuator_command_t*)0x3;\nachievable_torque_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms = (adcs_vec3_t*)0x1;\nfield_body_t = (adcs_vec3_t*)0x2;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand = (adcs_actuator_command_t*)0x3;\nachievable_torque_nm = (adcs_vec3_t*)0x4;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = NAN;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = INFINITY;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = -1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = -1.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1e-13;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 50000.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 0.0;\nfield_body_t->x = 50000.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 0.0;\nfield_body_t->y = 50000.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 50000.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 1.0;\nfield_body_t->z = 1.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1e-6;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1000.0;\nfield_body_t->x = 50000.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 50000.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 2e-7;\nmax_dipole_a_m2 = 10.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 50000.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 0.0;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "momentum_error_nms->x = 1.0;\nfield_body_t->x = 50000.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\ntorque_gain_s_inv = 1.0;\nmax_dipole_a_m2 = 1e9;\ncommand->command.x = 0.0;\ncommand->command.y = 0.0;\ncommand->command.z = 0.0;\ncommand->saturated_axes = 0;\nachievable_torque_nm->x = 0.0;\nachievable_torque_nm->y = 0.0;\nachievable_torque_nm->z = 0.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,143 @@
+{
+ "key": "4c080ea886e8d7d7c0770274b85d6e9db9cfb56c",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "requested_a_m2 = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "duty = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_a_m2->x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_a_m2->y = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_a_m2->z = -INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "full_scale_a_m2 = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "full_scale_a_m2 = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "full_scale_a_m2 = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "minimum_duty = -0.1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "minimum_duty = 1.2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "minimum_duty = NAN;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_a_m2->x = 0.0;\nrequested_a_m2->y = 0.0;\nrequested_a_m2->z = 0.0;\nfull_scale_a_m2 = 1.0;\nminimum_duty = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_a_m2->x = 0.0;\nrequested_a_m2->y = -0.0;\nrequested_a_m2->z = 0.0;\nfull_scale_a_m2 = 2.5;\nminimum_duty = 0.2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_a_m2->x = 0.15;\nrequested_a_m2->y = -0.15;\nrequested_a_m2->z = 0.0;\nfull_scale_a_m2 = 1.0;\nminimum_duty = 0.2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_a_m2->x = 0.2;\nrequested_a_m2->y = -0.2;\nrequested_a_m2->z = 0.2;\nfull_scale_a_m2 = 1.0;\nminimum_duty = 0.2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_a_m2->x = 1.0;\nrequested_a_m2->y = -1.0;\nrequested_a_m2->z = 0.0;\nfull_scale_a_m2 = 1.0;\nminimum_duty = 0.2;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_a_m2->x = 1.5;\nrequested_a_m2->y = -1.5;\nrequested_a_m2->z = 0.0;\nfull_scale_a_m2 = 1.0;\nminimum_duty = 0.2;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_a_m2->x = 0.5;\nrequested_a_m2->y = -0.25;\nrequested_a_m2->z = 0.75;\nfull_scale_a_m2 = 1.0;\nminimum_duty = 0.1;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_a_m2->x = 2.0;\nrequested_a_m2->y = -4.0;\nrequested_a_m2->z = 1.0;\nfull_scale_a_m2 = 4.0;\nminimum_duty = 0.05;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_a_m2->x = 0.01;\nrequested_a_m2->y = 0.99;\nrequested_a_m2->z = -0.99;\nfull_scale_a_m2 = 1.0;\nminimum_duty = 0.1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_a_m2->x = 5.0;\nrequested_a_m2->y = -5.0;\nrequested_a_m2->z = 0.0;\nfull_scale_a_m2 = 5.0;\nminimum_duty = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_a_m2->x = 0.9999999999;\nrequested_a_m2->y = -0.9999999999;\nrequested_a_m2->z = 0.0;\nfull_scale_a_m2 = 1.0;\nminimum_duty = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_a_m2->x = 1e-15;\nrequested_a_m2->y = -1e-15;\nrequested_a_m2->z = 0.0;\nfull_scale_a_m2 = 1.0;\nminimum_duty = 0.3;"
+   ]
+  }
+ ]
+}

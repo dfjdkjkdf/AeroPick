@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定先初始化输出为默认值(INFINITY/SIZE_MAX/0)，再校验输入指针；wheels为NULL时应返回ADCS_E_NULL(1)且保留已初始化的默认值，A完全符合，B错返回码，C未执行初始化。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "逻辑同测试1，speed_limits为NULL触发相同分支，A的返回码与输出默认值均严格遵循需求规定的执行顺序与错误码映射。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9049,
+  "completion": 2769
+ }
+}

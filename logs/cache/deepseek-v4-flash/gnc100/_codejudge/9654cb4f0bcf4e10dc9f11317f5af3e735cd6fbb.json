@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确地在拒绝计数达到 max_rejects 时锁存 FAULT 且仅由 disable 复位，并校验了非退化输入，而 A 未锁存、B 未校验非退化场。",
+ "_usage": {
+  "prompt": 11709,
+  "completion": 15611
+ }
+}

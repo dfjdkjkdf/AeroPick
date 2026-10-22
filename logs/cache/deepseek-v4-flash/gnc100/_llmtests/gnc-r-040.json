@@ -1,0 +1,155 @@
+{
+ "key": "6141490df4ba921727ca75ea143e310c5ea85368",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.0;\nrequest->y = 1.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 3.0;\nrequest->y = 4.0;\nrequest->z = 0.0;\nfield->x = 0.0;\nfield->y = 1.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 2.0;\nrequest->y = -3.0;\nrequest->z = 1.5;\nfield->x = 0.0;\nfield->y = 1.0;\nfield->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = -5.0;\nrequest->y = 2.0;\nrequest->z = -1.0;\nfield->x = -1.0;\nfield->y = -1.0;\nfield->z = -1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 0.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 2.0;\nfield->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nfield->x = 1.0e-12;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\nfield->x = 1.0000000000001e-12;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 5.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0e-13;\nrequest->y = 2.0e-13;\nrequest->z = 3.0e-13;\nfield->x = 0.0;\nfield->y = 0.0;\nfield->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request = NULL;\nfield->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field = NULL;\nrequest->x = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "parallel = NULL;\nrequest->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "perpendicular = NULL;\nrequest->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "fraction = NULL;\nrequest->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = NAN;\nrequest->y = 1.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = INFINITY;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = -INFINITY;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = NAN;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 0.0;\nfield->y = INFINITY;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 0.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 0.0;\nfield->y = 0.0;\nfield->z = 1.0e-12;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nfield->x = 2.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.0e-15;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  }
+ ]
+}

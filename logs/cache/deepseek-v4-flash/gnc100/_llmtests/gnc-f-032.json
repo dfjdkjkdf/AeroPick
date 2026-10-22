@@ -1,0 +1,137 @@
+{
+ "key": "267da3ef6efddc5f91957dd5b7fb1eabbaf5d5e5",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = 1.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 1.0;\nsecond->y = 1.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "first->x = 2.0;\nfirst->y = -3.0;\nfirst->z = 6.0;\nsecond->x = -1.0;\nsecond->y = 0.5;\nsecond->z = 0.25;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "first->x = 1e-6;\nfirst->y = 2e-6;\nfirst->z = 3e-6;\nsecond->x = 1.0;\nsecond->y = 0.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 1.0;\nsecond->y = 0.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = -1.0;\nsecond->y = 0.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = 1.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first->x = -1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = -1.0;\nsecond->y = 1e-9;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first->x = 1e-11;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = 1.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first->x = 1e-12;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = 1.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first->x = 0.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 1.0;\nsecond->y = 0.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = 0.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first = NULL;\nsecond->x = 1.0;\nsecond->y = 0.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = 1.0;\nsecond->z = 0.0;\nseparation_rad = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = 1.0;\nsecond->z = 0.0;\nconditioning = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first->x = NAN;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = 1.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first->x = INFINITY;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = 1.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = 0.0;\nsecond->y = -INFINITY;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 0.0;\nfirst->z = 0.0;\nsecond->x = NAN;\nsecond->y = 1.0;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "first->x = 1e300;\nfirst->y = 1e300;\nfirst->z = 1e300;\nsecond->x = -1e300;\nsecond->y = 1e300;\nsecond->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "first->x = 1.0;\nfirst->y = 2.0;\nfirst->z = 3.0;\nsecond->x = 3.0;\nsecond->y = -2.0;\nsecond->z = 1.0;"
+   ]
+  }
+ ]
+}

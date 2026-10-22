@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "轮组无效（轴为零向量）按需求应锁存FAULT，B输出FAULT且目标未初始化。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "轮组无效按需求应锁存FAULT，B输出FAULT且目标未初始化。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "enable=0时需求规定禁用复位为OFF，B输出OFF。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "启用时轮组无效按需求应锁存FAULT，B输出FAULT。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "启用时轮组无效按需求应锁存FAULT，B输出FAULT。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "启用时轮组无效按需求应锁存FAULT，B输出FAULT。"
+  }
+ ],
+ "pick": "B"
+}

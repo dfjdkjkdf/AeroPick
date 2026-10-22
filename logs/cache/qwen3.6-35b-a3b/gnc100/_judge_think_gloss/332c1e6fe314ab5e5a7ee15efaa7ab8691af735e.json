@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "需求明确规定输出指针为NULL时须返回ADCS_E_NULL(1)，C正确返回1且无崩溃，符合空指针防护要求。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "同上，需求规定realized指针为NULL时返回1，C实现正确拦截并返回指定错误码。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "同上，需求规定mask指针为NULL时返回1，C实现正确拦截并返回指定错误码。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "需求规定非法输入(如NAN)必须返回ADCS_E_RANGE(2)且输出清零，C正确拦截并返回2；B返回0且污染输出，严重违规。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "需求规定非法输入(如INFINITY)必须返回ADCS_E_RANGE(2)且输出清零，C正确拦截并返回2；B错误执行限幅并返回成功，违规。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "需求规定校准参数(area_turns)必须为正有限值，NAN属非法校准应返回ADCS_E_RANGE(2)且清零，C正确拦截；A漏检并传播NAN，违规。"
+  }
+ ],
+ "pick": "C",
+ "_usage": {
+  "prompt": 10461,
+  "completion": 4720
+ }
+}

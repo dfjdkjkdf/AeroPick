@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 安全处理 NULL、验证 q 与惯量矩阵有限/对称/非负对角，失败时清零输出，并按 C_BI*P_I*C_BI^T 计算；A 在 NULL 输出指针时会解引用，C 缺少对称性校验。",
+ "_usage": {
+  "prompt": 10567,
+  "completion": 2068
+ }
+}

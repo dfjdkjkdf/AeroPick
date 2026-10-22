@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定双输出存在时所有错误均需写入accepted=identity且separation_rad=INFINITY，B的输出(1, inf)严格匹配该约束。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求规定单个输出指针为NULL时仅返回错误码，未要求修改另一输出，保持Harness初始值0符合规范。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同上，单输出为空时不执行写入操作，保持0符合需求定义的错误返回路径。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "零范数样本属退化错误，需求强制要求此时写入accepted=identity(sep=inf)，A完全符合，B/C的w=0直接违反需求。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "极小范数样本触发退化错误处理，行为同测试4，A写入identity和inf符合需求，B/C违规。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "含INFINITY样本为非有限数据错误，应走统一错误处理分支，A写入identity和inf符合需求。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9362,
+  "completion": 5609
+ }
+}

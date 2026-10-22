@@ -1,0 +1,1 @@
+{"prompt_sha1": "4063c0888adbf3cfbb749debd4774e81136fc220", "discrete": [["eclipse", null, ["0", "1"]]], "continuous": [["position_m", [3], -1000000.0, 1000000.0], ["sun_direction", [3], -1000000.0, 1000000.0], ["earth_radius_m", null, 0.0, 1000000.0]], "outputs": [["behind_m", null, [-1000000.0, 1000000.0]], ["miss_m", null, [0.0, 1000000.0]]]}

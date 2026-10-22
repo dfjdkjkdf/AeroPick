@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定需拒绝非法输入（空指针属malformed wheels）并锁定FAULT状态；A直接崩溃严重违反航天软件鲁棒性与安全规范，B返回1（对应ADCS_E_NULL/故障码）符合“Reject”与错误处理要求。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9477,
+  "completion": 2195
+ }
+}

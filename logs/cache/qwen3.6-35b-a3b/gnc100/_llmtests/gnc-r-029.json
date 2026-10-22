@@ -1,0 +1,130 @@
+{
+ "key": "bf8f26ac7ce7b7385f41c8a98392dcdb34b02923",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "sa_input.enable = 0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 0.994987; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.1;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.5;\nsa_config.exit_cosine = 0.4;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 0.5; sa_input.boresight->y = 0.866025; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.5;\nsa_config.exit_cosine = 0.4;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 0.499999; sa_input.boresight->y = 0.866025; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_input.sun = NULL;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight = NULL;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_input.sun->x = 0.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_input.sun->x = NAN; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_input.sun->x = INFINITY; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.8;\nsa_config.exit_cosine = 0.9;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_state.mode = SA_OFF;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 0.994987; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.1;\nGncRepoSAHysteresisStep();\nsa_state.mode = sa_output.mode;",
+    "GncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_state.mode = SA_ACTIVE;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 0.994987; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.1;\nGncRepoSAHysteresisStep();\nsa_state.mode = sa_output.mode;",
+    "sa_input.boresight->x = 0.5; sa_input.boresight->y = 0.866025; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_state.mode = SA_ACTIVE;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 0.994987; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.1;\nGncRepoSAHysteresisStep();\nsa_state.mode = sa_output.mode;",
+    "sa_input.boresight->x = 0.85; sa_input.boresight->y = 0.526782; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_state.mode = SA_ACTIVE;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 0.85; sa_input.boresight->y = 0.526782; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();\nsa_state.mode = sa_output.mode;",
+    "sa_input.boresight->x = 0.499999; sa_input.boresight->y = 0.866025; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_state.mode = SA_FAULT;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();\nsa_state.mode = sa_output.mode;",
+    "sa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = -1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = 0.8;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = -1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 1.1;\nsa_config.exit_cosine = 0.8;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "sa_input.enable = 1;\nsa_config.enter_cosine = 0.9;\nsa_config.exit_cosine = -1.1;\nsa_input.sun->x = 1.0; sa_input.sun->y = 0.0; sa_input.sun->z = 0.0;\nsa_input.boresight->x = 1.0; sa_input.boresight->y = 0.0; sa_input.boresight->z = 0.0;\nGncRepoSAHysteresisStep();"
+   ]
+  }
+ ]
+}

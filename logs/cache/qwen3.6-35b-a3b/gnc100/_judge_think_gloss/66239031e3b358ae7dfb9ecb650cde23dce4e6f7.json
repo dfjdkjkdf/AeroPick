@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定无效fraction应返回ADCS_E_RANGE(2)，测试中fraction为NaN(0.0/0.0)属区间外无效输入，A返回2完全符合需求，B返回3错误归类为奇异输入。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 8933,
+  "completion": 1755
+ }
+}

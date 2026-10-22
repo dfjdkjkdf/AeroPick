@@ -1,0 +1,128 @@
+{
+ "key": "5e33e6041095406a5282a4a633fca4d9ebd051f8",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 1.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 2.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 2.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 0.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 1.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 1.0000001; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 1.0; previous->y = 2.0; previous->z = 3.0;\ntarget->x = 4.0; target->y = 5.0; target->z = 6.0;\nmax_delta_nm = 100.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 1.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = -1.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 0.5;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous = NULL;\ntarget->x = 1.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget = NULL;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 1.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = -1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 1.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = INFINITY;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = NAN; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = INFINITY; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 1.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 1.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext = NULL;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 1.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\nlimited = NULL;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;",
+    "previous->x = next->x; previous->y = next->y; previous->z = next->z;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;",
+    "previous->x = next->x; previous->y = next->y; previous->z = next->z;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;",
+    "previous->x = next->x; previous->y = next->y; previous->z = next->z;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;",
+    "previous->x = next->x; previous->y = next->y; previous->z = next->z;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;",
+    "previous->x = next->x; previous->y = next->y; previous->z = next->z;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;",
+    "previous->x = next->x; previous->y = next->y; previous->z = next->z;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;",
+    "previous->x = next->x; previous->y = next->y; previous->z = next->z;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;",
+    "previous->x = next->x; previous->y = next->y; previous->z = next->z;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;",
+    "previous->x = next->x; previous->y = next->y; previous->z = next->z;\ntarget->x = 10.0; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 0.0; previous->y = 1.0; previous->z = 0.0;\ntarget->x = 0.0; target->y = 2.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 1.0;\ntarget->x = 0.0; target->y = 0.0; target->z = 2.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 0.0; previous->y = 0.0; previous->z = 0.0;\ntarget->x = 0.999999999; target->y = 0.0; target->z = 0.0;\nmax_delta_nm = 1.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 1.0; previous->y = 1.0; previous->z = 1.0;\ntarget->x = 2.0; target->y = 2.0; target->z = 2.0;\nmax_delta_nm = 5.0;\nnext->x = 0.0; next->y = 0.0; next->z = 0.0;\n*limited = 0;"
+   ]
+  }
+ ]
+}

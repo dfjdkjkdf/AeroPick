@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "零磁场导致 adcs_momentum_unload_dipole 返回非 OK，按契约应零输出，B 输出 energy=0、momentum=0。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "负增益导致 adcs_momentum_unload_dipole 返回范围错误，应零输出，B 输出全零。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "NAN 增益导致非 OK 状态，应零输出，B 输出全零。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "INFINITY 增益导致非 OK 状态，应零输出，B 输出全零。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "正常输入下能量应为 500+250+30=780，B 能量正确。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "正常输入下能量应为 500+250=750，B 能量正确。"
+  }
+ ],
+ "pick": "B"
+}

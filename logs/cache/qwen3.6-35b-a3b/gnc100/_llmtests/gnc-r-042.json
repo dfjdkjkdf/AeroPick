@@ -1,0 +1,125 @@
+{
+ "key": "0eb3ee656156ebe784be69d4c57bdf7d1ba4ddbe",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "previous = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "current = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rate = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "command = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous_time = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "current_time = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gain = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "limit = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = 2.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 0.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = NAN;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 1.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = 0.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 1.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = 1.1;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 1.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 0.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 1.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 1.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 1.0;\ngain = 1.0;\nlimit = 10.0;\nprevious->x = 1.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 1.0;\ncurrent->x = 1.1;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 2.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 1.0;\ngain = 0.0;\nlimit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = 1.0;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 1.0;\ngain = 1.0;\nlimit = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 2.0;\nprevious->z = 3.0;\nprevious_time = 0.0;\ncurrent->x = 4.0;\ncurrent->y = 5.0;\ncurrent->z = 6.0;\ncurrent_time = 1.0;\ngain = 2.0;\nlimit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "previous->x = 1.0;\nprevious->y = 0.0;\nprevious->z = 0.0;\nprevious_time = 0.0;\ncurrent->x = INFINITY;\ncurrent->y = 0.0;\ncurrent->z = 0.0;\ncurrent_time = 1.0;\ngain = 1.0;\nlimit = 10.0;"
+   ]
+  }
+ ]
+}

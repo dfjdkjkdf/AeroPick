@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "实现B严格遵循了需求中“优先使用提供的GNC原语”的指示，正确调用了adcs_quat_normalize与adcs_quat_abs_dot，且状态机流转和质量判定逻辑完整对应需求表格。",
+ "_usage": {
+  "prompt": 10651,
+  "completion": 3304
+ }
+}

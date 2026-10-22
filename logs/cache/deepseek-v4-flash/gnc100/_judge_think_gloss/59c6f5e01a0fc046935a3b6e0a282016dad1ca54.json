@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求规定 usable 为验证观测数、weighted_body 为未归一化加权和，B 输出 usable=2 且 (1,1,0)。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "三个观测均有效且权重和为 6，B 输出 usable=3 且加权和 (1,2,3)。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "总权重等于最小权重且几何可用，B 输出 usable=2 且加权和 (1,2,0)。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "总权重小于最小值但仍为良构，usable 应为验证观测数 2，B 输出 2 且加权和正确。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "分离正弦合格，B 输出 usable=2 且未归一化加权和 (1.70711,0.707107,0)。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "体向量分离不足但良构，usable 应为验证观测数 2，B 输出 2 且加权和正确。"
+  }
+ ],
+ "pick": "B"
+}

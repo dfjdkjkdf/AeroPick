@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "c_bi 为 NULL，需求规定应返回 ADCS_E_NULL，失败默认 angle=INFINITY，故 B 正确。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "check_body 为 NULL，需求规定应返回 ADCS_E_NULL，失败默认 angle=INFINITY，故 B 正确。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "check_inertial 为 NULL，需求规定应返回 ADCS_E_NULL，失败默认 angle=INFINITY，故 B 正确。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "cross_residual_body 为 NULL，需求规定应返回 ADCS_E_NULL，失败默认 angle=INFINITY，故 B 正确。"
+  }
+ ],
+ "pick": "B"
+}

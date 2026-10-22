@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定NULL四元数需锁存FAULT状态（模式3），B输出正确而A错误。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "未初始化量为0构成零四元数，触发需求规定的FAULT条件，B模式3正确。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "输入含非有限值，触发需求规定的FAULT条件，B模式3正确。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "norm_error_limit为负违反需求>=0约束，属无效配置应触发FAULT，B模式3正确。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "required默认为0不满足需求1..20约束，属无效配置应触发FAULT，B模式3正确。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "同测试5逻辑，无效配置触发FAULT，B模式3正确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9520,
+  "completion": 3727
+ }
+}

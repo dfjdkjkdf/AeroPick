@@ -1,0 +1,1 @@
+{"prompt_sha1": "845f59b30839c69c12dd2bb97ca058cd34957e04", "discrete": [["c", null, ["NULL"]]], "continuous": [["c.m", [3, 3], -1000000.0, 1000000.0], ["orth", null, -1000000.0, 1000000.0], ["det", null, -1000000.0, 1000000.0]], "outputs": [["orth", null, null], ["det", null, null]]}

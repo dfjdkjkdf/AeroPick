@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求规定NULL样本应返回ADCS_E_NULL且有效输出需写为单位四元数与INFINITY，仅B的返回值、accepted.w=1及separation_rad=inf完全吻合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求明确accepted为NULL时返回ADCS_E_NULL(1)，B正确返回1，A错误返回了ADCS_E_DEGENERATE(3)。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "需求明确separation_rad为NULL时返回ADCS_E_NULL(1)，B正确返回1，A错误返回了ADCS_E_DEGENERATE(3)。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "多参数NULL触发错误处理，B按需求将separation_rad置为INFINITY符合错误兜底约定。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "需求规定所有错误路径均须将accepted赋值为身份四元数(w=1)，仅B满足，A/C误清零。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "双输出指针为空时必返回ADCS_E_NULL(1)，B正确，A错误返回了非预期的退化码3。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9219,
+  "completion": 3907
+ }
+}

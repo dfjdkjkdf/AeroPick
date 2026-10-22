@@ -1,0 +1,134 @@
+{
+ "key": "f093a7625e8030fd04de8c3789559107c37cc824",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "st = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rate = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "cmd = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "time = -1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "alpha = -0.1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "alpha = 1.1;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gain = -1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "limit = -1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "st->initialized = 0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\ntime = 1.0; alpha = 0.5; gain = 1.0; limit = 100.0;",
+    "field->x = 50.0; field->y = 10.0; field->z = 0.0;\ntime = 2.0; alpha = 0.5; gain = 1.0; limit = 100.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "st->initialized = 0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\ntime = 1.0; alpha = 0.5; gain = 1.0; limit = 100.0;",
+    "field->x = 50.0; field->y = 10.0; field->z = 0.0;\ntime = 1.0; alpha = 0.5; gain = 1.0; limit = 100.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "st->initialized = 0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\ntime = 1.0; alpha = 0.5; gain = 1.0; limit = 100.0;",
+    "field->x = 50.0; field->y = 10.0; field->z = 0.0;\ntime = 0.5; alpha = 0.5; gain = 1.0; limit = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "st->initialized = 0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\ntime = 1.0; alpha = 0.0; gain = 1.0; limit = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "st->initialized = 0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\ntime = 1.0; alpha = 1.0; gain = 1.0; limit = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "st->initialized = 0;\nfield->x = 50.0; field->y = 0.0; field->z = 0.0;\ntime = 1.0; alpha = 0.5; gain = 1.0; limit = 100.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "st->initialized = 0;\nfield->x = 0.0; field->y = 0.0; field->z = 0.0;\ntime = 1.0; alpha = 0.5; gain = 1.0; limit = 100.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = INFINITY; field->y = 0.0; field->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field->x = NAN; field->y = 0.0; field->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "time = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "alpha = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gain = INFINITY;"
+   ]
+  }
+ ]
+}

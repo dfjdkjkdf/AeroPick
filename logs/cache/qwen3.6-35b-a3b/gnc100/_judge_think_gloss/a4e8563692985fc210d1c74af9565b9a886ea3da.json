@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求规定空指针应返回ADCS_E_NULL(1)且不得崩溃，A安全拦截并返回1，B直接崩溃。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求明确写明“非有限或近零四元数 -> ADCS_E_DEGENERATE”，B严格返回3，A误返回了ADCS_E_NOT_FINITE(4)。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同测试2，NAN属非有限值，需求强制指定错误码为ADCS_E_DEGENERATE(3)，B正确实现。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9147,
+  "completion": 2967
+ }
+}

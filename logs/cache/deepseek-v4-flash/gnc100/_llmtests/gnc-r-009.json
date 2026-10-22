@@ -1,0 +1,211 @@
+{
+ "key": "70afa6433a83633c2fa10ad114ee33dea38f7064",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheels = NULL; mb_input.wheel_count = 4;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 2; mb_input.wheel_count = 4;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 3;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_input.wheels[0].speed_rad_s = 1.0e9;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.target_nms.x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.kp_s_inv = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.ki_s2_inv = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.enter_error_nms = 0.5; mb_config.exit_error_nms = 0.5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.enter_error_nms = 0.5; mb_config.exit_error_nms = 0.4;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.target_slew_nms_per_cycle = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.dt_s = -0.01;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.integral_limit_nms_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.torque_limit_nm = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.max_wheel_speed_rad_s = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.settle_cycles = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.settle_cycles = 21;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.settle_cycles = 1; mb_config.enter_error_nms = 0.1; mb_config.exit_error_nms = 0.2; mb_config.target_slew_nms_per_cycle = 1.0; mb_config.dt_s = 0.01; mb_config.integral_limit_nms_s = 1.0; mb_config.torque_limit_nm = 1.0; mb_config.max_wheel_speed_rad_s = 1000.0; mb_config.kp_s_inv = 1.0; mb_config.ki_s2_inv = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.settle_cycles = 20; mb_config.enter_error_nms = 0.1; mb_config.exit_error_nms = 0.2; mb_config.target_slew_nms_per_cycle = 1.0; mb_config.dt_s = 0.01; mb_config.integral_limit_nms_s = 1.0; mb_config.torque_limit_nm = 1.0; mb_config.max_wheel_speed_rad_s = 1000.0; mb_config.kp_s_inv = 1.0; mb_config.ki_s2_inv = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_input.wheels[0].speed_rad_s = 100.0; mb_config.max_wheel_speed_rad_s = 100.0; mb_config.target_slew_nms_per_cycle = 1.0; mb_config.enter_error_nms = 0.1; mb_config.exit_error_nms = 0.2; mb_config.dt_s = 0.01; mb_config.integral_limit_nms_s = 1.0; mb_config.torque_limit_nm = 1.0; mb_config.kp_s_inv = 1.0; mb_config.ki_s2_inv = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mb_input.enable = 0; mb_config.target_nms.x = 5.0; mb_input.wheel_count = 4; mb_input.wheels[0].inertia_kg_m2 = 0.1; mb_input.wheels[0].speed_rad_s = 10.0; mb_input.wheels[0].axis_body.x = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.target_nms.x = 10.0; mb_config.target_slew_nms_per_cycle = 1.0; mb_config.enter_error_nms = 0.5; mb_config.exit_error_nms = 1.0; mb_config.dt_s = 0.1; mb_config.integral_limit_nms_s = 10.0; mb_config.torque_limit_nm = 10.0; mb_config.max_wheel_speed_rad_s = 1000.0; mb_config.kp_s_inv = 1.0; mb_config.ki_s2_inv = 0.5; mb_config.settle_cycles = 3;",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.target_nms.x = 5.0; mb_config.target_slew_nms_per_cycle = 1.0; mb_config.enter_error_nms = 0.5; mb_config.exit_error_nms = 1.0; mb_config.dt_s = 0.1; mb_config.integral_limit_nms_s = 10.0; mb_config.torque_limit_nm = 10.0; mb_config.max_wheel_speed_rad_s = 1000.0; mb_config.kp_s_inv = 1.0; mb_config.ki_s2_inv = 0.5; mb_config.settle_cycles = 2;",
+    "mb_config.target_nms.x = 20.0;",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.target_nms.x = 3.0; mb_config.target_slew_nms_per_cycle = 1.0; mb_config.enter_error_nms = 0.5; mb_config.exit_error_nms = 1.0; mb_config.dt_s = 0.1; mb_config.integral_limit_nms_s = 0.001; mb_config.torque_limit_nm = 100.0; mb_config.max_wheel_speed_rad_s = 1000.0; mb_config.kp_s_inv = 0.0; mb_config.ki_s2_inv = 1000.0; mb_config.settle_cycles = 1;",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_input.wheels[0].inertia_kg_m2 = 1.0; mb_input.wheels[0].speed_rad_s = 100.0; mb_input.wheels[0].axis_body.x = 1.0; mb_config.target_nms.x = 0.0; mb_config.target_slew_nms_per_cycle = 1.0; mb_config.enter_error_nms = 0.5; mb_config.exit_error_nms = 1.0; mb_config.dt_s = 0.1; mb_config.integral_limit_nms_s = 10.0; mb_config.torque_limit_nm = 1000.0; mb_config.max_wheel_speed_rad_s = 1000.0; mb_config.kp_s_inv = 0.0; mb_config.ki_s2_inv = 0.0; mb_config.settle_cycles = 1;",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.target_nms.x = 2.0; mb_config.target_slew_nms_per_cycle = 1.0; mb_config.enter_error_nms = 0.5; mb_config.exit_error_nms = 1.0; mb_config.dt_s = 0.1; mb_config.integral_limit_nms_s = 10.0; mb_config.torque_limit_nm = 0.05; mb_config.max_wheel_speed_rad_s = 1000.0; mb_config.kp_s_inv = 1.0; mb_config.ki_s2_inv = 1.0; mb_config.settle_cycles = 1;",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_input.wheels[0].inertia_kg_m2 = 1.0; mb_input.wheels[0].speed_rad_s = 5.0; mb_input.wheels[0].axis_body.x = 1.0; mb_config.target_nms.x = 1000.0; mb_config.target_slew_nms_per_cycle = 100.0; mb_config.enter_error_nms = 0.5; mb_config.exit_error_nms = 1.0; mb_config.dt_s = 0.1; mb_config.integral_limit_nms_s = 10.0; mb_config.torque_limit_nm = 1.0; mb_config.max_wheel_speed_rad_s = 1000.0; mb_config.kp_s_inv = 1.0; mb_config.ki_s2_inv = 0.0; mb_config.settle_cycles = 1;",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_input.enable = 0; mb_input.wheel_count = 4; mb_config.target_nms.x = 5.0; mb_input.enable = 1;",
+    ""
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.target_nms.y = 4.0; mb_config.target_slew_nms_per_cycle = 1.0; mb_config.enter_error_nms = 0.5; mb_config.exit_error_nms = 1.0; mb_config.dt_s = 0.1; mb_config.integral_limit_nms_s = 10.0; mb_config.torque_limit_nm = 10.0; mb_config.max_wheel_speed_rad_s = 1000.0; mb_config.kp_s_inv = 1.0; mb_config.ki_s2_inv = 0.5; mb_config.settle_cycles = 1;",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "mb_input.wheels = NULL; mb_input.enable = 0; mb_config.target_nms.z = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "mb_input.enable = 1; mb_input.wheel_count = 4; mb_config.target_slew_nms_per_cycle = 0.0001; mb_config.enter_error_nms = 0.0; mb_config.exit_error_nms = 1.0e-9; mb_config.dt_s = 1.0e-9; mb_config.integral_limit_nms_s = 1.0e-9; mb_config.torque_limit_nm = 1.0e-9; mb_config.max_wheel_speed_rad_s = 1.0e-9; mb_config.kp_s_inv = 0.0; mb_config.ki_s2_inv = 0.0;"
+   ]
+  }
+ ]
+}

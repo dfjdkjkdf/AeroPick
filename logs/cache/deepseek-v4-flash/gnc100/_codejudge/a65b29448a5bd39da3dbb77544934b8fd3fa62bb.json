@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 在 null 且 out 存在时也按失败合约写入单位阵，并正确计算 C = B * R^T，其他失败状态也符合要求。",
+ "_usage": {
+  "prompt": 8492,
+  "completion": 6059
+ }
+}

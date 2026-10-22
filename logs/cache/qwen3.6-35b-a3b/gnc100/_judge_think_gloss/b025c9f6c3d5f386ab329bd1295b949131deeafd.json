@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "请求为空且配置全0违反多项约束，需求规定非法输入应锁死FAULT并清零向量，B返回模式5且全零正确，A崩溃"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "磁场指针为空违反非退化要求，需求规定应锁死FAULT，B正确返回模式5，A崩溃"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "最大力矩为负违反正数要求，需求规定应锁死FAULT，B正确返回模式5，A误入PULSE"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "停止分数大于启动分数违反stop<start要求，需求规定应锁死FAULT，B正确返回模式5，A误入PULSE"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "持续时间全为0违反1..100要求，需求规定应锁死FAULT，B正确返回模式5，A误入INHIBIT"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "配置完全合法，需求明确捕获脉冲时elapsed置1且thermal_cycles加1，A符合该计数规则，B未更新"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 11147,
+  "completion": 4162
+ }
+}

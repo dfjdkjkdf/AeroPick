@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "首个有效样本应初始化参考并视为接受，输出 accepted=1。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "首个有效样本应初始化参考并视为接受，输出 accepted=1。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "enable=0 应强制 OFF 并清零参考和计数器，B 输出符合。"
+  }
+ ],
+ "pick": "B"
+}

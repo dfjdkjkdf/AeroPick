@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定“Failure returns identity”，B输出单位阵符合该要求，A输出零矩阵不符。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "同上，任意输入为NULL均属于失败情况，需按需求返回单位阵。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "同上，空指针触发失败分支，需求强制要求返回单位阵。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "同上，空指针触发失败分支，需求强制要求返回单位阵。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "同上，空指针触发失败分支，需求强制要求返回单位阵。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "同上，空指针触发失败分支，需求强制要求返回单位阵。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9370,
+  "completion": 2282
+ }
+}

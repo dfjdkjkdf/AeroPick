@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C implements the required NULL/RANGE/DEGENERATE checks in order, computes the inverse-square clamped gain and returns the unit direction and its scaled gain with zeroed failure outputs, matching the spec exactly.",
+ "_usage": {
+  "prompt": 9776,
+  "completion": 16442
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定非有限场/时间应返回ADCS_E_RANGE，且所有失败情况输出必须清零；输入含NAN属非有限场，A输出0符合“失败清零”要求，B输出NaN违规。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 8927,
+  "completion": 1841
+ }
+}

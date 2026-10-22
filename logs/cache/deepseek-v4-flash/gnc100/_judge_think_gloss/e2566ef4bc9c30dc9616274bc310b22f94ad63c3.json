@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "首个接受样本为 identity，且无上一接受姿态历史，relative_step_rad 应为 0。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "首个接受样本无上一接受姿态历史，relative_step_rad 应为 0。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "q=(2,0,0,0) 归一化为 identity，首个接受样本 relative_step_rad 应为 0。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "q=(-1,0,0,0) 经符号对齐为 identity，首个接受样本 relative_step_rad 应为 0。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "max_hold_cycles=1 边界下接受 identity，首个接受样本 relative_step_rad 应为 0。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "max_hold_cycles=20 边界下接受 identity，首个接受样本 relative_step_rad 应为 0。"
+  }
+ ],
+ "pick": "B"
+}

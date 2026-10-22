@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "总权重低于门限但观测均有效，qo_output.usable 应为已验证观测数 2。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "体向量分离正弦约 0.371 低于门限，但输出 usable 仍是已验证观测数 2。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "参考向量分离正弦约 0.0995 低于门限，但输出 usable 仍是已验证观测数 2。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "count=1 且数组为 NULL 属 malformed，应进入 FAULT=2。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "body 为 NULL 属 malformed，应进入 FAULT=2。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "reference 为 NULL 属 malformed，应进入 FAULT=2。"
+  }
+ ],
+ "pick": "B"
+}

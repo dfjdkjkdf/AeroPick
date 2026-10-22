@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "Implementation A explicitly validates all required conditions, correctly computes the minimum margin and reserve vector, and returns the momentum status, matching the specification exactly.",
+ "_usage": {
+  "prompt": 9558,
+  "completion": 27721
+ }
+}

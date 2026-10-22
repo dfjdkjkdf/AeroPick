@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C 正确处理配置/enable 校验、禁用复位并清除 FAULT、退化场与非递增时间故障，并按规范表驱动状态机与输出。",
+ "_usage": {
+  "prompt": 12202,
+  "completion": 14988
+ }
+}

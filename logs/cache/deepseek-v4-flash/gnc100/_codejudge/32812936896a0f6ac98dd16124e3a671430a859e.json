@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确实现了禁用清零、无效配置/样本置 FAULT、移动样本清窗并累计 rejected，以及达到 required 时用包含当前样本的 sum/count 发布并冻结 READY；B 在阈值样本漏加且禁用优先级错误，C 未校验非法 enable 且故障时错误累加 rejected。",
+ "_usage": {
+  "prompt": 10991,
+  "completion": 14035
+ }
+}

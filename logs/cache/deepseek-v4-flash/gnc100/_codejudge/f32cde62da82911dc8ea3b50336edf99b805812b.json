@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C validates all entries before writing output, uses the projected remainder threshold for collinearity, constructs the right-handed basis in the required order, and computes the Frobenius correction norm correctly.",
+ "_usage": {
+  "prompt": 10094,
+  "completion": 24625
+ }
+}

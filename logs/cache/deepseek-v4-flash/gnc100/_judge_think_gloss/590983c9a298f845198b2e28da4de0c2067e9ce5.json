@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "c_bi为空应返回ADCS_E_NULL且角度失败默认置INFINITY，B的inf符合（C同值）。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "check_body为空应返回ADCS_E_NULL且角度失败默认置INFINITY，B的inf符合（C同值）。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "check_inertial为空应返回ADCS_E_NULL且角度失败默认置INFINITY，B的inf符合（C同值）。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "cross_residual_body为空属于空指针错误，角度输出仍应为失败默认INFINITY，B符合（C同值）。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "check_body为NaN属于无效向量，应返回ADCS_E_RANGE(2)，B返回2符合。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "check_inertial为inf属于无效向量，应返回ADCS_E_RANGE(2)，B返回2符合。"
+  }
+ ],
+ "pick": "B"
+}

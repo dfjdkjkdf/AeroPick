@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确使用 adcs_wheel_momentum 校验并置 FAULT，按轮独立生成功率/限速掩码，按实际输出转矩与转速分别统计 motoring/regenerative 功率，并实现了要求的 LIMITED/RECOVERING/NORMAL 状态机。",
+ "_usage": {
+  "prompt": 17104,
+  "completion": 17588
+ }
+}

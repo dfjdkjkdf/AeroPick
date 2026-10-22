@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly implements the required NULL/range checks and per-axis computations using the provided finite-vector helper and local copies, matching the normative equations and status contract.",
+ "_usage": {
+  "prompt": 9632,
+  "completion": 19244
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "主源已是STAR且两源可用，TRIAD是替代源应作为candidate维护；C输出candidate=2符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "两源夹角应为2*acos(|dot|)=1.5708，且未融合时权重应为0；C同时满足。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "夹角1.5708超过融合门限0.5，不融合且权重为0；C满足。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "夹角1.5708超过融合门限0.5，不融合且权重为0；C满足。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "STAR不可用，TRIAD可用；未融合时triad_weight应为0；C输出0符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "融合门限为PI/2，正确符号不变夹角为1.5708；C输出正确。"
+  }
+ ],
+ "pick": "C"
+}

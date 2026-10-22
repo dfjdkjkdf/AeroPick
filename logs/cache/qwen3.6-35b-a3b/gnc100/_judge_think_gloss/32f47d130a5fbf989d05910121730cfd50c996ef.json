@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定的状态检查顺序第一条为“any NULL pointer -> ADCS_E_NULL”，测试输入含多个空指针，函数应直接返回错误码1而不解引用；实现A正确返回1，实现B崩溃说明未优先进行空指针校验。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 8986,
+  "completion": 2099
+ }
+}

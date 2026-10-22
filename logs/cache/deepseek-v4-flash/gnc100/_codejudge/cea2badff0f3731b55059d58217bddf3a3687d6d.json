@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A uses the provided helpers to compute ||C C^T - I||_F and det(C), correctly handles null and nonfinite inputs with the specified outputs, and does not modify C.",
+ "_usage": {
+  "prompt": 8621,
+  "completion": 17913
+ }
+}

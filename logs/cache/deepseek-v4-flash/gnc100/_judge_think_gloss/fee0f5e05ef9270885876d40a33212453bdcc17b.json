@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "required_rate 为 NULL 触发 ADCS_E_NULL，非空失败输出 margin 应按需求置为 -INFINITY。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "margin 为 NULL 触发 ADCS_E_NULL，非空失败输出 required_rate 应按需求置为 INFINITY。"
+  }
+ ],
+ "pick": "A"
+}

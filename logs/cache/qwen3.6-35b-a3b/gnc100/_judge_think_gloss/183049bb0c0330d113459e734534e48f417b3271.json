@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "body_a为NULL触发空指针检查，需求规定失败时必须输出无穷大，A符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "body_b为NULL触发空指针检查，属失败条件，需求明确要求输出无穷大。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "inertial_a为NULL触发空指针检查，属失败条件，应按需求输出无穷大。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "inertial_b为NULL触发空指针检查，属失败条件，需求规定失败输出无穷大。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "四向量均未赋值（视为NULL），触发失败分支，按需求应输出无穷大而非初始值0。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "其余三向量为零向量触发范数≤1e-12的退化判断，属失败条件，必须输出无穷大。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9226,
+  "completion": 2605
+ }
+}

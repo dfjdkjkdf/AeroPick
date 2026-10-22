@@ -1,0 +1,121 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as an aerospace GNC software review expert. I need to evaluate two different implementations (A and B) of a C function based on a provided requirement specification. There are 6 tests with divergent outputs for `gb_state.bias`. I need to determine which implementation (A or B) is correct for each test, based *only* on the requirement, and output a JSON summary.
+
+2.  **Analyze the Requirement**:
+    *   **Function Purpose**: Stationary gyro bias batch calibration.
+    *   **Core Logic**:
+        *   Accumulate finite samples with norm <= `stationary_limit` using linked vector addition.
+        *   Moving samples (> limit) clear the partial window without fault.
+        *   At exactly `required` samples, publish the scaled mean (`sum / count`) and freeze READY. Disable clears.
+        *   NULL/nonfinite samples or invalid configuration latch FAULT.
+        *   Valid config: `enable` 0 or 1, finite `stationary_limit` >= 0, `required` in 2..100.
+        *   Publish sum energy using linked functions.
+    *   **State Machine Table**:
+        *   `any / enable == 0` -> IDLE: clear everything.
+        *   `not READY / sample norm > stationary_limit` -> COLLECT: count/sum zero; increment rejected.
+        *   `not READY / norm <= stationary_limit, incremented count < required` -> COLLECT: accumulate, bias zero.
+        *   `not READY / norm <= stationary_limit, incremented count >= required` -> READY: publish `sum/count`.
+        *   `READY / accepted enabled cycle` -> READY: freeze bias.
+        *   `malformed enabled cycle/config` -> FAULT: failure defaults.
+    *   **Key Variables/Structs** (from context):
+        *   `gb_input`: `enable`, `sample` (pointer to `adcs_vec3_t`)
+        *   `gb_config`: `stationary_limit`, `required`
+        *   `gb_state`: `mode`, `count`, `rejected`, `sum`, `bias`
+        *   `gb_output`: `mode`, `count`, `rejected`, `bias`, `sum_energy`
+        *   Wait, the prompt says "比较最后一次调用后的输出", but the differences listed are for `gb_state.bias`. I'll assume `gb_state.bias` reflects the published bias or the internal state bias. The requirement says "publish `sum/count`" when transitioning to READY. It also says "freeze bias" in READY state.
+        *   Let's carefully map the table to behavior:
+            *   Initial state? Implicitly not READY. Probably COLLECT or IDLE. Since `enable=1`, it goes to COLLECT.
+            *   Cycle 1: `norm <= limit`, `count` becomes 1. If `required` is 3 (Test 1), `count < required`. State stays COLLECT. Action: accumulate into `sum`. `bias` should be zero (as per table: "accumulate, bias zero").
+            *   Cycle 2: `norm <= limit`, `count` becomes 2. If `required` is 3, `count < required`. State stays COLLECT. Action: accumulate into `sum`. `bias` zero.
+            *   Cycle 3: `norm <= limit`, `count` becomes 3. `count >= required`. Transition to READY. Action: publish `sum/count`. This means `bias = sum / 3`. Since all samples are `{0.1, 0.1, 0.1}`, `sum = {0.3, 0.3, 0.3}`. `bias = {0.1, 0.1, 0.1}`.
+            *   Let's check Test 1: `required=3`, 3 calls. Output after 3rd call: A has bias `{0.1, 0.1, 0.1}`, B has `{0, 0, 0}`. According to table, at exactly `required` samples, it transitions to READY and publishes `sum/count`. So A matches. B incorrectly keeps bias zero or fails to publish/update.
+            *   Test 2 & 3: `required=2`, 2 calls. Samples have norm `sqrt(0.707^2 + 0.707^2) ≈ 1.0`. `stationary_limit=1.0`. So `norm <= limit` holds (or is very close). After 2 calls, `count >= required`. Transition to READY. Publish `sum/count`. Sum = `{1.414..., 1.414..., 0}`. Mean = `{0.707..., 0.707..., 0}`. A matches. B has 0.
+            *   Test 4, 5, 6: `required=2`, 2 calls. Sample `{0.1, 0.1, 0.1}`. Norm ~0.173 <= 1.0. After 2 calls, `count >= required`. Transition to READY. Publish `sum/count` = `{0.1, 0.1, 0.1}`. A matches. B has 0.
+
+3.  **Evaluate Each Test against Requirement**:
+    *   **Test 1**: `required=3`, 3 iterations. After 3rd iter, `count=3 >= required`. Per table: "not READY / norm <= stationary_limit, incremented count >= required -> READY | publish sum/count". `sum` accumulates three `{0.1,0.1,0.1}` -> `{0.3,0.3,0.3}`. `sum/count` = `{0.1,0.1,0.1}`. A gives `{0.1,0.1,0.1}`. B gives `{0,0,0}`. **A is correct.** Reason: Requirement specifies publishing `sum/count` upon reaching `required` samples, yielding the mean.
+    *   **Test 2**: `required=2`, 2 iterations. `norm ≈ 1.0 <= limit`. After 2nd iter, `count=2 >= required`. Transition to READY, publish `sum/count` = `{0.707..., 0.707..., 0}`. A matches. B gives 0. **A is correct.** Reason: Reaches `required` count, must transition to READY and output the accumulated mean.
+    *   **Test 3**: Same as Test 2, just slight float difference in input (`0.7071067811865476` vs `.5`). Still `norm <= limit`. Same logic. **A is correct.** Reason: Meets `required` threshold, correctly computes and publishes mean.
+    *   **Test 4**: `required=2`, 2 iterations. Input `{0.1,0.1,0.1}`. After 2nd iter, `count=2 >= required`. Publish mean `{0.1,0.1,0.1}`. A matches. B gives 0. **A is correct.** Reason: Satisfies `required` condition, implements `sum/count` publication as specified.
+    *   **Test 5**: Identical to Test 4. **A is correct.** Reason: Matches requirement for batch completion and mean publication.
+    *   **Test 6**: Identical to Test 4. **A is correct.** Reason: Matches requirement for batch completion and mean publication.
+
+    Wait, let's double check the exact wording of the table:
+    "not READY / norm <= stationary_limit, incremented count >= required | READY | publish sum/count"
+    This clearly means when the count reaches `required`, the mode changes to READY, and the output `bias` should be `sum / count`.
+    All tests show A producing the correct mean, while B produces zeros. B seems to fail to update/publish the bias upon reaching the required count, or keeps it zero until some other condition.
+    Therefore, A is consistently correct across all tests.
+
+4.  **Structure the Output**:
+    The user wants a JSON with specific format:
+    `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will generate this JSON. I need to make sure the IDs match "测试 1", "测试 2", etc. I'll use numbers 1 to 6.
+    Reasons should be concise, one sentence each.
+    Check constraint: "只依据需求判断... 只输出 JSON".
+    I will strictly follow the format.
+
+    Let's draft the JSON mentally:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求明确要求达到required样本数时发布sum/count，A正确输出了均值。"},
+        {"id": 2, "correct": "A", "reason": "满足norm<=limit且count>=required，状态应转为READY并发布均值，A符合。"},
+        {"id": 3, "correct": "A", "reason": "同测试2，样本范数未超阈值，达到计数要求后应输出累积均值，A正确。"},
+        {"id": 4, "correct": "A", "reason": "两次调用后count等于required，按需求需发布sum/count，A结果正确。"},
+        {"id": 5, "correct": "A", "reason": "与测试4逻辑一致，达到批处理完成条件时应输出计算后的偏置值，A正确。"},
+        {"id": 6, "correct": "A", "reason": "与测试4逻辑一致，满足发布条件，A实现的均值计算符合规范。"}
+      ],
+      "pick": "A"
+    }
+    ```
+
+    Wait, let's verify if there's any trick. The prompt says "moving samples clear the partial window without fault." But here all samples are stationary (norm <= limit). So no clearing happens.
+    "At exactly required samples publish the scaled mean and freeze READY." -> This confirms A.
+    "DISABLE CLEARs." -> Once READY, clears are disabled.
+    All tests stop right after the 2nd or 3rd call, which is exactly when `count >= required`. So the state should be READY, and bias should be published.
+    B outputs 0, which implies it either hasn't published yet or failed to compute. A is definitely correct per spec.
+
+    One minor point: The prompt asks for JSON only. I will output exactly that.
+    I will ensure the JSON keys and values match the request precisely.
+    Format check: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I'll replace 测试编号 with integers 1-6.
+    All reasons are one sentence.
+    Ready.✅
+    Output matches request. 
+    Self-Correction/Refinement during thought: 
+    Should I explicitly mention the state machine row? Yes, briefly in reason.
+    "需求表格明确：当递增后的count≥required时进入READY态并发布sum/count，A正确计算出均值，B保持为零不符合要求。" -> Good.
+    I will generate the JSON now. 
+    All steps verified. No extra text. Only JSON. 
+    Proceeds. 
+    Output Generation. 
+    *(Self-Correction/Verification during drafting)*
+    Let's double check the exact prompt: "只输出 JSON：{"tests":[...],"pick":"..."}"
+    I will strictly output only the JSON string.
+    The IDs in the prompt are "测试 1", "测试 2", etc. I'll use 1, 2, 3, 4, 5, 6.
+    All good. 
+    Output matches. 
+    [Done] 
+    Generating response. 
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求表格规定递增count≥required时需转入READY并发布sum/count，A正确输出了三次采样的均值。"},
+        {"id": 2, "correct": "A", "reason": "样本范数未超限且调用两次后count达required，应按需求发布累积均值，A结果正确。"},
+        {"id": 3, "correct": "A", "reason": "同测试2边界条件，达到计数要求后状态机应发布mean，A符合规范而B错误清零。"},
+        {"id": 4, "correct": "A", "reason": "两次有效采样后count等于required，触发发布条件，A正确计算并输出了偏置均值。"},
+        {"id": 5, "correct": "A", "reason": "逻辑同测试4，满足批处理完成条件即应输出sum/count，A实现正确。"},
+        {"id": 6, "correct": "A", "reason": "同上，达到required次数后必须发布计算后的均值，A符合需求描述。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Looks solid. Matches all constraints. Proceeds. 
+    Output Generation. 
+    *(Note: I will ensure the JSON is valid and strictly follows the requested format.)* 
+    Final Check of the Prompt: "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}"
+    I will output exactly that. No markdown formatting if possible, or standard markdown JSON block. The prompt says "只输出 JSON", so I will just output the raw JSON string.
+    All good. 
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "无限制且滤波功率<=释放阈值，应进入RECOVERING并置clean=1；A符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "无限制且滤波功率<=释放阈值，应进入RECOVERING并置clean=1；A符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "无限制且滤波功率<=释放阈值，应进入RECOVERING并置clean=1；A符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "NaN扭矩为无效输入，应锁存FAULT并清零命令；A符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "Inf扭矩为无效输入，应锁存FAULT并清零命令；A符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "先进入LIMITED，恢复后回到NORMAL，下一拍无限制又进入RECOVERING并置clean=1；A符合。"
+  }
+ ],
+ "pick": "A"
+}

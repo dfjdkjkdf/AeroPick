@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确实现 Rodrigues 公式，并在包括空指针在内的失败情况下尽量将输出置零且将无效轴映射为 ADCS_E_RANGE；A/C 对部分失败未先置零。",
+ "_usage": {
+  "prompt": 9013,
+  "completion": 1275
+ }
+}

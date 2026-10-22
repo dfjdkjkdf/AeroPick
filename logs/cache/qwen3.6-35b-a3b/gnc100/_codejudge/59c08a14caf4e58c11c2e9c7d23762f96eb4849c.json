@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C正确实现了全部数学定义与边界校验（显式包含max_rate<0.0），空指针处理安全无越界，且严格遵循了所有失败路径均返回INFINITY/-INFINITY的规范要求。",
+ "_usage": {
+  "prompt": 9183,
+  "completion": 2691
+ }
+}

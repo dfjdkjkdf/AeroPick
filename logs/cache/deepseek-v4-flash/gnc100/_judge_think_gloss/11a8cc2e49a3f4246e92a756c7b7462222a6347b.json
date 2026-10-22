@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "第4次速率=(2.0-1.10)/0.1=9>1，低于max_rejects=3，应进入REJECT(2)，故C符合。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "第2次速率=(2.0-1.0)/0.1=10>1，低于max_rejects=3，应进入REJECT(2)，故C符合。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "第2次速率=10>1，仅第1次拒绝，未达到max_rejects=2，应进入REJECT(2)，故C符合。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "enable=1且field为NULL，无效输入应锁存FAULT(3)，故C符合。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "enable=1且field含NAN，非有限数据应锁存FAULT(3)，故C符合。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "enable=1且field含INFINITY，非有限数据应锁存FAULT(3)，故C符合。"
+  }
+ ],
+ "pick": "C"
+}

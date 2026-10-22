@@ -1,0 +1,387 @@
+{
+ "key": "fe74948bcb4da057e174b744670e83d6d3a00779",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "qr_input.enable = 0;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qr_state.mode = QR_OFF;",
+    "qr_state.good = 0;",
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 2;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qr_state.mode = QR_MONITOR;",
+    "qr_state.good = 1;",
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 2;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qr_state.mode = QR_READY;",
+    "qr_state.good = 20;",
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 20;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body = NULL;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial = NULL;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights = NULL;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 1;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.weights[0] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = -1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;",
+    "qr_config.residual_limit_rad = ADCS_PI + 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 21;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qr_state.mode = QR_MONITOR;",
+    "qr_state.good = 0;",
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.0;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qr_state.mode = QR_MONITOR;",
+    "qr_state.good = 0;",
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = ADCS_PI;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qr_state.mode = QR_MONITOR;",
+    "qr_state.good = 0;",
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 2;",
+    "qr_config.allow_outlier_reject = 1;",
+    "qr_input.count = 4;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.body[3].x = 0.0; qr_input.body[3].y = 0.0; qr_input.body[3].z = 0.0;",
+    "qr_input.inertial[3].x = 0.0; qr_input.inertial[3].y = 0.0; qr_input.inertial[3].z = 0.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;",
+    "qr_input.weights[3] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qr_state.mode = QR_READY;",
+    "qr_state.good = 5;",
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 5;",
+    "qr_config.allow_outlier_reject = 1;",
+    "qr_input.count = 4;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.body[3].x = 0.0; qr_input.body[3].y = 0.0; qr_input.body[3].z = 0.0;",
+    "qr_input.inertial[3].x = 0.0; qr_input.inertial[3].y = 0.0; qr_input.inertial[3].z = 0.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;",
+    "qr_input.weights[3] = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;",
+    "qr_config.allow_outlier_reject = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;",
+    "qr_config.residual_limit_rad = NAN;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "qr_state.mode = QR_MONITOR;",
+    "qr_state.good = 0;",
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 1;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "qr_state.mode = QR_FAULT;",
+    "qr_state.good = 0;",
+    "qr_input.enable = 1;",
+    "qr_config.residual_limit_rad = 0.1;",
+    "qr_config.required_good = 1;",
+    "qr_config.allow_outlier_reject = 0;",
+    "qr_input.count = 3;",
+    "qr_input.body[0].x = 1.0; qr_input.body[0].y = 0.0; qr_input.body[0].z = 0.0;",
+    "qr_input.inertial[0].x = 1.0; qr_input.inertial[0].y = 0.0; qr_input.inertial[0].z = 0.0;",
+    "qr_input.body[1].x = 0.0; qr_input.body[1].y = 1.0; qr_input.body[1].z = 0.0;",
+    "qr_input.inertial[1].x = 0.0; qr_input.inertial[1].y = 1.0; qr_input.inertial[1].z = 0.0;",
+    "qr_input.body[2].x = 0.0; qr_input.body[2].y = 0.0; qr_input.body[2].z = 1.0;",
+    "qr_input.inertial[2].x = 0.0; qr_input.inertial[2].y = 0.0; qr_input.inertial[2].z = 1.0;",
+    "qr_input.weights[0] = 1.0;",
+    "qr_input.weights[1] = 1.0;",
+    "qr_input.weights[2] = 1.0;"
+   ]
+  }
+ ]
+}

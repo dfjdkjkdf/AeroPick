@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B better satisfies the spec: it validates both binary flags, preserves bad count on re-prime, and maintains consecutive stop-rate evidence across COARSE/FINE transitions, while A misses enable-flag validation, clears bad on re-prime, and resets good count when entering FINE.",
+ "_usage": {
+  "prompt": 14041,
+  "completion": 35177
+ }
+}

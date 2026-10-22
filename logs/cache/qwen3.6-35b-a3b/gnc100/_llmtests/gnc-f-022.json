@@ -1,0 +1,127 @@
+{
+ "key": "c39013b688db9fd753eabb9fa3cf633836f09485",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "samples = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "weights = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "direction = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "resultant = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 33;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "weights[0] = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "weights[0] = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "weights[0] = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "weights[0] = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "samples[0].x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "samples[0].x = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "samples[0].x = 0.0;\nsamples[0].y = 0.0;\nsamples[0].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "samples[0].x = 1.0;\nsamples[0].y = 0.0;\nsamples[0].z = 0.0;\nsamples[1].x = 1.0;\nsamples[1].y = 0.0;\nsamples[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "samples[0].x = 1.0;\nsamples[0].y = 0.0;\nsamples[0].z = 0.0;\nsamples[1].x = 0.0;\nsamples[1].y = 1.0;\nsamples[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "samples[0].x = 1.0;\nsamples[0].y = 0.0;\nsamples[0].z = 0.0;\nsamples[1].x = 0.0;\nsamples[1].y = 1.0;\nsamples[1].z = 0.0;\nweights[0] = 2.0;\nweights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "samples[0].x = 1.0;\nsamples[0].y = 0.0;\nsamples[0].z = 0.0;\nsamples[1].x = -1.0;\nsamples[1].y = 0.0;\nsamples[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "samples[0].x = 1.0;\nsamples[0].y = 0.0;\nsamples[0].z = 0.0;\nsamples[1].x = -1.0;\nsamples[1].y = 0.0;\nsamples[1].z = 0.0;\nweights[0] = 1.0;\nweights[1] = 1.000000001;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "count = 1;",
+    "samples[0].x = 1.0;\nsamples[0].y = 0.0;\nsamples[0].z = 0.0;\nweights[0] = 1.0;",
+    "count = 2;\nsamples[1].x = 1.0;\nsamples[1].y = 0.0;\nsamples[1].z = 0.0;\nweights[1] = 1.0;"
+   ]
+  }
+ ]
+}

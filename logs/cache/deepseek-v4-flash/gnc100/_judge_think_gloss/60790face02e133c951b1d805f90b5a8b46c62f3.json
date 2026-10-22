@@ -1,0 +1,20 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "第4次NIS=1200且连续拒绝达3次进入FAULT并锁存计数3；第5次处于FAULT未评估，应发布INF且use_measurement=0，B符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "max_consecutive_reject=1，第1次拒绝即达限进入FAULT并保留计数1；第2次处于FAULT未评估，应发布INF，B符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "第3次连续拒绝达3次进入FAULT并保留计数3；第4次仍处于FAULT未评估，应保留计数3并发布INF，B符合。"
+  }
+ ],
+ "pick": "B"
+}

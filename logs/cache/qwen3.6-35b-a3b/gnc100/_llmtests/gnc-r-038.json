@@ -1,0 +1,125 @@
+{
+ "key": "a8a09c75134ccccde519fc8f46354f5e3bf8effb",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "request = NULL;\nrequest->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\naxes = NULL;\naxes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\ncount = 3;\ntorque_limit_nm = 10.0;\nwheel_torque[0] = 0.0; wheel_torque[1] = 0.0; wheel_torque[2] = 0.0;\nachieved = NULL;\nachieved->x = 0.0; achieved->y = 0.0; achieved->z = 0.0;\nresidual = NULL;\nresidual->x = 0.0; residual->y = 0.0; residual->z = 0.0;\nmask = NULL;\n*mask = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "achieved = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "residual = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "mask = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 2;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 4;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque_limit_nm = -1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque_limit_nm = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque_limit_nm = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque_limit_nm = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes[0].x = 0.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 1.0; axes[1].y = 0.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 1.0; axes[2].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 1.0; axes[1].y = 0.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 1.0; axes[2].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "axes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.99999999999; axes[1].y = 0.0; axes[1].z = 0.00000000001;\naxes[2].x = 0.0; axes[2].y = 1.0; axes[2].z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 5.0; request->y = 5.0; request->z = 5.0;\naxes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\ntorque_limit_nm = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 10.0; request->y = 0.0; request->z = 0.0;\naxes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\ntorque_limit_nm = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 10.000000000000002; request->y = 0.0; request->z = 0.0;\naxes[0].x = 1.0; axes[0].y = 0.0; axes[0].z = 0.0;\naxes[1].x = 0.0; axes[1].y = 1.0; axes[1].z = 0.0;\naxes[2].x = 0.0; axes[2].y = 0.0; axes[2].z = 1.0;\ntorque_limit_nm = 10.0;"
+   ]
+  }
+ ]
+}

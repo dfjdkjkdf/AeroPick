@@ -1,0 +1,125 @@
+{
+ "key": "37907707bd28d1470a0a2e0ecc16784f58724288",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 1.0; predicted->x = 0.0; predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.7071067811865476; predicted->x = 0.7071067811865476; predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.0; predicted->x = 0.0; predicted->y = 0.0; predicted->z = 1.0;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.0; predicted->x = 0.0; predicted->y = 1.0; predicted->z = 0.0;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.0; predicted->x = 1.0; predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 0.0; predicted->x = 0.0; predicted->y = 0.0; predicted->z = -1.0;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = -0.7071067811865476; predicted->x = -0.7071067811865476; predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 0.9999999999999999; predicted->x = 0.0; predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 0.0; predicted->x = 0.0; predicted->y = 0.0; predicted->z = 0.0000000000001;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "predicted = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "measured = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "rotation_vector = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*angle = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "predicted->w = 0.0; predicted->x = 0.0; predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = 1.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "predicted->w = 1.0; predicted->x = 0.0; predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = 0.0; measured->x = 0.0; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 0.7071067811865476; predicted->x = 0.7071067811865476; predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = 0.7071067811865476; measured->x = -0.7071067811865476; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 0.7071067811865476; predicted->x = 0.7071067811865476; predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = -0.7071067811865476; measured->x = 0.7071067811865476; measured->y = 0.0; measured->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.5; predicted->x = 0.5; predicted->y = 0.5; predicted->z = 0.5;\nmeasured->w = 0.5; measured->x = 0.5; measured->y = 0.5; measured->z = 0.5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "predicted->w = 0.5; predicted->x = 0.5; predicted->y = 0.5; predicted->z = 0.5;\nmeasured->w = -0.5; measured->x = -0.5; measured->y = -0.5; measured->z = -0.5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "predicted->w = 1.0 / sqrt(2.0); predicted->x = 1.0 / sqrt(2.0); predicted->y = 0.0; predicted->z = 0.0;\nmeasured->w = 0.0; measured->x = 0.0; measured->y = 1.0; measured->z = 0.0;"
+   ]
+  }
+ ]
+}

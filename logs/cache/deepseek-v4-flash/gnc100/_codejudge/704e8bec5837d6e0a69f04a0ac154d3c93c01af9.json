@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C checks all pointers and calibration/input validity, and zeroes outputs on any range failure before conversion.",
+ "_usage": {
+  "prompt": 10095,
+  "completion": 23910
+ }
+}

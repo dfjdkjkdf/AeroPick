@@ -1,0 +1,30 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "wheels 为 NULL 应返回 ADCS_E_NULL，失败时 fastest 应为 SIZE_MAX，A 为 1.84467e+19 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "momentum 为 NULL 应失败并将非空输出清零、fastest 置 SIZE_MAX，A 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "momentum_norm 为 NULL 应失败并清零 momentum/energy、fastest 置 SIZE_MAX，A 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "energy 为 NULL 应失败并清零 momentum/momentum_norm、fastest 置 SIZE_MAX，A 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "fastest 为 NULL 应失败并清零 momentum/momentum_norm/energy，A 符合。"
+  }
+ ],
+ "pick": "A"
+}

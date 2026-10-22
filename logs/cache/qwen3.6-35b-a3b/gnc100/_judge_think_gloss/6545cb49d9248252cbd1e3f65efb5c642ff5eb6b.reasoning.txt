@@ -1,0 +1,172 @@
+Here's a thinking process:
+
+1.  **Understand the Goal:** The user wants me to act as an aerospace GNC software review expert. I need to evaluate three different implementations (A, B, C) of a C function based on a given requirement and six test cases. For each test case, I must determine which implementation's output matches the requirement. Finally, I need to pick the single best implementation overall. The output must be a specific JSON format.
+
+2.  **Analyze the Requirement:**
+    *   **Function Purpose:** Three-axis normalized-innovation-squared (NIS) gate.
+    *   **Inputs:** `residual` (pointer), `variance` (pointer). Also implicitly `enable`, `accept_threshold`, `reject_threshold`, `max_consecutive_reject`, and internal state (`mode`, `consecutive_reject`).
+    *   **Core Algorithm:**
+        *   Compute whitened vector: `whitened_i = residual_i / sqrt(variance_i)`
+        *   Compute NIS: `NIS = whitened dot whitened` (using linked vector library, but standard math applies).
+        *   Decision Table for NIS:
+            *   `NIS <= accept_threshold`: ACCEPT, reset rejection evidence to zero (`consecutive_reject = 0`).
+            *   `accept_threshold < NIS < reject_threshold`: Preserve prior ACCEPT/REJECT. Increment `consecutive_reject` *only* if preserved decision is REJECT.
+            *   `NIS >= reject_threshold`: REJECT, increment `consecutive_reject`.
+            *   If `consecutive_reject` reaches `max_consecutive_reject`: FAULT, retain count (stop incrementing? "retain count" implies it stays at `max_consecutive_reject`).
+    *   **Input Validation & Fault Handling:**
+        *   Disable resets ACCEPT.
+        *   Require: binary enable, non-NULL finite residual and variance, each variance strictly positive, `0 <= accept_threshold < reject_threshold`, `max_consecutive_reject` in `[1, 20]`.
+        *   Invalid input latches FAULT with `use_measurement = 0`.
+        *   Any FAULT cycle that does not evaluate a measurement publishes `nis` and `whitened_norm` as `INFINITY`.
+        *   `use_measurement` is 1 exactly when published mode is ACCEPT.
+        *   Disable publishes ACCEPT with zero count, `nis` and `whitened_norm` 0, and `use_measurement=1`.
+        *   Report whitened norm as independent diagnostic.
+    *   **State/Output Variables (from context):**
+        *   `ig_input_t`: `enable`, `residual`, `variance`
+        *   `ig_config_t`: `accept_threshold`, `reject_threshold`, `max_consecutive_reject`
+        *   `ig_state_t`: `mode` (IG_ACCEPT=0, IG_REJECT=1, IG_FAULT=2), `consecutive_reject`
+        *   `ig_output_t`: `mode`, `consecutive_reject`, `nis`, `whitened_norm`, `use_measurement`
+    *   **Key Logic Extraction:**
+        *   Check `enable`. If not enabled/binary: disable logic -> mode=ACCEPT, count=0, nis=0, wn=0, use_meas=1.
+        *   Check inputs: pointers non-NULL, values finite, variances > 0, thresholds valid, max_rejects in range. If invalid -> latch FAULT (mode=FAULT, count retained or set?), nis/wn=INFINITY, use_meas=0.
+        *   Compute `whitened_i = res_i / sqrt(var_i)`.
+        *   `NIS = sum(whitened_i^2)`.
+        *   `whitened_norm = sqrt(NIS)`.
+        *   Apply decision table based on current mode and NIS vs thresholds.
+        *   Update `consecutive_reject` accordingly.
+        *   Check if `consecutive_reject == max_consecutive_reject` -> transition to FAULT.
+        *   Output: `mode`, `consecutive_reject`, `nis`, `whitened_norm`, `use_measurement` (1 if ACCEPT, else 0).
+
+3.  **Analyze Test Cases:**
+
+    *   **Test 1:** Boundary test. Valid inputs.
+        *   `enable=1`, `acc_thresh=2.0`, `rej_thresh=7.815`, `max_rej=3`.
+        *   `res = [2.7956..., 0, 0]`, `var = [1, 1, 1]`.
+        *   Compute: `whitened_x = 2.7956 / sqrt(1) = 2.7956`. `NIS = 2.7956^2 ≈ 7.8154`.
+        *   Wait, `7.8154 >= 7.815` (reject_threshold). So NIS >= reject_threshold.
+        *   Initial state: `consecutive_reject` unassigned -> 0. Mode unassigned -> 0 (ACCEPT).
+        *   Since initial mode is ACCEPT, and NIS >= rej_thresh, decision is REJECT. Increment count to 1.
+        *   Output should be: `mode = REJECT (1)`, `consecutive_reject = 1`.
+        *   Let's check implementations: A says `mode=0, count=0`. B says `mode=1, count=1`. C says `mode=1, count=1`.
+        *   According to requirement: NIS >= reject_threshold -> REJECT, increment. So B/C are correct for this step. A is wrong.
+        *   *Self-Correction/Verification:* Is `7.8154 >= 7.815`? Yes. Even if it were slightly less, it's clearly in the reject region or boundary. The threshold is 7.815. `2.79561852654119^2 = 7.81548...`. So it triggers REJECT. Count goes from 0 to 1. Mode becomes REJECT. So B or C is correct.
+
+    *   **Test 2:** Error test. `residual = NULL`.
+        *   Requirement: "non-NULL finite residual and variance". Invalid input latches FAULT.
+        *   Expected: `mode = FAULT (2)`.
+        *   Implementations: A=0, B=2, C=0.
+        *   B matches requirement.
+
+    *   **Test 3:** Error test. `variance = NULL`.
+        *   Same as above. Invalid input -> FAULT.
+        *   Expected: `mode = FAULT (2)`.
+        *   Implementations: A=0, B=2, C=0.
+        *   B matches requirement.
+
+    *   **Test 4:** Error test. `variance->x = 0.0`.
+        *   Requirement: "each variance strictly positive". Variance x is 0 -> Invalid.
+        *   Expected: `mode = FAULT (2)`.
+        *   Implementations: A=0, B=2, C=0.
+        *   B matches requirement.
+
+    *   **Test 5:** Error test. `variance->x = -1.0`.
+        *   Negative variance -> Invalid.
+        *   Expected: `mode = FAULT (2)`.
+        *   Implementations: A=0, B=2, C=0.
+        *   B matches requirement.
+
+    *   **Test 6:** Error test. `variance->x = INFINITY`.
+        *   Variance must be finite (implied by "finite residual and variance", also `sqrt(INFINITY)` is INF, division gives 0 or NaN, but requirement says "finite"). Actually, requirement says "non-NULL finite residual and variance". So INFINITY is invalid.
+        *   Expected: `mode = FAULT (2)`.
+        *   Implementations: A=0, B=2, C=0.
+        *   B matches requirement.
+
+4.  **Synthesize Findings:**
+    *   Test 1: B or C correct (REJECT, count=1). A is wrong.
+    *   Tests 2-6: All error cases requiring FAULT (mode=2). Only B outputs 2. A and C output 0 (ACCEPT), which violates the explicit fault condition for invalid inputs.
+    *   Therefore, B is consistently correct across all tests. C might be correct for Test 1, but fails all error tests. A fails all tests.
+    *   Conclusion: B is the only implementation that satisfies the requirement for all provided tests.
+
+5.  **Draft JSON Response (Mental Refinement):**
+    Need to follow the exact format: `{"tests":[{"id":测试编号,"correct":"A|B|C|未规定|无法判断","reason":"一句话"}],"pick":"A|B|C"}`
+    Let's draft the reasons concisely:
+    T1: NIS≈7.8155≥reject_threshold，应进入REJECT并计数+1，B/C符合。
+    T2-T6: 输入非法（空指针或方差不满足正有限值），需求明确要求置FAULT(2)，仅B符合。
+    Pick: B
+
+    Check format requirements: "只输出 JSON：..."
+    I will construct the JSON carefully.
+    IDs: 1, 2, 3, 4, 5, 6.
+    Reasons should be one sentence each.
+    T1: NIS值约7.8155大于等于拒绝阈值，按决策表应判定为REJECT且连续拒绝计数加1，B与C输出正确。
+    T2: residual为空指针属非法输入，需求规定应置FAULT(2)，仅B符合。
+    T3: variance为空指针属非法输入，需求规定应置FAULT(2)，仅B符合。
+    T4: 方差分量为0不满足“严格为正”要求，属非法输入应置FAULT(2)，仅B符合。
+    T5: 方差分量为负数不满足“严格为正”要求，属非法输入应置FAULT(2)，仅B符合。
+    T6: 方差分量为无穷大不满足“有限”要求，属非法输入应置FAULT(2)，仅B符合。
+    Pick: B
+
+    Wait, let's double check T1. The prompt says "A=0; B=1; C=1". Both B and C are correct for T1. But B is correct for all. So pick B.
+    Is there any nuance in the requirement about "Invalid input latches FAULT with use_measurement=0"? The tests only compare `ig_state.mode` and `ig_state.consecutive_reject`. B sets mode=2, which matches FAULT.
+    All good.
+
+    One minor point: Test 1 says "boundary". `2.79561852654119^2 = 7.81548...`. Threshold is `7.815`. It's strictly greater. So REJECT is correct.
+    The reason for T1 can just say "NIS计算值大于拒绝阈值，应触发REJECT状态并将计数器置1，B和C正确".
+    I will keep it concise.
+
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "NIS计算值约7.8155大于拒绝阈值7.815，按需求应判定REJECT且连续拒绝计数加1，B输出正确。"},
+        {"id": 2, "correct": "B", "reason": "残差指针为空属非法输入，需求明确规定非法输入需锁存FAULT(2)模式，仅B符合。"},
+        {"id": 3, "correct": "B", "reason": "方差指针为空属非法输入，需求明确规定非法输入需锁存FAULT(2)模式，仅B符合。"},
+        {"id": 4, "correct": "B", "reason": "方差分量不满足严格为正要求，属非法输入需锁存FAULT(2)模式，仅B符合。"},
+        {"id": 5, "correct": "B", "reason": "方差分量为负数不满足严格为正要求，属非法输入需锁存FAULT(2)模式，仅B符合。"},
+        {"id": 6, "correct": "B", "reason": "方差分量为无穷大不满足有限性要求，属非法输入需锁存FAULT(2)模式，仅B符合。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Check against constraints: "只依据需求判断", "每测试一种实现符合", "JSON格式".
+    All matches. I will output exactly this.
+    One detail: In T1, both B and C are correct. I'll mark it as "B" (or "B/C" but the prompt says "A|B|C|未规定|无法判断", so I'll stick to B since it's the overall winner, or maybe note B/C but pick B. The prompt says "哪一种实现的输出符合需求", implying singular. I'll just say B.)
+    Actually, to be precise, I'll say "B或C" if allowed, but the enum is strict. I'll just put "B". Or "B/C". I'll stick to "B".
+    Wait, the prompt says `correct":"A|B|C|未规定|无法判断"`. I will use "B".
+    Reason for T1: NIS值约7.8155大于等于拒绝阈值，应判定REJECT且计数+1，B输出正确。
+    All good.
+    Final check of the prompt: "只输出 JSON：..."
+    I will generate exactly that. 
+    One thing: Test 1 output difference shows `ig_state.consecutive_reject：A=0；B=1；C=1` and `ig_state.mode：A=0；B=1；C=1`. So B and C are identical here. I'll just assign B.
+    Everything aligns. Proceed. 
+    Output matches requested format.✅
+    Self-Correction/Refinement during thought: 
+    Should I mention C for T1? The prompt allows only A/B/C. I'll just pick B. It's fine.
+    The reasoning is solid.
+    Generate. 
+    Output Generation. 
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "NIS计算值约7.8155大于拒绝阈值7.815，按决策表应判定REJECT并将连续拒绝计数加1，B输出正确。"},
+        {"id": 2, "correct": "B", "reason": "残差指针为空属非法输入，需求明确规定非法输入需锁存FAULT(2)模式，仅B符合。"},
+        {"id": 3, "correct": "B", "reason": "方差指针为空属非法输入，需求明确规定非法输入需锁存FAULT(2)模式，仅B符合。"},
+        {"id": 4, "correct": "B", "reason": "方差分量不满足严格为正要求，属非法输入需锁存FAULT(2)模式，仅B符合。"},
+        {"id": 5, "correct": "B", "reason": "方差分量为负数不满足严格为正要求，属非法输入需锁存FAULT(2)模式，仅B符合。"},
+        {"id": 6, "correct": "B", "reason": "方差分量为无穷大不满足有限性要求，属非法输入需锁存FAULT(2)模式，仅B符合。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Matches perfectly. No extra text. Proceeds. 
+    Output Generation. 
+    *(Self-Correction/Verification during drafting)*: 
+    Wait, let's verify T1 calculation precisely: `2.79561852654119^2 = 7.815483...`. Threshold is `7.815`. `7.815483 >= 7.815` is true. So REJECT. Count increments from 0 to 1. Mode becomes REJECT (1). Correct.
+    All error tests: `mode` should be FAULT (2). Only B has 2. Correct.
+    The JSON structure is exactly as requested.
+    Ready. 
+    Output matches response. 
+    [Done] 
+    *Self-Correction/Note during thought*: The prompt says `correct":"A|B|C|未规定|无法判断"`. I will strictly follow this.
+    I will produce the JSON now. 
+    Output Generation. (Proceeds)

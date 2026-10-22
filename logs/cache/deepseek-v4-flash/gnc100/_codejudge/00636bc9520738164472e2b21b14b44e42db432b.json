@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly uses adcs_vec3_normalize, maps normalization failure to ADCS_E_RANGE, and performs all required validation and computations.",
+ "_usage": {
+  "prompt": 9222,
+  "completion": 15508
+ }
+}

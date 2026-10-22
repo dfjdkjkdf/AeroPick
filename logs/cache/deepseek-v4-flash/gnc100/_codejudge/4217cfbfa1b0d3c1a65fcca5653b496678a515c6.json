@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B correctly validates inputs, computes the minimum-norm dipole with uniform norm saturation, sets saturated_axes to 7/0, and zeroes both outputs on all failures including null pointers.",
+ "_usage": {
+  "prompt": 9804,
+  "completion": 11715
+ }
+}

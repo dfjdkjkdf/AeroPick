@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定配置需满足 0 <= recovered < saturated，测试输入 recovered_rad_s 为负值属无效配置，应触发 FAULT 锁存并清零输出，实现 B 完全符合该要求。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9228,
+  "completion": 2038
+ }
+}

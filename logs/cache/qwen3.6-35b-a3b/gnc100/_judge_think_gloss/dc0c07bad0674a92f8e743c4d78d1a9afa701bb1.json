@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定分配值为“-轴向量点乘请求力矩”，A符号正确且残差(requested-achieved)计算符合定义，B符号相反导致残差为零。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "A遵循负号分配原则且未触发限幅，状态保持NORMAL，B符号错误违背核心分配公式。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "请求力矩超出幅值限幅(10.1>10)，A正确钳位至-10并置为LIMITED状态，B符号错误且未处理限幅。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同测试3，A严格遵循“先点乘取负、再限幅、后更新状态”的需求流程。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "虽处于LIMITED状态，但slew变化量恰等于限值(20<=20)未新增超限，幅度限幅仍生效，A输出正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "slew限值(4.9)小于理论变化量(5)，A正确钳位至-4.9并进入LIMITED状态，B完全忽略slew限幅。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 12588,
+  "completion": 4869
+ }
+}

@@ -1,0 +1,131 @@
+{
+ "key": "28298e0980437f56d32bfd8c50d782e3fee2591b",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = -2.0;\nrequested_dipole_a_m2->z = 3.0;\nfield_body_t->x = 0.5;\nfield_body_t->y = -1.5;\nfield_body_t->z = 2.5;\nper_axis_limit_a_m2->x = 10.0;\nper_axis_limit_a_m2->y = 10.0;\nper_axis_limit_a_m2->z = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_dipole_a_m2->x = -1.0;\nrequested_dipole_a_m2->y = 2.0;\nrequested_dipole_a_m2->z = -3.0;\nfield_body_t->x = -0.5;\nfield_body_t->y = 1.5;\nfield_body_t->z = -2.5;\nper_axis_limit_a_m2->x = 10.0;\nper_axis_limit_a_m2->y = 10.0;\nper_axis_limit_a_m2->z = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 2.0;\nrequested_dipole_a_m2->z = 3.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 0.0;\nper_axis_limit_a_m2->y = 0.0;\nper_axis_limit_a_m2->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_dipole_a_m2->x = 0.0;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 2.0;\nfield_body_t->z = 3.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_dipole_a_m2->x = 5.0;\nrequested_dipole_a_m2->y = -5.0;\nrequested_dipole_a_m2->z = 5.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 2.0;\nfield_body_t->z = 3.0;\nper_axis_limit_a_m2->x = 5.0;\nper_axis_limit_a_m2->y = 5.0;\nper_axis_limit_a_m2->z = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_dipole_a_m2->x = 5.0000001;\nrequested_dipole_a_m2->y = -5.0000001;\nrequested_dipole_a_m2->z = 5.0000001;\nfield_body_t->x = 1.0;\nfield_body_t->y = 2.0;\nfield_body_t->z = 3.0;\nper_axis_limit_a_m2->x = 5.0;\nper_axis_limit_a_m2->y = 5.0;\nper_axis_limit_a_m2->z = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_dipole_a_m2->x = 4.9999999;\nrequested_dipole_a_m2->y = -4.9999999;\nrequested_dipole_a_m2->z = 4.9999999;\nfield_body_t->x = 1.0;\nfield_body_t->y = 2.0;\nfield_body_t->z = 3.0;\nper_axis_limit_a_m2->x = 5.0;\nper_axis_limit_a_m2->y = 5.0;\nper_axis_limit_a_m2->z = 5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_dipole_a_m2->x = 20.0;\nrequested_dipole_a_m2->y = 0.1;\nrequested_dipole_a_m2->z = -30.0;\nfield_body_t->x = 0.0;\nfield_body_t->y = 1.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 2.0;\nper_axis_limit_a_m2->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "requested_dipole_a_m2->x = -20.0;\nrequested_dipole_a_m2->y = -0.1;\nrequested_dipole_a_m2->z = 30.0;\nfield_body_t->x = 0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 1.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 2.0;\nper_axis_limit_a_m2->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 2.0;\nrequested_dipole_a_m2->z = 3.0;\nfield_body_t->x = 0.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 2.0;\nper_axis_limit_a_m2->z = 3.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2 = NULL;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t = NULL;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2 = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = 1.0;\ncommand = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = 1.0;\ntorque_nm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = NAN;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = INFINITY;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 0.0;\nfield_body_t->y = NAN;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 1.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = -1.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 0.0;\nper_axis_limit_a_m2->y = INFINITY;\nper_axis_limit_a_m2->z = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "requested_dipole_a_m2->x = 1.0;\nrequested_dipole_a_m2->y = 0.0;\nrequested_dipole_a_m2->z = 0.0;\nfield_body_t->x = 1.0;\nfield_body_t->y = 0.0;\nfield_body_t->z = 0.0;\nper_axis_limit_a_m2->x = 0.0;\nper_axis_limit_a_m2->y = 1.0;\nper_axis_limit_a_m2->z = NAN;"
+   ]
+  }
+ ]
+}

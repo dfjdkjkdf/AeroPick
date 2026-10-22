@@ -1,0 +1,1 @@
+{"prompt_sha1": "d648b2994987b82194da930fa5bf3dcaa2745e3f", "discrete": [["adcs_status_t", null, ["0", "1", "2", "3", "4", "5"]]], "continuous": [["q_bi.w", [4], -1.0, 1.0], ["covariance_i.m", [3, 3], -1000000.0, 1000000.0]], "outputs": [["covariance_b.m", [3, 3], null]]}

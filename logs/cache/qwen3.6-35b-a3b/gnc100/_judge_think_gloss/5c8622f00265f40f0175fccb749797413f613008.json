@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定NULL输入需触发latch FAULT，对应枚举值为2，B输出正确。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "需求明确规定NULL输入需触发latch FAULT，对应枚举值为2，B输出正确。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "需求明确规定NULL输入需触发latch FAULT，对应枚举值为2，B输出正确。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "需求明确规定负数限制条件需触发latch FAULT，对应枚举值为2，B输出正确。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "需求明确规定负数限制条件需触发latch FAULT，对应枚举值为2，B输出正确。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "需求明确要求count需在1..20范围内，0越界需触发latch FAULT，对应枚举值为2，B输出正确。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9365,
+  "completion": 2215
+ }
+}

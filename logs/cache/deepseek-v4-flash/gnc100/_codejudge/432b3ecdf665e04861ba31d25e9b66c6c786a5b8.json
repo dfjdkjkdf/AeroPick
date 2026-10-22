@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly normalizes q_BI, uses the linked DCM and transpose for round-trip, computes error against the original inertial vector, and zeros body/recovered with error=INFINITY for both NULL and degenerate/nonfinite failures.",
+ "_usage": {
+  "prompt": 8892,
+  "completion": 3148
+ }
+}

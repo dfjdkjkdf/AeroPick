@@ -1,0 +1,8 @@
+{
+ "pick": "C",
+ "reason": "C correctly handles NULL and range failures by zeroing non-NULL outputs, validates finite symmetric input with nonnegative diagonal, and computes the congruence transform using provided GNC primitives.",
+ "_usage": {
+  "prompt": 10505,
+  "completion": 4899
+ }
+}

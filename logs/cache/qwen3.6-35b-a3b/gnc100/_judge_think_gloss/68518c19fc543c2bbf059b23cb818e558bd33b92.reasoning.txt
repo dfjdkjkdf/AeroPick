@@ -1,0 +1,208 @@
+Here's a thinking process:
+
+1.  **Understand the Goal:** The user wants me to act as an aerospace GNC software review expert. I need to evaluate three different implementations (A, B, C) of a specific C function based on a given requirement and test cases. I must output a JSON object with my judgment for each test case and a final pick for the best implementation.
+
+2.  **Analyze the Requirement:**
+    *   **Function:** Three-axis normalized-innovation-squared (NIS) gate.
+    *   **Inputs:** `residual` (pointer), `variance` (pointer). Also implicit inputs from context: `enable`, `accept_threshold`, `reject_threshold`, `max_consecutive_reject`.
+    *   **Core Algorithm:**
+        *   Compute whitened vector: `whitened_i = residual_i / sqrt(variance_i)`
+        *   Compute NIS: `NIS = whitened dot whitened` (using linked vector library, but here it's just the sum of squares since it's 3-axis).
+        *   Decision Table:
+            *   `NIS <= accept_threshold`: ACCEPT, reset rejection evidence count to zero.
+            *   `accept_threshold < NIS < reject_threshold`: Preserve prior ACCEPT/REJECT. Increment count *only* if preserved decision is REJECT.
+            *   `NIS >= reject_threshold`: REJECT, increment count.
+            *   If `consecutive_reject` reaches `max_consecutive_reject`: FAULT, retain count (don't reset).
+        *   **Disable behavior:** Disable resets ACCEPT. (Wait, "Disable resets ACCEPT." probably means if `enable=0`, it resets to ACCEPT state? Or maybe it publishes ACCEPT with zero count, nis=0, whitened_norm=0, use_measurement=1. Let's check the exact wording: "Disable resets ACCEPT. Require binary enable, non-NULL finite residual and variance, each variance strictly positive, 0<=accept_threshold<reject_threshold, and max rejects in 1..20. Invalid input latches FAULT with use_measurement=0. Any FAULT cycle that does not evaluate a measurement publishes nis and whitened_norm as INFINITY. use_measurement is 1 exactly when the published mode is ACCEPT; disable publishes ACCEPT with zero count, nis and whitened_norm 0, and use_measurement=1.")
+        *   Wait, the text says: "Disable resets ACCEPT." This likely means when `enable == 0`, the state resets to ACCEPT.
+        *   Input Validation: `non-NULL finite residual and variance`, `each variance strictly positive`, thresholds valid, `max_consecutive_reject` in 1..20.
+        *   Invalid input -> Latch FAULT with `use_measurement=0`.
+        *   FAULT cycle without measurement -> publish `nis` and `whitened_norm` as `INFINITY`.
+        *   `use_measurement = 1` exactly when published mode is ACCEPT.
+        *   Disable -> publishes ACCEPT with zero count, nis=0, whitened_norm=0, use_measurement=1.
+        *   Report whitened norm as independent diagnostic.
+        *   Prefer GNC primitives.
+        *   Generation stops before `}`.
+
+    Let's clarify the state machine logic from the requirement:
+    *   Inputs: `ig_input.enable`, `ig_input.residual`, `ig_input.variance`, `ig_config.accept_threshold`, `ig_config.reject_threshold`, `ig_config.max_consecutive_reject`.
+    *   State: `ig_state.mode` (ACCEPT=0, REJECT=1, FAULT=2), `ig_state.consecutive_reject`.
+    *   Output: `ig_output.mode`, `ig_output.consecutive_reject`, `ig_output.nis`, `ig_output.whitened_norm`, `ig_output.use_measurement`.
+    *   Logic per cycle:
+        1. Check validity: pointers non-NULL, values finite, variances > 0, thresholds valid, max_rejects in range.
+        2. If invalid input: latch FAULT (`mode=FAULT`, `consecutive_reject` stays?), `use_measurement=0`. Publish `nis=INF`, `whitened_norm=INF`.
+        3. If `enable == 0` (disable): reset to ACCEPT. `mode=ACCEPT`, `consecutive_reject=0`, `nis=0`, `whitened_norm=0`, `use_measurement=1`.
+        4. If valid & enabled:
+           - Compute whitened vector components: `w[i] = r[i] / sqrt(v[i])`.
+           - `whitened_norm = sqrt(w.x^2 + w.y^2 + w.z^2)`.
+           - `NIS = whitened_norm^2` (or dot product).
+           - Compare NIS to thresholds:
+             - `NIS <= accept_threshold`: `mode = ACCEPT`, `consecutive_reject = 0`.
+             - `NIS >= reject_threshold`: `mode = REJECT`, `consecutive_reject++`.
+             - `accept_threshold < NIS < reject_threshold`: preserve previous mode. If previous was REJECT, `consecutive_reject++`.
+           - Check fault condition: if `consecutive_reject >= max_consecutive_reject`, set `mode = FAULT`. Retain count.
+           - `use_measurement = 1` if `mode == ACCEPT`, else `0`.
+           - Publish `nis = NIS`, `whitened_norm = whitened_norm`.
+
+    Let's re-read carefully: "Disable resets ACCEPT." -> When `enable=0`, state becomes ACCEPT.
+    "Invalid input latches FAULT with use_measurement=0." -> Once FAULT, stays FAULT until reset? Or just for that cycle? "latches" implies persistent. But let's assume for these tests, we just see the immediate effect or it stays. The tests only call once.
+    "Any FAULT cycle that does not evaluate a measurement publishes nis and whitened_norm as INFINITY."
+    "use_measurement is 1 exactly when the published mode is ACCEPT"
+    "disable publishes ACCEPT with zero count, nis and whitened_norm 0, and use_measurement=1."
+
+    Let's analyze each test case based on this understanding.
+
+    **Test 1:**
+    *   Inputs: `enable=1`, `acc_thr=2.0`, `rej_thr=7.815`, `max_rej=3`.
+    *   `residual = (2.7956, 0, 0)`, `variance = (1, 1, 1)`.
+    *   Valid inputs? Yes. All finite, variances > 0. Thresholds valid. Max rej in range.
+    *   Compute whitened: `w = (2.7956/1, 0, 0) = (2.7956, 0, 0)`.
+    *   `whitened_norm = 2.7956`.
+    *   `NIS = 2.7956^2 ≈ 7.8154`.
+    *   Compare NIS: `7.8154 >= 7.815` (reject_threshold). So `NIS >= reject_threshold`.
+    *   Decision: REJECT. Increment `consecutive_reject`. Initial count is 0 (uninitialized/unassigned in test, so 0). New count = 1.
+    *   Mode becomes REJECT.
+    *   Fault check: `1 < 3`, so no FAULT.
+    *   Output: `mode = REJECT (1)`, `consecutive_reject = 1`.
+    *   Matches B and C. A says `mode=0, count=0`. So A is wrong. B and C match the calculation.
+    *   Wait, `7.815^2` is actually `61.07`, but `reject_threshold` is `7.815`. NIS is ~7.8154. It's slightly above. So REJECT is correct.
+    *   Conclusion for Test 1: B/C correct.
+
+    **Test 2:**
+    *   Inputs: `enable=1`, thresholds set, `max_rej=3`.
+    *   `residual = NULL`.
+    *   Validity check: `residual` is NULL -> Invalid input.
+    *   Action: Latch FAULT. `mode = FAULT (2)`. `use_measurement = 0`.
+    *   Output: `mode = 2`.
+    *   Matches B and C. A says `mode=0`. So A is wrong.
+    *   Conclusion for Test 2: B/C correct.
+
+    **Test 3:**
+    *   Inputs: `enable=1`, thresholds set, `max_rej=3`.
+    *   `variance = NULL`.
+    *   Validity check: `variance` is NULL -> Invalid input.
+    *   Action: Latch FAULT. `mode = FAULT (2)`.
+    *   Output: `mode = 2`.
+    *   Matches B and C. A says `mode=0`. So A is wrong.
+    *   Conclusion for Test 3: B/C correct.
+
+    **Test 4:**
+    *   Inputs: `enable=1`, thresholds set, `max_rej=3`.
+    *   `variance->x = 0.0`, others 1.0.
+    *   Validity check: `variance->x` must be strictly positive. 0.0 is not > 0. -> Invalid input.
+    *   Action: Latch FAULT. `mode = FAULT (2)`.
+    *   Output: `mode = 2`.
+    *   Matches B and C. A says `mode=0`. So A is wrong.
+    *   Conclusion for Test 4: B/C correct.
+
+    **Test 5:**
+    *   Inputs: `enable=1`, thresholds set, `max_rej=3`.
+    *   `variance->x = -1.0`.
+    *   Validity check: strictly positive required. Negative -> Invalid input.
+    *   Action: Latch FAULT. `mode = FAULT (2)`.
+    *   Output: `mode = 2`.
+    *   Matches B and C. A says `mode=0`. So A is wrong.
+    *   Conclusion for Test 5: B/C correct.
+
+    **Test 6:**
+    *   Inputs: `enable=1`, thresholds set, `max_rej=3`.
+    *   `residual=(1,0,0)`, `variance->x = INFINITY`.
+    *   Validity check: `variance` must be finite. INFINITY is not finite -> Invalid input.
+    *   Action: Latch FAULT. `mode = FAULT (2)`.
+    *   Output: `mode = 2`.
+    *   Matches B and C. A says `mode=0`. So A is wrong.
+    *   Conclusion for Test 6: B/C correct.
+
+    Wait, all error tests (2-6) show B and C returning FAULT (2), while A returns ACCEPT (0). This strongly suggests A fails input validation, whereas B and C correctly implement it.
+    Between B and C, they are identical in all provided outputs. I need to pick one. Usually, in these prompts, if two implementations match perfectly on the given tests, either is fine, or there's a subtle hint. But the prompt says "同一个 C 函数有几种不同实现（记为 A、B、C）... 你看不到代码". I will just pick B or C. Since they are identical in results, I'll note that B and C both match, and arbitrarily pick B (or C). Actually, the prompt asks to pick one: `"pick":"A|B|C"`. I'll pick B. Or maybe C? It doesn't matter much as long as reasoning is sound. I'll stick with B. Wait, sometimes one has better numerical stability or follows "Prefer the provided GNC primitives where they naturally express the algorithm." But I can't see code. I'll just say B matches.
+
+    Let's double check Test 1 calculation.
+    `residual->x = 2.79561852654119`
+    `variance->x = 1.0`
+    `whitened_x = 2.79561852654119 / 1.0 = 2.79561852654119`
+    `NIS = 2.79561852654119^2 = 7.815483...`
+    `reject_threshold = 7.815`
+    `7.815483 > 7.815` -> REJECT.
+    Count increments from 0 to 1.
+    Mode becomes REJECT (1).
+    So B/C are correct.
+
+    All tests point to B and C being correct. A is incorrect on all counts.
+    I will formulate the JSON response.
+    For each test, reason briefly.
+    Test 1: NIS≈7.8155 > 7.815，触发REJECT，计数+1至1，模式置1。B/C符合。
+    Test 2: residual为NULL，非法输入，应置FAULT(2)。B/C符合。
+    Test 3: variance为NULL，非法输入，应置FAULT(2)。B/C符合。
+    Test 4: variance元素为0，不满足严格正数要求，非法输入，应置FAULT(2)。B/C符合。
+    Test 5: variance元素为负，非法输入，应置FAULT(2)。B/C符合。
+    Test 6: variance元素为INF，非有限值，非法输入，应置FAULT(2)。B/C符合。
+    Pick: B (或C，两者表现一致，任选其一即可，通常选第一个正确的)
+
+    Check constraint: "只依据需求判断... 最后综合所有测试，选出最符合需求的一种实现。"
+    I will output JSON as requested.
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "计算得NIS≈7.8155大于reject_threshold(7.815)，应判定为REJECT且连续拒绝计数加1至1，B/C输出正确。"},
+        {"id": 2, "correct": "B", "reason": "residual指针为NULL属于非法输入，需求规定应锁存FAULT模式(2)，B/C输出正确。"},
+        {"id": 3, "correct": "B", "reason": "variance指针为NULL属于非法输入，需求规定应锁存FAULT模式(2)，B/C输出正确。"},
+        {"id": 4, "correct": "B", "reason": "variance存在0值不满足严格正数要求，属非法输入，应锁存FAULT模式(2)，B/C输出正确。"},
+        {"id": 5, "correct": "B", "reason": "variance存在负值不满足严格正数要求，属非法输入，应锁存FAULT模式(2)，B/C输出正确。"},
+        {"id": 6, "correct": "B", "reason": "variance存在INF值不满足有限性要求，属非法输入，应锁存FAULT模式(2)，B/C输出正确。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Wait, should I specify B or C? They are identical. I'll pick B. The prompt says "哪一种实现的输出符合需求", implying maybe only one is fully correct, but given the data, B and C match. I'll state B/C are identical in results, pick B. Or maybe C is preferred for some reason? No info. I'll just pick B.
+    Let's verify the exact wording for Test 1: `ig_state.consecutive_reject：A=0；B=1；C=1`, `ig_state.mode：A=0；B=1；C=1`.
+    All good.
+    One minor point: "Invalid input latches FAULT with use_measurement=0." The test only shows `ig_state.mode`. That's fine.
+    I will generate the JSON.
+    Check format: `{"tests":[{"id":测试编号,"correct":"A|B|C|未规定|无法判断","reason":"一句话"}],"pick":"A|B|C"}`
+    All matches.
+    Ready. 
+    Self-Correction/Refinement during thought:
+    Could Test 1 be ACCEPT? `NIS <= accept_threshold` is ACCEPT. `accept_threshold` is 2.0. NIS is ~7.815. Definitely REJECT.
+    What about floating point comparison? `7.815483 > 7.815` is clearly true. Even with epsilon, it's outside.
+    So B/C are definitively correct.
+    I will output exactly as requested.
+    One thing: The prompt says "你看不到代码，也不知道各实现的数量。" and "请**只依据需求**判断".
+    I'll stick to the analysis.
+    Output matches request.✅
+    Proceed. 
+    Generating response. 
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "根据输入计算得NIS≈7.8155，大于reject_threshold(7.815)，按决策表应进入REJECT状态并将连续拒绝计数+1至1，B/C结果正确。"},
+        {"id": 2, "correct": "B", "reason": "residual为NULL违反非空要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C结果正确。"},
+        {"id": 3, "correct": "B", "reason": "variance为NULL违反非空要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C结果正确。"},
+        {"id": 4, "correct": "B", "reason": "variance元素为0不满足严格正数要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C结果正确。"},
+        {"id": 5, "correct": "B", "reason": "variance元素为负不满足严格正数要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C结果正确。"},
+        {"id": 6, "correct": "B", "reason": "variance元素为INF不满足有限性要求，属非法输入，需求规定应直接锁存FAULT模式(2)，B/C结果正确。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    All steps verified. Output matches constraint.✅
+    Note: I used "B" as the pick since B and C are identical in the provided outputs, and conventionally the first matching one is selected. I could also write "B/C" but the schema says `A|B|C`. I'll stick with B. If needed, I'll mention they are equivalent in the reason, but keep the pick as B. Actually, the prompt says `correct":"A|B|C|未规定|无法判断"`, so I must pick one letter. I'll pick B.
+    Final check of the prompt: "最后综合所有测试，选出最符合需求的一种实现。" -> B.
+    Done. 
+    Output matches exactly. 
+    Proceeds. 
+    [Output Generation] -> *Self-Correction/Verification during generation prep*: 
+    Wait, let's look at Test 1 again. `ig_state.mode：A=0；B=1；C=1`. `ig_state.consecutive_reject：A=0；B=1；C=1`.
+    Is it possible that `NIS` should be compared differently? `whitened dot whitened`. Yes, sum of squares.
+    Everything is solid.
+    I will produce the JSON. 
+    One detail: `ig_state.mode` enum: `IG_ACCEPT=0, IG_REJECT=1, IG_FAULT=2`. So 1 is REJECT, 2 is FAULT. Correct.
+    All good. 
+    Output matches. 
+    [Done] 
+    *(Self-Correction/Note during thought)*: I should make sure the JSON keys match exactly: `"id"`, `"correct"`, `"reason"`. The prompt uses Chinese numbers for IDs in the list: `测试 1`, `测试 2`, etc. I will use integers `1, 2, 3, 4, 5, 6`.
+    The prompt says: `{"tests":[{"id":测试编号,"correct":"A|B|C|未规定|无法判断","reason":"一句话"}],"pick":"A|B|C"}`
+    I will follow this strictly.
+    Final JSON construction.✅
+    Output Generation. 
+    *(Done.)*

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A correctly computes the perpendicular projection, applies uniform norm saturation with saturated_axes=7 when scaled, and zeroes outputs on range/degenerate failures; C fails to zero outputs on E_RANGE.",
+ "_usage": {
+  "prompt": 9572,
+  "completion": 5976
+ }
+}

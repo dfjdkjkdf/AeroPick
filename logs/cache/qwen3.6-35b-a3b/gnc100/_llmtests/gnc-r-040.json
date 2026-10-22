@@ -1,0 +1,125 @@
+{
+ "key": "6141490df4ba921727ca75ea143e310c5ea85368",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "request = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "parallel = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "perpendicular = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "*fraction = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "fraction = NULL;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 0.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.0;\nrequest->y = 1.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 2.0;\nrequest->z = 3.0;\nfield->x = 4.0;\nfield->y = 5.0;\nfield->z = 6.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = -1.0;\nrequest->y = -2.0;\nrequest->z = -3.0;\nfield->x = 4.0;\nfield->y = 5.0;\nfield->z = 6.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0e-13;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0e-13;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0e-12;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 0.999999999999;\nfield->y = 0.0;\nfield->z = 0.000000000001;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0/0.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 0.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 0.0/0.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nfield->x = 1.0;\nfield->y = 1.0/0.0;\nfield->z = 0.0;"
+   ]
+  }
+ ]
+}

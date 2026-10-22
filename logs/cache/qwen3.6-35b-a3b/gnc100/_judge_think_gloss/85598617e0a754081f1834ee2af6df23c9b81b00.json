@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "需求规定空指针需返回ADCS_E_NULL(1)且输出清零，A与C均符合，B直接崩溃违反安全规范，C稳健正确。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "需求数学定义明确力矩为[a,a,a,a]，负幅值属合法有限标量，B与C正确返回ADCS_OK(0)及-1力矩，A误报范围错误，C正确。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "需求要求空指针优先拦截返回ADCS_E_NULL(1)并清零，A与C符合，B因未处理空指针导致崩溃，C正确。"
+  }
+ ],
+ "pick": "C",
+ "_usage": {
+  "prompt": 9811,
+  "completion": 4344
+ }
+}

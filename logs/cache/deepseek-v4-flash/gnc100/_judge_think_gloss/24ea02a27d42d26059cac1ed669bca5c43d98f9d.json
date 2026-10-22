@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "总权重2>=1且两分离正弦均为1>=0.1，按决策表 usable=1，A=1符合。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "总权重6>=1且两分离正弦均为1>=0.1，按决策表 usable=1，A=1符合。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "总权重3>=3为边界满足，两分离正弦均为1>=0.1，usable=1，A=1符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "总权重3<3.0001，不满足 minimum_weight，usable=0，A=0符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "两分离正弦≈0.707>=0.5且总权重2>=1，usable=1，A=1符合。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "body前两向量分离正弦≈0.371<0.5，几何不可用，usable=0，A=0符合。"
+  }
+ ],
+ "pick": "A"
+}

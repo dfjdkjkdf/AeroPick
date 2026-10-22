@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "enable=1且sample=NULL应锁存FAULT且不崩溃，A的输出符合该需求。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "required=2为无效配置，但第3次enable=0应清空全部状态到IDLE，A的mode=0符合。"
+  }
+ ],
+ "pick": "A"
+}

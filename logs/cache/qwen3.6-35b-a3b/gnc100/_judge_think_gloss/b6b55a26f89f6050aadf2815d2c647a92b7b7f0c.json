@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A,C",
+   "reason": "需求明确规定空指针应返回ADCS_E_NULL(1)，A与C正确拦截并返回1，B缺失空指针检查导致崩溃/无返回。"
+  },
+  {
+   "id": 2,
+   "correct": "B,C",
+   "reason": "需求规定非有限输入必须返回ADCS_E_RANGE(2)，B与C正确识别NAN并返回2，A未校验直接计算返回0违规。"
+  },
+  {
+   "id": 3,
+   "correct": "B,C",
+   "reason": "同测试2逻辑，查询时间为NAN属非有限值，B与C正确返回2，A违规返回0。"
+  }
+ ],
+ "pick": "C",
+ "_usage": {
+  "prompt": 9399,
+  "completion": 4458
+ }
+}

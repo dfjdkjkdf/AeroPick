@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A validates all required inputs (including field finiteness) before advancing state and propagates exact helper error codes, matching the contract's failure handling.",
+ "_usage": {
+  "prompt": 8446,
+  "completion": 26851
+ }
+}

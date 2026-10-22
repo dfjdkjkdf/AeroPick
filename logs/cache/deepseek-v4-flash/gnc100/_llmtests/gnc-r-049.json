@@ -1,0 +1,143 @@
+{
+ "key": "ab6a4f04a35823e90ad0252a2f19e1c27b7b7057",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 0.5;\nrequest->y = -0.5;\nrequest->z = 0.5;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = -1.0;\nrequest->y = -1.0;\nrequest->z = -1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 2.0;\nrequest->y = -2.0;\nrequest->z = 0.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = 1.5;\nrequest->y = 0.25;\nrequest->z = -3.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -2.0;\nlimits[1].max_value = 2.0;\nlimits[2].min_value = -4.0;\nlimits[2].max_value = 4.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 0.0;\nrequest->y = 0.0;\nrequest->z = 0.0;\nlimits[0].min_value = 0.0;\nlimits[0].max_value = 0.0;\nlimits[1].min_value = 0.0;\nlimits[1].max_value = 0.0;\nlimits[2].min_value = 0.0;\nlimits[2].max_value = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 5.0;\nrequest->y = 5.0;\nrequest->z = 5.0;\nlimits[0].min_value = 5.0;\nlimits[0].max_value = 5.0;\nlimits[1].min_value = 5.0;\nlimits[1].max_value = 5.0;\nlimits[2].min_value = 5.0;\nlimits[2].max_value = 5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = -5.0;\nrequest->y = -5.0;\nrequest->z = -5.0;\nlimits[0].min_value = 5.0;\nlimits[0].max_value = 5.0;\nlimits[1].min_value = 5.0;\nlimits[1].max_value = 5.0;\nlimits[2].min_value = 5.0;\nlimits[2].max_value = 5.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "request->x = -3.0;\nrequest->y = 4.0;\nrequest->z = -12.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -2.0;\nlimits[1].max_value = 2.0;\nlimits[2].min_value = -3.0;\nlimits[2].max_value = 3.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request = NULL;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;\nlimited = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;\nresidual = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;\nresidual_norm = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;\nmask = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = NAN;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = INFINITY;\nrequest->z = 1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = -INFINITY;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits[0].min_value = 2.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = NAN;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "request->x = 1.0;\nrequest->y = 1.0;\nrequest->z = 1.0;\nlimits[0].min_value = -1.0;\nlimits[0].max_value = 1.0;\nlimits[1].min_value = -1.0;\nlimits[1].max_value = 1.0;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = INFINITY;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "request->x = 1.0e-300;\nrequest->y = -1.0e-300;\nrequest->z = 0.0;\nlimits[0].min_value = -1.0e-300;\nlimits[0].max_value = 1.0e-300;\nlimits[1].min_value = -1.0e-300;\nlimits[1].max_value = 1.0e-300;\nlimits[2].min_value = -1.0;\nlimits[2].max_value = 1.0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A正确诊断有限矩阵并设置valid为仅当行列式>0且C*C^T误差≤tolerance时为1，其他有效输入返回ADCS_OK与valid=0；无效tolerance/非有限矩阵返回ADCS_E_RANGE，且使用GNC原语。",
+ "_usage": {
+  "prompt": 8711,
+  "completion": 24470
+ }
+}

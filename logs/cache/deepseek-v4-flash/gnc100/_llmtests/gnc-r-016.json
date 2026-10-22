@@ -1,0 +1,184 @@
+{
+ "key": "03f2790111ed15e7781ba26cfbc540fba9e65d9b",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 0.0;\npt_config.test_axis_body.y = 1.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 2.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 2;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 2e-6;\npt_input.measured_torque_nm->y = 0.0;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;",
+    "pt_input.measured_torque_nm->x = 2e-6;\npt_input.measured_torque_nm->y = 0.0;\npt_input.measured_torque_nm->z = 0.0;",
+    "pt_input.measured_torque_nm->x = -2e-6;\npt_input.measured_torque_nm->y = 0.0;\npt_input.measured_torque_nm->z = 0.0;",
+    "pt_input.measured_torque_nm->x = -2e-6;\npt_input.measured_torque_nm->y = 0.0;\npt_input.measured_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 1.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 1e-6;\npt_input.field_body_t->y = 2e-6;\npt_input.field_body_t->z = 3e-6;\npt_input.measured_torque_nm->x = 3e-6;\npt_input.measured_torque_nm->y = -3e-6;\npt_input.measured_torque_nm->z = -1e-6;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -0.5e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -0.499999e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 1.0;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 1.0;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -0.999999e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 20;\npt_config.max_samples_per_phase = 200;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 2;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t = NULL;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm = NULL;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = NAN;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = INFINITY;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 0.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 0.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.0;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 1.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 0;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 21;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 0;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 201;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 0.0;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = 0.0;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 2;\npt_config.max_samples_per_phase = 5;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;",
+    "pt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = 0.0;\npt_input.measured_torque_nm->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = 1e-6;\npt_input.measured_torque_nm->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = 1e-6;\npt_input.measured_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 2;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = 0.0;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_IDLE;",
+    "pt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = 0.0;\npt_input.measured_torque_nm->z = 0.0;",
+    "pt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pt_input.enable = 0;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_NEGATIVE;\npt_state.confirm_count = 5;\npt_state.sample_count = 7;",
+    "pt_input.enable = 1;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = 1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_PASS;\npt_state.confirm_count = 3;\npt_state.sample_count = 4;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "pt_input.enable = 1;\npt_config.test_axis_body.x = 1.0;\npt_config.test_axis_body.y = 0.0;\npt_config.test_axis_body.z = 0.0;\npt_config.test_dipole_a_m2 = 1.0;\npt_config.min_fraction = 0.5;\npt_config.confirm_samples = 1;\npt_config.max_samples_per_phase = 10;\npt_input.field_body_t->x = 0.0;\npt_input.field_body_t->y = 0.0;\npt_input.field_body_t->z = 1e-6;\npt_input.measured_torque_nm->x = 0.0;\npt_input.measured_torque_nm->y = -1e-6;\npt_input.measured_torque_nm->z = 0.0;\npt_state.mode = PT_FAULT;\npt_state.confirm_count = 3;\npt_state.sample_count = 4;"
+   ]
+  }
+ ]
+}

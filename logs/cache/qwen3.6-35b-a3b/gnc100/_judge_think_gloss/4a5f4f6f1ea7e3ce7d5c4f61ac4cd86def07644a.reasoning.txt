@@ -1,0 +1,132 @@
+Here's a thinking process:
+
+1.  **Understand the Goal**: The user wants me to act as an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a given requirement document and a set of test cases where their outputs differ. I must determine which implementation's output matches the requirement for each test, and finally pick the overall correct implementation. I must output only JSON.
+
+2.  **Analyze the Requirement**:
+    *   **Function Purpose**: Quality-gated stationary-window gyro bias calibration.
+    *   **Input/State**: `gb_input_t` (enable, rate), `gb_config_t` (limits, thresholds), `gb_state_t` (mode, count, rejected_windows, has_previous, mean, m2, previous_rate, bias, variance, drift_count). Output: `gb_output_t` (mode, count, rejected_windows, rejection, bias, variance).
+    *   **Key Logic**:
+        *   **Enable/Disable**: "Disable clears all state." (Not directly tested here, enable=1 in all tests).
+        *   **Validation**: "Require binary enable, finite nonnegative thresholds, required_samples in 3..100, max_rejected_windows in 1..20, drift_limit_rad_s finite and nonnegative, and drift_confirm_samples in 1..20." -> This is configuration validation, likely done once or checked before processing. All configs here are valid.
+        *   **Rejection Criteria per sample**:
+            *   "An enabled sample is accepted only when its finite rate norm is at most `stationary_limit_rad_s`" -> Check `norm(rate) <= stationary_limit`. If not, reject with `RATE`.
+            *   "and, after the first sample in a window, its vector change is at most `max_sample_delta_rad_s`." -> Check `|rate - previous_rate| <= max_sample_delta`. If not, reject with `STEP`.
+            *   "A rate or delta rejection clears the current window and increments `rejected_windows`."
+        *   **Acceptance & Welford's Algorithm**:
+            *   "Accepted samples update the mean and per-axis second central moment with Welford's algorithm."
+            *   State variables: `count`, `mean`, `m2`.
+            *   `has_previous` flag seems to track if it's the first sample in the window.
+        *   **Window Completion / Variance Check**:
+            *   "At `required_samples`, accept the bias only when every population variance is at most `max_stddev_rad_s` squared." -> `variance = m2 / count`. Check `variance[i] <= max_stddev^2`.
+            *   "A noisy window is rejected and cleared." -> Reject with `VARIANCE`, increment `rejected_windows`, clear window.
+            *   "Latch FAULT when a rejection makes `rejected_windows` reach `max_rejected_windows`."
+            *   "READY freezes the accepted bias and variance for valid enabled cycles." -> Mode transitions to READY. Bias = mean, Variance = variance.
+        *   **Drift Check (while READY)**:
+            *   Compare distance from frozen bias against `drift_limit`. Within limit -> reset drift counter. Outside -> increment. Reaches `drift_confirm_samples` -> discard calibration, restart collection (empty window). Drift does NOT increment `rejected_windows`.
+        *   **Output Publishing**:
+            *   "Rejection reasons are published as NONE, RATE, STEP, or VARIANCE; ordinary collection publishes the current population variance but a rejected window publishes zero statistics."
+            *   "The published bias is zero in every mode except READY;"
+            *   "a valid enabled cycle outside READY/FAULT runs in COLLECT." (Mode 1 is likely GB_COLLECT, 0 is OFF, 2 is READY, 3 is FAULT based on enum `gb_mode_t`). Wait, enum says `GB_OFF = 0, GB_COLLECT = 1, GB_READY = 2, GB_FAULT = 3`. So mode 1 = COLLECT.
+            *   In COLLECT mode: `bias` should be 0. `variance` should be current population variance. `count` should reflect accepted samples in current window. `rejected_windows` accumulates across windows. `rejection` reason for current step.
+
+3.  **Analyze Test Cases**:
+    *   **Common Setup**: All tests have valid config. `enable = 1`. Call 1 time.
+    *   **Tests 1, 2, 5, 6**: Identical setup. `rate = [1e-6, 1e-6, 1e-6]`.
+        *   Norm = sqrt(3)*1e-6 ≈ 1.732e-6. `stationary_limit` = 1e-3. Norm <= limit? Yes.
+        *   First sample in window. Delta check skipped (or passes by definition).
+        *   Accepted. Window updates. `count` becomes 1. `has_previous` becomes 1. `mean` updates to [1e-6, ...]. `previous_rate` updates.
+        *   `required_samples` = 5. Not reached yet. Mode stays COLLECT (1).
+        *   Output `count` should be 1. Mode should be 1 (COLLECT). `gb_state.count` = 1. `gb_state.has_previous` = 1. `mean` = input rate.
+        *   Implementation A shows exactly this: `count=1`, `mode=1`, `state.count=1`, `state.has_previous=1`, `mean=[1e-6...]`.
+        *   Implementation B shows 0s everywhere. This implies B didn't process the sample correctly, or started in a different state, or failed validation silently. Given the requirement clearly states accepted samples update mean/count, A is correct. B is wrong.
+    *   **Test 3**: `rate = [1e-3, 1e-3, 1e-3]`.
+        *   Norm = sqrt(3)*1e-3 ≈ 1.732e-3. `stationary_limit` = 1e-3.
+        *   Norm > limit? Yes. Rejection reason: `RATE`.
+        *   "A rate or delta rejection clears the current window and increments `rejected_windows`."
+        *   Since it's the first call, window was empty/cleared anyway. `rejected_windows` increments to 1.
+        *   Mode stays COLLECT (since not READY/FAULT yet, and rejection doesn't immediately fault unless threshold reached).
+        *   Output: `mode` should be 1 (COLLECT). `rejected_windows` should be 1. `rejection` should be RATE (1). `state.rejected_windows` should be 1.
+        *   Implementation A: `mode=1`, `rejected_windows=1`, `rejection=1`, `state.rejected_windows=1`. Matches requirement.
+        *   Implementation B: All 0s. Wrong.
+    *   **Test 4**: `rate = [1e-3 + 1e-9, ...]`.
+        *   Norm ≈ 1.732e-3 + small. Still > 1e-3. Same logic as Test 3. Rejection RATE. `rejected_windows` = 1.
+        *   Implementation A matches. B is 0s. Wrong.
+
+4.  **Synthesize Findings**:
+    *   Tests 1, 2, 5, 6: Input rate is low enough. Should be accepted. Count increments, mean updates, mode stays COLLECT. A matches. B outputs zeros, implying no processing or wrong initial state handling. A is correct.
+    *   Tests 3, 4: Input rate exceeds `stationary_limit`. Should be rejected due to RATE. `rejected_windows` increments to 1. Mode stays COLLECT. A matches. B outputs zeros. A is correct.
+    *   Overall, Implementation A correctly follows the requirement for sample acceptance/rejection, state updates, and mode tracking. Implementation B appears to either do nothing, fail silently, or start in an incorrect state/outputting defaults without updating.
+    *   Therefore, A is correct for all tests. Pick A.
+
+5.  **Draft JSON Response** (mental refinement):
+    Need to format exactly as requested.
+    For each test: id, correct ("A"), reason (brief, referencing requirement).
+    Tests 1,2,5,6 are identical in setup/output diff, so reasons will be similar. I'll group them logically or write individually as requested.
+    Test 1: 输入速率范数小于阈值，首拍应被接受并更新窗口状态（count=1, mean=输入值, mode=COLLECT），A符合需求，B全零未处理。
+    Test 2: 同测试1，A正确。
+    Test 3: 输入速率范数大于stationary_limit，应按RATE拒绝并清空窗口、递增rejected_windows至1，A符合，B错误。
+    Test 4: 同测试3逻辑，超限拒绝，A符合。
+    Test 5: 同测试1，A符合。
+    Test 6: 同测试1，A符合。
+    Pick: A
+
+    Check constraints: "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}"
+    I will generate exactly this structure.
+
+    Let's double check the requirement details to ensure accuracy of reasoning.
+    - "An enabled sample is accepted only when its finite rate norm is at most stationary_limit_rad_s" -> Test 1 norm ~1.7e-6 < 1e-3. Accept.
+    - "after the first sample... vector change at most max_sample_delta" -> N/A for first sample.
+    - "Accepted samples update the mean and per-axis second central moment with Welford's algorithm." -> count++, mean updated. A shows this.
+    - "A rate or delta rejection clears the current window and increments rejected_windows." -> Test 3 norm ~1.7e-3 > 1e-3. Reject RATE. rejected_windows++. A shows 1.
+    - Mode: COLLECT is 1. A shows 1. B shows 0 (OFF?). B is definitely wrong.
+    - All reasoning holds.
+
+    Construct JSON carefully.
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "速率范数低于阈值且为首拍，按需求应被接受并更新窗口计数与均值，A输出count=1及对应均值符合COLLECT态逻辑，B全零未执行更新。"},
+        {"id": 2, "correct": "A", "reason": "同测试1配置，首拍低速率样本应正常入库更新状态，A符合需求，B未处理。"},
+        {"id": 3, "correct": "A", "reason": "速率范数超过stationary_limit，按需求应以RATE拒绝并清空窗口、递增rejected_windows至1，A输出完全匹配，B未记录拒绝。"},
+        {"id": 4, "correct": "A", "reason": "同测试3逻辑，速率轻微超限仍触发RATE拒绝与计数器递增，A符合需求。"},
+        {"id": 5, "correct": "A", "reason": "同测试1，首拍接受并更新状态，A正确。"},
+        {"id": 6, "correct": "A", "reason": "同测试1，首拍接受并更新状态，A正确。"}
+      ],
+      "pick": "A"
+    }
+    ```
+    Check format: matches request. Reasons are concise. Logic aligns with GNC standards and provided text. No extra text. Ready. 
+    One minor point: The prompt says "测试 1（类型 normal...）", etc. I will use numeric IDs 1-6 as implied.
+    All good. Output matches exactly. 
+    Self-Correction/Verification during thought:
+    - Check enum: `GB_COLLECT = 1`. A's mode=1 matches COLLECT. Correct.
+    - Check `rejected_windows`: increments on rejection. A=1. Correct.
+    - Check `count`: increments on acceptance. A=1. Correct.
+    - B outputs 0 for everything, which contradicts basic state machine progression for a single valid/invalid call. A is unambiguously correct.
+    - JSON structure is strict. I will produce it now. 
+    Output matches response.✅
+    Proceeds. 
+    [Output Generation] -> *Proceeds*
+    *(Self-Correction/Refinement during drafting)*: I should make sure the IDs match the prompt's numbering exactly. The prompt lists "测试 1", "测试 2", etc. I'll use `"id": 1`, etc.
+    The reason strings are kept to one sentence as requested.
+    All constraints met. 
+    Final JSON generation. 
+    `{ "tests": [ ... ], "pick": "A" }` -> matches. 
+    Done. 
+    [Output Generation] (matches the final refined version)
+    *(Note: I will ensure the JSON is strictly valid and contains no markdown formatting issues if possible, but standard markdown code block is fine. The prompt says "只输出 JSON：...", so I will output raw JSON or within a code block as is standard. I'll stick to raw JSON to be safe, or just the exact string.)*
+    Actually, the prompt says `只输出 JSON：{"tests":[...],"pick":"..."}`. I will output exactly that.
+    Let's produce it. 
+    `[Done]` 
+    *Self-Correction/Verification during output gen prep*: 
+    Wait, let's verify test 3 & 4 output fields: `gb_output.mode：A=1；B=0`. Mode 1 is COLLECT. Correct.
+    `gb_output.rejected_windows：A=1；B=0`. Correct.
+    `gb_output.rejection：A=1；B=0`. Rejection enum: `GB_REJECT_RATE = 1`. Correct.
+    Everything aligns perfectly. A is correct.
+    Output matches. 
+    Proceeds. 
+    `[Output Generation]` -> *Proceeds* (produces the JSON)
+    *(Final Check of the Prompt)*: "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}"
+    I will format it precisely.
+    All good. 
+    [Output] -> *Proceeds*

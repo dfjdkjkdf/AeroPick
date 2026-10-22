@@ -1,0 +1,30 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "enable==0 时按规范表 any/enable==0 应进入 IDLE 并清空，输出 mode=0。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "第二次样本 norm<=limit 且达到 required，应先累加再发布 sum/count，A 得到 sum.x=1、bias.x=0.5、energy=1。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "第三次样本达到 required 时也应累加，sum=(1,1,1)，bias.z=1/3，energy=3，A 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "与测试2相同，达到 required 的当前样本应计入累加后再发布，A 符合。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "与测试2相同，达到 required 的当前样本应计入累加后再发布，A 符合。"
+  }
+ ],
+ "pick": "A"
+}

@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确要求空指针检查优先且失败时输出清零，实现A正确返回ADCS_E_NULL(1)且不崩溃，实现B直接崩溃违反规范。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，传入null的torque_nm应触发空指针保护返回ADCS_E_NULL(1)，实现A符合预期，实现B崩溃。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9383,
+  "completion": 1850
+ }
+}

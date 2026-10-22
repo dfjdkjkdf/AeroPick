@@ -1,0 +1,29 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "参数rate为NULL，依需求“Any null -> ADCS_E_NULL”应返回1，B符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "time非递增触发范围错误，依需求应返回RANGE(2)且不推进状态，B完全符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "dt=0触发范围错误，应返回RANGE(2)且状态不更新，B返回2且状态/输出保持正确，符合需求。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "首拍先初始化状态，零场强触发退化错误应返回DEGENERATE(3)且状态已更新，B符合。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9363,
+  "completion": 4108
+ }
+}

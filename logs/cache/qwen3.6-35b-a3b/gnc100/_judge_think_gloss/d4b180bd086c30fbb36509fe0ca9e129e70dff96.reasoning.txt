@@ -1,0 +1,130 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:** I am an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a given requirement. The function is `adcs_pilot_wheel_reserve` (inferred from the context, though the prototype is cut off, it matches the description). I have test cases where outputs differ. I must determine which implementation's output is correct according to the requirement for each test, and then pick the overall correct implementation. Output must be strictly JSON.
+
+2.  **Analyze the Requirement:**
+    *   **Function Purpose:** Wheel-cluster speed reserve. Validate and normalize each wheel axis, find the minimum signed speed margin, accumulate the corresponding directional momentum reserve, and return current linked-library cluster momentum.
+    *   **Definitions:**
+        *   `margin_i = speed_limits[i] - |speed_rad_s_i|`
+        *   `minimum_margin` is the smallest margin and `limiting_index` its first index.
+        *   `reserve_vector = sum_i inertia_i * margin_i * normalize(axis_i)`
+        *   `momentum` comes from `adcs_wheel_momentum(wheels, count, momentum)`.
+    *   **Failure Handling:**
+        *   Null `minimum_margin/limiting_index/momentum/reserve_vector` -> `ADCS_E_NULL` (nothing written).
+        *   Otherwise, outputs are first set to `minimum_margin=INFINITY`, `limiting_index=SIZE_MAX`, `momentum=reserve_vector=0`.
+        *   Then null `wheels/speed_limits` -> `ADCS_E_NULL`.
+        *   `count` outside 1..16 -> `ADCS_E_RANGE`.
+        *   Any nonfinite or nonpositive speed limit, nonfinite or nonpositive inertia, nonfinite speed, or axis with norm <= ADCS_EPS_NORM (or nonfinite) -> `ADCS_E_RANGE`.
+    *   **Implicit Logic Flow (from Failure Handling):**
+        1. Check output pointers (`minimum_margin`, `limiting_index`, `momentum`, `reserve_vector`). If any NULL -> return `ADCS_E_NULL`. Do nothing else.
+        2. Initialize outputs: `*minimum_margin = INFINITY; *limiting_index = SIZE_MAX; *momentum = {0,0,0}; *reserve_vector = {0,0,0};`
+        3. Check input pointers (`wheels`, `speed_limits`). If either NULL -> return `ADCS_E_NULL`.
+        4. Check `count`: if `< 1` or `> 16` -> return `ADCS_E_RANGE`.
+        5. Loop over wheels (0 to count-1):
+           * Check `speed_limits[i]`: nonfinite or `<= 0` -> `ADCS_E_RANGE`.
+           * Check `wheels[i].inertia_kg_m2`: nonfinite or `<= 0` -> `ADCS_E_RANGE`.
+           * Check `wheels[i].speed_rad_s`: nonfinite -> `ADCS_E_RANGE`.
+           * Normalize `wheels[i].axis_body` with min norm `ADCS_EPS_NORM`. If fails (norm <= EPS or nonfinite) -> `ADCS_E_RANGE`.
+           * Compute `margin_i = speed_limits[i] - fabs(wheels[i].speed_rad_s)`.
+           * Update `minimum_margin` and `limiting_index`: if `margin_i < *minimum_margin`, update both.
+           * Accumulate `reserve_vector += inertia_i * margin_i * normalized_axis`.
+        6. Call `adcs_wheel_momentum(wheels, count, momentum)`. Note: The requirement says `momentum` comes from this function. It doesn't specify error handling for this call explicitly in the failure section, but typically it just computes it. Given the initialization step sets it to 0, and the loop might not touch it if an error occurs earlier, but here we assume success path or error path handles it. Actually, the requirement says "Otherwise outputs are first set to... momentum=reserve_vector=0". Then checks inputs. If valid, it proceeds. The momentum calculation likely happens at the end or during valid processing. Let's stick to the explicit order: init -> validate -> compute.
+        7. Return `ADCS_OK`.
+
+    Wait, let's carefully parse the exact wording:
+    "Null minimum_margin/limiting_index/momentum/reserve_vector -> ADCS_E_NULL (nothing written)." -> Step 1.
+    "Otherwise outputs are first set to minimum_margin=INFINITY, limiting_index=SIZE_MAX, momentum=reserve_vector=0;" -> Step 2.
+    "then null wheels/speed_limits -> ADCS_E_NULL;" -> Step 3.
+    "count outside 1..16 -> ADCS_E_RANGE;" -> Step 4.
+    "any nonfinite or nonpositive speed limit, nonfinite or nonpositive inertia, nonfinite speed, or axis with norm <= ADCS_EPS_NORM (or nonfinite) -> ADCS_E_RANGE." -> Step 5.
+
+    This defines a strict sequence of checks and initializations.
+
+3.  **Analyze Test Cases:**
+    *   **Test 1:** `wheels = NULL`. Other params presumably valid pointers.
+        *   According to requirement: First check output pointers (assumed valid since diff is only in return code). Initialize outputs. Then check `wheels` -> NULL -> `ADCS_E_NULL`.
+        *   So expected return code: `ADCS_E_NULL` (which is 1).
+        *   Implementation A returns 2 (`ADCS_E_RANGE`).
+        *   Implementation B returns 1 (`ADCS_E_NULL`).
+        *   Conclusion: B is correct for Test 1.
+
+    *   **Test 2:** `speed_limits = NULL`.
+        *   Same logic: Initialize outputs, then check `speed_limits` -> NULL -> `ADCS_E_NULL`.
+        *   Expected return code: 1.
+        *   A returns 2. B returns 1.
+        *   Conclusion: B is correct for Test 2.
+
+4.  **Synthesize & Format Output:**
+    *   Test 1: Correct is B. Reason: Requirement specifies that after initializing outputs, a null `wheels` pointer should trigger `ADCS_E_NULL` (value 1), not `ADCS_E_RANGE`.
+    *   Test 2: Correct is B. Reason: Similarly, a null `speed_limits` pointer per requirement yields `ADCS_E_NULL` (value 1).
+    *   Pick: B.
+    *   Construct JSON carefully.
+
+    Check definitions: `ADCS_E_NULL = 1`, `ADCS_E_RANGE = 2`. Matches.
+    Check requirement order: "then null wheels/speed_limits -> ADCS_E_NULL". Explicitly states NULL inputs cause `ADCS_E_NULL`.
+    Both tests clearly point to B.
+
+    Draft JSON:
+    ```json
+    {
+      "tests": [
+        {
+          "id": 1,
+          "correct": "B",
+          "reason": "需求明确规定在初始化输出后，若wheels为空应返回ADCS_E_NULL(1)，而非ADCS_E_RANGE(2)。"
+        },
+        {
+          "id": 2,
+          "correct": "B",
+          "reason": "同理，需求规定speed_limits为空时也应返回ADCS_E_NULL(1)。"
+        }
+      ],
+      "pick": "B"
+    }
+    ```
+
+    Double check constraints:
+    - "只依据需求判断"
+    - "按需求逐条推理..."
+    - "最后综合所有测试，选出最符合需求的一种实现。"
+    - "只输出 JSON"
+    - Format matches exactly.
+
+    One minor point: The prompt says "测试 1（类型 error；未赋值的量为 0；共调用 1 次，比较最后一次调用后的输出）". The return value difference is `__ret__: A=2；B=1`. My reasoning holds.
+    I will generate the JSON exactly as requested. No extra text.
+    All steps verified. Proceed. 
+    Self-Correction/Refinement during thought: 
+    Should I mention the exact enum values? Yes, ADCS_E_NULL=1, ADCS_E_RANGE=2.
+    The reason strings should be concise as requested ("一句话").
+    The JSON structure matches the prompt's example style.
+    Ready. 
+    Output matches the draft.✅
+    Final Check of the Prompt: "只输出 JSON：{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}"
+    I will strictly follow this format.
+    All good. 
+    Generating. 
+    [Output Generation] -> JSON string. 
+    *(Self-Correction/Verification during generation prep)*
+    Wait, let's verify the exact wording in the prompt for test IDs: "测试 1", "测试 2". I'll use `"id": 1` and `"id": 2`.
+    The prompt says: `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will produce exactly that.
+    Reason 1: 需求明确指定检查顺序为“先初始化输出，再判空wheels”，空指针应返回ADCS_E_NULL(1)。
+    Reason 2: 需求同样规定speed_limits为空时触发ADCS_E_NULL(1)，与实现B一致。
+    Pick: B
+    All consistent.✅
+    Output matches. 
+    Proceeds. 
+    [Output Generation] (matches the final JSON)
+    ```json
+    {"tests":[{"id":1,"correct":"B","reason":"需求明确规定检查顺序为先初始化输出再判空wheels，空指针应返回ADCS_E_NULL(1)。"},{"id":2,"correct":"B","reason":"需求同样规定speed_limits为空时应返回ADCS_E_NULL(1)，实现B符合该逻辑。"}],"pick":"B"}
+    ```
+    Done. 
+    Self-Correction/Note during thought: I should ensure the JSON is valid and strictly follows the template. The prompt uses Chinese keys in the template description but expects standard JSON keys. I will use standard keys as shown in the template.
+    All good. 
+    Output matches response. 
+    [Final Check of the Prompt Text]
+    "Null minimum_margin/limiting_index/momentum/reserve_vector -> ADCS_E_NULL (nothing written). Otherwise outputs are first set to minimum_margin=INFINITY, limiting_index=SIZE_MAX, momentum=reserve_vector=0; then null wheels/speed_limits -> ADCS_E_NULL;"
+    This perfectly confirms B is correct. A likely checks pointers before initialization or misclassifies NULL as RANGE.
+    Result is solid. 
+    Output Generation. 
+    *(Done.)*

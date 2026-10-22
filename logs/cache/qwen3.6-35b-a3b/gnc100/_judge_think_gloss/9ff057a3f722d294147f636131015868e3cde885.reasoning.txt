@@ -1,0 +1,101 @@
+Here's a thinking process:
+
+1.  **Understand the User Role & Task:** I am an aerospace GNC software review expert. I need to evaluate two implementations (A and B) of a C function based on a given requirement. I only see the test cases where they differ, not the code. I must determine which implementation is correct for each test case based *only* on the requirement, then pick the overall correct implementation. Output must be a specific JSON format.
+
+2.  **Analyze the Requirement:**
+    *   **Functionality:** Quality-gated stationary-window gyro bias calibration.
+    *   **Input Validation/Requirements:** "Require binary enable, finite nonnegative thresholds, required_samples in 3..100, max_rejected_windows in 1..20, drift_limit_rad_s finite and nonnegative, and drift_confirm_samples in 1..20."
+    *   **States/Modes:** The context defines `gb_mode_t` enum: `GB_OFF = 0`, `GB_COLLECT = 1`, `GB_READY = 2`, `GB_FAULT = 3`.
+    *   **Fault Behavior:** "Latch FAULT when a rejection makes rejected_windows reach max_rejected_windows." Also, invalid input faults even while READY. Wait, the requirement says: "Invalid input faults even while READY." This implies that if configuration parameters are invalid (e.g., negative thresholds, out-of-range samples), it should transition to or stay in FAULT mode. Let's check the exact wording: "Require binary enable, finite nonnegative thresholds... Latch FAULT when a rejection makes rejected_windows reach max_rejected_windows. ... Invalid input faults even while READY."
+    *   **Disable/Enable:** "Disable clears all state." (enable=0 -> OFF/OFF mode? Probably GB_OFF). "Require binary enable..." means enable must be 0 or 1.
+    *   **Key State Transitions:**
+        *   Initial/Disabled: `GB_OFF` (0)
+        *   Valid Enable & Config: `GB_COLLECT` (1)
+        *   After `required_samples` accepted & variance OK: `GB_READY` (2)
+        *   Fault condition (max_rejected_windows reached or invalid input): `GB_FAULT` (3)
+    *   **Test Cases Analysis:** All tests are error-type tests with 1 call. They set invalid configurations or inputs and check `gb_output.mode` and `gb_state.mode`. Both A and B show `A=0` (`GB_OFF`) and `B=3` (`GB_FAULT`).
+    *   Let's look at each test case carefully against the requirement.
+
+    *Test 1:* `gb_input.enable = 1; gb_input.rate_rad_s = NULL;`
+    Requirement: "Require binary enable..." It doesn't explicitly say what happens if rate_rad_s is NULL, but typically null pointer inputs cause faults or errors. However, the prompt says "未赋值的量为 0" (unassigned quantities are 0). In C, passing NULL might trigger a fault or crash, but here we compare modes. If input is invalid (NULL pointer), does it go to FAULT or OFF? The requirement says "Invalid input faults even while READY." It implies invalid inputs generally lead to FAULT state. But wait, `rate_rad_s` being NULL is a severe error. Often, GNC systems latch to FAULT on invalid pointers or out-of-bounds config. Let's check Test 2-6 first, they have clear config violations.
+
+    *Test 2:* `gb_config.stationary_limit_rad_s = -1.0;` (Negative threshold)
+    Requirement: "finite nonnegative thresholds". So this is an invalid configuration.
+    Action: "Invalid input faults even while READY." -> Should transition to FAULT (`GB_FAULT` = 3).
+    Result: B (mode=3) matches. A (mode=0) likely treats it as OFF or ignores it, which is incorrect for a faulting system.
+
+    *Test 3:* `gb_config.max_sample_delta_rad_s = -1.0;` (Negative threshold)
+    Same as above. Invalid config -> FAULT (3). B matches.
+
+    *Test 4:* `gb_config.max_stddev_rad_s = -1.0;` (Negative threshold)
+    Same. Invalid config -> FAULT (3). B matches.
+
+    *Test 5:* `gb_config.required_samples = 2;` (Out of range 3..100)
+    Requirement: "required_samples in 3..100". 2 is invalid.
+    Action: Invalid input -> FAULT (3). B matches.
+
+    *Test 6:* `gb_config.required_samples = 101;` (Out of range 3..100)
+    Same. Invalid input -> FAULT (3). B matches.
+
+    *Re-evaluating Test 1:* `rate_rad_s = NULL`. Even if not explicitly stated as a config parameter, a NULL sensor input is fundamentally invalid. In safety-critical GNC software, invalid inputs typically trigger a FAULT state. Given Tests 2-6 clearly point to FAULT (3) for invalid configs, it's highly consistent that Test 1 should also result in FAULT (3) rather than OFF (0). OFF usually implies disable/clear state, not fault. So B is correct for Test 1 too.
+
+    Wait, let's think about standard GNC behavior. When `enable=1` but config is invalid, it shouldn't just sit in `OFF` (0). `OFF` typically means `enable=0`. Since `enable=1`, it must be in COLLECT, READY, or FAULT. If config is bad, it faults. So mode should be 3. B is correct.
+
+    Let's double check the exact wording: "Invalid input faults even while READY." This strongly supports transitioning to FAULT (3) on invalid inputs/configs.
+    Therefore, for all 6 tests, the correct mode is `GB_FAULT` (3). Implementation B outputs 3, Implementation A outputs 0.
+    Thus, B is correct for all tests.
+
+    Structure the reasoning:
+    - Requirement specifies that invalid inputs/configurations (negative thresholds, out-of-range sample counts) must trigger a fault state (`GB_FAULT` / 3).
+    - `GB_OFF` (0) corresponds to disabled state (`enable=0`), but here `enable=1`.
+    - Therefore, any test with invalid parameters while enabled should result in mode 3.
+    - B outputs 3, A outputs 0. B is correct for all tests.
+    - Pick B.
+
+    Check JSON format requirement:
+    `{"tests":[{"id":测试编号,"correct":"A|B|未规定|无法判断","reason":"一句话"}],"pick":"A|B"}`
+    I will fill in the IDs 1 to 6.
+    Reason for each: 需求明确规定无效输入/配置需进入FAULT状态(3)，且enable已置1不应为OFF(0)，故B正确。
+    Pick: B
+
+    One minor point: Test 1 has `rate_rad_s = NULL`. Is it explicitly covered? "Invalid input faults even while READY." applies generally. A NULL pointer is definitely invalid. So FAULT is correct.
+    All tests are identical in pattern: invalid param + enable=1 -> expects FAULT(3).
+    I will generate the JSON accordingly.
+    Let's verify enum values from context:
+    `typedef enum { GB_OFF = 0, GB_COLLECT = 1, GB_READY = 2, GB_FAULT = 3 } gb_mode_t;`
+    Matches perfectly.
+    All reasons can be concise.
+    Ready.✅
+    Output matches requested format. 
+    Self-Correction/Refinement during thought: 
+    Could "Invalid input faults even while READY" mean it only faults if already READY? No, "even while" emphasizes that it faults regardless of current mode, including initial states. Standard practice is to fault immediately on bad config.
+    What about `gb_output.mode` vs `gb_state.mode`? Both show same difference. The question asks to judge based on output/state. Both align.
+    I will stick with B.
+    Format exactly as requested.
+    `{ "tests": [ { "id": 1, "correct": "B", "reason": "需求规定无效输入或配置需触发FAULT状态(3)，enable=1时不应为OFF(0)" }, ... ] , "pick": "B" }`
+    All good. 
+    Proceed. 
+    Output Generation. 
+    *(Self-Correction/Verification during drafting)*
+    Wait, let's carefully read: "Invalid input faults even while READY." This could imply that initially, if config is bad, it might just refuse to start or fault. Either way, 3 is correct.
+    Is there any chance A is correct? Sometimes systems ignore bad config and stay in OFF until fixed. But "faults" is explicit. So B is definitely correct.
+    I will produce the JSON. 
+    Structure:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "B", "reason": "需求规定无效输入需触发FAULT状态，enable=1时不应停留在OFF(0)。"},
+        {"id": 2, "correct": "B", "reason": "stationary_limit为负值违反非负阈值要求，应进入FAULT(3)。"},
+        {"id": 3, "correct": "B", "reason": "max_sample_delta为负值违反非负阈值要求，应进入FAULT(3)。"},
+        {"id": 4, "correct": "B", "reason": "max_stddev为负值违反非负阈值要求，应进入FAULT(3)。"},
+        {"id": 5, "correct": "B", "reason": "required_samples=2超出3..100范围，属非法配置应进入FAULT(3)。"},
+        {"id": 6, "correct": "B", "reason": "required_samples=101超出3..100范围，属非法配置应进入FAULT(3)。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Matches requirements perfectly. Output matches. 
+    One detail: "未赋值的量为 0" means other fields are 0. Doesn't change logic.
+    All good. 
+    Proceeds. 
+    [Output Generation] -> *Proceeds*

@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确地在达到 required 时累加当前有效样本并发布 scaled mean/READY，而 A 在 enable=0 时可能先因样本或配置置 FAULT，C 漏加第 required 个样本。",
+ "_usage": {
+  "prompt": 11239,
+  "completion": 12979
+ }
+}

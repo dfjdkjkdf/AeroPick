@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "未规定",
+   "reason": "最大转速低于warn，保持NORMAL；需求未规定NORMAL下elapsed取值。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "进入DERATE，制动功率为负的机械功率，B的-16符合power*dt能量累加符号要求。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "达到trip直接进入BRAKE，需求规定进入BRAKE时elapsed=0，且制动功率应为负；B同时满足。"
+  },
+  {
+   "id": 4,
+   "correct": "未规定",
+   "reason": "最大转速等于release但仍低于warn，保持NORMAL；需求未规定NORMAL下elapsed取值。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "进入DERATE，制动功率应为负的机械功率，B的-20符合要求。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "进入DERATE，制动功率应为负的机械功率，B的-20符合要求。"
+  }
+ ],
+ "pick": "B"
+}

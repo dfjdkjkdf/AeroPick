@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定输入指针为空时应返回ADCS_E_NULL，且失败默认值为INFINITY和SIZE_MAX(约1.84e19)，A完全吻合，B/C置0违反核心契约。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，A正确执行空指针校验与默认值回退。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "同上。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "同上。"
+  },
+  {
+   "id": 5,
+   "correct": "B",
+   "reason": "输出指针为NULL时无法写入默认值，A直接崩溃属实现缺陷；B/C安全返回ADCS_E_NULL，符合航天软件防崩溃约定。"
+  },
+  {
+   "id": 6,
+   "correct": "B",
+   "reason": "同上。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9486,
+  "completion": 4790
+ }
+}

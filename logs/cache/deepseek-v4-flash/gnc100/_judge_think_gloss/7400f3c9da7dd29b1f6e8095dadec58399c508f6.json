@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "体向量范数1e-13小于等于ADCS_EPS_NORM，属于无效向量，应失败并将K清零。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "惯性向量范数1e-13小于等于ADCS_EPS_NORM，属于无效向量，应失败并将K清零。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "body_vectors为NULL应返回ADCS_E_NULL，且失败输出K清零。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "inertial_vectors为NULL应返回ADCS_E_NULL，且失败输出K清零。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "weight_sum为NULL应返回ADCS_E_NULL，且失败输出K清零。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "count=0不满足2..32，应返回ADCS_E_RANGE，且失败输出K清零。"
+  }
+ ],
+ "pick": "A"
+}

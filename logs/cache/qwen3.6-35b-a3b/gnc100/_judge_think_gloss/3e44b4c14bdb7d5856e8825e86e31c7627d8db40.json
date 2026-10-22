@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定空指针应返回ADCS_E_NULL(1)，A正确返回1且未崩溃，B/C崩溃违反航天软件基础健壮性要求。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，A正确返回错误码并按契约输出失败默认值(INF与零向量)，B/C崩溃。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "按需求数学定义推导，独立第三向量经姿态阵映射后与body向量的叉乘结果应为[0,0,1]，A输出吻合，B符号相反。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "按需求数学定义推导，叉乘结果应为[0,1,0]，A输出吻合，B符号相反。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "输入含无穷大量属非有限输入，需求明确对应ADCS_E_NOT_FINITE(4)，A正确返回，C误判为RANGE(2)。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "输入含NaN同样属非有限输入，应返回ADCS_E_NOT_FINITE(4)，A正确，C误判。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 10393,
+  "completion": 4702
+ }
+}

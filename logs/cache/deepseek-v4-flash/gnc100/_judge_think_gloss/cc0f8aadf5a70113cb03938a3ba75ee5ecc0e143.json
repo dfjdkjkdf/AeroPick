@@ -1,0 +1,35 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "C",
+   "reason": "DRIVE 且 next=310.025<350，冷却应为(310-290)/10=2；C 正确，A 用了更新后温度。"
+  },
+  {
+   "id": 2,
+   "correct": "C",
+   "reason": "DRIVE 请求0，冷却应为(349-290)/10=5.9，next=348.941<350；C 正确更新温度。"
+  },
+  {
+   "id": 3,
+   "correct": "C",
+   "reason": "DRIVE 请求1，冷却6，next=349.945<350，不触发跳转；C 正确。"
+  },
+  {
+   "id": 4,
+   "correct": "C",
+   "reason": "trip_count 已达最大值但 next=349.945<350，未发生 DRIVE→COOL，不应 FAULT；C 正确。"
+  },
+  {
+   "id": 5,
+   "correct": "C",
+   "reason": "COOL 下施加电压应为0，加热0，冷却1，next=299.99<=300 转 DRIVE；C 正确。"
+  },
+  {
+   "id": 6,
+   "correct": "C",
+   "reason": "COOL 下施加电压应为0，加热0，冷却1.1，next=300.989>300 保持 COOL；C 正确。"
+  }
+ ],
+ "pick": "C"
+}

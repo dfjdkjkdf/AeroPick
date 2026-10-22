@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确实现了 BRAKE 的 elapsed 计数、释放证据、限幅掩码和能量累加；B 未在 BRAKE 中递增 elapsed，且限幅掩码与能量符号错误。",
+ "_usage": {
+  "prompt": 13477,
+  "completion": 15141
+ }
+}

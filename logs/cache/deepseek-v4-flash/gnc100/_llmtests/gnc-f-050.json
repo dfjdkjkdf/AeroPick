@@ -1,0 +1,164 @@
+{
+ "key": "d3d19c36ef32f33109cb5fff23bf9547e7369b72",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "wheels = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "field = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "momentum = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "command = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "torque = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "energy = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "dissipation = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 17;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 16;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = 2.0e-5;\nfield->y = 1.0e-5;\nfield->z = -3.0e-5;\ngain = 1.0e-3;\ndipole_limit = 5.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.05;\nwheels[0].speed_rad_s = 200.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ngain = 1.0e-3;\ndipole_limit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = NAN;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = INFINITY;\nfield->y = 0.0;\nfield->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.0;\nwheels[0].speed_rad_s = 100.0;\nfield->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = -0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = NAN;\nfield->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 0.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = 0.0;\nfield->y = 0.0;\nfield->z = 0.0;\ngain = 1.0e-3;\ndipole_limit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ngain = -1.0e-3;\ndipole_limit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = 1.0e-5;\ngain = NAN;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = 1.0e-5;\ngain = INFINITY;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "count = 3;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nwheels[1].axis_body.y = 1.0;\nwheels[1].inertia_kg_m2 = 0.2;\nwheels[1].speed_rad_s = -50.0;\nwheels[2].axis_body.z = 1.0;\nwheels[2].inertia_kg_m2 = NAN;\nwheels[2].speed_rad_s = 0.0;\nfield->x = 1.0e-5;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "count = 3;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nwheels[1].axis_body.y = 1.0;\nwheels[1].inertia_kg_m2 = 0.2;\nwheels[1].speed_rad_s = -50.0;\nwheels[2].axis_body.z = 1.0;\nwheels[2].inertia_kg_m2 = 0.15;\nwheels[2].speed_rad_s = 20.0;\nfield->x = 2.0e-5;\nfield->y = 1.0e-5;\nfield->z = -3.0e-5;\ngain = 4.0e-3;\ndipole_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ngain = 1.0e-3;\ndipole_limit = 0.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "count = 1;\nwheels[0].axis_body.x = 1.0;\nwheels[0].axis_body.y = 0.0;\nwheels[0].axis_body.z = 0.0;\nwheels[0].inertia_kg_m2 = 1.0;\nwheels[0].speed_rad_s = 1.0;\nfield->x = 1.0e-5;\nfield->y = 0.0;\nfield->z = 0.0;\ngain = 1.0e-3;\ndipole_limit = 1.0e-9;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "count = 2;\nwheels[0].axis_body.x = 1.0;\nwheels[0].inertia_kg_m2 = 0.1;\nwheels[0].speed_rad_s = 100.0;\nwheels[1].axis_body.y = 1.0;\nwheels[1].inertia_kg_m2 = 0.2;\nwheels[1].speed_rad_s = -50.0;\nfield->x = 1.0e-5;\nfield->y = 2.0e-5;\nfield->z = 0.0;\ngain = 1.0e-3;\ndipole_limit = 5.0;",
+    "field->x = -1.0e-5;\nfield->y = 1.0e-5;\nfield->z = 1.0e-5;",
+    "field->x = 0.0;\nfield->y = 0.0;\nfield->z = 0.0;",
+    "wheels[1].speed_rad_s = 0.0;\nfield->x = 3.0e-5;"
+   ]
+  }
+ ]
+}

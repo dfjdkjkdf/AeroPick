@@ -1,0 +1,25 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "c 为 NULL 应返回 ADCS_E_NULL，失败时 angle 输出 INFINITY，因此 B 符合。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "body 为 NULL 应返回 ADCS_E_NULL，失败时 angle 输出 INFINITY，因此 B 符合。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "reference 为 NULL 应返回 ADCS_E_NULL，失败时 angle 输出 INFINITY，因此 B 符合。"
+  },
+  {
+   "id": 4,
+   "correct": "B",
+   "reason": "innovation 为 NULL 应返回 ADCS_E_NULL，失败时 angle 输出 INFINITY，因此 B 符合。"
+  }
+ ],
+ "pick": "B"
+}

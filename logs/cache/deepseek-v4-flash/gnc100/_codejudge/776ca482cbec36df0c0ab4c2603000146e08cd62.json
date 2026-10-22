@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确实现了禁用复位和 FAULT 锁存，并保持进入 BRAKE/COOLDOWN 时 elapsed=0，而 A 缺少禁用处理且 FAULT 不锁存。",
+ "_usage": {
+  "prompt": 13406,
+  "completion": 22293
+ }
+}

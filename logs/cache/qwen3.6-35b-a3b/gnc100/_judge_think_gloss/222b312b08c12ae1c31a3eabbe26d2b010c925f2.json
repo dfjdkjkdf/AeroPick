@@ -1,0 +1,39 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "输入触发错误条件，需求明确规定失败时输出必须为INFINITY和-INFINITY，A符合规范，B错误清零。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，错误分支应按需求将输出置为无穷大与负无穷大，A正确。"
+  },
+  {
+   "id": 3,
+   "correct": "A",
+   "reason": "duration=0.0违反“nonpositive duration”触发ADCS_E_RANGE，失败输出须为INFINITY/-INFINITY，A正确。"
+  },
+  {
+   "id": 4,
+   "correct": "A",
+   "reason": "duration=-1.0违反非正时长限制触发错误，失败输出须为INFINITY/-INFINITY，A正确。"
+  },
+  {
+   "id": 5,
+   "correct": "A",
+   "reason": "max_rate=NAN违反“nonfinite rate”触发错误，失败输出须为INFINITY/-INFINITY，A正确。"
+  },
+  {
+   "id": 6,
+   "correct": "A",
+   "reason": "max_rate=INFINITY违反非有限速率限制触发错误，失败输出须为INFINITY/-INFINITY，A正确。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9168,
+  "completion": 2820
+ }
+}

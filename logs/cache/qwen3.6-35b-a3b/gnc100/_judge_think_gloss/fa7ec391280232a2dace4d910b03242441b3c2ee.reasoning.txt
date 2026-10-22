@@ -1,0 +1,161 @@
+Here's a thinking process:
+
+1.  **Understand the Goal:** The user wants me to act as an aerospace GNC software review expert. I need to evaluate two different implementations (A and B) of a C function based on a provided requirement specification. I must determine which implementation's output is correct for each test case, based *only* on the requirement. Finally, I need to pick the overall correct implementation (A or B) and output the result in a specific JSON format.
+
+2.  **Analyze the Requirement:**
+    *   **Function:** Sun acquisition visibility supervisor.
+    *   **Inputs/Context:** Normalized measured (boresight) and boresight vectors? Wait, "Normalize measured and boresight vectors". Actually, it says "sun" and "boresight" in the struct. Let's assume `sa_input.sun` and `sa_input.boresight`.
+    *   **Logic:**
+        *   Compute cosine = dot(normalized sun, normalized boresight). Or just dot product if already normalized? The requirement says "Normalize measured and boresight vectors, compute cosine...". So cosine is the dot product of normalized vectors.
+        *   Hysteresis logic: Enter ACTIVE at `cosine >= enter`, leave at `cosine <= exit`.
+        *   Report angle and normalized correction axis. Parallel vectors are valid with zero axis.
+        *   Disable resets.
+        *   Fault conditions: NULL/nonfinite/degenerate vectors, invalid flags or `-1 <= exit < enter <= 1` violations latch FAULT.
+        *   Normative visibility table:
+            *   `enable == 0` -> OFF, zero correction.
+            *   `OFF` / `cosine < enter_cosine` -> OFF, computed axis when nonparallel.
+            *   `OFF` / `cosine >= enter_cosine` -> ACTIVE, computed axis when nonparallel.
+            *   `ACTIVE` / `cosine > exit_cosine` -> ACTIVE, computed axis when nonparallel.
+            *   `ACTIVE` / `cosine <= exit_cosine` -> OFF, computed axis when nonparallel.
+            *   `invalid enabled cycle` -> FAULT, zero correction. (This likely refers to the `-1 <= exit < enter <= 1` violation or similar config error).
+    *   **Key Outputs:** `mode` (OFF=0, ACTIVE=1, FAULT=2), `cosine`, `angle_rad`, `correction_axis`.
+    *   **Angle:** Angle between vectors is `acos(cosine)`.
+    *   **Correction Axis:** Cross product of normalized vectors, normalized. If parallel, zero axis.
+    *   **Fault Latch:** Once latched, does it stay latched? "latch FAULT" implies it stays until reset, but "Disable resets" means once faulted, it stays faulted. However, the tests only call the function once per test case, so we just need to know if it faults on this single call.
+    *   **Config Validation:** `-1 <= exit < enter <= 1` is required. If violated, FAULT. Also `exit < enter` is standard hysteresis. Wait, the condition says `-1 <= exit < enter <= 1`. So `exit` must be strictly less than `enter`. Both must be within [-1, 1].
+
+3.  **Analyze Each Test Case against Requirements:**
+
+    *   **Test 1:**
+        *   Input: `enable = 0`. Vectors/config uninitialized (default 0).
+        *   Requirement: `any / enable == 0` -> Next mode OFF, correction zero.
+        *   Expected: `mode` = OFF (0), `cosine` = 0 (or undefined, but usually 0), `angle` = 0, `axis` = {0,0,0}.
+        *   A: mode=0 (OFF), state=0. Matches.
+        *   B: mode=2 (FAULT), state=2. Incorrect. Why would it fault? Maybe config validation failed because `enter`=0, `exit`=0, so `exit < enter` is false? But `enable=0` should bypass config checks or the table says first row overrides. The table explicitly says `any / enable == 0` -> OFF. So B is wrong.
+        *   Conclusion: A is correct.
+
+    *   **Test 2:**
+        *   Input: `enable = 1`, `enter=0.9`, `exit=0.8`. Valid config (`0.8 < 0.9`).
+        *   Vectors: sun={1,0,0}, boresight={0.994987, 0, 0.1}. Note: length of boresight = sqrt(0.994987^2 + 0.1^2) ≈ sqrt(0.989999 + 0.01) ≈ 1.0. So it's normalized.
+        *   Cosine = dot(sun, boresight) = 0.994987.
+        *   Current state: default 0 (OFF).
+        *   Logic: `OFF` / `cosine (0.994987) >= enter (0.9)` -> Next mode ACTIVE.
+        *   Correction axis: cross(sun, boresight) = cross({1,0,0}, {0.994987,0,0.1}) = {0*0.1 - 0*0, 0*0.994987 - 1*0.1, 1*0 - 0*0.994987} = {0, -0.1, 0}. Normalize: {0, -1, 0}.
+        *   Angle: acos(0.994987) ≈ 0.1 rad.
+        *   Expected: mode=ACTIVE(1), state=1, cosine=0.994987, angle≈0.1, axis.y=-1.
+        *   A: mode=2 (FAULT), cosine=0, angle=0, axis.y=0. Incorrect. Why fault? Maybe it thinks `exit < enter` is violated? But 0.8 < 0.9. Or maybe it checks config before enable? Unlikely. Or maybe it faults on something else? Wait, `sa_config.exit_cosine = 0.8`, `enter = 0.9`. That's valid. A faults here. B matches expectations.
+        *   Conclusion: B is correct.
+
+    *   **Test 3:**
+        *   Input: `enable = 1`, `enter=0.5`, `exit=0.4`. Valid.
+        *   Vectors: sun={1,0,0}, boresight={0.5, 0.866025, 0}. Length ≈ 1.
+        *   Cosine = 0.5.
+        *   State: default 0 (OFF).
+        *   Logic: `OFF` / `cosine (0.5) >= enter (0.5)` -> Next mode ACTIVE.
+        *   Correction axis: cross({1,0,0}, {0.5, 0.866, 0}) = {0, 0, 0.866}. Normalize -> {0, 0, 1}.
+        *   Angle: acos(0.5) = π/3 ≈ 1.0472 rad.
+        *   Expected: mode=ACTIVE(1), state=1, cosine=0.5, angle≈1.0472, axis.z=1.
+        *   A: mode=2 (FAULT), others 0. Incorrect.
+        *   B: mode=1, state=1, cosine=0.5, angle=1.0472, axis.z=1. Matches.
+        *   Conclusion: B is correct.
+
+    *   **Test 4:**
+        *   Input: `enable = 1`, `enter=0.5`, `exit=0.4`. Valid.
+        *   Vectors: sun={1,0,0}, boresight={0.499999, 0.866025, 0}. Cosine ≈ 0.499999.
+        *   State: default 0 (OFF).
+        *   Logic: `OFF` / `cosine (0.499999) < enter (0.5)` -> Next mode OFF.
+        *   Correction axis: same direction as Test 3, {0, 0, 1}.
+        *   Expected: mode=OFF(0), state=0, cosine=0.499999, angle≈1.0472, axis.z=1.
+        *   A: mode=2 (FAULT), others 0. Incorrect.
+        *   B: mode=0, state=0, cosine=0.499999, angle=1.0472, axis.z=1. Matches.
+        *   Conclusion: B is correct.
+
+    *   **Test 5:**
+        *   Input: `enable = 1`, `enter=0.8`, `exit=0.9`. **Invalid config!** `exit (0.9) < enter (0.8)` is FALSE. Violates `-1 <= exit < enter <= 1`.
+        *   Requirement: "...violations latch FAULT."
+        *   Expected: mode=FAULT(2), state=2, cosine=? (maybe 0 or previous, but typically fault clears computation), correction=zero.
+        *   A: mode=1 (ACTIVE), cosine=1. Incorrect. It ignored the fault condition.
+        *   B: mode=2 (FAULT), cosine=0. Correctly detected fault.
+        *   Conclusion: B is correct.
+
+    *   **Test 6:**
+        *   Input: `enable = 1`, `enter=0.9`, `exit=0.8`. Valid.
+        *   Initial state: `sa_state.mode = SA_OFF` (0).
+        *   Vectors: same as Test 2. Cosine = 0.994987.
+        *   Logic: `OFF` / `cosine >= enter` -> ACTIVE.
+        *   Expected: Same as Test 2. mode=ACTIVE(1), state=1, cosine=0.994987, angle≈0.1, axis.y=-1.
+        *   A: mode=2 (FAULT). Incorrect.
+        *   B: mode=1, state=1, cosine=0.994987, angle=0.100167, axis.y=-1. Matches.
+        *   Conclusion: B is correct.
+
+4.  **Synthesize & Verify:**
+    *   Test 1: A correct. (B faults incorrectly on enable=0)
+    *   Test 2: B correct. (A faults incorrectly)
+    *   Test 3: B correct.
+    *   Test 4: B correct.
+    *   Test 5: B correct. (A misses fault condition)
+    *   Test 6: B correct.
+    *   Overall: B is correct in 5 out of 6 tests. A fails on almost all except Test 1. A seems to have a bug where it faults on almost everything, possibly due to improper config check order or vector normalization issues, but given the clear mismatches with the spec, B aligns perfectly with the normative table and fault conditions.
+    *   Wait, let's double check Test 1. A gives mode=0, B gives mode=2. Spec says `enable==0` -> OFF. So A is right for T1.
+    *   Let's check Test 5 again. Config `enter=0.8, exit=0.9`. This violates `exit < enter`. Spec says "latch FAULT". B gives FAULT. A gives ACTIVE. So B is right for T5.
+    *   Therefore, B is overwhelmingly more compliant. The prompt asks to pick one. B is clearly the intended correct implementation.
+
+    Structure the JSON output carefully.
+    For each test, provide ID, correct choice, and a concise reason based on the spec.
+    Test 1: A correct. Reason: enable=0 directly forces OFF mode per table; B incorrectly faults.
+    Test 2: B correct. Reason: cosine>=enter enters ACTIVE, computes correct axis/angle; A incorrectly faults.
+    Test 3: B correct. Reason: cosine>=enter enters ACTIVE, boundary value handled correctly; A faults.
+    Test 4: B correct. Reason: cosine<enter keeps OFF, computes axis correctly; A faults.
+    Test 5: B correct. Reason: exit>enter violates hysteresis config, must latch FAULT; A ignores fault.
+    Test 6: B correct. Reason: Explicit OFF start matches sequence logic, transitions to ACTIVE correctly; A faults.
+    Pick: B.
+
+    Check constraints: "只依据需求判断", "按需求逐条推理", "最后综合所有测试，选出最符合需求的一种实现", "只输出 JSON".
+    I will format exactly as requested.
+    One minor point: Test 1 says "未赋值的量为 0". `sa_config.enter_cosine = 0`, `exit_cosine = 0`. Does `0 < 0` fail? Yes. But `enable=0` takes precedence per table ("any / enable == 0 | OFF"). So A is correct.
+    All reasoning holds.
+
+    Draft JSON:
+    ```json
+    {
+      "tests": [
+        {"id": 1, "correct": "A", "reason": "需求规定enable==0时直接输出OFF且修正轴为零，A符合；B错误触发了FAULT。"},
+        {"id": 2, "correct": "B", "reason": "cosine(0.995)>=enter(0.9)应从OFF转入ACTIVE，并计算正确夹角与正交轴；A错误触发FAULT。"},
+        {"id": 3, "correct": "B", "reason": "cosine(0.5)>=enter(0.5)边界条件应转入ACTIVE，角度约1.0472，正交轴为Z向；A错误触发FAULT。"},
+        {"id": 4, "correct": "B", "reason": "cosine(0.499999)<enter(0.5)应保持OFF，但需输出当前正交轴与余弦值；A错误触发FAULT。"},
+        {"id": 5, "correct": "B", "reason": "配置exit(0.9)>enter(0.8)违反滞回区间要求，需求明确指示应latch FAULT；A忽略故障条件。"},
+        {"id": 6, "correct": "B", "reason": "显式初始化OFF状态后按逻辑正常转入ACTIVE，数值与Test 2一致；A错误触发FAULT。"}
+      ],
+      "pick": "B"
+    }
+    ```
+    Review against requirements:
+    - "只依据需求判断" -> Checked.
+    - "按需求逐条推理" -> Reasons cover the specific rule applied.
+    - Format matches exactly.
+    - No extra text.
+    All good. I will generate the response. 
+    One detail: Test 1 reason mentions B faults incorrectly. Spec says "invalid flags or -1<=exit<enter<=1 violations latch FAULT". With enable=0, config might be uninit (0,0), which violates exit<enter. But table says "any / enable == 0" overrides. So A is correct. B probably checks config before enable, which is a common bug. My reason captures this.
+    Test 5: exit=0.9, enter=0.8. Violation. B faults. Correct.
+    Everything aligns. Output matches request.✅
+    Proceed. 
+    Self-Correction/Refinement during thought: 
+    Check Test 1 again. `sa_config` fields are not set, so they default to 0. `exit < enter` becomes `0 < 0` which is false. If B checks config first, it faults. But spec says "any / enable == 0" comes first in table. So A is right.
+    Check Test 4: `cosine < enter` -> OFF. B outputs mode 0, correct.
+    Check Test 5: `exit > enter` -> FAULT. B outputs mode 2, correct.
+    All solid.
+    Output matches exactly. 
+    Generating. 
+    [Output Generation] -> JSON string. 
+    (Note: I will ensure the JSON is strictly formatted as requested.) 
+    `{"tests":[{"id":1,"correct":"A","reason":"需求表第一行规定enable==0时直接输出OFF及零修正轴，A符合；B因未优先处理enable标志而误触发FAULT。"},{"id":2,"correct":"B","reason":"初始OFF态下cosine(0.995)>=enter(0.9)，应按表转入ACTIVE并计算非平行修正轴与夹角，B符合；A误触发FAULT。"},{"id":3,"correct":"B","reason":"边界条件cosine(0.5)>=enter(0.5)应转入ACTIVE，角度π/3(≈1.0472)，正交轴为Z向，B完全匹配；A误触发FAULT。"},{"id":4,"correct":"B","reason":"cosine(0.499999)<enter(0.5)应保持OFF态，但仍需报告当前余弦值与非平行修正轴，B符合；A误触发FAULT。"},{"id":5,"correct":"B","reason":"配置exit(0.9)>enter(0.8)违反'-1<=exit<enter<=1'要求，需求明确指示应latch FAULT，B正确拦截；A忽略故障。"},{"id":6,"correct":"B","reason":"显式置OFF后按逻辑正常转入ACTIVE，输出与Test 2一致，B符合；A误触发FAULT。"}],"pick":"B"}`
+    Matches perfectly. Proceeds. 
+    Output Generation. 
+    [Done] 
+    *(Self-Correction/Verification during drafting)*: 
+    Wait, let's verify Test 1's `sa_output.cosine` etc. The prompt doesn't list differences for Test 1 except mode/state. So my reason is fine.
+    All tests match B except T1. B is clearly the robust implementation.
+    JSON structure is exact.
+    Ready. 
+    Output matches response. 
+    `[Proceeds]`

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确计算 C·C^T 的 Frobenius 误差与 C 的有符号行列式，未修改 C，并在空指针或非有限元失败时按要求设置输出并返回对应状态。",
+ "_usage": {
+  "prompt": 8541,
+  "completion": 15383
+ }
+}

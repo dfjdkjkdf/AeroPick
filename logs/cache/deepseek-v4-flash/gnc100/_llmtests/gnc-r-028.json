@@ -1,0 +1,155 @@
+{
+ "key": "a494ca04b5c69f8d6b15313c020076d86f67dcdb",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 3;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 1.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 1.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 20;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 0.0;\nwm_config.restart = 1.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 1.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_COMPLETE;\nwm_state.good = 5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_COMPLETE;\nwm_state.good = 5;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 2.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_COMPLETE;\nwm_state.good = 5;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels = NULL;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 3;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 5;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels[0].axis_body.x = 0.0;\nwm_input.wheels[0].axis_body.y = 0.0;\nwm_input.wheels[0].axis_body.z = 0.0;\nwm_input.wheels[0].inertia_kg_m2 = 1.0;\nwm_input.wheels[0].speed_rad_s = 1.0;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 0;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 21;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 1.0 / 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0 / 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 3.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 2.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.count = 4;\nwm_input.wheels[0].axis_body.x = 1.0;\nwm_input.wheels[0].axis_body.y = 0.0;\nwm_input.wheels[0].axis_body.z = 0.0;\nwm_input.wheels[0].inertia_kg_m2 = 1.0;\nwm_input.wheels[0].speed_rad_s = 1.0;\nwm_input.wheels[1].axis_body.x = 0.0;\nwm_input.wheels[1].axis_body.y = 1.0;\nwm_input.wheels[1].axis_body.z = 0.0;\nwm_input.wheels[1].inertia_kg_m2 = 0.0;\nwm_input.wheels[1].speed_rad_s = 0.0;\nwm_input.wheels[2].axis_body.x = 0.0;\nwm_input.wheels[2].axis_body.y = 0.0;\nwm_input.wheels[2].axis_body.z = 1.0;\nwm_input.wheels[2].inertia_kg_m2 = 0.0;\nwm_input.wheels[2].speed_rad_s = 0.0;\nwm_input.wheels[3].axis_body.x = 0.0;\nwm_input.wheels[3].axis_body.y = 0.0;\nwm_input.wheels[3].axis_body.z = -1.0;\nwm_input.wheels[3].inertia_kg_m2 = 0.0;\nwm_input.wheels[3].speed_rad_s = 0.0;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.5;\nwm_config.restart = 2.5;\nwm_config.required = 2;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;",
+    "wm_config.target.x = 0.0;",
+    "wm_config.target.x = 0.0;",
+    "wm_config.target.x = 0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.count = 4;\nwm_input.wheels[0].axis_body.x = 1.0;\nwm_input.wheels[0].axis_body.y = 0.0;\nwm_input.wheels[0].axis_body.z = 0.0;\nwm_input.wheels[0].inertia_kg_m2 = 1.0;\nwm_input.wheels[0].speed_rad_s = 1.0;\nwm_input.wheels[1].axis_body.x = 0.0;\nwm_input.wheels[1].axis_body.y = 1.0;\nwm_input.wheels[1].axis_body.z = 0.0;\nwm_input.wheels[1].inertia_kg_m2 = 0.0;\nwm_input.wheels[1].speed_rad_s = 0.0;\nwm_input.wheels[2].axis_body.x = 0.0;\nwm_input.wheels[2].axis_body.y = 0.0;\nwm_input.wheels[2].axis_body.z = 1.0;\nwm_input.wheels[2].inertia_kg_m2 = 0.0;\nwm_input.wheels[2].speed_rad_s = 0.0;\nwm_input.wheels[3].axis_body.x = 0.0;\nwm_input.wheels[3].axis_body.y = 0.0;\nwm_input.wheels[3].axis_body.z = -1.0;\nwm_input.wheels[3].inertia_kg_m2 = 0.0;\nwm_input.wheels[3].speed_rad_s = 0.0;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.5;\nwm_config.restart = 2.5;\nwm_config.required = 2;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;",
+    "wm_input.wheels[0].speed_rad_s = 3.0;",
+    "wm_input.wheels[0].speed_rad_s = 1.0;",
+    "wm_input.wheels[0].speed_rad_s = 1.0;",
+    "wm_input.wheels[0].speed_rad_s = 3.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wm_input.enable = 1;\nwm_input.count = 4;\nwm_input.wheels[0].axis_body.x = 1.0;\nwm_input.wheels[0].axis_body.y = 0.0;\nwm_input.wheels[0].axis_body.z = 0.0;\nwm_input.wheels[0].inertia_kg_m2 = 1.0;\nwm_input.wheels[0].speed_rad_s = 1.0;\nwm_input.wheels[1].axis_body.x = 0.0;\nwm_input.wheels[1].axis_body.y = 1.0;\nwm_input.wheels[1].axis_body.z = 0.0;\nwm_input.wheels[1].inertia_kg_m2 = 0.0;\nwm_input.wheels[1].speed_rad_s = 0.0;\nwm_input.wheels[2].axis_body.x = 0.0;\nwm_input.wheels[2].axis_body.y = 0.0;\nwm_input.wheels[2].axis_body.z = 1.0;\nwm_input.wheels[2].inertia_kg_m2 = 0.0;\nwm_input.wheels[2].speed_rad_s = 0.0;\nwm_input.wheels[3].axis_body.x = 0.0;\nwm_input.wheels[3].axis_body.y = 0.0;\nwm_input.wheels[3].axis_body.z = -1.0;\nwm_input.wheels[3].inertia_kg_m2 = 0.0;\nwm_input.wheels[3].speed_rad_s = 0.0;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.5;\nwm_config.restart = 2.5;\nwm_config.required = 2;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;",
+    "wm_input.wheels[0].speed_rad_s = 1.0;",
+    "wm_input.wheels[0].speed_rad_s = 3.0;",
+    "wm_input.wheels[0].speed_rad_s = 1.0;",
+    "wm_input.enable = 0;",
+    "wm_input.enable = 1;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wm_input.enable = 0;\nwm_input.count = 4;\nwm_input.wheels[0].axis_body.x = 1.0;\nwm_input.wheels[0].axis_body.y = 0.0;\nwm_input.wheels[0].axis_body.z = 0.0;\nwm_input.wheels[0].inertia_kg_m2 = 1.0;\nwm_input.wheels[0].speed_rad_s = 1.0;\nwm_input.wheels[1].axis_body.x = 0.0;\nwm_input.wheels[1].axis_body.y = 1.0;\nwm_input.wheels[1].axis_body.z = 0.0;\nwm_input.wheels[1].inertia_kg_m2 = 0.0;\nwm_input.wheels[1].speed_rad_s = 0.0;\nwm_input.wheels[2].axis_body.x = 0.0;\nwm_input.wheels[2].axis_body.y = 0.0;\nwm_input.wheels[2].axis_body.z = 1.0;\nwm_input.wheels[2].inertia_kg_m2 = 0.0;\nwm_input.wheels[2].speed_rad_s = 0.0;\nwm_input.wheels[3].axis_body.x = 0.0;\nwm_input.wheels[3].axis_body.y = 0.0;\nwm_input.wheels[3].axis_body.z = -1.0;\nwm_input.wheels[3].inertia_kg_m2 = 0.0;\nwm_input.wheels[3].speed_rad_s = 0.0;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.5;\nwm_config.restart = 2.5;\nwm_config.required = 3;\nwm_state.mode = WM_COMPLETE;\nwm_state.good = 7;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wm_input.enable = 2;\nwm_input.wheels->axis_body.x = 1.0;\nwm_input.wheels->axis_body.y = 0.0;\nwm_input.wheels->axis_body.z = 0.0;\nwm_input.wheels->inertia_kg_m2 = 1.0;\nwm_input.wheels->speed_rad_s = 1.0;\nwm_input.count = 4;\nwm_config.target.x = 0.0;\nwm_config.target.y = 0.0;\nwm_config.target.z = 0.0;\nwm_config.stop = 1.0;\nwm_config.restart = 2.0;\nwm_config.required = 1;\nwm_state.mode = WM_ACTIVE;\nwm_state.good = 0;"
+   ]
+  }
+ ]
+}

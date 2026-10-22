@@ -1,0 +1,186 @@
+{
+ "key": "6808bd166d8cd94c77ff26fb3b4b26dc4ad27868",
+ "tests": [
+  {
+   "kind": "error",
+   "steps": [
+    "gb_input.enable = 1;\n gb_input.rate_rad_s = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = -1.0;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.max_sample_delta_rad_s = -1.0;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.max_stddev_rad_s = -1.0;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.required_samples = 2;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.required_samples = 101;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.max_rejected_windows = 0;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.max_rejected_windows = 21;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.drift_limit_rad_s = -1.0;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.drift_confirm_samples = 0;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "gb_config.drift_confirm_samples = 21;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 0.0;\n gb_input.rate_rad_s->y = 0.0;\n gb_input.rate_rad_s->z = 0.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 1e-3;\n gb_config.max_sample_delta_rad_s = 1e-4;\n gb_config.max_stddev_rad_s = 1e-5;\n gb_config.required_samples = 5;\n gb_config.max_rejected_windows = 10;\n gb_config.drift_limit_rad_s = 1e-4;\n gb_config.drift_confirm_samples = 3;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 1e-3;\n gb_config.max_sample_delta_rad_s = 1e-4;\n gb_config.max_stddev_rad_s = 1e-5;\n gb_config.required_samples = 5;\n gb_config.max_rejected_windows = 10;\n gb_config.drift_limit_rad_s = 1e-4;\n gb_config.drift_confirm_samples = 3;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 1e-3;\n gb_config.max_sample_delta_rad_s = 1e-4;\n gb_config.max_stddev_rad_s = 1e-5;\n gb_config.required_samples = 5;\n gb_config.max_rejected_windows = 10;\n gb_config.drift_limit_rad_s = 1e-4;\n gb_config.drift_confirm_samples = 3;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 1e-3;\n gb_input.rate_rad_s->y = 1e-3;\n gb_input.rate_rad_s->z = 1e-3;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 1e-3;\n gb_config.max_sample_delta_rad_s = 1e-4;\n gb_config.max_stddev_rad_s = 1e-5;\n gb_config.required_samples = 5;\n gb_config.max_rejected_windows = 10;\n gb_config.drift_limit_rad_s = 1e-4;\n gb_config.drift_confirm_samples = 3;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 1e-3 + 1e-9;\n gb_input.rate_rad_s->y = 1e-3 + 1e-9;\n gb_input.rate_rad_s->z = 1e-3 + 1e-9;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 1e-3;\n gb_config.max_sample_delta_rad_s = 1e-4;\n gb_config.max_stddev_rad_s = 1e-5;\n gb_config.required_samples = 5;\n gb_config.max_rejected_windows = 10;\n gb_config.drift_limit_rad_s = 1e-4;\n gb_config.drift_confirm_samples = 3;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-3 + 1e-9;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 1e-3;\n gb_config.max_sample_delta_rad_s = 1e-4;\n gb_config.max_stddev_rad_s = 1e-5;\n gb_config.required_samples = 5;\n gb_config.max_rejected_windows = 10;\n gb_config.drift_limit_rad_s = 1e-4;\n gb_config.drift_confirm_samples = 3;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-3;\n gb_input.rate_rad_s->y = 1e-3;\n gb_input.rate_rad_s->z = 1e-3;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 1e-3;\n gb_config.max_sample_delta_rad_s = 1e-4;\n gb_config.max_stddev_rad_s = 1e-5;\n gb_config.required_samples = 5;\n gb_config.max_rejected_windows = 10;\n gb_config.drift_limit_rad_s = 1e-4;\n gb_config.drift_confirm_samples = 3;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 1e-3;\n gb_config.max_sample_delta_rad_s = 1e-4;\n gb_config.max_stddev_rad_s = 1e-5;\n gb_config.required_samples = 5;\n gb_config.max_rejected_windows = 10;\n gb_config.drift_limit_rad_s = 1e-4;\n gb_config.drift_confirm_samples = 3;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "gb_config.stationary_limit_rad_s = 1e-3;\n gb_config.max_sample_delta_rad_s = 1e-4;\n gb_config.max_stddev_rad_s = 1e-5;\n gb_config.required_samples = 5;\n gb_config.max_rejected_windows = 10;\n gb_config.drift_limit_rad_s = 1e-4;\n gb_config.drift_confirm_samples = 3;\n gb_input.enable = 1;\n gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;",
+    "gb_input.rate_rad_s->x = 1e-6;\n gb_input.rate_rad_s->y = 1e-6;\n gb_input.rate_rad_s->z = 1e-6;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确按轴使用对应 limits 进行钳位、置饱和位并计算残差范数，且对包括 limits 在内的 NULL 返回 ADCS_E_NULL、对非法限制返回 ADCS_E_RANGE 并将失败输出清零。",
+ "_usage": {
+  "prompt": 9632,
+  "completion": 4229
+ }
+}

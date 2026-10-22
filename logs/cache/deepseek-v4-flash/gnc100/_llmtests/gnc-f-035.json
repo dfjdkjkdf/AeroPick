@@ -1,0 +1,165 @@
+{
+ "key": "6a550aaaab1af773d1c64c1b0c386dc64d5a017b",
+ "tests": [
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 0.5;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel->axis_body.x = 0.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 2.0;\nwheel->inertia_kg_m2 = 1.2;\nwheel->speed_rad_s = -3.0;\nmotor_torque = -0.25;\ndt = 0.02;\nspeed_limit = 50.0;"
+   ]
+  },
+  {
+   "kind": "normal",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 2.0;\nwheel->axis_body.z = 2.0;\nwheel->inertia_kg_m2 = 0.25;\nwheel->speed_rad_s = 5.0;\nmotor_torque = 0.0;\ndt = 0.0;\nspeed_limit = 100.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 10.0;\nmotor_torque = 0.0;\ndt = 0.0;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel->axis_body.x = 0.0;\nwheel->axis_body.y = 1.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 2.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 20.0;\ndt = 1.0;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel->axis_body.x = 0.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 1.0;\nwheel->inertia_kg_m2 = 2.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = -20.0;\ndt = 1.0;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 10.0000000001;\nmotor_torque = 0.0;\ndt = 0.0;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = -10.0000000001;\nmotor_torque = 0.0;\ndt = 0.0;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel->axis_body.x = 1.0e-300;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.0;\ndt = 0.0;\nspeed_limit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel->axis_body.x = 1.0e-13;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.0;\ndt = 0.0;\nspeed_limit = 1.0;"
+   ]
+  },
+  {
+   "kind": "boundary",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0e-300;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 1.0;\ndt = 1.0;\nspeed_limit = 1.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel = NULL;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 10.0;\nnext_wheel = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 10.0;\nnext_momentum = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 10.0;\nsaturated = NULL;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 0.0/0.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 0.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = -1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = -0.01;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 0.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 1.0/0.0;\ndt = 0.01;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.0/0.0;\nspeed_limit = 10.0;"
+   ]
+  },
+  {
+   "kind": "error",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 0.1;\ndt = 0.01;\nspeed_limit = 1.0/0.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wheel->axis_body.x = 1.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 1.0;\nwheel->speed_rad_s = 9.0;\nmotor_torque = 5.0;\ndt = 0.5;\nspeed_limit = 10.0;",
+    "wheel->speed_rad_s = next_wheel->speed_rad_s;\nmotor_torque = 5.0;\ndt = 0.5;",
+    "wheel->speed_rad_s = next_wheel->speed_rad_s;\nmotor_torque = -5.0;\ndt = 0.5;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wheel->axis_body.x = 0.0;\nwheel->axis_body.y = 1.0;\nwheel->axis_body.z = 0.0;\nwheel->inertia_kg_m2 = 2.0;\nwheel->speed_rad_s = 0.0;\nmotor_torque = 4.0;\ndt = 1.0;\nspeed_limit = 3.0;",
+    "wheel->speed_rad_s = next_wheel->speed_rad_s;\nmotor_torque = -4.0;\ndt = 1.0;"
+   ]
+  },
+  {
+   "kind": "sequence",
+   "steps": [
+    "wheel->axis_body.x = 0.0;\nwheel->axis_body.y = 0.0;\nwheel->axis_body.z = 1.0;\nwheel->inertia_kg_m2 = 0.5;\nwheel->speed_rad_s = 2.0;\nmotor_torque = 0.0;\ndt = 0.0;\nspeed_limit = 2.0;",
+    "wheel->speed_rad_s = next_wheel->speed_rad_s;\nmotor_torque = 1.0;\ndt = 0.1;"
+   ]
+  }
+ ]
+}

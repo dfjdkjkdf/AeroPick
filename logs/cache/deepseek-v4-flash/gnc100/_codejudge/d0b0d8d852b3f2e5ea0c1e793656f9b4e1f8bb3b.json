@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "A 正确使用 2*acos(|dot|) 计算符号不变 disagreement，且主源切换证据、失效/无效配置处理和融合权重均符合需求，而 B 的夹角计算减半、C 在无效配置时错误复位状态。",
+ "_usage": {
+  "prompt": 16677,
+  "completion": 19742
+ }
+}

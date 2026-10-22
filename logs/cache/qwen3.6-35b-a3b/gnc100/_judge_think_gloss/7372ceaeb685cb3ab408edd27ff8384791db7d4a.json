@@ -1,0 +1,14 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "需求明确规定‘Null -> ADCS_E_NULL’，实现B在接收到空指针时安全返回1(ADCS_E_NULL)且不崩溃，严格符合空指针处理与失败输出契约；实现A发生崩溃，违反需求。"
+  }
+ ],
+ "pick": "B",
+ "_usage": {
+  "prompt": 9010,
+  "completion": 1960
+ }
+}

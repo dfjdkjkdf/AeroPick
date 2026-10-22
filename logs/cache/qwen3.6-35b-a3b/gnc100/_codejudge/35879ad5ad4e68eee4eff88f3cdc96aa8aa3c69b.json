@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "实现B准确实现了故障锁定阈值（达到max_rejects即转FAULT而非A的越界判定），严格遵循需求指定的计算顺序，且各分支状态更新完整合规。",
+ "_usage": {
+  "prompt": 10534,
+  "completion": 3985
+ }
+}

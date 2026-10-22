@@ -1,0 +1,8 @@
+{
+ "pick": "B",
+ "reason": "B 正确校验输出指针，错误时按可用输出写 identity/INF，首样本规范化为非负 w，后续按历史对齐并用 adcs_quat_abs_dot 计算符号不变分离角且仅成功时更新历史。",
+ "_usage": {
+  "prompt": 9374,
+  "completion": 10561
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "B",
+   "reason": "enable=0 是合法禁用，需求规定 Disable 应复位为 OFF，不应因未使用的轮子数据或速度配置进入 FAULT。"
+  },
+  {
+   "id": 2,
+   "correct": "B",
+   "reason": "enable=0 是合法禁用，需求规定 Disable 应复位为 OFF，wheels=NULL 不应在禁用状态下被当作 malformed wheels 触发 FAULT。"
+  }
+ ],
+ "pick": "B"
+}

@@ -1,0 +1,19 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "位置向量沿太阳方向投影为-6372000(<0)且垂直距离为0(<6371000)，严格满足需求定义的Eclipse几何条件，状态机应跳转至ECLIPSE(枚举值1)。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "几何构型与地球半径同测试1，同样严格触发Eclipse条件；recovery_cycles仅影响光照恢复后的计数逻辑，不改变当前拍的Eclipse判定结果，模式应为1。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9924,
+  "completion": 3592
+ }
+}

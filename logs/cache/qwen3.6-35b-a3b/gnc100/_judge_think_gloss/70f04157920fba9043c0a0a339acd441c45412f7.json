@@ -1,0 +1,24 @@
+{
+ "tests": [
+  {
+   "id": 1,
+   "correct": "A",
+   "reason": "需求明确规定空输出指针优先返回ADCS_E_NULL(1)，测试中未赋值指针为0即NULL，A的实现符合规范。"
+  },
+  {
+   "id": 2,
+   "correct": "A",
+   "reason": "同上，空指针检查优先级高于阈值与业务逻辑，应直接返回1，B错误地跳过了空指针检查。"
+  },
+  {
+   "id": 3,
+   "correct": "B",
+   "reason": "指针与阈值均合法，但零磁场输入会使adcs_momentum_unload_dipole返回ADCS_E_DEGENERATE(3)，需求规定启用时若子函数失败应透传其状态码，B符合。"
+  }
+ ],
+ "pick": "A",
+ "_usage": {
+  "prompt": 9349,
+  "completion": 4529
+ }
+}

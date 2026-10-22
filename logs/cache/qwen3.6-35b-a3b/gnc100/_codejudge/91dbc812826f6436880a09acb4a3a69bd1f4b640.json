@@ -1,0 +1,8 @@
+{
+ "pick": "A",
+ "reason": "实现A严格遵循了失败时输出置零、优先使用GNC基元（如adcs_vec3_scale）、先减偏置后乘矩阵的顺序要求，且错误处理分支完整严谨。",
+ "_usage": {
+  "prompt": 10460,
+  "completion": 3660
+ }
+}
