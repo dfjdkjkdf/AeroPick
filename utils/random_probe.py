@@ -622,7 +622,7 @@ def classify_compile_error(stderr_text, gen_range, harness_start):
 
 
 def _compile_cmd(project):
-    link_libs = ["-lstdutils7_V2_01"] + ([f"-l{project}"] if project else [])
+    link_libs = (["-lstdutils7_V2_01"] if os.path.exists(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "eval", "includes", "libstdutils7_V2_01.a")) else []) + ([f"-l{project}"] if project else [])  # gnc100 needs no project library
     return (
         "gcc case.c -I/includes -Wl,--start-group "
         f"-L/includes {' '.join(link_libs)} -Wl,--end-group "
@@ -631,7 +631,7 @@ def _compile_cmd(project):
 
 
 def _compile_cmd_ubsan(project):
-    link_libs = ["-lstdutils7_V2_01"] + ([f"-l{project}"] if project else [])
+    link_libs = (["-lstdutils7_V2_01"] if os.path.exists(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "eval", "includes", "libstdutils7_V2_01.a")) else []) + ([f"-l{project}"] if project else [])  # gnc100 needs no project library
     return (
         "gcc case.c -I/includes -Wl,--start-group "
         f"-L/includes {' '.join(link_libs)} -Wl,--end-group "
